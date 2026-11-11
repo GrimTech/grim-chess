@@ -1,0 +1,102 @@
+{
+  "id": "adult.s1.opening-centre",
+  "track": "adult",
+  "stage": 1,
+  "order": 18,
+  "skillIds": [
+    "opening.principles.centre"
+  ],
+  "title": "Opening principle 1: fight for the centre",
+  "summary": "Occupy and control e4, d4, e5 and d5 with your first moves.",
+  "estMinutes": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The four central squares, **e4, d4, e5, d5**, are the most valuable. Pieces there reach both sides of the board, and central pawns take squares away from enemy pieces. Start with a centre pawn: **1.e4** or **1.d4**."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Occupy the centre with a pawn, two squares forward.",
+      "solution": [
+        "e4"
+      ],
+      "alternatives": [
+        "d4"
+      ],
+      "explain": "e4 (or d4) occupies the centre and opens lines for your queen and a bishop."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "prompt": "You are Black. Answer 1.e4 by staking your own claim in the centre with a pawn.",
+      "solution": [
+        "e5"
+      ],
+      "alternatives": [
+        "d5"
+      ],
+      "explain": "1...e5 stops White from playing d4-d5 and e5 freely and frees your bishop and queen. 1...d5 is also principled."
+    },
+    {
+      "type": "quiz",
+      "question": "Which first move fights for the centre?",
+      "choices": [
+        "1.d4",
+        "1.a4",
+        "1.h4",
+        "1.Na3"
+      ],
+      "answer": 0,
+      "explain": "Flank pawn moves and rim knights do nothing for the centre."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "prompt": "Develop a piece that attacks Black's centre pawn.",
+      "solution": [
+        "Nf3"
+      ],
+      "explain": "Nf3 attacks e5 and develops toward the centre. This is the start of most classical openings."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2",
+      "prompt": "White offers a central pawn trade. Take it.",
+      "solution": [
+        "exd4"
+      ],
+      "explain": "Exchanging toward the centre keeps the balance. Note that d4 was attacked once and defended only by the queen."
+    },
+    {
+      "type": "quiz",
+      "question": "Why are central squares valuable?",
+      "choices": [
+        "Pieces there control more squares and can reach either wing quickly",
+        "Kings are safest there",
+        "Pawns there cannot be captured"
+      ],
+      "answer": 0,
+      "explain": "A knight on d4 controls 8 squares; on a1 only 2. The centre multiplies piece power."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: name the four central squares.",
+      "choices": [
+        "d4, e4, d5, e5",
+        "c3, f3, c6, f6",
+        "a1, h1, a8, h8",
+        "d1, e1, d8, e8"
+      ],
+      "answer": 0,
+      "explain": "The extended centre (c3-f3-f6-c6) matters too, but these four are the core."
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#opening-principles",
+    "knowledge-base/03-chess-knowledge/strategy.md#centre"
+  ]
+}

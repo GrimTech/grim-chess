@@ -1,0 +1,117 @@
+{
+  "id": "adult.s3.discovered-attacks",
+  "track": "adult",
+  "stage": 3,
+  "order": 15,
+  "skillIds": [
+    "tactics.discovered-attack"
+  ],
+  "title": "Discovered attacks",
+  "summary": "Move the front piece of a battery with its own threat and unmask an attack by the piece behind: two threats in one move.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **battery** is two of your pieces on one line, with the front piece blocking the rear piece's attack. When the front piece moves, the rear piece attacks. If the moving piece also makes a threat (a check, a capture, an attack on another piece), the opponent faces two threats at once.\n\nWarning: the uncovered line works both ways. If the rear piece is undefended, the target may simply capture it."
+    },
+    {
+      "type": "move",
+      "fen": "rnb2rk1/pp3ppp/2pqp3/8/8/2NBP3/PPP2PPP/R2Q1RK1 w - - 0 30",
+      "prompt": "Worked example. Your queen on d1 and bishop on d3 form a battery on the d-file, aimed at Black's undefended queen on d6. Move the bishop with check.",
+      "solution": [
+        "Bxh7+",
+        "Kxh7",
+        "Qxd6"
+      ],
+      "explain": "Bxh7+! Kxh7 Qxd6: the bishop check unmasks the queen's attack on d6. Black must answer the check, and the queen falls. Give a bishop, win a queen.",
+      "hint": "The bishop can capture with check."
+    },
+    {
+      "type": "move",
+      "fen": "r1b2rk1/p1p2ppp/1pnp1q2/8/3N4/1P2P3/PBP2PPP/R1Q2RK1 w - - 0 30",
+      "prompt": "Your b2-bishop is hidden behind the d4-knight, aimed at the queen on f6. Move the knight with a gain.",
+      "solution": [
+        "Nxc6"
+      ],
+      "explain": "Nxc6! captures a knight and unmasks Bxf6. Black must save the queen (her ...Qxb2 is met by Qxb2 because the c1-queen defends the bishop), so White simply keeps the extra piece.",
+      "hint": "Capture with the knight."
+    },
+    {
+      "type": "move",
+      "fen": "r2q1rk1/ppp1bppp/4p3/n2pP3/2nP1B2/P1N4P/BPbNQPP1/R3K2R w KQ - 0 14",
+      "prompt": "White to move. Your e2-queen is blocked by the d2-knight on the second rank. What is at the end of that line?",
+      "solution": [
+        "Nxc4",
+        "dxc4",
+        "Qxc2"
+      ],
+      "explain": "Nxc4! captures a knight and opens the queen's line to the c2-bishop. After ...dxc4 Qxc2 White has won a piece."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/6pp/p7/1pb5/3p4/P1p4P/1PP2PPK/RB2r3 w - - 0 25",
+      "prompt": "White to move. Your a1-rook is hidden behind the b1-bishop, facing Black's e1-rook.",
+      "solution": [
+        "Ba2+",
+        "Kf8",
+        "Rxe1"
+      ],
+      "explain": "Ba2+! The bishop moves with check, and the rook's attack on e1 is unmasked: ...Kf8 Rxe1. Double threat: check plus discovered attack."
+    },
+    {
+      "type": "move",
+      "fen": "rn2kb1r/pppb1ppp/8/8/Q1B4q/2P5/P2P1PPP/R1B1K1NR w KQkq - 3 9",
+      "prompt": "White to move. Your a4-queen is looking along the 4th rank, blocked by your own c4-bishop. What is on h4?",
+      "solution": [
+        "Bxf7+",
+        "Kxf7",
+        "Qxh4"
+      ],
+      "explain": "Bxf7+! Kxf7 Qxh4: the bishop capture with check opens the 4th rank, and Black's queen falls."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/ppp1pn1p/2n3P1/3p3Q/7N/2P5/PP1P1PPP/RNB1KB1R b KQkq - 0 7",
+      "prompt": "Black to move. Your h8-rook is behind the h7-pawn, aimed at the knight on h4. White's queen is on h5.",
+      "solution": [
+        "hxg6",
+        "Qxg6",
+        "Rxh4"
+      ],
+      "explain": "...hxg6! captures the pawn, attacks the queen and unmasks the rook: after Qxg6 Rxh4 Black has won a knight."
+    },
+    {
+      "type": "quiz",
+      "question": "Which of these is the most dangerous kind of discovered attack?",
+      "choices": [
+        "The front piece moves to an empty, quiet square",
+        "The front piece moves with check or captures something valuable",
+        "The rear piece is a pawn",
+        "The front piece is the king"
+      ],
+      "answer": 1,
+      "explain": "The more forcing the front piece's move, the less time the opponent has to answer the unmasked threat. With check, the defender usually has no answer at all."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: when does a discovered attack fail?",
+      "choices": [
+        "When the front piece is a knight",
+        "When the target can simply capture the unmasked rear piece (or trade itself off), or when the front piece's move gives the opponent a stronger check",
+        "Never",
+        "When you have two bishops"
+      ],
+      "answer": 1,
+      "explain": "Always check the line in both directions: the queen you attack may take your undefended rook."
+    }
+  ],
+  "practiceThemes": [
+    "discoveredAttack"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#discovered-attack",
+    "Brunia & van Wijgerden, Steps Method Step 3 workbook (eliminating the defender, discovered attack)",
+    "knowledge-base/02-methods/steps-method.md (Step 3: eliminating the defender, discovered attack, pawn endings)",
+    "Lichess puzzle database (CC0): 04bHj, 07WtY, 11tua, 0Mf9G"
+  ]
+}

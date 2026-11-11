@@ -1,0 +1,97 @@
+{
+  "id": "adult.s6.deep-forcing-lines",
+  "track": "adult",
+  "stage": 6,
+  "order": 3,
+  "skillIds": [
+    "calculation.deep-forcing"
+  ],
+  "title": "Deep forcing lines (8-12 plies)",
+  "summary": "Calculate long forcing variations accurately, including the opponent's side-lines, and evaluate the final position correctly.",
+  "estMinutes": 35,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Long lines, few branches\n\nForcing lines (checks, captures, direct threats) let you calculate 8-12 plies because the opponent has few replies. Rules:\n1. Write (or say) the line move by move, with the **position after each move** clear in your head.\n2. At each node, list the opponent's **forcing** replies (checks, captures) and check each one — this is where most errors hide.\n3. Stop only in a **quiet** position and evaluate it with concrete criteria (material, king safety, passed pawns).\n4. Double-check the final position for an in-between move or a stalemate trick."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 30",
+      "prompt": "White to move. A queen sacrifice ends the World Championship game (Petrosian-Spassky, World Championship 1966, game 10).",
+      "solution": [
+        "Qh8+"
+      ],
+      "hint": "Deflect the king, then fork.",
+      "explain": "**30.Qh8+!!** — Spassky resigned at once, since after 30...Kxh8 31.Nxf7+ and 32.Nxg5 White is a knight up. The line is short, but the key is seeing that the knight fork after the queen sacrifice also wins back the queen (engine +6.6; 30.Nxf7 only +0.8)."
+    },
+    {
+      "type": "move",
+      "fen": "2b1rb2/pp3p2/2n2kpp/2p5/4qB2/2P2Q1P/PP3PP1/3R1BK1 w - - 0 31",
+      "prompt": "White to move. A bishop sacrifice drags the king out (Karpov-Topalov, Dos Hermanas 1994)",
+      "solution": [
+        "Be5+"
+      ],
+      "orientation": "white",
+      "explain": "**31.Be5+!** — the king must take; then Qxf7 and Qxe8 follow with mating threats. Engine main line: 31.Be5+ Kxe5 32.Qxf7 Bf5 33.Qxe8+ Be7 34.Qh8+ Bf6 35.Qf8 Be7. (Karpov-Topalov, Dos Hermanas 1994; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "6k1/pb1r1pp1/1pn2q1p/3B4/8/P4NP1/1P3PP1/3RR1K1 w - - 0 24",
+      "prompt": "White to move. Calculate the forcing line to the end (Kasparov-Karpov, World Championship 1985)",
+      "solution": [
+        "Re8+"
+      ],
+      "orientation": "white",
+      "explain": "**24.Re8+!** — the check deflects the king and the bishop check on e4 follows; White wins material by force. Engine main line: 24.Re8+ Kh7 25.Be4+ g6 26.Rxd7 Kg7 27.Rxb7 Qxb2 28.Bxc6 Qc1+ 29.Kh2 Qxc6. (Kasparov-Karpov, World Championship 1985; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "r1bb1r1k/p4ppp/2p2n1N/7Q/2p5/2B2N2/qPP2PPP/2KR3R w - - 2 19",
+      "prompt": "White to move. Tal's combination: sacrifice the queen on f7 (Tal-Smyslov, Candidates 1959)",
+      "solution": [
+        "Qxf7"
+      ],
+      "orientation": "white",
+      "explain": "**19.Qxf7!** — after the queen check sequence White comes out with rook and two knights active against the exposed black king. Engine main line: 19.Qxf7 Qa1+ 20.Kd2 Rxf7 21.Nxf7+ Kg8 22.Rxa1 Ne4+ 23.Ke1 Kxf7 24.Ne5+ Kg8. (Tal-Smyslov, Candidates 1959; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "rn1qrbk1/1pR2ppp/2b5/p3p3/Q7/P2PBNP1/1P2PPBP/2R3K1 w - - 1 17",
+      "prompt": "White to move. The white rooks are doubled against the bishop on c6. Find Botvinnik's combination (Botvinnik-Portisch, Monte Carlo 1968).",
+      "solution": [
+        "R1xc6"
+      ],
+      "hint": "Take with the right rook: which one should stay on the 7th rank?",
+      "explain": "**17.R1xc6!** bxc6 18.Rxf7! — an exchange sacrifice followed by a rook raid on f7 that leaves Black's king open; the game continued 18...h6 19.Rb7 Qc8 20.Qc4+ and Botvinnik won. Engine: +4.2 for 17.R1xc6 (the other capture 17.R7xc6 is only +0.5)."
+    },
+    {
+      "type": "quiz",
+      "question": "You have calculated a 10-ply forcing line ending with an extra pawn. What is the most common mistake at this point?",
+      "choices": [
+        "Being too careful",
+        "Stopping the evaluation in a position where the opponent still has a check, a capture or an intermezzo",
+        "Calculating the line twice",
+        "Writing it down"
+      ],
+      "answer": 1,
+      "explain": "The quiescence rule. In the final position, look once more for his forcing moves."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Calculation drill**: 10 positions at the stage 6 level in exam mode (no moving pieces, 10 minutes each, write the full line).\n- **Puzzles**: 20 *veryLong* and 10 *master* puzzles at your rating.\n- Compare your written lines with the engine; record where your line went wrong (missing reply, wrong evaluation, wrong move order)."
+    }
+  ],
+  "practiceThemes": [
+    "veryLong",
+    "master"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "knowledge-base/02-methods/soviet-school-botvinnik-dvoretsky-yusupov.md",
+    "Dvoretsky, Secrets of Chess Training",
+    "Aagaard, Grandmaster Preparation: Calculation",
+    "Petrosian-Spassky, World Championship 1966 (game 10)",
+    "Kasparov-Karpov, World Championship 1985"
+  ]
+}

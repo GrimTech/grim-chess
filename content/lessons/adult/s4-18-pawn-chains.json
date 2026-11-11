@@ -1,0 +1,111 @@
+{
+  "id": "adult.s4.pawn-chains",
+  "track": "adult",
+  "stage": 4,
+  "order": 18,
+  "skillIds": [
+    "strategy.pawn.chains"
+  ],
+  "title": "Pawn chains: attack the base",
+  "summary": "Read the direction of a pawn chain, find its base, and plan your play on the right wing.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **pawn chain** is a diagonal line of pawns protecting each other, e.g. White d4-e5 against Black e6-d5 in the French Advance. Nimzowitsch's rules:\n\n- Attack the chain at its **base** (the rear pawn, which no pawn protects): ...c5 against d4. Attacking the head (...f6 against e5) is the second-best, later option.\n- The chain points to the wing where its owner should play: White's d4-e5 chain points to the **kingside**; Black, cramped there, counterattacks on the queenside."
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3",
+      "md": "French Advance after 3.e5. White's chain is d4-e5, Black's is e6-d5. The base of White's chain is **d4**: only the c3-pawn (once played) can protect it. Black's light-squared bishop is shut in by his own chain, a typical by-product.",
+      "arrows": [
+        [
+          "c7",
+          "c5",
+          "green"
+        ],
+        [
+          "f7",
+          "f6",
+          "yellow"
+        ]
+      ],
+      "highlights": [
+        "d4",
+        "e5"
+      ],
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. Which plan follows Nimzowitsch's rule?",
+      "choices": [
+        "3...c5, attacking the base d4 at once",
+        "3...f6, attacking the head e5",
+        "3...Nc6, developing and waiting"
+      ],
+      "answer": 0,
+      "explain": "**3...c5!** hits the base; if White ever gives up d4, e5 loses its support. 3...f6?! at once opens Black's own king (Bd3 and Qh5+ ideas) and the engine marks it clearly worse; 3...Nc6?! blocks the c-pawn, the very pawn that should attack the base. Engine check: ...c5 is about 0.8 pawns better than either.",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. White has played 6.Bd3 and 7.cxd4, and d4 looks weak: three black pieces (Nc6, Qb6 and soon ...Nge7-f5) eye it. Is 7...Nxd4 good?",
+      "choices": [
+        "Yes: 7...Nxd4 8.Nxd4 Qxd4 wins the base pawn",
+        "No: after 7...Nxd4? 8.Nxd4 Qxd4?? 9.Bb5+ the d1-queen takes d4; first 7...Bd7, taking b5 away",
+        "No, Black should play 7...f6 instead"
+      ],
+      "answer": 1,
+      "explain": "Pressure on the base must still be calculated. **7...Bd7!** covers b5; only then is d4 really attacked. 7...f6 weakens the king and loses time. Engine check: 7...Bd7 is about equal, 7...Nxd4 loses heavily, 7...f6 costs almost two pawns.",
+      "fen": "r1b1kbnr/pp3ppp/1qn1p3/3pP3/3P4/3B1N2/PP3PPP/RNBQK2R b KQkq - 0 7"
+    },
+    {
+      "type": "quiz",
+      "question": "King's Indian, closed centre. White's chain is c4-d5-e4, Black's is d6-e5. On which wings do the two sides play?",
+      "choices": [
+        "White on the queenside (c4-c5 against the base d6), Black on the kingside (...f5 against the base e4, then ...f4 and ...g5)",
+        "Both on the kingside",
+        "White on the kingside, Black on the queenside"
+      ],
+      "answer": 0,
+      "explain": "Each chain points to a wing: White's pawns point to the queenside, Black's to the kingside. Both sides attack the base of the enemy chain on their own wing, which is why King's Indian games become races on opposite wings.",
+      "fen": "r1bq1rk1/ppp1npbp/3p1np1/3Pp3/2P1P3/2N2N2/PP2BPPP/R1BQ1RK1 w - - 1 9"
+    },
+    {
+      "type": "quiz",
+      "question": "In the King's Indian structure above, which pawn move is Black's thematic attack on the base of White's chain?",
+      "choices": [
+        "...f5, against e4",
+        "...c6, against d5",
+        "...b5, against c4"
+      ],
+      "answer": 0,
+      "explain": "The base of the d5-e4 part of the chain is **e4**, and ...f5 attacks it. ...c6 attacks the *head* (d5) and opens the c-file, which helps the side with the queenside play, White. The chains tell each side where to play."
+    },
+    {
+      "type": "quiz",
+      "question": "Typical error: what goes wrong when you attack the head of the chain too early?",
+      "choices": [
+        "Nothing, it is equally good",
+        "You often open lines near your own king or give the opponent a strong square, while the base stays solid",
+        "You lose the right to castle"
+      ],
+      "answer": 1,
+      "explain": "Attacking the head (e.g. ...f6 in the French) is a real plan, but usually *after* ...c5 has removed or fixed the base, and when your king is safe. Played prematurely it weakens e6 and the h5-e8 diagonal."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** (1) Which pawn of a chain is attacked first, and why? (2) In the French Advance, where should each side play? (3) Why did 7...Nxd4 fail? Answers: the base, because no pawn can defend it; White on the kingside, Black on the queenside with ...c5, ...Qb6, ...Nf5; because of 9.Bb5+ with a discovered attack on d4."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#pawn-chains",
+    "knowledge-base/03-chess-knowledge/strategy.md#french-structures",
+    "knowledge-base/03-chess-knowledge/strategy.md#kings-indian-structures",
+    "knowledge-base/02-methods/positional-frameworks-nimzowitsch-silman.md#2-nimzowitsch-my-system-mein-system-1925",
+    "Nimzowitsch, My System (1925), chapters on pawn chains, outposts and the blockade",
+    "Watson, Play the French (4th ed., 2012), Advance Variation"
+  ]
+}

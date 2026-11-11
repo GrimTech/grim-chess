@@ -1,0 +1,120 @@
+{
+  "id": "adult.s5.french-caro-slav-structures",
+  "track": "adult",
+  "stage": 5,
+  "order": 11,
+  "skillIds": [
+    "strategy.french-caro-structures"
+  ],
+  "title": "French, Caro-Kann and Slav structures",
+  "summary": "Attack the base of the chain (...c5, ...f6), handle the Winawer doubled pawns, and play the Caro/Slav structures with the light bishop outside the chain.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Pawn chains: attack the base\n\n**French Advance** (e4-e5 against ...e6-d5): the chain d4-e5 points at Black's kingside; Black attacks its **base** with ...c5 and its **head** with ...f6. White supports d4 (c3, Nf3, Be3 or b4 ideas) and attacks on the kingside; Black presses d4 with ...Qb6, ...Nc6, ...Nf5/...Nh6-f5 and later ...f6.\n\n**Winawer** (3.Nc3 Bb4 4.e5 c5 5.a3 Bxc3+ 6.bxc3): White gets the bishop pair and the doubled c-pawns, Black gets the better structure and play against c3/a3; 7.Qg4 attacks the dark squares Black weakened by giving up the bishop.\n\n**Caro-Kann and Slav**: Black develops the light bishop **outside** the pawn chain (...Bf5/...Bg4) before ...e6. The c6-d5 structure is solid; Black's central break is ...c5 or ...e5."
+    },
+    {
+      "type": "board",
+      "fen": "r1b1k2r/pp2bppp/1qn1p3/3pPn2/1P1P4/P4N2/1B3PPP/RN1QKB1R w KQkq - 3 10",
+      "md": "**French Advance**: 5.Nf3 Qb6 6.a3 Nh6 7.b4 cxd4 8.cxd4 Nf5 9.Bb2 Be7. Black's pieces all hit d4 (Nc6, Nf5, Qb6). White's b4 gains queenside space and supports d4 with Bb2. The f6 break will come later to attack e5.",
+      "orientation": "black",
+      "arrows": [
+        [
+          "f5",
+          "d4",
+          "red"
+        ],
+        [
+          "c6",
+          "d4",
+          "red"
+        ],
+        [
+          "b6",
+          "d4",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the French Advance, which pawn is the base of White's chain d4-e5, and how does Black attack it?",
+      "choices": [
+        "e5, with ...f6",
+        "d4, with ...c5",
+        "c3, with ...b5-b4",
+        "f2, with ...g5-g4"
+      ],
+      "answer": 1,
+      "explain": "The base is d4; ...c5 attacks it. The head e5 is attacked with ...f6. Nimzowitsch: attack the chain at its base.",
+      "fen": "r1b1k2r/pp2bppp/1qn1p3/3pPn2/1P1P4/P4N2/1B3PPP/RN1QKB1R w KQkq - 3 10"
+    },
+    {
+      "type": "board",
+      "fen": "rnbqk2r/pp2nppp/4p3/2ppP3/3P2Q1/P1P5/2P2PPP/R1B1KBNR b KQkq - 2 7",
+      "md": "**Winawer, 7.Qg4**: White attacks g7 at once. Black chooses between 7...O-O, 7...Qc7 (sacrificing g7/h7 for central counterplay after ...cxd4) and 7...Kf8. White's long-term trumps: the bishop pair and dark squares; Black's: the c3/a3 weaknesses and a lead in central play.",
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "What is the main long-term weakness Black targets in the Winawer after 6.bxc3?",
+      "choices": [
+        "White's king on e1",
+        "The doubled c-pawns, especially c3 (and a3), along the c-file and with ...Qa5/...Ba4 ideas",
+        "The e5-pawn only",
+        "White's light-squared bishop"
+      ],
+      "answer": 1,
+      "explain": "Black aims at the doubled c-pawns (...Qa5, ...Bd7-a4, ...Rc8) and the light squares. White aims to open the position for the bishops and use the dark squares around Black's king.",
+      "fen": "rnbqk2r/pp2nppp/4p3/2ppP3/3P2Q1/P1P5/2P2PPP/R1B1KBNR b KQkq - 2 7"
+    },
+    {
+      "type": "board",
+      "fen": "r2qkbnr/pp1n1pp1/2p1p2p/7P/3P4/3Q1NN1/PPP2PP1/R1B1K2R w KQkq - 0 11",
+      "md": "**Caro-Kann Classical**: 4...Bf5 5.Ng3 Bg6 6.h4 h6 7.Nf3 Nd7 8.h5 Bh7 9.Bd3 Bxd3 10.Qxd3 e6. The light bishop was traded off without being shut in. White has space (h5 cramps g6), Black is solid and aims for ...Ngf6, ...Be7/...Bd6, ...Qc7, castling queenside and ...c5 later.",
+      "orientation": "black"
+    },
+    {
+      "type": "board",
+      "fen": "rn1qk2r/pp3ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P3PPP/R1BQ1RK1 b kq - 2 8",
+      "md": "**Slav, 5.a4 Bf5**: again the bishop goes out before ...e6. After 6.e3 e6 7.Bxc4 Bb4 8.O-O, Black has a solid c6-e6 structure; the key breaks are ...c5 and ...e5, White's are e3-e4 (often prepared by Nh4, f3 or Qe2) and d4-d5.",
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "In the Slav with ...Bf5 and ...e6, what is White's main central break?",
+      "choices": [
+        "g4-g5",
+        "e3-e4 (often after Qe2/Nh4 or f3)",
+        "b2-b4",
+        "h2-h4"
+      ],
+      "answer": 1,
+      "explain": "e3-e4 gains central space and kicks the f5 bishop. Black wants to answer with ...Bg6 or ...e5/...c5 breaks at the right moment.",
+      "fen": "rn1qk2r/pp3ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P3PPP/R1BQ1RK1 b kq - 2 8"
+    },
+    {
+      "type": "play",
+      "fen": "rnbqk2r/pp2nppp/4p3/2ppP3/3P2Q1/P1P5/2P2PPP/R1B1KBNR b KQkq - 2 7",
+      "goal": "hold",
+      "prompt": "Play the Winawer position as Black against the engine (level 12) for 25 moves. Choose a plan (7...O-O or 7...Qc7 with ...cxd4) and keep the balance.",
+      "maxMoves": 25,
+      "engineLevel": 12
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: one French game (Nimzowitsch or Botvinnik as Black are classic) and one Caro-Kann or Slav game.\n- Write for each structure: the base of the chain, both sides' pawn breaks, the good and bad bishop.\n- Play 3 training games from your own repertoire line in one of these structures and check whether you played the right break."
+    }
+  ],
+  "practiceThemes": [
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "knowledge-base/03-chess-knowledge/openings.md",
+    "Dvoretsky & Yusupov, Positional Play",
+    "Soltis, Pawn Structure Chess",
+    "Flores Rios, Chess Structures: A Grandmaster Guide"
+  ]
+}

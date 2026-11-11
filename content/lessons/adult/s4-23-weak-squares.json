@@ -1,0 +1,90 @@
+{
+  "id": "adult.s4.weak-squares",
+  "track": "adult",
+  "stage": 4,
+  "order": 23,
+  "skillIds": [
+    "strategy.weak-squares"
+  ],
+  "title": "Weak squares and holes",
+  "summary": "Spot squares your opponent can no longer guard with pawns, then plan to occupy them.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **weak square** (hole) is a square that can no longer be defended by a pawn. Every pawn move creates some: after ...g6, the squares f6 and h6 lose the g-pawn's protection; after g3 without a fianchetto bishop, f3 and h3 become holes.\n\nWhen several weak squares share a colour (for example after ...g6 and the exchange of Black's dark-squared bishop), we speak of a **colour-complex weakness**. Plans: occupy the holes with pieces, trade the bishop that defends them, bring the queen and a knight to them."
+    },
+    {
+      "type": "quiz",
+      "question": "Black has played ...g6 and ...Bg7. White exchanges the g7-bishop with Bh6xg7. Which squares become weak?",
+      "choices": [
+        "The dark squares around the black king: f6, h6 and g7",
+        "The light squares f7 and h7",
+        "None, because the g6-pawn defends them"
+      ],
+      "answer": 0,
+      "explain": "The g6-pawn no longer guards f6/h6 (it moved past them), and the bishop that covered the dark squares has gone. This is why White plays Be3-h6 in the Yugoslav Attack against the Dragon: the dark squares around Black's king become holes for the queen and knights."
+    },
+    {
+      "type": "board",
+      "fen": "2rq1rk1/pp1bppb1/3p1np1/4n2p/3NP2P/1BN1BP2/PPPQ2P1/2KR3R w - - 0 13",
+      "md": "Yugoslav Attack (Dragon). Black has played ...g6 and ...h5; White has castled long. White's typical plan includes **Bh6** to trade the dragon bishop, after which h6, f6 and g7 are weak, and g4 to open lines.",
+      "arrows": [
+        [
+          "e3",
+          "h6",
+          "green"
+        ],
+        [
+          "g2",
+          "g4",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Which pawn move creates a hole on f3 for White?",
+      "choices": [
+        "g2-g3 when the light-squared bishop is not on g2",
+        "h2-h3",
+        "e2-e4"
+      ],
+      "answer": 0,
+      "explain": "After g3 the f3-square is no longer covered by the g-pawn; if the light-squared bishop is not on g2 to guard it, a black knight or bishop can land on f3. A fianchetto bishop \"plugs\" the holes created by g3."
+    },
+    {
+      "type": "quiz",
+      "question": "You have found a hole on d6 in your opponent's camp. What is the best general plan?",
+      "choices": [
+        "Plant a knight there, supported by a pawn or piece, and trade the opponent's pieces that could dispute it",
+        "Put your queen there immediately",
+        "Ignore it until the endgame"
+      ],
+      "answer": 0,
+      "explain": "A supported knight on a deep hole cramps the whole position. Trade the opponent's defenders of that square (often his bishop of that colour) first. The queen is too valuable to occupy a contested square early."
+    },
+    {
+      "type": "quiz",
+      "question": "Typical error with weak squares:",
+      "choices": [
+        "Creating holes near your own king with unnecessary pawn moves (for example ...h6 and ...g5) when the opponent has pieces ready to use them",
+        "Occupying holes with knights",
+        "Trading the opponent's good bishop"
+      ],
+      "answer": 0,
+      "explain": "Pawn moves cannot be taken back. Every pawn advance near your king leaves squares behind; make such moves only when they gain something concrete."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** What is a hole? What is a colour-complex weakness? Which bishop exchange creates dark-square weaknesses around a fianchettoed king? (Trading the fianchetto bishop, e.g. Bh6xg7.)"
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#weak-squares-and-colour-complexes",
+    "knowledge-base/03-chess-knowledge/strategy.md#king-safety",
+    "Silman, How to Reassess Your Chess, 4th ed. (2010), imbalances: minor pieces, pawn structure, space",
+    "Nimzowitsch, My System (1925), chapters on pawn chains, outposts and the blockade"
+  ]
+}

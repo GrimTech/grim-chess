@@ -1,0 +1,99 @@
+{
+  "id": "adult.s8.practical-decisions-elite",
+  "track": "adult",
+  "stage": 8,
+  "order": 3,
+  "skillIds": [
+    "calculation.practical-decisions",
+    "practical.elite-competition"
+  ],
+  "title": "Practical decisions and norm-level competition",
+  "summary": "Balance calculation depth, intuition and clock; manage risk, nerves and long matches as in world-championship play.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Practical decision-making\n\nAt GM level a game has 2-5 critical moments. The practical skill is to **recognise them**, spend time there, and play the rest quickly and safely. Ingredients:\n- **Intuition first**: what does the position \"want\"? Then verify the 1-2 critical lines.\n- **Clock-aware depth**: with 10 minutes left, a safe good move beats a risky best move.\n- **Opponent-aware**: choose positions where his likely errors are bigger than yours.\n\n## Norm-level competition\n\nFIDE GM norms need a performance of about **2600 over at least 9 games** against titled opposition (with conditions on federations and titles), and a rating of 2500 at some point. That means a stable routine for 9-11 consecutive games, preparation every day, and recovery from losses."
+    },
+    {
+      "type": "move",
+      "fen": "8/b4k2/8/1R5p/5P2/3qP1P1/4NK2/8 w - - 0 81",
+      "prompt": "White to move (Carlsen-Nepomniachtchi, World Championship 2021, game 6, move 81). After 7 hours of play, find the only move that keeps the winning chances (Carlsen-Nepomniachtchi, WCh 2021 2021)",
+      "solution": [
+        "Rb7+"
+      ],
+      "orientation": "white",
+      "explain": "**81.Rb7+!** — the check followed by Rxa7 removes the a7-bishop; every other move lets Black hold the balance easily. Engine main line: 81.Rb7+ Kg8 82.Rxa7 Qb1 83.Ra8+ Kf7 84.Rc8 Qh1. (Carlsen-Nepomniachtchi, WCh 2021 2021; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "8/6k1/8/3R3p/5P2/4PNP1/q4K2/8 w - - 17 91",
+      "prompt": "White to move (move 91 of the same game). Find the only move (Carlsen-Nepomniachtchi, WCh 2021 2021)",
+      "solution": [
+        "Rd2"
+      ],
+      "orientation": "white",
+      "explain": "**91.Rd2!** — the rook covers the second rank and keeps the f-pawn and the knight protected from the queen checks. Engine main line: 91.Rd2 Qc4 92.Ne5 Qc1 93.Rd7+ Kg8 94.g4 hxg4. (Carlsen-Nepomniachtchi, WCh 2021 2021; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "r3r1k1/2p2pp1/1b1pqN1p/1p2p3/4P3/2PPN2P/1P3PP1/R2QR1K1 b - - 0 22",
+      "prompt": "Black to move (Anand-Carlsen, World Championship 2013). Take with the right piece (Anand-Carlsen, WCh 2013 2013)",
+      "solution": [
+        "Qxf6"
+      ],
+      "orientation": "black",
+      "explain": "**22...Qxf6!** — only the queen recapture keeps the balance; the pawn structure and the b6-bishop then compensate. Engine main line: 22...Qxf6 23.Qh5 Rxa1 24.Rxa1 Bxe3 25.fxe3 c5. (Anand-Carlsen, WCh 2013 2013; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "Game 6 of the 2021 match lasted 136 moves (nearly 8 hours). What factor was most important in Carlsen's win?",
+      "choices": [
+        "Opening preparation",
+        "Physical and mental endurance plus practical decisions with little time on the clock (keeping the game going, finding only-moves late in the session)",
+        "A forced tactical combination",
+        "A blunder in the opening"
+      ],
+      "answer": 1,
+      "explain": "Elite competition rewards stamina and practical skill; this is why GMs train physically."
+    },
+    {
+      "type": "quiz",
+      "question": "Last round of a norm tournament. You need a draw for a GM norm. You are slightly better. Your opponent offers a draw. What is the professional decision?",
+      "choices": [
+        "Decline: you are better",
+        "Accept: the norm is the tournament goal and the risk of playing on outweighs the extra half-point",
+        "Ask the arbiter",
+        "Play on for 10 more moves and then decide"
+      ],
+      "answer": 1,
+      "explain": "Tournament situation is part of the evaluation. Professionals weigh results, not only positions."
+    },
+    {
+      "type": "quiz",
+      "question": "You have 8 minutes for 12 moves in a complex position with two candidate moves: A is objectively best (+0.6) but needs 6 minutes of calculation; B is +0.4, simple and safe. What do you play?",
+      "choices": [
+        "A: always the best move",
+        "B: the small objective difference is not worth spending most of your remaining time",
+        "Neither",
+        "Offer a draw"
+      ],
+      "answer": 1,
+      "explain": "Practical decisions include the clock. A good safe move with time in hand beats a slightly better move that leaves you in time trouble."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- Play one **rated classical tournament** per month against titled opposition (FIDE-rated events) and track performance against the 2600 norm benchmark.\n- After each game, mark the critical moments and your time usage at each; aim to spend at least 40% of your time on the 3 most critical positions.\n- Physical routine: 3 sessions of aerobic exercise per week in the month before an event."
+    }
+  ],
+  "practiceThemes": [
+    "superGM"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md",
+    "knowledge-base/03-chess-knowledge/grandmaster-competency-profile.md",
+    "knowledge-base/01-learning-science/time-to-mastery-evidence.md",
+    "Carlsen-Nepomniachtchi, World Championship 2021 (game 6)",
+    "FIDE Title Regulations (norm requirements)"
+  ]
+}

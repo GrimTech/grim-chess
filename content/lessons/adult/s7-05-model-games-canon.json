@@ -1,0 +1,97 @@
+{
+  "id": "adult.s7.model-games-canon",
+  "track": "adult",
+  "stage": 7,
+  "order": 5,
+  "skillIds": [
+    "strategy.model-games"
+  ],
+  "title": "The canon of model games and champions' styles",
+  "summary": "From Steinitz to Carlsen: the games every master knows, the plan each one teaches, and how to use them as templates.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Why model games?\n\nStrong players carry a library of **model games**: a game that shows the plan in a structure better than any explanation. When you reach a similar position, you recall the template. The corpus in this app contains 369 classical games selected for this purpose.\n\nA starter canon by theme:\n- **Attack**: Lasker-Bauer 1889 (double bishop sacrifice), Botvinnik-Capablanca 1938 (passed pawn + attack), Kasparov-Topalov 1999 (king hunt).\n- **Positional squeeze**: Saemisch-Nimzowitsch 1923 (zugzwang), Karpov-Unzicker 1974 (space and bind), Petrosian's exchange sacrifices.\n- **Structures**: Fischer-Spassky 1972 game 6 (hanging pawns), Botvinnik's IQP games, Carlsbad minority attacks.\n- **Endgame technique**: Capablanca-Tartakower 1924 (king march), Alekhine-Capablanca 1927 game 34 (two weaknesses), Fischer-Taimanov 1971 (bishop v knight), Carlsen-Anand 2013 (rook ending)."
+    },
+    {
+      "type": "quiz",
+      "question": "Which game is the classic model for the double bishop sacrifice?",
+      "choices": [
+        "Steinitz-von Bardeleben 1895",
+        "Lasker-Bauer, Amsterdam 1889",
+        "Morphy-Duke of Brunswick 1858",
+        "Karpov-Unzicker 1974"
+      ],
+      "answer": 1,
+      "explain": "Lasker-Bauer 1889: Bxh7+ and Bxg7, then Rf3-h3."
+    },
+    {
+      "type": "quiz",
+      "question": "Which plan does Capablanca-Tartakower, New York 1924 illustrate?",
+      "choices": [
+        "Minority attack",
+        "King march in a rook ending: activity over material (the king walks to g5-f6 while the rook stays on the 7th)",
+        "Exchange sacrifice",
+        "Opposite-side castling attack"
+      ],
+      "answer": 1,
+      "explain": "It is the textbook example of \"the rook on the 7th and the king march\"."
+    },
+    {
+      "type": "quiz",
+      "question": "In Fischer-Spassky, Reykjavik 1972 (game 6), White played 1.c4 and won against the Tartakower QGD. What structural theme decided?",
+      "choices": [
+        "IQP",
+        "Hanging pawns c5/d5 attacked with e4 and pressure, then Black's position collapsed on the light squares and the f-file",
+        "Maroczy bind",
+        "Stonewall"
+      ],
+      "answer": 1,
+      "explain": "Game 6 is the model of attacking hanging pawns (see the stage 5 lesson)."
+    },
+    {
+      "type": "quiz",
+      "question": "Which statement about Karpov's style is most accurate?",
+      "choices": [
+        "He sacrificed material constantly",
+        "Prophylaxis, restriction of the opponent's pieces and gradual accumulation of small advantages, with precise technique",
+        "He avoided endgames",
+        "He played only 1.d4"
+      ],
+      "answer": 1,
+      "explain": "Karpov-Unzicker 1974 shows this: 24.Ba7! froze the queenside before the decisive kingside play."
+    },
+    {
+      "type": "board",
+      "fen": "r1bq1rk1/2p1bppp/p1np1n2/1p2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 b - - 0 9",
+      "md": "**Template position: Closed Ruy Lopez.** Model games in this structure in the corpus: Karpov-Unzicker 1974, Fischer-Spassky 1972 (Breyer games), Kasparov-Karpov matches. Plans: White Nbd2-f1-g3, d4-d5 and queenside a4 or kingside f4; Black ...Na5/...c5 or ...Nb8-d7 (Breyer), ...c5 and queenside play."
+    },
+    {
+      "type": "quiz",
+      "question": "What is the most effective way to study a model game?",
+      "choices": [
+        "Replay it quickly several times",
+        "Play through it in guess-the-move mode, write the plan at each phase, then compare with annotations and an engine",
+        "Memorise all moves",
+        "Read only the final position"
+      ],
+      "answer": 1,
+      "explain": "Active study with commitment and explanation builds templates; passive replay does not."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- Build your **personal canon**: 30 games, at least 3 for each structure in your repertoire and 6 endgame classics. Play each through in **Guess the move** and write a 3-line summary (structure, plan, decisive moment).\n- Revisit 2 games of the canon every week (spaced repetition)."
+    }
+  ],
+  "practiceThemes": [
+    "master"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/game-study-and-analysis-loops.md",
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "content/games/README.md (master-game corpus)",
+    "Kasparov, My Great Predecessors",
+    "Chernev, The Most Instructive Games of Chess Ever Played"
+  ]
+}

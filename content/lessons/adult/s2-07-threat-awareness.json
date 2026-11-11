@@ -1,0 +1,140 @@
+{
+  "id": "adult.s2.threat-awareness",
+  "track": "adult",
+  "stage": 2,
+  "order": 7,
+  "skillIds": [
+    "calculation.threat-awareness"
+  ],
+  "title": "What does my opponent threaten?",
+  "summary": "After every enemy move, ask what it attacks, threatens or leaves undefended.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Habit number one: after **every** opponent move, before thinking about your own plans, ask **\"What does that move do?\"**\n\n- What does it attack now? Any checks or captures next move?\n- Does it threaten mate?\n- What did it stop defending?\n\nIf there is a threat, deal with it first."
+    },
+    {
+      "type": "quiz",
+      "question": "White has just played 2.Qh5. What does it threaten?",
+      "choices": [
+        "Qxe5+, winning a pawn with check",
+        "Qxh7",
+        "Qxf7#",
+        "Nothing"
+      ],
+      "answer": 0,
+      "explain": "The e5-pawn is undefended and Qxe5 would also check the e8-king. (Qxf7 is not mate yet: no bishop supports it.)",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 1 2"
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 1 2",
+      "prompt": "Meet the threat to e5, ideally with a developing move.",
+      "solution": [
+        "Nc6"
+      ],
+      "alternatives": [
+        "d6",
+        "Qe7",
+        "Qf6"
+      ],
+      "explain": "Nc6 defends e5 and develops. 2...d6 also works but blocks your bishop. Next, watch out for Bc4 and Qxf7#."
+    },
+    {
+      "type": "quiz",
+      "question": "Black has just played 4...Qb6. What is the threat?",
+      "choices": [
+        "Qxb2, winning the undefended b2-pawn",
+        "Qxf2#",
+        "Qb4+ and Qxf4",
+        "Nothing"
+      ],
+      "answer": 0,
+      "explain": "The bishop left c1 for f4, so nothing defends b2 any more. Ask \"what did my last move stop defending?\" too.",
+      "fen": "rnb1kb1r/pp2pppp/1q3n2/2pp4/3P1B2/2N1P3/PPP2PPP/R2QKBNR w KQkq - 2 5"
+    },
+    {
+      "type": "move",
+      "fen": "rnb1kb1r/pp2pppp/1q3n2/2pp4/3P1B2/2N1P3/PPP2PPP/R2QKBNR w KQkq - 2 5",
+      "prompt": "Deal with the threat to b2.",
+      "solution": [
+        "Nb5"
+      ],
+      "alternatives": [
+        "Qc1",
+        "Rb1",
+        "dxc5"
+      ],
+      "explain": "Nb5 counter-attacks: it threatens Nc7+ forking king and rook, so ...Qxb2 is too slow. Qc1 and Rb1 simply defend b2, and dxc5 is also fine."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+      "prompt": "Black's last move attacked your bishop. Deal with it.",
+      "solution": [
+        "Ba4"
+      ],
+      "alternatives": [
+        "Bxc6",
+        "Be2",
+        "Bc4"
+      ],
+      "explain": "Ba4 keeps the pin on the c6-knight. Bxc6 (the Exchange Variation) is also fine. Ignoring the threat would lose a piece."
+    },
+    {
+      "type": "move",
+      "fen": "r1b2rk1/ppp2ppp/2nb4/8/7q/2N5/PPPP1PPP/R1BQ1RK1 w - - 0 10",
+      "prompt": "Black's queen and bishop are both aiming at h2. Find the threat and stop it.",
+      "solution": [
+        "g3"
+      ],
+      "alternatives": [
+        "f4"
+      ],
+      "explain": "Black threatened Qxh2#. g3 blocks the bishop and attacks the queen. Defending a mate threat comes before anything else."
+    },
+    {
+      "type": "quiz",
+      "question": "What should you ask first after your opponent moves?",
+      "choices": [
+        "\"What does that move threaten?\"",
+        "\"What is my plan?\"",
+        "\"How much time do I have?\""
+      ],
+      "answer": 0,
+      "explain": "Threats first, plans second."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: besides new attacks, what else can an opponent's move change?",
+      "choices": [
+        "What it no longer defends",
+        "Nothing",
+        "Only the clock"
+      ],
+      "answer": 0,
+      "explain": "A piece that moves stops guarding the squares it used to cover, as in the ...Qb6 example."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: is a threat to mate in one more urgent than a threat to win a pawn?",
+      "choices": [
+        "Yes, always handle mate threats first",
+        "No",
+        "Only in the endgame"
+      ],
+      "answer": 0,
+      "explain": "Mate ends the game. Material can be recovered."
+    }
+  ],
+  "practiceThemes": [
+    "hangingPiece",
+    "defensiveMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md#thought-process-overview",
+    "knowledge-base/02-methods/heisman-thought-process-and-real-chess.md#3-the-structured-thought-process-simplified-composite",
+    "knowledge-base/02-methods/heisman-thought-process-and-real-chess.md#2-hope-chess-vs-real-chess"
+  ]
+}

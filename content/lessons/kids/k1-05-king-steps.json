@@ -1,0 +1,108 @@
+{
+  "id": "kids.1.king-steps",
+  "track": "kids",
+  "stage": 1,
+  "order": 105,
+  "skillIds": [
+    "rules.pieces.king"
+  ],
+  "title": "King steps",
+  "summary": "The king takes one small step in any direction.",
+  "estMinutes": 5,
+  "minAge": 4,
+  "steps": [
+    {
+      "type": "text",
+      "md": "This is the **king**, the most important piece. He takes **one small step** at a time."
+    },
+    {
+      "type": "board",
+      "fen": "k7/8/8/8/4K3/8/8/8 w - - 0 1",
+      "md": "One step in any direction.",
+      "arrows": [
+        [
+          "e4",
+          "e5"
+        ],
+        [
+          "e4",
+          "f5"
+        ],
+        [
+          "e4",
+          "f4"
+        ],
+        [
+          "e4",
+          "f3"
+        ],
+        [
+          "e4",
+          "e3"
+        ],
+        [
+          "e4",
+          "d3"
+        ],
+        [
+          "e4",
+          "d4"
+        ],
+        [
+          "e4",
+          "d5"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "k7/8/8/8/4K3/8/8/8 w - - 0 1",
+      "prompt": "Step the king up to the star!",
+      "solution": [
+        "Ke5"
+      ],
+      "explain": "One step. Good king!",
+      "highlights": [
+        "e5"
+      ],
+      "hint": "Just one square up."
+    },
+    {
+      "type": "move",
+      "fen": "k7/8/8/8/4K3/8/8/8 w - - 0 1",
+      "prompt": "Step the king to the star!",
+      "solution": [
+        "Kd3"
+      ],
+      "explain": "A little step down and to the side.",
+      "highlights": [
+        "d3"
+      ],
+      "hint": "Kings can step on diagonals too."
+    },
+    {
+      "type": "board",
+      "fen": "8/8/4k3/8/4K3/8/8/8 w - - 0 1",
+      "md": "Kings can **never** stand next to each other. The squares between them are off limits!",
+      "highlights": [
+        "d5",
+        "e5",
+        "f5"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Can the white king step to e5 here?",
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "answer": 1,
+      "explain": "No! Then the two kings would touch.",
+      "fen": "8/8/4k3/8/4K3/8/8/8 w - - 0 1"
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

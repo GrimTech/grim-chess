@@ -1,0 +1,123 @@
+{
+  "id": "kids.1.queen-power",
+  "track": "kids",
+  "stage": 1,
+  "order": 104,
+  "skillIds": [
+    "rules.pieces.queen"
+  ],
+  "title": "Queen power",
+  "summary": "The queen moves like a rook and a bishop together.",
+  "estMinutes": 5,
+  "minAge": 4,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Meet the **queen**! She is the strongest piece. She moves like a rook **and** a bishop."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/3Q4/8/8/4K3 w - - 0 1",
+      "md": "Straight lines and diagonals. Eight ways to go!",
+      "arrows": [
+        [
+          "d4",
+          "d8"
+        ],
+        [
+          "d4",
+          "d2"
+        ],
+        [
+          "d4",
+          "a4"
+        ],
+        [
+          "d4",
+          "h4"
+        ],
+        [
+          "d4",
+          "g7"
+        ],
+        [
+          "d4",
+          "a7"
+        ],
+        [
+          "d4",
+          "a1"
+        ],
+        [
+          "d4",
+          "g1"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/7k/8/8/8/8/7K/Q7 w - - 0 1",
+      "prompt": "Move the queen straight up to the star!",
+      "solution": [
+        "Qa6"
+      ],
+      "explain": "Like a rook!",
+      "arrows": [
+        [
+          "a1",
+          "a6",
+          "yellow"
+        ]
+      ],
+      "hint": "Straight up."
+    },
+    {
+      "type": "move",
+      "fen": "8/7k/8/8/8/8/7K/Q7 w - - 0 1",
+      "prompt": "Now move the queen on the diagonal to the star!",
+      "solution": [
+        "Qf6"
+      ],
+      "explain": "Like a bishop!",
+      "arrows": [
+        [
+          "a1",
+          "f6",
+          "yellow"
+        ]
+      ],
+      "hint": "Slide corner-ways."
+    },
+    {
+      "type": "move",
+      "fen": "8/7k/8/8/8/8/7K/3Q4 w - - 0 1",
+      "prompt": "Go to the star at the top!",
+      "solution": [
+        "Qd8"
+      ],
+      "explain": "Super queen!",
+      "arrows": [
+        [
+          "d1",
+          "d8",
+          "yellow"
+        ]
+      ],
+      "hint": "Straight up the middle."
+    },
+    {
+      "type": "quiz",
+      "question": "Which piece is the strongest?",
+      "choices": [
+        "King",
+        "Queen",
+        "Pawn"
+      ],
+      "answer": 1,
+      "explain": "The queen is the strongest piece."
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

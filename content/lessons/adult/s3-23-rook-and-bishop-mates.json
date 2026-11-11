@@ -1,0 +1,122 @@
+{
+  "id": "adult.s3.rook-and-bishop-mates",
+  "track": "adult",
+  "stage": 3,
+  "order": 23,
+  "skillIds": [
+    "checkmate.rook-bishop"
+  ],
+  "title": "Rook-and-bishop mates: Morphy, Pillsbury, Opera, Mayet",
+  "summary": "Rook and bishop coordinate against the king on the back rank or the long diagonal; the Opera Game finish and its relatives.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Four patterns, one idea: **the rook and bishop share the work**.\n\n- **Morphy's mate**: bishop mates on the long diagonal, rook on the g-file cages the king (h8).\n- **Pillsbury's mate**: the mirror image: rook mates on the g-file, bishop covers h8/g7.\n- **Opera mate**: rook mates on the back rank, protected by a bishop (Morphy's 17.Rd8#).\n- **Mayet's mate**: rook mates on the back rank next to the king, protected along the long diagonal by a bishop."
+    },
+    {
+      "type": "board",
+      "fen": "1n1Rkb1r/p4ppp/4q3/4p1B1/4P3/8/PPP2PPP/2K5 b k - 1 17",
+      "md": "The Opera Game, Paris 1858, after 17.Rd8#. The g5-bishop protects the rook and covers e7; Black's own pieces block the rest.",
+      "arrows": [
+        [
+          "g5",
+          "d8",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "r5k1/ppp2p2/8/8/8/1P6/PBP2P2/6KR w - - 0 30",
+      "prompt": "Mayet's mate in one.",
+      "solution": [
+        "Rh8#"
+      ],
+      "explain": "Rh8#: the b2-bishop protects the rook along the long diagonal and covers g7; f7 is blocked by Black's own pawn."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/N4ppp/4b3/4p3/P7/4P1Pn/2r5/R1R4K b - - 1 28",
+      "prompt": "Black to move: mate in two. Morphy's mate along the long diagonal.",
+      "solution": [
+        "Bd5+",
+        "e4",
+        "Bxe4#"
+      ],
+      "explain": "...Bd5+! e4 (the only block) ...Bxe4#: Morphy's pattern. The bishop mates on the long diagonal, the h3-knight covers g1, and the c2-rook covers g2 and h2."
+    },
+    {
+      "type": "move",
+      "fen": "5r1k/r5pp/1p1n4/p1p1N3/2Bp2P1/P2R4/1P3PKP/8 w - - 1 34",
+      "prompt": "White to move: mate in two. Your rook wants the h-file and your c4-bishop already covers g8.",
+      "solution": [
+        "Ng6+",
+        "hxg6",
+        "Rh3#"
+      ],
+      "explain": "Ng6+! hxg6 Rh3#: the knight sacrifice opens the h-file. The rook mates (protected by the king), the c4-bishop covers g8 and Black's own g7-pawn blocks the last square: rook mates, bishop cages."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/p5pp/1p1Q4/3P4/8/B5P1/P3qr1P/5RK1 w - - 0 30",
+      "prompt": "White to move: mate in two. The f8-rook is Black's only back-rank defender.",
+      "solution": [
+        "Qxf8+",
+        "Rxf8",
+        "Rxf8#"
+      ],
+      "explain": "Qxf8+! Rxf8 Rxf8#: the queen sacrifice deflects the defender; the a3-bishop protects f8 (Opera-style)."
+    },
+    {
+      "type": "move",
+      "fen": "4r2k/3p1p2/p1b2R1p/1pQ5/8/1B4rP/PP3PP1/6K1 b - - 0 29",
+      "prompt": "Black to move: mate in two. Your c6-bishop is aimed down the long diagonal at g2.",
+      "solution": [
+        "Re1+",
+        "Kh2",
+        "Rxg2#"
+      ],
+      "explain": "...Re1+! Kh2 ...Rxg2#: the g3-rook captures on g2, protected by the c6-bishop; the e1-rook covers g1 and h1, and h3 is blocked by White's own pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "What is the difference between Morphy's and Pillsbury's mate?",
+      "choices": [
+        "None",
+        "In Morphy's the bishop gives mate and the rook cages; in Pillsbury's the rook gives mate and the bishop cages",
+        "Morphy's uses two bishops",
+        "Pillsbury's needs a queen"
+      ],
+      "answer": 1,
+      "explain": "Same geometry, roles swapped. Both arise when the g-file and long diagonal open against a castled king."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: in the Opera mate, what protects the mating rook on d8?",
+      "choices": [
+        "The queen",
+        "A bishop on the h4-d8 diagonal (g5)",
+        "The king",
+        "A knight on c6"
+      ],
+      "answer": 1,
+      "explain": "Rook on the back rank + bishop guarding it is the Opera pattern; with the bishop on the long diagonal it is Mayet's."
+    }
+  ],
+  "practiceThemes": [
+    "morphysMate",
+    "pillsburysMate",
+    "operaMate",
+    "backRankMate"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#morphys-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#pillsburys-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#opera-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#mayets-mate",
+    "Morphy - Duke of Brunswick & Count Isouard, Paris 1858",
+    "Renaud & Kahn, The Art of the Checkmate (1953)",
+    "Lichess puzzle database (CC0): 3JM51, 0o3G4, 0lCtN, 0Nwlm"
+  ]
+}

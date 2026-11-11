@@ -1,0 +1,109 @@
+{
+  "id": "adult.s3.queen-and-minor-piece-mates",
+  "track": "adult",
+  "stage": 3,
+  "order": 24,
+  "skillIds": [
+    "checkmate.lolli-greco"
+  ],
+  "title": "Queen-and-minor mates: Lolli, Greco, Balestra",
+  "summary": "The queen mates with help from a pawn on f6 (Lolli), a bishop on the a2-g8 diagonal (Greco), or a distant bishop check (Balestra).",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "- **Lolli's mate**: a pawn on f6 supports the queen on g7 against a fianchettoed or weakened castle (often after Qh6).\n- **Greco's mate**: a bishop on the a2-g8 diagonal covers g8; the queen (or rook) mates on the h-file against a king on h8 hemmed by its g7-pawn.\n- **Balestra mate**: a bishop gives check from a distance while the queen covers the escape squares."
+    },
+    {
+      "type": "move",
+      "fen": "r5k1/pp3p2/5PpQ/8/8/8/5PPP/6K1 w - - 0 30",
+      "prompt": "Lolli's mate in one.",
+      "solution": [
+        "Qg7#"
+      ],
+      "explain": "Qg7#: the f6-pawn protects the queen. A pawn wedged on f6 and a queen reaching h6 is the most common mating attack against the fianchetto."
+    },
+    {
+      "type": "move",
+      "fen": "5r1k/pp4pp/qb6/8/2B5/7R/PP3PP1/3Q2K1 w - - 0 30",
+      "prompt": "Greco's mate in two. Your c4-bishop already controls g8. Open the h-file.",
+      "solution": [
+        "Rxh7+",
+        "Kxh7",
+        "Qh5#"
+      ],
+      "explain": "Rxh7+! Kxh7 (forced: g8 is covered by the bishop) Qh5#: the bishop covers g8, the g7-pawn blocks, and the queen mates along the h-file.",
+      "hint": "Sacrifice the rook on h7."
+    },
+    {
+      "type": "move",
+      "fen": "r2q1k1r/pp1bb2p/2n1p1Bn/3pN2Q/3p4/2P5/PP3PPP/RN2R1K1 w - - 0 13",
+      "prompt": "White to move: mate in two. A queen check, then a bishop finish.",
+      "solution": [
+        "Qxh6+",
+        "Kg8",
+        "Bf7#"
+      ],
+      "explain": "Qxh6+! Kg8 Bf7#: the bishop checks from f7, protected by the e5-knight; the queen on h6 covers f8 and g7, and Black's own rook and pawn block h8 and h7."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/1p1bpp1p/pPr5/P1Pp2p1/3p4/3Pq1P1/2R1P1BP/2Q1RK2 b - - 4 28",
+      "prompt": "Black to move: mate in two. The queen on e3 already covers f2 and the e-file.",
+      "solution": [
+        "Rf6+",
+        "Bf3",
+        "Bh3#"
+      ],
+      "explain": "...Rf6+! Bf3 (the only block) ...Bh3#: the bishop checks from a distance; the queen covers f2 and g1, the bishop itself covers g2, and White's own rook and pawn block e1 and e2. Bishop checks, queen cages: the Balestra mate."
+    },
+    {
+      "type": "move",
+      "fen": "r3qr2/pbp1bk1p/1p6/3Pp1Qn/2B1n3/1P4P1/PBP2P1P/4R1K1 w - - 0 21",
+      "prompt": "White to move: mate in two. Use a pawn check to open a bishop diagonal.",
+      "solution": [
+        "d6+",
+        "Bd5",
+        "Bxd5#"
+      ],
+      "explain": "d6+! is a discovered check from the c4-bishop. After the block ...Bd5, Bxd5# follows: the queen on g5 covers f6, g6, g7 and g8, and Black's own pieces block e7, e8 and f8."
+    },
+    {
+      "type": "quiz",
+      "question": "Which set-up allows Lolli's mate?",
+      "choices": [
+        "A white pawn on f6 and the white queen reaching g7 (e.g. via h6)",
+        "A white bishop on c4 and a rook on h8",
+        "Two rooks on the 7th",
+        "A knight on e7"
+      ],
+      "answer": 0,
+      "explain": "A pawn on f6 (or f3 for Black) wedged into a castled king is a permanent mating threat: answer it at once or remove the pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: in Greco's mate, what keeps the king from escaping to g8?",
+      "choices": [
+        "A rook on g1",
+        "A bishop on the a2-g8 diagonal",
+        "A knight on f6",
+        "A pawn on h7"
+      ],
+      "answer": 1,
+      "explain": "Bishop on c4 (or b3) plus the h-file: look for Rh8+ Kxh8 Qh5# whenever the h-file opens."
+    }
+  ],
+  "practiceThemes": [
+    "balestraMate",
+    "mateIn2",
+    "mate"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#lollis-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#grecos-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#balestra-mate",
+    "Greco, manuscripts (c. 1620)",
+    "Renaud & Kahn, The Art of the Checkmate (1953)",
+    "Lichess puzzle database (CC0): HRp4L, 6TGIK, 27ALx"
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "adult.s4.attacking-the-castled-king",
+  "track": "adult",
+  "stage": 4,
+  "order": 29,
+  "skillIds": [
+    "strategy.attack.king"
+  ],
+  "title": "Attacking the castled king",
+  "summary": "Check the preconditions, bring pieces first, then open lines: rook lifts, sacrifices and pawn storms.",
+  "estMinutes": 18,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Vukovic's preconditions for a successful attack on the castled king:\n\n1. **Superior force** near the king (count attackers vs defenders in that sector).\n2. A **weakened pawn cover** or a king in the centre.\n3. **Lines to open** (files, diagonals) for your pieces.\n4. The opponent has **no counterplay**, especially no central break: a flank attack is best met by a reaction in the centre, so your centre must be stable.\n\nOrder of work: bring pieces first (rook lifts via the third rank, queen to the h-file, knights to g5/f5), then open lines with pawns or sacrifices."
+    },
+    {
+      "type": "quiz",
+      "question": "You want to attack on the kingside, but the centre is open and your opponent can play ...d5 next, hitting your e4-pawn and opening the e-file towards your king. What does Vukovic advise?",
+      "choices": [
+        "Stabilise or close the centre first; a flank attack with an unstable centre is usually refuted by a central counter-strike",
+        "Attack anyway, faster is better",
+        "Castle long first"
+      ],
+      "answer": 0,
+      "explain": "Precondition 4: the opponent must lack central counterplay. Otherwise the centre opens before your attack arrives and your own king is exposed."
+    },
+    {
+      "type": "move",
+      "fen": "r3nrk1/p2q1p1p/2pbp3/2pp3p/5P2/1P1PP2R/PBP3PP/RN4K1 w - - 0 16",
+      "prompt": "White to move. Black has just taken on h5. Your rook on h3 and bishop on b2 are aimed at the king. Calculate.",
+      "solution": [
+        "Rg3+",
+        "Ng7",
+        "Rxg7+",
+        "Kh8",
+        "Rxf7+"
+      ],
+      "explain": "**16.Rg3+! Ng7 17.Rxg7+! Kh8 18.Rxf7+** is a **discovered check** from the b2-bishop along the long diagonal, and the f7-rook attacks the d7-queen. The rook lift Rh3-g3 brought the rook to the king with tempo."
+    },
+    {
+      "type": "quiz",
+      "question": "What is a rook lift?",
+      "choices": [
+        "Moving a rook up the board (often via the third rank: Re1-e3-h3) to join a kingside attack",
+        "Doubling rooks on a file",
+        "Sacrificing a rook on h7"
+      ],
+      "answer": 0,
+      "explain": "Rooks are slow to reach the kingside along the back rank because pawns block the files. A lift via the third rank (or sixth for Black) brings them to the g- or h-file quickly."
+    },
+    {
+      "type": "move",
+      "fen": "1r1q1r1k/1bpn2pp/p2pB3/2p1bP2/8/2N3RQ/PPP3PP/R1B3K1 w - - 2 18",
+      "prompt": "White to move. Black's king on h8 has one defender less than it needs. Find the forced mate.",
+      "solution": [
+        "Qxh7+",
+        "Kxh7",
+        "Rh3+",
+        "Qh4",
+        "Rxh4#"
+      ],
+      "explain": "**18.Qxh7+! Kxh7 19.Rh3+ Qh4 20.Rxh4#.** The queen sacrifice removes the h7-pawn; the rook on the third rank (already lifted to g3) swings to the h-file, and the e6-bishop covers g8. A model of superior force near the king."
+    },
+    {
+      "type": "quiz",
+      "question": "Count the attackers and defenders. Your queen, rook and knight are near the black king; Black has the f6-knight and the king itself. Black's other pieces are on the queenside. What does the count suggest?",
+      "choices": [
+        "A sacrifice to open lines is likely to work: you have superior force in the sector",
+        "Wait until Black brings more defenders",
+        "Trade queens"
+      ],
+      "answer": 0,
+      "explain": "Superior force in the sector is precondition 1. When the count is clearly in your favour and lines can be opened, look for the breakthrough (sacrifice, pawn lever) now, before the defenders arrive."
+    },
+    {
+      "type": "move",
+      "fen": "r6k/2p1qrp1/2p2NRp/4p3/3b2Q1/1P1P3P/P4P2/1K4R1 w - - 10 28",
+      "prompt": "White to move. Independent exercise: your rook, queen and knight are all near the king.",
+      "solution": [
+        "Rxh6+",
+        "gxh6",
+        "Qg8+",
+        "Rxg8",
+        "Rxg8#"
+      ],
+      "explain": "**28.Rxh6+! gxh6 29.Qg8+! Rxg8 30.Rxg8#.** The rook sacrifice destroys the pawn cover; the queen sacrifice decoys the rook, and the second rook mates on g8 supported by the f6-knight (Arabian mate)."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Recite Vukovic's four preconditions. In which order do you bring pieces and open lines? (Pieces first, then open lines.) Typical error: launching a pawn storm while the centre is unstable."
+    }
+  ],
+  "practiceThemes": [
+    "kingsideAttack"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#attacking-the-king",
+    "knowledge-base/03-chess-knowledge/strategy.md#rook-lifts",
+    "knowledge-base/03-chess-knowledge/tactics.md#attacking-sacrifices-on-the-king",
+    "Vukovic, The Art of Attack in Chess (1965)",
+    "Aagaard, Grandmaster Preparation: Attack & Defence (Quality Chess, 2013)",
+    "Lichess puzzle database (CC0), puzzles 0QaCU, 0cHnF, 4YMh9"
+  ]
+}

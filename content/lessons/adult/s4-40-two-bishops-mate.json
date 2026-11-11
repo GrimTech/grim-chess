@@ -1,0 +1,68 @@
+{
+  "id": "adult.s4.two-bishops-mate",
+  "track": "adult",
+  "stage": 4,
+  "order": 40,
+  "skillIds": [
+    "endgame.mate.two-bishops"
+  ],
+  "title": "Mate with two bishops",
+  "summary": "Two bishops side by side form a wall; drive the king to any corner and mate it there.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "King and two bishops against king is a forced win (at most about 19 moves from any position). Technique:\n\n1. Place the bishops **next to each other** (e.g. on d4/e4 or e5/e4): together they form a **diagonal wall** the king cannot cross.\n2. Bring your **king** forward to take away squares; the bishops move the wall step by step.\n3. Drive the king to **any corner** (unlike B+N, every corner works).\n4. Mate with one bishop checking along a diagonal while the other covers the last square. **Watch for stalemate** when the king is in the corner."
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/6K1/8/2B5/8/8/2B5 w - - 0 1",
+      "prompt": "White to move. The king is in the corner; your light-squared bishop covers g8 and your king covers g7 and h7. Mate in one.",
+      "solution": [
+        "Bb2#"
+      ],
+      "explain": "**1.Bb2#.** The dark-squared bishop checks along the long diagonal, the c4-bishop covers g8, and your king covers g7 and h7. The final picture of every two-bishop mate looks like this."
+    },
+    {
+      "type": "quiz",
+      "question": "Which of these is the most common error in the two-bishops mate?",
+      "choices": [
+        "Stalemating the king in the corner by taking away its last square without giving check",
+        "Using the king too much",
+        "Putting the bishops next to each other"
+      ],
+      "answer": 0,
+      "explain": "With the king on h8 and your pieces covering g7, g8 and h7, any non-checking move is stalemate. Before every move near the corner, count the defender's legal moves."
+    },
+    {
+      "type": "quiz",
+      "question": "Why place the bishops on adjacent squares (for example d4 and e4)?",
+      "choices": [
+        "Together they cover two neighbouring diagonals, forming a wall the king cannot cross",
+        "So they protect each other",
+        "To be able to give double check"
+      ],
+      "answer": 0,
+      "explain": "A light and a dark bishop next to each other cover two parallel diagonals; the enemy king cannot jump over both. Your king then pushes from the other side."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/3k4/8/8/8/8/2B1KB2 w - - 0 1",
+      "goal": "mate",
+      "prompt": "Deliver mate with king and two bishops. The engine tries to stay in the centre.",
+      "maxMoves": 50,
+      "explain": "Bishops side by side as a wall, king in support, shrink the box, drive to a corner, mate. Avoid stalemate."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Recite the four steps. Which corners can you use? (Any.) What is the stalemate check you do before every move near the corner? (Count the king's legal moves.)"
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#two-bishops-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#two-bishops-mate",
+    "de la Villa, 100 Endgames You Must Know (New in Chess, 2008), two bishops mate",
+    "Averbakh, Comprehensive Chess Endings vol. 1 (minor pieces)"
+  ]
+}

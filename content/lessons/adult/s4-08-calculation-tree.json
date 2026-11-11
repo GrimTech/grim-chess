@@ -1,0 +1,137 @@
+{
+  "id": "adult.s4.calculation-tree",
+  "track": "adult",
+  "stage": 4,
+  "order": 8,
+  "skillIds": [
+    "calculation.tree-basic",
+    "calculation.visualization.intermediate"
+  ],
+  "title": "Calculating a small tree",
+  "summary": "Candidate moves, forcing lines first, one branch at a time, and holding 4-6 plies in your head.",
+  "estMinutes": 20,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A practical calculation procedure (Kotov, as refined by Aagaard and Dvoretsky):\n\n1. **List candidates first**, forcing moves (checks, captures, threats) before quiet ones. Two or three are enough.\n2. For each candidate, find the opponent's **best** replies only (forcing logic prunes the tree).\n3. Go down **one branch at a time**, to a *quiet* position, evaluate, then move to the next branch. Do not hop back and forth.\n4. When you find a good line, spend a moment looking for a refutation or a better move (Lasker).\n\nVisualisation is the engine of all this: you must \"see\" the board 4-6 plies ahead, including which squares and lines have opened."
+    },
+    {
+      "type": "quiz",
+      "question": "**Blindfold.** 1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 g6? 5.Nxe5! Bxd1?? Picture the position without a board. White to move: what is the strongest continuation?",
+      "choices": [
+        "6.Bxf7+ Ke7 7.Nd5#",
+        "6.Kxd1 dxe5, a piece for the queen",
+        "6.Nxf7, forking queen and rook"
+      ],
+      "answer": 0,
+      "explain": "This is **Legal's mate**. 6.Bxf7+ forces 6...Ke7 (d7 is covered by the e5-knight), and 7.Nd5# follows: the d5-knight covers f6, the f7-bishop covers e6 and e8 and is protected by the e5-knight, and d6, d8 and f8 are blocked by Black's own pieces. To see it you had to hold four plies and the squares around the king in your head."
+    },
+    {
+      "type": "board",
+      "fen": "1k1r4/ppp2pb1/4b2p/5qp1/1P3p2/5N2/1P3QPP/R1BrR1K1 w - - 3 23",
+      "md": "White to move. Black's rook has landed on d1, attacking e1 and c1. Candidates: **23.Rxd1** (natural) and **23.Qxa7+** (forcing). Calculate the forcing one first: 23.Qxa7+ Kc8 24.Qa8+ Kd7. Now *visualise*: where is the black king, and what stands between the d8-rook and d1?",
+      "arrows": [
+        [
+          "f2",
+          "a7",
+          "green"
+        ],
+        [
+          "e1",
+          "d1",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "1k1r4/ppp2pb1/4b2p/5qp1/1P3p2/5N2/1P3QPP/R1BrR1K1 w - - 3 23",
+      "prompt": "White to move. Play the forcing line you just visualised.",
+      "solution": [
+        "Qxa7+",
+        "Kc8",
+        "Qa8+",
+        "Kd7",
+        "Rxd1+"
+      ],
+      "explain": "**23.Qxa7+ Kc8 24.Qa8+ Kd7 25.Rxd1+.** The forced king walk put the king on d7, between the d8-rook and d1, so the d1-rook is simply lost; the a8-queen also eyes d8. The quiet 23.Rxd1?! Rxd1 24.Qf1 gives nothing comparable."
+    },
+    {
+      "type": "quiz",
+      "question": "You have found a line that wins a piece. What does a good calculator do next?",
+      "choices": [
+        "Play it immediately before you forget it",
+        "Check the opponent's most forcing replies in the final position (checks, captures, in-between moves), then look briefly for something even better",
+        "Recalculate every branch from the start twice"
+      ],
+      "answer": 1,
+      "explain": "Stop the tree only in a **quiet** position and check that the opponent has no forcing reply there. Then Lasker's rule: \"If you see a good move, look for a better one\". Re-calculating the same lines repeatedly is a time-management error (Kotov)."
+    },
+    {
+      "type": "move",
+      "fen": "2r1r3/3q2pk/p2p4/1p1Bbb2/1P6/P2PB2P/3Q2K1/2R2R2 w - - 0 34",
+      "prompt": "White to move. Black has just played ...Bxf5. Calculate 34.Rxf5 Qxf5 to the end before you play it.",
+      "solution": [
+        "Rxf5",
+        "Qxf5",
+        "Be4",
+        "Qxe4+",
+        "dxe4"
+      ],
+      "explain": "**34.Rxf5 Qxf5 35.Be4!** pins the queen to the king on h7 along the b1-h7 diagonal. 35...Qxe4+ 36.dxe4. White has given rook and bishop for queen and bishop: you win the queen for a rook. The key was to visualise the pin three plies deep."
+    },
+    {
+      "type": "quiz",
+      "question": "In that line, after 35.Be4, why can the black queen not simply step away?",
+      "choices": [
+        "It is pinned to the king on h7",
+        "All its squares are attacked",
+        "Black must recapture on e3 first"
+      ],
+      "answer": 0,
+      "explain": "The queen on f5, bishop on e4 and king on h7 are on one diagonal: moving the queen off it would expose the king, which is illegal. Seeing that alignment at the end of the line is the visualisation part of the work."
+    },
+    {
+      "type": "move",
+      "fen": "4R2r/2p2pk1/pp1q1np1/3P4/8/P2B1Q2/1PP2PPP/4R1K1 b - - 0 24",
+      "prompt": "Black to move. White has just played Rxe8. The obvious recapture is ...Rxe8. Calculate a forcing alternative.",
+      "solution": [
+        "Qxh2+",
+        "Kf1",
+        "Qh1+",
+        "Ke2",
+        "Rxe8+"
+      ],
+      "explain": "24...Rxe8? 25.Rxe8 just trades. **24...Qxh2+! 25.Kf1 Qh1+ 26.Ke2** (the king is driven onto the e-file) **26...Rxe8+** and the e1-rook cannot recapture through its own king. Black wins a rook. Four forcing plies, then a quiet evaluation."
+    },
+    {
+      "type": "move",
+      "fen": "1kr3N1/1bp3b1/1p2P2p/1p1p1Pp1/1PnP2p1/q1Q5/4B1PP/2R2RK1 b - - 0 30",
+      "prompt": "Black to move. Independent exercise: a capture, a recapture, then what?",
+      "solution": [
+        "Qxc3",
+        "Rxc3",
+        "Bxd4+",
+        "Kh1",
+        "Bxc3"
+      ],
+      "explain": "**30...Qxc3 31.Rxc3 Bxd4+!** The bishop takes with check and forks king and c3-rook. **32.Kh1 Bxc3** and Black is a rook up. Calculate the forced sequence to the quiet end before you start it."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Recite the four steps of the procedure. Then replay, in your head only, the line 23.Qxa7+ Kc8 24.Qa8+ Kd7 25.Rxd1+: where is every piece involved at the end? Training tip: solve a few puzzles a day *without moving the pieces* until you have written down or said the whole line."
+    }
+  ],
+  "practiceThemes": [
+    "long"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md#calculation-tree",
+    "knowledge-base/03-chess-knowledge/calculation.md#visualization",
+    "knowledge-base/03-chess-knowledge/calculation.md#forcing-moves-first-cct",
+    "knowledge-base/02-methods/kotov-tree-of-analysis.md#3-what-replaced-it-practical-calculation-procedures",
+    "Kotov, Think Like a Grandmaster (1971)",
+    "Aagaard, Grandmaster Preparation: Calculation (Quality Chess, 2012)",
+    "Lichess puzzle database (CC0), puzzles 029M7, 09LVe, 1Iakl, 0njUf"
+  ]
+}

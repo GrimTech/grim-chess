@@ -1,0 +1,113 @@
+{
+  "id": "adult.s2.checks-captures-threats",
+  "track": "adult",
+  "stage": 2,
+  "order": 9,
+  "skillIds": [
+    "calculation.cct"
+  ],
+  "title": "Forcing moves first: checks, captures, threats",
+  "summary": "Search checks, captures and threats for both sides before quiet moves.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Forcing moves limit your opponent's replies, so they are easy to calculate and often decisive. In every position run **CCT**:\n\n1. **Checks**: every check, even ones that \"lose\" material.\n2. **Captures**: every capture.\n3. **Threats**: moves that threaten mate or to win material.\n\nDo it for **your** moves and for your **opponent's**."
+    },
+    {
+      "type": "quiz",
+      "question": "How many checks does White have here?",
+      "choices": [
+        "3 (Re8+, Qc8+, Qxg7+)",
+        "1",
+        "2",
+        "4"
+      ],
+      "answer": 0,
+      "explain": "Re8+, Qc8+ and Qxg7+ are all checks. None of them wins, but you only know that after listing them.",
+      "fen": "r5k1/5ppp/8/8/8/2Q5/5PPP/4R1K1 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/ppp2ppp/8/q5NQ/8/8/PPPB1PPP/6K1 w - - 0 1",
+      "prompt": "Bxa5 grabs the queen, but run CCT first: is there something better?",
+      "solution": [
+        "Qxh7#"
+      ],
+      "explain": "Checks first: Qxh7 is mate, supported by the g5-knight. Grabbing the queen would let the game go on."
+    },
+    {
+      "type": "move",
+      "fen": "r5k1/5ppp/8/8/8/5Q2/5PPP/6K1 w - - 0 1",
+      "prompt": "Find the forcing move that ends the game.",
+      "solution": [
+        "Qxa8#"
+      ],
+      "explain": "A capture that is also check, and the king has no squares: f8 and h8 are on the queen's rank, f7-h7 are its own pawns."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. What is White threatening?",
+      "choices": [
+        "Qxf7#",
+        "Nxe5",
+        "Bxf7+ winning a pawn",
+        "Nothing"
+      ],
+      "answer": 0,
+      "explain": "Your opponent's CCT: the queen and bishop both hit f7. Defend it before doing anything else.",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3"
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5ppp/8/8/8/1q6/5PPP/3R2K1 w - - 0 1",
+      "prompt": "Your d1-rook is unprotected and Black's queen eyes it, but you move first. Find the forcing win.",
+      "solution": [
+        "Rd8#"
+      ],
+      "explain": "Check first: Rd8 is mate on the back rank."
+    },
+    {
+      "type": "quiz",
+      "question": "Why look at forcing moves first?",
+      "choices": [
+        "They limit the opponent's replies, so they are easier to calculate and often decisive",
+        "They are always best",
+        "Quiet moves are illegal in tactics"
+      ],
+      "answer": 0,
+      "explain": "Forcing moves are not always best, but you must know what they do before you choose a quiet move."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what does CCT stand for?",
+      "choices": [
+        "Checks, captures, threats",
+        "Centre, castling, tempo",
+        "Count, calculate, think"
+      ],
+      "answer": 0,
+      "explain": "In that order, for both sides."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: should you include checks that seem to lose material?",
+      "choices": [
+        "Yes, list every check",
+        "No",
+        "Only queen checks"
+      ],
+      "answer": 0,
+      "explain": "Many winning combinations start with a sacrificial check."
+    }
+  ],
+  "practiceThemes": [
+    "short",
+    "mateIn1"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md#forcing-moves-first-cct",
+    "knowledge-base/03-chess-knowledge/calculation.md#candidate-moves",
+    "knowledge-base/02-methods/heisman-thought-process-and-real-chess.md#3-the-structured-thought-process-simplified-composite"
+  ]
+}

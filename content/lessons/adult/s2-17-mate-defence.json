@@ -1,0 +1,111 @@
+{
+  "id": "adult.s2.mate-defence",
+  "track": "adult",
+  "stage": 2,
+  "order": 17,
+  "skillIds": [
+    "checkmate.mate-defence"
+  ],
+  "title": "Defending against mate threats",
+  "summary": "Spot a mate threat and parry it: luft, blocking, guarding, or counter-threat.",
+  "estMinutes": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Defences against a mate threat, roughly in order of preference:\n\n1. **Luft**: give the king a flight square.\n2. **Block** the attacking line.\n3. **Guard** the mating square with another piece.\n4. **Capture or chase** an attacking piece.\n5. A **counter-threat** that is even stronger (check or mate first).\n\nFirst you have to see the threat. That is the threat-awareness habit."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/4R1K1 b - - 0 1",
+      "prompt": "You are Black. White threatens Re8#. Defend.",
+      "solution": [
+        "h6"
+      ],
+      "alternatives": [
+        "g6",
+        "h5",
+        "g5",
+        "f6",
+        "f5",
+        "Kf8"
+      ],
+      "explain": "Luft. The king gets h7 and the back rank is no longer a problem. g6, h5 and g5 work too, as does Kf8."
+    },
+    {
+      "type": "move",
+      "fen": "r1b2rk1/ppp2ppp/2nb4/8/7q/2N5/PPPP1PPP/R1BQ1RK1 w - - 0 10",
+      "prompt": "Black threatens Qxh2#. Stop it.",
+      "solution": [
+        "g3"
+      ],
+      "alternatives": [
+        "f4"
+      ],
+      "explain": "g3 blocks the bishop's diagonal and kicks the queen. f4, blocking the same diagonal, also holds."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/1b3pp1/7p/8/8/3P2Pq/PPP2P1P/R2QR1K1 w - - 0 1",
+      "prompt": "Black threatens Qg2#. Parry the threat.",
+      "solution": [
+        "f3"
+      ],
+      "alternatives": [
+        "Re4"
+      ],
+      "explain": "f3 blocks the long diagonal, so the bishop no longer supports g2. Re4 blocks too. Careful: Qf3?? also blocks but loses the queen to ...Bxf3."
+    },
+    {
+      "type": "quiz",
+      "question": "Your opponent threatens mate in one. You can win their queen, but your move does not stop the mate. Should you take?",
+      "choices": [
+        "No: stop the mate first (unless your move gives check or mate)",
+        "Yes, always take the queen",
+        "It depends on the clock"
+      ],
+      "answer": 0,
+      "explain": "A mate threat beats any material gain, unless your own move is forcing enough (a check) to keep the initiative."
+    },
+    {
+      "type": "quiz",
+      "question": "Which defence also prevents future back-rank problems?",
+      "choices": [
+        "Luft (e.g. h3/h6)",
+        "Blocking with a piece",
+        "A counter-attack"
+      ],
+      "answer": 0,
+      "explain": "A blocking piece may be tied down later. Luft solves the problem permanently, though it creates a slight weakness."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: name three ways to stop a mate threat.",
+      "choices": [
+        "Luft, block, guard the square",
+        "Resign, castle, push a pawn",
+        "Trade queens, offer a draw, pass"
+      ],
+      "answer": 0,
+      "explain": "Also: capture the attacker or create a stronger counter-threat."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what must happen before you can defend against mate?",
+      "choices": [
+        "You must notice the threat by asking what the opponent's last move does",
+        "Nothing",
+        "Calculate 10 moves deep"
+      ],
+      "answer": 0,
+      "explain": "Threat-awareness first."
+    }
+  ],
+  "practiceThemes": [
+    "defensiveMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#mating-net-skills-beyond-named-patterns",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#back-rank-mate",
+    "knowledge-base/03-chess-knowledge/calculation.md#defensive-calculation"
+  ]
+}

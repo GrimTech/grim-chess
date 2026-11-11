@@ -1,0 +1,93 @@
+{
+  "id": "adult.s6.real-sacrifices-initiative",
+  "track": "adult",
+  "stage": 6,
+  "order": 2,
+  "skillIds": [
+    "tactics.real-sacrifice",
+    "strategy.initiative"
+  ],
+  "title": "Intuitive sacrifices and the initiative",
+  "summary": "Spielmann's \"real\" sacrifices: give material for lasting initiative when full calculation is impossible, and keep the initiative once you have it.",
+  "estMinutes": 35,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Sham and real sacrifices\n\nSpielmann distinguished **sham sacrifices** (material comes back by force — a combination) from **real sacrifices** (no forced return: you get initiative, open lines, a king hunt, a positional bind). Real sacrifices are decided by **judgement**:\n- How many pieces join the attack, how fast, and how long does the opponent need to coordinate?\n- Is the compensation **lasting** (structure, king safety) or **temporary** (tempo, development)?\n- If the attack fails, what is left?\n\n**The initiative** is the ability to make threats that force replies. Rules: keep making threats, bring new pieces with tempo, avoid exchanges that relieve the defender, and convert the initiative into something permanent before it fades."
+    },
+    {
+      "type": "move",
+      "fen": "1r5k/1b2np1p/pq2NprQ/1p6/4p1BP/2P4R/1P3PP1/2KR4 w - - 10 25",
+      "prompt": "White to move. White has sacrificed material for the attack; the black king is on h8. Find the only move that keeps the initiative alive (Kasparov-Kramnik, Novgorod 1994).",
+      "solution": [
+        "Qf4"
+      ],
+      "hint": "Keep threats coming: what does the queen attack from f4?",
+      "explain": "**25.Qf4!** — the queen leaves h6 with tempo on the f6-pawn and keeps both the h-file and the e6-knight in play. Every other queen move loses (engine: Qf4 -1.6 objectively, others about -6.6), but Kasparov kept the initiative: 25...Re8 26.Rd6 Nd5 27.h5! and he won. Real sacrifices often lead to positions where only one move keeps the game alive."
+    },
+    {
+      "type": "move",
+      "fen": "r5r1/p3kpP1/b1pNB2p/2p5/p6n/2P2P2/P5PP/R4RK1 w - - 3 24",
+      "prompt": "White to move. White has given material for the g7-pawn and the d6-knight. Find the quiet move that keeps everything together (Tal-Hecht, Varna Olympiad 1962).",
+      "solution": [
+        "Bc4"
+      ],
+      "hint": "Protect the g7-pawn indirectly and challenge the a6-bishop.",
+      "explain": "**24.Bc4!** — the bishop offers itself and covers the queening square g8 and the a6-bishop's diagonal; 24...Rxg7 25.g3 Kxd6 26.Bxa6 and White's active pieces against Black's scattered ones give White the better game (engine +0.3, while 24.Bxf7 is -4.6)."
+    },
+    {
+      "type": "move",
+      "fen": "1r2r2k/1bq3bp/p2p2n1/1p1P1Qp1/4B3/PP2R3/1BP3PP/5R1K w - - 3 28",
+      "prompt": "White to move. A rook lift that keeps the initiative (Tal-Smyslov, Candidates 1959)",
+      "solution": [
+        "Rh3"
+      ],
+      "orientation": "white",
+      "explain": "**28.Rh3!** — the rook joins the kingside attack; Black's queenside counterplay is too slow. Engine: about 0.00, while slower moves lose the initiative and the game. Engine main line: 28.Rh3 Rxe4 29.Qxg6 Rh4 30.Rf7 Bxb2. (Tal-Smyslov, Candidates 1959; checked with Stockfish 19.)"
+    },
+    {
+      "type": "board",
+      "fen": "r1bqr1k1/pppnbpp1/7p/2P5/3PN3/3Q1N2/PPB1p1PP/R4RK1 w - - 0 15",
+      "md": "**Spassky-Bronstein, Leningrad 1960 (King's Gambit).** Spassky played **15.Nd6!?** (engine prefers 15.Rf2), allowing 15...Nf8 16.Nxf7 exf1=Q+ 17.Rxf1 with a winning attack in the game. A real sacrifice: objectively questionable, practically devastating."
+    },
+    {
+      "type": "quiz",
+      "question": "You consider a real sacrifice. The engine (checked after the game) shows it was -0.8, but you won. What is the correct lesson?",
+      "choices": [
+        "Real sacrifices are always good",
+        "Practical value and objective value differ; the sacrifice was a reasonable risk if the defence was hard to find, but you must check whether a sound alternative was available",
+        "Never sacrifice",
+        "The engine is wrong"
+      ],
+      "answer": 1,
+      "explain": "Use the engine after the game to learn where the defence was. Over time, your intuition about which sacrifices are sound improves."
+    },
+    {
+      "type": "quiz",
+      "question": "Which is the best sign that you still have the initiative?",
+      "choices": [
+        "You have more material",
+        "Each of your moves creates a threat the opponent must answer, and he cannot find time for his own plan",
+        "Your pieces are on the opponent's half",
+        "You have castled"
+      ],
+      "answer": 1,
+      "explain": "Initiative is about tempo. When your moves stop forcing replies, convert or consolidate."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: Kasparov-Kramnik 1994 and Tal-Hecht 1962 (corpus), playing White from move 15.\n- **Calculation drill**: 5 positions where a sacrifice is possible; write your evaluation (= / += / +-) before calculating, then compare with the engine.\n- In your own games, note one moment per week where you could have sacrificed for the initiative."
+    }
+  ],
+  "practiceThemes": [
+    "sacrifice",
+    "advantage"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "knowledge-base/03-chess-knowledge/tactics.md",
+    "Spielmann, The Art of Sacrifice in Chess",
+    "Kasparov-Kramnik, Novgorod 1994",
+    "Tal-Hecht, Varna Olympiad 1962"
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "adult.s3.candidate-moves",
+  "track": "adult",
+  "stage": 3,
+  "order": 8,
+  "skillIds": [
+    "calculation.candidate-moves"
+  ],
+  "title": "Candidate moves: list before you calculate",
+  "summary": "Kotov's discipline: list forcing moves for both sides and the opponent's threat before calculating any single line deeply.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Before calculating, **list your candidates**. Kotov's rule: name them all first, then examine each branch once. Aagaard's three questions:\n\n1. What are my candidate moves?\n2. What does my opponent want (their threat)?\n3. What are the weaknesses?\n\nAlways include the **forcing moves** (checks, captures, threats) for **both** sides. The first move that comes to mind is a candidate, not a decision."
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. Scan the forcing moves: how many checks does White have, and how many captures?",
+      "choices": [
+        "No checks, three captures",
+        "One check, five captures",
+        "Two checks, four captures",
+        "One check, two captures"
+      ],
+      "answer": 1,
+      "explain": "Checks: only Qxe8+. Captures: Qxe8+, Qxd1, Qxc4, Qxa6 and Rxd1. A complete scan takes seconds and is the raw material of your candidate list.",
+      "fen": "4r1k1/1p3pp1/p6p/8/Q1p1nq2/2P2N1P/PP3PP1/3rR1K1 w - - 0 30"
+    },
+    {
+      "type": "move",
+      "fen": "4r1k1/1p3pp1/p6p/8/Q1p1nq2/2P2N1P/PP3PP1/3rR1K1 w - - 0 30",
+      "prompt": "White to move. Black's rook on d1 attacks your rook on e1, and you are under pressure. List the captures, then play the best one.",
+      "solution": [
+        "Qxe8+",
+        "Kh7",
+        "Rxd1"
+      ],
+      "explain": "Qxe8+ comes first because it is a capture **with check**: after ...Kh7 White also takes on d1 and is a whole rook up. Any other capture gives Black a tempo to save a rook or start threats against f2.",
+      "hint": "Which capture also gives check?"
+    },
+    {
+      "type": "quiz",
+      "question": "Your opponent just moved a knight to g4, attacking f2 and h2. Which question should come first in your thinking?",
+      "choices": [
+        "Which of my plans is most ambitious?",
+        "What does that move threaten?",
+        "Can I trade queens?",
+        "Where should my rooks go in ten moves?"
+      ],
+      "answer": 1,
+      "explain": "Heisman's step 1: what did the opponent's last move do? Threats are part of your candidate list: a defensive move may be the best candidate."
+    },
+    {
+      "type": "move",
+      "fen": "r5k1/6p1/2p2p2/1pNp2p1/1P6/1B3P2/1Bb2KPP/8 w - - 6 29",
+      "prompt": "White to move. Capture first, then think about the follow-up: there is a tactic waiting at the end.",
+      "solution": [
+        "Bxc2",
+        "Ra2",
+        "Nd3"
+      ],
+      "explain": "Bxc2 takes the bishop. Black's ...Ra2 then attacks the b2-bishop, and the calm Nd3 defends it: White stays a piece up. The defensive follow-up was a candidate you had to list in advance.",
+      "hint": "Count material after each capture."
+    },
+    {
+      "type": "move",
+      "fen": "3r2k1/5p1p/p5p1/4P3/4QP1b/P4P1P/2r5/6RK b - - 1 30",
+      "prompt": "Black to move. Doubling on the second rank looks slow, but list Black's threats after it.",
+      "solution": [
+        "Rdd2",
+        "Qxc2",
+        "Rxc2"
+      ],
+      "explain": "...Rdd2! creates the unstoppable threat ...Rh2 mate (h2 is covered twice). White must give up the queen with Qxc2. A quiet candidate beat all the captures.",
+      "hint": "What would two rooks on the 2nd rank threaten next to White's king?"
+    },
+    {
+      "type": "move",
+      "fen": "8/3PR1p1/5pkp/8/4P3/6P1/1p1r3P/4K3 w - - 0 38",
+      "prompt": "White to move. Black's rook has just taken on d2 with check and Black's b-pawn is one step from queening. List every candidate (captures, checks, your own promotion) and count the race.",
+      "solution": [
+        "Kxd2",
+        "b1=Q",
+        "d8=Q"
+      ],
+      "explain": "Kxd2! looks like it lets Black queen, but after ...b1=Q White promotes too: d8=Q, and White is a whole rook up with two queens on the board. The candidate list had to include \"what if he queens first?\".",
+      "hint": "Capturing the rook is safe if you count the promotions."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/1p3pp1/4p2p/1R1p4/5P2/1R4PP/5rBK/2r5 b - - 1 28",
+      "prompt": "Black to move. Find the candidate that creates a threat White cannot meet.",
+      "solution": [
+        "Rcc2",
+        "Rb1",
+        "Rxg2+"
+      ],
+      "explain": "...Rcc2 doubles on the 2nd rank: the g2-bishop is attacked twice and pinned to the king. White's best is Rb1 and then ...Rxg2+ wins a piece.",
+      "hint": "Your rooks belong together."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the correct order?",
+      "choices": [
+        "Calculate the most attractive move deeply, then look at others if it fails",
+        "List candidates including all forcing moves for both sides and the opponent's threat, then calculate each branch once",
+        "Play the first move that comes to mind to save time",
+        "Only calculate checks"
+      ],
+      "answer": 1,
+      "explain": "Listing first prevents tunnel vision (\"single-candidate\" error) and repeated analysis of the same branch."
+    }
+  ],
+  "practiceThemes": [
+    "mix",
+    "short"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md#candidate-moves",
+    "knowledge-base/03-chess-knowledge/calculation.md#forcing-moves-first-cct",
+    "knowledge-base/02-methods/heisman-thought-process-and-real-chess.md#3-the-structured-thought-process-simplified-composite",
+    "Kotov, Think Like a Grandmaster (candidate moves, tree of analysis)",
+    "Aagaard, Grandmaster Preparation: Calculation (three questions)",
+    "Lichess puzzle database (CC0): 06CUg, 0ICJl, 09ZOa, 0A577, 0QTMv"
+  ]
+}

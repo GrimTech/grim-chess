@@ -1,0 +1,98 @@
+{
+  "id": "kids.1.bishop-slides",
+  "track": "kids",
+  "stage": 1,
+  "order": 103,
+  "skillIds": [
+    "rules.pieces.bishop"
+  ],
+  "title": "Bishop slides",
+  "summary": "The bishop slides on diagonals and always stays on its colour.",
+  "estMinutes": 5,
+  "minAge": 4,
+  "steps": [
+    {
+      "type": "text",
+      "md": "This is the **bishop**. It has a pointy hat. It slides on **diagonals**."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/3B4/8/8/4K3 w - - 0 1",
+      "md": "Corner to corner, like a slide!",
+      "arrows": [
+        [
+          "d4",
+          "h8"
+        ],
+        [
+          "d4",
+          "a7"
+        ],
+        [
+          "d4",
+          "a1"
+        ],
+        [
+          "d4",
+          "g1"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/8/8/8/8/8/2B4K w - - 0 1",
+      "prompt": "Slide the bishop to the star!",
+      "solution": [
+        "Bh6"
+      ],
+      "explain": "Wheee! A long slide.",
+      "arrows": [
+        [
+          "c1",
+          "h6",
+          "yellow"
+        ]
+      ],
+      "hint": "Go up and to the right."
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/8/8/8/8/7K/5B2 w - - 0 1",
+      "prompt": "Slide the bishop to the star!",
+      "solution": [
+        "Ba6"
+      ],
+      "explain": "Up and to the left. Well done!",
+      "arrows": [
+        [
+          "f1",
+          "a6",
+          "yellow"
+        ]
+      ],
+      "hint": "Go up and to the left."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/8/8/8/2B1KB2 w - - 0 1",
+      "md": "One bishop walks on **dark** squares. The other walks on **light** squares. Forever!",
+      "highlights": [
+        "c1",
+        "f1"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Can a bishop on a dark square ever reach a light square?",
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "answer": 1,
+      "explain": "Never! A bishop keeps its colour all game."
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "adult.s1.stalemate",
+  "track": "adult",
+  "stage": 1,
+  "order": 15,
+  "skillIds": [
+    "rules.stalemate"
+  ],
+  "title": "Stalemate: the accidental draw",
+  "summary": "No legal move and not in check is a draw. Do not throw away won games.",
+  "estMinutes": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Stalemate**: the side to move has **no legal move** and is **not in check**. The game is a **draw**, however much material the other side has. It is the most common way beginners throw away won positions, especially with king and queen against king."
+    },
+    {
+      "type": "board",
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1",
+      "md": "Black to move. The king is not in check, but g8, h7 and g7 are all covered. No legal move: stalemate, draw.",
+      "highlights": [
+        "g8",
+        "g7",
+        "h7"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. Checkmate, stalemate, or play on?",
+      "choices": [
+        "Stalemate",
+        "Checkmate",
+        "Play on"
+      ],
+      "answer": 0,
+      "explain": "The king on a8 is not in check, but a7, b7 and b8 are all covered by the queen. Black has no other pieces: stalemate.",
+      "fen": "k7/8/1Q6/8/8/8/8/6K1 b - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. Checkmate, stalemate, or play on?",
+      "choices": [
+        "Play on: the pawn can move",
+        "Stalemate",
+        "Checkmate"
+      ],
+      "answer": 0,
+      "explain": "The king has no moves, but the h-pawn can still advance. Stalemate needs no legal move for any piece.",
+      "fen": "k7/8/1Q6/8/7p/8/8/6K1 b - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/6K1/8/8/8/8/5Q2 w - - 0 1",
+      "prompt": "Mate in one. Careful: one natural queen move stalemates.",
+      "solution": [
+        "Qf8#"
+      ],
+      "explain": "Qf8# checks along the back rank. Qf7?? would take every square without giving check: stalemate."
+    },
+    {
+      "type": "move",
+      "fen": "k7/8/1K6/8/8/8/8/2Q5 w - - 0 1",
+      "prompt": "Mate in one. Watch out for Qc7, which stalemates.",
+      "solution": [
+        "Qc8#"
+      ],
+      "explain": "Qc8# checks along the 8th rank; your king covers a7, b7 and the queen covers b8. Qc7?? leaves Black with no move and no check."
+    },
+    {
+      "type": "quiz",
+      "question": "Who wins on stalemate?",
+      "choices": [
+        "Nobody, it is a draw",
+        "The side with more material",
+        "The side that is stalemated loses"
+      ],
+      "answer": 0,
+      "explain": "Stalemate is always a draw. When you are losing, keep it in mind as a rescue."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the difference between checkmate and stalemate?",
+      "choices": [
+        "Mate: in check with no move. Stalemate: not in check with no move",
+        "There is none",
+        "Stalemate needs two pieces"
+      ],
+      "answer": 0,
+      "explain": "The only difference is whether the king is in check, and it changes the result from a win to a draw."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: with K+Q vs K, what should you check before every quiet queen move near the enemy king?",
+      "choices": [
+        "That the lone king still has a legal move",
+        "That your queen is defended",
+        "That you have castled"
+      ],
+      "answer": 0,
+      "explain": "Before every quiet move, ask \"does Black still have a legal move?\""
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#stalemate",
+    "knowledge-base/03-chess-knowledge/endgames.md#stalemate-awareness"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "kids.6.f7-trap",
+  "track": "kids",
+  "stage": 2,
+  "order": 604,
+  "skillIds": [
+    "tactics.attacking-f7",
+    "checkmate.legal",
+    "opening.traps.basic"
+  ],
+  "title": "The f7 trap",
+  "summary": "Legal's mate: a famous trap aimed at f7.",
+  "estMinutes": 7,
+  "minAge": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "At the start, **f7** is guarded only by the black king. Tricks often aim there!"
+    },
+    {
+      "type": "board",
+      "fen": "rn1qkbnr/ppp2p1p/3p2p1/4p3/2B1P1b1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 5",
+      "md": "Black pinned your knight. But is it really pinned?",
+      "arrows": [
+        [
+          "c4",
+          "f7",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "rn1qkbnr/ppp2p1p/3p2p1/4p3/2B1P1b1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 5",
+      "prompt": "Legal's trap! Give away your queen and checkmate.",
+      "solution": [
+        "Nxe5",
+        "Bxd1",
+        "Bxf7+",
+        "Ke7",
+        "Nd5#"
+      ],
+      "explain": "Legal's mate! The little pieces beat the queen.",
+      "hint": "Jump into e5 with the \"pinned\" knight."
+    },
+    {
+      "type": "quiz",
+      "question": "Which square do opening tricks attack?",
+      "choices": [
+        "f7",
+        "a7",
+        "h8"
+      ],
+      "answer": 0,
+      "explain": "f7 is weak because only the king guards it."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1ppp/8/4N3/2BnP3/8/PPPP1PPP/RNBQK2R b KQkq - 0 4",
+      "prompt": "You are Black. White grabbed a pawn. Punish it!",
+      "solution": [
+        "Qg5"
+      ],
+      "explain": "Your queen attacks the knight AND g2!",
+      "hint": "The queen can attack two things."
+    },
+    {
+      "type": "text",
+      "md": "Watch out for f7 (and f2 when you are White) in every game!"
+    }
+  ],
+  "practiceThemes": [
+    "attackingF2F7"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

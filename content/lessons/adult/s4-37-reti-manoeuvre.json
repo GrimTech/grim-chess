@@ -1,0 +1,97 @@
+{
+  "id": "adult.s4.reti-manoeuvre",
+  "track": "adult",
+  "stage": 4,
+  "order": 37,
+  "skillIds": [
+    "endgame.pawn.reti-manoeuvre"
+  ],
+  "title": "The Réti manoeuvre and shouldering",
+  "summary": "A king on a diagonal can chase two goals at once; and a king can block the other king with its body.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Kings move as fast diagonally as straight: from h8 to h4 takes four moves, and so does h8-g7-f6-e5-... towards the centre. **Réti's idea:** walk the king along a diagonal so that it approaches **two targets at once** (catching the enemy pawn *and* supporting your own), and the opponent cannot stop both.\n\n**Shouldering:** use your king to block the opponent's king from reaching a key area (body-check), even at the cost of time."
+    },
+    {
+      "type": "board",
+      "fen": "7K/8/k1P5/7p/8/8/8/8 w - - 0 1",
+      "md": "Réti (1921). White to move. The h5-pawn seems unstoppable (the king on h8 is outside its square) and the c6-pawn seems lost. Yet White draws.",
+      "arrows": [
+        [
+          "h8",
+          "g7",
+          "green"
+        ],
+        [
+          "g7",
+          "f6",
+          "green"
+        ],
+        [
+          "f6",
+          "e5",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "7K/8/k1P5/7p/8/8/8/8 w - - 0 1",
+      "prompt": "White to move. Walk the king down the long diagonal so that it chases the h-pawn and supports the c-pawn at the same time.",
+      "solution": [
+        "Kg7",
+        "Kb6",
+        "Kf6",
+        "h4",
+        "Ke5"
+      ],
+      "hint": "Move towards the centre and the h-pawn at the same time.",
+      "explain": "**1.Kg7! Kb6 2.Kf6 h4 3.Ke5!** Now if 3...Kxc6 4.Kf4 catches the h-pawn; if 3...h3 4.Kd6 h2 5.c7 h1=Q 6.c8=Q and both queen: a draw. Two goals, one diagonal."
+    },
+    {
+      "type": "quiz",
+      "question": "Why does 1.Kg7 work when 1.Kh7 loses?",
+      "choices": [
+        "1.Kg7 moves towards both the h-pawn and the c-pawn; 1.Kh7 only chases the pawn and is too slow",
+        "Because g7 is a dark square",
+        "1.Kh7 is stalemate"
+      ],
+      "answer": 0,
+      "explain": "On the diagonal each move gains ground on both targets. The straight route down the h-file loses contact with the c-pawn, and the pawn race is lost."
+    },
+    {
+      "type": "play",
+      "fen": "7K/8/k1P5/7p/8/8/8/8 w - - 0 1",
+      "goal": "draw",
+      "prompt": "Play the Réti study yourself against the engine and secure the draw.",
+      "maxMoves": 20
+    },
+    {
+      "type": "quiz",
+      "question": "Shouldering: your king and the enemy king race towards the same pawn. What does \"shouldering\" mean?",
+      "choices": [
+        "Placing your king so that it blocks the opponent's king's path (kings cannot stand next to each other), even if your own route is longer",
+        "Exchanging kings",
+        "Moving the king backwards to gain the opposition"
+      ],
+      "answer": 0,
+      "explain": "Because kings may never touch, your king can act as a wall. A sideways step that blocks the enemy king's diagonal often gains more than a straight run."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** What are the two goals in the Réti study? (Catch the h-pawn; support the c-pawn.) Why is a diagonal king walk efficient? (Same number of moves, two directions covered.)"
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#réti-manoeuvre",
+    "knowledge-base/03-chess-knowledge/endgames.md#shouldering",
+    "de la Villa, 100 Endgames You Must Know (New in Chess, 2008), the Réti study",
+    "Réti, study (Kagans Neueste Schachnachrichten, 1921)",
+    "Dvoretsky, Dvoretsky's Endgame Manual (Russell Enterprises, 2003)"
+  ]
+}

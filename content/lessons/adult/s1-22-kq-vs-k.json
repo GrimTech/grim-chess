@@ -1,0 +1,112 @@
+{
+  "id": "adult.s1.kq-vs-k",
+  "track": "adult",
+  "stage": 1,
+  "order": 22,
+  "skillIds": [
+    "endgame.mate.kq"
+  ],
+  "title": "King and queen vs king",
+  "summary": "Box the king in with the queen, bring your king, mate without stalemating.",
+  "estMinutes": 12,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Method:\n\n1. **Box**: place the queen a knight's move away from the enemy king. This shrinks its box without giving check.\n2. **Shrink**: follow the king, keeping the knight's distance, until it is stuck on the edge.\n3. **Bring your king** next to it (queen stays put, but watch for stalemate).\n4. **Mate**: queen checks on the edge, supported by your king.\n\nIt takes at most about 10 moves."
+    },
+    {
+      "type": "board",
+      "fen": "8/8/8/3k4/8/2Q5/8/4K3 w - - 0 1",
+      "md": "The box. The queen on c3 keeps the black king out of the c-file and the 3rd rank.",
+      "arrows": [
+        [
+          "c3",
+          "c8",
+          "blue"
+        ],
+        [
+          "c3",
+          "h3",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the box method, where does the queen go relative to the enemy king?",
+      "choices": [
+        "A knight's move away",
+        "Right next to it",
+        "On the same file"
+      ],
+      "answer": 0,
+      "explain": "At a knight's distance the queen covers every square around the king except the ones pointing away from it, so the box keeps shrinking."
+    },
+    {
+      "type": "move",
+      "fen": "k7/8/1K6/8/8/8/8/2Q5 w - - 0 1",
+      "prompt": "Mate in one. Avoid the stalemate.",
+      "solution": [
+        "Qc8#"
+      ],
+      "explain": "Qc8#. Qc7?? would be stalemate: no check, no legal move."
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/6K1/8/8/8/8/1Q6 w - - 0 1",
+      "prompt": "Mate in one.",
+      "solution": [
+        "Qb8#"
+      ],
+      "explain": "The queen checks on the back rank; your king covers g7 and h7."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. What is the result?",
+      "choices": [
+        "Stalemate, draw",
+        "Checkmate",
+        "Black plays on"
+      ],
+      "answer": 0,
+      "explain": "The classic accident: the queen at a knight's distance from a cornered king, with no check. Once the king is on the edge, stop boxing and bring your own king.",
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1"
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/4k3/8/8/8/3QK3 w - - 0 1",
+      "goal": "mate",
+      "prompt": "Checkmate with king and queen. Box, shrink, bring the king, mate.",
+      "maxMoves": 15,
+      "explain": "Target: under 10 moves, never stalemate."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/2k5/8/8/8/5K1Q/8 w - - 0 1",
+      "goal": "mate",
+      "prompt": "Once more from a new position: mate with no stalemate.",
+      "maxMoves": 15,
+      "explain": "If you notice the black king has only one or two squares, check that your next quiet move leaves it at least one."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: once the enemy king is stuck on the edge, what is the next step?",
+      "choices": [
+        "Bring your own king up to support the mate",
+        "Keep chasing with the queen",
+        "Offer a draw"
+      ],
+      "answer": 0,
+      "explain": "The queen cannot mate alone. The king must help."
+    }
+  ],
+  "practiceThemes": [
+    "endgame",
+    "queenEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#kq-vs-k",
+    "knowledge-base/03-chess-knowledge/endgames.md#stalemate-awareness",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#king-and-queen-vs-king"
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "adult.s3.a-complete-basic-repertoire",
+  "track": "adult",
+  "stage": 3,
+  "order": 49,
+  "skillIds": [
+    "opening.repertoire.complete-basic"
+  ],
+  "title": "Building a complete basic repertoire",
+  "summary": "One system as White and two defences as Black, 8-10 moves deep with typical plans and model games, kept in a file you review after every game.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Stage-3 guidance (1000-1400): **fix one White system and two Black defences** (one vs 1.e4, one vs 1.d4), know **8-10 moves** of the main lines, the **typical middlegame plan**, and **2-3 model games** per line. After every game, compare your opening with the database and patch the file. Spend most training time on tactics and endgames: openings matter, but less than you think at this level."
+    },
+    {
+      "type": "quiz",
+      "question": "Which repertoire best fits these guidelines?",
+      "choices": [
+        "White: 1.e4 Italian + a simple anti-Sicilian; Black: 1...e5 vs 1.e4 and the QGD vs 1.d4",
+        "White: five different first moves; Black: a new defence every week",
+        "Only gambits, everything memorised 25 moves deep",
+        "No repertoire at all"
+      ],
+      "answer": 0,
+      "explain": "Compact, principled and consistent: one system, two defences, with understanding."
+    },
+    {
+      "type": "move",
+      "fen": "r1bq1rk1/ppp1bppp/2np1n2/4p3/2B1P3/2PP1N2/PP3PPP/RNBQR1K1 b - - 0 7",
+      "prompt": "Your Italian file, move 8 for Black. Play a typical plan move: prepare to bring the knight to the kingside or challenge the centre.",
+      "solution": [
+        "a6"
+      ],
+      "explain": "...a6 keeps the bishop pair after a possible Na5 and prepares ...Ba7-type ideas; ...Na5, ...Be6 and ...h6 are also normal. In your file, note the plan, not just the move.",
+      "alternatives": [
+        "h6",
+        "Be6",
+        "Na5",
+        "Bg4",
+        "Kh8"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQ - 2 6",
+      "prompt": "Your QGD file as Black. Play the main-line move that prepares ...Nbd7 or ...b6 with ...h6 options.",
+      "solution": [
+        "h6"
+      ],
+      "explain": "...h6 asks the bishop to decide (Bh4 or Bxf6) before Black chooses a set-up: Tartakower (...b6) or Lasker (...Ne4). ...Nbd7 is also standard.",
+      "alternatives": [
+        "Nbd7"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "After a tournament game you find the opponent deviated on move 6 and you did not know the line. What is the right repertoire workflow?",
+      "choices": [
+        "Switch openings",
+        "Look up the deviation in a database, add 1-2 reliable answers and the plan to your file, then review it with spaced repetition",
+        "Ignore it",
+        "Memorise 20 moves of every sideline"
+      ],
+      "answer": 1,
+      "explain": "A repertoire grows from your own games. Spaced repetition (MoveTrainer style) keeps it in memory."
+    },
+    {
+      "type": "quiz",
+      "question": "How deep should a stage-3 player know main lines?",
+      "choices": [
+        "2-3 moves",
+        "About 8-10 moves, with the typical plans",
+        "25+ moves",
+        "Only the first move"
+      ],
+      "answer": 1,
+      "explain": "Depth beyond that pays off only from stage 4-5 onwards."
+    },
+    {
+      "type": "quiz",
+      "question": "Which is the best way to make opening study stick?",
+      "choices": [
+        "Re-reading the file",
+        "Quizzing yourself on the moves and plans (retrieval), spaced over days, and playing the lines in training games",
+        "Watching videos once",
+        "Copying lines by hand"
+      ],
+      "answer": 1,
+      "explain": "Retrieval practice beats re-reading. Play the lines against bots and review the games."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what are the three ingredients of each repertoire line?",
+      "choices": [
+        "Moves only",
+        "Main-line moves (8-10), the typical middlegame plan, and 2-3 model games",
+        "Traps only",
+        "Engine evaluations only"
+      ],
+      "answer": 1,
+      "explain": "Plans and model games are what let you play sensibly once theory ends."
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#repertoire-building-by-level",
+    "knowledge-base/02-methods/opening-repertoire-building.md#4-evidence-informed-principles-for-repertoire-work",
+    "knowledge-base/02-methods/opening-repertoire-building.md#3-level-appropriate-time-budgets-platform-defaults",
+    "Chessable MoveTrainer (spaced repetition of lines)",
+    "knowledge-base/01-learning-science/retrieval-practice-interleaving-desirable-difficulties.md#2-retrieval-practice-the-testing-effect"
+  ]
+}

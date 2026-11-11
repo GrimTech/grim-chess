@@ -1,0 +1,86 @@
+{
+  "id": "kids.3.queen-mates",
+  "track": "kids",
+  "stage": 1,
+  "order": 304,
+  "skillIds": [
+    "checkmate.mate-in-1",
+    "checkmate.support-mate"
+  ],
+  "title": "Queen checkmates",
+  "summary": "Checkmate in one with the queen and a helper.",
+  "estMinutes": 7,
+  "minAge": 6,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Let us find **checkmate in one** with the queen. Look for checks first!"
+    },
+    {
+      "type": "move",
+      "fen": "6k1/8/6K1/8/8/8/8/Q7 w - - 0 1",
+      "prompt": "Checkmate in one!",
+      "solution": [
+        "Qa8#"
+      ],
+      "explain": "Checkmate along the top row!",
+      "hint": "Your king already guards the squares in front.",
+      "alternatives": [
+        "Qg7#"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/7K/8/8/8/8/1Q6 w - - 0 1",
+      "prompt": "Checkmate in one!",
+      "solution": [
+        "Qh7#"
+      ],
+      "explain": "The king guards the queen. Checkmate!",
+      "hint": "Slide the queen next to the black king.",
+      "alternatives": [
+        "Qb8#"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/3Q2K1 w - - 0 1",
+      "prompt": "Checkmate in one!",
+      "solution": [
+        "Qd8#"
+      ],
+      "explain": "Back-row checkmate!",
+      "hint": "The black pawns trap their own king."
+    },
+    {
+      "type": "move",
+      "fen": "k7/8/2K5/8/8/8/8/1Q6 w - - 0 1",
+      "prompt": "Checkmate in one!",
+      "solution": [
+        "Qb7#"
+      ],
+      "explain": "Next to the king, guarded by your king!",
+      "hint": "Put the queen where your king protects her."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/Q7/5K2/8/8/8/8/8 w - - 0 1",
+      "prompt": "Checkmate in one!",
+      "solution": [
+        "Qg7#"
+      ],
+      "explain": "Super checkmate!",
+      "hint": "Your king on f6 can protect the queen."
+    },
+    {
+      "type": "text",
+      "md": "Five checkmates! You are a **queen champion**."
+    }
+  ],
+  "practiceThemes": [
+    "mateIn1"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

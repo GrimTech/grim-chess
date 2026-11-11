@@ -1,0 +1,115 @@
+{
+  "id": "adult.s3.trapped-pieces",
+  "track": "adult",
+  "stage": 3,
+  "order": 18,
+  "skillIds": [
+    "tactics.trapped-piece"
+  ],
+  "title": "Trapping pieces",
+  "summary": "A piece without safe squares can be won. Learn the classic traps: the greedy bishop on a7, the queen on b2, the rook in the corner, the knight on the rim.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Before attacking a piece, ask where it can go. If every retreat is covered, **take away the last square** with a pawn or piece and win it next move. Typical victims: a bishop that grabbed a7/h2 (trapped by ...b6 or g3), a queen that took on b2, a knight on the rim, a rook stuck behind its own king."
+    },
+    {
+      "type": "move",
+      "fen": "2kr3r/Bpp2ppp/3bpn2/8/8/5N2/PPP2PPP/3RR1K1 b - - 0 30",
+      "prompt": "Worked example. White's bishop has just grabbed your a7-pawn. Trap it with one pawn move.",
+      "solution": [
+        "b6"
+      ],
+      "explain": "...b6! shuts the bishop in: b8 is covered by your king and the a7-b8 corner is a dead end. Next comes ...Kb7, and the bishop can only give itself up for a pawn (Bxb6 cxb6 or ...Kxb6). \"Poisoned pawn\" captures on a7 and h2 are a classic trap.",
+      "hint": "Close the diagonal with a pawn."
+    },
+    {
+      "type": "move",
+      "fen": "8/1p3p1p/p2p1kp1/r2Pp3/P1r5/2P4P/1P1R1KP1/R7 w - - 7 34",
+      "prompt": "White to move. Black's rook on a5 has very few squares. Take them away.",
+      "solution": [
+        "b4",
+        "Rxa4",
+        "Rxa4"
+      ],
+      "explain": "b4! attacks the rook, and every escape is covered: b5 by the a4-pawn, c5 by the b4-pawn, d5 is defended by the d2-rook, and a6 is blocked by Black's own pawn. After ...Rxa4 Rxa4 White has won a rook for a pawn."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/ppp2rp1/3b2p1/2p1p2p/2PnP1Pq/3PBP1P/PP1Q2KN/R4R2 w - - 3 19",
+      "prompt": "White to move. Black's queen on h4 has gone deep into your position. Can you cut off her retreat?",
+      "solution": [
+        "Bg5",
+        "Qxg5",
+        "Qxg5"
+      ],
+      "explain": "Bg5! The queen has no safe square: ...Qxg5 Qxg5 and White has won the queen for a bishop."
+    },
+    {
+      "type": "move",
+      "fen": "r1b1k2r/pppp1ppp/7n/4P3/8/2Q5/P1P1KPPP/RNq2B1R w kq - 4 12",
+      "prompt": "White to move. Black's queen has penetrated to c1. Calmly trap her.",
+      "solution": [
+        "Nd2",
+        "Qxa1",
+        "Qxa1"
+      ],
+      "explain": "Nd2! closes the first rank. The queen can only grab the a1-rook, ...Qxa1, and Qxa1 wins her. A quiet move that leaves no escape."
+    },
+    {
+      "type": "move",
+      "fen": "r1b1k2r/pppp1ppp/1qn2n2/2P5/2B1P3/2PPBQ2/P4PPP/RN2K1R1 b Qkq - 0 12",
+      "prompt": "Black to move. White's a1-rook is stuck in the corner behind its own pieces.",
+      "solution": [
+        "Qb2",
+        "Qe2",
+        "Qxa1"
+      ],
+      "explain": "...Qb2! attacks the rook, which cannot escape (b1 is blocked by the knight). After Qe2 Qxa1 Black has won the exchange."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqk1nr/ppppbpQp/8/8/8/1P6/P1P1PPPP/RNB1KBNR b KQkq - 0 4",
+      "prompt": "Black to move. White's queen has grabbed g7 and the a1-rook is undefended.",
+      "solution": [
+        "Bf6",
+        "Qg3",
+        "Bxa1"
+      ],
+      "explain": "...Bf6! hits the queen, which must move, and then ...Bxa1 wins the rook along the long diagonal. Early queen raids often end with something trapped or lost."
+    },
+    {
+      "type": "quiz",
+      "question": "Your bishop could take a pawn on a7 (Black king on c8, pawns b7 and c7). What should you check first?",
+      "choices": [
+        "Whether the pawn is defended",
+        "Whether ...b6 would trap the bishop, leaving no way back",
+        "Whether you can castle afterwards",
+        "Nothing: free pawns should be taken"
+      ],
+      "answer": 1,
+      "explain": "The question is not whether the pawn is defended, but whether your piece can come back."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the first step in trapping a piece?",
+      "choices": [
+        "Attack it immediately",
+        "Count its safe squares and cover them one by one, keeping the final attack for last",
+        "Trade queens",
+        "Push all your pawns"
+      ],
+      "answer": 1,
+      "explain": "Trapping is mostly quiet moves: take squares first, attack last."
+    }
+  ],
+  "practiceThemes": [
+    "trappedPiece"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#trapped-piece",
+    "Yusupov, Build Up Your Chess 1 (trapping pieces)",
+    "Lichess puzzle database (CC0): 0WPYk, 0KVw4, 09IR3, 0D3Pa, 1YJUs"
+  ]
+}

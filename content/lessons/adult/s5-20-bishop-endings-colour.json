@@ -1,0 +1,84 @@
+{
+  "id": "adult.s5.bishop-endings-colour",
+  "track": "adult",
+  "stage": 5,
+  "order": 20,
+  "skillIds": [
+    "endgame.ocb.advanced",
+    "endgame.same-colour-bishops"
+  ],
+  "title": "Opposite- and same-coloured bishop endings",
+  "summary": "When opposite-coloured bishops win (connected pawns far advanced, pawns two or more files apart), when one extra pawn draws, and the Centurini idea of diagonals that are too short.",
+  "estMinutes": 25,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Opposite-coloured bishops: blockade versus two weaknesses\n\nWith opposite-coloured bishops the defender's bishop and king can **blockade on squares of the bishop's colour** that the attacker cannot contest. Rules of thumb (DEM ch. 5):\n\n- **One extra pawn**: almost always a draw if the defender's king or bishop can blockade it.\n- **Two connected pawns**: the defender needs his king in front of them; pawns that reach the **6th rank** together usually win if the king is not blocking.\n- **Two separated pawns**: the further apart, the better for the attacker. With **two or more files between them**, king and bishop can be overloaded: the king stops one pawn, the bishop must stop the other alone — and the attacker's king supports the bishop's pawn.\n- The attacker's main method is the **second weakness**: create a passed pawn on the other wing so that the defender's king must leave the blockade."
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: one extra pawn with opposite-coloured bishops. Result with best play?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw against every White move. The black king blockades the d-pawn on d6/d7, the dark-squared bishop helps, and White has no second weakness to stretch the defence.",
+      "fen": "8/4k3/8/3P4/2K5/8/4B3/6b1 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: two connected pawns on the 6th rank. Result with best play?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White mates in 7 moves with best play (for example 1.Bh5+ or 1.e7). The black king can blockade only one of the two pawns; the black dark-squared bishop can stop the d-pawn on d8 but can never control e8 (a light square).",
+      "fen": "4k3/8/3PP3/8/2K5/8/4B3/6b1 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "8/8/3k4/1P5P/8/2K5/8/3B2b1 w - - 0 1",
+      "prompt": "Two pawns six files apart. White to play and win — only one move does it.",
+      "solution": [
+        "h6"
+      ],
+      "hint": "Which squares can one black bishop control at the same time?",
+      "explain": "**1.h6!** The pawn crosses the bishop's diagonal at once. After a slow move such as 1.Kc4?, Black plays 1...Be3! and the bishop on e3 controls both b6 and h6: the two pawns are blockaded by **one** piece and the king walks over. After 1.h6 the black bishop must watch h8 from the long diagonal, the black king must watch the b-pawn, and the white king walks over to support the pawn the bishop alone is guarding (tablebase: win in 24 moves)."
+    },
+    {
+      "type": "text",
+      "md": "## Same-coloured bishops: Centurini's ideas\n\nWith **bishops of the same colour**, B+P v B is a win when the defending king is cut off from the pawn and the defending bishop has to cover the promotion path along a diagonal that is **too short**.\n\nFor a **b-pawn** queening on b8 (dark) with dark bishops: the square b8 lies on the long diagonal h2-b8 and on the short diagonal a7-b8. The attacker blocks the long diagonal (Bc7, Bd6, Be5...) and the defending bishop cannot reach the short one in time: the pawn queens. If the defending **king** gets in front of the pawn on a square the attacking bishop cannot attack, it is a draw.\n\nPractical method: (1) put your king next to the pawn's path, (2) use the bishop to **interfere** with the defending bishop's diagonal, (3) gain a tempo by attacking the defending bishop so it must leave the long diagonal."
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. Same-coloured (dark) bishops, b-pawn on b6, black king far away on g4. Result with best play?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White wins (in 16 moves with best play). The black king is too far away to help, so the black bishop alone must stop the pawn on b8, and White can block or deflect it on the long h2-b8 diagonal while the short a7-b8 diagonal is too short to provide a second defensive line.",
+      "fen": "8/8/1PK5/4b3/6k1/4B3/8/8 w - - 0 1"
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles:** 20 puzzles with the theme *bishopEndgame* at your rating.\n- **Endgames trainer:** play the OCB position with two connected pawns (from both sides) and the separated-pawn position until you win it in under 30 moves.\n- In Game review, look up your last bishop ending and ask: was it opposite or same colour, and did the stronger side use the second weakness?"
+    }
+  ],
+  "practiceThemes": [
+    "bishopEndgame",
+    "endgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky, Dvoretsky's Endgame Manual (5th ed., 2020)",
+    "de la Villa, 100 Endgames You Must Know",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)"
+  ]
+}

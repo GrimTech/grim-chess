@@ -1,0 +1,109 @@
+{
+  "id": "adult.s2.square-rule",
+  "track": "adult",
+  "stage": 2,
+  "order": 19,
+  "skillIds": [
+    "endgame.pawn.square-rule"
+  ],
+  "title": "The rule of the square",
+  "summary": "Decide instantly whether a king can catch a passed pawn.",
+  "estMinutes": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Picture a square with one side running from the pawn to its promotion square. If the defending king is **inside the square** (or can step into it on its move), it catches the pawn. If not, the pawn queens.\n\nTwo details: whose move it is matters (it is the king that must step inside), and a pawn on its starting rank counts from the square after its double step."
+    },
+    {
+      "type": "board",
+      "fen": "8/8/8/P7/4k3/8/8/K7 b - - 0 1",
+      "md": "The square of the a5-pawn runs a5-d5-d8-a8. Black to move: Kd5 steps inside and catches the pawn.",
+      "highlights": [
+        "a5",
+        "b5",
+        "c5",
+        "d5",
+        "a8",
+        "d8",
+        "d6",
+        "d7"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/8/8/P7/4k3/8/8/K7 b - - 0 1",
+      "prompt": "You are Black. Step into the square.",
+      "solution": [
+        "Kd5"
+      ],
+      "explain": "Only Kd5 enters the square. After a6 Kc6 a7 Kb7, the pawn is lost."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/8/P7/4k3/8/8/K7 w - - 0 1",
+      "prompt": "Same position, but White to move. Win the race.",
+      "solution": [
+        "a6"
+      ],
+      "explain": "a6 shrinks the square to a6-c6-c8-a8, and the king on e4 cannot step into it. The pawn queens."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. Can the king catch the a5-pawn?",
+      "choices": [
+        "No, it cannot enter the square",
+        "Yes"
+      ],
+      "answer": 0,
+      "explain": "From f3 the king can reach e4 or e3 at best, outside the a5-d8 square.",
+      "fen": "8/8/8/P7/8/5k2/8/K7 b - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "A white pawn stands on a2, its starting square. For the rule of the square, measure from...",
+      "choices": [
+        "a3, because of the double step",
+        "a2",
+        "a1"
+      ],
+      "answer": 0,
+      "explain": "Its first move can be two squares, so treat it as if it were already on a3."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/P7/4k3/8/8/K7 b - - 0 1",
+      "goal": "hold",
+      "prompt": "You are Black. Catch the pawn.",
+      "maxMoves": 12,
+      "explain": "Step into the square and walk to the queening square."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: who must be inside the square?",
+      "choices": [
+        "The defending king, after its move",
+        "The attacking king",
+        "The pawn"
+      ],
+      "answer": 0,
+      "explain": "The defending king must be inside the square, or step into it with the move."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: does it matter whose move it is?",
+      "choices": [
+        "Yes, one tempo can decide the race",
+        "No"
+      ],
+      "answer": 0,
+      "explain": "Kd5 drew with Black to move; a6 won with White to move."
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#rule-of-the-square",
+    "knowledge-base/03-chess-knowledge/endgames.md#general-endgame-principles"
+  ]
+}

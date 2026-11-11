@@ -1,0 +1,107 @@
+{
+  "id": "adult.s1.piece-values",
+  "track": "adult",
+  "stage": 1,
+  "order": 11,
+  "skillIds": [
+    "rules.piece-values"
+  ],
+  "title": "What the pieces are worth",
+  "summary": "Pawn 1, knight 3, bishop 3, rook 5, queen 9: use the numbers to judge trades.",
+  "estMinutes": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Use these values to judge every capture and trade:\n\n| Pawn | Knight | Bishop | Rook | Queen |\n|---|---|---|---|---|\n| 1 | 3 | 3 | 5 | 9 |\n\nThe king is priceless: you can never trade it. A trade is good when you gain more than you give."
+    },
+    {
+      "type": "quiz",
+      "question": "You capture a rook with your knight, and the knight is then captured. Net result?",
+      "choices": [
+        "+2 for you",
+        "-2 for you",
+        "Even"
+      ],
+      "answer": 0,
+      "explain": "You win 5, lose 3: +2. Winning a rook for a minor piece is called \"winning the exchange\"."
+    },
+    {
+      "type": "quiz",
+      "question": "You capture a bishop and a pawn but lose your rook. Net result?",
+      "choices": [
+        "-1",
+        "+1",
+        "Even"
+      ],
+      "answer": 0,
+      "explain": "You gain 3 + 1 = 4 and give 5: -1."
+    },
+    {
+      "type": "quiz",
+      "question": "Your queen takes a pawn that is defended by another pawn. What happens?",
+      "choices": [
+        "You lose 8 points (9 - 1)",
+        "You win a pawn",
+        "Even trade"
+      ],
+      "answer": 0,
+      "explain": "The pawn recaptures your queen. \"Is it defended?\" is the question to ask before every capture."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/3r1p2/8/4N3/8/8/4K3 w - - 0 1",
+      "prompt": "Your knight can capture two different pieces. Take the more valuable one.",
+      "solution": [
+        "Nxd6+"
+      ],
+      "explain": "The rook (5) beats the pawn (1). Both are undefended here, so take the bigger prize."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/5p2/n7/8/2B5/8/8/4K3 w - - 0 1",
+      "prompt": "Two captures are possible. One wins material, one loses it. Choose well.",
+      "solution": [
+        "Bxa6"
+      ],
+      "explain": "Bxa6 wins a free knight (+3). Bxf7+ grabs a pawn but the king recaptures (+1 - 3 = -2)."
+    },
+    {
+      "type": "quiz",
+      "question": "Which is usually worth more: two minor pieces (knight + bishop) or one rook?",
+      "choices": [
+        "Two minor pieces (6 vs 5)",
+        "The rook",
+        "Exactly equal"
+      ],
+      "answer": 0,
+      "explain": "By the numbers 6 > 5, and in practice two active minor pieces usually outplay a rook in the middlegame."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is a rook worth?",
+      "choices": [
+        "5",
+        "3",
+        "9",
+        "4"
+      ],
+      "answer": 0,
+      "explain": "Rook 5. Knight and bishop 3, queen 9, pawn 1."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: you trade your bishop for the opponent's knight. Net result?",
+      "choices": [
+        "Even (3 for 3)",
+        "+1",
+        "-1"
+      ],
+      "answer": 0,
+      "explain": "Knight and bishop are both worth about 3."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#piece-movement",
+    "knowledge-base/03-chess-knowledge/tactics.md#counting-and-exchanges"
+  ]
+}

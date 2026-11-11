@@ -1,0 +1,142 @@
+{
+  "id": "adult.s4.greek-gift",
+  "track": "adult",
+  "stage": 4,
+  "order": 15,
+  "skillIds": [
+    "tactics.greek-gift"
+  ],
+  "title": "The Greek gift: Bxh7+",
+  "summary": "The classic bishop sacrifice on h7: its preconditions, the king's three replies, and when it fails.",
+  "estMinutes": 20,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The **Greek gift**: Bxh7+ Kxh7, then Ng5+ and Qh5 (or Qd3/Qg4), with mate threats on h7. **Preconditions checklist** (Vukovic):\n\n1. Bishop on the b1-h7 diagonal; Black has castled short.\n2. No black knight on f6 (often chased by a pawn on e5).\n3. Your knight can reach g5 safely: no black bishop on e7/d8 or pawn on h6 that can simply take it, unless you can recapture with a pawn on h4 or a bishop on c1/f4, opening the h-file.\n4. Your queen reaches h5/the h-file quickly.\n5. Black cannot defend h7 easily (...Nf6, ...Bf5, ...Nf8).\n\nThen calculate the king's replies: ...Kg8, ...Kg6, ...Kh6, and declining with ...Kh8."
+    },
+    {
+      "type": "board",
+      "fen": "r1bq1rk1/pppnbppp/2n1p3/3pP3/3P3P/3B1N2/PPP2PP1/RNBQK2R w KQ - 0 1",
+      "md": "All boxes ticked: bishop on d3, e5 has chased the knight to d7, Nf3 ready for g5, queen ready for h5, and the **h4-pawn** backs up g5: if ...Bxg5, hxg5 opens the h-file for the rook on h1.",
+      "arrows": [
+        [
+          "d3",
+          "h7",
+          "green"
+        ],
+        [
+          "f3",
+          "g5",
+          "green"
+        ],
+        [
+          "d1",
+          "h5",
+          "blue"
+        ],
+        [
+          "h4",
+          "g5",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "r1bq1rk1/pppnbppp/2n1p3/3pP3/3P3P/3B1N2/PPP2PP1/RNBQK2R w KQ - 0 1",
+      "prompt": "White to move. Start the attack.",
+      "solution": [
+        "Bxh7+"
+      ],
+      "explain": "**1.Bxh7+!** Engine check: White is winning. After 1...Kxh7 2.Ng5+ Bxg5 3.hxg5+ the h-file opens with check, and after 1...Kh8 the bishop retreats with a decisive attack (Ng5 and Qh5 coming). The h4-pawn is what makes the knight on g5 unanswerable."
+    },
+    {
+      "type": "quiz",
+      "question": "Same position, but the white pawn is on **h2**, not h4. Is 1.Bxh7+ sound?",
+      "choices": [
+        "Yes, the same attack works",
+        "Not sound: after 1...Kxh7 2.Ng5+ Bxg5 the defender of g5 has been removed and there is no h-file to open",
+        "Only if Black replies 1...Kh8"
+      ],
+      "answer": 1,
+      "explain": "Without the h4-pawn, 2.Ng5+ is met by 2...Bxg5 (3.Bxg5 Qxg5): White has given a bishop for a pawn and the attack is over. Precondition 3 fails. Engine check: here 1.Bxh7+ loses material; a normal move like 1.h4 or 1.O-O is about equal.",
+      "fen": "r1bq1rk1/pppnbppp/2n1p3/3pP3/3P4/3B1N2/PPP2PPP/RNBQK2R w KQ - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "r2q1rk1/pp3ppp/1np1pb2/8/3P1B2/2PBRQ2/PP3PPP/R5K1 w - - 6 14",
+      "prompt": "White to move. A Greek gift with a different follow-up: there is no knight, but look at your e3-rook.",
+      "solution": [
+        "Bxh7+",
+        "Kxh7",
+        "Qh5+",
+        "Kg8",
+        "Rh3"
+      ],
+      "explain": "**14.Bxh7+! Kxh7 15.Qh5+ Kg8 16.Rh3!** The **rook lift** replaces the knight: Qh8 mate is threatened and Black has no good defence. Ask \"which piece joins the queen on the h-file?\" (Ng5, Rh3, or Bg5-f6 ideas)."
+    },
+    {
+      "type": "move",
+      "fen": "r2q1rk1/pbppnppp/8/2b1p3/8/2PB3N/2PP1PPP/R1BQK2R w KQ - 1 10",
+      "prompt": "White to move. Black has just castled. Your knight is on h3, not f3. Does the sacrifice still work?",
+      "solution": [
+        "Bxh7+",
+        "Kxh7",
+        "Qh5+",
+        "Kg8",
+        "Ng5"
+      ],
+      "explain": "**10.Bxh7+! Kxh7 11.Qh5+ Kg8 12.Ng5** and mate on h7 is threatened; Black must give up a lot of material. The knight reached g5 from h3 just as well, and nothing can take it there."
+    },
+    {
+      "type": "quiz",
+      "question": "After Bxh7+ Kxh7 Ng5+, the king steps forward with ...Kg6. What is the usual idea?",
+      "choices": [
+        "Retreat the knight",
+        "Bring the queen with check or a strong threat (Qd3+, Qg4, h4-h5+), because the king on g6 is exposed",
+        "Exchange queens"
+      ],
+      "answer": 1,
+      "explain": "The ...Kg6 defence is the most demanding to refute: the king walks forward and White must keep checking or threatening (Qd3+ with f4-f5, Qg4 with h4-h5+, or Qc2+). Calculate it before you sacrifice; this line is stage-5 depth."
+    },
+    {
+      "type": "move",
+      "fen": "r2q1rk1/pbp1b1pp/1p2p3/3pP1N1/7P/2PB4/PP3nP1/R1BQK2R w KQ - 0 15",
+      "prompt": "White to move. Black has just taken f2 with a knight, forking your queen and rook. Ignore it.",
+      "solution": [
+        "Bxh7+",
+        "Kh8",
+        "Qh5"
+      ],
+      "explain": "**15.Bxh7+! Kh8** (15...Kxh7 16.Qh5+ Kg8 17.Qh7#) **16.Qh5!** threatens Bg6+ and Qh7 mate. The knight fork on f2 does not matter: the attack is far faster than the material. Sometimes the king declines the gift, and the bishop stays on h7 as a battering ram."
+    },
+    {
+      "type": "move",
+      "fen": "r1bq1rk1/ppp3p1/5n1p/4b3/8/2PBB3/PP3PPP/RN1Q1RK1 b - - 1 12",
+      "prompt": "Black to move. Independent exercise, colours reversed: the \"Greek gift\" on h2.",
+      "solution": [
+        "Bxh2+",
+        "Kxh2",
+        "Ng4+",
+        "Kg1",
+        "Qh4"
+      ],
+      "explain": "**12...Bxh2+! 13.Kxh2 Ng4+ 14.Kg1 Qh4** threatens ...Qh2 mate (the g4-knight supports h2). The same pattern works for Black against the h2-pawn: bishop on the b8-h2 diagonal, knight to g4, queen to h4."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Recite the five preconditions. Then: what made the difference between the two diagrams with the pawn on h4 and on h2? (The h4-pawn guards g5 and opens the h-file after ...Bxg5 hxg5.) Typical error: sacrificing because \"it looks like the textbook\" without checking ...Bxg5 and ...Kg6."
+    }
+  ],
+  "practiceThemes": [
+    "sacrifice",
+    "kingsideAttack"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#greek-gift-sacrifice",
+    "knowledge-base/03-chess-knowledge/strategy.md#attacking-the-king",
+    "Vukovic, The Art of Attack in Chess (1965), chapter on the bishop sacrifice on h7",
+    "Silman, How to Reassess Your Chess, 4th ed. (2010)",
+    "Lichess puzzle database (CC0), puzzles 0gjXA, 020eU, 0Dtvi, 05IZx"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "adult.s1.check",
+  "track": "adult",
+  "stage": 1,
+  "order": 13,
+  "skillIds": [
+    "rules.check"
+  ],
+  "title": "Check and how to escape it",
+  "summary": "A king under attack must escape at once: move it, capture the attacker, or block.",
+  "estMinutes": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A king that is attacked is **in check**. You must get out of check immediately, in one of three ways:\n\n1. **Move** the king to a safe square.\n2. **Capture** the checking piece.\n3. **Block**: put a piece between the king and the checker.\n\nYou can never make a move that leaves your own king in check. Knight checks and pawn checks cannot be blocked."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/8/8/4r3/4K3 w - - 0 1",
+      "md": "The black rook on e2 gives check along the e-file. White must deal with it now.",
+      "arrows": [
+        [
+          "e2",
+          "e1",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/8/8/4r3/4K3 w - - 0 1",
+      "prompt": "Escape the check by capturing the checking piece.",
+      "solution": [
+        "Kxe2"
+      ],
+      "explain": "The rook is undefended, so the king can take it. Kd1 or Kf1 would also escape, but capturing wins a rook."
+    },
+    {
+      "type": "move",
+      "fen": "k3r3/8/8/8/8/8/8/4KB2 w - - 0 1",
+      "prompt": "Escape the check by blocking.",
+      "solution": [
+        "Be2"
+      ],
+      "explain": "The bishop steps between the rook and the king. The king defends it on e2, so the block costs nothing."
+    },
+    {
+      "type": "quiz",
+      "question": "A knight gives check. Which escape is impossible?",
+      "choices": [
+        "Blocking",
+        "Moving the king",
+        "Capturing the knight"
+      ],
+      "answer": 0,
+      "explain": "Knights jump, so there is no line to block. Against a knight check you must move the king or capture the knight."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/8/8/8/8/3N4/5PPP/4r1K1 w - - 0 1",
+      "prompt": "You are in check on your back rank. Find the only legal move.",
+      "solution": [
+        "Nxe1"
+      ],
+      "explain": "The king cannot move (f1 is attacked by the rook, f2/g2/h2 are your own pawns) and nothing can block on f1. Capturing the rook with the knight is the only move."
+    },
+    {
+      "type": "quiz",
+      "question": "Black is in check from the bishop. How many legal moves does Black have?",
+      "choices": [
+        "4 (Kd8, Kf8, Ke7, Kf7)",
+        "5",
+        "2",
+        "0"
+      ],
+      "answer": 0,
+      "explain": "The bishop on b5 checks along b5-c6-d7-e8, so d7 is still covered. The other four king moves are safe. Black has no piece to block or capture with.",
+      "fen": "4k3/8/8/1B6/8/8/8/4K3 b - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Your opponent gives check, but you could capture their queen. Can you take the queen instead of answering the check?",
+      "choices": [
+        "No, you must get out of check first",
+        "Yes, if the queen is worth more",
+        "Yes, in casual games"
+      ],
+      "answer": 0,
+      "explain": "A move that leaves your king in check is illegal, whatever it captures."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: name the three ways out of check.",
+      "choices": [
+        "Move the king, capture the checker, block the line",
+        "Move the king, castle, resign",
+        "Capture, promote, block"
+      ],
+      "answer": 0,
+      "explain": "Move, capture, block. Check all three every time you are in check."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#king-moves-and-check",
+    "knowledge-base/02-methods/steps-method.md#3-didactic-principles"
+  ]
+}

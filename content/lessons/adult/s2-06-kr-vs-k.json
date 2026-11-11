@@ -1,0 +1,117 @@
+{
+  "id": "adult.s2.kr-vs-k",
+  "track": "adult",
+  "stage": 2,
+  "order": 6,
+  "skillIds": [
+    "endgame.mate.kr"
+  ],
+  "title": "King and rook vs king",
+  "summary": "The box method: cut the king off, shrink the box, mate on the edge.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A rook cannot mate alone, but rook + king can, in at most about 16 moves:\n\n1. **Cut off** the king with the rook (a \"box\").\n2. **Shrink** the box with the rook whenever your king guards the rook.\n3. Use your **king** to approach; play a waiting rook move when needed.\n4. **Mate** on the edge: the kings face each other (opposition) and the rook checks along the edge."
+    },
+    {
+      "type": "board",
+      "fen": "8/8/8/2k5/8/3R4/8/3K4 w - - 0 1",
+      "md": "The rook on d3 boxes the black king into the area a4-c8. Next: bring the king up to protect the rook, then shrink the box.",
+      "arrows": [
+        [
+          "d3",
+          "d8",
+          "blue"
+        ],
+        [
+          "d3",
+          "a3",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "board",
+      "fen": "R2k4/8/3K4/8/8/8/8/8 b - - 0 1",
+      "md": "The final picture: kings in opposition (d6 and d8), the rook mates along the back rank."
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
+      "prompt": "Mate in one.",
+      "solution": [
+        "Ra8#"
+      ],
+      "explain": "The king on g6 takes g7 and h7; the rook covers the 8th rank."
+    },
+    {
+      "type": "move",
+      "fen": "k7/8/1K6/8/8/8/8/2R5 w - - 0 1",
+      "prompt": "Mate in one. (Rb1?? would be stalemate.)",
+      "solution": [
+        "Rc8#"
+      ],
+      "explain": "Rc8# checks on the back rank. Rb1 would take b8 without check: stalemate."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. What is the result?",
+      "choices": [
+        "Stalemate",
+        "Checkmate",
+        "Black plays on"
+      ],
+      "answer": 0,
+      "explain": "a7 and b7 are covered by the king, b8 by the rook, and there is no check. Watch for this with rook and king near a cornered king.",
+      "fen": "k7/8/1K6/8/8/8/8/1R6 b - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Your rook is attacked by the enemy king and your king cannot defend it. What should you do?",
+      "choices": [
+        "Move the rook to the far side of the board, keeping the box",
+        "Defend it by giving check",
+        "Trade it"
+      ],
+      "answer": 0,
+      "explain": "A rook far from the enemy king is safe and still cuts off the same rank or file."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/4k3/8/8/8/R3K3 w - - 0 1",
+      "goal": "mate",
+      "prompt": "Mate with king and rook. Use the box method.",
+      "maxMoves": 25,
+      "explain": "Target: under 16 moves. Box, bring the king, shrink, mate."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/8/2k5/8/6K1/7R w - - 0 1",
+      "goal": "mate",
+      "prompt": "Again, from a new position.",
+      "maxMoves": 20,
+      "explain": "Keep the rook out of reach of the enemy king and avoid stalemate on the edge."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: in the final mate, how do the kings stand?",
+      "choices": [
+        "Facing each other with one square between (opposition)",
+        "Side by side",
+        "Far apart"
+      ],
+      "answer": 0,
+      "explain": "With the kings in opposition the rook can check along the edge and every flight square is covered."
+    }
+  ],
+  "practiceThemes": [
+    "rookEndgame",
+    "endgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#kr-vs-k",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#king-and-rook-vs-king-box-mate",
+    "knowledge-base/03-chess-knowledge/endgames.md#stalemate-awareness"
+  ]
+}

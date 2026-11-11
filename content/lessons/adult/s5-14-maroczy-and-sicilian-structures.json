@@ -1,0 +1,124 @@
+{
+  "id": "adult.s5.maroczy-and-sicilian-structures",
+  "track": "adult",
+  "stage": 5,
+  "order": 14,
+  "skillIds": [
+    "strategy.maroczy",
+    "strategy.sicilian-structures"
+  ],
+  "title": "Maroczy bind and Sicilian structures",
+  "summary": "Play with and against the c4-e4 bind, the Najdorf ...e5 structure and the d5-hole, the Sveshnikov and Dragon plans.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Maroczy bind\n\nWhite pawns on **c4 and e4** (against ...d6 and ...g6 in the Accelerated Dragon or Hedgehog-type set-ups) clamp d5 and b5. White's plan: keep the bind, play on the queenside (b4, c5) or with f4-f5; avoid exchanges that relieve Black. Black's plan: **exchange pieces** (especially knights, ...Nxd4), put the queen on a5, rooks on c8/fc8, and prepare the breaks **...b5** or **...f5** (sometimes ...d5 sacrifices).\n\n## Sicilian structures\n\n- **Najdorf ...e5** (Be2 or Nb3 lines): Black gets d6 backward and a hole on **d5**, in return for central control and active pieces. White aims for Nd5 / Bxf6 to occupy d5; Black aims to cover d5 (...Be6, ...Nbd7-b6) or to break with ...d5 himself.\n- **Sveshnikov**: ...e5 and ...b5 with doubled f-pawns after Bxf6 gxf6; Black has the bishop pair and ...f5 breaks; White has the d5 knight.\n- **Dragon**: opposite-side castling; Black's long diagonal and ...Rc8xc3 exchange sacrifices against White's h4-h5 attack.\n- **Scheveningen**: small centre e6-d6; Black waits for the right moment to break with ...d5 or ...e5."
+    },
+    {
+      "type": "board",
+      "fen": "r2q1rk1/pp1bppbp/2np1np1/8/2PNP3/2N1B3/PP2BPPP/R2Q1RK1 w - - 2 10",
+      "md": "**Maroczy bind** (Accelerated Dragon: 5.c4 Bg7 6.Be3 Nf6 7.Nc3 O-O 8.Be2 d6 9.O-O Bd7). Black's typical continuation is ...Nxd4 and ...Bc6, ...a5 (to gain b4/fix the queenside) and ...Nd7-c5. The breaks ...b5 and ...f5 must be prepared carefully.",
+      "orientation": "black",
+      "highlights": [
+        "d5",
+        "b5"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Playing Black against the Maroczy bind, which exchange is usually welcome?",
+      "choices": [
+        "Exchanging the dark-squared bishops on g7",
+        "Exchanging knights (...Nxd4) to reduce White's control of d5 and free the position",
+        "Exchanging Black's light-squared bishop for a knight",
+        "No exchanges at all"
+      ],
+      "answer": 1,
+      "explain": "With less space, exchanges help the cramped side. ...Nxd4 followed by ...Bc6 or ...Be6 is typical; keep the g7 bishop, which is Black's best piece.",
+      "fen": "r2q1rk1/pp1bppbp/2np1np1/8/2PNP3/2N1B3/PP2BPPP/R2Q1RK1 w - - 2 10"
+    },
+    {
+      "type": "board",
+      "fen": "rnbq1rk1/1p2bppp/p2p1n2/4p3/4P3/1NN5/PPP1BPPP/R1BQ1RK1 w - - 4 9",
+      "md": "**Najdorf with ...e5** (6.Be2 e5 7.Nb3 Be7 8.O-O O-O). The d5-square is the key: White wants a knight there (Nd5 after Bg5xf6 or via c3), Black wants to control it with ...Be6, ...Nbd7-b6 and pieces, or to play ...d5 himself, after which the backward d6 problem disappears.",
+      "orientation": "black",
+      "highlights": [
+        "d5"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the Najdorf ...e5 structure, Black has a backward d6-pawn. Why is the structure still sound?",
+      "choices": [
+        "Because d6 can always advance immediately",
+        "Because Black controls d4/f4, gets active piece play, and if White cannot occupy d5 permanently, the ...d5 break equalises",
+        "Because White cannot castle",
+        "Because the d-file is closed"
+      ],
+      "answer": 1,
+      "explain": "Structures with \"weaknesses\" are sound when the weakness cannot be exploited. The fight is about the d5-square.",
+      "fen": "rnbq1rk1/1p2bppp/p2p1n2/4p3/4P3/1NN5/PPP1BPPP/R1BQ1RK1 w - - 4 9"
+    },
+    {
+      "type": "board",
+      "fen": "r1bqkb1r/5p1p/p1np4/1p1Npp2/4P3/N7/PPP2PPP/R2QKB1R w KQkq - 0 11",
+      "md": "**Sveshnikov** (…9.Bxf6 gxf6 10.Nd5 f5). Black accepts doubled f-pawns and a hole on d5 for the bishop pair, central pawns and the ...f5 break. White's pieces: Nd5, c3 and Nc2-e3, often Bd3 and Qh5; Black plays ...Bg7, ...Be6 and ...f4 or ...fxe4.",
+      "orientation": "black"
+    },
+    {
+      "type": "board",
+      "fen": "r2q1rk1/pp1bppbp/2np1np1/8/2BNP3/2N1BP2/PPPQ2PP/2KR3R b - - 6 10",
+      "md": "**Dragon, Yugoslav Attack** (…9.Bc4 Bd7 10.O-O-O). White's plan: Bh6 to trade the Dragon bishop, h4-h5 to open the h-file. Black's plan: ...Rc8, ...Ne5-c4, ...Qa5, and the exchange sacrifice ...Rxc3 to shatter White's king position.",
+      "orientation": "black",
+      "arrows": [
+        [
+          "h2",
+          "h4",
+          "red"
+        ],
+        [
+          "c8",
+          "c3",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the Dragon (Yugoslav Attack), why is the exchange sacrifice ...Rxc3 so common?",
+      "choices": [
+        "It wins the exchange back by force",
+        "It destroys the pawn cover of White's king on c1/b1 (after bxc3) and removes a key defender of e4/d5, giving Black long-term attacking chances and central control",
+        "It forces a draw",
+        "It is a mistake beginners make"
+      ],
+      "answer": 1,
+      "explain": "The rook on c8 is often less valuable than the knight on c3 in this structure: after bxc3 White's king is exposed and the long diagonal opens.",
+      "fen": "r2q1rk1/pp1bppbp/2np1np1/8/2BNP3/2N1BP2/PPPQ2PP/2KR3R b - - 6 10"
+    },
+    {
+      "type": "play",
+      "fen": "r2q1rk1/pp1bppbp/2np1np1/8/2PNP3/2N1B3/PP2BPPP/R2Q1RK1 w - - 2 10",
+      "goal": "hold",
+      "prompt": "Play the Maroczy position as Black against the engine (level 12) for 25 moves. Exchange pieces wisely and prepare ...b5 or ...f5 without weakening yourself.",
+      "maxMoves": 25,
+      "engineLevel": 12
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: one Najdorf ...e5 game and one Dragon or Sveshnikov game (Kasparov, Fischer and Anand games in the corpus).\n- **Openings** trainer: write the move-order tree for your Sicilian to move 15 and label each structure."
+    }
+  ],
+  "practiceThemes": [
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "knowledge-base/03-chess-knowledge/openings.md",
+    "Dvoretsky & Yusupov, Positional Play",
+    "Soltis, Pawn Structure Chess",
+    "Flores Rios, Chess Structures: A Grandmaster Guide",
+    "Kasparov, Revolution in the 70s (Sicilian structures)"
+  ]
+}

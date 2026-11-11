@@ -1,0 +1,101 @@
+{
+  "id": "adult.s1.capture",
+  "track": "adult",
+  "stage": 1,
+  "order": 9,
+  "skillIds": [
+    "rules.capture"
+  ],
+  "title": "Capturing",
+  "summary": "Move onto an enemy piece to remove it; you can never capture your own pieces.",
+  "estMinutes": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "To **capture**, move a piece onto a square occupied by an enemy piece. The enemy piece is removed and yours takes its place. Every piece captures the way it moves, except the pawn, which captures diagonally. You may never capture your own pieces, and capturing is never compulsory."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/3n4/8/8/8/3RK3 w - - 0 1",
+      "prompt": "Capture the knight with your rook.",
+      "solution": [
+        "Rxd5"
+      ],
+      "explain": "Straight up the d-file. \"x\" in a move means a capture: Rxd5."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/2r5/8/4B3/4K3 w - - 0 1",
+      "prompt": "Capture the rook with your bishop.",
+      "solution": [
+        "Bxc4"
+      ],
+      "explain": "Along the diagonal e2-d3-c4."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/3q4/8/4N3/8/4K3 w - - 0 1",
+      "prompt": "Capture the queen with your knight.",
+      "solution": [
+        "Nxd5"
+      ],
+      "explain": "The knight jumps from e3 to d5 and takes the queen. Knights attack in their L-pattern, which is easy to miss."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/8/8/3n4/4K3 w - - 0 1",
+      "prompt": "Capture the knight with your king.",
+      "solution": [
+        "Kxd2"
+      ],
+      "explain": "The king captures like it moves, one square. It may only capture an undefended piece, because it can never move onto an attacked square."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/8/2b5/3P4/4K3 w - - 0 1",
+      "prompt": "Capture the bishop with your pawn.",
+      "solution": [
+        "dxc3"
+      ],
+      "explain": "Pawns capture diagonally forward: d2 takes on c3."
+    },
+    {
+      "type": "quiz",
+      "question": "Can the white rook capture the white pawn on d5?",
+      "choices": [
+        "No, you cannot capture your own pieces",
+        "Yes",
+        "Only if the king is in danger"
+      ],
+      "answer": 0,
+      "explain": "Your own pieces simply block your other pieces.",
+      "fen": "4k3/8/8/3P4/8/8/8/3RK3 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: does the pawn capture the same way it moves?",
+      "choices": [
+        "No: it moves straight, captures diagonally",
+        "Yes",
+        "Only on its first move"
+      ],
+      "answer": 0,
+      "explain": "The pawn is the single exception; all other pieces capture along their normal lines."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: are you forced to capture when you can?",
+      "choices": [
+        "No, capturing is optional",
+        "Yes, always",
+        "Only with pawns"
+      ],
+      "answer": 0,
+      "explain": "Unlike draughts, capturing in chess is a choice. Many games are lost by capturing automatically."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#piece-movement",
+    "knowledge-base/02-methods/steps-method.md#3-didactic-principles"
+  ]
+}

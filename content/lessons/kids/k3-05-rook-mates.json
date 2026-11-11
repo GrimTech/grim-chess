@@ -1,0 +1,75 @@
+{
+  "id": "kids.3.rook-mates",
+  "track": "kids",
+  "stage": 1,
+  "order": 305,
+  "skillIds": [
+    "checkmate.mate-in-1"
+  ],
+  "title": "Rook checkmates",
+  "summary": "Checkmate in one with rooks on the edge.",
+  "estMinutes": 7,
+  "minAge": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Rooks love the **edge** of the board. Push the king to the side, then checkmate!"
+    },
+    {
+      "type": "move",
+      "fen": "7k/1R6/8/8/8/8/8/R5K1 w - - 0 1",
+      "prompt": "Checkmate in one!",
+      "solution": [
+        "Ra8#"
+      ],
+      "explain": "Two rooks, one checkmate!",
+      "hint": "One rook guards the 7th row already."
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
+      "prompt": "Checkmate in one!",
+      "solution": [
+        "Ra8#"
+      ],
+      "explain": "The king and rook work together!",
+      "hint": "Your king guards the squares in front of the black king."
+    },
+    {
+      "type": "move",
+      "fen": "1k6/ppp5/8/8/8/8/8/3R2K1 w - - 0 1",
+      "prompt": "Checkmate in one!",
+      "solution": [
+        "Rd8#"
+      ],
+      "explain": "The black pawns trapped their own king.",
+      "hint": "Back row!"
+    },
+    {
+      "type": "move",
+      "fen": "1k6/8/1K6/8/8/8/7R/8 w - - 0 1",
+      "prompt": "Checkmate in one!",
+      "solution": [
+        "Rh8#"
+      ],
+      "explain": "Kings face to face, then the rook strikes!",
+      "hint": "Use the top row."
+    },
+    {
+      "type": "quiz",
+      "question": "Where do rooks like to checkmate?",
+      "choices": [
+        "On the edge",
+        "In the middle"
+      ],
+      "answer": 0,
+      "explain": "A king on the edge has fewer escape squares."
+    }
+  ],
+  "practiceThemes": [
+    "mateIn1"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

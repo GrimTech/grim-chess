@@ -1,0 +1,64 @@
+{
+  "id": "kids.8.discovered-check",
+  "track": "kids",
+  "stage": 3,
+  "order": 802,
+  "skillIds": [
+    "tactics.discovered-check",
+    "tactics.double-check"
+  ],
+  "title": "Double trouble",
+  "summary": "Discovered check and double check.",
+  "estMinutes": 7,
+  "minAge": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **discovered check**: move a piece and uncover check from the piece behind. The moving piece can grab anything!"
+    },
+    {
+      "type": "move",
+      "fen": "q3k3/8/8/8/4B3/8/8/4R1K1 w - - 0 1",
+      "prompt": "Discovered check! Grab the queen.",
+      "solution": [
+        "Bxa8+"
+      ],
+      "explain": "Check from the rook, and you took the queen!",
+      "hint": "The bishop moves, the rook checks."
+    },
+    {
+      "type": "text",
+      "md": "**Double check**: both pieces give check at once. The king **must** move!"
+    },
+    {
+      "type": "move",
+      "fen": "3qkb2/3p1p2/8/8/4N3/8/8/4R1K1 w - - 0 1",
+      "prompt": "Double check and checkmate!",
+      "solution": [
+        "Nf6#"
+      ],
+      "explain": "Double check! The king had nowhere to go.",
+      "hint": "The knight checks AND uncovers the rook.",
+      "alternatives": [
+        "Nd6#"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In double check, what must happen?",
+      "choices": [
+        "The king moves",
+        "Block one check"
+      ],
+      "answer": 0,
+      "explain": "You cannot block two checks at once."
+    }
+  ],
+  "practiceThemes": [
+    "discoveredCheck",
+    "doubleCheck"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

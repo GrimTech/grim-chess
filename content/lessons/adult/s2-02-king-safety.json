@@ -1,0 +1,109 @@
+{
+  "id": "adult.s2.king-safety",
+  "track": "adult",
+  "stage": 2,
+  "order": 2,
+  "skillIds": [
+    "opening.principles.king-safety"
+  ],
+  "title": "Opening principle 3: castle early",
+  "summary": "Get your king out of the centre within about ten moves and connect your rooks.",
+  "estMinutes": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The centre files open up quickly once pawns are exchanged, and an uncastled king on e1/e8 becomes a target. Aim to **castle within about the first ten moves**. Castling also **connects your rooks**: once the back rank between them is empty, they protect each other and can move to central files."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "prompt": "Your kingside pieces are developed. Castle.",
+      "solution": [
+        "O-O"
+      ],
+      "explain": "Knight and bishop are out, so castling is possible. Now your king is tucked away and the h1-rook comes toward the centre."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 b kq - 2 5",
+      "prompt": "You are Black. Make your king safe.",
+      "solution": [
+        "O-O"
+      ],
+      "explain": "Black castles too. Both kings are safe and the game is balanced."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkb1r/pppp1ppp/8/4N3/4n3/8/PPPP1PPP/RNBQKB1R w KQkq - 0 4",
+      "prompt": "Black copied your capture, but Black's king is still on e8 and the e-file is open. Exploit it.",
+      "solution": [
+        "Qe2"
+      ],
+      "explain": "Qe2! attacks the e4-knight along the open e-file. If 4...Nf6?? 5.Nc6+ uncovers check on the king and wins the queen. Black must play 4...Qe7, and after 5.Qxe4 White is a pawn up."
+    },
+    {
+      "type": "quiz",
+      "question": "Why castle early?",
+      "choices": [
+        "The king is safer behind pawns, and the rook joins the game",
+        "It wins material",
+        "It is required by move 10"
+      ],
+      "answer": 0,
+      "explain": "Two benefits for one move: safety and rook development."
+    },
+    {
+      "type": "quiz",
+      "question": "What does \"connecting the rooks\" mean?",
+      "choices": [
+        "No pieces left between your rooks on the back rank",
+        "Putting both rooks on the same file",
+        "Trading rooks"
+      ],
+      "answer": 0,
+      "explain": "Develop the minor pieces and queen off the back rank, castle, and your rooks defend each other."
+    },
+    {
+      "type": "quiz",
+      "question": "After castling kingside, which pawn moves weaken your king most?",
+      "choices": [
+        "Advancing the g- and h-pawns without reason",
+        "Moving the a-pawn",
+        "Moving the c-pawn"
+      ],
+      "answer": 0,
+      "explain": "The f-, g- and h-pawns are the king's shield. Every advance creates holes."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: roughly by which move should you aim to castle?",
+      "choices": [
+        "Around move 10",
+        "Move 3 at the latest",
+        "Move 25",
+        "Never in the opening"
+      ],
+      "answer": 0,
+      "explain": "Develop minor pieces first, then castle, usually within the first 10 moves."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the danger of an uncastled king when the e-file opens?",
+      "choices": [
+        "Checks and pins along the file",
+        "It cannot be checkmated",
+        "Nothing"
+      ],
+      "answer": 0,
+      "explain": "The Qe2 example: a pin on the open e-file won material."
+    }
+  ],
+  "practiceThemes": [
+    "opening",
+    "castling"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#opening-principles",
+    "knowledge-base/03-chess-knowledge/strategy.md#king-safety"
+  ]
+}

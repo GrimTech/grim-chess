@@ -1,0 +1,121 @@
+{
+  "id": "adult.s4.reti-and-vukovic-mates",
+  "track": "adult",
+  "stage": 4,
+  "order": 13,
+  "skillIds": [
+    "checkmate.reti",
+    "checkmate.vukovic"
+  ],
+  "title": "Réti's mate and the Vukovic mate",
+  "summary": "A double check that ends with bishop and rook, and the rook mate covered by a knight.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Réti's mate** (Réti vs Tartakower, Vienna 1910): a queen sacrifice drags the king into the centre, a **double check** by bishop and rook leaves it no time, and a bishop or rook mates a king hemmed in by its own pieces.\n\n**Vukovic mate**: a rook mates the king on the edge (or on a rank/file) while a **knight covers the flight squares** and the rook is protected by a third piece (king, pawn or the knight itself)."
+    },
+    {
+      "type": "board",
+      "fen": "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w kq - 0 9",
+      "md": "Réti vs Tartakower after 1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Qd3 e5?! 6.dxe5 Qa5+ 7.Bd2 Qxe5 8.O-O-O Nxe4?. Black's king is still on e8, the d-file is open, and White's rook on d1 and bishop on d2 are lined up. Look at d8.",
+      "arrows": [
+        [
+          "d3",
+          "d8",
+          "green"
+        ],
+        [
+          "d2",
+          "g5",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w kq - 0 9",
+      "prompt": "White to move. Play Réti's combination: sacrifice the queen, then double check.",
+      "solution": [
+        "Qd8+",
+        "Kxd8",
+        "Bg5+",
+        "Kc7",
+        "Bd8#"
+      ],
+      "hint": "Which square is the king lured to so that bishop and rook can check it at the same time?",
+      "explain": "**9.Qd8+!! Kxd8 10.Bg5+** is a *double check* (bishop on the h4-d8 diagonal and rook on the d-file); only a king move helps. 10...Ke8 11.Rd8# and **10...Kc7 11.Bd8#** both mate. On c7 the king is boxed in by its own b8-knight, c8-bishop and b7/c6-pawns; the d8-bishop covers b6, and the d1-rook protects the bishop and covers d6 and d7."
+    },
+    {
+      "type": "quiz",
+      "question": "Why is a double check so powerful?",
+      "choices": [
+        "It wins material automatically",
+        "The defender cannot block or capture both checking pieces, so the king must move",
+        "It is always mate"
+      ],
+      "answer": 1,
+      "explain": "Against a double check only a **king move** is legal. Blocking one line leaves the other check; capturing one piece leaves the other. In Réti's mate the king's two squares were both mates."
+    },
+    {
+      "type": "move",
+      "fen": "2r5/8/p3N2p/1p5k/8/PP1P2RP/1K1P4/7r w - - 7 44",
+      "prompt": "White to move. The black king is on the h-file edge. Knight check, then rook mate.",
+      "solution": [
+        "Nf4+",
+        "Kh4",
+        "Rg4#"
+      ],
+      "explain": "**44.Nf4+ Kh4 45.Rg4#.** The h3-pawn protects the rook, the rook covers g3 and g5, and the f4-knight covers h3 and h5: a Vukovic mate."
+    },
+    {
+      "type": "move",
+      "fen": "r6k/p1p1NR2/2ppb2P/4p3/4p2P/P2Pb3/1PP5/3K4 w - - 5 31",
+      "prompt": "White to move. Mate in two: knight check, then the rook on the seventh.",
+      "solution": [
+        "Ng6+",
+        "Kg8",
+        "Rg7#"
+      ],
+      "explain": "**31.Ng6+ Kg8 32.Rg7#.** The rook is protected by the h6-pawn; the knight on g6 covers f8 and h8. Classic Vukovic geometry: rook adjacent to the king, knight covering the escape squares."
+    },
+    {
+      "type": "move",
+      "fen": "r4rk1/pR6/3p2p1/6Np/2n1P1Nq/8/P5PP/6RK w - - 0 28",
+      "prompt": "White to move. Your rook is on the seventh rank and your knights are close to the king.",
+      "solution": [
+        "Nh6+",
+        "Kh8",
+        "Rh7#"
+      ],
+      "explain": "**28.Nh6+ Kh8 29.Rh7#.** The g5-knight protects the rook on h7; the h6-knight covers g8 and f7. Note how the rook on the seventh rank and two knights work together."
+    },
+    {
+      "type": "move",
+      "fen": "5k2/pp3p2/5Np1/3N2Pn/P1P2P1P/1P5b/5r2/3R3K b - - 2 33",
+      "prompt": "Black to move. Independent exercise, with colours reversed.",
+      "solution": [
+        "Ng3+",
+        "Kg1",
+        "Rg2#"
+      ],
+      "explain": "**33...Ng3+ 34.Kg1 Rg2#.** The rook is protected by the h3-bishop, and the g3-knight covers f1 and h1. Same pattern, other colour."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Picture the final position of Réti's mate with the king on c7, then name what covers each square around it. Answer: b8, c8, b7 and c6 are Black's own pieces; b6 is covered by the d8-bishop; d6 and d7 by the d1-rook, which also protects the bishop. For the Vukovic mate: rook next to the king and protected; knight covering the flight squares the rook does not."
+    }
+  ],
+  "practiceThemes": [
+    "vukovicMate",
+    "doubleCheck"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#rétis-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#vukovic-mate",
+    "knowledge-base/03-chess-knowledge/tactics.md#double-check",
+    "Réti vs Tartakower, Vienna 1910",
+    "Vukovic, The Art of Attack in Chess (1965)",
+    "Lichess puzzle database (CC0), puzzles 6yRRo, 7pnni, 1c58j, 9RcX6"
+  ]
+}

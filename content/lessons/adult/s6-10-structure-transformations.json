@@ -1,0 +1,83 @@
+{
+  "id": "adult.s6.structure-transformations",
+  "track": "adult",
+  "stage": 6,
+  "order": 10,
+  "skillIds": [
+    "strategy.structure-transformations"
+  ],
+  "title": "Pawn-structure transformations",
+  "summary": "IQP to hanging pawns to isolated pawn couple: anticipate how exchanges transform the structure and choose the transformation that suits you.",
+  "estMinutes": 25,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Structures change\n\nMany middlegames contain a **transformation**: one exchange changes the pawn structure and with it the plans.\n- **IQP (d4 isolated) → isolated pawn couple (c3-d4)** after ...Nxc3 bxc3: the d4-pawn gets support, the c3-pawn becomes a target on the half-open c-file, and c3-c4 can turn them into **hanging pawns**.\n- **IQP → hanging pawns** (c4-d4) when a knight exchange on c4/c3 brings a pawn alongside.\n- **Hanging pawns → IQP or passed pawn** after one of them advances (d4-d5 or c4-c5).\n- **Carlsbad → IQP** after the minority attack b5xc6 and ...bxc6/...cxb5.\n\nAsk before every exchange: *which pawn recaptures, and what structure results?*"
+    },
+    {
+      "type": "board",
+      "fen": "r1bq1rk1/pp2bppp/2n1p3/3n4/3P4/2NB1N2/PP3PPP/R1BQR1K1 b - - 5 10",
+      "md": "**IQP position** (Caro-Kann, Panov Attack). White's d4-pawn is isolated; White plays for the initiative (Bc2-Qd3 battery, Ne5, Rook lift Re3), Black for exchanges and a blockade on d5.",
+      "highlights": [
+        "d4",
+        "d5"
+      ]
+    },
+    {
+      "type": "board",
+      "fen": "r1bq1rk1/pp2bppp/2n1p3/8/3P4/2PB1N2/P4PPP/R1BQR1K1 b - - 0 11",
+      "md": "**After 10...Nxc3 11.bxc3**: the IQP has become the **isolated pawn couple** c3-d4. White can now play c3-c4 (hanging pawns) and the d4-pawn is better protected, but the c3-pawn is a new target on the half-open c-file.",
+      "highlights": [
+        "c3",
+        "d4"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Black is fighting against an IQP on d4 and can exchange knights on c3 (…Nxc3 bxc3). What is the main drawback for Black?",
+      "choices": [
+        "It loses a pawn",
+        "It strengthens d4 (now protected by c3) and gives White the c3-c4 option to create hanging pawns, while removing Black's blockading knight from d5",
+        "It allows mate",
+        "There is no drawback"
+      ],
+      "answer": 1,
+      "explain": "Exchanges on d5/c3 change the structure. Many players prefer to keep the knight on d5 as a blockader against an IQP.",
+      "fen": "r1bq1rk1/pp2bppp/2n1p3/8/3P4/2PB1N2/P4PPP/R1BQR1K1 b - - 0 11"
+    },
+    {
+      "type": "quiz",
+      "question": "You have hanging pawns c4-d4 and the opponent attacks them with pieces. Which transformation often helps the side with the pawns?",
+      "choices": [
+        "Never advance",
+        "Advancing d4-d5 at the right moment to create a passed pawn and open lines for the pieces",
+        "Exchanging all pieces",
+        "Advancing c4-c5 always"
+      ],
+      "answer": 1,
+      "explain": "An advance transforms hanging pawns into a passed pawn (d5) or a protected pawn chain; the timing is everything."
+    },
+    {
+      "type": "play",
+      "fen": "r1bq1rk1/pp2bppp/2n1p3/3n4/3P4/2NB1N2/PP3PPP/R1BQR1K1 b - - 5 10",
+      "goal": "hold",
+      "prompt": "Play the IQP position as White against the engine (level 13) for 25 moves. Before each exchange, predict the resulting structure.",
+      "maxMoves": 25,
+      "engineLevel": 13
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: one IQP game (Botvinnik, Kasparov or Karpov in the corpus).\n- In your last 10 games, find every structural transformation (pawn exchange that changed the structure) and judge whether it helped you."
+    }
+  ],
+  "practiceThemes": [
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "Dvoretsky & Yusupov, Positional Play",
+    "Flores Rios, Chess Structures",
+    "Baburin, Winning Pawn Structures",
+    "Karpov & Mokeev, Chess Strategy for Club Players"
+  ]
+}

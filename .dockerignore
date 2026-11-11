@@ -1,0 +1,16 @@
+.git
+.github
+.vscode
+.idea
+**/node_modules
+**/dist
+apps/web/public/stockfish
+data/*.db
+data/*.db-*
+**/*.log
+.env
+.env.*
+**/.DS_Store
+Dockerfile*
+!deploy/Dockerfile
+fly.toml

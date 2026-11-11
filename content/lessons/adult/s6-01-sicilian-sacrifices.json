@@ -1,0 +1,96 @@
+{
+  "id": "adult.s6.sicilian-sacrifices",
+  "track": "adult",
+  "stage": 6,
+  "order": 1,
+  "skillIds": [
+    "tactics.sacrifice.sicilian"
+  ],
+  "title": "Typical sacrifices against the Sicilian",
+  "summary": "Nd5, Nf5, Bxe6/Nxe6 and Bxb5/Nxb5 against the Sicilian king in the centre or the ...e6/...d6 structure — when they work and when they are only practical.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## The Sicilian sacrifice squares\n\nThe Sicilian gives Black a pawn majority in the centre and a half-open c-file, but often leaves the black king in the centre or behind a thin e6/d6/f7 wall. White's typical sacrifices:\n- **Nd5!** (against ...e6): if ...exd5, exd5 opens the e-file against the king on e8 or e7/g8; the knight also attacks e7, c7, b6, f6.\n- **Nf5!** (against ...e6/...g6): if ...exf5, exf5 or the e-file opens; the knight hits d6, g7, e7.\n- **Bxe6 / Nxe6** (against ...fxe6 with the king on e8): the e6-pawn is the cornerstone; after the sacrifice the light squares (d5, f7) collapse.\n- **Bxb5 / Nxb5** (against ...a6/...b5): opens the a4-e8 diagonal and the c-file, often with the black king still on e8.\n\nThese sacrifices are usually **positional/intuitive**: not every line can be calculated, so judge **development, king position and open lines**."
+    },
+    {
+      "type": "board",
+      "fen": "rqb2rk1/3nbppp/p2pp3/6P1/1p1BPP2/2NB1Q2/PPP4P/2KR3R w - - 0 16",
+      "md": "**Tal-Larsen, Candidates match (Bled) 1965, game 10.** Tal played **16.Nd5!?** exd5 17.exd5 and attacked the uncastled-looking kingside with Rde1, h4 and Bxf5; he won a brilliant game. Modern engines say 16.Nd5 is objectively dubious (about -1.0 against 16.Ne2 +0.4), but at the board Larsen did not find the defence. This is the essence of the \"real\" Sicilian sacrifice: open lines and initiative instead of a calculated win."
+    },
+    {
+      "type": "quiz",
+      "question": "After 16.Nd5 exd5 17.exd5 in Tal-Larsen, what is White's main compensation for the piece?",
+      "choices": [
+        "A forced mate",
+        "Open e-file, the d5-pawn cramping Black, and bishops aiming at the black king while Black's queenside pieces are out of play",
+        "Material: White wins the piece back by force",
+        "A better endgame"
+      ],
+      "answer": 1,
+      "explain": "Initiative, space and open lines. The engine refutation required precise defence; practically the pressure was enormous.",
+      "fen": "rqb2rk1/3nbppp/p2pp3/6P1/1p1BPP2/2NB1Q2/PPP4P/2KR3R w - - 0 16"
+    },
+    {
+      "type": "move",
+      "fen": "2r1rbk1/1p4p1/p2pb1Pp/q3n3/3NP3/2N3Q1/PPP5/K1B2R1R w - - 6 27",
+      "prompt": "White to move. Black's king is on g8, the e6-bishop holds d5 and f7. Find the thematic knight jump (Carlsen-Nakamura, London 2011).",
+      "solution": [
+        "Nd5"
+      ],
+      "alternatives": [
+        "Qf4",
+        "Nxe6"
+      ],
+      "explain": "**27.Nd5!** — the knight lands on the hole created by ...e5 and ...d6; Bxd5 exd5 would open the e-file and give White's pieces e4 and the light squares. Engine: Nd5 +2.5 (27.Qf4 +2.1 and 27.Nxe6 +2.1 also keep a large advantage)."
+    },
+    {
+      "type": "move",
+      "fen": "3rr1k1/1pqbbppp/3ppn2/1p6/P3PP2/2NQBB2/2P3PP/1R1R3K w - - 0 20",
+      "prompt": "White to move. Black's b5-pawn is weak and the d6-pawn is backward. Find the sacrifice that opens the queenside (Anand-Kasparov, World Championship 1995, game 9).",
+      "solution": [
+        "Nxb5"
+      ],
+      "alternatives": [
+        "axb5"
+      ],
+      "explain": "**20.Nxb5!** — the knight takes the pawn; after ...Bxb5 axb5 the a-file and the d6/b6 squares become targets and the bishop pair is gone. Anand won this game. Engine: +0.8 (20.axb5 +0.6 is also good)."
+    },
+    {
+      "type": "quiz",
+      "question": "Which factor most often justifies a piece sacrifice on d5 or e6 in the Sicilian?",
+      "choices": [
+        "White is ahead on the queenside",
+        "The black king is still in the centre (or the e-file can be opened) and White has more pieces developed",
+        "Black has castled queenside",
+        "There are opposite-coloured bishops"
+      ],
+      "answer": 1,
+      "explain": "King in the centre + lead in development + an openable file: these are the classic preconditions."
+    },
+    {
+      "type": "play",
+      "fen": "r2q1rk1/3nbppp/p2pbn2/1p2p3/4P1P1/1NN1BP2/PPPQ3P/2KR1B1R w - - 0 12",
+      "goal": "hold",
+      "prompt": "Play the English Attack against the Najdorf as White (engine level 13) for 25 moves. Look for g5, Nd5 and the h-pawn advance; check every sacrifice for Black's defences before you play it.",
+      "maxMoves": 25,
+      "engineLevel": 13
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles**: 20 *sacrifice* puzzles from Sicilian openings (*Puzzles → by opening: Sicilian Defense*, theme *sacrifice*).\n- **Guess the move**: Tal-Larsen 1965 game 10 (corpus) from move 12, playing White; then check each critical move with the engine.\n- Make a list of the five sacrifice squares (d5, f5, e6, b5, g5/h5) and one game example for each from the corpus."
+    }
+  ],
+  "practiceThemes": [
+    "sacrifice",
+    "exposedKing"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md",
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "Kasparov, Revolution in the 70s",
+    "Tal-Larsen, Candidates match 1965 (game 10)",
+    "Anand-Kasparov, World Championship 1995"
+  ]
+}

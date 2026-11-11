@@ -1,0 +1,111 @@
+{
+  "id": "adult.s3.double-check",
+  "track": "adult",
+  "stage": 3,
+  "order": 17,
+  "skillIds": [
+    "tactics.double-check"
+  ],
+  "title": "Double check",
+  "summary": "Two pieces give check at once: the only defence is a king move. Use it to mate or to grab material.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "In a **double check**, the moving piece gives check and also unmasks a second check. Blocking or capturing cannot stop two checks, so **the king must move**. This makes double check the strongest discovered check: both checking pieces can be en prise and it does not matter."
+    },
+    {
+      "type": "move",
+      "fen": "rn1qkbnr/pppb1ppp/8/8/4N3/8/PPP2PPP/R1BQR1K1 w - - 0 30",
+      "prompt": "Worked example. Black's king on e8 is surrounded by its own pieces; your e1-rook is behind the e4-knight. Mate in one with a double check.",
+      "solution": [
+        "Nd6#"
+      ],
+      "explain": "Nd6# (or Nf6#): knight and rook both give check, the king has no square, and capturing the knight would not stop the rook. Double check plus a boxed-in king is mate.",
+      "alternatives": [
+        "Nf6#"
+      ],
+      "hint": "Move the knight to a square where it also checks."
+    },
+    {
+      "type": "move",
+      "fen": "8/p2rk2p/1p3pp1/4P3/2r5/6P1/P2R3P/4R1K1 w - - 0 30",
+      "prompt": "White to move. The e5-pawn stands between your e1-rook and Black's king.",
+      "solution": [
+        "exf6+",
+        "Kxf6",
+        "Rxd7"
+      ],
+      "explain": "exf6+! is a double check (pawn and rook). The king must move, ...Kxf6, and now Rxd7 wins the rook that had been defended only by the king."
+    },
+    {
+      "type": "move",
+      "fen": "r3rnk1/1bp1pp2/p2q4/1p1p3p/3P2NP/2N2P2/PPP1P3/2KR1BR1 w - - 0 18",
+      "prompt": "White to move: mate in two. Your g1-rook is behind the g4-knight on the g-file.",
+      "solution": [
+        "Nf6+",
+        "Kh8",
+        "Rg8#"
+      ],
+      "explain": "Nf6+! is a double check (knight and g1-rook), so ...Kh8 is forced. Then Rg8#: the rook is protected by the f6-knight, which also covers h7, and Black's own f8-knight and e8-rook cannot reach g8."
+    },
+    {
+      "type": "move",
+      "fen": "r4rk1/pp1b1p1p/3b1Pp1/B3n1P1/2pP3N/7P/P1P1n1BK/R2Q1R2 b - - 0 21",
+      "prompt": "Black to move: mate in two. Your d6-bishop is aimed at h2 behind your e5-knight.",
+      "solution": [
+        "Nf3+",
+        "Kh1",
+        "Ng3#"
+      ],
+      "explain": "...Nf3+! is double check (knight and bishop). Kh1 is the only move and ...Ng3# follows: the e2-knight and d6-bishop control every square."
+    },
+    {
+      "type": "move",
+      "fen": "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w kq - 0 9",
+      "prompt": "Réti - Tartakower, Vienna 1910. White to move: mate in three, starting with a queen sacrifice and a double check.",
+      "solution": [
+        "Qd8+",
+        "Kxd8",
+        "Bg5+",
+        "Kc7",
+        "Bd8#"
+      ],
+      "explain": "9.Qd8+! Kxd8 10.Bg5+ (double check from bishop and d1-rook) Kc7 11.Bd8#. If 10...Ke8, 11.Rd8# instead.",
+      "hint": "The d1-rook is behind the queen."
+    },
+    {
+      "type": "quiz",
+      "question": "Black is in double check from a bishop and a rook. Which reply can be legal?",
+      "choices": [
+        "Capturing the bishop with a pawn",
+        "Blocking the rook's line",
+        "A king move",
+        "Capturing the rook with the queen"
+      ],
+      "answer": 2,
+      "explain": "Against double check only a king move is legal, unless the king can capture one checker while escaping the other (rare)."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: why is double check often stronger than a single discovered check?",
+      "choices": [
+        "It gains two tempi",
+        "The opponent cannot block or capture; the king must move, so both checking pieces may stand en prise",
+        "It always mates",
+        "It forces a queen trade"
+      ],
+      "answer": 1,
+      "explain": "With a boxed-in king, double check is frequently mate; otherwise it drives the king into a net."
+    }
+  ],
+  "practiceThemes": [
+    "doubleCheck"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#double-check",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#rétis-mate",
+    "Réti - Tartakower, Vienna 1910",
+    "Lichess puzzle database (CC0): 10zfK, AvK7s, 11Gfy"
+  ]
+}

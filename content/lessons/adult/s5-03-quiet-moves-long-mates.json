@@ -1,0 +1,113 @@
+{
+  "id": "adult.s5.quiet-moves-long-mates",
+  "track": "adult",
+  "stage": 5,
+  "order": 3,
+  "skillIds": [
+    "tactics.quiet-move",
+    "checkmate.mate-in-5"
+  ],
+  "title": "Quiet moves and long forced mates",
+  "summary": "Non-forcing moves that create unstoppable threats, and mates in four to six moves found by calculating checks and quiet interpositions.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## The blind spot of CCT\n\n\"Checks, captures, threats\" finds most tactics — and misses the **quiet move**: a move without check or capture that creates a threat the opponent cannot meet (often two threats). Quiet moves are typical when:\n- the opponent's pieces are **overloaded** and any forcing move would release the tension;\n- a **retreat or side-step** clears a line (a rook to f6, a queen sideways);\n- a piece is **offered** but taking it opens something worse.\n\nAt stage 5 add an explicit pass to your thinking: *after the forcing moves, which quiet move creates an unstoppable threat?*"
+    },
+    {
+      "type": "move",
+      "fen": "r3qr1k/pp3pbp/2pn4/7Q/3pP3/2NB3P/PPP3P1/R4RK1 w - - 0 19",
+      "prompt": "White to move. Black threatens nothing serious; White's queen and bishop eye h7. Find the quiet killer (Fischer-Benko, US Championship 1963/64).",
+      "solution": [
+        "Rf6"
+      ],
+      "hint": "Block the bishop's defensive diagonal... with a rook.",
+      "explain": "**19.Rf6!!** — no check, no capture. White threatens Qxh7 mate and Rxd6; 19...Bxf6 20.e5 opens the bishop's diagonal with mate on h7, and 19...Kg8 20.e5 h6 21.Ne2 (the game) leaves Black helpless. Engine: +6.5 for Rf6, 0.00 for 19.e5."
+    },
+    {
+      "type": "move",
+      "fen": "r3r1k1/pp3pbp/1qp3p1/2B5/2BP2b1/Q1n2N2/P4PPP/3R1K1R b - - 3 17",
+      "prompt": "Black to move. White attacks the queen on b6 and threatens to consolidate. Find Fischer's famous quiet move (Byrne-Fischer, New York 1956).",
+      "solution": [
+        "Be6"
+      ],
+      "hint": "Ignore the attack on your queen and make a developing move with a threat.",
+      "explain": "**17...Be6!!** offers the queen. After 18.Bxb6 Bxc4+ the windmill of discovered checks (see the previous lesson) gives Black a winning material balance; 18.Qxc3 Qxc5! 19.dxc5 Bxc3 is also winning for Black. Engine: +3.0 for Black after Be6, -0.75 after the best alternative."
+    },
+    {
+      "type": "move",
+      "fen": "1Q6/5pk1/2p3p1/1p1bN2p/1b5P/6n1/r5P1/3K4 b - - 9 38",
+      "prompt": "Black to move and mate (Byrne-Fischer, New York Rosenwald 1956)",
+      "solution": [
+        "Bb3+",
+        "Kc1",
+        "Ne2+",
+        "Kb1",
+        "Nc3+"
+      ],
+      "orientation": "black",
+      "explain": "**38...Bb3+ 39.Kc1 Ne2+ 40.Kb1 Nc3+ 41.Kc1** and mate on the next move. The knight and bishop take every square; the rook on a2 seals the second rank. In the game Fischer finished with 41...Rc2#. Engine main line: 38...Bb3+ 39.Kc1 Ne2+ 40.Kb1 Nc3+ 41.Kc1 Ba3#. (Byrne-Fischer, New York Rosenwald 1956; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "8/5ppk/3Qp2p/8/p2P1rnq/2P3R1/1P1R1P2/6K1 b - - 0 38",
+      "prompt": "Black to move and mate (Salov-Karpov, Alma-Ata m1 1995)",
+      "solution": [
+        "Qh2+",
+        "Kf1",
+        "Rxf2+",
+        "Ke1",
+        "Qh1+",
+        "Rg1",
+        "Qxg1#"
+      ],
+      "orientation": "black",
+      "explain": "**38...Qh2+!** forces the king to f1, then the rook enters with check on f2 and the queen mates on g1. Engine main line: 38...Qh2+ 39.Kf1 Rxf2+ 40.Ke1 Qh1+ 41.Rg1 Qxg1#. (Salov-Karpov, Alma-Ata m1 1995; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "6Q1/p1r1b3/1p3p2/2q1n3/3R2P1/P4k2/5P1P/3R2K1 w - - 3 35",
+      "prompt": "White to move and mate (Kasparov-Portisch, Niksic 1983)",
+      "solution": [
+        "Qb3+",
+        "Qc3",
+        "Qd5+",
+        "Ke2",
+        "Qe4+"
+      ],
+      "orientation": "white",
+      "explain": "**35.Qb3+!** — checks from the side drive the king, and the black queen must interpose before the mate. Engine main line: 35.Qb3+ Qc3 36.Qd5+ Ke2 37.Qe4+ Qe3 38.Qxe3#. (Kasparov-Portisch, Niksic 1983; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "Why do strong players find quiet moves more often than club players?",
+      "choices": [
+        "They calculate more lines",
+        "They look for the opponent's defensive resources and ask what threat cannot be parried, not only which forcing move exists",
+        "They have better memory",
+        "Quiet moves are rare at master level"
+      ],
+      "answer": 1,
+      "explain": "Quiet moves come from understanding the position's needs (overloaded pieces, blocked lines). Training them: positions where the first move is not a check or capture."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles**: 20 *quietMove* puzzles and 10 *mateIn5* / *mateIn4* puzzles at your rating. For mates, write the whole line including all defensive interpositions before moving.\n- **Mate drills** (*Train → mates*): one session of long mates.\n- In each solved puzzle, label the move type of the key move: check, capture, threat, or quiet."
+    }
+  ],
+  "practiceThemes": [
+    "quietMove",
+    "mateIn5",
+    "mateIn4"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md",
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "Nunn, Understanding Chess Tactics",
+    "Kasparov, My Great Predecessors (vols. I-IV)",
+    "Fischer-Benko, US Championship 1963/64",
+    "Byrne-Fischer, New York 1956"
+  ]
+}

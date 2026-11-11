@@ -1,0 +1,121 @@
+{
+  "id": "adult.s1.coordinates",
+  "track": "adult",
+  "stage": 1,
+  "order": 2,
+  "skillIds": [
+    "rules.board.coordinates"
+  ],
+  "title": "Naming the squares",
+  "summary": "Files a-h, ranks 1-8: find any square by its name from either side of the board.",
+  "estMinutes": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Every square has a name. **Files** are the columns, lettered a-h from White's left to right. **Ranks** are the rows, numbered 1-8 from White's side. A square is file + rank: **e4**, **h8**.\n\nWhite's pieces start on ranks 1-2, Black's on ranks 7-8. All later lessons use these names, so learn them now."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/8/8/8/4K3 w - - 0 1",
+      "md": "The white king is on **e1**, the black king on **e8**. The highlighted squares are d4, e4, d5 and e5: the **centre**.",
+      "highlights": [
+        "d4",
+        "e4",
+        "d5",
+        "e5"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Which square is the white knight on?",
+      "choices": [
+        "c6",
+        "f3",
+        "c3",
+        "f6"
+      ],
+      "answer": 0,
+      "explain": "Third file (c), sixth rank (6): c6.",
+      "fen": "4k3/8/2N5/8/8/8/8/4K3 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/8/8/8/4K3 w - - 0 1",
+      "prompt": "Move the white king to d2.",
+      "solution": [
+        "Kd2"
+      ],
+      "explain": "d-file, 2nd rank. The king moves one square at a time, so d2 is one step diagonally forward-left from e1."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "From the starting position, move the knight from g1 to f3.",
+      "solution": [
+        "Nf3"
+      ],
+      "explain": "Knights can jump over the pawns. Nf3 is one of the most common first moves."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Now move the pawn on d2 to d4.",
+      "solution": [
+        "d4"
+      ],
+      "explain": "Pawns are named only by their square: this move is written simply \"d4\"."
+    },
+    {
+      "type": "quiz",
+      "question": "Which of these squares is dark?",
+      "choices": [
+        "a1",
+        "h1",
+        "a8",
+        "e4"
+      ],
+      "answer": 0,
+      "explain": "a1 is dark (the left corner from White's side); h1, the right corner, is light. Rule of thumb: if file number (a=1) plus rank is even, the square is dark: a1 = 1+1 = 2."
+    },
+    {
+      "type": "quiz",
+      "question": "When you play Black, you sit behind rank 8. Which square is in your near right-hand corner?",
+      "choices": [
+        "a8",
+        "h8",
+        "a1",
+        "h1"
+      ],
+      "answer": 0,
+      "explain": "From Black's side the board is rotated: files run h to a from left to right, so the near-right corner is a8. It is light, so \"light on the right\" holds for both players."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: on which file do both kings start?",
+      "choices": [
+        "e-file",
+        "d-file",
+        "a-file",
+        "h-file"
+      ],
+      "answer": 0,
+      "explain": "Kings start on e1 and e8; queens on d1 and d8."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the square where the d-file meets the 5th rank?",
+      "choices": [
+        "d5",
+        "5d",
+        "e5",
+        "d4"
+      ],
+      "answer": 0,
+      "explain": "Always file letter first, then rank number: d5."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#coordinates",
+    "knowledge-base/02-methods/steps-method.md#3-didactic-principles"
+  ]
+}

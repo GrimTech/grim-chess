@@ -1,0 +1,100 @@
+{
+  "id": "adult.s5.intuition-guess-the-move",
+  "track": "adult",
+  "stage": 5,
+  "order": 8,
+  "skillIds": [
+    "calculation.intuition"
+  ],
+  "title": "Training intuition with master games",
+  "summary": "Guess-the-move sessions: commit to a move, compare with the master, verify with calculation — and build patterns faster.",
+  "estMinutes": 25,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Intuition is trained pattern recognition\n\nStrong players' first impressions are usually right because they recognise thousands of patterns (chunks, templates). You build them by **active** study of master games:\n1. Cover the moves; for each move of one side, **commit** to your choice (write it down or play it) before revealing.\n2. Compare. If different, ask *why* the master's move is better (or whether yours was also good: check with the engine within ~0.3).\n3. Calculate briefly when the position is sharp: intuition proposes, calculation verifies.\n4. Score yourself; review the positions you missed a week later.\n\nPassive replaying of games does very little. Commitment before feedback is what trains the intuition."
+    },
+    {
+      "type": "board",
+      "fen": "r1rq1bk1/1n1b1p1p/3p1np1/1p1Pp3/1Pp1P3/2P1BNNP/R2Q1PP1/1B2R1K1 w - - 2 24",
+      "md": "**Karpov-Unzicker, Nice Olympiad 1974**, after 23...Qd8. A model of a closed Ruy Lopez: White has space on both wings. Karpov played **24.Ba7!**, a calm move that takes the a-file away from Black's rook and freezes the queenside. Black's pieces have no squares; White then prepared f4-f5 and won on the kingside.",
+      "arrows": [
+        [
+          "e3",
+          "a7",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the diagram (Karpov-Unzicker 1974), what is the idea of 24.Ba7?",
+      "choices": [
+        "To attack the b6-square",
+        "To occupy the only open file's entry square and block the black rook on a8, so that White can later double rooks or switch to the kingside without counterplay",
+        "To prepare Bxb8",
+        "To provoke ...b4"
+      ],
+      "answer": 1,
+      "explain": "The bishop on a7 is \"out of play\" by normal standards but blocks the a-file completely. Intuition here is about restricting the opponent, not about piece activity rules.",
+      "fen": "r1rq1bk1/1n1b1p1p/3p1np1/1p1Pp3/1Pp1P3/2P1BNNP/R2Q1PP1/1B2R1K1 w - - 2 24"
+    },
+    {
+      "type": "move",
+      "fen": "4r1k1/p6p/1p3np1/3p1P2/q1pP4/1nP3N1/1B3QPP/4R1K1 w - - 1 26",
+      "prompt": "Guess the move. White to play (Botvinnik-Capablanca, AVRO 1938)",
+      "solution": [
+        "Re6"
+      ],
+      "orientation": "white",
+      "explain": "**26.Re6!** — the rook takes the open file's key square, supported by the f5-pawn; after 26...Rxe6 27.fxe6 the passed e-pawn and the queen's entry ideas give White a winning attack. Engine main line: 26.Re6 Rxe6 27.fxe6 Kg7 28.Qf4 Qa2 29.Qc7+ Kh6. (Botvinnik-Capablanca, AVRO 1938; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "2r1k3/p4ppp/bp1rp3/8/1RPP4/3K2P1/P4PBP/1R6 w - - 0 25",
+      "prompt": "Guess the move. White to play (a queenless middlegame) (Kasparov-Karpov, World Championship 1985)",
+      "solution": [
+        "Ra4"
+      ],
+      "orientation": "white",
+      "explain": "**25.Ra4!** — the rook attacks a7 and prepares to switch along the 4th rank; Black's queenside pawns become targets. Pressure before liquidation. Engine main line: 25.Ra4 b5 26.cxb5 Rb8 27.Ke3 Rdb6 28.Ra5 Bb7. (Kasparov-Karpov, World Championship 1985; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "1k1r4/1n3Bpp/1p6/p7/1P6/P1K5/2P1p1PP/3R4 w - - 0 34",
+      "prompt": "Guess the move. White to play (a rook and bishop ending) (Fischer-Taimanov, Candidates 1971)",
+      "solution": [
+        "Re1"
+      ],
+      "orientation": "white",
+      "explain": "**34.Re1!** — the rook attacks the dangerous e2-pawn from behind; only this move keeps the balance and later the winning chances. Engine main line: 34.Re1 Nd6 35.Bh5 Nb5+ 36.Kb2 g6 37.Bf3 Nd4. (Fischer-Taimanov, Candidates 1971; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "Your guess differs from the master's move, and the engine shows your move is only 0.1 worse. How should you score it?",
+      "choices": [
+        "Zero: only the game move counts",
+        "As (nearly) correct: different but equally good moves are fine — focus your review on moves that were clearly worse",
+        "As a blunder",
+        "Ignore the engine"
+      ],
+      "answer": 1,
+      "explain": "Engine tolerance (about 0.3 in normal positions) avoids punishing good alternatives. Spend your review time on the big differences."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: one full game per day for 2 weeks (alternate eras: one Capablanca, Karpov or Carlsen game, one Tal, Kasparov or Fischer game). Record your score.\n- Every Sunday, replay the 10 positions where your guess was furthest from the master's move.\n- Target at this level: within 0.3 of the master/engine move on at least 60% of moves."
+    }
+  ],
+  "practiceThemes": [
+    "master",
+    "masterVsMaster"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/game-study-and-analysis-loops.md",
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/01-learning-science/chunking-and-template-theory.md",
+    "Pandolfini, Solitaire Chess",
+    "Karpov-Unzicker, Nice Olympiad 1974"
+  ]
+}

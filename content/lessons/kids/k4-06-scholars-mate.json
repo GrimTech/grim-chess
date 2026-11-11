@@ -1,0 +1,79 @@
+{
+  "id": "kids.4.scholars-mate",
+  "track": "kids",
+  "stage": 1,
+  "order": 406,
+  "skillIds": [
+    "checkmate.opening-mates"
+  ],
+  "title": "Sneaky early mates",
+  "summary": "Scholar's mate and Fool's mate: how they work and how to stop them.",
+  "estMinutes": 7,
+  "minAge": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Some checkmates happen in the **first few moves**! Learn them so they never happen to you."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
+      "prompt": "Scholar's mate! Checkmate on f7.",
+      "solution": [
+        "Qxf7#"
+      ],
+      "explain": "The bishop guards the queen on f7.",
+      "hint": "f7 is guarded only by the king."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+      "prompt": "You are Black. White wants Qxf7 mate! Stop it.",
+      "solution": [
+        "g6"
+      ],
+      "explain": "Blocked, and now the queen is attacked too!",
+      "hint": "Protect f7 or block the queen.",
+      "alternatives": [
+        "Qe7",
+        "Qf6",
+        "Qg5",
+        "Qh4",
+        "Ke7",
+        "Nh6",
+        "d5"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Which square is weak for Black at the start?",
+      "choices": [
+        "f7",
+        "a7",
+        "e5"
+      ],
+      "answer": 0,
+      "explain": "f7 is guarded only by the king."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2",
+      "prompt": "You are Black. Checkmate in one! (Fool's mate)",
+      "solution": [
+        "Qh4#"
+      ],
+      "explain": "The fastest checkmate in chess!",
+      "hint": "The white king has no pawns guarding the diagonal."
+    },
+    {
+      "type": "text",
+      "md": "Remember: develop your pieces and **guard f7** (or f2). Then sneaky mates cannot work!"
+    }
+  ],
+  "practiceThemes": [
+    "attackingF2F7"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

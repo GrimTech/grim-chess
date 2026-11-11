@@ -1,0 +1,102 @@
+{
+  "id": "adult.s2.skewers",
+  "track": "adult",
+  "stage": 2,
+  "order": 15,
+  "skillIds": [
+    "tactics.skewer"
+  ],
+  "title": "Skewers",
+  "summary": "Attack a valuable piece; when it moves, take the piece behind it.",
+  "estMinutes": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **skewer** is a reversed pin: a line piece attacks the **more valuable** piece in front, which must move, and then captures the piece **behind** it. The classic case is a check on the king with a queen or rook behind it."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/8/8/3k3r/8/8/R5K1 w - - 0 1",
+      "prompt": "Skewer the king and rook.",
+      "solution": [
+        "Ra4+",
+        "Ke3",
+        "Rxh4"
+      ],
+      "explain": "Ra4+ checks along the 4th rank. When the king steps aside, the rook behind it falls."
+    },
+    {
+      "type": "move",
+      "fen": "6q1/5k2/8/8/8/8/PP2B3/1K6 w - - 0 1",
+      "prompt": "Skewer the king and queen.",
+      "solution": [
+        "Bc4+",
+        "Ke7",
+        "Bxg8"
+      ],
+      "explain": "Bc4+ checks along the a2-g8 diagonal. The queen on g8 stands behind the king."
+    },
+    {
+      "type": "move",
+      "fen": "r5k1/5ppp/8/8/8/4K2Q/8/8 b - - 0 1",
+      "prompt": "You are Black. Skewer the white king and queen.",
+      "solution": [
+        "Ra3+",
+        "Kd4",
+        "Rxh3"
+      ],
+      "explain": "Ra3+ checks along the 3rd rank; the queen on h3 is behind the king."
+    },
+    {
+      "type": "quiz",
+      "question": "What is the difference between a pin and a skewer?",
+      "choices": [
+        "Pin: the less valuable piece is in front. Skewer: the more valuable piece is in front",
+        "There is no difference",
+        "A skewer needs a knight"
+      ],
+      "answer": 0,
+      "explain": "Same geometry, reversed order."
+    },
+    {
+      "type": "quiz",
+      "question": "Which pieces can deliver a skewer?",
+      "choices": [
+        "Bishops, rooks and queens",
+        "Knights and pawns",
+        "Only queens"
+      ],
+      "answer": 0,
+      "explain": "Like pins, skewers need a line piece."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: the front piece in a skewer is typically...",
+      "choices": [
+        "The king or queen",
+        "A pawn",
+        "A knight"
+      ],
+      "answer": 0,
+      "explain": "It must be valuable enough that it has to move away."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: two of the enemy's pieces stand on the same open line. What should you look for?",
+      "choices": [
+        "A skewer or pin along that line",
+        "A knight fork",
+        "Castling"
+      ],
+      "answer": 0,
+      "explain": "Pieces lined up on a rank, file or diagonal are line-tactic targets."
+    }
+  ],
+  "practiceThemes": [
+    "skewer"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#skewer",
+    "knowledge-base/03-chess-knowledge/tactics.md#pin"
+  ]
+}

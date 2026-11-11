@@ -1,0 +1,92 @@
+{
+  "id": "adult.s6.stoyko-exercise",
+  "track": "adult",
+  "stage": 6,
+  "order": 4,
+  "skillIds": [
+    "calculation.stoyko"
+  ],
+  "title": "The Stoyko exercise: a full analysis tree",
+  "summary": "Analyse one complex position completely in writing, then compare with the engine — the most demanding calculation training.",
+  "estMinutes": 40,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## The method\n\nThe Stoyko exercise (named after Steve Stoyko; popularised by Dvoretsky):\n1. Take a **complex position** with several plausible candidate moves.\n2. Spend **30-60 minutes** (no board moving) and write down the **complete tree**: all candidates, the opponent's main replies, sub-variations, and an evaluation at each leaf.\n3. Only then, check with an engine and compare branch by branch.\n4. Score yourself: correct main line? correct evaluation? missed candidates (yours or his)?\n\nThe exercise trains **breadth**, **depth**, **discipline** (each branch once), and **honest evaluation** — the skills that separate 2100 from 2300."
+    },
+    {
+      "type": "board",
+      "fen": "2Rr1rk1/pn1P1pp1/1q5p/1p3Q2/3N4/8/5PPP/4R1K1 w - - 4 28",
+      "md": "**Exercise position: Spassky-Petrosian, World Championship 1969, White to move.** The d7-pawn is a monster, the black queen and rooks are tied down, but Black threatens ...Qxd4 and ...Nd6. Write your tree now: candidate moves (Nc6, Qxb5?, Re8, Nxb5...), Black's best replies, evaluation of every leaf. Then go to the next step.",
+      "orientation": "white"
+    },
+    {
+      "type": "move",
+      "fen": "2Rr1rk1/pn1P1pp1/1q5p/1p3Q2/3N4/8/5PPP/4R1K1 w - - 4 28",
+      "prompt": "Now play the main line of your tree: White to move (Spassky-Petrosian, World Championship 1969)",
+      "solution": [
+        "Nc6"
+      ],
+      "orientation": "white",
+      "explain": "**28.Nc6!** — the knight attacks d8 and b8 and cannot be taken (...Qxc6 Rxd8). Black must give back material; White's d-pawn decides. Engine main line: 28.Nc6 Nd6 29.Nxd8 Nxf5 30.Nc6 Nd6 31.Rxf8+ Kxf8 32.d8=Q+ Qxd8 33.Nxd8 b4. (Spassky-Petrosian, World Championship 1969; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "Comparing your tree with the engine, which kind of error is most typical at this level?",
+      "choices": [
+        "Too many candidate moves",
+        "A missing candidate for the opponent (a counter-attacking reply) or a wrong evaluation at a leaf",
+        "Calculating too deeply",
+        "Writing too neatly"
+      ],
+      "answer": 1,
+      "explain": "Most trees fail on the opponent's resources or on the final evaluation. Note which, and target it in training."
+    },
+    {
+      "type": "quiz",
+      "question": "How often should the Stoyko exercise be done?",
+      "choices": [
+        "Every day for many hours",
+        "About once a week, on one carefully chosen position, with a thorough comparison afterwards",
+        "Never; engines make it obsolete",
+        "Only before tournaments"
+      ],
+      "answer": 1,
+      "explain": "It is very demanding. Quality over quantity: one serious tree per week is a good rhythm, alongside regular puzzles."
+    },
+    {
+      "type": "move",
+      "fen": "1r5k/1b2np1p/pq2NprQ/1p6/4p1BP/2P4R/1P3PP1/2KR4 w - - 10 25",
+      "prompt": "Second exercise (Kasparov-Kramnik, Novgorod 1994): write a tree for White, then play the first move. White to move.",
+      "solution": [
+        "Qf4"
+      ],
+      "explain": "**25.Qf4!** is the only move that keeps White in the game (engine -1.6; every other queen move about -6.6). The tree should include 25...Re8 26.Rd6 Nd5 27.h5! (the game) and 25...Bd5 26.Bh5 lines."
+    },
+    {
+      "type": "play",
+      "fen": "2Rr1rk1/pn1P1pp1/1q5p/1p3Q2/3N4/8/5PPP/4R1K1 w - - 4 28",
+      "goal": "win",
+      "prompt": "Now play out the Spassky-Petrosian position as White against the engine (level 14), trusting your tree. Success = winning decisive material.",
+      "maxMoves": 30,
+      "engineLevel": 14
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- Choose one complex position per week (from your own games, *critical moments* in Game review, or the master-game corpus) and do the full Stoyko exercise: 45 minutes, written tree, then engine comparison.\n- Keep a log: date, position, time, main line correct (yes/no), evaluation error, missed resource."
+    }
+  ],
+  "practiceThemes": [
+    "veryLong",
+    "masterVsMaster"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "knowledge-base/02-methods/soviet-school-botvinnik-dvoretsky-yusupov.md",
+    "Dvoretsky, Secrets of Chess Training",
+    "Aagaard, Grandmaster Preparation: Calculation",
+    "knowledge-base/02-methods/kotov-tree-of-analysis.md",
+    "Stoyko method as described by Dvoretsky (Secrets of Chess Training)"
+  ]
+}

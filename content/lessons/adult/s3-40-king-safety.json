@@ -1,0 +1,96 @@
+{
+  "id": "adult.s3.king-safety",
+  "track": "adult",
+  "stage": 3,
+  "order": 40,
+  "skillIds": [
+    "strategy.king-safety"
+  ],
+  "title": "King safety",
+  "summary": "Castle early, keep the pawn shield, avoid needless pawn moves in front of the king, and punish an opponent who leaves the king in the centre.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "King safety rules:\n\n- **Castle** before the centre opens.\n- Keep the **pawn shield** (f2/g2/h2 or f7/g7/h7) intact; every pawn move there creates holes.\n- Count **attackers vs defenders** near the king.\n- When the opponent's king is stuck in the centre, **open lines** quickly (even with a pawn sacrifice)."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 1 5",
+      "prompt": "Quiet Italian. Your development is complete on the kingside. Make your king safe.",
+      "solution": [
+        "O-O"
+      ],
+      "explain": "O-O: king safe, rook connected. Castling early is the simplest way to take king-safety worries off the board."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+      "prompt": "White threatens Qxf7#. Defend so that your king stays safe and you gain time against the queen.",
+      "solution": [
+        "g6"
+      ],
+      "explain": "...g6! blocks the threat and gains a tempo on the queen (followed by ...Nf6, ...Bg7). ...Qe7 also holds f7. Do not play ...Nf6?? which allows Qxf7#.",
+      "alternatives": [
+        "Qe7"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Which pawn move weakens a castled king (on g1) the most, all else equal?",
+      "choices": [
+        "a3",
+        "g4",
+        "c3",
+        "b3"
+      ],
+      "answer": 1,
+      "explain": "g2-g4 tears open the long diagonal and the squares f3, h3, f4, h4 around the king. Pawn moves on the other wing do not affect king safety."
+    },
+    {
+      "type": "move",
+      "fen": "r5r1/pp2np1k/2p1p2P/2PpB3/3Pb3/7R/P3B2K/6R1 w - - 3 39",
+      "prompt": "White to move. Black's king on h7 lacks defenders. Use your rooks and bishop.",
+      "solution": [
+        "Rg7+",
+        "Rxg7",
+        "hxg7+"
+      ],
+      "explain": "Rg7+! Rxg7 hxg7+ (discovered check from the h3-rook) and the g7-pawn plus bishop on e5 decide: Black's king is stripped of its shelter."
+    },
+    {
+      "type": "quiz",
+      "question": "Your opponent has not castled and the e-file is about to open. What is usually right?",
+      "choices": [
+        "Close the centre",
+        "Open the e-file quickly (e.g. a pawn break or sacrifice) and bring rooks to it",
+        "Castle queenside and wait",
+        "Trade queens"
+      ],
+      "answer": 1,
+      "explain": "A king in the centre is a target only while the centre is open. Act before it can castle."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: how do you assess king safety quickly?",
+      "choices": [
+        "Count your pawns",
+        "Look at the pawn shield, open lines toward the king, and the number of attackers versus defenders nearby",
+        "Look at the clock",
+        "Count pieces on the queenside"
+      ],
+      "answer": 1,
+      "explain": "Attackers vs defenders around the king is the best quick indicator (Vukovic)."
+    }
+  ],
+  "practiceThemes": [
+    "exposedKing",
+    "kingsideAttack"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#king-safety",
+    "knowledge-base/03-chess-knowledge/strategy.md#attacking-the-king",
+    "Vukovic, The Art of Attack in Chess (king safety)",
+    "Lichess puzzle database (CC0): 7rxcb"
+  ]
+}

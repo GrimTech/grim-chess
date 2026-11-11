@@ -1,0 +1,95 @@
+{
+  "id": "adult.s3.the-centre",
+  "track": "adult",
+  "stage": 3,
+  "order": 38,
+  "skillIds": [
+    "strategy.centre"
+  ],
+  "title": "The centre: occupy, control, challenge",
+  "summary": "Classical occupation versus hypermodern control, and the pawn breaks that challenge a centre: ...c5 against a chain, ...e5 in the King's Indian, d4 in the Italian.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The centre (d4, d5, e4, e5) gives pieces maximum scope and lets you switch between wings. Two schools:\n\n- **Classical**: occupy it with pawns (e4/d4).\n- **Hypermodern** (Nimzowitsch, Réti): control it from a distance with pieces, then attack the enemy centre with pawn breaks.\n\nAgainst a **pawn chain** (e.g. d4-e5), Nimzowitsch's rule: **attack the base** of the chain (d4) with ...c5."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5",
+      "prompt": "Italian Game. White prepared c3. Take the centre with a pawn.",
+      "solution": [
+        "d4"
+      ],
+      "explain": "d4! uses c3 to build a full pawn centre and hits the c5-bishop. The quieter d3 is also played by top players, but d4 is the classical, principled way and leads to open, active play.",
+      "alternatives": [
+        "d3"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3",
+      "prompt": "French Advance. White's chain is d4-e5. Attack its base.",
+      "solution": [
+        "c5"
+      ],
+      "explain": "...c5! strikes at d4, the base of the chain. Black follows with ...Nc6, ...Qb6 and ...Nge7-f5, piling up on d4."
+    },
+    {
+      "type": "move",
+      "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N2N2/PP2BPPP/R1BQK2R b KQ - 3 6",
+      "prompt": "King's Indian. Black let White build a big centre (hypermodern). Now challenge it.",
+      "solution": [
+        "e5"
+      ],
+      "explain": "...e5! is the King's Indian's main break, contesting d4 and claiming dark squares. If White closes with d5, Black attacks on the kingside with ...Ne8 and ...f5."
+    },
+    {
+      "type": "quiz",
+      "question": "The centre is locked (pawns on d4/e5 vs d5/e6). Where should play usually take place?",
+      "choices": [
+        "In the centre, by piece sacrifices",
+        "On the wings, with pawn breaks pointed at the chain (e.g. ...c5/...f6 for Black, f4-f5 or c4-c5 for White)",
+        "Nowhere: a draw",
+        "By king walks"
+      ],
+      "answer": 1,
+      "explain": "With a closed centre, both sides play pawn breaks on the wings, usually on the side the chain \"points\" to."
+    },
+    {
+      "type": "quiz",
+      "question": "Hypermodern openings (e.g. Grünfeld, Alekhine, King's Indian) share which idea?",
+      "choices": [
+        "Never move central pawns",
+        "Allow the opponent a pawn centre, then attack it with pieces and pawn breaks",
+        "Castle queenside",
+        "Fianchetto both bishops always"
+      ],
+      "answer": 1,
+      "explain": "Control matters more than occupation; an overextended centre becomes a target."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: against the chain d4-e5, which pawn break attacks the base?",
+      "choices": [
+        "...f6",
+        "...c5",
+        "...g5",
+        "...a5"
+      ],
+      "answer": 1,
+      "explain": "...c5 attacks the base (d4). ...f6 attacks the head (e5): also playable, but Nimzowitsch's principle is to start at the base."
+    }
+  ],
+  "practiceThemes": [
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#centre",
+    "knowledge-base/03-chess-knowledge/strategy.md#pawn-chains",
+    "knowledge-base/03-chess-knowledge/strategy.md#pawn-breaks",
+    "Nimzowitsch, My System",
+    "Nimzowitsch, My System (the pawn chain: attack the base)",
+    "knowledge-base/02-methods/positional-frameworks-nimzowitsch-silman.md"
+  ]
+}

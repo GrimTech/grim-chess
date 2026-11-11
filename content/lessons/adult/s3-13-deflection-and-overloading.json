@@ -1,0 +1,108 @@
+{
+  "id": "adult.s3.deflection-and-overloading",
+  "track": "adult",
+  "stage": 3,
+  "order": 13,
+  "skillIds": [
+    "tactics.deflection"
+  ],
+  "title": "Deflection and overloading",
+  "summary": "Force a defender away from its post with a check, capture or sacrifice; exploit pieces that have two jobs at once.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Deflection**: force a defender away from the square or line it guards, usually with a check, a capture or a sacrifice it must accept.\n\n**Overloading**: a defender with two duties cannot do both. Hit one duty and the other collapses.\n\nThe classic first example is the queen on d8 guarded only by the king on e8, with your queen on the open d-file."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/ppp1nppp/5n2/4p1B1/8/1B6/PP3PPP/RN1QK1NR w KQkq - 2 10",
+      "prompt": "Worked example. White to move. Black's queen on d8 is attacked by your queen and defended only by the king. Deflect the king.",
+      "solution": [
+        "Bxf7+",
+        "Kxf7",
+        "Qxd8"
+      ],
+      "explain": "Bxf7+! Kxf7 Qxd8: the check drags the king away from d8, and the queen falls. White gives a bishop and wins a queen.",
+      "hint": "A check on f7 forces the king to move."
+    },
+    {
+      "type": "move",
+      "fen": "2r1kbn1/pp2ppp1/2n3p1/8/2B3P1/1Q3q1r/PP1P1P2/RNB2RK1 w - - 0 14",
+      "prompt": "White to move. Black's h3-rook is defended only by the queen on f3. Deflect the queen.",
+      "solution": [
+        "Bxf7+",
+        "Qxf7",
+        "Qxh3"
+      ],
+      "explain": "Bxf7+! The king cannot recapture, because your b3-queen now covers f7, so Black's queen must take: ...Qxf7, abandoning the h3-rook, and Qxh3 wins it. The queen could not both stop the check and defend h3."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/1b3p2/p3p1pp/3qP3/3r1P2/1R4PP/4BP2/Q5K1 w - - 1 30",
+      "prompt": "White to move. Black's d4-rook is protected only by the queen on d5. Overload the queen.",
+      "solution": [
+        "Rxb7",
+        "Qxb7",
+        "Qxd4"
+      ],
+      "explain": "Rxb7! Qxb7 Qxd4: the queen had to guard both the b7-bishop and the d4-rook. Taking one deflects her from the other."
+    },
+    {
+      "type": "move",
+      "fen": "2k1r3/2p5/1p4pp/3p1b2/3P4/PRP3P1/2P2P1P/4RK2 b - - 3 31",
+      "prompt": "Black to move: mate in two. White's king guards the e1-rook. Deflect it.",
+      "solution": [
+        "Bh3+",
+        "Kg1",
+        "Rxe1#"
+      ],
+      "explain": "...Bh3+! Kg1 (the only move) ...Rxe1#: the king was pushed off the defence of e1, and the rook mates on the back rank."
+    },
+    {
+      "type": "move",
+      "fen": "2r5/p3k3/1b2p1Q1/3pP1N1/7P/8/q3rPP1/6K1 w - - 0 27",
+      "prompt": "White to move: mate in two. Black's e6-pawn is the knight's target; who defends it?",
+      "solution": [
+        "Qf7+",
+        "Kd8",
+        "Nxe6#"
+      ],
+      "explain": "Qf7+! Kd8 Nxe6#: the queen check drives the king to d8, and the knight lands on e6 with mate. The king was overloaded: it could not both escape the check and keep guard of e6."
+    },
+    {
+      "type": "quiz",
+      "question": "A black rook on e8 guards the back rank and also defends a knight on e6. Which white idea exploits this overload?",
+      "choices": [
+        "Attack the e6-knight a second time so the rook must choose",
+        "Trade queens",
+        "Push the h-pawn",
+        "Ignore the rook and castle"
+      ],
+      "answer": 0,
+      "explain": "An overloaded defender can only answer one threat. Add an attacker to one of its duties, or deflect it with a capture."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the difference between deflection and decoy?",
+      "choices": [
+        "There is none",
+        "Deflection forces a defender AWAY from a square; decoy forces a piece ONTO a square where it becomes a target",
+        "Deflection always uses the queen",
+        "Decoy only works against pawns"
+      ],
+      "answer": 1,
+      "explain": "Deflection removes a guard; decoy (next lesson) lures a piece, often the king, into a fork, pin or mate."
+    }
+  ],
+  "practiceThemes": [
+    "deflection"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#deflection",
+    "knowledge-base/03-chess-knowledge/tactics.md#overloading",
+    "Brunia & van Wijgerden, Steps Method Step 3 workbook (eliminating the defender, discovered attack)",
+    "Yusupov, Build Up Your Chess 1 (deflection)",
+    "Lichess puzzle database (CC0): 0jiUb, 16BKv, 082WX, 13DBh, 3WyxT"
+  ]
+}

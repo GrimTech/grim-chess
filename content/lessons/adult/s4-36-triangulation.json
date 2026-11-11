@@ -1,0 +1,135 @@
+{
+  "id": "adult.s4.triangulation",
+  "track": "adult",
+  "stage": 4,
+  "order": 36,
+  "skillIds": [
+    "endgame.pawn.triangulation"
+  ],
+  "title": "Triangulation: losing a tempo on purpose",
+  "summary": "When the position would win with the opponent to move, walk your king around a triangle to hand him the move.",
+  "estMinutes": 18,
+  "steps": [
+    {
+      "type": "text",
+      "md": "In pawn endings, **zugzwang** often decides: the same position wins with the opponent to move and only draws with you to move. If your king has more room than his, you can **lose a tempo**:\n\n- **Triangulation:** your king makes three moves around a triangle of adjacent squares (e.g. g4-h4-g3-g4) and returns to the same square, while the enemy king, short of space, can only shuttle between two squares. After three moves the original position is back, but **with the opponent to move**.\n- A related trick: step to a square that takes away the enemy king's waiting square, so that he has no neutral move.\n\nAlways ask first: \"Who would be in zugzwang in this position, and can I pass the move?\""
+    },
+    {
+      "type": "move",
+      "fen": "8/5pK1/4k1p1/6P1/5P2/8/8/8 w - - 9 57",
+      "prompt": "White to move. With Black to move here, ...Ke7 would be a harmless waiting move. Take that waiting move away.",
+      "solution": [
+        "Kf8",
+        "f6",
+        "Kg7",
+        "fxg5",
+        "fxg5",
+        "Kf5",
+        "Kh6"
+      ],
+      "explain": "**57.Kf8!** Now e7 touches your king, so the black king has no neutral square: 57...f6 (king moves drop the f7-pawn) 58.Kg7 fxg5 59.fxg5 Kf5 60.Kh6, and Black is in zugzwang again: the g6-pawn falls. You transferred the move to Black by controlling his shuttle square."
+    },
+    {
+      "type": "move",
+      "fen": "8/p7/P7/6p1/5p2/5P1K/5kP1/8 b - - 1 41",
+      "prompt": "Black to move. White's king on h3 is almost stalemated; White has only pawn moves left. Lose a tempo with your king.",
+      "solution": [
+        "Kg1",
+        "g3",
+        "Kf2",
+        "gxf4",
+        "gxf4",
+        "Kg4",
+        "Ke3",
+        "Kf5",
+        "Kxf3"
+      ],
+      "explain": "**41...Kg1!** and back **42...Kf2** after 42.g3: the king returns to f2, and White, who had only pawn moves, had to change his structure. After 43.gxf4 gxf4 44.Kg4 Ke3 Black's king invades and wins f3. A two-square shuffle works when the opponent has no waiting moves at all."
+    },
+    {
+      "type": "board",
+      "fen": "8/2p1k3/1p6/1PpPK2p/2P2P2/8/8/8 w - - 0 48",
+      "md": "White to move. White wants his king on g4 with Black to move, so that the black king (shuttling between e4/f5 type squares) must give way. Watch the triangle **g4-h4-g3** in the solution.",
+      "arrows": [
+        [
+          "g4",
+          "h4",
+          "green"
+        ],
+        [
+          "h4",
+          "g3",
+          "green"
+        ],
+        [
+          "g3",
+          "g4",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/2p1k3/1p6/1PpPK2p/2P2P2/8/8/8 w - - 0 48",
+      "prompt": "White to move. Win the h-pawn, then triangulate to put Black in zugzwang.",
+      "solution": [
+        "Kf5",
+        "h4",
+        "Kg4",
+        "Kf6",
+        "Kxh4",
+        "Kf5",
+        "Kg3",
+        "Ke4",
+        "Kg4"
+      ],
+      "explain": "**48.Kf5 h4 49.Kg4 Kf6 50.Kxh4 Kf5 51.Kg3! Ke4 52.Kg4!** The white king went g4-h4-g3-g4 (a triangle) while the black king could only go f5-e4: the same kind of position has arisen, but now **Black is to move**. Every king move gives way: either the f-pawn advances (f4-f5) or the white king enters. Triangulation won the zugzwang."
+    },
+    {
+      "type": "quiz",
+      "question": "What does triangulation achieve?",
+      "choices": [
+        "It returns to the same position with the opponent to move",
+        "It wins a pawn directly",
+        "It gains the opposition in every position"
+      ],
+      "answer": 0,
+      "explain": "Three king moves around a triangle versus two shuttling moves: the position repeats, but the side to move has changed. It works only when your king has a triangle of safe squares and the enemy king does not."
+    },
+    {
+      "type": "quiz",
+      "question": "Why can the defender not simply triangulate back?",
+      "choices": [
+        "His king lacks the room: the squares around it are controlled by pawns or the enemy king, so he can only shuttle between two squares",
+        "Triangulation is only allowed for White",
+        "Because of the fifty-move rule"
+      ],
+      "answer": 0,
+      "explain": "Space is the resource. If the defender also has a triangle, the tempo battle continues (corresponding squares, stage 5). Typical error: trying to triangulate when your own king has no safe triangle."
+    },
+    {
+      "type": "play",
+      "fen": "8/2p1k3/1p6/1PpPK2p/2P2P2/8/8/8 w - - 0 48",
+      "goal": "promote",
+      "prompt": "Play the triangulation position against the engine and promote a pawn.",
+      "maxMoves": 35,
+      "explain": "Take the h-pawn, triangulate with g4-h4-g3-g4 to win the zugzwang, then invade and win the black pawns."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Define triangulation in one sentence. In the last example, which three squares formed the triangle? (g4, h4, g3.) Before using it, what must you check? (That the position is a zugzwang for the side to move, and that your king has a safe triangle while the enemy king does not.)"
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame",
+    "zugzwang"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#triangulation",
+    "knowledge-base/03-chess-knowledge/endgames.md#opposition",
+    "knowledge-base/03-chess-knowledge/endgames.md#corresponding-squares",
+    "de la Villa, 100 Endgames You Must Know (New in Chess, 2008), triangulation",
+    "Dvoretsky, Dvoretsky's Endgame Manual (Russell Enterprises, 2003), chapter 1 (corresponding squares)",
+    "Lichess puzzle database (CC0), puzzles 0hYiw, 0U50v, 0GYBj"
+  ]
+}

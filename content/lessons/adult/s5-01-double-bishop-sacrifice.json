@@ -1,0 +1,105 @@
+{
+  "id": "adult.s5.double-bishop-sacrifice",
+  "track": "adult",
+  "stage": 5,
+  "order": 1,
+  "skillIds": [
+    "tactics.double-bishop-sacrifice",
+    "checkmate.mating-attack"
+  ],
+  "title": "The double bishop sacrifice and building a mating attack",
+  "summary": "Lasker-Bauer 1889 and its descendants: remove both pawn shields with Bxh7+ and Bxg7, then bring the rook. Plus how attacks are prepared before the blow.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Preparing the blow\n\nA mating attack is built before it is executed. Check the four conditions (Vukovic, *The Art of Attack*):\n1. **More attackers than defenders** near the king (count pieces that can reach the king zone in 1-2 moves).\n2. **Lines**: open or openable files and diagonals towards the king (pawn levers, sacrifices).\n3. **Weakened shelter**: missing or advanced pawns, absent defensive minor pieces (especially the f6 knight).\n4. **The opponent cannot bring defenders in time** (count tempi).\n\n**The double bishop sacrifice** (Lasker-Bauer 1889) removes both h7 and g7: Bxh7+ and Bxg7, then the queen checks and a **rook lift** (Rf3-g3/h3) delivers the final blow. Requirements: queen ready to reach h5/g4 with tempo, a rook that can swing over, and no quick defensive ...f5/...f6 resources."
+    },
+    {
+      "type": "move",
+      "fen": "r4rk1/1b2bppp/ppq1p3/2ppB2n/5P2/1P1BP3/P1PPQ1PP/R4RK1 w - - 0 15",
+      "prompt": "White to move. Both bishops aim at the black king; the knight on h5 is loose. Find the classic combination (Lasker-Bauer, Amsterdam 1889).",
+      "solution": [
+        "Bxh7+",
+        "Kxh7",
+        "Qxh5+",
+        "Kg8",
+        "Bxg7",
+        "Kxg7",
+        "Qg4+"
+      ],
+      "hint": "Two bishops, two pawns in front of the king.",
+      "explain": "**15.Bxh7+! Kxh7 16.Qxh5+ Kg8 17.Bxg7!! Kxg7 18.Qg4+** and after 18...Kh7 19.Rf3! e5 20.Rh3+ Qh6 21.Rxh6+ Kxh6 22.Qd7! White forks the two bishops and wins decisively. Declining the second bishop (17...f6/17...f5) also loses to the rook lift. Engine: +6.8 after 15.Bxh7+, about 0.1 for anything else."
+    },
+    {
+      "type": "quiz",
+      "question": "In the Lasker-Bauer pattern, why does the second sacrifice Bxg7 work only if White can play Rf1-f3 quickly?",
+      "choices": [
+        "Because the rook must defend the queen",
+        "Because after the king escapes to g7/h7 the decisive attacker is the rook lift to g3/h3; without it the queen alone only gives perpetual check",
+        "Because Rf3 protects the e3 pawn",
+        "It does not matter; Bxg7 always wins"
+      ],
+      "answer": 1,
+      "explain": "The two bishop sacrifices only open the king; the rook (or another piece) arriving with tempo is what mates or wins material. Before sacrificing, check that the third attacker arrives in time."
+    },
+    {
+      "type": "move",
+      "fen": "8/p3q1kp/1p2Pnp1/3pQ3/2pP4/1nP3N1/1B4PP/6K1 w - - 5 30",
+      "prompt": "White to move. Black's queen guards f6 and e7; White's queen and knight are ready. Find the deflection that starts a winning attack (Botvinnik-Capablanca, AVRO 1938).",
+      "solution": [
+        "Ba3"
+      ],
+      "hint": "The black queen has too many jobs.",
+      "explain": "**30.Ba3!!** deflects the queen from the defence of f6/e7. The game went 30...Qxa3 31.Nh5+! gxh5 32.Qg5+ Kf8 33.Qxf6+ Kg8 34.e7 and the e-pawn queens or White mates; Black's checks ran out on move 41. Declining with 30...Qe8 loses to 31.Qc7+ (engine line 30...Qe8 31.Qc7+ Kh6 32.Be7). Engine: +6.6 for Ba3, under +3.1 for anything else."
+    },
+    {
+      "type": "move",
+      "fen": "r1r1k3/pp1qn2p/5pp1/3p2N1/6Q1/8/PP3PPP/2R1R1K1 w - - 2 22",
+      "prompt": "White to move. Black's king is stuck in the centre and the e-file is open. Start the most famous rook dance in chess history (Steinitz-von Bardeleben, Hastings 1895).",
+      "solution": [
+        "Rxe7+"
+      ],
+      "hint": "The d7-queen is overloaded: it must guard e7 and stay protected.",
+      "explain": "**22.Rxe7+!** Kf8 23.Rf7+ Kg8 24.Rg7+ Kh8 25.Rxh7+ — the rook cannot be taken because of Qxd7 or mate with the queen and knight. Von Bardeleben left the hall instead of resigning; Steinitz showed the mate in 10 to the spectators. Engine: +6.2 for Rxe7+, +1.3 for 22.Nxh7."
+    },
+    {
+      "type": "quiz",
+      "question": "Before playing a speculative sacrifice on h7, which question matters most?",
+      "choices": [
+        "Is the sacrifice beautiful?",
+        "Can my next attacker (queen, knight, rook) join with tempo, and does the defender have ...f5/...Nf6/...Re8-type resources?",
+        "Has the opponent castled long?",
+        "Do I have more pawns?"
+      ],
+      "answer": 1,
+      "explain": "Count attackers and defenders, then calculate the defender's resources. A sacrifice without a follow-up attacker is just a lost piece."
+    },
+    {
+      "type": "play",
+      "fen": "r4rk1/1b2bppp/ppq1p3/2ppB2n/5P2/1P1BP3/P1PPQ1PP/R4RK1 w - - 0 15",
+      "goal": "win",
+      "prompt": "Now play the Lasker-Bauer position against the engine (level 13) and convert it. Success = winning decisive material.",
+      "maxMoves": 30,
+      "engineLevel": 13
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles**: 20 puzzles with the theme *kingsideAttack* and 10 with *sacrifice* at your rating (*Puzzles → by theme*).\n- **Guess the move**: Lasker-Bauer 1889 and Botvinnik-Capablanca 1938 (both in the corpus) from the moment the attack starts.\n- In your last 10 games, find one position where you attacked: count attackers and defenders at the moment you started. Were the four conditions met?"
+    }
+  ],
+  "practiceThemes": [
+    "sacrifice",
+    "kingsideAttack",
+    "exposedKing"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md",
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "Nunn, Understanding Chess Tactics",
+    "Kasparov, My Great Predecessors (vols. I-IV)",
+    "Lasker-Bauer, Amsterdam 1889",
+    "Botvinnik-Capablanca, AVRO 1938"
+  ]
+}

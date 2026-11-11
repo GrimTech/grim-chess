@@ -1,0 +1,100 @@
+{
+  "id": "adult.s1.promotion",
+  "track": "adult",
+  "stage": 1,
+  "order": 10,
+  "skillIds": [
+    "rules.promotion"
+  ],
+  "title": "Pawn promotion",
+  "summary": "A pawn that reaches the last rank becomes a queen, rook, bishop or knight.",
+  "estMinutes": 6,
+  "steps": [
+    {
+      "type": "text",
+      "md": "When a pawn reaches the far rank (rank 8 for White, rank 1 for Black) it must be **promoted**, as part of the same move, to a queen, rook, bishop or knight of your colour. You choose freely, even if you still have your original queen, so two or more queens are allowed. The new piece acts immediately (it can give check at once). Almost always you choose a queen."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/1P6/8/8/8/8/8/4K3 w - - 0 1",
+      "prompt": "Promote the pawn to a queen.",
+      "solution": [
+        "b8=Q+"
+      ],
+      "explain": "b8=Q. The new queen gives check along the 8th rank at once. The \"=Q\" in notation shows the promotion piece."
+    },
+    {
+      "type": "move",
+      "fen": "r3k3/1P6/8/8/8/8/8/4K3 w - - 0 1",
+      "prompt": "Promote with a capture: take the rook and make a queen.",
+      "solution": [
+        "bxa8=Q+"
+      ],
+      "explain": "A pawn may also promote by capturing diagonally onto the last rank. Pushing to b8 instead would lose the new queen to the rook."
+    },
+    {
+      "type": "move",
+      "fen": "k7/2P5/1K6/8/8/8/8/8 w - - 0 1",
+      "prompt": "Promote and deliver checkmate in one move.",
+      "solution": [
+        "c8=Q#"
+      ],
+      "alternatives": [
+        "c8=R#"
+      ],
+      "explain": "The new queen on c8 checks along the 8th rank; your king covers a7 and b7. A rook would also mate here, but the queen is the natural choice."
+    },
+    {
+      "type": "quiz",
+      "question": "You still have your original queen. Can you promote a second pawn to a queen?",
+      "choices": [
+        "Yes, you may have several queens",
+        "No, only to a captured piece",
+        "Only to a rook"
+      ],
+      "answer": 0,
+      "explain": "The choice is not limited to captured pieces. Over the board, use an upside-down rook or ask the arbiter for a second queen."
+    },
+    {
+      "type": "quiz",
+      "question": "Which pieces can a pawn promote to?",
+      "choices": [
+        "Queen, rook, bishop or knight",
+        "Any piece including a king",
+        "Only a queen",
+        "Queen or king"
+      ],
+      "answer": 0,
+      "explain": "Never a king, and it cannot stay a pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: does the promoted piece act on the same move it appears?",
+      "choices": [
+        "Yes, it can give check immediately",
+        "No, it waits one move",
+        "Only a knight can"
+      ],
+      "answer": 0,
+      "explain": "The new piece is fully active the moment it lands."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: where does a black pawn promote?",
+      "choices": [
+        "On the 1st rank",
+        "On the 8th rank",
+        "On any rank after 5 moves"
+      ],
+      "answer": 0,
+      "explain": "Each side promotes on the opponent's back rank: White on rank 8, Black on rank 1."
+    }
+  ],
+  "practiceThemes": [
+    "promotion"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#promotion",
+    "knowledge-base/02-methods/steps-method.md#3-didactic-principles"
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "id": "adult.s6.prophylaxis",
+  "track": "adult",
+  "stage": 6,
+  "order": 6,
+  "skillIds": [
+    "strategy.prophylaxis",
+    "calculation.prophylactic-thinking"
+  ],
+  "title": "Prophylaxis: what does my opponent want?",
+  "summary": "Nimzowitsch, Petrosian and Karpov: prevent the opponent's plan before executing your own — as a habit at every move.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Dvoretsky's question\n\nBefore every important decision, ask: **\"What would my opponent do if it were his move?\"** Then look for a move that prevents his idea **and** improves your position.\n\nTypical prophylactic moves: a king step out of a future check (Kh2, Kg2), a pawn move that takes a square from an enemy piece (a3 against ...Nb4, h3 against ...Ng4), a rook that defends the second rank in advance, an exchange of the opponent's best piece. Karpov and Petrosian built whole games on this."
+    },
+    {
+      "type": "move",
+      "fen": "3rr1k1/p4ppp/1p2q3/3p4/3B2NP/QP4nB/P3RP2/3R1K2 w - - 0 34",
+      "prompt": "White to move. The black knight on g3 and the e-file pressure create threats. Find the calm move that defuses them (Karpov-Sokolov, Linares cf 1987)",
+      "solution": [
+        "Kg2"
+      ],
+      "orientation": "white",
+      "explain": "**34.Kg2!** — the king attacks the g3-knight and leaves the back rank; after 34...Qxe2 35.Qc1 White traps or wins material on e2 with a safe king. Engine main line: 34.Kg2 Qxe2 35.Qc1 Nh5 36.Kh2 Rd6 37.Qd2 h6. (Karpov-Sokolov, Linares cf 1987; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "5k2/p4p2/1p6/5R1p/5Qn1/1P2P3/P7/3q2K1 w - - 3 41",
+      "prompt": "White to move. Black threatens ...Nxe3 and checks on the first rank. Find the prophylactic queen move (Capablanca-Lasker, World Championship 1921)",
+      "solution": [
+        "Qf1"
+      ],
+      "orientation": "white",
+      "explain": "**41.Qf1!** — the queen covers the first rank and the f-file in advance; only then does White's rook go after the h-pawn. Engine main line: 41.Qf1 Qd7 42.Rxh5 Qd2 43.Rh8+ Ke7 44.Rh3 Nxe3. (Capablanca-Lasker, World Championship 1921; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "4kr2/1p5p/p3p3/2bp4/3R4/2N5/PPP2PPP/6K1 w - - 2 27",
+      "prompt": "White to move. A quiet rook move stops Black's plan before it starts (Fischer-Taimanov, Candidates 1971)",
+      "solution": [
+        "Rd2"
+      ],
+      "orientation": "white",
+      "explain": "**27.Rd2!** — the rook defends the second rank and keeps the d-file; Black's ...Rf2/...Bf2-type activity is prevented. Engine main line: 27.Rd2 Ke7 28.Kf1 b5 29.Nd1 h5 30.Rd3 Rf4. (Fischer-Taimanov, Candidates 1971; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "8/1pB3p1/p3k3/P6R/4P1KP/5P2/6r1/4b3 w - - 8 41",
+      "prompt": "White to move. The black bishop and rook look for checks and the g-pawn. Only one king move keeps the advantage (Alekhine-Capablanca, World Championship 1927)",
+      "solution": [
+        "Kh3"
+      ],
+      "orientation": "white",
+      "explain": "**41.Kh3!** — the king leaves the g-file and the e1-h4 diagonal before Black can use them. Engine main line: 41.Kh3 Rf2 42.Rf5 g6 43.Rf4 Bd2 44.Rf8 Ke7. (Alekhine-Capablanca, World Championship 1927; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "You are about to start a queenside attack. Your opponent's best plan is ...f5 with kingside play. Which approach reflects prophylactic thinking?",
+      "choices": [
+        "Ignore it; the attack is faster",
+        "First play a move that makes ...f5 harder or less effective (for example Nd2-f1-g3, f3, or g4) if it costs little, then attack",
+        "Exchange queens",
+        "Play ...f5 yourself"
+      ],
+      "answer": 1,
+      "explain": "If a small investment kills the opponent's plan, your own plan runs unopposed. If prevention costs too much time, calculate the race instead."
+    },
+    {
+      "type": "quiz",
+      "question": "Which statement best describes \"prophylactic thinking\" in calculation?",
+      "choices": [
+        "Calculating only defensive moves",
+        "At every node of your tree, identifying the opponent's strongest idea (not only his forcing moves) and checking that your line deals with it",
+        "Avoiding all risk",
+        "Playing slowly"
+      ],
+      "answer": 1,
+      "explain": "It is a thinking habit, not a type of move. It is one of the most consistent differences between masters and strong club players."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: one Karpov game and one Petrosian game (corpus). For each of your guesses, first write \"his threat: ...\".\n- In your next 3 games, at every move from 15 to 30, write down the opponent's main idea on the scoresheet (one word is enough).\n- **Puzzles**: 15 *defensiveMove* puzzles; before solving, state the opponent's threat."
+    }
+  ],
+  "practiceThemes": [
+    "defensiveMove",
+    "quietMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "Dvoretsky & Yusupov, Positional Play",
+    "Flores Rios, Chess Structures",
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "Nimzowitsch, My System",
+    "Dvoretsky, School of Chess Excellence 2 (prophylactic thinking)",
+    "Karpov-Sokolov, Linares 1987"
+  ]
+}

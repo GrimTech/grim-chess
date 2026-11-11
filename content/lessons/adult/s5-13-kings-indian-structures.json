@@ -1,0 +1,111 @@
+{
+  "id": "adult.s5.kings-indian-structures",
+  "track": "adult",
+  "stage": 5,
+  "order": 13,
+  "skillIds": [
+    "strategy.kid-structures"
+  ],
+  "title": "King's Indian structures and pawn-storm races",
+  "summary": "Mar del Plata (White on the queenside with c5, Black on the kingside with ...f5-f4-g5), the exchange line, and the Petrosian/Benoni-type centre.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Closed centre, opposite wings\n\nWith the centre locked (d5 against e5), each side attacks where its pawns point:\n- **White** plays on the **queenside**: c4-c5, b4, Nd3/Nb5, opening the c-file and invading on c7.\n- **Black** plays on the **kingside**: ...f5, ...f4, ...g5-g4, often sacrificing a pawn or piece on g3/h3 to reach White's king.\n\n**Race rules:** count the tempi; a tempo spent on defence must slow the opponent more than it slows you; and **piece sacrifices to open lines** decide many races.\n\nOther KID structures: the **exchange variation** (dxe5 dxe5, queens off: Black is fine if he uses d4 and c5 squares and avoids ...c6 weaknesses), the **Petrosian system** (d5 with Bg5), and Benoni-type structures after ...c5."
+    },
+    {
+      "type": "board",
+      "fen": "r1bq1rk1/ppp1n1bp/3p1np1/3Pp3/2P1Pp2/2NN1P2/PP1BB1PP/R2Q1RK1 w - - 0 13",
+      "md": "**Mar del Plata** (…9.Ne1 Nd7 10.Nd3 f5 11.Bd2 Nf6 12.f3 f4). Black has closed the centre-kingside with ...f4; the plan is ...g5-g4, ...Ng6, ...Rf7, ...Bf8, ...h5 and a sacrifice on g4/h3. White plays c5 and opens the c-file. Each move counts.",
+      "orientation": "black",
+      "arrows": [
+        [
+          "g7",
+          "g5",
+          "red"
+        ],
+        [
+          "c4",
+          "c5",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the Mar del Plata structure above, what is Black's typical pawn lever on the kingside?",
+      "choices": [
+        "...b5",
+        "...g5-g4 (after ...h5 or directly), attacking f3",
+        "...c5",
+        "...d5"
+      ],
+      "answer": 1,
+      "explain": "...g5-g4 hits f3, the base of White's kingside chain. Combined with ...Ng6-h4 or ...Nf6-h5 it opens lines towards g2.",
+      "fen": "r1bq1rk1/ppp1n1bp/3p1np1/3Pp3/2P1Pp2/2NN1P2/PP1BB1PP/R2Q1RK1 w - - 0 13"
+    },
+    {
+      "type": "quiz",
+      "question": "And White's matching lever on the queenside?",
+      "choices": [
+        "f4",
+        "c4-c5, attacking d6 and opening the c-file",
+        "g4",
+        "h4"
+      ],
+      "answer": 1,
+      "explain": "c5 attacks the base d6. Typical follow-ups: cxd6, Nb5, Rc1, Qc2 and an invasion on c7.",
+      "fen": "r1bq1rk1/ppp1n1bp/3p1np1/3Pp3/2P1Pp2/2NN1P2/PP1BB1PP/R2Q1RK1 w - - 0 13"
+    },
+    {
+      "type": "board",
+      "fen": "rnbr2k1/ppp2pbp/5np1/4p1B1/2P1P3/2N2N2/PP2BPPP/R3K2R b KQ - 1 9",
+      "md": "**Exchange variation** (7.dxe5 dxe5 8.Qxd8 Rxd8 9.Bg5): queens are gone and the centre is symmetrical. White hopes for d5 and pressure on the d-file; Black is comfortable if he plays ...Re8/...Rf8, ...c6, ...Na6-c5 and uses d4. A useful reminder that the KID is not only about attacks.",
+      "orientation": "black"
+    },
+    {
+      "type": "board",
+      "fen": "rnbq1rk1/1pp2pb1/3p1npp/p2Pp3/2P1P2B/2N2N2/PP2BPPP/R2QK2R b KQ - 1 9",
+      "md": "**Petrosian system** (7.d5 a5 8.Bg5 h6 9.Bh4): White closes the centre early and pins the f6 knight to hinder ...f5. Black's choices include ...Na6-c5 (blockading on c5, using the a5 pawn) and ...g5/...Nh5 to free the game.",
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "In a pawn-storm race on opposite wings, which principle is most reliable?",
+      "choices": [
+        "Always defend first, then attack",
+        "Count tempi; spend a move on defence only if it slows the opponent's attack more than your own; use piece sacrifices to open lines",
+        "Never sacrifice material in a race",
+        "Exchange queens to stop all attacks"
+      ],
+      "answer": 1,
+      "explain": "Races are about time. A defensive move that costs a tempo but gains two (for example by closing a file) is good; most \"prophylactic\" moves in races simply lose the race."
+    },
+    {
+      "type": "play",
+      "fen": "r1bq1rk1/ppp1n1bp/3p1np1/3Pp3/2P1Pp2/2NN1P2/PP1BB1PP/R2Q1RK1 w - - 0 13",
+      "goal": "hold",
+      "prompt": "Play the Mar del Plata position as Black against the engine (level 12) for 25 moves. Execute the kingside plan (...g5, ...Ng6, ...Rf7, ...h5, ...g4) and do not lose the race on the queenside.",
+      "maxMoves": 25,
+      "engineLevel": 12
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: two KID games (e.g. Kasparov's KID wins in the corpus) playing Black.\n- **Puzzles**: 15 *kingsideAttack* puzzles at your rating.\n- If the KID is in your repertoire, write the move-order tree for the Mar del Plata to move 15 with the plan at each leaf."
+    }
+  ],
+  "practiceThemes": [
+    "kingsideAttack",
+    "queensideAttack"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "knowledge-base/03-chess-knowledge/openings.md",
+    "Dvoretsky & Yusupov, Positional Play",
+    "Soltis, Pawn Structure Chess",
+    "Flores Rios, Chess Structures: A Grandmaster Guide",
+    "Gligoric, King's Indian Defence: Mar del Plata Variation",
+    "Kasparov's King's Indian games (corpus: classics-karpov-kasparov.pgn)"
+  ]
+}

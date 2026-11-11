@@ -1,0 +1,71 @@
+{
+  "id": "kids.2.pawn-captures",
+  "track": "kids",
+  "stage": 1,
+  "order": 202,
+  "skillIds": [
+    "rules.pieces.pawn",
+    "rules.capture"
+  ],
+  "title": "Pawns capture sideways",
+  "summary": "Pawns move straight ahead but capture one step diagonally.",
+  "estMinutes": 5,
+  "minAge": 5,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Pawns walk straight, but they **capture diagonally**: one step forward to the side."
+    },
+    {
+      "type": "board",
+      "fen": "7k/8/8/3pp3/4P3/8/8/4K3 w - - 0 1",
+      "md": "The pawn is blocked in front, but it can capture on d5.",
+      "arrows": [
+        [
+          "e4",
+          "d5",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/8/3pp3/4P3/8/8/4K3 w - - 0 1",
+      "prompt": "The pawn is blocked. Capture!",
+      "solution": [
+        "exd5"
+      ],
+      "explain": "A sideways bite!",
+      "hint": "Diagonal, forward."
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/8/8/1n1p4/2P5/8/4K3 w - - 0 1",
+      "prompt": "Two things to capture. Capture the **knight**!",
+      "solution": [
+        "cxb4"
+      ],
+      "explain": "The knight is worth more than a pawn.",
+      "hint": "The knight is on the left."
+    },
+    {
+      "type": "board",
+      "fen": "7k/8/8/4p3/4P3/8/8/4K3 w - - 0 1",
+      "md": "Pawns **cannot** capture straight ahead. These two are stuck!"
+    },
+    {
+      "type": "quiz",
+      "question": "Can the white pawn capture the black pawn here?",
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "answer": 1,
+      "explain": "No. Pawns only capture diagonally.",
+      "fen": "7k/8/8/4p3/4P3/8/8/4K3 w - - 0 1"
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

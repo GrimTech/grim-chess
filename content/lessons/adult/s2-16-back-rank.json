@@ -1,0 +1,112 @@
+{
+  "id": "adult.s2.back-rank",
+  "track": "adult",
+  "stage": 2,
+  "order": 16,
+  "skillIds": [
+    "checkmate.back-rank"
+  ],
+  "title": "Back-rank and corridor mates",
+  "summary": "Mate a king trapped behind its own pawns; know luft as the defence.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A king behind an unmoved pawn shield (f7, g7, h7) has no escape squares upwards. A rook or queen on the **back rank** then mates. The **corridor mate** is the same idea on any edge line. Defence: **luft** (a pawn move such as h3/h6 giving the king a square), or keeping a rook on the back rank."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/3Q2K1 w - - 0 1",
+      "prompt": "Mate in one.",
+      "solution": [
+        "Qd8#"
+      ],
+      "explain": "Back-rank mate with the queen."
+    },
+    {
+      "type": "move",
+      "fen": "2r3k1/5ppp/8/8/8/8/3Q1PPP/3R2K1 w - - 0 1",
+      "prompt": "Black's rook guards the back rank. Remove it: mate in two.",
+      "solution": [
+        "Qd8+",
+        "Rxd8",
+        "Rxd8#"
+      ],
+      "explain": "Qd8+! deflects the only defender. After ...Rxd8, Rxd8#. The queen sacrifice is worth it because the result is mate."
+    },
+    {
+      "type": "move",
+      "fen": "2rr2k1/5ppp/8/8/8/8/3R1PPP/3R2K1 w - - 0 1",
+      "prompt": "Doubled rooks against the back rank: mate in two.",
+      "solution": [
+        "Rxd8+",
+        "Rxd8",
+        "Rxd8#"
+      ],
+      "explain": "Two attackers vs two defenders, but the last capture is mate."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/1p6/kr6/1p6/8/6K1/4R3 w - - 0 1",
+      "prompt": "A corridor mate on the a-file. Mate in one.",
+      "solution": [
+        "Ra1#"
+      ],
+      "explain": "The black king is boxed in on the a-file by its own pawns and rook."
+    },
+    {
+      "type": "quiz",
+      "question": "Which move gives luft to a king on g1 behind f2, g2, h2?",
+      "choices": [
+        "h3",
+        "Kh1",
+        "Rf1",
+        "a3"
+      ],
+      "answer": 0,
+      "explain": "h3 (or g3) creates an escape square. It costs one tempo but removes back-rank worries for the whole game."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. Is it checkmate?",
+      "choices": [
+        "No: the a8-rook captures on e8",
+        "Yes",
+        "It is stalemate"
+      ],
+      "answer": 0,
+      "explain": "Before you play a back-rank \"mate\", check whether a defender can capture the checker or block the rank. Here Rxe8 wins a rook.",
+      "fen": "r3R1k1/5ppp/8/8/8/8/5PPP/6K1 b - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the standard defence against back-rank mates?",
+      "choices": [
+        "Luft: a pawn move giving the king a square",
+        "Castling queenside",
+        "Moving the king to the centre"
+      ],
+      "answer": 0,
+      "explain": "Luft, or keeping a heavy piece on the back rank."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: a rook defends your back rank. What tactic tries to remove it?",
+      "choices": [
+        "Deflection, e.g. a queen sacrifice on the back rank",
+        "A pin on the h-file",
+        "En passant"
+      ],
+      "answer": 0,
+      "explain": "As in the Qd8+ Rxd8 Rxd8# combination."
+    }
+  ],
+  "practiceThemes": [
+    "backRankMate",
+    "mateIn2"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#back-rank-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#corridor-mate"
+  ]
+}

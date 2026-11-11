@@ -1,0 +1,144 @@
+{
+  "id": "adult.s3.two-motif-combinations",
+  "track": "adult",
+  "stage": 3,
+  "order": 19,
+  "skillIds": [
+    "tactics.combination-basics"
+  ],
+  "title": "Two-motif combinations",
+  "summary": "Put the motifs together: removing the defender plus fork, decoy plus fork, deflection plus back rank, pin plus fork.",
+  "estMinutes": 16,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **combination** is a forcing sequence, often with a sacrifice, built from two or more motifs. The first move creates the condition (removes a defender, lures a piece, opens a line); the second motif cashes in (fork, pin, mate). When a single motif \"almost\" works, ask which preparatory move would make it work. These puzzles are **mixed**: name the motifs before you move."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/7p/2n3p1/1p1pPp2/1P1P1P2/1NQ2K2/q5PP/8 b - - 6 41",
+      "prompt": "Black to move. Your knight would love to fork from d4, but the b3-knight guards it. Prepare the fork.",
+      "solution": [
+        "Qxb3",
+        "Qxb3",
+        "Nxd4+",
+        "Ke3",
+        "Nxb3"
+      ],
+      "explain": "...Qxb3! Qxb3 Nxd4+ and ...Nxb3: queen trade (decoy of the white queen to b3) plus knight fork. Black ends a knight up.",
+      "hint": "Trade queens on the square you want to fork."
+    },
+    {
+      "type": "move",
+      "fen": "r2q1rk1/ppb3pp/2p1R3/8/3P4/5NP1/P1Q3PP/R5K1 b - - 0 21",
+      "prompt": "Black to move. The d4-pawn is guarded by the f3-knight, and behind it is the a1-rook.",
+      "solution": [
+        "Rxf3",
+        "gxf3",
+        "Qxd4+",
+        "Kg2",
+        "Qxa1"
+      ],
+      "explain": "...Rxf3! gxf3 Qxd4+ forks king and a1-rook: Kg2 Qxa1. Removing the defender, then a queen fork."
+    },
+    {
+      "type": "move",
+      "fen": "2k2b1r/pp1r1p1p/2p2p2/8/2BPbBP1/5N1Q/Pq5P/R4RK1 b - - 3 19",
+      "prompt": "Black to move. White's d4-pawn shields the king on g1 and the bishop on c4.",
+      "solution": [
+        "Bxf3",
+        "Qxf3",
+        "Qxd4+",
+        "Be3",
+        "Qxc4"
+      ],
+      "explain": "...Bxf3! Qxf3 Qxd4+ (removing the knight that defended d4) and the check also hits the c4-bishop: Be3 Qxc4."
+    },
+    {
+      "type": "move",
+      "fen": "2r5/7k/4q1pp/1p5N/1P2b3/P1p5/2Q3PP/6RK w - - 4 36",
+      "prompt": "White to move. Black's queen defends the e4-bishop. Could your knight fork king and queen?",
+      "solution": [
+        "Qxe4",
+        "Qxe4",
+        "Nf6+",
+        "Kg7",
+        "Nxe4"
+      ],
+      "explain": "Qxe4! Qxe4 Nf6+ and Nxe4: the queen exchange decoys Black's queen to e4, where the knight forks it with the king."
+    },
+    {
+      "type": "move",
+      "fen": "4k2r/1b6/p2p2p1/1p1Nq3/4r1p1/PN6/1PPQ2P1/1K2R3 w k - 0 26",
+      "prompt": "White to move. Black's e4-rook is pinned to the queen on e5 by your e1-rook.",
+      "solution": [
+        "Rxe4",
+        "Qxe4",
+        "Nf6+",
+        "Kf7",
+        "Nxe4"
+      ],
+      "explain": "Rxe4! Qxe4 Nf6+ forks king and queen: Kf7 Nxe4. Pin plus fork."
+    },
+    {
+      "type": "move",
+      "fen": "r4rk1/ppp3bp/2np4/5qp1/3PN3/2P3P1/PPB2nNP/R1BQ1RK1 b - - 1 18",
+      "prompt": "Black to move: mate in three. White's back rank is guarded only by the f1-rook and the queen.",
+      "solution": [
+        "Nh3+",
+        "Kh1",
+        "Qxf1+",
+        "Qxf1",
+        "Rxf1#"
+      ],
+      "explain": "...Nh3+! Kh1 Qxf1+! Qxf1 Rxf1#: a check, a deflecting queen sacrifice, and a back-rank mate."
+    },
+    {
+      "type": "move",
+      "fen": "3rr1k1/3bRp2/p2p1pp1/1p1P4/8/3B3P/P1P2KP1/4R3 w - - 6 26",
+      "prompt": "White to move. Black's d8-rook guards e8. Overload it.",
+      "solution": [
+        "Rxd7",
+        "Rxd7",
+        "Rxe8+"
+      ],
+      "explain": "Rxd7! Rxd7 Rxe8+: the capture of the d7-bishop deflects the d8-rook from the back rank, and White picks up the e8-rook with check, a full rook ahead."
+    },
+    {
+      "type": "quiz",
+      "question": "You see a knight fork of king and queen on f6, but the f6-square is covered by a black pawn on g7. What is the typical two-motif fix?",
+      "choices": [
+        "Give up on the fork",
+        "Deflect or remove the g7-pawn first (e.g. a sacrifice that forces ...gx...), then fork",
+        "Move the king",
+        "Trade rooks"
+      ],
+      "answer": 1,
+      "explain": "Combinations are built backwards from the target: the fork is the goal, the first move removes what stops it."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: how should you train combinations at this stage?",
+      "choices": [
+        "Only themed sets, forever",
+        "Themed sets to learn each motif, then mixed sets (no hint about the motif), repeated in cycles",
+        "Only long calculation exercises",
+        "Only opening traps"
+      ],
+      "answer": 1,
+      "explain": "Mixed practice (interleaving) feels harder but builds recognition that transfers to games; the Woodpecker method repeats the same set in shrinking time."
+    }
+  ],
+  "practiceThemes": [
+    "short",
+    "advantage"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#combination-techniques",
+    "Brunia & van Wijgerden, Steps Method Step 3 workbook (eliminating the defender, discovered attack)",
+    "Yusupov, Build Up Your Chess 1 (combinations)",
+    "knowledge-base/01-learning-science/retrieval-practice-interleaving-desirable-difficulties.md#4-interleaving",
+    "knowledge-base/02-methods/tactical-repetition-woodpecker-de-la-maza.md#4-how-grim-chess-should-implement-tactical-repetition",
+    "Lichess puzzle database (CC0): 0iiir, 0H9UW, 0m3J3, 07Iec, 0lrWI, 0GZZ4, 0U4gN"
+  ]
+}

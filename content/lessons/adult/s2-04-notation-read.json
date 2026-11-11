@@ -1,0 +1,139 @@
+{
+  "id": "adult.s2.notation-read",
+  "track": "adult",
+  "stage": 2,
+  "order": 4,
+  "skillIds": [
+    "rules.notation.san-read"
+  ],
+  "title": "Reading chess notation",
+  "summary": "Read algebraic notation (SAN): pieces, captures, checks, castling, promotion, disambiguation.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**SAN** (Standard Algebraic Notation) is how moves are written:\n\n- Piece letter + square: **K** king, **Q** queen, **R** rook, **B** bishop, **N** knight; pawns have no letter. Nf3 = knight to f3; e4 = pawn to e4.\n- **x** = capture (Bxe5). Pawn captures name the file it left: exd5.\n- **+** check, **#** checkmate, **O-O** / **O-O-O** castling, **e8=Q** promotion.\n- If two identical pieces can reach the square, add the starting file (Nbd2) or rank (R1a3).\n- Move numbers: 1.e4 e5 means White played e4, Black answered e5."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Play White's moves of this line: 1.e4 e5 2.Nf3 Nc6 3.Bb5",
+      "solution": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5"
+      ],
+      "explain": "That is the Ruy Lopez (Spanish Opening). Black's replies were played automatically."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+      "prompt": "You are Black. Play: 1...Nf6 2.c4 e6 3.Nc3 Bb4",
+      "solution": [
+        "Nf6",
+        "c4",
+        "e6",
+        "Nc3",
+        "Bb4"
+      ],
+      "explain": "The Nimzo-Indian Defence. \"1...Nf6\": the three dots mark a Black move."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/8/5N2/8/1N2K3 w - - 0 1",
+      "prompt": "Play Nbd2.",
+      "solution": [
+        "Nbd2"
+      ],
+      "explain": "Both knights can reach d2; \"b\" says the knight from the b-file goes."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/R7/8/8/8/R3K3 w - - 0 1",
+      "prompt": "Play R1a3.",
+      "solution": [
+        "R1a3"
+      ],
+      "explain": "Both rooks are on the a-file, so the file letter does not help. The rank number tells you: the rook from rank 1."
+    },
+    {
+      "type": "move",
+      "fen": "8/4P3/5k2/8/8/8/8/4K3 w - - 0 1",
+      "prompt": "Play e8=N+.",
+      "solution": [
+        "e8=N+"
+      ],
+      "explain": "Pawn to e8, promoting to a knight, with check: the knight on e8 attacks f6. Promoting to anything other than a queen is called underpromotion."
+    },
+    {
+      "type": "move",
+      "fen": "r3k2r/pppppppp/8/8/8/8/8/4K3 b kq - 0 1",
+      "prompt": "You are Black. Play O-O.",
+      "solution": [
+        "O-O"
+      ],
+      "explain": "Black castles kingside: Kg8, Rf8. The notation is the same for both colours."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Play White's moves: 1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 6.cxd4 Bb4+ 7.Bd2",
+      "solution": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bc4",
+        "Bc5",
+        "c3",
+        "Nf6",
+        "d4",
+        "exd4",
+        "cxd4",
+        "Bb4+",
+        "Bd2"
+      ],
+      "explain": "Captures, a check and a block: the main line of the Giuoco Piano."
+    },
+    {
+      "type": "quiz",
+      "question": "What does \"Bxe5+\" mean?",
+      "choices": [
+        "A bishop captures on e5 and gives check",
+        "A bishop moves to e5 and is in check",
+        "A pawn captures a bishop on e5"
+      ],
+      "answer": 0,
+      "explain": "x = capture, + = check."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what does \"#\" at the end of a move mean?",
+      "choices": [
+        "Checkmate",
+        "Check",
+        "A good move",
+        "Castling"
+      ],
+      "answer": 0,
+      "explain": "+ is check, # is mate. \"!\" and \"?\" are comments (good move, mistake)."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what does \"exd5\" tell you?",
+      "choices": [
+        "The pawn from the e-file captures on d5",
+        "A piece on e captured d5 from d",
+        "The king moves from e to d5"
+      ],
+      "answer": 0,
+      "explain": "Pawn captures always name the file the pawn came from."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#algebraic-notation-san",
+    "knowledge-base/03-chess-knowledge/rules.md#recording-moves-and-notation"
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "adult.s3.key-squares",
+  "track": "adult",
+  "stage": 3,
+  "order": 30,
+  "skillIds": [
+    "endgame.pawn.key-squares"
+  ],
+  "title": "Key squares: where the king must go",
+  "summary": "Key squares guarantee promotion when the attacking king reaches them. Learn the rules for pawns on ranks 2-6 and rook pawns.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Key squares** are squares that win if your king stands on them, whoever is to move.\n\n- Pawn on the 2nd-4th rank (not a rook pawn): the three squares **two ranks in front** of it (pawn e4: d6, e6, f6).\n- Pawn on the 5th or 6th rank: the three squares one rank ahead **and** the three squares two ranks ahead (pawn e5: d6, e6, f6, d7, e7, f7).\n- Rook pawn: the two squares on the adjacent file next to the queening square (h-pawn: g7 and g8).\n\nThe opposition is the method; key squares are the target."
+    },
+    {
+      "type": "quiz",
+      "question": "White pawn on d4. What are its key squares?",
+      "choices": [
+        "c5, d5, e5",
+        "c6, d6, e6",
+        "c7, d7, e7",
+        "d5 and d6"
+      ],
+      "answer": 1,
+      "explain": "Two ranks in front of the pawn: c6, d6, e6."
+    },
+    {
+      "type": "quiz",
+      "question": "White pawn on e5. Which of these is NOT a key square?",
+      "choices": [
+        "d6",
+        "f7",
+        "e8",
+        "e6"
+      ],
+      "answer": 2,
+      "explain": "For a pawn on the 5th rank the key squares are d6, e6, f6, d7, e7 and f7. e8 is the queening square, not a key square."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/8/2k5/8/4K3/3P4/8 w - - 0 1",
+      "prompt": "White to move. The d2-pawn's key squares are c4, d4 and e4. Reach one.",
+      "solution": [
+        "Ke4"
+      ],
+      "explain": "Ke4! stands on a key square already: the d-pawn now promotes by force. Kd3? lets Black take the opposition with ...Kd5 and draw.",
+      "hint": "One of the three key squares is reachable at once."
+    },
+    {
+      "type": "board",
+      "fen": "8/8/3k4/8/8/8/3PK3/8 w - - 0 1",
+      "md": "Compare: here White's king is too far back. Black reaches d5 and controls the key squares c4/d4/e4 from the front: a draw with correct defence (engine: 0.00).",
+      "highlights": [
+        "c4",
+        "d4",
+        "e4"
+      ]
+    },
+    {
+      "type": "play",
+      "fen": "8/3k4/8/8/8/3K4/3P4/8 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Play it out: get your king to a key square of the pawn, then push.",
+      "explain": "Kc4 or Ke4 first; the pawn stays behind until the king owns the squares in front."
+    },
+    {
+      "type": "quiz",
+      "question": "White pawn on h5, White king on g6, Black king on h8. Result?",
+      "choices": [
+        "White wins: g6 is a key square",
+        "Draw: with a rook pawn the defending king in the corner holds",
+        "Black wins",
+        "White wins only with the move"
+      ],
+      "answer": 1,
+      "explain": "Rook pawns are the exception: their key squares are g7/g8, and if the defending king reaches the corner it is a draw. The White king on g6 does not stand on a key square."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what do you need to win K+P vs K with a non-rook pawn on the 2nd-4th rank?",
+      "choices": [
+        "A queen",
+        "Your king on one of the three squares two ranks in front of the pawn",
+        "Your king behind the pawn",
+        "The move"
+      ],
+      "answer": 1,
+      "explain": "Once your king is on a key square, you win regardless of who is to move. Count your route there before trading into the pawn ending."
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#key-squares",
+    "Dvoretsky's Endgame Manual, ch. 1 (pawn endings)",
+    "de la Villa, 100 Endgames You Must Know",
+    "Silman, Complete Endgame Course (1000-1199 and 1200-1399 sections)"
+  ]
+}

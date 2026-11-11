@@ -1,0 +1,112 @@
+{
+  "id": "adult.s4.underpromotion",
+  "track": "adult",
+  "stage": 4,
+  "order": 6,
+  "skillIds": [
+    "tactics.underpromotion"
+  ],
+  "title": "Underpromotion: knight forks and stalemate traps",
+  "summary": "Promote to a knight for a check or fork, or to a rook when a queen would give stalemate.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Almost always you promote to a queen. Two exceptions decide games:\n\n1. **Knight promotion** when the knight gives **check or a fork** (or mate) that a queen cannot, gaining the tempo you need.\n2. **Rook (or bishop) promotion** when a queen would **stalemate** the enemy king.\n\nHabit: before promoting, look at the position *after* a queen appears: is it stalemate? Can the opponent then mate or win the queen? Then look at the knight's checks from the promotion square."
+    },
+    {
+      "type": "move",
+      "fen": "8/p3P2R/1p1k4/2p2K1p/2P4r/1P6/P7/7q w - - 0 53",
+      "prompt": "White to move. Black has just promoted and threatens to mate you. Promote yourself, with check.",
+      "solution": [
+        "e8=N+",
+        "Kc6",
+        "Rc7#"
+      ],
+      "explain": "**53.e8=N+!** A queen would not give check, and Black would mate you first. The knight check drives the king to c6 and **54.Rc7#** follows: the rook is protected by the e8-knight, which also covers d6; the c4-pawn covers b5 and d5, and the rook covers b7 and d7."
+    },
+    {
+      "type": "move",
+      "fen": "8/1P3R2/2k1p2r/3p4/3P4/7p/P6K/5q2 w - - 0 45",
+      "prompt": "White to move. Black has just queened on f1. Use the promotion square to gain a tempo.",
+      "solution": [
+        "b8=N+",
+        "Kb6",
+        "Rxf1"
+      ],
+      "explain": "**45.b8=N+!** with check. After 45...Kb6 **46.Rxf1** wins the new queen: your f7-rook was already lined up on the f-file. 45.b8=Q? would let Black move first, and 45...Qxf7 removes your rook: the two pieces were attacking each other along the f-file."
+    },
+    {
+      "type": "move",
+      "fen": "3QR3/1p6/p7/P6p/5k2/4p2K/5rp1/8 b - - 0 52",
+      "prompt": "Black to move. White has just queened on d8. Promote with check and finish the game.",
+      "solution": [
+        "g1=N+",
+        "Kh4",
+        "Rh2#"
+      ],
+      "explain": "**52...g1=N+!** gives check and also covers h3. After 53.Kh4 (h2 is covered by your rook) **53...Rh2#**: your king guards g3, g4 and g5, and h5 is blocked by your own pawn. A queen on g1 would not give check, and White's queen would start checking you instead."
+    },
+    {
+      "type": "board",
+      "fen": "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1",
+      "md": "The **Saavedra position** (1895). White plays 1.c7 Rd6+ 2.Kb5 Rd5+ 3.Kb4 Rd4+ 4.Kb3 Rd3+ 5.Kc2 Rd4!, and now 6.c8=Q? Rc4+! 7.Qxc4 is **stalemate**. The answer is coming next.",
+      "arrows": [
+        [
+          "c7",
+          "c8",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/2P5/8/8/3r4/8/2K5/k7 w - - 9 6",
+      "prompt": "White to move. Promote so that ...Rc4+ no longer saves Black, then meet his defence.",
+      "solution": [
+        "c8=R",
+        "Ra4",
+        "Kb3"
+      ],
+      "hint": "Which piece covers the c-file like a queen but does not take away the a1-king's last squares?",
+      "explain": "**6.c8=R!** avoids the stalemate and threatens 7.Ra8#. The only defence is 6...Ra4, and now **7.Kb3!** attacks the rook and threatens 8.Rc1# at the same time. Black cannot meet both: White wins."
+    },
+    {
+      "type": "quiz",
+      "question": "After 6.c8=Q Rc4+ 7.Qxc4, why is it stalemate?",
+      "choices": [
+        "The black king on a1 has no legal move and Black has no other pieces",
+        "The queen gives check",
+        "The fifty-move rule applies"
+      ],
+      "answer": 0,
+      "explain": "The white king on c2 covers b1 and b2 and the queen on c4 covers a2; the black king is not in check and has no legal move: **stalemate**. After 6.c8=R the reply 6...Rc4+ 7.Rxc4 leaves a2 free (a rook does not cover diagonals), so there is no stalemate and White mates soon.",
+      "fen": "8/2P5/8/8/3r4/8/2K5/k7 w - - 9 6"
+    },
+    {
+      "type": "move",
+      "fen": "4r3/7P/p4kPK/1p6/1P6/P7/8/8 w - - 1 69",
+      "prompt": "White to move. Independent exercise: two connected pawns against a rook. Count the checks before you promote.",
+      "solution": [
+        "g7",
+        "Re1",
+        "g8=N+"
+      ],
+      "explain": "**69.g7! Re1** (threatening ...Rh1 mate) **70.g8=N+!** The knight checks and gains the tempo for h8=Q next. 70.g8=Q?? Rh1# is mate, because the king on h6 has no flight square while the black king guards g5, g6 and g7."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** (1) Name the two reasons to underpromote. (2) In the Saavedra position, what two threats does 7.Kb3 create? (3) What should you check before every promotion?\n\nAnswers: a knight check or fork, and avoiding stalemate; Kxa4 and Rc1#; the position after a queen appears (stalemate, mate threats against you, can the queen be taken) and the knight checks from the promotion square."
+    }
+  ],
+  "practiceThemes": [
+    "underPromotion"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#underpromotion",
+    "knowledge-base/03-chess-knowledge/endgames.md#band-2300-and-above-mastery",
+    "Saavedra study (Barbier/Saavedra, Glasgow Weekly Citizen, 1895), FEN from KB endgames.md",
+    "de la Villa, 100 Endgames You Must Know (New in Chess, 2008), stalemate and promotion themes",
+    "Lichess puzzle database (CC0), puzzles ZrgCo, 6VZpZ, HfmsU, WQPEa"
+  ]
+}

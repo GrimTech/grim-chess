@@ -1,0 +1,77 @@
+{
+  "id": "kids.2.pawn-promotion",
+  "track": "kids",
+  "stage": 1,
+  "order": 205,
+  "skillIds": [
+    "rules.promotion"
+  ],
+  "title": "A pawn becomes a queen",
+  "summary": "A pawn that reaches the last row becomes a new piece.",
+  "estMinutes": 6,
+  "minAge": 5,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Magic time! When a pawn reaches the **last row**, it turns into a queen, rook, bishop or knight."
+    },
+    {
+      "type": "board",
+      "fen": "8/4P3/8/7k/8/8/8/K7 w - - 0 1",
+      "md": "One more step and this pawn becomes a queen!",
+      "arrows": [
+        [
+          "e7",
+          "e8",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/4P3/8/7k/8/8/8/K7 w - - 0 1",
+      "prompt": "Push the pawn and choose a **queen**!",
+      "solution": [
+        "e8=Q+"
+      ],
+      "explain": "A brand new queen!",
+      "hint": "Push to the top, then pick the queen."
+    },
+    {
+      "type": "move",
+      "fen": "8/P6k/8/8/8/8/2K5/8 w - - 0 1",
+      "prompt": "Make another queen!",
+      "solution": [
+        "a8=Q"
+      ],
+      "explain": "Two queens made today!",
+      "hint": "All the way up."
+    },
+    {
+      "type": "quiz",
+      "question": "A pawn reaches the end. What do players pick most?",
+      "choices": [
+        "Queen",
+        "Pawn",
+        "King"
+      ],
+      "answer": 0,
+      "explain": "The queen, because she is the strongest."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/3P4/8/8/6K1/k7 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Race your pawn to the end! The black king will try to catch it.",
+      "maxMoves": 6,
+      "engineLevel": 6,
+      "explain": "Your pawn was too fast!"
+    }
+  ],
+  "practiceThemes": [
+    "promotion"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

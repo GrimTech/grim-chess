@@ -1,0 +1,102 @@
+{
+  "id": "adult.s4.defensive-calculation",
+  "track": "adult",
+  "stage": 4,
+  "order": 11,
+  "skillIds": [
+    "calculation.defensive",
+    "tactics.defensive-resources"
+  ],
+  "title": "Defence: only-moves and counter-chances",
+  "summary": "Calculate the attacker's ideas first, then find the resource: interpose with tempo, return material, counter-attack, perpetual check.",
+  "estMinutes": 18,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Defensive calculation starts with the **opponent's threats**: what are his checks, captures and attacking moves? Then look for resources in this order:\n\n1. A move that defends **with tempo** (interposing or attacking something).\n2. **Counter-attack** or a check that changes the move order.\n3. **Giving material back** to break the attack.\n4. In bad positions: **perpetual check**, stalemate tricks, simplification.\n\nIn critical defensive moments there is often only one move. Elimination (previous lesson) is your main tool."
+    },
+    {
+      "type": "move",
+      "fen": "3r1rk1/pppb1pb1/6pp/2qNp3/4P3/PnPP2P1/1P4BP/R1BQ1RK1 w - - 1 19",
+      "prompt": "White to move. Black's knight on b3 has just uncovered a check from c5. Find the defence that also gains material.",
+      "solution": [
+        "Be3",
+        "Qd6",
+        "Qxb3"
+      ],
+      "explain": "You are in check from the c5-queen and the b3-knight forks a1 and c1. **19.Be3!** blocks with tempo, attacking the queen; after 19...Qd6 **20.Qxb3** the knight is gone. 19.Kh1? Nxa1 loses the exchange."
+    },
+    {
+      "type": "move",
+      "fen": "r3k2r/pp2q1pp/2n2n2/1Q2R1B1/3p4/P7/1P1N1PPP/R5K1 b kq - 0 17",
+      "prompt": "Black to move. White has just played Rxe5, pinning your queen to the king. Defend.",
+      "solution": [
+        "Qxe5",
+        "Qxb7",
+        "O-O"
+      ],
+      "explain": "A pinned piece may still capture *along the pin line*: **17...Qxe5!** removes the attacker. White's 18.Qxb7 hits a8 and c6, but **18...O-O** gets the king out of the centre and saves everything; Black is a piece up."
+    },
+    {
+      "type": "quiz",
+      "question": "You are under a strong attack and a pawn down. Your opponent threatens mate in two. Which resource is usually the most efficient first question?",
+      "choices": [
+        "Can I counter-attack with a check or a bigger threat?",
+        "Which pawn can I push to make luft?",
+        "Can I win back my pawn?"
+      ],
+      "answer": 0,
+      "explain": "Forcing moves first, also in defence. A check or a counter-threat may change the move order so that the mate never happens. Luft and passive defence come next; regaining material is irrelevant if you are mated."
+    },
+    {
+      "type": "move",
+      "fen": "6r1/1Qp1k3/1b2p1r1/1p1pP3/pP4p1/P1R4P/4RP1K/1q6 w - - 0 36",
+      "prompt": "White to move. Black has doubled rooks on the g-file and a queen on b1: you are lost if you play slowly. Find the draw.",
+      "solution": [
+        "Rxc7+",
+        "Bxc7",
+        "Qxc7+"
+      ],
+      "explain": "Every quiet move loses. **36.Rxc7+! Bxc7 37.Qxc7+** opens the black king, and White gives **perpetual check**: 37...Kf8 38.Qd8+ Kg7 39.Qe7+ and so on. Giving up material to reach a perpetual is a key defensive resource."
+    },
+    {
+      "type": "move",
+      "fen": "2r2r2/5pkp/p4n2/1pqp4/4pQ2/2P4P/PP3PP1/1K1R3R w - - 0 25",
+      "prompt": "White to move. Black has just played ...d5 and your position is under fire. Engine check: every quiet move loses. Find the forcing line.",
+      "solution": [
+        "Qg5+",
+        "Kh8",
+        "Qxf6+"
+      ],
+      "explain": "**25.Qg5+! Kh8 26.Qxf6+** removes the knight with check, and White has at least a perpetual with Qg5+/Qf6+ (the engine even rates White better). When defending, a forcing sequence that changes the material balance is often the only way."
+    },
+    {
+      "type": "quiz",
+      "question": "What is an \"only move\"?",
+      "choices": [
+        "A move that is the only legal move",
+        "The only move that keeps the evaluation; every alternative loses or worsens it decisively",
+        "A move the engine finds but humans cannot"
+      ],
+      "answer": 1,
+      "explain": "In critical positions the defender often has exactly one move that holds. Recognising such moments (\"everything natural loses here\") is what makes you slow down and calculate, see the critical-moments lesson."
+    },
+    {
+      "type": "text",
+      "md": "**Typical errors.** Panicking and defending passively; not looking at the attacker's threats concretely; refusing to give back material. **Retrieval check.** Name the four defensive resources in order, and one example of each from this lesson (Be3 with tempo; ...Qxe5 along the pin line; Rxc7+ for perpetual; Qg5+ and Qxf6+)."
+    }
+  ],
+  "practiceThemes": [
+    "defensiveMove",
+    "equality"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md#defensive-calculation",
+    "knowledge-base/03-chess-knowledge/tactics.md#defensive-and-drawing-tactics",
+    "knowledge-base/03-chess-knowledge/tactics.md#perpetual-check",
+    "knowledge-base/03-chess-knowledge/strategy.md#defence",
+    "Dvoretsky, Secrets of Chess Defence / School of Chess Excellence series (defensive thinking)",
+    "Aagaard, Grandmaster Preparation: Attack & Defence (Quality Chess, 2013)",
+    "Lichess puzzle database (CC0), puzzles 07Jg5, k94Wa, LE4VB, ZK71B"
+  ]
+}

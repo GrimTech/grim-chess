@@ -1,0 +1,101 @@
+{
+  "id": "adult.s3.evaluation-elements-and-imbalances",
+  "track": "adult",
+  "stage": 3,
+  "order": 37,
+  "skillIds": [
+    "strategy.evaluation-elements"
+  ],
+  "title": "Evaluating a position: the elements and imbalances",
+  "summary": "Material, king safety, piece activity, pawn structure, space, development and initiative: a checklist that turns \"I don't know what to do\" into a plan.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "When there is no tactic, **evaluate** before choosing a plan. Run through the elements:\n\n1. **Material** (and imbalances such as bishop pair, minor piece vs pawns).\n2. **King safety**.\n3. **Piece activity** and coordination.\n4. **Pawn structure**: weaknesses, passed pawns, islands.\n5. **Space** and the **centre**.\n6. **Development** and **initiative** (dynamic, temporary).\n\nThe side with the better *static* features wants to slow the game down; the side with *dynamic* advantages must act before they disappear."
+    },
+    {
+      "type": "quiz",
+      "question": "Exchange Ruy Lopez after 5.O-O. What is White's main long-term asset?",
+      "choices": [
+        "The bishop pair",
+        "A healthier pawn structure: a 4-vs-3 kingside majority that can create a passed pawn, while Black's queenside majority is crippled by doubled c-pawns",
+        "A lead in development",
+        "Better king safety"
+      ],
+      "answer": 1,
+      "explain": "Black has the bishop pair and free development (dynamic); White has the better structure (static) and is happy to trade pieces toward an endgame.",
+      "fen": "r1bqkbnr/1pp2ppp/p1p5/4p3/4P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 1 5"
+    },
+    {
+      "type": "quiz",
+      "question": "Same position, Black's perspective. Which plan fits Black's imbalance?",
+      "choices": [
+        "Trade all the pieces as quickly as possible",
+        "Keep pieces on, use the bishop pair and open lines (e.g. ...f6, ...Bg4, ...Qd6, castling long), playing for activity",
+        "Push the doubled c-pawns immediately",
+        "Play only with the king"
+      ],
+      "answer": 1,
+      "explain": "Static weaknesses (the doubled pawns) matter most in endgames; Black's compensation is dynamic, so Black avoids simplification.",
+      "fen": "r1bqkbnr/1pp2ppp/p1p5/4p3/4P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 1 5"
+    },
+    {
+      "type": "quiz",
+      "question": "Roughly, which trade is closest to equal material?",
+      "choices": [
+        "Rook for knight",
+        "Rook for bishop and two pawns",
+        "Queen for rook",
+        "Bishop for three pawns, always"
+      ],
+      "answer": 1,
+      "explain": "Rook (5) vs bishop + two pawns (5) is the classic near-equal imbalance; the evaluation then depends on activity and structure."
+    },
+    {
+      "type": "move",
+      "fen": "2r3k1/5ppp/8/P7/8/8/5PPP/3R2K1 w - - 0 30",
+      "prompt": "Rook endgame, White is a pawn up with an outside passed pawn. Which element matters most right now? Act on it.",
+      "solution": [
+        "a6"
+      ],
+      "explain": "a6! The passed pawn is the biggest asset and it must be pushed while Black's rook is passive: ...Ra8 a7 ties the rook down, and White's king or rook then wins the kingside. Ra1 is also good, but the pawn move is the most forcing use of the advantage.",
+      "hint": "Passed pawns must be pushed."
+    },
+    {
+      "type": "quiz",
+      "question": "You are behind in development but have a solid structure and safe king. What should you aim for?",
+      "choices": [
+        "Open the centre immediately",
+        "Keep the position closed, finish development, and neutralise the initiative; your static strengths count later",
+        "Attack the opponent's king with pawns",
+        "Trade your best piece"
+      ],
+      "answer": 1,
+      "explain": "A development lead is temporary. Do not open lines while you are behind; catch up first."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which two elements are the most \"temporary\"?",
+      "choices": [
+        "Material and pawn structure",
+        "Development lead and initiative",
+        "King safety and space",
+        "Bishop pair and passed pawns"
+      ],
+      "answer": 1,
+      "explain": "Temporary advantages must be converted (by opening lines, attacking, or winning material) before they vanish; permanent ones can be nursed."
+    }
+  ],
+  "practiceThemes": [
+    "advantage",
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#evaluation-elements",
+    "knowledge-base/03-chess-knowledge/strategy.md#material-and-imbalances",
+    "Silman, How to Reassess Your Chess (imbalances)",
+    "knowledge-base/02-methods/positional-frameworks-nimzowitsch-silman.md",
+    "knowledge-base/03-chess-knowledge/calculation.md#evaluating-final-positions"
+  ]
+}

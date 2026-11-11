@@ -1,0 +1,61 @@
+{
+  "id": "kids.8.too-many-jobs",
+  "track": "kids",
+  "stage": 3,
+  "order": 804,
+  "skillIds": [
+    "tactics.deflection"
+  ],
+  "title": "Too many jobs",
+  "summary": "A defender with two jobs can be pulled away from one.",
+  "estMinutes": 7,
+  "minAge": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Some defenders have **two jobs**. Give them too much work and something breaks!"
+    },
+    {
+      "type": "board",
+      "fen": "4r1k1/5ppp/8/4b3/8/8/5PPP/3QR1K1 w - - 0 1",
+      "md": "The black rook guards the bishop **and** the back row.",
+      "arrows": [
+        [
+          "e8",
+          "e5",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4r1k1/5ppp/8/4b3/8/8/5PPP/3QR1K1 w - - 0 1",
+      "prompt": "Give the rook too many jobs!",
+      "solution": [
+        "Rxe5"
+      ],
+      "explain": "If the rook takes back, Qd8+ is checkmate!",
+      "hint": "Capture the bishop."
+    },
+    {
+      "type": "quiz",
+      "question": "What happens if Black plays ...Rxe5?",
+      "choices": [
+        "Qd8+ and checkmate",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Qd8+ Re8 Qxe8#."
+    },
+    {
+      "type": "text",
+      "md": "Look for defenders with **two jobs**. Make one job impossible!"
+    }
+  ],
+  "practiceThemes": [
+    "deflection"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "adult.s4.isolated-queen-pawn",
+  "track": "adult",
+  "stage": 4,
+  "order": 28,
+  "skillIds": [
+    "strategy.iqp"
+  ],
+  "title": "The isolated queen's pawn",
+  "summary": "With the IQP: activity, outposts on e5/c5, attack and the d4-d5 break. Against it: blockade on d5 and simplification.",
+  "estMinutes": 18,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The **IQP** (white pawn on d4 with no c- or e-pawns; often from the Queen's Gambit Accepted, Tarrasch, Caro-Kann Panov, Nimzo-Indian, Alapin Sicilian) is a trade-off:\n\n**For the IQP side:** space, open c- and e-files, outposts on **e5** and c5, kingside attack (Bd3/Bc2 with Qd3, rook lift Re3-h3), and the **d4-d5 break**. Avoid exchanges.\n\n**Against the IQP:** **blockade d5** (a knight is ideal), trade minor pieces (especially White's attacking light-squared bishop and knights), pressure d4 (Rd8, Nc6, Bf6), and aim for an endgame where the pawn is a weakness."
+    },
+    {
+      "type": "board",
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/8/3P4/2NB1N2/PP3PPP/R1BQR1K1 w - - 5 11",
+      "md": "Typical IQP position (Semi-Tarrasch type). White: knight to e5, bishop on d3 or c2 aimed at h7, queen to d3 or e2, rooks to the e- and d-files, and the d4-d5 break when it opens lines. Black: blockade on d5, ...b6/...Bb7, trade pieces.",
+      "arrows": [
+        [
+          "f3",
+          "e5",
+          "green"
+        ],
+        [
+          "d4",
+          "d5",
+          "blue"
+        ],
+        [
+          "d3",
+          "h7",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "As the side with the IQP, what is your attitude towards piece exchanges?",
+      "choices": [
+        "Avoid them: every trade reduces your activity while the pawn weakness remains",
+        "Seek them, to reach an endgame",
+        "Indifferent"
+      ],
+      "answer": 0,
+      "explain": "The IQP gives **dynamic** compensation (space, activity) for a **static** weakness. Exchanges reduce the dynamics and leave the static weakness, so the IQP side keeps pieces on and the defender trades."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move against the IQP (White has just played Be4, attacking the d5-knight). Which move fits the anti-IQP strategy?",
+      "choices": [
+        "11...Nce7, reinforcing the d5 blockade",
+        "11...Nxc3, trading the blockader",
+        "11...a5, starting queenside play and ignoring d5"
+      ],
+      "answer": 0,
+      "explain": "**11...Nce7** keeps a knight on d5 (if one is taken, the other replaces it) and supports ...b6/...Bb7 or ...Ng6. 11...Nxc3? 12.bxc3 gives White the c3-d4 pawn pair and the half-open b-file, curing the weakness. 11...a5? ignores the blockade, and White plays for the attack and d4-d5. Engine check: 11...Nce7 is clearly better than 11...Nxc3.",
+      "fen": "r1bq1rk1/pp3ppp/2n1pb2/3n4/3PB3/2N2N2/PP3PPP/R1BQR1K1 b - - 7 11"
+    },
+    {
+      "type": "move",
+      "fen": "r4rk1/pp1n1pp1/4b2p/q7/1bpP3B/2N5/PPB3PP/R2Q1RK1 w - - 1 16",
+      "prompt": "White to move. Your isolated d-pawn can break now. Play it.",
+      "solution": [
+        "d5",
+        "Bxc3",
+        "dxe6"
+      ],
+      "explain": "**16.d5!** hits the e6-bishop and opens the position for your pieces. After 16...Bxc3 17.dxe6 White wins material: the e6-pawn attacks d7 and f7 and the c3-bishop will be recaptured. The d4-d5 break is the IQP's most important resource."
+    },
+    {
+      "type": "quiz",
+      "question": "When is the d4-d5 break usually strong?",
+      "choices": [
+        "When your pieces are better placed than the opponent's, so that opening the centre favours you, often with a tactical point",
+        "As early as possible, on move 10",
+        "Only in the endgame"
+      ],
+      "answer": 0,
+      "explain": "d4-d5 liquidates the weakness and opens lines. It works when the opponent's pieces are not ready (king, undeveloped bishop, pinned knight). Played without preparation it simply trades the IQP and leaves you with nothing."
+    },
+    {
+      "type": "quiz",
+      "question": "Which endgame is usually good for the side *against* the IQP?",
+      "choices": [
+        "Minor-piece or rook endgame where the d4-pawn is blockaded and attacked by king and pieces",
+        "Any opposite-coloured-bishop endgame",
+        "Queen endgame with many checks"
+      ],
+      "answer": 0,
+      "explain": "In the endgame the IQP has no dynamic compensation left: it is just a weak pawn that cannot be protected by pawns. This is why the defender trades pieces (Karpov's classic technique)."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** List three plans for the IQP side (e5 outpost, kingside attack with rook lift, d4-d5) and three for the defender (blockade d5, trade pieces, pressure d4). Typical error for the IQP side: drifting into an endgame. For the defender: grabbing the pawn too early while the attack is still on."
+    }
+  ],
+  "practiceThemes": [
+    "middlegame",
+    "kingsideAttack"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#isolated-queen-pawn",
+    "knowledge-base/03-chess-knowledge/strategy.md#pawn-breaks",
+    "Baburin, Winning Pawn Structures (Batsford, 1998), IQP chapters",
+    "Karpov vs Spassky and Botvinnik IQP model games (KB strategy.md)",
+    "Nimzowitsch, My System (1925), the blockade",
+    "Lichess puzzle database (CC0), puzzles 047Tg"
+  ]
+}

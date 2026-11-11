@@ -1,0 +1,63 @@
+{
+  "id": "kids.7.breakthrough",
+  "track": "kids",
+  "stage": 3,
+  "order": 705,
+  "skillIds": [
+    "endgame.pawn.breakthrough"
+  ],
+  "title": "Pawn breakthrough",
+  "summary": "Three pawns against three: sacrifice to break through.",
+  "estMinutes": 6,
+  "minAge": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Three pawns against three. A clever **sacrifice** opens the road for one pawn!"
+    },
+    {
+      "type": "board",
+      "fen": "6k1/ppp5/8/PPP5/8/8/8/6K1 w - - 0 1",
+      "md": "Hmm, all blocked? Not quite!"
+    },
+    {
+      "type": "move",
+      "fen": "6k1/ppp5/8/PPP5/8/8/8/6K1 w - - 0 1",
+      "prompt": "Break through! Start with the middle pawn.",
+      "solution": [
+        "b6",
+        "axb6",
+        "c6",
+        "bxc6",
+        "a6"
+      ],
+      "explain": "Nobody can stop the a-pawn now!",
+      "hint": "Push the middle pawn to b6."
+    },
+    {
+      "type": "quiz",
+      "question": "Why does the breakthrough work?",
+      "choices": [
+        "The black king is too far away",
+        "Pawns can move backwards"
+      ],
+      "answer": 0,
+      "explain": "The king cannot catch the last pawn."
+    },
+    {
+      "type": "play",
+      "fen": "6k1/ppp5/8/PPP5/8/8/8/6K1 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Now play it out against the computer!",
+      "maxMoves": 8,
+      "engineLevel": 6,
+      "explain": "Breakthrough!"
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "kids.3.castling",
+  "track": "kids",
+  "stage": 2,
+  "order": 307,
+  "skillIds": [
+    "rules.castling"
+  ],
+  "title": "Castling",
+  "summary": "The king hops two squares and the rook jumps over to guard him.",
+  "estMinutes": 6,
+  "minAge": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Castling** is a special move. The king steps **two squares** toward a rook, and the rook hops over him."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/8/8/8/R3K2R w KQ - 0 1",
+      "md": "Short castling to the right, or long castling to the left.",
+      "arrows": [
+        [
+          "e1",
+          "g1"
+        ],
+        [
+          "e1",
+          "c1"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/8/8/5PPP/4K2R w K - 0 1",
+      "prompt": "Castle short! Move the king two squares to the right.",
+      "solution": [
+        "O-O"
+      ],
+      "explain": "The king is tucked in behind the pawns.",
+      "hint": "Move the king to g1."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/8/8/PPP5/R3K3 w Q - 0 1",
+      "prompt": "Castle long! Move the king two squares to the left.",
+      "solution": [
+        "O-O-O"
+      ],
+      "explain": "Long castling done!",
+      "hint": "Move the king to c1."
+    },
+    {
+      "type": "quiz",
+      "question": "Can you castle when your king is in check?",
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "answer": 1,
+      "explain": "No castling out of check."
+    },
+    {
+      "type": "quiz",
+      "question": "Can you castle if your king has already moved?",
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "answer": 1,
+      "explain": "Only a king that has never moved can castle."
+    }
+  ],
+  "practiceThemes": [
+    "castling"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "id": "adult.s4.club-repertoire",
+  "track": "adult",
+  "stage": 4,
+  "order": 42,
+  "skillIds": [
+    "opening.repertoire.club"
+  ],
+  "title": "A compact club repertoire: 10-15 moves with plans",
+  "summary": "Drill main lines, know the resulting structures and plans, and watch for move orders and transpositions.",
+  "estMinutes": 18,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Stage-4 target (KB): a **complete but compact** repertoire, 10-15 moves deep in main lines, with the **structure, plans and 2-3 model games** for each line, and awareness of **move orders and transpositions**. An example set: White 1.e4 with the Italian, the Alapin against the Sicilian and Advance lines against the French and Caro-Kann; Black the Caro-Kann or 1...e5, plus a Queen's Gambit Declined or Slav against 1.d4.\n\nThe drills below are repertoire examples: play the moves from memory, then answer the plan questions."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Repertoire drill (White, Italian Giuoco Pianissimo): play 1.e4, 2.Nf3, 3.Bc4, 4.c3, 5.d3, 6.O-O.",
+      "solution": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bc4",
+        "Bc5",
+        "c3",
+        "Nf6",
+        "d3",
+        "d6",
+        "O-O"
+      ],
+      "explain": "The slow Italian: c3 and d3 build a solid centre, and the plan is Re1, a4, h3, Nbd2-f1-g3 and the d3-d4 break at the right moment."
+    },
+    {
+      "type": "board",
+      "fen": "r1bq1rk1/1pp2ppp/p1np1n2/2b1p3/P1B1P3/2PP1N2/1P3PPP/RNBQR1K1 b - - 0 8",
+      "md": "Italian after 8.a4. Typical plans: White gains queenside space (a4, prevents ...b5), regroups Nbd2-f1-g3 and prepares d4; Black plays ...Ba7, ...h6, ...Be6 or ...Ne7-g6.",
+      "arrows": [
+        [
+          "b1",
+          "d2",
+          "green"
+        ],
+        [
+          "d3",
+          "d4",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In this Italian structure, what is White's main central lever?",
+      "choices": [
+        "d3-d4, prepared by c3, Re1 and Nbd2-f1",
+        "f2-f4 immediately",
+        "e4-e5 at once"
+      ],
+      "answer": 0,
+      "explain": "c3 supports d4. Playing d4 before the pieces are ready lets Black exchange and free his game; prepared, it gains central space."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "prompt": "Repertoire drill (Black, Caro-Kann Advance, short-castling system): answer 1.e4 with ...c6, ...d5, ...Bf5, ...e6 and the ...c5 break.",
+      "solution": [
+        "c6",
+        "d4",
+        "d5",
+        "e5",
+        "Bf5",
+        "Nf3",
+        "e6",
+        "Be2",
+        "c5"
+      ],
+      "explain": "Bishop out *before* ...e6, then ...c5 attacks the base of White's d4-e5 chain. Next: ...Nc6, ...Qb6 or ...cxd4 and ...Ne7-c6."
+    },
+    {
+      "type": "board",
+      "fen": "rn1qkbnr/pp3ppp/4p3/2ppPb2/3P4/5N2/PPP1BPPP/RNBQK2R w KQkq - 0 6",
+      "md": "Caro-Kann Advance after 5...c5: Black's plan is pressure on d4 (...Nc6, ...Qb6, ...cxd4) and queenside play; White aims for kingside space and the f4-f5 or c4 ideas.",
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "**Move order.** 1.d4 Nf6 2.c4 e6 3.Nf3 d5 4.Nc3. Which opening has arisen?",
+      "choices": [
+        "A Queen's Gambit Declined",
+        "A Nimzo-Indian",
+        "A King's Indian"
+      ],
+      "answer": 0,
+      "explain": "Through a different order (Indian first, ...d5 later) the game has transposed into a QGD. With 3.Nc3 instead of 3.Nf3 Black could have played the Nimzo-Indian 3...Bb4. Knowing which transpositions you allow is part of the repertoire."
+    },
+    {
+      "type": "quiz",
+      "question": "Against 1.e4 c5, you choose 2.c3 (Alapin). What is the idea?",
+      "choices": [
+        "Prepare d2-d4 so that after ...cxd4 you recapture with the c-pawn and keep a pawn centre",
+        "Prevent ...Nc6",
+        "Prepare Qa4+"
+      ],
+      "answer": 0,
+      "explain": "c3 supports d4: White builds the ideal pawn centre or reaches IQP structures after ...d5 lines, and avoids the huge theory of the Open Sicilian."
+    },
+    {
+      "type": "quiz",
+      "question": "How deep should a 1400-1800 player's main lines be, according to the platform guidelines?",
+      "choices": [
+        "About 10-15 moves, with plans and model games",
+        "25-30 moves like elite players",
+        "3-5 moves, then improvise"
+      ],
+      "answer": 0,
+      "explain": "Depth without understanding breaks down at the first deviation; plans and structures carry you through. Elite depth (20-30 moves) belongs to stages 6-8."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** For each of your lines, can you name: the typical structure, one pawn break for each side, and one model game? If not, that is your next study task."
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#repertoire-building-by-level",
+    "knowledge-base/03-chess-knowledge/openings.md#transition-from-opening-to-middlegame",
+    "knowledge-base/02-methods/opening-repertoire-building.md#3-level-appropriate-time-budgets-platform-defaults",
+    "Lakdawala and others, Move by Move series (Everyman), model-game approach",
+    "Chessable MoveTrainer-style spaced repetition (KB openings.md [5])"
+  ]
+}

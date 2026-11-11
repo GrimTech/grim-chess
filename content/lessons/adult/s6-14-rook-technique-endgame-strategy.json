@@ -1,0 +1,86 @@
+{
+  "id": "adult.s6.rook-technique-endgame-strategy",
+  "track": "adult",
+  "stage": 6,
+  "order": 14,
+  "skillIds": [
+    "endgame.rook.advanced-technique",
+    "endgame.strategy"
+  ],
+  "title": "Advanced rook technique and endgame strategy",
+  "summary": "Checking distance, king routes, rook against pawns; Shereshevsky's principles: do not hurry, centralise, schematic thinking.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Endgame strategy (Shereshevsky)\n\n1. **Do not hurry**: when the opponent has no counterplay, improve every piece before acting; repeat moves to gain time on the clock and see the opponent's reactions.\n2. **Centralise the king**.\n3. **Schematic thinking**: picture the ideal placement of your pieces, then find the route.\n4. **Two weaknesses**: stretch the defence.\n5. **Exchange decisions**: when ahead, exchange pieces, not pawns; know which endings result.\n\n## Rook technique\n\n- **Checking distance**: the defending rook needs three or more files of distance to check effectively.\n- **Cut-offs**: cut the enemy king off along a rank or file before advancing the pawn.\n- **Rook against pawns**: the king must approach on the right route, often diagonally."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/8/2p1k3/P6R/1K6/6rP/8 w - - 0 53",
+      "prompt": "White to move. Rook ending, two pawns against one. Carlsen's technique (Carlsen-Anand, WCh 2013 2013)",
+      "solution": [
+        "a5"
+      ],
+      "orientation": "white",
+      "explain": "**53.a5!** — the outside pawn runs while the rook stays behind it; the black king is tied to the a-pawn and the h-pawn decides later. Engine main line: 53.a5 Kd6 54.Rh7 Rg8 55.a6 Kc6 56.a7 Kb6 57.h4 Rg3+. (Carlsen-Anand, WCh 2013 2013; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "8/7p/2N1pp1k/8/3Pn3/4PpPP/1r3P2/3R2K1 w - - 4 42",
+      "prompt": "White to move. A difficult rook-and-knight ending. Find the only defensive move (Kramnik-Topalov, WCh 2006)",
+      "solution": [
+        "Rf1"
+      ],
+      "orientation": "white",
+      "explain": "**42.Rf1!** — the rook attacks the f3-pawn from the side and keeps the black rook passive; other moves let Black's f-pawn and king advance. Engine main line: 42.Rf1 Kg6 43.d5 e5 44.Ne7+ Kg5 45.g4 Ra2. (Kramnik-Topalov, WCh 2006; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "8/8/6K1/8/1k6/2p5/8/6R1 w - - 0 1",
+      "prompt": "Rook against pawn. White to move and win (only one move does it).",
+      "solution": [
+        "Kf5"
+      ],
+      "explain": "**1.Kf5!** — the king heads diagonally for e4/d3; 1...c2 2.Ke4 Kc3 3.Ke3 and Rc1 wins the pawn (tablebase: every other move draws)."
+    },
+    {
+      "type": "quiz",
+      "question": "You are a pawn up in a rook ending with no counterplay for the opponent. What does \"do not hurry\" mean in practice?",
+      "choices": [
+        "Offer a draw",
+        "Improve king and rook first, make useful waiting moves, provoke weaknesses, and only then start the decisive pawn advance",
+        "Push the passed pawn immediately",
+        "Exchange rooks"
+      ],
+      "answer": 1,
+      "explain": "Shereshevsky's principle. Hasty pawn advances give the defender targets and checking distance."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/2p1k3/P6R/1K6/6rP/8 w - - 0 53",
+      "goal": "win",
+      "prompt": "Convert Carlsen's rook ending as White against the engine (level 14). Success = queening or winning the rook.",
+      "maxMoves": 40,
+      "engineLevel": 14
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Endgames trainer**: rook against pawn (three positions), checking distance (short side) and Lucena revision.\n- **Guess the move**: Carlsen-Anand 2013 game 6 from move 40 (corpus), playing White.\n- Read Shereshevsky's *Endgame Strategy*, chapters on \"Do not hurry\" and the two weaknesses."
+    }
+  ],
+  "practiceThemes": [
+    "rookEndgame",
+    "endgame",
+    "advantage"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky's Endgame Manual (5th ed.)",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)",
+    "Shereshevsky, Endgame Strategy",
+    "Carlsen-Anand, World Championship 2013 (game 6)",
+    "Kramnik-Topalov, World Championship 2006"
+  ]
+}

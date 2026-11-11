@@ -1,0 +1,79 @@
+{
+  "id": "kids.7.square-rule",
+  "track": "kids",
+  "stage": 2,
+  "order": 702,
+  "skillIds": [
+    "endgame.pawn.square-rule"
+  ],
+  "title": "The magic square",
+  "summary": "Can the king catch the pawn? Draw the square.",
+  "estMinutes": 6,
+  "minAge": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Can the king catch the pawn? Draw a **square** from the pawn to the end. If the king can step in, he catches it!"
+    },
+    {
+      "type": "board",
+      "fen": "8/8/8/6k1/1P6/8/8/7K b - - 0 1",
+      "md": "The pawn on b4 makes this square (b4 to f8). The black king on g5 is outside.",
+      "highlights": [
+        "b4",
+        "c4",
+        "d4",
+        "e4",
+        "f4",
+        "b8",
+        "f8",
+        "f5",
+        "f6",
+        "f7",
+        "b5",
+        "b6",
+        "b7",
+        "c8",
+        "d8",
+        "e8"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. Can the black king catch the pawn?",
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "answer": 1,
+      "explain": "No! The king is outside the square.",
+      "fen": "8/8/8/6k1/1P6/8/8/7K w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. Can the black king catch this pawn?",
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "answer": 0,
+      "explain": "Yes, the king is close enough.",
+      "fen": "8/8/8/3k4/P7/8/8/7K w - - 0 1"
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/6k1/1P6/8/8/7K w - - 0 1",
+      "goal": "promote",
+      "prompt": "Run, pawn, run! The king is outside the square.",
+      "maxMoves": 6,
+      "engineLevel": 6,
+      "explain": "Too fast for the king!"
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

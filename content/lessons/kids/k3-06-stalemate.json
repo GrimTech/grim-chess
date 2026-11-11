@@ -1,0 +1,74 @@
+{
+  "id": "kids.3.stalemate",
+  "track": "kids",
+  "stage": 1,
+  "order": 306,
+  "skillIds": [
+    "rules.stalemate"
+  ],
+  "title": "Stalemate trap",
+  "summary": "No check and no legal moves is a draw. Avoid it when winning!",
+  "estMinutes": 6,
+  "minAge": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Stalemate**: the king is **not** in check, but there is **no legal move**. It is a draw. Nobody wins!"
+    },
+    {
+      "type": "board",
+      "fen": "7k/8/6Q1/8/8/8/8/1K6 b - - 0 1",
+      "md": "Black to move. Not in check, but every square is guarded. Stalemate!",
+      "highlights": [
+        "g8",
+        "g7",
+        "h7"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. What is this?",
+      "choices": [
+        "Checkmate",
+        "Stalemate"
+      ],
+      "answer": 1,
+      "explain": "No check, no moves: stalemate, a draw.",
+      "fen": "7k/8/6Q1/8/8/8/8/1K6 b - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/5K2/8/8/8/8/6Q1 w - - 0 1",
+      "prompt": "Careful! Find **checkmate**, not stalemate.",
+      "solution": [
+        "Qg7#"
+      ],
+      "explain": "Checkmate, not stalemate!",
+      "hint": "Give check next to the king."
+    },
+    {
+      "type": "move",
+      "fen": "k7/8/1K6/8/8/8/8/7R w - - 0 1",
+      "prompt": "Find **checkmate**!",
+      "solution": [
+        "Rh8#"
+      ],
+      "explain": "Checkmate! You won, no draw.",
+      "hint": "Check along the top row."
+    },
+    {
+      "type": "quiz",
+      "question": "Who wins after stalemate?",
+      "choices": [
+        "White",
+        "Black",
+        "Nobody"
+      ],
+      "answer": 2,
+      "explain": "Stalemate is a draw."
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

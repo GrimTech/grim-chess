@@ -1,0 +1,120 @@
+{
+  "id": "adult.s3.kill-box-triangle-and-blind-swine",
+  "track": "adult",
+  "stage": 3,
+  "order": 26,
+  "skillIds": [
+    "checkmate.killbox-triangle"
+  ],
+  "title": "Kill box, triangle and blind swine mates",
+  "summary": "Heavy-piece mates: queen and rook forming a box or triangle around the king, and two rooks on the 7th rank.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "- **Kill box**: a rook next to the king, supported by the queen, which also covers the remaining squares of the 3x3 box.\n- **Triangle**: queen and rook, each one square from the king on the same line, separated by one square.\n- **Blind swine** (\"pigs on the seventh\"): two rooks on the 7th rank mate a king confined to a 2x2 area, typically Rxg7+ Kh8 Rxh7+ Kg8 Rbg7#."
+    },
+    {
+      "type": "board",
+      "fen": "5rk1/6RR/8/8/8/8/8/6K1 b - - 0 1",
+      "md": "Blind swine: the rooks on g7 and h7 protect each other, f8 is blocked by Black's own rook.",
+      "highlights": [
+        "g7",
+        "h7"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "r1b3kr/ppp5/2nq1p2/2b5/3p1P2/3Q4/PPP3PP/RNB1R1K1 w - - 0 15",
+      "prompt": "White to move: mate in two. Use queen and rook together.",
+      "solution": [
+        "Qg6+",
+        "Kf8",
+        "Re8#"
+      ],
+      "explain": "Qg6+! Kf8 Re8#: the rook mates next to the king, protected by the queen along the g6-e8 diagonal, and the queen also covers f7, g7 and g8: a kill box."
+    },
+    {
+      "type": "move",
+      "fen": "3r2k1/3r2pp/4R3/4Q3/p7/P6P/1P1p2P1/2qR3K w - - 3 37",
+      "prompt": "White to move: mate in two. Queen and rook against the king on g8.",
+      "solution": [
+        "Re8+",
+        "Kf7",
+        "Qe6#"
+      ],
+      "explain": "Re8+! Kf7 Qe6#: rook on e8 and queen on e6 form the triangle around the king on f7."
+    },
+    {
+      "type": "move",
+      "fen": "4r1k1/3R3N/p5p1/2p3N1/Pp6/2q5/6PP/3R2K1 b - - 2 36",
+      "prompt": "Black to move: mate in two. A triangle mate against White's king.",
+      "solution": [
+        "Re1+",
+        "Kf2",
+        "Qe3#"
+      ],
+      "explain": "...Re1+! Kf2 ...Qe3#: the rook on e1 and queen on e3, both adjacent to the king, protect each other."
+    },
+    {
+      "type": "move",
+      "fen": "3r2k1/6pp/Rp1rNp2/2p5/4p3/PP2P1P1/2P2P1P/4K2R b K - 0 21",
+      "prompt": "Black to move: mate in two. Two rooks on the d-file.",
+      "solution": [
+        "Rd1+",
+        "Ke2",
+        "R8d2#"
+      ],
+      "explain": "...Rd1+! Ke2 ...R8d2#: the rooks protect each other on the d-file; the d1-rook covers e1 and f1, the d2-rook covers the second rank, the e4-pawn takes d3 and f3, and White's own pawns block e3 and f2."
+    },
+    {
+      "type": "move",
+      "fen": "3rq2k/pp3p1p/2p3p1/6P1/7R/P3P3/1PP2P2/2K4R w - - 0 27",
+      "prompt": "White to move: mate in three. Blind swine with the h-file.",
+      "solution": [
+        "Rxh7+",
+        "Kg8",
+        "Rh8+",
+        "Kg7",
+        "R1h7#"
+      ],
+      "explain": "Rxh7+! Kg8 Rh8+! Kg7 R1h7#: the rooks take turns on the h-file; the final mate on h7 is protected by the h8-rook, and the g5-pawn covers f6 and h6."
+    },
+    {
+      "type": "quiz",
+      "question": "Two white rooks reach the 7th rank against a king on g8 with pawns g7 and h7. What is the typical finish?",
+      "choices": [
+        "Rxg7+ Kh8 Rxh7+ Kg8 and a rook returns to g7 with mate",
+        "Trade one rook",
+        "Push the a-pawn",
+        "Check from the back rank only"
+      ],
+      "answer": 0,
+      "explain": "Each capture comes with check; the king can only shuttle between g8 and h8 until the second rook seals g7."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: in the kill-box mate, what supports the rook adjacent to the king?",
+      "choices": [
+        "A knight",
+        "The queen, which also covers the rest of the 3x3 box",
+        "A pawn",
+        "The king"
+      ],
+      "answer": 1,
+      "explain": "Queen and rook in a box shape: drill with the killBoxMate theme."
+    }
+  ],
+  "practiceThemes": [
+    "killBoxMate",
+    "triangleMate",
+    "blindSwineMate"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#kill-box-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#triangle-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#blind-swine-mate",
+    "Nimzowitsch, My System (pigs on the seventh)",
+    "Lichess puzzle database (CC0): 669tG, 3naVc, 4IX3E, 3H6vB, AFT93"
+  ]
+}

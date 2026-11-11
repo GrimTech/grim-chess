@@ -1,0 +1,103 @@
+{
+  "id": "adult.s6.endgame-studies-calculation",
+  "track": "adult",
+  "stage": 6,
+  "order": 5,
+  "skillIds": [
+    "calculation.studies"
+  ],
+  "title": "Endgame studies as calculation training",
+  "summary": "Saavedra, Reti and rook-against-pawn studies: quiet moves, underpromotion and precise king routes, all checked with tablebases.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Why studies?\n\nComposed studies contain **only-moves**: every move must be exact, often quiet or paradoxical (underpromotion, king walks along diagonals, stalemate defences). Solving them trains precision, imagination and the habit of checking the opponent's best defence. Solve without moving pieces, write the solution, then check."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1",
+      "prompt": "Saavedra (1895). White to move and win.",
+      "solution": [
+        "c7",
+        "Rd6+",
+        "Kb5",
+        "Rd5+",
+        "Kb4",
+        "Rd4+",
+        "Kb3",
+        "Rd3+",
+        "Kc2",
+        "Rd4",
+        "c8=R"
+      ],
+      "hint": "Count the checks; at the end, which piece should the pawn become?",
+      "explain": "**1.c7 Rd6+ 2.Kb5 Rd5+ 3.Kb4 Rd4+ 4.Kb3 Rd3+ 5.Kc2 Rd4! 6.c8=R!!** — 6.c8=Q? Rc4+ 7.Qxc4 is stalemate. After 6.c8=R the threat is Ra8#; 6...Ra4 7.Kb3! attacks the rook and threatens Rc1#, and White wins (tablebase). The king must walk down the b-file to escape the checks, then the underpromotion avoids the stalemate trap."
+    },
+    {
+      "type": "move",
+      "fen": "7K/8/k1P5/7p/8/8/8/8 w - - 0 1",
+      "prompt": "Reti (1921). White to move and draw. The h-pawn seems unstoppable.",
+      "solution": [
+        "Kg7",
+        "h4",
+        "Kf6",
+        "Kb6",
+        "Ke5"
+      ],
+      "hint": "A diagonal king walk is as fast as a straight one.",
+      "explain": "**1.Kg7! h4 2.Kf6! Kb6 3.Ke5!** — the king pursues two goals at once along the diagonal: it approaches the h-pawn's square and supports the c-pawn. 3...Kxc6 4.Kf4 catches the pawn; 3...h3 4.Kd6 h2 5.c7 queens with a draw (tablebase: every other White move loses)."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/6K1/8/1k6/2p5/8/7R w - - 0 1",
+      "prompt": "Rook against pawn. White to move and win — only one move does it.",
+      "solution": [
+        "Kf5"
+      ],
+      "hint": "Which route brings the king to the c-pawn fastest?",
+      "explain": "**1.Kf5!** (tablebase: the only win). The king heads for e4-d3 along the diagonal, reaching the pawn in time: 1...c2 2.Ke4 Kc3 3.Ke3 and Rc1 wins the pawn. 1.Rc1? Kb3 and 1.Kf6? c2 are only draws: the rook alone cannot stop the pawn supported by its king."
+    },
+    {
+      "type": "quiz",
+      "question": "In the Saavedra position, why does 6.c8=Q fail?",
+      "choices": [
+        "Black mates",
+        "After 6...Rc4+ 7.Qxc4 Black is stalemated",
+        "The queen is captured for free",
+        "It is not legal"
+      ],
+      "answer": 1,
+      "explain": "The black king on a1 has no moves; after the forced capture of the rook on c4, it is stalemate. The rook promotion keeps the win."
+    },
+    {
+      "type": "quiz",
+      "question": "What is the most valuable habit studies teach a practical player?",
+      "choices": [
+        "Memorising composed positions",
+        "Looking for the opponent's best defence (often a stalemate or a counter-trick) and for quiet, paradoxical moves",
+        "Playing faster",
+        "Avoiding endgames"
+      ],
+      "answer": 1,
+      "explain": "Studies are calculation training in its purest form: every defensive trick must be found."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- Solve 2 studies a week (Dvoretsky's *Secrets of Chess Training* chapter on studies, or a study database), 20 minutes each, without moving pieces.\n- **Puzzles**: 15 *quietMove* and 5 *underPromotion* puzzles.\n- Check each study solution against the tablebase in the **Analysis** board."
+    }
+  ],
+  "practiceThemes": [
+    "quietMove",
+    "zugzwang",
+    "underPromotion"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky's Endgame Manual (5th ed.)",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)",
+    "Saavedra study (1895)",
+    "Reti study (1921)"
+  ]
+}

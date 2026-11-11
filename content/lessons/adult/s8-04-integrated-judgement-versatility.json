@@ -1,0 +1,96 @@
+{
+  "id": "adult.s8.integrated-judgement-versatility",
+  "track": "adult",
+  "stage": 8,
+  "order": 4,
+  "skillIds": [
+    "strategy.integrated-judgement",
+    "strategy.versatility"
+  ],
+  "title": "Integrated GM judgement and versatility",
+  "summary": "Combine structure, dynamics, prophylaxis and calculation at speed, in open, closed, dynamic and technical positions from both sides.",
+  "estMinutes": 35,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Integrated judgement\n\nAt 2500+ there is no \"strategic\" or \"tactical\" position: every decision combines structure, piece activity, the opponent's ideas and concrete lines — quickly. A practical routine for each important move:\n1. **What changed?** (opponent's last move, threats)\n2. **What does the position require?** (structure-based plan)\n3. **What does he want?** (prophylaxis)\n4. **Concrete check** of the 2-3 candidates.\n\n**Versatility**: GMs can play any structure from either side. Training it: play your openings from the *other* side in training games, and study model games in structures you avoid."
+    },
+    {
+      "type": "move",
+      "fen": "r1r3k1/pp1nppb1/1q1p3p/3Pn1p1/4P2B/2N4P/PPB1QPP1/1R3RK1 w - - 0 19",
+      "prompt": "White to move (Carlsen-Karjakin, Bilbao 2016). Only one move keeps the balance (Carlsen-Karjakin, 9th Masters Final 2016 2016)",
+      "solution": [
+        "Bg3"
+      ],
+      "orientation": "white",
+      "explain": "**19.Bg3!** — the bishop retreats to cover the dark squares and the e5-knight's targets; prophylaxis before activity. Engine main line: 19.Bg3 Ng6 20.Kh1 Nde5 21.Bh2 Qa6 22.Qh5 Nd3. (Carlsen-Karjakin, 9th Masters Final 2016 2016; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "rn3rk1/5ppp/4pn2/p7/b1NP4/5NP1/1q2PPBP/R4RK1 w - - 0 17",
+      "prompt": "White to move (Kramnik-Topalov, World Championship 2006). Take the right way (Kramnik-Topalov, WCh 2006)",
+      "solution": [
+        "Nxb2"
+      ],
+      "orientation": "white",
+      "explain": "**17.Nxb2!** — the knight recaptures; the resulting position is balanced but other recaptures lose material. Engine main line: 17.Nxb2 Bb5 18.Ne5 Ra7 19.Na4 Bxe2 20.Rfe1 Bh5. (Kramnik-Topalov, WCh 2006; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "r2q1rk1/pp2bppp/2n1bn2/8/2pP4/2N1B1P1/PP2PPBP/R2Q1RK1 w - - 0 12",
+      "prompt": "White to move (Korchnoi-Carlsen, Drammen 2004/05). A central break at the right moment (Korchnoi-Carlsen, Smartfish Masters 2004)",
+      "solution": [
+        "d5"
+      ],
+      "orientation": "white",
+      "explain": "**12.d5!** — the pawn sacrifice/exchange opens the long diagonal for the g2-bishop; only this keeps White's advantage. Engine main line: 12.d5 Nxd5 13.Nxd5 Bg5 14.Bxg5 Qxg5 15.Qc1 Qxc1. (Korchnoi-Carlsen, Smartfish Masters 2004; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "3q1rk1/4bppp/br3n2/pN1pN3/3P1B2/6P1/PP2QP1P/R2R2K1 w - - 1 21",
+      "prompt": "White to move (Kramnik-Topalov 2006). A quiet queenside move (Kramnik-Topalov, WCh 2006)",
+      "solution": [
+        "a4"
+      ],
+      "orientation": "white",
+      "explain": "**21.a4!** — fixing the queenside before the knights invade; integrated judgement in one move: structure, prophylaxis, preparation. Engine main line: 21.a4 Ne4 22.Rdc1 Bf6 23.Rc2 h6 24.Nc6. (Kramnik-Topalov, WCh 2006; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "4r1k1/pnp1r1pp/1p3p1q/2pPP2b/2P2p2/2Q2B1P/P2NRPP1/R5K1 w - - 0 24",
+      "prompt": "White to move (Ding-Nepomniachtchi, World Championship 2023). A pawn sacrifice that changes the evaluation (Ding Liren-Nepomniachtchi, WCh 2023 2023)",
+      "solution": [
+        "e6"
+      ],
+      "orientation": "white",
+      "explain": "**24.e6!** — the pawn cuts the black position in two and keeps the balance; slower moves let Black consolidate. Engine main line: 24.e6 Bg6 25.a4 a5 26.Be4 Bh5 27.Ree1 Nd6 28.Bd3 Bg6. (Ding Liren-Nepomniachtchi, WCh 2023 2023; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "Which training best develops stylistic versatility at GM level?",
+      "choices": [
+        "Playing only your favourite openings",
+        "Playing training games and studying model games in structures you normally avoid, from both sides",
+        "Solving only tactical puzzles",
+        "Playing more blitz"
+      ],
+      "answer": 1,
+      "explain": "Versatility comes from experience in unfamiliar structures. Elite players deliberately broaden their repertoire."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- For one month, play your repertoire from the **opposite side** in training games (Play, 25+10) against a strong bot; analyse each game.\n- **Guess the move**: one game per week from each world-champion match in the corpus since 2000.\n- Write the four-question routine on your scoresheet in training games until it becomes automatic."
+    }
+  ],
+  "practiceThemes": [
+    "superGM",
+    "master"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "knowledge-base/03-chess-knowledge/grandmaster-competency-profile.md",
+    "Carlsen-Karjakin, Bilbao 2016",
+    "Kramnik-Topalov, World Championship 2006",
+    "Ding-Nepomniachtchi, World Championship 2023"
+  ]
+}

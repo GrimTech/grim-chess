@@ -1,0 +1,87 @@
+{
+  "id": "adult.s5.resilience-and-swindles",
+  "track": "adult",
+  "stage": 5,
+  "order": 29,
+  "skillIds": [
+    "practical.resilience",
+    "practical.swindles"
+  ],
+  "title": "Resilience after mistakes, and swindling in lost positions",
+  "summary": "Reset after an error, keep setting problems, and know the stalemate, fortress and perpetual tricks that save lost games.",
+  "estMinutes": 20,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## After the mistake\n\nThe move after a mistake is the most dangerous one: players either play on as if nothing happened or panic. Routine:\n1. **Stop**. Take a minute away from the board in your head; accept that the evaluation changed.\n2. **Re-evaluate** the position as if you had just sat down. What is the new plan?\n3. **Set problems**: keep pieces on (when losing), create complications, aim for positions where the opponent must find only-moves.\n4. **Look for drawing mechanisms**: perpetual check, fortress, stalemate, opposite bishops, the wrong rook pawn, rook v rook + pawn theoretical draws."
+    },
+    {
+      "type": "move",
+      "fen": "7k/5K1p/7P/8/8/1Q6/8/r7 b - - 0 1",
+      "prompt": "Black to move. You are a queen down and your king has no moves. Save the game.",
+      "solution": [
+        "Rf1+"
+      ],
+      "orientation": "black",
+      "hint": "Your king has no moves. What happens if your rook disappears?",
+      "explain": "**1...Rf1+!** — the \"mad rook\": the black king is stalemated, so the rook checks the white king endlessly; capturing it gives stalemate. Tablebase: this is the **only** drawing move. Look for this pattern whenever your king has no legal moves."
+    },
+    {
+      "type": "quiz",
+      "question": "You blundered a piece in a complex middlegame. Your opponent has 10 minutes, you have 25. Which approach gives the best practical chances?",
+      "choices": [
+        "Resign immediately",
+        "Keep pieces on, create threats, use your time advantage, aim for positions where he must calculate",
+        "Exchange everything to reduce his attacking chances",
+        "Play fast to put him under time pressure"
+      ],
+      "answer": 1,
+      "explain": "Complexity and the clock are a lost player's allies. Simplification helps the side with the extra material."
+    },
+    {
+      "type": "quiz",
+      "question": "In a lost rook ending (R+P v R), which defensive set-ups give drawing chances?",
+      "choices": [
+        "Rook passive on the back rank in front of a central pawn",
+        "Philidor (rook on the 3rd rank), checks from behind, short-side defence, Vancura against a rook pawn",
+        "King far away from the pawn",
+        "Exchanging rooks"
+      ],
+      "answer": 1,
+      "explain": "Know the theoretical drawing positions; many \"lost\" rook endings are draws if you reach one of them."
+    },
+    {
+      "type": "play",
+      "fen": "4k3/R7/7r/3KP3/8/8/8/8 b - - 0 1",
+      "goal": "hold",
+      "prompt": "Philidor defence: hold the draw for 30 moves. Keep the rook on the 6th rank until the pawn advances to e6, then check from behind.",
+      "maxMoves": 30
+    },
+    {
+      "type": "quiz",
+      "question": "After losing a game in round 3, you notice you are playing too fast and too riskily in round 4. What is the best correction?",
+      "choices": [
+        "Play even faster to finish quickly",
+        "Use a checklist: write down the time every 5 moves, blunder-check every move, and play your normal openings",
+        "Offer draws early",
+        "Switch to an unfamiliar sharp opening"
+      ],
+      "answer": 1,
+      "explain": "Tilt shows up as speed and risk. A simple process checklist is the most effective counter."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- In **Game review**, find two games where you were losing; mark the move where you could have created maximum practical problems or a drawing mechanism.\n- **Puzzles**: 15 *defensiveMove* puzzles and 5 stalemate-trick positions from the *equality* theme.\n- **Play**: 3 games from clearly worse positions (*Play → from position*) against a bot about 100 points above you; score yourself on how long you made it last."
+    }
+  ],
+  "practiceThemes": [
+    "equality",
+    "defensiveMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md",
+    "knowledge-base/01-learning-science/motivation-tilt-and-emotional-control.md",
+    "Aagaard, Grandmaster Preparation: Attack and Defence",
+    "Tablebases (tablebase.lichess.ovh)"
+  ]
+}

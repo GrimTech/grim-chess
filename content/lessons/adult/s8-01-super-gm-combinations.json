@@ -1,0 +1,99 @@
+{
+  "id": "adult.s8.super-gm-combinations",
+  "track": "adult",
+  "stage": 8,
+  "order": 1,
+  "skillIds": [
+    "tactics.supergm-combinations"
+  ],
+  "title": "Super-GM combinations",
+  "summary": "Kasparov-Topalov 1999 and Topalov-Shirov 1998: combinations where the only moves are deep, quiet or paradoxical.",
+  "estMinutes": 40,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## The highest level\n\nSuper-GM combinations combine everything: a deep first move, quiet follow-ups, and only-moves for the defender that must also be found. Train them in exam conditions (no moving pieces, 20-30 minutes, full written solution) and compare with engine lines move by move."
+    },
+    {
+      "type": "move",
+      "fen": "b2r3r/k4p1p/p2q1np1/NppP4/3p1Q2/P4PPB/1PP4P/1K1RR3 w - - 1 24",
+      "prompt": "White to move. Kasparov-Topalov, Wijk aan Zee 1999 (\"Kasparov's Immortal\"). Find the sacrifice that starts the king hunt.",
+      "solution": [
+        "Rxd4"
+      ],
+      "hint": "Remove the d4-pawn so that the e-file and the d-file open towards the king.",
+      "explain": "**24.Rxd4!!** cxd4 25.Re7+! Kb6 26.Qxd4+ Kxa5 27.b4+ Ka4 28.Qc3 Qxd5 29.Ra7! and the king is hunted across the board. Modern engines show the sacrifice is roughly balanced (about -0.4, the alternative 24.Nc6+ is worse at -1.1): a real sacrifice that required Topalov to find the only defence (24...Kb6!), which he did not. Accepting with 24...cxd4 loses."
+    },
+    {
+      "type": "move",
+      "fen": "b2r3r/k4p1p/p2q1np1/Np1P4/3p1Q2/P4PPB/1PP4P/1K2R3 w - - 0 25",
+      "prompt": "Kasparov-Topalov continued. White to move (after 24.Rxd4 cxd4) (Kasparov-Topalov, Hoogovens 1999)",
+      "solution": [
+        "Re7+"
+      ],
+      "orientation": "white",
+      "explain": "**25.Re7+!** — the rook check drives the king forward; the queen follows on d4. Engine main line: 25.Re7+ Kb6 26.Qxd4+ Kxa5 27.b4+ Ka4 28.Qc3 Qxd5 29.Ra7 Bb7. (Kasparov-Topalov, Hoogovens 1999; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "b2r3r/4Rp1p/pk1q1np1/Np1P4/3p1Q2/P4PPB/1PP4P/1K6 w - - 2 26",
+      "prompt": "White to move (after 25...Kb6) (Kasparov-Topalov, Hoogovens 1999)",
+      "solution": [
+        "Qxd4+"
+      ],
+      "orientation": "white",
+      "explain": "**26.Qxd4+!** — the king must take on a5 and walks into the open board. Engine main line: 26.Qxd4+ Kxa5 27.b4+ Ka4 28.Qc3 Qxd5 29.Ra7 Rd6 30.Kb2 Qxf3. (Kasparov-Topalov, Hoogovens 1999; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "8/8/4kpp1/3p1b2/p6P/2B5/6P1/6K1 b - - 2 47",
+      "prompt": "Black to move. Topalov-Shirov, Linares 1998. Opposite-coloured bishops — and yet a win. Find the move.",
+      "solution": [
+        "Bh3"
+      ],
+      "orientation": "black",
+      "hint": "Your king needs to reach e4 — what is in the way?",
+      "explain": "**47...Bh3!!** — the bishop offers itself so that the black king can walk to e4 without being stopped by g2-g4 and the white king: 48.gxh3 Kf5 49.Kf2 Ke4 50.Bxf6 d4 51.Be7 Kd3 and the passed pawns win (engine +2.8, while the natural 47...Be4 gives only about +0.5). One of the most famous moves in endgame history."
+    },
+    {
+      "type": "move",
+      "fen": "2bqnrk1/5p1p/5PpQ/3pP1P1/2pP1R2/2P5/6BP/1q3NK1 b - - 1 28",
+      "prompt": "Black to move (Anand-Carlsen, World Championship 2013, game 6). Find the only way to keep the advantage (Anand-Carlsen, WCh 2013 2013)",
+      "solution": [
+        "Qe1"
+      ],
+      "orientation": "black",
+      "explain": "**28...Qe1!** — the queen goes behind White's lines, pinning the f1-knight and hitting e4/e2; quiet but decisive. Engine main line: 28...Qe1 29.h3 Bf5 30.Rf3 Qb6 31.Rxf5 Qb2 32.Rf3. (Anand-Carlsen, WCh 2013 2013; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "Kasparov later said he saw the final position of the Rxd4 combination at move 24. Engines show 24.Rxd4 was objectively not winning. What is the lesson for a GM-level player?",
+      "choices": [
+        "Never play unsound sacrifices",
+        "At the highest level, practical difficulty matters: a sacrifice where the defender must find a single only-move under pressure can be the best practical choice — but calculate the critical defence and know the risk",
+        "Engines are always wrong",
+        "Always play the engine move"
+      ],
+      "answer": 1,
+      "explain": "Practical decision-making uses both objective evaluation and the opponent's chance to find only-moves."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles**: 20 *superGM* puzzles (exam mode, 15 minutes each, written solution).\n- **Guess the move**: Kasparov-Topalov 1999 and Topalov-Shirov 1998 (corpus), from move 20 and 40 respectively.\n- Aagaard's Grandmaster Preparation: Calculation — 5 exercises per week, graded honestly."
+    }
+  ],
+  "practiceThemes": [
+    "superGM",
+    "veryLong"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "knowledge-base/03-chess-knowledge/grandmaster-competency-profile.md",
+    "Aagaard, Grandmaster Preparation: Calculation",
+    "Kasparov, My Great Predecessors (vols. I-V)",
+    "Kasparov-Topalov, Wijk aan Zee 1999",
+    "Topalov-Shirov, Linares 1998",
+    "Anand-Carlsen, World Championship 2013"
+  ]
+}

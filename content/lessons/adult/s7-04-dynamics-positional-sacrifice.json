@@ -1,0 +1,99 @@
+{
+  "id": "adult.s7.dynamics-positional-sacrifice",
+  "track": "adult",
+  "stage": 7,
+  "order": 4,
+  "skillIds": [
+    "strategy.dynamic-evaluation",
+    "strategy.positional-sacrifice"
+  ],
+  "title": "Statics against dynamics; positional sacrifices",
+  "summary": "Weigh long-term structure against short-term activity, and give pawns or pieces for lasting compensation.",
+  "estMinutes": 35,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Static and dynamic factors\n\n**Static**: material, pawn structure, permanent weak squares, the bishop pair — they last.\n**Dynamic**: development, initiative, king exposure, piece activity — they disappear if not used.\n\nThe key question in every imbalance: *will my dynamic advantage last long enough to become a static one, or will his static advantage outlast my activity?* If your advantage is dynamic, act now (open lines, sacrifice); if it is static, slow the game down and neutralise his activity first.\n\n**Positional sacrifices** give material for a static gain (structure, squares, a passed pawn) or a lasting bind — compensation that is still there 20 moves later."
+    },
+    {
+      "type": "move",
+      "fen": "1r2k2r/pQ1n1ppp/8/q2p1p2/Pb6/4PN2/1P3PPP/R1B2RK1 w k - 1 16",
+      "prompt": "White to move. White's queen is deep in Black's camp; Black's king is in the centre. Choose between grabbing and activity (Euwe-Alekhine, World Championship 1937)",
+      "solution": [
+        "Qc6"
+      ],
+      "orientation": "white",
+      "explain": "**16.Qc6!** — the queen keeps the black king in the centre (Ke7) and supports e4: dynamic factors outweigh Black's extra material for now. Engine main line: 16.Qc6 Ke7 17.e4 Rhc8 18.Qxd5 Qxd5 19.exd5 Bc5. (Euwe-Alekhine, World Championship 1937; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "r3k2r/p4ppp/1pp1pnn1/q7/PB1Q4/1BP5/5PPP/R2R2K1 b kq - 1 21",
+      "prompt": "Black to move. Offer a queen exchange that changes the static picture (Gelfand-Korchnoi, GM 2001)",
+      "solution": [
+        "Qe5"
+      ],
+      "orientation": "black",
+      "explain": "**21...Qe5!** — after 22.Qxe5 Nxe5 the queenless middlegame favours Black's knights and better structure: a static gain for a dynamic concession. Engine main line: 21...Qe5 22.Qxe5 Nxe5 23.Bd6 Ned7 24.Bc2 a5 25.c4. (Gelfand-Korchnoi, GM 2001; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "r2qkb1r/1p3p1p/p1npbp2/1N2p3/4P3/2N5/PPP2PPP/R2QKB1R w KQkq - 0 11",
+      "prompt": "White to move. A positional pawn sacrifice in the Sicilian (Fischer-Taimanov 1971) (Fischer-Taimanov, Candidates 1971)",
+      "solution": [
+        "Na3"
+      ],
+      "orientation": "white",
+      "explain": "**11.Na3!** — the knight returns to the game via c4; Black's ...d5 break leads to positions where White's pieces and the d5-square matter more than the structure. Engine main line: 11.Na3 d5 12.exd5 Bxa3 13.bxa3 Qa5 14.Qd2 O-O-O. (Fischer-Taimanov, Candidates 1971; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "rn3rk1/pp3p2/7p/q1Pp2p1/1b6/1NB1P3/PPb2PPP/R3KB1R w KQ - 0 16",
+      "prompt": "White to move. Concrete play against static weaknesses (Kasparov-Short, PCA-World Championship 1993)",
+      "solution": [
+        "Nxa5"
+      ],
+      "orientation": "white",
+      "explain": "**16.Nxa5!** — White simply takes the queen; Black regains material with ...Bxc3+ and the position is roughly balanced (engine about +0.4), while other moves lose material. Engine main line: 16.Nxa5 Bxc3+ 17.bxc3 b6 18.Rc1 Bg6 19.Nb3 bxc5. (Kasparov-Short, PCA-World Championship 1993; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "You are a pawn down but have a lead in development and open lines against the opponent's king. Which approach fits the dynamic evaluation?",
+      "choices": [
+        "Exchange queens to reach a calm ending",
+        "Act quickly: open more lines, bring pieces with tempo, and create threats before the opponent consolidates",
+        "Wait for the opponent to make a mistake",
+        "Win back the pawn at any cost"
+      ],
+      "answer": 1,
+      "explain": "Dynamic advantages are temporary. Trading queens would leave only the static factor (the missing pawn)."
+    },
+    {
+      "type": "quiz",
+      "question": "Which compensation for a pawn sacrifice is the most lasting?",
+      "choices": [
+        "One tempo of development",
+        "A permanent weakness in the opponent's structure or a blockading piece on an outpost that cannot be driven away",
+        "A single check",
+        "An exchange of queens"
+      ],
+      "answer": 1,
+      "explain": "Static compensation survives exchanges. That is what distinguishes a positional sacrifice from a speculative one."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: one Euwe or Alekhine game (corpus) where material was sacrificed; for each critical move, write \"static\" or \"dynamic\" before choosing.\n- **Puzzles**: 15 *advantage* and 15 *equality* puzzles: evaluate first, then solve."
+    }
+  ],
+  "practiceThemes": [
+    "advantage",
+    "equality",
+    "sacrifice"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "knowledge-base/03-chess-knowledge/grandmaster-competency-profile.md",
+    "Kasparov, My Great Predecessors vol. II (Euwe, Alekhine)",
+    "Euwe-Alekhine, World Championship 1937",
+    "Gelfand-Korchnoi 2001"
+  ]
+}

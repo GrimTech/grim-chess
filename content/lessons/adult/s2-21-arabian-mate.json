@@ -1,0 +1,104 @@
+{
+  "id": "adult.s2.arabian-mate",
+  "track": "adult",
+  "stage": 2,
+  "order": 21,
+  "skillIds": [
+    "checkmate.arabian"
+  ],
+  "title": "The Arabian mate",
+  "summary": "Rook and knight trap a king in the corner.",
+  "estMinutes": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "One of the oldest recorded mating patterns. The king is in the corner (h8). A **knight on f6** guards h7 and g8; a **rook** mates on h7 (protected by the knight) or on g8 / along the edge."
+    },
+    {
+      "type": "board",
+      "fen": "7k/7R/5N2/8/8/8/8/6K1 b - - 0 1",
+      "md": "The Arabian mate: Rh7 is protected by the f6-knight, which also covers g8.",
+      "arrows": [
+        [
+          "f6",
+          "h7",
+          "green"
+        ],
+        [
+          "f6",
+          "g8",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "7k/1R6/5N2/8/8/8/8/6K1 w - - 0 1",
+      "prompt": "Mate in one.",
+      "solution": [
+        "Rh7#"
+      ],
+      "explain": "The knight protects the rook on h7 and covers g8. The king has no move."
+    },
+    {
+      "type": "move",
+      "fen": "7k/7p/5N2/8/8/8/7P/6RK w - - 0 1",
+      "prompt": "A variant: mate in one.",
+      "solution": [
+        "Rg8#"
+      ],
+      "explain": "The knight protects g8; the h7-pawn takes the king's last square."
+    },
+    {
+      "type": "move",
+      "fen": "7k/1R6/8/p7/4N3/8/8/6K1 w - - 0 1",
+      "prompt": "Set up the Arabian mate: mate in two.",
+      "solution": [
+        "Nf6",
+        "a4",
+        "Rh7#"
+      ],
+      "explain": "Nf6 covers h7 and g8. Black can only push the a-pawn, and Rh7# follows."
+    },
+    {
+      "type": "quiz",
+      "question": "In the last position, what if Black had no a-pawn?",
+      "choices": [
+        "Nf6 would be stalemate",
+        "Still mate in two",
+        "Black would escape"
+      ],
+      "answer": 0,
+      "explain": "With no pawn to move, Nf6 leaves Black without a legal move: stalemate. In that case play a check first, or bring the king."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which two pieces deliver the Arabian mate?",
+      "choices": [
+        "Rook and knight",
+        "Queen and bishop",
+        "Two rooks"
+      ],
+      "answer": 0,
+      "explain": "Rook and knight, with the king in the corner."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: where does the knight stand when the king is on h8?",
+      "choices": [
+        "f6",
+        "g6",
+        "h6"
+      ],
+      "answer": 0,
+      "explain": "From f6 the knight covers h7 and g8."
+    }
+  ],
+  "practiceThemes": [
+    "arabianMate"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#arabian-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#pattern-catalogue-summary"
+  ]
+}

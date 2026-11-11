@@ -1,0 +1,119 @@
+{
+  "id": "adult.s4.mate-in-four",
+  "track": "adult",
+  "stage": 4,
+  "order": 12,
+  "skillIds": [
+    "checkmate.mate-in-4"
+  ],
+  "title": "Mate in four: forcing sequences",
+  "summary": "Checks, decoy sacrifices and a king hunt calculated four moves deep.",
+  "estMinutes": 18,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A mate in four is seven plies, too long to find by staring. Use structure:\n\n1. Picture the **final mating pattern** first (back rank, queen and knight on h7, Arabian mate...).\n2. Ask which enemy piece or pawn prevents it, and **decoy or remove** it with checks and sacrifices.\n3. Calculate **checks first**: they leave the opponent few replies, so the tree stays narrow.\n\nMost long mates are short patterns preceded by one or two forcing \"preparation\" moves."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/pp3pp1/8/4q1N1/6b1/4r3/PP3QP1/5K1R w - - 0 28",
+      "prompt": "White to move. Black has just played ...Rxe3. The final picture is a queen mate on h7, supported by the g5-knight. Get the queen to the h-file with tempo.",
+      "solution": [
+        "Rh8+",
+        "Kxh8",
+        "Qh4+",
+        "Bh5",
+        "Qxh5+",
+        "Kg8",
+        "Qh7#"
+      ],
+      "explain": "**28.Rh8+! Kxh8 29.Qh4+** (the rook sacrifice decoyed the king to h8 and opened the h-file for the queen) **29...Bh5 30.Qxh5+ Kg8 31.Qh7#**, the queen protected by the knight. Mate in four."
+    },
+    {
+      "type": "move",
+      "fen": "1Q2R3/1b1r1ppk/2q4p/5R2/3r4/1P4NP/6P1/7K w - - 17 41",
+      "prompt": "White to move. Mate in four with rook sacrifices.",
+      "solution": [
+        "Rh8+",
+        "Kg6",
+        "Rxh6+",
+        "Kxh6",
+        "Qh8+",
+        "Kg6",
+        "Qh5#"
+      ],
+      "explain": "**41.Rh8+! Kg6 42.Rxh6+! Kxh6 43.Qh8+ Kg6 44.Qh5#.** Both sacrifices drag the king forward; the final mate is queen on h5 supported by the f5-rook, with f6 and g5 covered."
+    },
+    {
+      "type": "quiz",
+      "question": "In long forcing mates, why calculate checks first?",
+      "choices": [
+        "Checks are always sound",
+        "Each check limits the opponent to a few legal replies, so you can calculate deeper with less effort",
+        "The engine prefers checks"
+      ],
+      "answer": 1,
+      "explain": "Forcing moves shrink the tree: after a check the defender often has one or two legal moves. Quiet moves give him the whole board. That is why mates of four moves are calculable at all."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/p1Q2ppp/8/8/8/4q2P/Pr4P1/2R2R1K w - - 8 28",
+      "prompt": "White to move. The back rank is weak, but f7 and the f8-rook are in the way. Mate in four.",
+      "solution": [
+        "Qxf7+",
+        "Rxf7",
+        "Rc8+",
+        "Qe8",
+        "Rxe8+",
+        "Rf8",
+        "Rfxf8#"
+      ],
+      "explain": "**28.Qxf7+! Rxf7 29.Rc8+ Qe8 30.Rxe8+ Rf8 31.Rfxf8#.** The queen sacrifice decoys the rook off f8 and opens the f-file, so the second rook joins on the back rank."
+    },
+    {
+      "type": "move",
+      "fen": "r1r3k1/5p1p/3R3P/6P1/1p2PQ2/1P6/PB4q1/1K3R2 b - - 12 44",
+      "prompt": "Black to move. White's king on b1 has only a few defenders. Mate in four.",
+      "solution": [
+        "Qc2+",
+        "Ka1",
+        "Rxa2+",
+        "Kxa2",
+        "Ra8+",
+        "Ra6",
+        "Rxa6#"
+      ],
+      "explain": "**44...Qc2+ 45.Ka1 Rxa2+! 46.Kxa2 Ra8+ 47.Ra6 Rxa6#.** The rook sacrifice removes the a2-pawn and drags the king onto the open a-file; the queen on c2 covers b1 and b3."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/4Q1pp/2b1p3/2P1P3/3p1pPn/5P1P/1r1N1K2/R7 b - - 0 29",
+      "prompt": "Black to move. Independent exercise: mate in four with rook, bishop and knight.",
+      "solution": [
+        "Rxd2+",
+        "Kf1",
+        "Bb5+",
+        "Kg1",
+        "Nxf3+",
+        "Kh1",
+        "Rh2#"
+      ],
+      "explain": "**29...Rxd2+ 30.Kf1 Bb5+ 31.Kg1 Nxf3+ 32.Kh1 Rh2#.** The knight on f3 covers g1 and protects the rook on h2: an **Arabian mate**. Each move is a check, so White never has time to use the e7-queen."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** What three questions structure a long mating search? (Final pattern; what prevents it; checks first.) Which final patterns appeared today? (Queen and knight on h7; queen and rook triangle; back rank; rook on the a-file; Arabian mate.)"
+    }
+  ],
+  "practiceThemes": [
+    "mateIn4"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#mating-net-skills-beyond-named-patterns",
+    "knowledge-base/03-chess-knowledge/calculation.md#calculation-tree",
+    "knowledge-base/03-chess-knowledge/tactics.md#decoy-attraction",
+    "Polgar, Chess: 5334 Problems, Combinations and Games (1994), mates in three and more",
+    "Yusupov, Build Up Your Chess 2 (Quality Chess, 2009)",
+    "Lichess puzzle database (CC0), puzzles 0qPL6, 3duUu, 18AUj, 0tyXR, 0xccK"
+  ]
+}

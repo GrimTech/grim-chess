@@ -1,0 +1,84 @@
+{
+  "id": "adult.s7.blindfold-visualization",
+  "track": "adult",
+  "stage": 7,
+  "order": 3,
+  "skillIds": [
+    "calculation.blindfold"
+  ],
+  "title": "Blindfold play and long visualisation",
+  "summary": "Hold complete games in your head: square colours, piece routes, reading score sheets, and playing without the board.",
+  "estMinutes": 25,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Why blindfold?\n\nBlindfold play is the extreme form of calculation training: the board in your head must stay correct for a whole game. Masters can usually play a blindfold game at almost normal strength because they think in **chunks** (piece groups and structures), not in single squares.\n\nProgression: (1) square colours and diagonals, (2) knight routes, (3) reading 10-20 moves of an opening from notation and describing the position, (4) blindfold games against a weak bot, (5) against stronger opposition."
+    },
+    {
+      "type": "quiz",
+      "question": "Without looking at a board: are the squares e4 and b7 the same colour?",
+      "choices": [
+        "Yes, both light",
+        "Yes, both dark",
+        "No"
+      ],
+      "answer": 0,
+      "explain": "e4: file 5 + rank 4 = 9 (odd) = light; b7: 2 + 7 = 9 = light. A quick parity rule: (file number + rank number) odd = light square."
+    },
+    {
+      "type": "quiz",
+      "question": "Without a board: a knight on b1 wants to reach h8. What is the minimum number of moves?",
+      "choices": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "answer": 1,
+      "explain": "5 moves, for example b1-d2-f3-g5-f7-h8. Check first with colours: b1 is light and h8 dark, and a knight changes colour every move, so the number must be odd."
+    },
+    {
+      "type": "quiz",
+      "question": "Visualise: 1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3. Which white piece defends the e4-pawn?",
+      "choices": [
+        "The knight on f3",
+        "The rook on e1",
+        "The bishop on b3",
+        "The queen on d1"
+      ],
+      "answer": 1,
+      "explain": "Only the rook on e1 defends e4 (the knight is on f3, the bishop on b3 looks at f7). This is the Closed Ruy Lopez tabiya.",
+      "fen": "r1bq1rk1/2p1bppp/p1np1n2/1p2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 b - - 0 9"
+    },
+    {
+      "type": "quiz",
+      "question": "Visualise from the start: 1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 O-O 5.Bd3 d5 6.Nf3 c5 7.O-O. On which square is the black bishop and what does it attack?",
+      "choices": [
+        "b4, attacking the c3-knight",
+        "e7, attacking nothing",
+        "d6",
+        "a5"
+      ],
+      "answer": 0,
+      "explain": "The bishop is on b4 and attacks the c3-knight (no pin, since the king has castled). This is a main line of the Nimzo-Indian."
+    },
+    {
+      "type": "play",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "goal": "hold",
+      "prompt": "Blindfold training game: cover the board (or turn your screen away and use only the move list), and play 20 moves against the engine (level 9). Goal: no illegal move attempts and no lost material.",
+      "maxMoves": 20,
+      "engineLevel": 9
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Visualization drill** (*Train → visualization*): daily for 2 weeks, highest level you can do with 80% accuracy.\n- **Blindfold games**: 2 per week against a bot 400-600 points below your rating, then increase.\n- Read through 10 moves of a game in the corpus without a board, then set up the position and check it."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/01-learning-science/chunking-and-template-theory.md",
+    "Koltanowski / Najdorf blindfold records (historical)"
+  ]
+}

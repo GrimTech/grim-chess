@@ -1,0 +1,153 @@
+{
+  "id": "adult.s3.anastasia-hook-and-corner-mates",
+  "track": "adult",
+  "stage": 3,
+  "order": 21,
+  "skillIds": [
+    "checkmate.anastasia",
+    "checkmate.hook"
+  ],
+  "title": "Knight-and-rook mates: Anastasia, hook and corner",
+  "summary": "Three patterns where a knight takes the flight squares and a rook (or queen) delivers mate on the edge.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "board",
+      "fen": "8/4N1pk/8/7R/8/8/6PP/6K1 b - - 0 1",
+      "md": "**Anastasia's mate.** The knight on e7 covers g8 and g6; the king is trapped against the edge by its own g7-pawn; the rook (or queen) mates along the h-file.",
+      "highlights": [
+        "g8",
+        "g6",
+        "h7"
+      ],
+      "arrows": [
+        [
+          "h5",
+          "h7",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/4N1pk/8/3R4/8/8/6PP/6K1 w - - 0 1",
+      "prompt": "Mate in one: Anastasia's mate.",
+      "solution": [
+        "Rh5#"
+      ],
+      "explain": "Rh5#: the knight takes g6 and g8, the pawn blocks g7, and the rook covers the whole h-file."
+    },
+    {
+      "type": "move",
+      "fen": "2r2rk1/bp3pp1/p7/3N2p1/3pP3/1P1B2R1/1PP3PP/5nK1 w - - 0 27",
+      "prompt": "White to move: mate in two. Set up Anastasia's mate.",
+      "solution": [
+        "Ne7+",
+        "Kh7",
+        "Rh3#"
+      ],
+      "explain": "Ne7+! Kh7 (Kh8 Rh3# is the same idea) and Rh3#: the knight takes g6 and g8, the g7-pawn blocks the king, the rook lifts to the h-file.",
+      "hint": "First the knight check on e7."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/pp1Q1pp1/1b6/2pN4/8/8/Pq2nPPP/6RK w - - 4 35",
+      "prompt": "White to move: mate in two. Same pattern, with the queen finishing.",
+      "solution": [
+        "Ne7+",
+        "Kh7",
+        "Qh3#"
+      ],
+      "explain": "Ne7+! Kh7 Qh3#: the queen delivers the h-file mate while the knight covers g6 and g8."
+    },
+    {
+      "type": "board",
+      "fen": "4R3/4kp2/5N2/4P3/8/8/8/6K1 b - - 0 1",
+      "md": "**Hook mate.** The rook mates next to the king, protected by the knight; the knight is protected by a pawn; an enemy pawn (f7) blocks the last escape.",
+      "highlights": [
+        "e8",
+        "f6",
+        "e5"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "6k1/p5p1/4R1Np/3p1P2/3K4/P3P3/1r1p1nPP/2r5 w - - 2 37",
+      "prompt": "White to move: mate in two. Use rook, knight and the f5-pawn.",
+      "solution": [
+        "Re8+",
+        "Kf7",
+        "Rf8#"
+      ],
+      "explain": "Re8+! Kf7 Rf8#: the rook mates on f8, protected by the g6-knight, which is protected by the f5-pawn. The knight covers e7, the f5-pawn covers e6, and Black's own g7-pawn blocks: rook-knight-pawn, the hook."
+    },
+    {
+      "type": "move",
+      "fen": "8/p4R2/1p2p1k1/6N1/2P3NP/P5p1/2r3r1/7K w - - 1 37",
+      "prompt": "White to move: mate in two. Knights and rook against a king on g6.",
+      "solution": [
+        "Ne5+",
+        "Kh6",
+        "Rh7#"
+      ],
+      "explain": "Ne5+! Kh6 Rh7#: the g5-knight protects the rook on h7 and is itself protected by the h4-pawn (the hook chain); the e5-knight covers g6."
+    },
+    {
+      "type": "board",
+      "fen": "7k/5N1p/8/8/8/8/8/6RK b - - 0 1",
+      "md": "**Corner mate.** A rook on the g-file shuts the king in the corner, its own h7-pawn blocks, and the knight delivers mate from f7.",
+      "highlights": [
+        "g8",
+        "g7",
+        "f7"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/ppqrR3/5pp1/2pp1Nn1/5b1N/1P5P/P1P3P1/5RK1 w - - 0 26",
+      "prompt": "White to move: mate in two. Drive the king into the corner, then mate with a knight.",
+      "solution": [
+        "Nh6+",
+        "Kh8",
+        "Nxg6#"
+      ],
+      "explain": "Nh6+! Kh8 Nxg6#: the h6-knight covers g8, the e7-rook covers g7 and h7, and the second knight captures on g6 with mate."
+    },
+    {
+      "type": "quiz",
+      "question": "In Anastasia's mate (king on h7), which squares must the knight on e7 control?",
+      "choices": [
+        "g8 and g6",
+        "h8 and h6",
+        "f7 and f6",
+        "g7 and h5"
+      ],
+      "answer": 0,
+      "explain": "The h-file is the rook's; g7 is blocked by the king's own pawn; the knight takes g8 and g6."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what defines the hook mate?",
+      "choices": [
+        "Two rooks on the 7th rank",
+        "Rook adjacent to the king, protected by a knight, which is protected by a pawn, with an enemy pawn blocking the escape",
+        "A queen and bishop on the long diagonal",
+        "A knight mate in the corner with the king boxed in by its own pieces"
+      ],
+      "answer": 1,
+      "explain": "The chain rook-knight-pawn is the \"hook\". Drill: hookMate and anastasiaMate puzzle sets."
+    }
+  ],
+  "practiceThemes": [
+    "anastasiaMate",
+    "hookMate",
+    "cornerMate"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#anastasias-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#hook-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#corner-mate",
+    "Renaud & Kahn, The Art of the Checkmate (1953)",
+    "Lichess puzzle database (CC0): 1fNSc, 2MpwW, 1jfmg, 1AZOY, 0wu5F, 5UeLz"
+  ]
+}

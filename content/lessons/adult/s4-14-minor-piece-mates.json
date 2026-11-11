@@ -1,0 +1,108 @@
+{
+  "id": "adult.s4.minor-piece-mates",
+  "track": "adult",
+  "stage": 4,
+  "order": 14,
+  "skillIds": [
+    "checkmate.minor-piece-mates"
+  ],
+  "title": "Mates with bishops and knights",
+  "summary": "Blackburne, Max Lange, suffocation and double-knight mates, then double-bishop combinations.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Minor pieces mate when the king is **hemmed in by its own pieces** and the bishops or knights cover the rest:\n\n- **Blackburne:** a bishop on the long diagonal covers g7/h8, a knight on g5 supports the other bishop's mate on h7.\n- **Max Lange:** queen mates on g8 against a king on h7, the bishop on f7 covering g6 and protecting g8.\n- **Suffocation:** a knight checks on e7, the long-diagonal bishop covers g7/h8, the king's own rook and pawns block the rest.\n- **Double knight:** two knights against a king boxed in by its own pawns."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/7p/8/6N1/8/3B4/1B6/6K1 w - - 0 1",
+      "prompt": "White to move. Blackburne's mate in one.",
+      "solution": [
+        "Bxh7#"
+      ],
+      "explain": "**1.Bxh7#.** The b2-bishop covers g7 and h8 along the long diagonal, the g5-knight protects h7, and the king's own rook on f8 takes away its last square."
+    },
+    {
+      "type": "move",
+      "fen": "Q7/5Bpk/7p/8/8/8/8/6K1 w - - 0 1",
+      "prompt": "White to move. Max Lange's mate in one.",
+      "solution": [
+        "Qg8#"
+      ],
+      "explain": "**1.Qg8#.** The queen is protected by the f7-bishop, which also covers g6; the king's own g7- and h6-pawns block the rest."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/5p1p/8/3N4/8/2B5/8/6K1 w - - 0 1",
+      "prompt": "White to move. Suffocation mate in one.",
+      "solution": [
+        "Ne7#"
+      ],
+      "explain": "**1.Ne7#.** The knight checks, the c3-bishop covers g7 and h8, and f8, f7 and h7 are occupied by Black's own pieces."
+    },
+    {
+      "type": "move",
+      "fen": "k1n5/pppN4/8/1N6/8/8/8/6K1 w - - 0 1",
+      "prompt": "White to move. Two knights against a boxed-in king.",
+      "solution": [
+        "Nxc7#"
+      ],
+      "explain": "**1.Nxc7#.** The c7-knight checks a8, the d7-knight covers b8, and a7, b7 and c8 are blocked by Black's own pieces."
+    },
+    {
+      "type": "quiz",
+      "question": "What do all four patterns have in common?",
+      "choices": [
+        "The defending king is boxed in by its own pieces or pawns; the minor pieces only cover the remaining one or two squares",
+        "They all need a queen",
+        "They only happen in the endgame"
+      ],
+      "answer": 0,
+      "explain": "Minor pieces are short-range or single-colour pieces, so they rarely mate a king with free squares. Look for **self-blocking**: a king surrounded by its own rook and pawns needs only one or two squares covered."
+    },
+    {
+      "type": "move",
+      "fen": "5r1k/pp1n3p/1q4p1/8/2B2QP1/8/PP3b1B/R4K2 w - - 0 29",
+      "prompt": "White to move. Mate in three with two bishops.",
+      "solution": [
+        "Qxf8+",
+        "Nxf8",
+        "Be5+",
+        "Qf6",
+        "Bxf6#"
+      ],
+      "explain": "**29.Qxf8+! Nxf8 30.Be5+ Qf6 31.Bxf6#.** The queen sacrifice removes the f8-rook and pulls the knight to f8, where it blocks the king. Then the bishops on c4 and e5/f6 cover g8 and the long diagonal: a double-bishop mate."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/p4p1p/2p3p1/5b2/5b2/1BP3qP/PP4P1/3Q2BK b - - 0 30",
+      "prompt": "Black to move. Independent exercise: White has just taken your queen on d1. Mate in three with the bishops.",
+      "solution": [
+        "Qxh3+",
+        "gxh3",
+        "Be4+",
+        "Qf3",
+        "Bxf3#"
+      ],
+      "explain": "**30...Qxh3+! 31.gxh3 Be4+ 32.Qf3 Bxf3#.** The queen sacrifice opens the long diagonal towards h1; the f4-bishop covers h2 and g3, the light-squared bishop mates on f3. The king is blocked by its own g1-bishop."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Name the four patterns and the square on which each mate is delivered (h7 by the bishop; g8 by the queen; e7 by the knight; c7 by the knight). Then name the key condition they share: self-blocking."
+    }
+  ],
+  "practiceThemes": [
+    "mate",
+    "mateIn2"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#blackburnes-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#max-langes-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#suffocation-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#double-knight-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#double-bishop-mate",
+    "Renaud & Kahn, The Art of the Checkmate (1953)",
+    "Lichess puzzle database (CC0), puzzles EDXa8, eeC8T"
+  ]
+}

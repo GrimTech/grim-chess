@@ -1,0 +1,117 @@
+{
+  "id": "adult.s5.repertoire-database-engine",
+  "track": "adult",
+  "stage": 5,
+  "order": 27,
+  "skillIds": [
+    "opening.repertoire.structure-based",
+    "opening.database-engine",
+    "opening.sideline-coverage"
+  ],
+  "title": "Repertoire work: structures, databases and engines",
+  "summary": "Build a 15-20 move repertoire organised by pawn structure, use the master database and the engine without blind trust, and close the holes against sidelines.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## A repertoire is a set of structures, not a list of moves\n\nAt 1800-2100 your opening errors are rarely \"I forgot move 14\". They are \"I reached a structure I did not understand\". Organise your repertoire by the **pawn structures it produces** and learn, for each one:\n\n1. the **typical plans** for both sides (breaks, piece routes, which minor pieces to keep),\n2. **one or two model games** (see *Guess the move*),\n3. the **main line to about move 15-20**, plus a prepared answer to every sideline you meet more than once a year.\n\n**Database first, engine second.** The master database tells you what strong humans play and which plans work in practice; the engine checks the concrete moves. Filter the database to games between players rated 2300+ from the last 10-15 years; raw percentages from mixed-strength games mostly measure who blundered later. Use the engine to *refute* or *confirm* a line you already understand, not to pick moves you cannot explain. A +0.30 evaluation at depth 30 is \"equal, with a playable position\" — not a win."
+    },
+    {
+      "type": "board",
+      "fen": "r1bqrnk1/pp2bppp/2p2n2/3p2B1/3P4/2NBPN2/PPQ2PPP/R4RK1 w - - 9 11",
+      "md": "**Carlsbad structure from the Queen's Gambit Declined, Exchange Variation** (1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.cxd5 exd5 5.Bg5 c6 6.e3 Be7 7.Bd3 Nbd7 8.Qc2 O-O 9.Nf3 Re8 10.O-O Nf8).\n\nThe structure dictates the plans: White chooses between the **minority attack** (Rab1, b4-b5 to create a weak c6 pawn) and the central plan **Ne5/f3 and e3-e4**. Black regroups (...Ne6/...Ng6, ...Ne4) and looks for kingside play. If you know these plans, the exact move order matters much less.",
+      "arrows": [
+        [
+          "b2",
+          "b4",
+          "green"
+        ],
+        [
+          "b4",
+          "b5",
+          "green"
+        ],
+        [
+          "e3",
+          "e4",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Your database shows a sideline scoring 61% for White over 3,000 games, but the engine gives 0.00 after the main reply. What is the most sensible conclusion?",
+      "choices": [
+        "The line is objectively winning for White, so avoid it with Black",
+        "The line is objectively fine for Black; check the strong-player games to learn the reply and the typical plans, because the high score probably comes from weaker defenders",
+        "Ignore both: openings do not matter at 2000",
+        "Trust the percentage over the engine because humans play the games"
+      ],
+      "answer": 1,
+      "explain": "Percentages mix every level of play and every later blunder. Filter to strong players and recent years, find the reply that holds (the engine confirms it), and learn its plans. That is how a \"dangerous\" sideline becomes a comfortable one."
+    },
+    {
+      "type": "quiz",
+      "question": "You check your main line with the engine at depth 35. It shows +0.25 for White, and a rare alternative on move 12 shows +0.45. What should you do with your repertoire?",
+      "choices": [
+        "Switch to the move-12 alternative immediately: it is 0.20 better",
+        "Keep your line unless the alternative leads to positions you understand better; differences of 0.2 at this level are practically irrelevant, and understanding and surprise value matter more",
+        "Delete the line: anything above +0.20 means White is winning",
+        "Run the engine overnight until both lines show the same number"
+      ],
+      "answer": 1,
+      "explain": "Engine evaluations in the opening carry a margin of uncertainty, and 0.2 is inside it. Choose lines by structure, understanding and practical value; use the engine to make sure nothing is losing outright and to check the critical forcing lines."
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq - 0 2",
+      "md": "**Sideline coverage.** A Sicilian player needs prepared answers to 2.c3 (Alapin, shown), 2.Nc3 (Closed/Grand Prix), 3.Bb5(+) (Rossolimo/Moscow), 2.d4 cxd4 3.c3 (Smith-Morra) and 2.b3/2.g3. Write one reliable line against each, with the plan you are aiming for, and review the file with spaced repetition (*Openings* trainer). The same goes for 1.d4 players facing the London, the Trompowsky, the Albin and other offbeat gambits."
+    },
+    {
+      "type": "quiz",
+      "question": "After 1.e4 c5 2.d4 cxd4 3.c3 (Smith-Morra Gambit), which reply transposes directly into a main line of the 2.c3 Sicilian (Alapin)?",
+      "choices": [
+        "3...Nf6, because 4.e5 Nd5 5.cxd4 reaches the Alapin with ...Nf6/...Nd5",
+        "3...e5, because it blocks the centre",
+        "3...Qa5, pinning the c3 pawn",
+        "3...h6, preventing Bg5"
+      ],
+      "answer": 0,
+      "explain": "After 3...Nf6 4.e5 Nd5 5.cxd4 the position is the same as 2.c3 Nf6 3.e5 Nd5 4.d4 cxd4 5.cxd4. If you already know the Alapin, this is the most economical answer. Accepting with 3...dxc3 is also fine, but then you must learn the gambit.",
+      "fen": "rnbqkbnr/pp1ppppp/8/8/3pP3/2P5/PP3PPP/RNBQKBNR b KQkq - 0 3"
+    },
+    {
+      "type": "move",
+      "fen": "rnbqk1nr/ppp2ppp/8/4P3/1BP5/4p3/PP3PPP/RN1QKBNR b KQkq - 0 6",
+      "prompt": "Albin Counter-Gambit (1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3? Bb4+ 5.Bd2 dxe3 6.Bxb4??). Every 1.d4 player must know this trap. Black to play and win.",
+      "solution": [
+        "exf2+",
+        "Ke2",
+        "fxg1=N+"
+      ],
+      "orientation": "black",
+      "hint": "Keep checking, and look at which piece the f-pawn should become.",
+      "explain": "**6...exf2+ 7.Ke2 fxg1=N+!** The **Lasker Trap**. 7...fxg1=Q? allows 8.Qxd8+ Kxd8 9.Rxg1 and the game is equal (engine 0.00); the knight promotes **with check**, so White has no time for Qxd8+. After 8.Ke1 (8.Rxg1 Bg4+ wins the queen) 8...Qh4+ Black is winning. Lesson for the White player: 4.Nf3 (or 4.e4 / 4.a3), not 4.e3?, against the Albin."
+    },
+    {
+      "type": "board",
+      "fen": "r1bq1rk1/2p1bppp/p1n2n2/1p1pp3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 w - - 0 9",
+      "md": "**Know the critical lines of your main openings.** Marshall Attack: after 8.c3 d5 Black gives a pawn for a lasting kingside initiative (9.exd5 Nxd5 10.Nxe5 Nxe5 11.Rxe5 c6 12.d4 Bd6 13.Re1 Qh4 14.g3 Qh3). If you play the Ruy Lopez as White you need an answer (the main line, or an anti-Marshall such as 8.a4 or 8.h3); if you play it as Black this is a weapon worth learning in depth. See lesson *Sound gambits* (stage 6).",
+      "orientation": "black"
+    },
+    {
+      "type": "text",
+      "md": "## Assignment (this week)\n\n1. Open the **Openings** trainer and write down your repertoire tree to move 15 for your two main openings (one with White, one against 1.e4 or 1.d4). Mark the structure each line produces.\n2. For each structure, play through **two model games** in **Guess the move** before checking the moves.\n3. Find the **three most frequent sidelines** you met in your last 30 games (Game review) and prepare one line against each: database (2300+ games) first, then a short engine check of the critical position.\n4. Add every new line to spaced repetition and review it 10 minutes a day. Keep the total opening budget at about 15-20% of training time at this level."
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md",
+    "knowledge-base/02-methods/opening-repertoire-building.md",
+    "knowledge-base/02-methods/engine-use-best-practices.md",
+    "Dvoretsky & Yusupov, Opening Preparation (School of Future Champions 3)",
+    "Lichess opening explorer (CC0 openings data)"
+  ]
+}

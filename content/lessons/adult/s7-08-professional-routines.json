@@ -1,0 +1,90 @@
+{
+  "id": "adult.s7.professional-routines",
+  "track": "adult",
+  "stage": 7,
+  "order": 8,
+  "skillIds": [
+    "opening.repertoire.professional",
+    "practical.professional-routines",
+    "practical.self-training"
+  ],
+  "title": "Professional repertoire, routines and self-training",
+  "summary": "Maintain critical main lines with engine checks and novelties, manage risk by standings, and design your own training like a professional.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## The professional cycle\n\nAt 2300-2450 progress depends on **what you do without a trainer**. Professionals run a cycle:\n\n1. **Diagnose**: analyse your games without an engine first, then with it; classify errors (calculation, evaluation, opening, time, endgame technique). Keep an error log.\n2. **Plan**: allocate weekly time by weakness (for example 35% calculation, 25% own-game analysis, 20% openings, 20% endgames).\n3. **Build material**: collect positions from your own games and from top games into your own exercise sets (critical moments, typical structures).\n4. **Test**: solve under tournament conditions (no moving pieces, a clock, full lines written) and compare with the engine.\n5. **Openings**: keep critical main lines engine-checked, prepare a few **novelties** (new moves that are sound and practical), and follow new top-level games in your lines every month."
+    },
+    {
+      "type": "quiz",
+      "question": "You find a novelty on move 18 of your main line: the engine gives 0.00 (the main move gives +0.20 for the opponent), and the resulting position is complex with only-moves for the opponent. How do you treat it?",
+      "choices": [
+        "Discard it: 0.00 is not an advantage",
+        "Keep it as a prepared weapon: an objectively sound move that poses practical problems is exactly what a novelty should be; analyse the critical replies and store the file",
+        "Play it in the next blitz game to test it",
+        "Publish it immediately"
+      ],
+      "answer": 1,
+      "explain": "A good novelty is sound, surprising and practically difficult. Test it in training games against an engine from the novelty position, not in public online games where it can be seen."
+    },
+    {
+      "type": "quiz",
+      "question": "Last round of an open: you are half a point behind the leader, who plays a weaker opponent. You have Black against a strong player. What is a professional risk policy?",
+      "choices": [
+        "Play for a draw; nothing can be done",
+        "Choose a solid but unbalanced opening with long-term winning chances, avoid early forcing simplifications, and decide on risk at each critical moment based on the clock and the leader's game",
+        "Play an unsound gambit to force a decisive result",
+        "Offer a draw before the game"
+      ],
+      "answer": 1,
+      "explain": "Standings-based risk management means keeping the game complex enough to win without taking objectively unsound risks. Unsound play mostly increases your own losing chances."
+    },
+    {
+      "type": "quiz",
+      "question": "Which routine best reflects the evidence on deliberate practice for strong players?",
+      "choices": [
+        "Long sessions of online blitz",
+        "Focused sessions on targeted weaknesses with immediate feedback (solving with a clock, then checking), regular classical games, and own-game analysis before engine use",
+        "Reading many chess books passively",
+        "Watching top-level commentary"
+      ],
+      "answer": 1,
+      "explain": "Deliberate practice is effortful, targeted and feedback-rich. Blitz and passive study have value for recreation and familiarity, but they are not the core of improvement at this level."
+    },
+    {
+      "type": "quiz",
+      "question": "A training-game result surprises you: your prepared line led to a position the engine likes, but you lost three training games from it. What do you do?",
+      "choices": [
+        "Keep playing it; the engine is right",
+        "Treat it as a sign that the position does not suit you in practice: analyse why (plans you do not know, time use), learn the plans from model games, and if that fails replace the line",
+        "Stop using engines for preparation",
+        "Blame bad luck"
+      ],
+      "answer": 1,
+      "explain": "Practical results from training games are data. An objectively good line you cannot play is not part of a professional repertoire."
+    },
+    {
+      "type": "board",
+      "fen": "r2q1rk1/3nbppp/p2pbn2/1p2p3/4P1P1/1NN1BP2/PPPQ3P/2KR1B1R w - - 0 12",
+      "md": "**Example: keeping a critical line up to date.** The English Attack against the Najdorf (6.Be3 e5 7.Nb3 Be6 8.f3 Be7 9.Qd2 O-O 10.O-O-O Nbd7 11.g4 b5) changes every year at the top. A professional file stores the main branches with evaluations, the novelties of the last 12 months, the model games, and your own prepared deviations."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment (start a 4-week cycle)\n\n1. **Diagnose**: run Game review on your last 10 classical games, but annotate each one without the engine first. Log each error by type.\n2. **Plan**: write a weekly schedule by weakness (target 10-15 hours/week if your goal is IM/GM-equivalent strength; see the time-to-mastery KB article for realistic expectations).\n3. **Build**: create your own set of 30 positions from your games (critical moments) and solve it again in 2 weeks.\n4. **Openings**: pick one critical line of your repertoire, check it against all 2600+ games of the last year, and add one prepared novelty or improvement."
+    }
+  ],
+  "practiceThemes": [
+    "opening",
+    "master"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/opening-repertoire-building.md",
+    "knowledge-base/02-methods/engine-use-best-practices.md",
+    "knowledge-base/02-methods/soviet-school-botvinnik-dvoretsky-yusupov.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "knowledge-base/01-learning-science/time-to-mastery-evidence.md",
+    "Dvoretsky & Yusupov, Training for the Tournament Player",
+    "Botvinnik, Achieving the Aim"
+  ]
+}

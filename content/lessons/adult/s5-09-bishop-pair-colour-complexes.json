@@ -1,0 +1,79 @@
+{
+  "id": "adult.s5.bishop-pair-colour-complexes",
+  "track": "adult",
+  "stage": 5,
+  "order": 9,
+  "skillIds": [
+    "strategy.bishop-pair",
+    "strategy.colour-complexes"
+  ],
+  "title": "The bishop pair and colour complexes",
+  "summary": "Open the position for two bishops, restrict knights, and exploit (or repair) a colour complex left by the exchange of a bishop.",
+  "estMinutes": 25,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Two bishops\n\nThe **bishop pair** is worth about half a pawn in open positions: the bishops cover both colours and cannot be blocked out. Steinitz's method:\n- **open the position** (pawn breaks) so the bishops get diagonals;\n- **restrict the knights** by taking away their outposts with pawns (c4/c5-type pawn moves);\n- be ready to **give back** one bishop at the right moment to transform into a winning ending (good bishop v bad knight, or opposite bishops in an attack).\n\n## Colour complexes\n\nWhen a bishop is exchanged (especially a fianchetto bishop), the squares of its colour around the king or in the centre become **weak**. The opponent occupies them with a knight, the queen or the remaining bishop. Opposite-coloured bishops in the middlegame favour the **attacker**: the defender's bishop cannot oppose the attacking bishop."
+    },
+    {
+      "type": "board",
+      "fen": "r1bqnrk1/p2p1ppp/1pn1p3/2p5/2PPP3/P1PB4/4NPPP/R1BQK2R w KQ - 1 10",
+      "md": "**Nimzo-Indian, Samisch variation** (4.a3 Bxc3+ 5.bxc3). White has the bishop pair and the centre (plan: e4, f4-f5, kingside attack), Black has the better structure (target: c4 pawn, ...Na5, ...Ba6) and a light-squared blockade. A classic battle of the bishop pair against structure."
+    },
+    {
+      "type": "move",
+      "fen": "2qrr1k1/p3p1bp/1p2P1p1/5p2/4BB2/1QPp2P1/P4P1P/2R1R1K1 w - - 0 28",
+      "prompt": "White to move. The black pawns are on light squares; White's bishops dominate (Petrosian-Najdorf, La Habana Olympiad 1966)",
+      "solution": [
+        "Bd5"
+      ],
+      "orientation": "white",
+      "explain": "**28.Bd5!** — the bishop occupies the central light square; if the rook takes, White's queen recaptures and the light squares around the black king and the d-pawn become decisive targets. Engine main line: 28.Bd5 Rxd5 29.Qxd5 Rd8 30.Qb3 d2 31.Bxd2 Rxd2. (Petrosian-Najdorf, La Habana Olympiad 1966; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "You have two bishops against bishop and knight, with pawns on both wings. What is usually the best plan?",
+      "choices": [
+        "Close the position with pawn moves so your pieces are safe",
+        "Open lines with pawn breaks and take away the knight's outposts",
+        "Exchange one bishop immediately",
+        "Put all pawns on the colour of your bishops"
+      ],
+      "answer": 1,
+      "explain": "Open positions and restricted knights. Closing the position helps the knight."
+    },
+    {
+      "type": "quiz",
+      "question": "Black has exchanged his dark-squared bishop and his king is on g8 with pawns f7, g6, h7. Which white piece set-up usually exploits this colour complex?",
+      "choices": [
+        "Queen on h6 and a dark-squared bishop or knight aiming at f6/h6 and g7",
+        "Rooks on the queenside",
+        "Light-squared bishop on b5",
+        "Pawns on light squares"
+      ],
+      "answer": 0,
+      "explain": "Weak dark squares f6, g7 and h6 invite the queen and dark-squared bishop (Qh6, Bh6, Bf6) — the typical attack against a missing fianchetto bishop."
+    },
+    {
+      "type": "play",
+      "fen": "r1bqnrk1/p2p1ppp/1pn1p3/2p5/2PPP3/P1PB4/4NPPP/R1BQK2R w KQ - 1 10",
+      "goal": "hold",
+      "prompt": "Play the Samisch Nimzo-Indian as White against the engine (level 12) for 25 moves. Use the bishop pair: open the position with f4-f5 or e4-e5 at the right moment and keep the c4-pawn defended.",
+      "maxMoves": 25,
+      "engineLevel": 12
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: one Steinitz or Fischer game with the bishop pair (for example Fischer's wins with two bishops in the corpus).\n- In your last 20 games, find positions where you had (or faced) the bishop pair: did the owner open the position?"
+    }
+  ],
+  "practiceThemes": [
+    "advantage"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "Steinitz's principles (Lasker, Manual of Chess)",
+    "Petrosian-Najdorf, Havana Olympiad 1966",
+    "Dvoretsky & Yusupov, Positional Play"
+  ]
+}

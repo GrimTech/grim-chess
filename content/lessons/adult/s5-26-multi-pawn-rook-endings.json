@@ -1,0 +1,100 @@
+{
+  "id": "adult.s5.multi-pawn-rook-endings",
+  "track": "adult",
+  "stage": 5,
+  "order": 26,
+  "skillIds": [
+    "endgame.rook.multi-pawn",
+    "endgame.rook-vs-connected-pawns"
+  ],
+  "title": "Rook endings with many pawns; rook against connected pawns",
+  "summary": "Activity over material, the king march, and when two connected passers beat a rook.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Rook endings with many pawns\n\nThe \"golden rule\": **activity matters more than material**. An active rook (behind passed pawns, on the 7th rank, attacking pawns from behind) and an active king are often worth a pawn.\n- 4 v 3 or 3 v 2 on the same side: usually a draw.\n- An extra **outside** passed pawn: often a win, because the defending rook is tied to it and the attacking king takes the other wing.\n- Rook on the 7th + king march: Capablanca-Tartakower 1924 is the model.\n\n## Rook against two connected pawns\n\nTwo connected passers on the 6th (3rd for Black) supported by the king usually beat a lone rook if the rook's king is far away; with the defending king close, the rook usually wins."
+    },
+    {
+      "type": "move",
+      "fen": "5k2/p1p4R/1pr5/3p1pP1/P2P1P2/2P2K2/8/8 w - - 0 35",
+      "prompt": "White to move. Active rook on the 7th, passed g-pawn. Capablanca found the way (Capablanca-Tartakower, New York 1924).",
+      "solution": [
+        "Kg3",
+        "Rxc3+",
+        "Kh4"
+      ],
+      "explain": "**35.Kg3! Rxc3+ 36.Kh4** — the king marches to support g6-g7, giving up queenside pawns: activity first. The game continued 36...Rf3 37.g6 Rxf4+ 38.Kg5 Re4 39.Kf6 and White won. Engine: +2.3, while 35.Ke2 gives only +0.3."
+    },
+    {
+      "type": "move",
+      "fen": "8/5p2/k6K/r6p/4RP1P/8/8/8 w - - 0 77",
+      "prompt": "White to move. Alekhine converts the rook ending of game 34 (Alekhine-Capablanca, World Championship 1927)",
+      "solution": [
+        "Re5"
+      ],
+      "orientation": "white",
+      "explain": "**77.Re5!** — the rook cuts the black king off along the 5th rank while the white king takes the h-pawn. Engine main line: 77.Re5 Ra3 78.Kxh5 Kb6 79.Kh6 Kc6 80.h5. (Alekhine-Capablanca, World Championship 1927; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. Black's connected pawns stand on e3 and f3 supported by the king on d2; White's king is far away on a8. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 2,
+      "explain": "Tablebase: Black wins. The rook alone cannot stop two connected pawns on the 3rd rank supported by their king.",
+      "fen": "K7/8/8/8/8/4pp2/3k4/7R w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. Connected black pawns on e4 and f4 with the king on f5, the white king on g1 and rook on a1. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White wins. The pawns are only on the 4th rank and the white king is in front of them: the rook attacks from behind and the king blockades.",
+      "fen": "8/8/8/5k2/4pp2/8/8/R5K1 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "8/8/8/8/8/4pp2/3k4/R4K2 w - - 0 1",
+      "prompt": "White to move. Black's connected pawns are on the 3rd rank, but White's king is close. Find a winning move.",
+      "solution": [
+        "Rb1"
+      ],
+      "alternatives": [
+        "Re1",
+        "Ra2+",
+        "Kg1"
+      ],
+      "explain": "Tablebase: White wins. **1.Rb1** (also 1.Re1, 1.Ra2+ and 1.Kg1 win) keeps the rook on the first rank against ...e2+ and lets the king block. Typical line: 1...Kc2 2.Rb6 Kd3 3.Ke1 and the king blockades while the rook attacks from behind (tablebase win)."
+    },
+    {
+      "type": "play",
+      "fen": "8/5p2/k6K/r6p/4RP1P/8/8/8 w - - 0 77",
+      "goal": "win",
+      "prompt": "Convert the rook ending of Alekhine (World Championship 1927, game 34, White to move) against the engine (level 13): cut the king off, take the h-pawn, push the passer.",
+      "maxMoves": 40,
+      "engineLevel": 13
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: Capablanca-Tartakower 1924 from move 30 (corpus, *classics-interwar.pgn*).\n- **Puzzles**: 20 *rookEndgame* puzzles.\n- **Endgames trainer**: rook v two connected pawns from both sides, three positions each."
+    }
+  ],
+  "practiceThemes": [
+    "rookEndgame",
+    "endgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "Dvoretsky's Endgame Manual, ch. 8-9",
+    "Capablanca-Tartakower, New York 1924",
+    "Alekhine-Capablanca, World Championship 1927"
+  ]
+}

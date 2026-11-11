@@ -1,0 +1,100 @@
+{
+  "id": "adult.s5.clock-draws-opponent",
+  "track": "adult",
+  "stage": 5,
+  "order": 28,
+  "skillIds": [
+    "practical.time-trouble",
+    "practical.draw-decisions",
+    "practical.opponent-prep"
+  ],
+  "title": "The clock, draw offers and preparing for an opponent",
+  "summary": "Spend time where the game is decided, survive time trouble with a simple protocol, decide draw offers on evaluation, clock and standings, and prepare for a known opponent.",
+  "estMinutes": 20,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Time is a resource you invest\n\nMost games at 1800-2100 are decided at a handful of **critical moments**: a change in the pawn structure, a transition to an endgame, an exchange sacrifice, a surprising opponent move. Spend your time there, and play routine moves (recaptures, book moves, obvious regroupings) quickly.\n\n**A working budget for 90+30:** reach move 20 with at least half your time; never spend more than about 20 minutes on one move unless the game is decided there; if you have already calculated a line, play it — do not recalculate the same branch.\n\n**Your own time trouble — protocol:** (1) keep every piece protected, (2) prefer moves that keep the position closed and stable over forcing complications, (3) use the increment: make a safe move, then think on the opponent's time, (4) before every move, one blunder check only: *what are his checks and captures?*\n\n**The opponent's time trouble:** keep the position complex but sound, avoid simplifying exchanges, do not play fast yourself — you are the one with time."
+    },
+    {
+      "type": "quiz",
+      "question": "Under FIDE Laws, when is the correct moment to offer a draw in a game with a clock?",
+      "choices": [
+        "Any time, as long as it is your opponent's turn",
+        "After making your move on the board and before pressing your clock",
+        "Only after pressing your clock, so the opponent can think on his own time",
+        "Only through the arbiter"
+      ],
+      "answer": 1,
+      "explain": "Article 9.1.2.1: a player wishing to offer a draw shall do so after having made a move on the chessboard and before pressing his clock. An offer at any other time is still valid, but it may be penalised as a distraction."
+    },
+    {
+      "type": "quiz",
+      "question": "You want to claim a draw by threefold repetition, and your next move will create the third occurrence of the position. What is the correct procedure?",
+      "choices": [
+        "Play the move, press the clock, then call the arbiter",
+        "Write the move on your scoresheet, do not play it, and declare to the arbiter that you intend to make it and claim the draw",
+        "Offer a draw to your opponent; repetition is never claimable",
+        "Stop both clocks and announce the repetition after your opponent replies"
+      ],
+      "answer": 1,
+      "explain": "Article 9.2: the player having the move may claim when the position is about to appear (by first writing the move and declaring the intention to the arbiter) or has just appeared. If you play the move and press the clock first, you lose the right to claim at that moment."
+    },
+    {
+      "type": "quiz",
+      "question": "Last round. You need only a draw to win the tournament; your opponent needs a win. Position equal, you have 25 minutes, he has 4 minutes plus 30-second increment. He offers a draw. Best practical choice?",
+      "choices": [
+        "Decline: he is in time trouble, so play on and try to win",
+        "Accept: a draw gives you first place, and the clock does not change the fact that the risk is all yours",
+        "Decline and offer a draw yourself two moves later",
+        "Accept only if the engine says 0.00"
+      ],
+      "answer": 1,
+      "explain": "Draw decisions combine evaluation, clocks **and the tournament situation**. Here the result you need is on the table; the only thing playing on can do is lose it. Reverse the standings (you need a win, he needs a draw) and declining becomes clearly correct."
+    },
+    {
+      "type": "quiz",
+      "question": "You are worse (about -1) with 3 minutes plus 30-second increment against an opponent who has 30 minutes. Which approach gives the best practical chances?",
+      "choices": [
+        "Start a speculative attack immediately while he still has time to refute it",
+        "Make solid, safe moves that keep everything protected, use the increment to reach move 40, and save complications for when he must calculate",
+        "Offer a draw every move",
+        "Play the first move that comes to mind to save time for later"
+      ],
+      "answer": 1,
+      "explain": "In your own time trouble, risk is your enemy: unsound complications are easy for an opponent with time to refute. Stabilise, reach the time control, and then make the position difficult for him."
+    },
+    {
+      "type": "quiz",
+      "question": "You have the evening before a game and know your opponent. Which preparation is usually most valuable?",
+      "choices": [
+        "Memorise 25 moves of the sharpest line he has ever played",
+        "Study his repertoire tree, find the structure he scores worst in, prepare one sound line leading there, and note his habits (time use, how he handles endgames)",
+        "Analyse his losses only",
+        "Nothing; preparation is only for professionals"
+      ],
+      "answer": 1,
+      "explain": "Opponent preparation is about likely positions and tendencies, not memorising a forced line you do not understand. Pick a line you can play with confidence, then get a good night's sleep."
+    },
+    {
+      "type": "play",
+      "fen": "r1b2rk1/2q1bppp/p2p1n2/npp1p3/3PP3/2P2N1P/PPB2PP1/RNBQR1K1 w - - 1 12",
+      "goal": "draw",
+      "prompt": "Clock-discipline drill: play this Closed Ruy Lopez position (White) against the engine, with a goal of at least holding the balance. Before each move, write down how many minutes you are allowed to spend, and stick to it. (Use a 15+10 clock on the board beside you or a phone timer.)",
+      "maxMoves": 30,
+      "engineLevel": 6,
+      "explain": "The point is the habit: routine moves fast, critical moments slow. Afterwards, mark in Game review which moves were critical and compare with where you actually spent time."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n1. In your next **three rated games** (Play, 15+10 or longer) write your remaining time on the scoresheet every 5 moves. In Game review, mark the 3 most critical positions of each game and check whether you spent your longest thinks there.\n2. Play **five 5+3 games** against the bot from positions where you are worse (*Play → from position*) to practise the time-trouble protocol.\n3. Before your next tournament game against a known opponent, spend at most 60 minutes on preparation: repertoire tree, one target structure, habits. Then rest."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md",
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "FIDE Laws of Chess (2023), Articles 9.1-9.6",
+    "Kotov, Think Like a Grandmaster (time trouble chapter)"
+  ]
+}

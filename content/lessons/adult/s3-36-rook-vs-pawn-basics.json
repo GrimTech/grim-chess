@@ -1,0 +1,89 @@
+{
+  "id": "adult.s3.rook-vs-pawn-basics",
+  "track": "adult",
+  "stage": 3,
+  "order": 36,
+  "skillIds": [
+    "endgame.rook-vs-pawn-basic"
+  ],
+  "title": "Rook vs pawn: basics",
+  "summary": "A rook wins easily if its king is in front of the pawn or the defending king is cut off; an advanced, supported pawn can draw or even win.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Rook vs pawn rules of thumb:\n\n- If the stronger side's **king is in front of the pawn**, the rook wins easily.\n- If the defending king is **cut off** by the rook along a rank or file, the rook usually wins.\n- If the pawn is far advanced and supported by its king while the attacking king is far away, it is often a **draw**, and sometimes the pawn even wins (underpromotion and skewer tricks)."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/2k5/8/8/2p5/K5R1 w - - 0 1",
+      "goal": "win",
+      "prompt": "Your king is next to the pawn. Win it.",
+      "explain": "Kb2 and Rc1 (or Re1-e2 ideas) collect the pawn; then mate with K+R vs K."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/8/3k4/8/3p4/R5K1 w - - 0 1",
+      "goal": "win",
+      "prompt": "Black's pawn is on the 2nd rank, supported. Your rook and king still arrive in time.",
+      "explain": "Rd1 blockades in front, then the king walks over (Kf2-e2) and wins the pawn."
+    },
+    {
+      "type": "board",
+      "fen": "8/8/8/8/1k6/8/1p6/4R1K1 w - - 0 1",
+      "md": "Here the white king is too far away: the b-pawn, supported by its king, costs White the rook (...Kc3-c2 and ...b1=Q), and the result is a draw (engine 0.00).",
+      "highlights": [
+        "b1"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "1R6/8/8/8/8/2k5/2p5/7K b - - 0 1",
+      "prompt": "Black to move. White's rook is on b8 and the king is far away. Promote, and look at what the new queen attacks.",
+      "solution": [
+        "c1=Q+"
+      ],
+      "explain": "...c1=Q+! with check: the queen then uses checks (Kg2 Qg5+, Kf3 Qf5+ ...) to pick up the b8-rook by a fork or skewer. A pawn on the 7th supported by its king can beat a lone rook when the rook is badly placed."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/8/8/1kp5/8/5RK1 b - - 0 1",
+      "goal": "draw",
+      "prompt": "You are Black: your c-pawn is supported and White's king is far away. Hold the draw (force White to give up the rook for the pawn).",
+      "explain": "Advance with the king next to the pawn (...Kb2, ...c2); White must give the rook for the pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "When is rook vs pawn usually an easy win for the rook side?",
+      "choices": [
+        "Never",
+        "When the rook side's king is in front of the pawn, or the defending king is cut off from the pawn",
+        "Only if the pawn is a rook pawn",
+        "Only with the rook behind the pawn"
+      ],
+      "answer": 1,
+      "explain": "Count: how many moves does your king need to reach the pawn, versus the pawn to promote with its king's help?"
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: how does the rook \"cut off\" the defending king?",
+      "choices": [
+        "By checking it every move",
+        "By controlling a file or rank between the defending king and the pawn, so the king cannot come to support it",
+        "By attacking the pawn from the front",
+        "By trading itself"
+      ],
+      "answer": 1,
+      "explain": "Cutting off is the main technique in all rook endings; it returns in the Lucena and Philidor positions at stage 4."
+    }
+  ],
+  "practiceThemes": [
+    "rookEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#rook-vs-pawn-basics",
+    "de la Villa, 100 Endgames You Must Know",
+    "Dvoretsky's Endgame Manual ch. 8 (rook vs pawn)",
+    "Silman, Complete Endgame Course (1000-1199 and 1200-1399 sections)"
+  ]
+}

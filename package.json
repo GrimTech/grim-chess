@@ -1,0 +1,20 @@
+{
+  "name": "grim-chess",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Grim Chess: an evidence-based chess training platform from zero to master.",
+  "license": "AGPL-3.0-or-later",
+  "type": "module",
+  "workspaces": ["apps/*", "packages/*"],
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "dev": "npm run dev -w @grim/web",
+    "dev:server": "node --watch apps/server/src/index.ts",
+    "build": "npm run build -w @grim/web",
+    "start": "node apps/server/src/index.ts",
+    "lan": "node apps/server/src/index.ts --lan",
+    "test": "node --test \"packages/*/test/*.test.ts\" \"apps/server/test/*.test.ts\"",
+    "validate:content": "node scripts/validate-content.ts",
+    "typecheck": "tsc -p apps/web --noEmit"
+  }
+}

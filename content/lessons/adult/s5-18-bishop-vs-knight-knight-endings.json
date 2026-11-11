@@ -1,0 +1,95 @@
+{
+  "id": "adult.s5.bishop-vs-knight-knight-endings",
+  "track": "adult",
+  "stage": 5,
+  "order": 18,
+  "skillIds": [
+    "endgame.bishop-vs-knight",
+    "endgame.knight-endgames"
+  ],
+  "title": "Bishop against knight, and knight endgames",
+  "summary": "When the bishop dominates the knight (pawns on both wings, passed pawns), Fischer-Taimanov 1971, and knight endings treated like pawn endings.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Bishop or knight?\n\n- **The bishop is better** with pawns on both wings, open positions, passed pawns (it stops them from a distance) and when the knight has no outposts.\n- **The knight is better** with all pawns on one wing, blocked pawns on the bishop's colour, and stable outposts.\n- Technique with the bishop: put your pawns on squares **opposite** to your bishop's colour, fix the knight's targets, and use the king actively; **domination** (taking all the knight's squares) is the decisive motif.\n\n## Knight endings\n\nBotvinnik: \"knight endings are pawn endings\". The king's activity and **outside passed pawns** decide; knights cannot lose a tempo easily, so zugzwang and forks on promotion squares are typical."
+    },
+    {
+      "type": "move",
+      "fen": "8/3k4/8/PPK2p1p/4nP1P/6P1/8/8 w - - 1 69",
+      "prompt": "White to move: king and five pawns against knight and two pawns. Find the move that keeps the win (Fischer-Taimanov, Candidates 1971)",
+      "solution": [
+        "Kb6"
+      ],
+      "orientation": "white",
+      "explain": "**69.Kb6!** — the king supports the queenside pawns; the knight alone cannot stop two connected passers, and the black king is too far back. Engine main line: 69.Kb6 Kc8 70.Kc6 Kb8 71.b6 Ka8 72.a6 Nf6. (Fischer-Taimanov, Candidates 1971; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "8/8/5K2/4n3/4k1B1/7P/8/8 w - - 1 82",
+      "prompt": "White to move. Fischer's technique: bishop against knight with a passed h-pawn (Fischer-Taimanov, Candidates 1971)",
+      "solution": [
+        "Bc8"
+      ],
+      "orientation": "white",
+      "explain": "**82.Bc8!** — the bishop takes squares from the knight (domination) while the h-pawn runs; the knight cannot both stop the pawn and avoid being cut off. Engine main line: 82.Bc8 Nc4 83.h4 Nd6. (Fischer-Taimanov, Candidates 1971; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "2B5/8/5K2/8/5k1P/5n2/8/8 w - - 1 84",
+      "prompt": "White to move and finish it (Fischer-Taimanov, Candidates 1971)",
+      "solution": [
+        "h5"
+      ],
+      "orientation": "white",
+      "explain": "**84.h5!** — the knight cannot catch the pawn: ...Ng5 h6 and the bishop controls the queening square approaches. Engine main line: 84.h5 Ng5 85.h6 Ne4+ 86.Kg7 Nd6 87.h7 Nxc8. (Fischer-Taimanov, Candidates 1971; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "All pawns are on the kingside (4 v 3), and the defender has a knight against a bishop. Typical verdict?",
+      "choices": [
+        "The bishop always wins",
+        "Drawish: with pawns on one wing the knight is a good defender and the extra pawn is hard to convert",
+        "The knight side wins",
+        "Depends only on the colour of the bishop"
+      ],
+      "answer": 1,
+      "explain": "With pawns on one wing the bishop's long range matters less. Pawns on both wings favour the bishop."
+    },
+    {
+      "type": "quiz",
+      "question": "In a knight ending you have an outside passed pawn on the a-file; all other pawns are on the kingside. What is the standard plan?",
+      "choices": [
+        "Exchange knights immediately",
+        "Advance the outside passer to deflect the enemy king or knight, then win the kingside pawns with your king",
+        "Keep the pawn at home",
+        "Offer a draw"
+      ],
+      "answer": 1,
+      "explain": "Exactly as in pawn endings: the outside passer is a decoy. Knight endings follow pawn-ending logic."
+    },
+    {
+      "type": "play",
+      "fen": "8/3k4/8/PPK2p1p/4nP1P/6P1/8/8 w - - 1 69",
+      "goal": "win",
+      "prompt": "Win the position from Fischer-Taimanov (White to move) against the engine (level 14). Success = promoting or winning decisive material.",
+      "maxMoves": 40,
+      "engineLevel": 14
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: Fischer-Taimanov 1971 (the long bishop v knight game in the corpus) from move 40.\n- **Puzzles**: 15 *knightEndgame* and 10 *bishopEndgame* puzzles.\n- **Endgames trainer**: play an outside-passed-pawn knight ending from both sides."
+    }
+  ],
+  "practiceThemes": [
+    "bishopEndgame",
+    "knightEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "Fischer-Taimanov, Candidates match (Vancouver) 1971",
+    "Dvoretsky's Endgame Manual, ch. 3 and 7",
+    "Botvinnik on knight endings"
+  ]
+}

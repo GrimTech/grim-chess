@@ -1,0 +1,74 @@
+{
+  "id": "kids.8.dragon-challenge",
+  "track": "kids",
+  "stage": 4,
+  "order": 806,
+  "skillIds": [
+    "tactics.mixed-recognition",
+    "tactics.combination-basics"
+  ],
+  "title": "Dragon challenge",
+  "summary": "Mixed tactics with no hints: forks, pins, mates and more.",
+  "estMinutes": 10,
+  "minAge": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The **Dragon challenge**! Mixed puzzles. No theme names this time. Find the best move!"
+    },
+    {
+      "type": "move",
+      "fen": "r3k3/6p1/8/1N6/8/8/8/1K6 w - - 0 1",
+      "prompt": "Find the best move!",
+      "solution": [
+        "Nc7+"
+      ],
+      "explain": "A knight fork!"
+    },
+    {
+      "type": "move",
+      "fen": "3q4/8/8/3k4/8/8/8/R6K w - - 0 1",
+      "prompt": "Find the best move!",
+      "solution": [
+        "Rd1+"
+      ],
+      "explain": "A skewer!"
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5ppp/8/8/8/8/6K1/2R5 w - - 0 1",
+      "prompt": "Find the best move!",
+      "solution": [
+        "Rc8#"
+      ],
+      "explain": "Back-row checkmate!"
+    },
+    {
+      "type": "move",
+      "fen": "4k3/1q6/8/8/4B3/8/8/4R1K1 w - - 0 1",
+      "prompt": "Find the best move!",
+      "solution": [
+        "Bxb7+"
+      ],
+      "explain": "Discovered check!",
+      "alternatives": [
+        "Bc6+"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "kr6/pp6/8/1N6/8/8/8/6K1 w - - 0 1",
+      "prompt": "Find the best move!",
+      "solution": [
+        "Nc7#"
+      ],
+      "explain": "Smothered mate!"
+    }
+  ],
+  "practiceThemes": [
+    "mix"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

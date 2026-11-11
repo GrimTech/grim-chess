@@ -1,0 +1,71 @@
+{
+  "id": "kids.8.remove-the-guard",
+  "track": "kids",
+  "stage": 3,
+  "order": 803,
+  "skillIds": [
+    "tactics.removing-defender"
+  ],
+  "title": "Remove the guard",
+  "summary": "Capture the defender, then capture what it was guarding.",
+  "estMinutes": 7,
+  "minAge": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Is a piece guarded? **Remove the guard** first, then take it!"
+    },
+    {
+      "type": "board",
+      "fen": "6k1/5ppp/5n2/3b2B1/8/8/8/3R2K1 w - - 0 1",
+      "md": "The knight guards the bishop on d5.",
+      "arrows": [
+        [
+          "f6",
+          "d5",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5ppp/5n2/3b2B1/8/8/8/3R2K1 w - - 0 1",
+      "prompt": "Remove the guard!",
+      "solution": [
+        "Bxf6",
+        "gxf6",
+        "Rxd5"
+      ],
+      "explain": "Guard gone, bishop gone!",
+      "hint": "Take the knight first."
+    },
+    {
+      "type": "quiz",
+      "question": "What do you capture first?",
+      "choices": [
+        "The guard",
+        "The guarded piece"
+      ],
+      "answer": 0,
+      "explain": "Remove the guard first."
+    },
+    {
+      "type": "quiz",
+      "question": "Which black piece was the guard?",
+      "choices": [
+        "The knight on f6",
+        "The pawn on g7",
+        "The king"
+      ],
+      "answer": 0,
+      "explain": "The knight guarded d5. Remove it and d5 falls.",
+      "fen": "6k1/5ppp/5n2/3b2B1/8/8/8/3R2K1 w - - 0 1"
+    }
+  ],
+  "practiceThemes": [
+    "capturingDefender"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

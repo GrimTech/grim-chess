@@ -1,0 +1,104 @@
+{
+  "id": "adult.s2.mate-in-two",
+  "track": "adult",
+  "stage": 2,
+  "order": 22,
+  "skillIds": [
+    "checkmate.mate-in-2"
+  ],
+  "title": "Mate in two",
+  "summary": "Forcing two-move mates: try checks first and keep the replies narrow.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Most mates in two start with a **check** or a **sacrifice that forces one reply**. Method: list your checks (including sacrifices), and for each, list the opponent's replies. If every reply allows mate, you have found it. Use the patterns you know (back rank, Damiano, smothered, Arabian) as targets."
+    },
+    {
+      "type": "move",
+      "fen": "r6k/pp2Nppp/8/7Q/8/3R4/5PPP/6K1 w - - 0 1",
+      "prompt": "Mate in two.",
+      "solution": [
+        "Qxh7+",
+        "Kxh7",
+        "Rh3#"
+      ],
+      "explain": "Qxh7+! drags the king onto the open h-file, and Rh3# finishes: the e7-knight covers g8 and g6. This is Anastasia's mate."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/5p1p/6pQ/8/4N3/8/5PPP/6K1 w - - 0 1",
+      "prompt": "Mate in two.",
+      "solution": [
+        "Nf6+",
+        "Kh8",
+        "Qxh7#"
+      ],
+      "explain": "Nf6+ forces Kh8, and the knight now guards h7 for the queen."
+    },
+    {
+      "type": "move",
+      "fen": "1r4k1/5ppp/8/8/8/8/4QPPP/4R1K1 w - - 0 1",
+      "prompt": "Mate in two.",
+      "solution": [
+        "Qe8+",
+        "Rxe8",
+        "Rxe8#"
+      ],
+      "explain": "Qe8+ deflects the b8-rook onto e8, and the rook recaptures with mate."
+    },
+    {
+      "type": "move",
+      "fen": "3r2k1/5ppp/8/8/8/8/3q1PPP/R5K1 b - - 0 1",
+      "prompt": "You are Black. Mate in two.",
+      "solution": [
+        "Qd1+",
+        "Rxd1",
+        "Rxd1#"
+      ],
+      "explain": "Qd1+! The rook must take, and the d8-rook mates on the back rank. White never made luft."
+    },
+    {
+      "type": "quiz",
+      "question": "What should be the first candidates in a mate-in-two?",
+      "choices": [
+        "Checks, including sacrificial ones",
+        "Pawn moves",
+        "King moves"
+      ],
+      "answer": 0,
+      "explain": "Checks keep the opponent's replies to a minimum."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: after your first move in a mate-in-two, what must you verify?",
+      "choices": [
+        "That every legal reply allows a mate",
+        "Only the most likely reply",
+        "That you keep your queen"
+      ],
+      "answer": 0,
+      "explain": "A combination works only if it beats every defence."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: a sacrifice that lures a piece onto a bad square is called...",
+      "choices": [
+        "A decoy (attraction)",
+        "A skewer",
+        "En passant"
+      ],
+      "answer": 0,
+      "explain": "Qxh7+, Qe8+ and Qd1+ above were all decoys."
+    }
+  ],
+  "practiceThemes": [
+    "mateIn2"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#mating-net-skills-beyond-named-patterns",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#anastasias-mate",
+    "knowledge-base/03-chess-knowledge/calculation.md#forcing-moves-first-cct",
+    "knowledge-base/03-chess-knowledge/calculation.md#calculation-tree"
+  ]
+}

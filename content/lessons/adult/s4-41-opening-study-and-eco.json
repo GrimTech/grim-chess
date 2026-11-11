@@ -1,0 +1,100 @@
+{
+  "id": "adult.s4.opening-study-and-eco",
+  "track": "adult",
+  "stage": 4,
+  "order": 41,
+  "skillIds": [
+    "opening.study-method",
+    "opening.eco-classification"
+  ],
+  "title": "How to study openings (and the ECO map)",
+  "summary": "A repertoire workflow with spaced repetition and model games, plus the ECO volumes A-E to find your way in databases.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Opening study workflow** (KB openings.md):\n\n1. Choose openings that fit your style and time budget.\n2. Build the **skeleton**: main line plus the sidelines you actually meet, in a study or repertoire tool.\n3. **Annotate key positions** with plans, typical tactics and pawn breaks (not only moves).\n4. **Drill with spaced repetition** (short daily reviews beat long cramming).\n5. Play **training games** in the line; review them against a database and an engine.\n6. **Update after every game**: where did you or the opponent leave your file?\n\nBelow 2000, openings decide fewer games than tactics and endgames, so keep the budget modest and the understanding high."
+    },
+    {
+      "type": "quiz",
+      "question": "The **ECO** classification divides openings into five volumes. Where is the **Sicilian Defence** (1.e4 c5)?",
+      "choices": [
+        "Volume B (semi-open games other than the French)",
+        "Volume C",
+        "Volume A"
+      ],
+      "answer": 0,
+      "explain": "B covers 1.e4 with replies other than 1...e5 and 1...e6: Sicilian, Caro-Kann, Pirc, Alekhine, Scandinavian, Modern."
+    },
+    {
+      "type": "quiz",
+      "question": "Which volume contains the **French Defence** and the open games 1.e4 e5?",
+      "choices": [
+        "C",
+        "B",
+        "D"
+      ],
+      "answer": 0,
+      "explain": "Volume C: 1.e4 e5 (Ruy Lopez, Italian, Scotch, Petroff, King's Gambit...) and the French (1.e4 e6)."
+    },
+    {
+      "type": "quiz",
+      "question": "Queen's Gambit (1.d4 d5 2.c4) and the Grünfeld are in volume...",
+      "choices": [
+        "D",
+        "E",
+        "A"
+      ],
+      "answer": 0,
+      "explain": "D: closed games with 1.d4 d5 and the Grünfeld. E: Indian defences with ...e6/...g6 such as the Nimzo-Indian, Queen's Indian, Catalan, King's Indian. A: flank openings, Dutch, Benoni and other 1.d4 systems."
+    },
+    {
+      "type": "quiz",
+      "question": "Where are the **Nimzo-Indian** and the **King's Indian**?",
+      "choices": [
+        "E",
+        "D",
+        "B"
+      ],
+      "answer": 0,
+      "explain": "Both are Indian defences (1.d4 Nf6 2.c4 e6/g6), volume E."
+    },
+    {
+      "type": "quiz",
+      "question": "You lost a game after your opponent left your repertoire file on move 7. What is the best follow-up?",
+      "choices": [
+        "Check the move in a database and with an engine, add the main reply and a short plan to your file, and schedule it for spaced review",
+        "Switch openings",
+        "Memorise ten more moves of the main line"
+      ],
+      "answer": 0,
+      "explain": "Repertoire maintenance driven by your own games targets exactly the gaps that cost points. Adding a plan and a model game beats adding raw move depth."
+    },
+    {
+      "type": "quiz",
+      "question": "Which is the most effective way to retain a repertoire line?",
+      "choices": [
+        "Short spaced-repetition drills where you play the moves from memory, plus a model game per line",
+        "Reading the line once in a book",
+        "Watching a long video in one sitting"
+      ],
+      "answer": 0,
+      "explain": "Active recall with spacing (testing effect) is far better than rereading. Model games give the moves meaning, so they are easier to remember and to apply when the opponent deviates."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Name the six workflow steps and the ECO volumes A-E with one opening each (A: English/Dutch; B: Sicilian/Caro-Kann; C: Ruy Lopez/French; D: Queen's Gambit/Grünfeld; E: Nimzo/King's Indian)."
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#opening-preparation-workflow",
+    "knowledge-base/03-chess-knowledge/openings.md#eco-classification",
+    "knowledge-base/02-methods/opening-repertoire-building.md#4-evidence-informed-principles-for-repertoire-work",
+    "knowledge-base/01-learning-science/spaced-repetition-and-fsrs.md#3-what-chess-knowledge-suits-spaced-repetition",
+    "Encyclopaedia of Chess Openings (Chess Informant), volumes A-E",
+    "Lichess chess-openings dataset (ECO mapping)"
+  ]
+}

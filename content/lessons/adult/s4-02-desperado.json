@@ -1,0 +1,105 @@
+{
+  "id": "adult.s4.desperado",
+  "track": "adult",
+  "stage": 4,
+  "order": 2,
+  "skillIds": [
+    "tactics.desperado"
+  ],
+  "title": "Desperado: sell a doomed piece dearly",
+  "summary": "When a piece is lost anyway, make it capture or check on its way out.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **desperado** is a piece that is lost anyway (attacked and unable to escape, or about to be captured in an exchange) and therefore **captures or checks as expensively as possible before it dies**. It is closely related to the zwischenzug: in a sequence of mutual captures, the side that has a doomed piece should ask \"What can this piece take *before* it is taken?\"\n\nTypical situations: both sides have pieces en prise; a piece is attacked by a pawn and cannot retreat; a pinned piece will be lost, so it takes something first."
+    },
+    {
+      "type": "board",
+      "fen": "3r1rk1/pp3pbp/5np1/3Np3/4q3/1P2Q2P/P2B1PP1/R4RK1 w - - 0 20",
+      "md": "White to move. Black has just played ...Qxe4, offering a queen trade. The automatic reply is 20.Qxe4 Nxe4, equal material. But the d5-knight is attacked by the f6-knight and the black queen can take it later. Look at the *knight* first: it can capture on f6 **with check** before White recaptures the queen.",
+      "arrows": [
+        [
+          "d5",
+          "f6",
+          "green"
+        ],
+        [
+          "e3",
+          "e4",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "3r1rk1/pp3pbp/5np1/3Np3/4q3/1P2Q2P/P2B1PP1/R4RK1 w - - 0 20",
+      "prompt": "White to move. Play the idea from the diagram.",
+      "solution": [
+        "Nxf6+",
+        "Bxf6",
+        "Qxe4"
+      ],
+      "explain": "**20.Nxf6+!** The knight takes a piece with check; after 20...Bxf6 **21.Qxe4** White has won a full knight. Had White played 20.Qxe4?! Nxe4 first, nothing would have been gained."
+    },
+    {
+      "type": "quiz",
+      "question": "Your knight is attacked by a pawn and has no safe square. What is the desperado question?",
+      "choices": [
+        "Which square loses the least material?",
+        "What can the knight capture, preferably with check, before it is taken?",
+        "Can I defend the knight with another piece?"
+      ],
+      "answer": 1,
+      "explain": "A doomed piece should **earn something**: a pawn, a piece, or a check that gains a tempo. Only when it can take nothing does \"where does it lose least?\" become the question."
+    },
+    {
+      "type": "move",
+      "fen": "8/pp2k3/2p1P2p/2n3p1/6P1/1P1r3P/P3R1K1/4Nr2 w - - 0 38",
+      "prompt": "White to move. Black has just played ...Rxf1, attacking your knight. Kxf1 looks natural. Find the better capture first.",
+      "solution": [
+        "Nxd3",
+        "Nxd3",
+        "Kxf1"
+      ],
+      "explain": "The e1-knight is attacked and Black's other rook hangs on d3. **38.Nxd3!** takes the rook first; 38...Nxd3 and only now **39.Kxf1**. White has won both rooks for a knight and is completely winning. 38.Kxf1? Rxb3 would leave Black a rook up."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/5p2/1q4pQ/p2R3p/1p6/1b6/6PP/5R1K w - - 0 31",
+      "prompt": "White to move. Black has just played ...Bxb3, attacking your d5-rook. Use the doomed rook.",
+      "solution": [
+        "Rxh5",
+        "gxh5",
+        "Qxb6"
+      ],
+      "explain": "The d5-rook is attacked, so it may as well go out with a bang: **31.Rxh5!** threatens Qh7 mate, and 31...gxh5 is forced in practice. But the g6-pawn was the only piece blocking the sixth rank: **32.Qxb6** wins the queen. A desperado rook that also clears a line."
+    },
+    {
+      "type": "quiz",
+      "question": "In a sequence of mutual captures, both sides have a piece en prise. Which rule of thumb is correct?",
+      "choices": [
+        "Capture the most valuable piece first, because you might not get another chance",
+        "Count the whole sequence: a desperado capture is good only if what your piece takes is worth more than what you would otherwise lose",
+        "Always capture with check, even if it costs material"
+      ],
+      "answer": 1,
+      "explain": "Desperado is **counting with intermediate moves**. List the captures available to both sides, then count the material at the end of each line. A check is valuable when it gains time, not by itself. Typical error: grabbing with the doomed piece and overlooking that the opponent has his own desperado reply."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** (1) Define desperado in one sentence. (2) In the ...Qxe4 example, why was 20.Qxe4 wrong? (3) What else did the doomed rook on h5 achieve besides capturing a pawn?\n\nAnswers: a doomed piece captures or checks as much as possible before being taken; it allowed Black to trade queens and keep the knights, while 20.Nxf6+ won a piece; it removed the g6-pawn from the sixth rank so the queen could capture on b6."
+    }
+  ],
+  "practiceThemes": [
+    "sacrifice",
+    "intermezzo"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#desperado",
+    "knowledge-base/03-chess-knowledge/tactics.md#counting-and-exchanges",
+    "Yusupov, Build Up Your Chess 2 (Quality Chess, 2009), chapter on desperado and intermediate moves",
+    "Dvoretsky & Yusupov, Secrets of Chess Training (Edition Olms, 1996), calculation of mutual captures",
+    "Lichess puzzle database (CC0), puzzles 0UMxy, 0QclZ, 0Btga"
+  ]
+}

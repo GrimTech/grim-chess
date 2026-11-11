@@ -1,0 +1,139 @@
+{
+  "id": "adult.s3.boden-and-double-bishop-mates",
+  "track": "adult",
+  "stage": 3,
+  "order": 22,
+  "skillIds": [
+    "checkmate.boden"
+  ],
+  "title": "Boden's and double-bishop mates",
+  "summary": "Two bishops on criss-crossing or parallel diagonals mate a king boxed in by its own pieces, usually after a queen or rook sacrifice.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "board",
+      "fen": "2kr4/p2p4/B1p5/8/5B2/8/8/6K1 b - - 0 1",
+      "md": "**Boden's mate.** One bishop checks from a6, the other covers b8 and c7 from f4. The king on c8 is hemmed in by its own rook and pawns. It typically arises against a queenside-castled king after a sacrifice on c6 opens the a6-c8 diagonal.",
+      "arrows": [
+        [
+          "a6",
+          "c8",
+          "red"
+        ],
+        [
+          "f4",
+          "b8",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "2kr3r/pp1np3/2b2p1p/1B4p1/4p3/4P1B1/PP1K1PPP/R1R5 w - - 4 19",
+      "prompt": "White to move: mate in two. Open the a6-c8 diagonal.",
+      "solution": [
+        "Rxc6+",
+        "bxc6",
+        "Ba6#"
+      ],
+      "explain": "Rxc6+! bxc6 Ba6#: the rook sacrifice removes the b7-pawn from the diagonal; the g3-bishop covers b8 and c7. Classic Boden.",
+      "hint": "Sacrifice on c6."
+    },
+    {
+      "type": "move",
+      "fen": "2kr1b1r/pp1n2p1/Q1p1p1q1/3n1p1p/3P1B2/5PN1/PPP1BP1P/R4RK1 w - - 1 15",
+      "prompt": "White to move: mate in two. Same pattern, with a queen sacrifice.",
+      "solution": [
+        "Qxc6+",
+        "bxc6",
+        "Ba6#"
+      ],
+      "explain": "Qxc6+! bxc6 Ba6#: the f4-bishop takes b8 and c7, the e2-bishop mates on a6, and Black's own rook and knight block d8 and d7."
+    },
+    {
+      "type": "move",
+      "fen": "2r1k2r/pp1nb1pb/5n1p/3P4/5B2/P1P4N/1P1N2BP/2KR3R b k - 0 21",
+      "prompt": "Black to move: mate in two. Boden's mate against White's queenside king.",
+      "solution": [
+        "Rxc3+",
+        "bxc3",
+        "Bxa3#"
+      ],
+      "explain": "...Rxc3+! bxc3 Ba3#: the h7-bishop covers b1 and c2, the e7-bishop mates from a3. Black's bishops criss-cross exactly as in the pattern."
+    },
+    {
+      "type": "board",
+      "fen": "7k/7p/8/3B4/8/2B5/8/6K1 b - - 0 1",
+      "md": "**Double-bishop mate.** The bishops stand on adjacent parallel diagonals: one checks (c3), the other covers the flight square (g8 via d5). The king is blocked by its own pieces.",
+      "arrows": [
+        [
+          "c3",
+          "h8",
+          "red"
+        ],
+        [
+          "d5",
+          "g8",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "r3r1bk/pp4p1/3b1p1p/3q4/6PP/2BBQ3/1PP2P2/2K1R2R w - - 7 32",
+      "prompt": "White to move: mate in two. Two bishops aim at Black's king.",
+      "solution": [
+        "Qxh6+",
+        "gxh6",
+        "Bxf6#"
+      ],
+      "explain": "Qxh6+! gxh6 Bxf6#: the queen sacrifice decoys the g7-pawn to h6 and opens the long diagonal. The c3-bishop mates on f6, the d3-bishop covers h7, and Black's own bishop blocks g8."
+    },
+    {
+      "type": "move",
+      "fen": "1r2kb1r/1b1n1pp1/p2pp2p/2q3B1/1p3P2/3B4/PP1NQ1PP/R4R1K w k - 0 18",
+      "prompt": "White to move: mate in two. Open a diagonal to Black's king on e8.",
+      "solution": [
+        "Qxe6+",
+        "fxe6",
+        "Bg6#"
+      ],
+      "explain": "Qxe6+! fxe6 Bg6#: the f7-pawn is drawn to e6, opening the e8-h5 diagonal. The g5-bishop covers d8 and e7, Black's own bishop and knight block f8 and d7."
+    },
+    {
+      "type": "quiz",
+      "question": "Boden's mate usually needs which preparatory sacrifice?",
+      "choices": [
+        "A sacrifice on f7",
+        "A queen or rook sacrifice on c6 (or c3) that drags the b-pawn away and opens the a6-c8 diagonal",
+        "A pawn sacrifice on e5",
+        "A knight sacrifice on h7"
+      ],
+      "answer": 1,
+      "explain": "Against a queenside-castled king with a knight on c6 and the c7-square uncovered, look for Qxc6+ or Rxc6+."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: in Boden's mate, what is the second bishop's job?",
+      "choices": [
+        "Give check",
+        "Cover the flight squares (b8 and c7 for a king on c8)",
+        "Protect the queen",
+        "Block the d-file"
+      ],
+      "answer": 1,
+      "explain": "One bishop checks, the other cages. The king is blocked by its own pieces on d7/d8."
+    }
+  ],
+  "practiceThemes": [
+    "bodenMate",
+    "doubleBishopMate"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#bodens-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#double-bishop-mate",
+    "Schulder - Boden, London 1853",
+    "Renaud & Kahn, The Art of the Checkmate (1953)",
+    "Lichess puzzle database (CC0): 48kT7, CW2mn, 8vBUt, 7GQjt, BTaGA"
+  ]
+}

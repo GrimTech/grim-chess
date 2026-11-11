@@ -1,0 +1,80 @@
+{
+  "id": "kids.4.helper-mates",
+  "track": "kids",
+  "stage": 2,
+  "order": 405,
+  "skillIds": [
+    "checkmate.support-mate",
+    "checkmate.mate-in-1"
+  ],
+  "title": "The queen needs a friend",
+  "summary": "A guarded queen next to the king is checkmate.",
+  "estMinutes": 7,
+  "minAge": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The queen next to the king, **guarded by a friend**, is checkmate. The king cannot capture her!"
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/5pp1/8/7Q/8/3B4/8/6K1 w - - 0 1",
+      "prompt": "Checkmate! The bishop helps.",
+      "solution": [
+        "Qh7#"
+      ],
+      "explain": "The bishop guards the queen!",
+      "hint": "The bishop aims at h7."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/5pp1/8/6NQ/8/8/8/6K1 w - - 0 1",
+      "prompt": "Checkmate! The knight helps.",
+      "solution": [
+        "Qh7#"
+      ],
+      "explain": "The knight guards the queen!",
+      "hint": "Which square does the knight protect?"
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5p2/5P1Q/8/8/8/8/6K1 w - - 0 1",
+      "prompt": "Checkmate! The pawn helps.",
+      "solution": [
+        "Qg7#"
+      ],
+      "explain": "Even a pawn can be a great friend!",
+      "hint": "The pawn on f6 protects g7."
+    },
+    {
+      "type": "quiz",
+      "question": "Why can't the king capture the queen?",
+      "choices": [
+        "She is guarded",
+        "Kings never capture"
+      ],
+      "answer": 0,
+      "explain": "Capturing her would put the king in check."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/5p1p/8/8/3Q4/8/1B6/6K1 w - - 0 1",
+      "prompt": "Checkmate! The bishop helps from far away.",
+      "solution": [
+        "Qg7#"
+      ],
+      "explain": "The bishop guards from behind!",
+      "hint": "The bishop and queen are on the same diagonal.",
+      "alternatives": [
+        "Qh8#",
+        "Qg4#"
+      ]
+    }
+  ],
+  "practiceThemes": [
+    "mateIn1"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

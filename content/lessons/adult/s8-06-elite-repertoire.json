@@ -1,0 +1,92 @@
+{
+  "id": "adult.s8.elite-repertoire",
+  "track": "adult",
+  "stage": 8,
+  "order": 6,
+  "skillIds": [
+    "opening.repertoire.elite"
+  ],
+  "title": "Elite repertoire breadth and deep preparation",
+  "summary": "Two openings with each colour, both 1.e4 and 1.d4 experience, and forcing lines prepared 25-30 moves deep with neural-network engines — without losing understanding.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## What changes at 2450-2700\n\nAt GM level the opening is where most of the **preparation advantage** is created. Characteristics of an elite repertoire:\n\n- **Breadth**: at least two reliable systems against 1.e4 and against 1.d4, and experience with both 1.e4 and 1.d4 (or 1.c4/1.Nf3) as White, so opponents cannot prepare one line.\n- **Depth in forcing lines**: 25-30+ moves in critical forcing variations, checked with a neural-network engine (Stockfish NNUE / Lc0) at high depth, including the opponent's best tries and your sidelines.\n- **Understanding over memory**: in quiet lines, a deep knowledge of the resulting structures and endgames (for example the Berlin endgame) is worth more than move 30.\n- **Surprise weapons**: a few prepared side lines, used rarely, to avoid an opponent's deep preparation."
+    },
+    {
+      "type": "board",
+      "fen": "r1bk1b1r/ppp2ppp/2p5/4Pn2/8/5N2/PPP2PPP/RNB2RK1 w - - 0 9",
+      "md": "**The Berlin endgame** (1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Nxe4 5.d4 Nd6 6.Bxc6 dxc6 7.dxe5 Nf5 8.Qxd8+ Kxd8). Kramnik used it to neutralise Kasparov's 1.e4 in the 2000 World Championship match. Black has the bishop pair and a solid position; White has a kingside pawn majority. Knowledge of the plans (White: h3, Nc3, Rd1/Re1, kingside expansion; Black: ...Ke8, ...h5/...Be7, bishop activity) decides more than any single move.",
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "Why did the Berlin endgame work so well as a match weapon against an attacking 1.e4 player?",
+      "choices": [
+        "It loses by force, so it surprised him",
+        "It removes queens early and leads to a structural endgame where deep understanding matters more than preparation of attacking lines, and Black's position is objectively very solid",
+        "It wins a pawn by force",
+        "It avoids all theory"
+      ],
+      "answer": 1,
+      "explain": "The Berlin shifts the battle to a type of position where the opponent's main strength (initiative and preparation of sharp lines) counts less.",
+      "fen": "r1bk1b1r/ppp2ppp/2p5/4Pn2/8/5N2/PPP2PPP/RNB2RK1 w - - 0 9"
+    },
+    {
+      "type": "board",
+      "fen": "r1b1k2r/pp2ppbp/2n3p1/q1p5/3PP3/2P1BN2/P2Q1PPP/2R1KB1R b Kkq - 5 10",
+      "md": "**Forcing theory: Grunfeld Exchange** (…7.Nf3 c5 8.Be3 Qa5 9.Qd2 Nc6 10.Rc1). Lines like this are known 25+ moves deep at the top, often to an endgame evaluation. The professional standard is to know each critical branch with the reason for every move — not to rely on recall alone.",
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "An opponent has prepared deeply against your main Najdorf line. With a 2650 opponent who has 300 games in your line, what is the most professional choice for one game?",
+      "choices": [
+        "Repeat your line; you also know it well",
+        "Choose a prepared second system (for example a Sveshnikov or a 1...e5 line) checked in advance, so his preparation is wasted",
+        "Play a random new opening",
+        "Prepare his line overnight and improve at move 25"
+      ],
+      "answer": 1,
+      "explain": "Breadth is the defence against deep preparation. The second system must be prepared beforehand (with its own files) so that switching is not a gamble."
+    },
+    {
+      "type": "quiz",
+      "question": "How should neural-network engines be used in elite preparation?",
+      "choices": [
+        "Accept the engine's first line in every position",
+        "Use them to explore and verify (multi-PV, long analyses, checking the opponent's best tries), but select lines by practical difficulty, structure and your own understanding; store the reasons, not only the moves",
+        "Avoid them; they make players weaker",
+        "Use only short analyses of a few seconds"
+      ],
+      "answer": 1,
+      "explain": "Engines find resources humans miss, but the choice of line is a human, practical decision. Memorised moves without reasons are forgotten in the game."
+    },
+    {
+      "type": "play",
+      "fen": "r1b1kb1r/ppp2pp1/2p5/4Pn1p/8/2N2N1P/PPP2PP1/R1B2RK1 w - - 0 11",
+      "goal": "hold",
+      "prompt": "Play the Berlin endgame as White against a strong engine (level 15) for 25 moves without losing material. Aim for the typical plan: Bf4/Bg5, Rad1, Ne2-f4 or kingside pawn expansion.",
+      "maxMoves": 25,
+      "engineLevel": 15,
+      "explain": "Compare your plan with model games of Kasparov-Kramnik 2000 and later Berlin games in the master-game corpus."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Breadth audit**: list your systems against 1.e4, 1.d4, 1.c4, 1.Nf3 and as White. Where you have only one system, choose a second and plan 8 weeks to build it.\n- **Depth audit**: for each forcing line, check whether you know (and can explain) every move to move 25. Run a long engine check of the critical tabiya and store the evaluation with the date.\n- **Practice**: play training games from your prepared positions against the strongest bot level, and track your score by line."
+    }
+  ],
+  "practiceThemes": [
+    "opening",
+    "superGM"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/opening-repertoire-building.md",
+    "knowledge-base/03-chess-knowledge/openings.md",
+    "knowledge-base/02-methods/engine-use-best-practices.md",
+    "knowledge-base/03-chess-knowledge/grandmaster-competency-profile.md",
+    "Kasparov, Garry Kasparov on Modern Chess series",
+    "Kramnik interviews on the Berlin Defence (2000 World Championship preparation)"
+  ]
+}

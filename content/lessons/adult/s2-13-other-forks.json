@@ -1,0 +1,100 @@
+{
+  "id": "adult.s2.other-forks",
+  "track": "adult",
+  "stage": 2,
+  "order": 13,
+  "skillIds": [
+    "tactics.fork.queen"
+  ],
+  "title": "Pawn, queen and bishop forks",
+  "summary": "Every piece can fork: pawn forks, queen forks with check, bishop and king forks.",
+  "estMinutes": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Forks are not just for knights:\n\n- **Pawn fork**: a pawn attacks two pieces diagonally. Pieces worth more than a pawn must flee, so both are hit.\n- **Queen fork**: the queen checks and attacks a loose piece on another line.\n- **Bishop / rook / king forks**: same idea. The king can fork in the endgame."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/pp4pp/2n1r3/8/3P4/8/PP4PP/R5K1 w - - 0 1",
+      "prompt": "Fork knight and rook with a pawn.",
+      "solution": [
+        "d5"
+      ],
+      "explain": "d5 attacks c6 and e6. Neither piece defends d5, so White wins one of them for nothing."
+    },
+    {
+      "type": "move",
+      "fen": "r5k1/6pp/5p2/8/8/8/6PP/3Q2K1 w - - 0 1",
+      "prompt": "Check the king and attack the rook at the same time.",
+      "solution": [
+        "Qd5+",
+        "Kf8",
+        "Qxa8+"
+      ],
+      "explain": "Qd5+ checks along the a2-g8 diagonal and hits a8 along the long diagonal."
+    },
+    {
+      "type": "move",
+      "fen": "8/7k/8/p2B4/P5P1/7K/8/1r6 w - - 0 1",
+      "prompt": "Fork king and rook with the bishop.",
+      "solution": [
+        "Be4+",
+        "Kg7",
+        "Bxb1"
+      ],
+      "explain": "Be4+ checks h7 and attacks b1 along the same diagonal network."
+    },
+    {
+      "type": "quiz",
+      "question": "Which piece is most effective at forking two enemy pieces worth more than itself?",
+      "choices": [
+        "The pawn",
+        "The queen",
+        "The king"
+      ],
+      "answer": 0,
+      "explain": "A pawn attacks pieces worth 3-9. Even if it is captured, you win material. Queen forks need the targets to be undefended."
+    },
+    {
+      "type": "quiz",
+      "question": "In an endgame, the white king steps between two undefended black knights, attacking both. What is this called?",
+      "choices": [
+        "A king fork",
+        "A skewer",
+        "A pin"
+      ],
+      "answer": 0,
+      "explain": "The king is a strong piece in endgames and can fork loose pieces."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: why must the targets of a queen fork usually be undefended?",
+      "choices": [
+        "Otherwise the queen (9) would be lost for less",
+        "Queens cannot capture defended pieces",
+        "They must not be"
+      ],
+      "answer": 0,
+      "explain": "A queen can safely fork only loose pieces, or the king plus a loose piece."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: a pawn fork attacks how many pieces?",
+      "choices": [
+        "Two, one on each forward diagonal",
+        "Three",
+        "One"
+      ],
+      "answer": 0,
+      "explain": "A pawn attacks two squares, one on each forward diagonal."
+    }
+  ],
+  "practiceThemes": [
+    "fork"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#fork",
+    "knowledge-base/03-chess-knowledge/tactics.md#double-attack"
+  ]
+}

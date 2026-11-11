@@ -1,0 +1,1314 @@
+{
+  "version": "1.0",
+  "generated": "2026-11-11",
+  "notes": "Grim Chess assessment benchmarks. Rating scale 'GR' = FIDE Standard (post-1-Mar-2024) for >=1400; below 1400 an extended logistic scale with NO FIDE equivalent. All band values are PRIORS assembled from heterogeneous sources (status='prior'); replace with platform-measured values from the calibration study in knowledge-base/04-assessment/10-benchmarks-by-rating-band.md section 5 before showing them to users as typical values. ACPL in centipawns (live moves, per-move cap 400cp per Grim-ACPL v1); accuracy = Lichess production formula, online rapid; blunder = drop >= 0.3 winning chances (~150-170cp from equality) on a live move, per player per game. percentileFide = % of FIDE-listed players (all listed, Oct 2026 list) below the rating; null below the floor. Index: knowledge-base/04-assessment/README.md.",
+  "scale": {
+    "name": "GR (Grim Rating)",
+    "fideEquivalentFrom": 1400,
+    "belowFloorLabel": "Grim Rating (extended scale; no FIDE equivalent)",
+    "fideRegulations": "https://handbook.fide.com/chapter/B022024",
+    "pre2024FideRemap": "R_new = R_old + 0.4*(2000 - R_old) for 1000 <= R_old < 2000 (one-off FIDE adjustment, 1 Mar 2024)"
+  },
+  "titles": [
+    {
+      "code": "GM",
+      "name": "Grandmaster",
+      "minRating": 2500,
+      "normPerformance": 2600,
+      "normAvgOppMin": 2380,
+      "normOppFloor": 2200,
+      "directTitleMinRating": 2300,
+      "requirements": "FIDE rating >= 2500 at any time plus GM norms totalling >= 27 games (each norm >= 9 games, Rp >= 2600, avg opp >= 2380, >= 1/3 (min 3) GM opponents, >= 50% titled opponents, >= 2 foreign federations, score >= 35%); or direct title from listed events. Requires FIDE-rated OTB play.",
+      "source": "https://handbook.fide.com/chapter/B012024"
+    },
+    {
+      "code": "IM",
+      "name": "International Master",
+      "minRating": 2400,
+      "normPerformance": 2450,
+      "normAvgOppMin": 2230,
+      "normOppFloor": 2050,
+      "directTitleMinRating": 2200,
+      "requirements": "FIDE rating >= 2400 plus IM norms totalling >= 27 games (Rp >= 2450, avg opp >= 2230, >= 1/3 (min 3) IM/GM opponents, >= 50% titled, score >= 35%); or direct title.",
+      "source": "https://handbook.fide.com/chapter/B012024"
+    },
+    {
+      "code": "FM",
+      "name": "FIDE Master",
+      "minRating": 2300,
+      "normPerformance": null,
+      "directTitleMinRating": 2100,
+      "requirements": "FIDE rating >= 2300 based on >= 30 rated games (no norms); or direct title.",
+      "source": "https://handbook.fide.com/chapter/B012024"
+    },
+    {
+      "code": "CM",
+      "name": "Candidate Master",
+      "minRating": 2200,
+      "normPerformance": null,
+      "directTitleMinRating": 2000,
+      "requirements": "FIDE rating >= 2200 based on >= 30 rated games (no norms); or direct title.",
+      "source": "https://handbook.fide.com/chapter/B012024"
+    },
+    {
+      "code": "WGM",
+      "name": "Woman Grandmaster",
+      "minRating": 2300,
+      "normPerformance": 2400,
+      "normAvgOppMin": 2180,
+      "normOppFloor": 2000,
+      "directTitleMinRating": 2100,
+      "requirements": "FIDE rating >= 2300 plus WGM norms totalling >= 27 games (Rp >= 2400, avg opp >= 2180, >= 1/3 (min 3) WGM/IM/GM opponents, score >= 35%); or direct title.",
+      "source": "https://handbook.fide.com/chapter/B012024"
+    },
+    {
+      "code": "WIM",
+      "name": "Woman International Master",
+      "minRating": 2200,
+      "normPerformance": 2250,
+      "normAvgOppMin": 2030,
+      "normOppFloor": 1850,
+      "directTitleMinRating": 2000,
+      "requirements": "FIDE rating >= 2200 plus WIM norms totalling >= 27 games (Rp >= 2250, avg opp >= 2030, >= 1/3 (min 3) WIM/WGM/IM/GM opponents, score >= 35%); or direct title.",
+      "source": "https://handbook.fide.com/chapter/B012024"
+    },
+    {
+      "code": "WFM",
+      "name": "Woman FIDE Master",
+      "minRating": 2100,
+      "normPerformance": null,
+      "directTitleMinRating": 1900,
+      "requirements": "FIDE rating >= 2100 based on >= 30 rated games; or direct title.",
+      "source": "https://handbook.fide.com/chapter/B012024"
+    },
+    {
+      "code": "WCM",
+      "name": "Woman Candidate Master",
+      "minRating": 2000,
+      "normPerformance": null,
+      "directTitleMinRating": 1800,
+      "requirements": "FIDE rating >= 2000 based on >= 30 rated games; or direct title.",
+      "source": "https://handbook.fide.com/chapter/B012024"
+    }
+  ],
+  "platformMilestones": {
+    "rule": "Award '<TITLE>-equivalent strength (estimated)' when GRhat - 1.2816*SE >= minRating at two evaluations >= 30 days apart, SE <= 100, >= 30 rated standard-TC games in last 180 days, game-signal estimate >= minRating - 50, consistency test p >= 0.01, knowledge gates passed. Never display bare title abbreviations; never claim FIDE titles or norms.",
+    "z80": 1.2816,
+    "maxSe": 100,
+    "minGames": 30,
+    "windowDays": 180,
+    "repeatGapDays": 30,
+    "gameSignalTolerance": 50,
+    "doc": "knowledge-base/04-assessment/platform-measurement-model.md"
+  },
+  "bands": [
+    {
+      "rating": 400,
+      "label": "Absolute beginner",
+      "status": "prior",
+      "confidence": "low",
+      "aboveFideFloor": false,
+      "acpl": {
+        "rapid": 87,
+        "classical": 75
+      },
+      "accuracy": 72,
+      "accuracyIqr": [
+        58,
+        81
+      ],
+      "blundersPerGame": 2.9,
+      "blundersPerGameClassical": 2.0,
+      "puzzleRating": 900,
+      "percentileFide": null,
+      "asdRegan": 0.3103,
+      "engineTopMatchPct": null,
+      "lichessClassicalEquivalent": 940,
+      "chesscomRapidEquivalent": 100,
+      "extrapolatedFields": [
+        "acpl.classical",
+        "asdRegan"
+      ],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "below FIDE floor 1400: not applicable",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": null,
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 600,
+      "label": "Novice",
+      "status": "prior",
+      "confidence": "low",
+      "aboveFideFloor": false,
+      "acpl": {
+        "rapid": 78,
+        "classical": 69
+      },
+      "accuracy": 74,
+      "accuracyIqr": [
+        63,
+        83
+      ],
+      "blundersPerGame": 2.8,
+      "blundersPerGameClassical": 1.95,
+      "puzzleRating": 1050,
+      "percentileFide": null,
+      "asdRegan": 0.2881,
+      "engineTopMatchPct": null,
+      "lichessClassicalEquivalent": 1080,
+      "chesscomRapidEquivalent": 300,
+      "extrapolatedFields": [
+        "acpl.classical",
+        "asdRegan"
+      ],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "below FIDE floor 1400: not applicable",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": null,
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 800,
+      "label": "Beginner",
+      "status": "prior",
+      "confidence": "low",
+      "aboveFideFloor": false,
+      "acpl": {
+        "rapid": 73,
+        "classical": 64
+      },
+      "accuracy": 76,
+      "accuracyIqr": [
+        67,
+        84
+      ],
+      "blundersPerGame": 2.65,
+      "blundersPerGameClassical": 1.85,
+      "puzzleRating": 1200,
+      "percentileFide": null,
+      "asdRegan": 0.2658,
+      "engineTopMatchPct": null,
+      "lichessClassicalEquivalent": 1220,
+      "chesscomRapidEquivalent": 500,
+      "extrapolatedFields": [
+        "acpl.classical",
+        "asdRegan"
+      ],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "below FIDE floor 1400: not applicable",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": null,
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 1000,
+      "label": "Advanced beginner",
+      "status": "prior",
+      "confidence": "low",
+      "aboveFideFloor": false,
+      "acpl": {
+        "rapid": 68.5,
+        "classical": 58
+      },
+      "accuracy": 77,
+      "accuracyIqr": [
+        67,
+        84
+      ],
+      "blundersPerGame": 2.55,
+      "blundersPerGameClassical": 1.8,
+      "puzzleRating": 1350,
+      "percentileFide": null,
+      "asdRegan": 0.2435,
+      "engineTopMatchPct": null,
+      "lichessClassicalEquivalent": 1340,
+      "chesscomRapidEquivalent": 700,
+      "extrapolatedFields": [
+        "acpl.classical",
+        "asdRegan"
+      ],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "below FIDE floor 1400: not applicable",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": null,
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 1200,
+      "label": "Developing club player",
+      "status": "prior",
+      "confidence": "low",
+      "aboveFideFloor": false,
+      "acpl": {
+        "rapid": 63.5,
+        "classical": 53
+      },
+      "accuracy": 78,
+      "accuracyIqr": [
+        69,
+        86
+      ],
+      "blundersPerGame": 2.45,
+      "blundersPerGameClassical": 1.7,
+      "puzzleRating": 1450,
+      "percentileFide": null,
+      "asdRegan": 0.2212,
+      "engineTopMatchPct": null,
+      "lichessClassicalEquivalent": 1470,
+      "chesscomRapidEquivalent": 900,
+      "extrapolatedFields": [
+        "acpl.classical",
+        "asdRegan"
+      ],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "below FIDE floor 1400: not applicable",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": null,
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 1400,
+      "label": "Club player (FIDE floor)",
+      "status": "prior",
+      "confidence": "low-moderate",
+      "aboveFideFloor": true,
+      "acpl": {
+        "rapid": 59.5,
+        "classical": 48
+      },
+      "accuracy": 79,
+      "accuracyIqr": [
+        69,
+        86
+      ],
+      "blundersPerGame": 2.35,
+      "blundersPerGameClassical": 1.65,
+      "puzzleRating": 1600,
+      "percentileFide": 0.0,
+      "asdRegan": 0.1989,
+      "engineTopMatchPct": null,
+      "lichessClassicalEquivalent": 1590,
+      "chesscomRapidEquivalent": 1100,
+      "extrapolatedFields": [],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "Rama Chess count of Oct-2026 FIDE list: https://ramachess.com/articles/what-is-a-good-chess-rating/",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": null,
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 1600,
+      "label": "Club player",
+      "status": "prior",
+      "confidence": "moderate",
+      "aboveFideFloor": true,
+      "acpl": {
+        "rapid": 52,
+        "classical": 42
+      },
+      "accuracy": 81.5,
+      "accuracyIqr": [
+        75,
+        88
+      ],
+      "blundersPerGame": 2.05,
+      "blundersPerGameClassical": 1.45,
+      "puzzleRating": 1750,
+      "percentileFide": 32.0,
+      "asdRegan": 0.1767,
+      "engineTopMatchPct": null,
+      "lichessClassicalEquivalent": 1850,
+      "chesscomRapidEquivalent": 1550,
+      "extrapolatedFields": [],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "Rama Chess count of Oct-2026 FIDE list: https://ramachess.com/articles/what-is-a-good-chess-rating/",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": null,
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 1800,
+      "label": "Strong club player",
+      "status": "prior",
+      "confidence": "moderate",
+      "aboveFideFloor": true,
+      "acpl": {
+        "rapid": 45,
+        "classical": 37
+      },
+      "accuracy": 84,
+      "accuracyIqr": [
+        78,
+        90
+      ],
+      "blundersPerGame": 1.75,
+      "blundersPerGameClassical": 1.2,
+      "puzzleRating": 1900,
+      "percentileFide": 64.0,
+      "asdRegan": 0.1544,
+      "engineTopMatchPct": 44.0,
+      "lichessClassicalEquivalent": 2090,
+      "chesscomRapidEquivalent": 1950,
+      "extrapolatedFields": [],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "Rama Chess count of Oct-2026 FIDE list: https://ramachess.com/articles/what-is-a-good-chess-rating/",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": "Regan & Haworth AAAI 2011 (Rybka 3 d13): https://www.cse.buffalo.edu//~regan/papers/pdf/ReHa11c.pdf (2006-09 actual mm; 1800 row re-mapped from pre-2024 scale)",
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 2000,
+      "label": "Expert",
+      "status": "prior",
+      "confidence": "moderate",
+      "aboveFideFloor": true,
+      "acpl": {
+        "rapid": 40,
+        "classical": 32
+      },
+      "accuracy": 86,
+      "accuracyIqr": [
+        81,
+        92
+      ],
+      "blundersPerGame": 1.55,
+      "blundersPerGameClassical": 1.1,
+      "puzzleRating": 2100,
+      "percentileFide": 87.2,
+      "asdRegan": 0.1321,
+      "engineTopMatchPct": 46.1,
+      "lichessClassicalEquivalent": 2245,
+      "chesscomRapidEquivalent": 2190,
+      "extrapolatedFields": [],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "Rama Chess count of Oct-2026 FIDE list: https://ramachess.com/articles/what-is-a-good-chess-rating/",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": "Regan & Haworth AAAI 2011 (Rybka 3 d13): https://www.cse.buffalo.edu//~regan/papers/pdf/ReHa11c.pdf (2006-09 actual mm; 1800 row re-mapped from pre-2024 scale)",
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 2200,
+      "label": "CM-level",
+      "status": "prior",
+      "confidence": "moderate",
+      "aboveFideFloor": true,
+      "acpl": {
+        "rapid": 36,
+        "classical": 26
+      },
+      "accuracy": 88,
+      "accuracyIqr": [
+        81,
+        92
+      ],
+      "blundersPerGame": 1.4,
+      "blundersPerGameClassical": 1.0,
+      "puzzleRating": 2300,
+      "percentileFide": 96.4,
+      "asdRegan": 0.1098,
+      "engineTopMatchPct": 48.3,
+      "lichessClassicalEquivalent": 2375,
+      "chesscomRapidEquivalent": 2370,
+      "extrapolatedFields": [],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "Rama Chess count of Oct-2026 FIDE list: https://ramachess.com/articles/what-is-a-good-chess-rating/",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": "Regan & Haworth AAAI 2011 (Rybka 3 d13): https://www.cse.buffalo.edu//~regan/papers/pdf/ReHa11c.pdf (2006-09 actual mm; 1800 row re-mapped from pre-2024 scale)",
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 2300,
+      "label": "FM-level",
+      "status": "prior",
+      "confidence": "moderate",
+      "aboveFideFloor": true,
+      "acpl": {
+        "rapid": 34,
+        "classical": 24
+      },
+      "accuracy": 88.5,
+      "accuracyIqr": [
+        84,
+        94
+      ],
+      "blundersPerGame": 1.35,
+      "blundersPerGameClassical": 0.95,
+      "puzzleRating": 2400,
+      "percentileFide": 98.5,
+      "asdRegan": 0.0987,
+      "engineTopMatchPct": 50.3,
+      "lichessClassicalEquivalent": 2430,
+      "chesscomRapidEquivalent": 2460,
+      "extrapolatedFields": [],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "Rama Chess count of Oct-2026 FIDE list: https://ramachess.com/articles/what-is-a-good-chess-rating/",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": "Regan & Haworth AAAI 2011 (Rybka 3 d13): https://www.cse.buffalo.edu//~regan/papers/pdf/ReHa11c.pdf (2006-09 actual mm; 1800 row re-mapped from pre-2024 scale)",
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 2400,
+      "label": "IM-level",
+      "status": "prior",
+      "confidence": "low-moderate",
+      "aboveFideFloor": true,
+      "acpl": {
+        "rapid": 33,
+        "classical": 21
+      },
+      "accuracy": 89,
+      "accuracyIqr": [
+        84,
+        94
+      ],
+      "blundersPerGame": 1.3,
+      "blundersPerGameClassical": 0.9,
+      "puzzleRating": 2500,
+      "percentileFide": 99.48,
+      "asdRegan": 0.0875,
+      "engineTopMatchPct": 51.8,
+      "lichessClassicalEquivalent": 2470,
+      "chesscomRapidEquivalent": 2550,
+      "extrapolatedFields": [],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "Rama Chess count of Oct-2026 FIDE list: https://ramachess.com/articles/what-is-a-good-chess-rating/",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": "Regan & Haworth AAAI 2011 (Rybka 3 d13): https://www.cse.buffalo.edu//~regan/papers/pdf/ReHa11c.pdf (2006-09 actual mm; 1800 row re-mapped from pre-2024 scale)",
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 2500,
+      "label": "GM-level",
+      "status": "prior",
+      "confidence": "low-moderate",
+      "aboveFideFloor": true,
+      "acpl": {
+        "rapid": 30.5,
+        "classical": 18
+      },
+      "accuracy": 90,
+      "accuracyIqr": null,
+      "blundersPerGame": 1.2,
+      "blundersPerGameClassical": 0.85,
+      "puzzleRating": 2650,
+      "percentileFide": 99.85,
+      "asdRegan": 0.0764,
+      "engineTopMatchPct": 53.1,
+      "lichessClassicalEquivalent": 2550,
+      "chesscomRapidEquivalent": null,
+      "extrapolatedFields": [
+        "accuracy",
+        "acpl.rapid"
+      ],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "Rama Chess count of Oct-2026 FIDE list: https://ramachess.com/articles/what-is-a-good-chess-rating/",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": "Regan & Haworth AAAI 2011 (Rybka 3 d13): https://www.cse.buffalo.edu//~regan/papers/pdf/ReHa11c.pdf (2006-09 actual mm; 1800 row re-mapped from pre-2024 scale)",
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 2600,
+      "label": "Strong GM",
+      "status": "prior",
+      "confidence": "low",
+      "aboveFideFloor": true,
+      "acpl": {
+        "rapid": 28,
+        "classical": 16
+      },
+      "accuracy": 91,
+      "accuracyIqr": null,
+      "blundersPerGame": 1.05,
+      "blundersPerGameClassical": 0.75,
+      "puzzleRating": 2750,
+      "percentileFide": 99.96,
+      "asdRegan": 0.0653,
+      "engineTopMatchPct": 54.2,
+      "lichessClassicalEquivalent": null,
+      "chesscomRapidEquivalent": null,
+      "extrapolatedFields": [
+        "accuracy",
+        "acpl.rapid",
+        "blundersPerGame",
+        "blundersPerGameClassical",
+        "percentileFide"
+      ],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "Rama Chess count of Oct-2026 FIDE list: https://ramachess.com/articles/what-is-a-good-chess-rating/",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": "Regan & Haworth AAAI 2011 (Rybka 3 d13): https://www.cse.buffalo.edu//~regan/papers/pdf/ReHa11c.pdf (2006-09 actual mm; 1800 row re-mapped from pre-2024 scale)",
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 2700,
+      "label": "Elite (super-GM)",
+      "status": "prior",
+      "confidence": "low",
+      "aboveFideFloor": true,
+      "acpl": {
+        "rapid": 25.5,
+        "classical": 13
+      },
+      "accuracy": 92,
+      "accuracyIqr": null,
+      "blundersPerGame": 0.95,
+      "blundersPerGameClassical": 0.65,
+      "puzzleRating": 2900,
+      "percentileFide": 99.994,
+      "asdRegan": 0.0541,
+      "engineTopMatchPct": 56.3,
+      "lichessClassicalEquivalent": null,
+      "chesscomRapidEquivalent": null,
+      "extrapolatedFields": [
+        "accuracy",
+        "acpl.rapid",
+        "blundersPerGame",
+        "blundersPerGameClassical",
+        "percentileFide"
+      ],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "Rama Chess count of Oct-2026 FIDE list: https://ramachess.com/articles/what-is-a-good-chess-rating/",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": "Regan & Haworth AAAI 2011 (Rybka 3 d13): https://www.cse.buffalo.edu//~regan/papers/pdf/ReHa11c.pdf (2006-09 actual mm; 1800 row re-mapped from pre-2024 scale)",
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    },
+    {
+      "rating": 2800,
+      "label": "World-championship level",
+      "status": "prior",
+      "confidence": "low",
+      "aboveFideFloor": true,
+      "acpl": {
+        "rapid": 23,
+        "classical": 10
+      },
+      "accuracy": 93,
+      "accuracyIqr": null,
+      "blundersPerGame": 0.85,
+      "blundersPerGameClassical": 0.6,
+      "puzzleRating": 3050,
+      "percentileFide": 99.9996,
+      "asdRegan": 0.043,
+      "engineTopMatchPct": null,
+      "lichessClassicalEquivalent": null,
+      "chesscomRapidEquivalent": null,
+      "extrapolatedFields": [
+        "accuracy",
+        "acpl.classical",
+        "acpl.rapid",
+        "asdRegan",
+        "blundersPerGame",
+        "blundersPerGameClassical",
+        "percentileFide"
+      ],
+      "source": {
+        "acpl.rapid": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide interpolated at Lichess-equivalent via ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+        "acpl.classical": "2.4 x Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf (ratio assumed constant; derived)",
+        "accuracy": "KingChess Sep-2026 Lichess rapid accuracy medians (404,358 games): https://www.kingchess.io/blog/what-is-a-good-accuracy-in-chess/ interpolated at Lichess-equivalent (online rapid, Lichess formula)",
+        "blundersPerGame": "ChessStats.gg Lichess rating guide + methodology (SF18 100k nodes, live moves): https://chessstats.gg/stats/lichess-rating-guide (blunder >=150cp live move, per player, rapid 10+0)",
+        "blundersPerGameClassical": "0.7 x rapid (assumption informed by https://chessenginelab.substack.com/p/accuracy-rapid-blitz)",
+        "puzzleRating": "heuristic (Lichess puzzle); see knowledge-base/04-assessment/04-rating-conversions.md",
+        "percentileFide": "Rama Chess count of Oct-2026 FIDE list: https://ramachess.com/articles/what-is-a-good-chess-rating/",
+        "asdRegan": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf",
+        "engineTopMatchPct": null,
+        "doc": "knowledge-base/04-assessment/10-benchmarks-by-rating-band.md"
+      }
+    }
+  ],
+  "conversions": {
+    "lichessToFide": {
+      "description": "Lichess CLASSICAL rating -> FIDE Standard (post-2024), lower bounds of ChessDojo cohorts (Sep 2024). Piecewise-linear interpolation; return null below the first point (FIDE floor) and above the last point (unreliable). Treat as a prior with sd ~200. Not valid for blitz/bullet.",
+      "points": [
+        [
+          1575,
+          1400
+        ],
+        [
+          1630,
+          1420
+        ],
+        [
+          1700,
+          1475
+        ],
+        [
+          1765,
+          1525
+        ],
+        [
+          1825,
+          1575
+        ],
+        [
+          1880,
+          1625
+        ],
+        [
+          1940,
+          1675
+        ],
+        [
+          2000,
+          1725
+        ],
+        [
+          2060,
+          1775
+        ],
+        [
+          2120,
+          1825
+        ],
+        [
+          2180,
+          1900
+        ],
+        [
+          2245,
+          2000
+        ],
+        [
+          2315,
+          2100
+        ],
+        [
+          2375,
+          2200
+        ],
+        [
+          2430,
+          2300
+        ],
+        [
+          2470,
+          2400
+        ]
+      ],
+      "priorSd": 200,
+      "evidence": "moderate-low",
+      "source": "ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings",
+      "alternatives": [
+        {
+          "name": "Lichess blitz regression (self-reported FIDE, n=1606, era unknown)",
+          "formula": "FIDE = 220.64 + 0.822*lichessBlitz",
+          "source": "https://lichess.org/@/Peter_the_Head/blog/from-lichess-to-the-board-converting-online-blitz-ratings-to-fide-ratings/2qRac0JM"
+        },
+        {
+          "name": "Lichess classical+blitz regression (forum)",
+          "formula": "FIDE = 187 + 0.38*lichessClassical + 0.48*lichessBlitz",
+          "source": "https://lichess.org/forum/general-chess-discussion/how-to-estimate-your-fide-rating-conversion-formula-inside"
+        }
+      ]
+    },
+    "chesscomToFide": {
+      "description": "Chess.com RAPID rating -> FIDE Standard (post-2024), ChessDojo cohort lower bounds (Sep 2024). Same interpolation rules.",
+      "points": [
+        [
+          1100,
+          1400
+        ],
+        [
+          1200,
+          1420
+        ],
+        [
+          1300,
+          1475
+        ],
+        [
+          1400,
+          1525
+        ],
+        [
+          1500,
+          1575
+        ],
+        [
+          1600,
+          1625
+        ],
+        [
+          1700,
+          1675
+        ],
+        [
+          1800,
+          1725
+        ],
+        [
+          1900,
+          1775
+        ],
+        [
+          2000,
+          1825
+        ],
+        [
+          2100,
+          1900
+        ],
+        [
+          2190,
+          2000
+        ],
+        [
+          2280,
+          2100
+        ],
+        [
+          2370,
+          2200
+        ],
+        [
+          2460,
+          2300
+        ],
+        [
+          2550,
+          2400
+        ]
+      ],
+      "priorSd": 200,
+      "evidence": "moderate-low",
+      "source": "ChessDojo conversion table (Sep 2024): https://www.chessdojo.club/material/ratings"
+    },
+    "lichessPuzzleToFide": {
+      "description": "HEURISTIC Lichess puzzle rating -> FIDE-equivalent (GR). Inverse of band puzzleRating priors. Low evidence; use only as a weak prior (sd 300). Replace with a platform-fitted mapping.",
+      "points": [
+        [
+          1600,
+          1400
+        ],
+        [
+          1750,
+          1600
+        ],
+        [
+          1900,
+          1800
+        ],
+        [
+          2100,
+          2000
+        ],
+        [
+          2300,
+          2200
+        ],
+        [
+          2400,
+          2300
+        ],
+        [
+          2500,
+          2400
+        ],
+        [
+          2650,
+          2500
+        ],
+        [
+          2750,
+          2600
+        ],
+        [
+          2900,
+          2700
+        ],
+        [
+          3050,
+          2800
+        ]
+      ],
+      "priorSd": 300,
+      "evidence": "low",
+      "source": "Heuristic informed by https://lichess.org/forum/general-chess-discussion/data-analysis-lichess-vs-fide-ratings (n=230, median puzzle-FIDE gap 81) and Lichess puzzle/blitz correlation r~0.8-0.85; see knowledge-base/04-assessment/04-rating-conversions.md"
+    },
+    "fideToUschess": {
+      "description": "Official US Chess initialization formula (corrected 2025, retroactive to 1 Mar 2024)",
+      "nonYouth": {
+        "fideLe2000": "-1073 + 1.5667*FIDE",
+        "fideGt2000": "20 + 1.02*FIDE"
+      },
+      "youth": {
+        "fideLe2000": "-453 + 1.2667*FIDE",
+        "fideGt2000": "80 + 1.0*FIDE"
+      },
+      "evidence": "high",
+      "source": "https://www.glicko.net/ratings/report25.pdf"
+    }
+  },
+  "accuracyFormula": {
+    "winPercent": "50 + 50 * (2 / (1 + exp(-0.00368208 * cp)) - 1)",
+    "winPercentNotes": "cp from the mover's perspective; clamp cp to [-1000, 1000] first (scalachess CEILING); mate -> +/-1000. Source stores MULTIPLIER = -0.00368208 and computes exp(MULTIPLIER*cp): equivalent, do not double-negate.",
+    "moveAccuracy": "103.1668 * exp(-0.04354 * (wpBefore - wpAfter)) - 3.1669",
+    "moveAccuracyProduction": "if wpAfter >= wpBefore then 100 else clamp(103.1668100711649 * exp(-0.04354415386753951 * (wpBefore - wpAfter)) - 3.166924740191411 + 1, 0, 100)",
+    "moveAccuracyNotes": "The public Lichess page formula (moveAccuracy) omits the +1 'uncertainty bonus' present in production code (lila AccuracyPercent.scala). Grim-Accuracy v1 uses moveAccuracyProduction.",
+    "gameAccuracy": "windowSize = clamp((nPositions-1)/10, 2, 8); window weight = clamp(stdev(winPercent in window), 0.5, 12); gameAccuracy = (volatilityWeightedMean(moveAcc) + harmonicMean(moveAcc)) / 2",
+    "moveClassification": {
+      "inaccuracy": 0.1,
+      "mistake": 0.2,
+      "blunder": 0.3,
+      "unit": "drop in winningChances on [-1,1] scale (winningChances = (Win% - 50)/50)"
+    },
+    "sources": [
+      "https://github.com/lichess-org/scalachess/blob/master/core/src/main/scala/eval.scala",
+      "https://github.com/lichess-org/lila/blob/master/modules/analyse/src/main/AccuracyPercent.scala",
+      "https://github.com/lichess-org/lila/blob/master/modules/tree/src/main/Advice.scala",
+      "https://lichess.org/page/accuracy"
+    ]
+  },
+  "moveQualityToRating": {
+    "reganAsdLine": {
+      "formula": "ASD = 0.3549 - 0.0001114 * Elo",
+      "inverse": "Elo = 3186 - 8977 * ASD",
+      "engine": "Stockfish 16 single-PV, depth>=20, >=5M nodes",
+      "data": "2024 Budapest Olympiad (FIDE OTB classical)",
+      "modelErrorMultiplier": 1.4,
+      "source": "Regan CSE702 S25 ASD line (SF16, FIDE OTB): https://cse.buffalo.edu/~regan/ChessSeminar/CSE702EloEvolution.pdf"
+    },
+    "reganIpr2012": {
+      "formula": "IPR = 3571 - 15413 * AE_e",
+      "engine": "Rybka 3 depth 13, 50-PV",
+      "validRange": "2200-2700 (pre-2024 scale)",
+      "source": "https://cse.buffalo.edu/~regan/papers/pdf/Reg12IPRs.pdf",
+      "warning": "Do not apply to Stockfish output."
+    }
+  },
+  "stockfish": {
+    "uciEloMin": 1320,
+    "uciEloMax": 3190,
+    "calibration": "Since PR #4341 (merged 23 Jan 2023; Stockfish 16+): UCI_Elo -> Skill via cubic fit of games between Stockfish master at Skill 0-19 and Stash engine versions rated on CCRL; TC 120+1, 8moves_v3.pgn; anchored to CCRL Blitz to within +/-100 Elo. Engine-pool scale, NOT calibrated against humans. The pre-2023 calibration (PR #2225: 60+0.6, anchored to goldfish1.13 ~ CCRL 40/4 2000) is obsolete.",
+    "eloToSkill": "e = (uciElo - 1320) / (3190 - 1320); skill = clamp(((37.2473*e - 40.8525)*e + 22.2943)*e - 0.311438, 0, 19)",
+    "skillLevelElo": [
+      [
+        0,
+        1320
+      ],
+      [
+        1,
+        1444
+      ],
+      [
+        2,
+        1566
+      ],
+      [
+        3,
+        1729
+      ],
+      [
+        4,
+        1953
+      ],
+      [
+        5,
+        2197
+      ],
+      [
+        6,
+        2383
+      ],
+      [
+        7,
+        2518
+      ],
+      [
+        8,
+        2624
+      ],
+      [
+        9,
+        2711
+      ],
+      [
+        10,
+        2786
+      ],
+      [
+        11,
+        2851
+      ],
+      [
+        12,
+        2910
+      ],
+      [
+        13,
+        2963
+      ],
+      [
+        14,
+        3012
+      ],
+      [
+        15,
+        3057
+      ],
+      [
+        16,
+        3099
+      ],
+      [
+        17,
+        3139
+      ],
+      [
+        18,
+        3176
+      ],
+      [
+        19,
+        3191
+      ],
+      [
+        20,
+        null
+      ]
+    ],
+    "skillLevelEloNotes": "Levels 0-18: numerical inverse of the source polynomial (CCRL Blitz scale). Level 19: measured ~3191 in the PR #4341 table (polynomial reaches only ~18.38 at 3190). Level 20 = unrestricted; no meaningful Elo vs humans.",
+    "humanComparability": "none without human anchoring; see knowledge-base/04-assessment/12-engine-strength-calibration.md",
+    "sources": [
+      "https://raw.githubusercontent.com/official-stockfish/Stockfish/master/src/search.h",
+      "https://github.com/official-stockfish/Stockfish/pull/4341",
+      "https://github.com/official-stockfish/Stockfish/pull/2225"
+    ]
+  },
+  "glicko2": {
+    "tau": 0.5,
+    "defaultRating": 1500,
+    "defaultRd": 350,
+    "defaultVol": 0.06,
+    "scale": 173.7178,
+    "convergenceEpsilon": 1e-06,
+    "rdFloor": 30,
+    "ratingPeriod": "1 day or 15 games, whichever first",
+    "testVector": {
+      "input": {
+        "r": 1500,
+        "rd": 200,
+        "vol": 0.06,
+        "tau": 0.5,
+        "games": [
+          [
+            1400,
+            30,
+            1
+          ],
+          [
+            1550,
+            100,
+            0
+          ],
+          [
+            1700,
+            300,
+            0
+          ]
+        ]
+      },
+      "expected": {
+        "r": 1464.06,
+        "rd": 151.52,
+        "vol": 0.05999
+      },
+      "tolerance": {
+        "r": 0.05,
+        "rd": 0.05,
+        "vol": 2e-05
+      }
+    },
+    "lichessForComparison": {
+      "defaultRating": 1500,
+      "defaultRd": 500,
+      "defaultVol": 0.09,
+      "minRd": 45,
+      "maxVol": 0.1,
+      "periodsPerDay": 0.21436,
+      "tauReported": 0.75
+    },
+    "source": "http://www.glicko.net/glicko/glicko2.pdf"
+  },
+  "fide": {
+    "ratingFloor": 1400,
+    "maxInitialRating": 2200,
+    "minGamesFirstRating": 5,
+    "kFactors": [
+      {
+        "k": 40,
+        "condition": "new player until 30 games; or until end of year of 18th birthday while < 2300"
+      },
+      {
+        "k": 20,
+        "condition": "rating < 2400 (never reached 2400)"
+      },
+      {
+        "k": 10,
+        "condition": "published rating has reached 2400"
+      }
+    ],
+    "kTimesNMax": 700,
+    "fourHundredRule": "difference capped at 400 for players < 2650; full difference for >= 2650 (from 1 Oct 2025)",
+    "percentiles": {
+      "listDate": "2026-10",
+      "population": "all listed players (569,654)",
+      "atOrAbove": {
+        "1500": 85,
+        "1600": 68,
+        "1709": 50,
+        "1800": 36,
+        "2000": 12.8,
+        "2200": 3.6,
+        "2300": 1.5,
+        "2400": 0.52,
+        "2500": 0.15
+      },
+      "source": "Rama Chess count of Oct-2026 FIDE list: https://ramachess.com/articles/what-is-a-good-chess-rating/"
+    },
+    "titleHolders": {
+      "asOf": "2026-05",
+      "GM": 1889,
+      "IM": 4282,
+      "FM": 9617,
+      "CM": 3676,
+      "WGM": 534,
+      "WIM": 970,
+      "WFM": 2202,
+      "WCM": 1349,
+      "source": "https://en.wikipedia.org/wiki/FIDE_titles (secondary)"
+    },
+    "sources": [
+      "https://handbook.fide.com/chapter/B022024",
+      "https://handbook.fide.com/chapter/B012024"
+    ]
+  },
+  "assessment": {
+    "actBenchmarks": {
+      "chooseAMoveA": {
+        "items": 40,
+        "alpha": 0.87,
+        "rElo": 0.77,
+        "regression": "Elo = 1189 + 35.15*correct",
+        "se": 181.5
+      },
+      "chooseAMoveB": {
+        "items": 40,
+        "alpha": 0.9,
+        "rElo": 0.81,
+        "regression": "Elo = 1169 + 33.10*correct",
+        "se": 167.2
+      },
+      "predictAMove": {
+        "rElo": 0.63
+      },
+      "verbalKnowledge": {
+        "rElo": 0.55
+      },
+      "recall": {
+        "rElo": 0.51
+      },
+      "motivation": {
+        "rElo": 0.22
+      },
+      "note": "Dutch ratings, 1998, N=215; not directly transferable to post-2024 FIDE.",
+      "source": "https://www.ejwagenmakers.com/2005/VanderMaasWagenmakersACTpaper.pdf"
+    },
+    "bratkoKopecScoreToRating": [
+      [
+        [
+          0,
+          4
+        ],
+        "1300-1599"
+      ],
+      [
+        [
+          5,
+          6
+        ],
+        "1600-1799"
+      ],
+      [
+        [
+          7,
+          8
+        ],
+        "1800-1999"
+      ],
+      [
+        [
+          9,
+          12
+        ],
+        "2000-2199"
+      ],
+      [
+        [
+          13,
+          16
+        ],
+        "2200-2399"
+      ],
+      [
+        [
+          17,
+          24
+        ],
+        "2400+"
+      ]
+    ],
+    "bratkoKopecNote": "Kopec, Newborn & Yu (1986) table; authors disclaim absolute validity; not for platform rating use. https://www.sci.brooklyn.cuny.edu/~kopec/Publications/THE%20BRATKO-KOPEC%20TEST%20RECALIBRATED.htm"
+  },
+  "measurementModel": {
+    "status": "prior - refit in validation study",
+    "sigmaAnchorBots": 50,
+    "sigmaTimeControl": 100,
+    "moveQuality": {
+      "A": 3186,
+      "B": 8977,
+      "sigmaMap": 120,
+      "modelErrorMultiplier": 1.4,
+      "rhoLag1": 0.1,
+      "minLiveMoves": 300
+    },
+    "puzzle": {
+      "a": -100,
+      "b": 1.0,
+      "sigmaMap": 250
+    },
+    "battery": {
+      "beta": 300,
+      "thetaZeroGr": 1700,
+      "sigmaMap": 150,
+      "stopSeTheta": 0.3,
+      "maxItems": 30
+    },
+    "externalFide": {
+      "sigmaGe30Games": 40,
+      "sigmaLt30Games": 80
+    },
+    "externalOnline": {
+      "sigmaMap": 200
+    },
+    "correlation": {
+      "rhoMap": 0.3,
+      "rhoStatGM": 0.3
+    },
+    "stalenessGrPer30Days": 25,
+    "display": {
+      "minGames": 20,
+      "maxRdGames": 110,
+      "maxSe": 150,
+      "requireNonGameSignal": true
+    },
+    "consistencyTestAlpha": 0.01,
+    "fusion": "GLS: w = Sigma^-1 1 / (1' Sigma^-1 1); GR = w'x; SE = sqrt(1/(1' Sigma^-1 1))",
+    "doc": "knowledge-base/04-assessment/platform-measurement-model.md"
+  }
+}

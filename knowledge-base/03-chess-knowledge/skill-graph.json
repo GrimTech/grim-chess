@@ -1,0 +1,5906 @@
+{
+  "version": "1.0",
+  "generated": "2026-11-11",
+  "description": "Grim Chess chess-knowledge skill graph (DAG) from absolute zero to GM. See README.md in this folder.",
+  "lichessThemeKeysSource": "https://github.com/lichess-org/lila/blob/master/modules/puzzle/src/main/PuzzleTheme.scala (visible themes; hidden internal key checkFirst excluded), verified 2026-11-11",
+  "lichessThemeKeys": [
+    "advancedPawn",
+    "advantage",
+    "anastasiaMate",
+    "arabianMate",
+    "attackingF2F7",
+    "attraction",
+    "backRankMate",
+    "balestraMate",
+    "bishopEndgame",
+    "blindSwineMate",
+    "bodenMate",
+    "capturingDefender",
+    "castling",
+    "clearance",
+    "collinearMove",
+    "cornerMate",
+    "crushing",
+    "defensiveMove",
+    "deflection",
+    "discoveredAttack",
+    "discoveredCheck",
+    "doubleBishopMate",
+    "doubleCheck",
+    "dovetailMate",
+    "endgame",
+    "enPassant",
+    "epauletteMate",
+    "equality",
+    "exposedKing",
+    "fork",
+    "hangingPiece",
+    "hookMate",
+    "interference",
+    "intermezzo",
+    "killBoxMate",
+    "kingsideAttack",
+    "knightEndgame",
+    "long",
+    "master",
+    "masterVsMaster",
+    "mate",
+    "mateIn1",
+    "mateIn2",
+    "mateIn3",
+    "mateIn4",
+    "mateIn5",
+    "middlegame",
+    "mix",
+    "morphysMate",
+    "oneMove",
+    "opening",
+    "operaMate",
+    "pawnEndgame",
+    "pillsburysMate",
+    "pin",
+    "promotion",
+    "queenEndgame",
+    "queenRookEndgame",
+    "queensideAttack",
+    "quietMove",
+    "rookEndgame",
+    "sacrifice",
+    "short",
+    "skewer",
+    "smotheredMate",
+    "superGM",
+    "swallowstailMate",
+    "trappedPiece",
+    "triangleMate",
+    "underPromotion",
+    "veryLong",
+    "vukovicMate",
+    "xRayAttack",
+    "zugzwang"
+  ],
+  "domains": [
+    "rules",
+    "tactics",
+    "checkmate",
+    "calculation",
+    "strategy",
+    "endgame",
+    "opening",
+    "practical"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "name": "Foundations",
+      "eloRange": [
+        0,
+        600
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Beginner",
+      "eloRange": [
+        600,
+        1000
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Novice",
+      "eloRange": [
+        1000,
+        1400
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Intermediate",
+      "eloRange": [
+        1400,
+        1800
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Advanced",
+      "eloRange": [
+        1800,
+        2100
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Expert",
+      "eloRange": [
+        2100,
+        2300
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Master",
+      "eloRange": [
+        2300,
+        2450
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Grandmaster",
+      "eloRange": [
+        2450,
+        2700
+      ]
+    }
+  ],
+  "exerciseTypes": [
+    "lesson",
+    "coordinate-drill",
+    "move-drill",
+    "puzzle",
+    "mate-drill",
+    "endgame-drill",
+    "opening-drill",
+    "guess-the-move",
+    "calculation-drill",
+    "visualization-drill",
+    "play-bot",
+    "game-review",
+    "quiz"
+  ],
+  "skills": [
+    {
+      "id": "rules.board.coordinates",
+      "name": "Board coordinates",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.board.setup"
+      ],
+      "lichessThemes": [],
+      "summary": "Names files a-h and ranks 1-8 and identifies any square by its coordinate from both White and Black perspectives.",
+      "masteryCriteria": "Names 20 random highlighted squares in <30s with >=95% accuracy from White view and from Black view",
+      "exerciseTypes": [
+        "coordinate-drill",
+        "lesson"
+      ],
+      "kbRef": "rules.md#coordinates",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 2.4",
+        "FIDE Laws of Chess 2023 Art. App. C"
+      ]
+    },
+    {
+      "id": "rules.board.setup",
+      "name": "Board orientation and initial position",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [],
+      "lichessThemes": [],
+      "summary": "Places the board light-square-on-the-right and sets up all 32 pieces correctly, queen on her own colour.",
+      "masteryCriteria": "Sets up the initial position from an empty board with no errors in 3/3 attempts in under 90s each",
+      "exerciseTypes": [
+        "lesson",
+        "quiz"
+      ],
+      "kbRef": "rules.md#board-and-initial-position",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 2.1-2.3"
+      ]
+    },
+    {
+      "id": "rules.capture",
+      "name": "Capturing pieces",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.pieces.queen",
+        "rules.pieces.knight",
+        "rules.pieces.king",
+        "rules.pieces.pawn"
+      ],
+      "lichessThemes": [],
+      "summary": "Captures by moving onto an enemy-occupied square; pieces cannot capture their own side.",
+      "masteryCriteria": "Finds every available capture in 10 diagrams with 100% accuracy",
+      "exerciseTypes": [
+        "move-drill",
+        "puzzle"
+      ],
+      "kbRef": "rules.md#piece-movement",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 3.1"
+      ]
+    },
+    {
+      "id": "rules.check",
+      "name": "Check and the three ways to escape it",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.capture"
+      ],
+      "lichessThemes": [],
+      "summary": "Recognises check and escapes by moving the king, capturing the checker, or interposing.",
+      "masteryCriteria": "In 15 check diagrams lists all legal replies with >=95% accuracy; never makes an illegal move leaving the king in check in 10 bot games",
+      "exerciseTypes": [
+        "quiz",
+        "move-drill",
+        "play-bot"
+      ],
+      "kbRef": "rules.md#king-moves-and-check",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 3.9"
+      ]
+    },
+    {
+      "id": "rules.checkmate",
+      "name": "Checkmate",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.check"
+      ],
+      "lichessThemes": [
+        "mateIn1"
+      ],
+      "summary": "Knows the goal of the game: the king is in check and has no legal escape.",
+      "masteryCriteria": "Classifies 20 positions as check / checkmate / neither with >=95% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "lesson"
+      ],
+      "kbRef": "rules.md#checkmate",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 1.4.1, 5.1.1"
+      ]
+    },
+    {
+      "id": "rules.piece-values",
+      "name": "Relative piece values",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.capture"
+      ],
+      "lichessThemes": [],
+      "summary": "Knows conventional values P1 N3 B3 R5 Q9 and uses them to judge trades.",
+      "masteryCriteria": "Scores >=90% on 20 \"which trade is good for you?\" items using material count",
+      "exerciseTypes": [
+        "quiz",
+        "lesson"
+      ],
+      "kbRef": "rules.md#piece-movement",
+      "references": [
+        "Kaufman, Evaluation of Material Imbalances"
+      ]
+    },
+    {
+      "id": "rules.pieces.bishop",
+      "name": "How the bishop moves",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.board.coordinates"
+      ],
+      "lichessThemes": [],
+      "summary": "Bishop moves diagonally any distance and stays on one colour.",
+      "masteryCriteria": "Completes 10 bishop target drills with minimum moves, 100% legal; explains why a bishop never changes colour",
+      "exerciseTypes": [
+        "move-drill",
+        "lesson"
+      ],
+      "kbRef": "rules.md#piece-movement",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 3.2"
+      ]
+    },
+    {
+      "id": "rules.pieces.king",
+      "name": "How the king moves",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.board.coordinates"
+      ],
+      "lichessThemes": [],
+      "summary": "King moves one square in any direction and may never move into check; kings can never be adjacent.",
+      "masteryCriteria": "Identifies all legal king moves in 10 diagrams with 100% accuracy",
+      "exerciseTypes": [
+        "move-drill",
+        "quiz"
+      ],
+      "kbRef": "rules.md#king-moves-and-check",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 3.8.1"
+      ]
+    },
+    {
+      "id": "rules.pieces.knight",
+      "name": "How the knight moves",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.board.coordinates"
+      ],
+      "lichessThemes": [],
+      "summary": "Knight moves in an L-shape and jumps; always changes square colour.",
+      "masteryCriteria": "Completes the knight-tour-to-target drill (10 targets) with minimum moves in <3 min total, 100% legal",
+      "exerciseTypes": [
+        "move-drill",
+        "lesson"
+      ],
+      "kbRef": "rules.md#piece-movement",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 3.6"
+      ]
+    },
+    {
+      "id": "rules.pieces.pawn",
+      "name": "How the pawn moves and captures",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.board.coordinates"
+      ],
+      "lichessThemes": [],
+      "summary": "Pawn moves forward one (two from start), captures diagonally, never backward.",
+      "masteryCriteria": "Lists all legal pawn moves in 10 diagrams (incl. blocked pawns and double steps) with 100% accuracy",
+      "exerciseTypes": [
+        "move-drill",
+        "quiz"
+      ],
+      "kbRef": "rules.md#pawn-moves",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 3.7"
+      ]
+    },
+    {
+      "id": "rules.pieces.queen",
+      "name": "How the queen moves",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.pieces.rook",
+        "rules.pieces.bishop"
+      ],
+      "lichessThemes": [],
+      "summary": "Queen combines rook and bishop movement.",
+      "masteryCriteria": "Completes 10 queen target drills with minimum moves, 100% legal",
+      "exerciseTypes": [
+        "move-drill",
+        "lesson"
+      ],
+      "kbRef": "rules.md#piece-movement",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 3.4"
+      ]
+    },
+    {
+      "id": "rules.pieces.rook",
+      "name": "How the rook moves",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.board.coordinates"
+      ],
+      "lichessThemes": [],
+      "summary": "Rook moves any distance along ranks and files, cannot jump.",
+      "masteryCriteria": "Completes 10 rook maze/target drills with the minimum move count, 100% legal moves",
+      "exerciseTypes": [
+        "move-drill",
+        "lesson"
+      ],
+      "kbRef": "rules.md#piece-movement",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 3.3"
+      ]
+    },
+    {
+      "id": "rules.promotion",
+      "name": "Pawn promotion",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.pieces.pawn"
+      ],
+      "lichessThemes": [
+        "promotion"
+      ],
+      "summary": "A pawn reaching the last rank becomes a queen, rook, bishop or knight of the player's choice.",
+      "masteryCriteria": "Promotes correctly in 10 drills including choosing a piece not previously captured; explains why a second queen is allowed",
+      "exerciseTypes": [
+        "move-drill",
+        "quiz"
+      ],
+      "kbRef": "rules.md#promotion",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 3.7.3.3-3.7.3.4"
+      ]
+    },
+    {
+      "id": "rules.stalemate",
+      "name": "Stalemate",
+      "domain": "rules",
+      "stage": 1,
+      "prereqs": [
+        "rules.checkmate"
+      ],
+      "lichessThemes": [],
+      "summary": "No legal move and not in check is a draw.",
+      "masteryCriteria": "Classifies 20 positions as checkmate / stalemate / play-on with >=95% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "lesson"
+      ],
+      "kbRef": "rules.md#stalemate",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 5.2.1"
+      ]
+    },
+    {
+      "id": "tactics.hanging-piece",
+      "name": "Capturing hanging pieces",
+      "domain": "tactics",
+      "stage": 1,
+      "prereqs": [
+        "rules.piece-values",
+        "calculation.board-vision"
+      ],
+      "lichessThemes": [
+        "hangingPiece",
+        "oneMove"
+      ],
+      "summary": "Spots and captures undefended pieces; avoids leaving own pieces hanging.",
+      "masteryCriteria": "Solves 30 hangingPiece puzzles rated <800 with >=95% accuracy, median <15s",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#hanging-piece",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 1"
+      ]
+    },
+    {
+      "id": "checkmate.ladder",
+      "name": "Ladder mate with two heavy pieces",
+      "domain": "checkmate",
+      "stage": 1,
+      "prereqs": [
+        "rules.checkmate",
+        "rules.pieces.rook"
+      ],
+      "lichessThemes": [
+        "mate"
+      ],
+      "summary": "Mates with two rooks or queen+rook by alternating ranks.",
+      "masteryCriteria": "Mates with K+R+R v K from 5 random positions within 10 moves each, 0 stalemates",
+      "exerciseTypes": [
+        "mate-drill",
+        "endgame-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#ladder-mate-two-rooks-or-rook-and-queen",
+      "references": [
+        "Steps Method Step 1"
+      ]
+    },
+    {
+      "id": "checkmate.mate-in-1",
+      "name": "Mate in one",
+      "domain": "checkmate",
+      "stage": 1,
+      "prereqs": [
+        "rules.checkmate"
+      ],
+      "lichessThemes": [
+        "mateIn1",
+        "mate",
+        "oneMove"
+      ],
+      "summary": "Finds one-move checkmates.",
+      "masteryCriteria": "Solves 40 mateIn1 puzzles rated <900 with >=95% accuracy, median <15s",
+      "exerciseTypes": [
+        "mate-drill",
+        "puzzle"
+      ],
+      "kbRef": "checkmate-patterns.md#mating-net-skills-beyond-named-patterns",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 1"
+      ]
+    },
+    {
+      "id": "checkmate.opening-mates",
+      "name": "Fool's and Scholar's mate (attack and defence)",
+      "domain": "checkmate",
+      "stage": 1,
+      "prereqs": [
+        "rules.checkmate"
+      ],
+      "lichessThemes": [
+        "attackingF2F7",
+        "mateIn1"
+      ],
+      "summary": "Knows the fastest mates and how to defend f7/f2 against early queen attacks.",
+      "masteryCriteria": "Defends against Scholar's mate attempts in 5/5 bot games; demonstrates both mates",
+      "exerciseTypes": [
+        "lesson",
+        "play-bot"
+      ],
+      "kbRef": "checkmate-patterns.md#opening-mates-and-traps",
+      "references": [
+        "Steps Method Step 1"
+      ]
+    },
+    {
+      "id": "calculation.board-vision",
+      "name": "Board vision: seeing all attacks",
+      "domain": "calculation",
+      "stage": 1,
+      "prereqs": [
+        "rules.capture"
+      ],
+      "lichessThemes": [],
+      "summary": "Instantly sees which squares each piece attacks and which pieces are defended.",
+      "masteryCriteria": "Counts attackers/defenders of a marked piece in 20 diagrams with >=95% accuracy, <10s each",
+      "exerciseTypes": [
+        "visualization-drill",
+        "quiz"
+      ],
+      "kbRef": "calculation.md#board-vision",
+      "references": [
+        "Heisman, The Improving Chess Thinker"
+      ]
+    },
+    {
+      "id": "endgame.mate.kq",
+      "name": "K+Q vs K checkmate",
+      "domain": "endgame",
+      "stage": 1,
+      "prereqs": [
+        "checkmate.ladder",
+        "rules.stalemate"
+      ],
+      "lichessThemes": [],
+      "summary": "Mates with king and queen using the box/knight-distance method, checking that the defender always has a legal move (no stalemate).",
+      "masteryCriteria": "Mates vs engine from 5 random positions within 10 moves each with 0 stalemates",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#kq-vs-k",
+      "references": [
+        "Silman, Complete Endgame Course, Part 1 (unrated-999)",
+        "Steps Method Step 1"
+      ]
+    },
+    {
+      "id": "opening.principles.centre",
+      "name": "Opening principle: fight for the centre",
+      "domain": "opening",
+      "stage": 1,
+      "prereqs": [
+        "rules.board.coordinates",
+        "rules.pieces.pawn"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Occupies or controls e4/d4/e5/d5 in the first moves.",
+      "masteryCriteria": "In 10 opening positions picks a centre-fighting move among 4 options in >=90%",
+      "exerciseTypes": [
+        "lesson",
+        "quiz"
+      ],
+      "kbRef": "openings.md#opening-principles",
+      "references": [
+        "Steps Method Step 1"
+      ]
+    },
+    {
+      "id": "opening.principles.development",
+      "name": "Opening principle: develop pieces",
+      "domain": "opening",
+      "stage": 1,
+      "prereqs": [
+        "opening.principles.centre",
+        "rules.pieces.knight",
+        "rules.pieces.bishop"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Develops knights and bishops quickly, avoids moving pieces twice and early queen sorties.",
+      "masteryCriteria": "Develops all minor pieces by move 8 in 5/5 games vs bot ~600",
+      "exerciseTypes": [
+        "play-bot",
+        "quiz"
+      ],
+      "kbRef": "openings.md#opening-principles",
+      "references": [
+        "Steps Method Step 1"
+      ]
+    },
+    {
+      "id": "practical.sportsmanship",
+      "name": "Sportsmanship and playing on",
+      "domain": "practical",
+      "stage": 1,
+      "prereqs": [
+        "rules.checkmate"
+      ],
+      "lichessThemes": [],
+      "summary": "Shakes hands, plays to the end and keeps fighting in bad positions (beginner opponents often fail to convert).",
+      "masteryCriteria": "Completes 10 bot games to a result without abandoning and saves >=2 of 10 lost (-3) positions vs bot ~800",
+      "exerciseTypes": [
+        "play-bot",
+        "lesson"
+      ],
+      "kbRef": "psychology-and-practical.md#resigning",
+      "references": [
+        "FIDE Laws Art. 11"
+      ]
+    },
+    {
+      "id": "rules.castling",
+      "name": "Castling and its conditions",
+      "domain": "rules",
+      "stage": 2,
+      "prereqs": [
+        "rules.check",
+        "rules.pieces.king"
+      ],
+      "lichessThemes": [
+        "castling"
+      ],
+      "summary": "Castles kingside and queenside, knows all permanent and temporary conditions, and spots castling with a threat.",
+      "masteryCriteria": "Judges legality of castling in 20 diagrams (attacked squares, moved king/rook, pieces between, b1 attacked) with >=95% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "move-drill"
+      ],
+      "kbRef": "rules.md#castling",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 3.8.2, 4.4.2"
+      ]
+    },
+    {
+      "id": "rules.draws.dead-position",
+      "name": "Dead position and insufficient material",
+      "domain": "rules",
+      "stage": 2,
+      "prereqs": [
+        "rules.stalemate"
+      ],
+      "lichessThemes": [],
+      "summary": "Recognises positions where no sequence of legal moves can lead to mate (K v K, K+B v K, K+N v K, blocked chains).",
+      "masteryCriteria": "Classifies 20 material/position combos as dead / not dead with >=90% accuracy, including K+N+N v K (not dead)",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "rules.md#dead-position",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 5.2.2"
+      ]
+    },
+    {
+      "id": "rules.draws.repetition",
+      "name": "Repetition and move-count draws (3-fold, 5-fold, 50, 75)",
+      "domain": "rules",
+      "stage": 2,
+      "prereqs": [
+        "rules.stalemate"
+      ],
+      "lichessThemes": [],
+      "summary": "Same position three times allows a claim, five times is automatic; 50 moves without capture or pawn move allows a claim, 75 is automatic.",
+      "masteryCriteria": "Scores >=90% on 20 items on repetition (incl. castling/e.p. differences) and 50/75-move counting from move lists or FEN halfmove clocks",
+      "exerciseTypes": [
+        "quiz",
+        "lesson"
+      ],
+      "kbRef": "rules.md#threefold-repetition",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 9.2, 9.6.1"
+      ]
+    },
+    {
+      "id": "rules.en-passant",
+      "name": "En passant capture",
+      "domain": "rules",
+      "stage": 2,
+      "prereqs": [
+        "rules.pieces.pawn",
+        "rules.capture"
+      ],
+      "lichessThemes": [
+        "enPassant"
+      ],
+      "summary": "Captures a pawn that has just double-stepped past, only on the immediately following move, and uses en passant tactically (line opening, discovered check, mate).",
+      "masteryCriteria": "Identifies whether en passant is legal in 20 diagrams with move history with >=95% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "puzzle"
+      ],
+      "kbRef": "rules.md#en-passant",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 3.7.3.1-3.7.3.2"
+      ]
+    },
+    {
+      "id": "rules.notation.san-read",
+      "name": "Reading algebraic notation (SAN)",
+      "domain": "rules",
+      "stage": 2,
+      "prereqs": [
+        "rules.board.coordinates",
+        "rules.castling",
+        "rules.en-passant"
+      ],
+      "lichessThemes": [],
+      "summary": "Reads SAN move lists including captures, checks, castling, promotion and disambiguation.",
+      "masteryCriteria": "Plays through a 20-move SAN game on a board with 0 errors in 2/2 attempts",
+      "exerciseTypes": [
+        "move-drill",
+        "quiz"
+      ],
+      "kbRef": "rules.md#algebraic-notation-san",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. App. C",
+        "PGN Standard 8.2.3"
+      ]
+    },
+    {
+      "id": "rules.notation.san-write",
+      "name": "Writing algebraic notation",
+      "domain": "rules",
+      "stage": 2,
+      "prereqs": [
+        "rules.notation.san-read"
+      ],
+      "lichessThemes": [],
+      "summary": "Records own and opponent moves correctly in SAN.",
+      "masteryCriteria": "Writes the SAN for 30 moves shown on a board with >=95% accuracy including disambiguation",
+      "exerciseTypes": [
+        "quiz",
+        "move-drill"
+      ],
+      "kbRef": "rules.md#algebraic-notation-san",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 8.1, App. C"
+      ]
+    },
+    {
+      "id": "tactics.attacking-f7",
+      "name": "Attacking f7/f2 in the opening",
+      "domain": "tactics",
+      "stage": 2,
+      "prereqs": [
+        "tactics.double-attack",
+        "opening.principles.development"
+      ],
+      "lichessThemes": [
+        "attackingF2F7",
+        "opening"
+      ],
+      "summary": "Exploits the weakness of f7/f2 defended only by the king.",
+      "masteryCriteria": "Solves 20 attackingF2F7 puzzles ~1100 with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#attacking-f2-and-f7",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.counting",
+      "name": "Counting attackers and defenders",
+      "domain": "tactics",
+      "stage": 2,
+      "prereqs": [
+        "tactics.hanging-piece"
+      ],
+      "lichessThemes": [
+        "hangingPiece"
+      ],
+      "summary": "Counts attackers vs defenders and evaluates multi-capture sequences (static exchange evaluation) including x-ray recaptures.",
+      "masteryCriteria": "Correctly judges 20 \"can I win this piece?\" positions and gives net material for 10 multi-piece exchanges with >=90% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#counting-and-exchanges",
+      "references": [
+        "Steps Method Step 1",
+        "Steps Method Step 2"
+      ]
+    },
+    {
+      "id": "tactics.double-attack",
+      "name": "Double attack",
+      "domain": "tactics",
+      "stage": 2,
+      "prereqs": [
+        "tactics.counting",
+        "calculation.cct"
+      ],
+      "lichessThemes": [
+        "fork"
+      ],
+      "summary": "One move creates two threats at once.",
+      "masteryCriteria": "Solves 25 double-attack puzzles ~900 with >=90% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#double-attack",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 2"
+      ]
+    },
+    {
+      "id": "tactics.fork.knight",
+      "name": "Knight forks",
+      "domain": "tactics",
+      "stage": 2,
+      "prereqs": [
+        "tactics.double-attack",
+        "rules.pieces.knight"
+      ],
+      "lichessThemes": [
+        "fork"
+      ],
+      "summary": "Uses knight forks including family forks with check.",
+      "masteryCriteria": "Solves 30 knight-fork puzzles ~1000 with >=90% accuracy, median <30s",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#fork",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 2"
+      ]
+    },
+    {
+      "id": "tactics.fork.queen",
+      "name": "Pawn, queen and other forks",
+      "domain": "tactics",
+      "stage": 2,
+      "prereqs": [
+        "tactics.double-attack"
+      ],
+      "lichessThemes": [
+        "fork"
+      ],
+      "summary": "Pawn forks, queen forks with check, and rook, bishop and king forks.",
+      "masteryCriteria": "Solves 30 pawn/queen/rook/bishop/king fork puzzles ~1100 with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#fork",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.pin.absolute",
+      "name": "Absolute pins",
+      "domain": "tactics",
+      "stage": 2,
+      "prereqs": [
+        "tactics.counting",
+        "rules.check"
+      ],
+      "lichessThemes": [
+        "pin"
+      ],
+      "summary": "Pins a piece to the king so it cannot legally move.",
+      "masteryCriteria": "Solves 25 pin puzzles ~1000 with >=90% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#pin",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 2"
+      ]
+    },
+    {
+      "id": "tactics.promotion",
+      "name": "Promotion tactics",
+      "domain": "tactics",
+      "stage": 2,
+      "prereqs": [
+        "rules.promotion",
+        "tactics.double-attack"
+      ],
+      "lichessThemes": [
+        "promotion",
+        "advancedPawn"
+      ],
+      "summary": "Wins by promoting with tempo, deflecting blockers or using advanced pawns.",
+      "masteryCriteria": "Solves 20 promotion/advancedPawn puzzles ~1100 with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#promotion-tactics",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.skewer",
+      "name": "Skewers",
+      "domain": "tactics",
+      "stage": 2,
+      "prereqs": [
+        "tactics.pin.absolute"
+      ],
+      "lichessThemes": [
+        "skewer"
+      ],
+      "summary": "Attacks a valuable piece which must move and expose a piece behind it.",
+      "masteryCriteria": "Solves 25 skewer puzzles ~1000 with >=90% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#skewer",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 2"
+      ]
+    },
+    {
+      "id": "checkmate.arabian",
+      "name": "Arabian mate",
+      "domain": "checkmate",
+      "stage": 2,
+      "prereqs": [
+        "checkmate.mate-in-1"
+      ],
+      "lichessThemes": [
+        "arabianMate"
+      ],
+      "summary": "Rook and knight mate in the corner.",
+      "masteryCriteria": "Solves 12 arabianMate puzzles with >=90% accuracy",
+      "exerciseTypes": [
+        "mate-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#arabian-mate",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "checkmate.back-rank",
+      "name": "Back-rank and corridor mates",
+      "domain": "checkmate",
+      "stage": 2,
+      "prereqs": [
+        "checkmate.mate-in-1"
+      ],
+      "lichessThemes": [
+        "backRankMate"
+      ],
+      "summary": "Mates a king trapped on its back rank or in a corridor by its own pieces; knows luft as defence.",
+      "masteryCriteria": "Solves 25 backRankMate puzzles ~1000 and 5 curated corridor mates with >=90% accuracy",
+      "exerciseTypes": [
+        "mate-drill",
+        "puzzle"
+      ],
+      "kbRef": "checkmate-patterns.md#back-rank-mate",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 2"
+      ]
+    },
+    {
+      "id": "checkmate.legal",
+      "name": "Legal's mate",
+      "domain": "checkmate",
+      "stage": 2,
+      "prereqs": [
+        "checkmate.opening-mates",
+        "tactics.pin.absolute"
+      ],
+      "lichessThemes": [
+        "attackingF2F7"
+      ],
+      "summary": "The pinned-knight queen sacrifice trap ending Bxf7+ and Nd5#.",
+      "masteryCriteria": "Plays the Legal trap from the start vs a scripted bot and explains why the pin is illusory; solves 5 Legal-type puzzles",
+      "exerciseTypes": [
+        "lesson",
+        "puzzle"
+      ],
+      "kbRef": "checkmate-patterns.md#legals-mate",
+      "references": [
+        "Wikipedia: Légal Trap"
+      ]
+    },
+    {
+      "id": "checkmate.mate-defence",
+      "name": "Defending against mate threats",
+      "domain": "checkmate",
+      "stage": 2,
+      "prereqs": [
+        "checkmate.back-rank",
+        "calculation.threat-awareness"
+      ],
+      "lichessThemes": [
+        "defensiveMove"
+      ],
+      "summary": "Spots mating threats and parries with luft, interposition, or counter-threat.",
+      "masteryCriteria": "In 15 \"opponent threatens mate\" positions finds a saving move with >=90% accuracy",
+      "exerciseTypes": [
+        "puzzle",
+        "quiz"
+      ],
+      "kbRef": "checkmate-patterns.md#mating-net-skills-beyond-named-patterns",
+      "references": [
+        "Steps Method Step 2"
+      ]
+    },
+    {
+      "id": "checkmate.mate-in-2",
+      "name": "Mate in two",
+      "domain": "checkmate",
+      "stage": 2,
+      "prereqs": [
+        "checkmate.back-rank",
+        "calculation.cct"
+      ],
+      "lichessThemes": [
+        "mateIn2"
+      ],
+      "summary": "Finds forcing two-move mates, checks first.",
+      "masteryCriteria": "Solves 30 mateIn2 puzzles ~1100 with >=85% accuracy, median <60s",
+      "exerciseTypes": [
+        "mate-drill",
+        "puzzle"
+      ],
+      "kbRef": "checkmate-patterns.md#mating-net-skills-beyond-named-patterns",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 2"
+      ]
+    },
+    {
+      "id": "checkmate.smothered",
+      "name": "Smothered mate and Philidor's legacy",
+      "domain": "checkmate",
+      "stage": 2,
+      "prereqs": [
+        "checkmate.mate-in-1",
+        "rules.pieces.knight"
+      ],
+      "lichessThemes": [
+        "smotheredMate",
+        "sacrifice"
+      ],
+      "summary": "Knight mates a king surrounded by its own pieces, including the Qg8+ Rxg8 Nf7# queen-sacrifice combination.",
+      "masteryCriteria": "Solves 15 smotheredMate puzzles ~1100 and 5 Philidor-legacy positions with >=90% accuracy",
+      "exerciseTypes": [
+        "mate-drill",
+        "puzzle"
+      ],
+      "kbRef": "checkmate-patterns.md#smothered-mate",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "checkmate.support-mate",
+      "name": "Supported queen mates (Damiano family)",
+      "domain": "checkmate",
+      "stage": 2,
+      "prereqs": [
+        "checkmate.mate-in-1"
+      ],
+      "lichessThemes": [
+        "mateIn1",
+        "mate"
+      ],
+      "summary": "Queen mates adjacent to the king, protected by another unit (Damiano, Damiano's bishop).",
+      "masteryCriteria": "Solves 20 supported-queen mate puzzles ~1000 with >=90% accuracy",
+      "exerciseTypes": [
+        "mate-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#damianos-mate",
+      "references": [
+        "Wikipedia: Checkmate pattern"
+      ]
+    },
+    {
+      "id": "calculation.blunder-check",
+      "name": "Blunder check before moving",
+      "domain": "calculation",
+      "stage": 2,
+      "prereqs": [
+        "calculation.threat-awareness"
+      ],
+      "lichessThemes": [
+        "hangingPiece"
+      ],
+      "summary": "Before each move checks opponent's checks, captures and threats after the move (\"real chess\" vs \"hope chess\").",
+      "masteryCriteria": "Over 10 rated games (15+10) blunders (engine -3.0 or worse in one move) on fewer than 1 move per game on average",
+      "exerciseTypes": [
+        "play-bot",
+        "game-review"
+      ],
+      "kbRef": "calculation.md#blunder-check",
+      "references": [
+        "Heisman, The Improving Chess Thinker"
+      ]
+    },
+    {
+      "id": "calculation.cct",
+      "name": "Forcing moves first: checks, captures, threats",
+      "domain": "calculation",
+      "stage": 2,
+      "prereqs": [
+        "calculation.blunder-check"
+      ],
+      "lichessThemes": [
+        "short"
+      ],
+      "summary": "Searches checks, captures and threats for both sides before quiet moves.",
+      "masteryCriteria": "Lists all checks, captures and direct threats for both sides in 15 diagrams within 60s each, >=90% complete",
+      "exerciseTypes": [
+        "calculation-drill",
+        "quiz"
+      ],
+      "kbRef": "calculation.md#forcing-moves-first-cct",
+      "references": [
+        "Heisman; Steps Method Step 2"
+      ]
+    },
+    {
+      "id": "calculation.threat-awareness",
+      "name": "What does my opponent threaten?",
+      "domain": "calculation",
+      "stage": 2,
+      "prereqs": [
+        "calculation.board-vision",
+        "rules.check"
+      ],
+      "lichessThemes": [
+        "hangingPiece"
+      ],
+      "summary": "After every opponent move asks what it attacks, threatens or leaves undefended.",
+      "masteryCriteria": "In 20 positions names the opponent's threat after the last move with >=90% accuracy; in 10 bot games loses no piece to a 1-move threat",
+      "exerciseTypes": [
+        "quiz",
+        "play-bot",
+        "game-review"
+      ],
+      "kbRef": "calculation.md#thought-process-overview",
+      "references": [
+        "Heisman, Real Chess"
+      ]
+    },
+    {
+      "id": "strategy.piece-activity",
+      "name": "Piece activity, development and tempo",
+      "domain": "strategy",
+      "stage": 2,
+      "prereqs": [
+        "opening.principles.development"
+      ],
+      "lichessThemes": [
+        "middlegame"
+      ],
+      "summary": "Places pieces on active, coordinated squares; understands tempo and that a development lead must be used; improves the worst-placed piece.",
+      "masteryCriteria": "In 15 positions picks the engine-top-3 piece-improving move in >=75% and scores >=85% on a 15-item tempo quiz",
+      "exerciseTypes": [
+        "guess-the-move",
+        "lesson"
+      ],
+      "kbRef": "strategy.md#activity-and-coordination",
+      "references": [
+        "Steps Method Step 2"
+      ]
+    },
+    {
+      "id": "endgame.mate.kr",
+      "name": "K+R vs K checkmate",
+      "domain": "endgame",
+      "stage": 2,
+      "prereqs": [
+        "endgame.mate.kq"
+      ],
+      "lichessThemes": [],
+      "summary": "Mates with king and rook (box or opposition method).",
+      "masteryCriteria": "Mates vs engine from 5 random positions within 16 moves each with 0 stalemates",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#kr-vs-k",
+      "references": [
+        "Silman, Complete Endgame Course, Part 1-2"
+      ]
+    },
+    {
+      "id": "endgame.pawn.kp-basic",
+      "name": "K+P vs K basics",
+      "domain": "endgame",
+      "stage": 2,
+      "prereqs": [
+        "endgame.pawn.square-rule",
+        "rules.stalemate"
+      ],
+      "lichessThemes": [
+        "pawnEndgame"
+      ],
+      "summary": "King in front of pawn; defender blocks the promotion square; stalemate defence.",
+      "masteryCriteria": "Draws as defender in 5/5 basic K+P v K positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#kp-vs-k-basics",
+      "references": [
+        "Silman, Complete Endgame Course, Part 1"
+      ]
+    },
+    {
+      "id": "endgame.pawn.square-rule",
+      "name": "Rule of the square",
+      "domain": "endgame",
+      "stage": 2,
+      "prereqs": [
+        "rules.pieces.pawn",
+        "rules.pieces.king"
+      ],
+      "lichessThemes": [
+        "pawnEndgame"
+      ],
+      "summary": "Decides instantly whether a king catches a passed pawn.",
+      "masteryCriteria": "Answers 20 \"can the king catch it?\" diagrams (incl. double-step cases) in <10s each with >=95% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#rule-of-the-square",
+      "references": [
+        "Silman, Complete Endgame Course, Part 1"
+      ]
+    },
+    {
+      "id": "opening.first-repertoire.black",
+      "name": "First Black repertoire (1...e5 and 1...d5)",
+      "domain": "opening",
+      "stage": 2,
+      "prereqs": [
+        "opening.principles.king-safety"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Answers 1.e4 with 1...e5 and 1.d4 with 1...d5, with sound development plans.",
+      "masteryCriteria": "Reproduces 6 moves of chosen lines with 95% accuracy and reaches equality (engine within 0.7) in 4/5 bot games",
+      "exerciseTypes": [
+        "opening-drill",
+        "play-bot"
+      ],
+      "kbRef": "openings.md#repertoire-building-by-level",
+      "references": [
+        "Lichess chess-openings"
+      ]
+    },
+    {
+      "id": "opening.first-repertoire.white",
+      "name": "First White repertoire (1.e4, Italian)",
+      "domain": "opening",
+      "stage": 2,
+      "prereqs": [
+        "opening.principles.king-safety"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Plays 1.e4 e5 2.Nf3 Nc6 3.Bc4 with basic plans and knows replies to common Black defences.",
+      "masteryCriteria": "Reproduces the first 6 moves of the chosen lines with 95% accuracy in opening-drill and reaches a playable middlegame in 5/5 bot games",
+      "exerciseTypes": [
+        "opening-drill",
+        "play-bot"
+      ],
+      "kbRef": "openings.md#repertoire-building-by-level",
+      "references": [
+        "Lichess chess-openings (C50)"
+      ]
+    },
+    {
+      "id": "opening.principles.king-safety",
+      "name": "Opening principle: castle early",
+      "domain": "opening",
+      "stage": 2,
+      "prereqs": [
+        "opening.principles.development",
+        "rules.castling"
+      ],
+      "lichessThemes": [
+        "opening",
+        "castling"
+      ],
+      "summary": "Castles within the first ~10 moves and connects rooks.",
+      "masteryCriteria": "Castles by move 10 in 8/10 games vs bot ~800",
+      "exerciseTypes": [
+        "play-bot",
+        "game-review"
+      ],
+      "kbRef": "openings.md#opening-principles",
+      "references": [
+        "Steps Method Step 2"
+      ]
+    },
+    {
+      "id": "opening.traps.basic",
+      "name": "Basic opening traps",
+      "domain": "opening",
+      "stage": 2,
+      "prereqs": [
+        "checkmate.opening-mates",
+        "tactics.attacking-f7",
+        "checkmate.legal"
+      ],
+      "lichessThemes": [
+        "opening",
+        "attackingF2F7"
+      ],
+      "summary": "Knows and avoids classic traps (Scholar's, Legal, Fried Liver, Noah's Ark).",
+      "masteryCriteria": "Avoids or exploits each of 6 classic traps in scripted bot games in 6/6",
+      "exerciseTypes": [
+        "opening-drill",
+        "play-bot"
+      ],
+      "kbRef": "openings.md#opening-traps-and-miniatures",
+      "references": [
+        "Wikipedia: List of chess traps"
+      ]
+    },
+    {
+      "id": "rules.clock",
+      "name": "Using a chess clock and time controls",
+      "domain": "rules",
+      "stage": 3,
+      "prereqs": [
+        "rules.checkmate"
+      ],
+      "lichessThemes": [],
+      "summary": "Uses a clock correctly (same hand, increments, delay) and knows standard/rapid/blitz definitions.",
+      "masteryCriteria": "Plays 3 OTB or simulated games with clock with no procedural errors; scores >=90% on time-control quiz",
+      "exerciseTypes": [
+        "quiz",
+        "play-bot"
+      ],
+      "kbRef": "rules.md#chess-clock",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 6, App. A.1, B.1"
+      ]
+    },
+    {
+      "id": "rules.draws.claims",
+      "name": "Draw offers and claims",
+      "domain": "rules",
+      "stage": 3,
+      "prereqs": [
+        "rules.draws.repetition",
+        "rules.scoresheet"
+      ],
+      "lichessThemes": [],
+      "summary": "Offers draws correctly (after moving, before pressing the clock; cannot be withdrawn) and claims 3-fold/50-move draws by writing the intended move and calling the arbiter; knows incorrect-claim penalties.",
+      "masteryCriteria": "Scores 100% on 12 draw-offer and claim-procedure items",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "rules.md#incorrect-claims",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 9.2, 9.3, 9.5"
+      ]
+    },
+    {
+      "id": "rules.illegal-moves",
+      "name": "Illegal moves, irregularities and flag fall",
+      "domain": "rules",
+      "stage": 3,
+      "prereqs": [
+        "rules.clock",
+        "rules.draws.dead-position"
+      ],
+      "lichessThemes": [],
+      "summary": "Illegal-move procedure (+2 min, 1 min rapid/blitz, second illegal move loses) and flag-fall results including the \"can the opponent mate?\" rule (Art. 6.9).",
+      "masteryCriteria": "Scores >=90% on 20 irregularity and flag-fall items (e.g., K+N v K+R both ways)",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "rules.md#irregularities-and-illegal-moves",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 7.5, App. A.3"
+      ]
+    },
+    {
+      "id": "rules.notation.fen",
+      "name": "Reading and writing FEN",
+      "domain": "rules",
+      "stage": 3,
+      "prereqs": [
+        "rules.notation.san-read"
+      ],
+      "lichessThemes": [],
+      "summary": "Reads and writes all six FEN fields including castling rights, e.p. square and move counters.",
+      "masteryCriteria": "Converts 5 diagrams to FEN and 5 FENs to diagrams with 100% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "visualization-drill"
+      ],
+      "kbRef": "rules.md#fen-format",
+      "references": [
+        "PGN Standard 16.1",
+        "Chess Programming Wiki: FEN"
+      ]
+    },
+    {
+      "id": "rules.notation.pgn",
+      "name": "PGN game files",
+      "domain": "rules",
+      "stage": 3,
+      "prereqs": [
+        "rules.notation.fen"
+      ],
+      "lichessThemes": [],
+      "summary": "Understands PGN tags, movetext, comments, variations and NAGs; imports/exports games.",
+      "masteryCriteria": "Writes a valid PGN with the 7-tag roster, 1 variation and 2 comments that parses without error in the Lichess importer, in 2/2 attempts",
+      "exerciseTypes": [
+        "quiz",
+        "game-review"
+      ],
+      "kbRef": "rules.md#pgn-format",
+      "references": [
+        "PGN Standard (Edwards 1994)"
+      ]
+    },
+    {
+      "id": "rules.scoresheet",
+      "name": "Keeping score in tournaments",
+      "domain": "rules",
+      "stage": 3,
+      "prereqs": [
+        "rules.notation.san-write",
+        "rules.clock"
+      ],
+      "lichessThemes": [],
+      "summary": "Records moves on a scoresheet move by move, knows the under-5-minutes exemption and draw-offer marking.",
+      "masteryCriteria": "Keeps a complete correct scoresheet in 2 classical games (verified against PGN)",
+      "exerciseTypes": [
+        "game-review",
+        "quiz"
+      ],
+      "kbRef": "rules.md#recording-moves-and-notation",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 8.1, 8.4"
+      ]
+    },
+    {
+      "id": "rules.touch-move",
+      "name": "Touch-move and adjusting pieces",
+      "domain": "rules",
+      "stage": 3,
+      "prereqs": [
+        "rules.capture"
+      ],
+      "lichessThemes": [],
+      "summary": "Applies touch-move (first touched movable piece must move; touched enemy piece must be captured) and j'adoube.",
+      "masteryCriteria": "Scores 100% on 12 touch-move scenario items",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "rules.md#touch-move",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 4.1-4.8"
+      ]
+    },
+    {
+      "id": "tactics.combination-basics",
+      "name": "Two-motif combinations",
+      "domain": "tactics",
+      "stage": 3,
+      "prereqs": [
+        "tactics.deflection",
+        "tactics.decoy",
+        "tactics.discovered-attack",
+        "tactics.fork.queen",
+        "tactics.skewer",
+        "tactics.removing-defender"
+      ],
+      "lichessThemes": [
+        "short",
+        "advantage"
+      ],
+      "summary": "Combines two motifs (e.g., decoy + fork) in 2-3 move combinations.",
+      "masteryCriteria": "Solves 30 mixed short puzzles ~1400 with >=80% accuracy, median <90s",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#combination-techniques",
+      "references": [
+        "Steps Method Step 3",
+        "Yusupov's Chess School: Build Up Your Chess 1"
+      ]
+    },
+    {
+      "id": "tactics.decoy",
+      "name": "Decoy (attraction)",
+      "domain": "tactics",
+      "stage": 3,
+      "prereqs": [
+        "tactics.fork.knight",
+        "tactics.pin.absolute"
+      ],
+      "lichessThemes": [
+        "attraction"
+      ],
+      "summary": "Lures a piece (often the king) onto a square where it can be forked, pinned or mated.",
+      "masteryCriteria": "Solves 25 attraction puzzles ~1400 with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#decoy-attraction",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.deflection",
+      "name": "Deflection and overloading",
+      "domain": "tactics",
+      "stage": 3,
+      "prereqs": [
+        "tactics.removing-defender"
+      ],
+      "lichessThemes": [
+        "deflection"
+      ],
+      "summary": "Forces a defender away from its duty or exploits a defender with two duties.",
+      "masteryCriteria": "Solves 25 deflection puzzles ~1400 plus 10 curated overloading positions with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#deflection",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.discovered-attack",
+      "name": "Discovered attacks",
+      "domain": "tactics",
+      "stage": 3,
+      "prereqs": [
+        "tactics.double-attack",
+        "tactics.pin.absolute"
+      ],
+      "lichessThemes": [
+        "discoveredAttack"
+      ],
+      "summary": "Moves a piece to unmask an attack from a line piece behind it.",
+      "masteryCriteria": "Solves 25 discoveredAttack puzzles ~1300 with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#discovered-attack",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 3"
+      ]
+    },
+    {
+      "id": "tactics.discovered-check",
+      "name": "Discovered check",
+      "domain": "tactics",
+      "stage": 3,
+      "prereqs": [
+        "tactics.discovered-attack"
+      ],
+      "lichessThemes": [
+        "discoveredCheck"
+      ],
+      "summary": "Unmasks a check while the moving piece wins material; includes the windmill (repeated discovered checks).",
+      "masteryCriteria": "Solves 20 discoveredCheck puzzles ~1300 with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#discovered-check",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.double-check",
+      "name": "Double check",
+      "domain": "tactics",
+      "stage": 3,
+      "prereqs": [
+        "tactics.discovered-check"
+      ],
+      "lichessThemes": [
+        "doubleCheck"
+      ],
+      "summary": "Gives check with two pieces; only king moves answer it.",
+      "masteryCriteria": "Solves 15 doubleCheck puzzles ~1400 with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#double-check",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.perpetual-check",
+      "name": "Drawing tactics: perpetual check and stalemate tricks",
+      "domain": "tactics",
+      "stage": 3,
+      "prereqs": [
+        "rules.draws.repetition",
+        "rules.check"
+      ],
+      "lichessThemes": [
+        "equality"
+      ],
+      "summary": "Saves worse positions with unending checks or stalemate (desperado rook, queen sacrifice).",
+      "masteryCriteria": "Finds the save in 20 curated perpetual/stalemate positions with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#perpetual-check",
+      "references": [
+        "Lichess has no perpetual theme: curated set"
+      ]
+    },
+    {
+      "id": "tactics.pin.relative",
+      "name": "Relative pins and exploiting pins",
+      "domain": "tactics",
+      "stage": 3,
+      "prereqs": [
+        "tactics.pin.absolute"
+      ],
+      "lichessThemes": [
+        "pin"
+      ],
+      "summary": "Pins to queen/rook/key squares; piles up on and attacks pinned pieces; knows pinned pieces don't defend.",
+      "masteryCriteria": "Solves 25 pin puzzles ~1400 with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#pin",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 3"
+      ]
+    },
+    {
+      "id": "tactics.removing-defender",
+      "name": "Removing the defender",
+      "domain": "tactics",
+      "stage": 3,
+      "prereqs": [
+        "tactics.counting",
+        "tactics.double-attack"
+      ],
+      "lichessThemes": [
+        "capturingDefender"
+      ],
+      "summary": "Captures or exchanges the piece guarding a key square or piece.",
+      "masteryCriteria": "Solves 25 capturingDefender puzzles ~1400 with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#removing-the-defender",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 3"
+      ]
+    },
+    {
+      "id": "tactics.trapped-piece",
+      "name": "Trapping pieces",
+      "domain": "tactics",
+      "stage": 3,
+      "prereqs": [
+        "tactics.counting"
+      ],
+      "lichessThemes": [
+        "trappedPiece"
+      ],
+      "summary": "Attacks pieces with no safe squares (Bxa7 b6, knight on the rim, Noah's Ark).",
+      "masteryCriteria": "Solves 20 trappedPiece puzzles ~1400 with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#trapped-piece",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "checkmate.anastasia",
+      "name": "Anastasia's mate",
+      "domain": "checkmate",
+      "stage": 3,
+      "prereqs": [
+        "checkmate.mate-in-2"
+      ],
+      "lichessThemes": [
+        "anastasiaMate"
+      ],
+      "summary": "Knight and rook/queen trap the king on the edge.",
+      "masteryCriteria": "Solves 12 anastasiaMate puzzles with >=85% accuracy",
+      "exerciseTypes": [
+        "mate-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#anastasias-mate",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "checkmate.blocked-king-queen",
+      "name": "Epaulette, dovetail and swallow's tail mates",
+      "domain": "checkmate",
+      "stage": 3,
+      "prereqs": [
+        "checkmate.support-mate"
+      ],
+      "lichessThemes": [
+        "epauletteMate",
+        "dovetailMate",
+        "swallowstailMate"
+      ],
+      "summary": "Queen mates kings whose flight squares are blocked by their own pieces.",
+      "masteryCriteria": "Solves 15 puzzles across epauletteMate, dovetailMate and swallowstailMate with >=85% accuracy",
+      "exerciseTypes": [
+        "mate-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#queen-mates-with-blocked-king",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "checkmate.boden",
+      "name": "Boden's and double-bishop mates",
+      "domain": "checkmate",
+      "stage": 3,
+      "prereqs": [
+        "checkmate.mate-in-2",
+        "rules.pieces.bishop"
+      ],
+      "lichessThemes": [
+        "bodenMate",
+        "doubleBishopMate"
+      ],
+      "summary": "Two bishops on criss-crossing diagonals mate.",
+      "masteryCriteria": "Solves 20 bodenMate/doubleBishopMate puzzles with >=85% accuracy",
+      "exerciseTypes": [
+        "mate-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#bodens-mate",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "checkmate.hook",
+      "name": "Hook and corner mates",
+      "domain": "checkmate",
+      "stage": 3,
+      "prereqs": [
+        "checkmate.arabian",
+        "checkmate.smothered"
+      ],
+      "lichessThemes": [
+        "hookMate",
+        "cornerMate"
+      ],
+      "summary": "Rook, knight and pawn mate with an enemy pawn blocking.",
+      "masteryCriteria": "Solves 16 hookMate/cornerMate puzzles with >=85% accuracy",
+      "exerciseTypes": [
+        "mate-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#hook-mate",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "checkmate.killbox-triangle",
+      "name": "Kill box, triangle and blind swine mates",
+      "domain": "checkmate",
+      "stage": 3,
+      "prereqs": [
+        "checkmate.ladder",
+        "checkmate.support-mate"
+      ],
+      "lichessThemes": [
+        "killBoxMate",
+        "triangleMate",
+        "blindSwineMate"
+      ],
+      "summary": "Queen and rook coordinate in a 3x3 box or triangle.",
+      "masteryCriteria": "Solves 18 killBoxMate/triangleMate/blindSwineMate puzzles with >=85% accuracy",
+      "exerciseTypes": [
+        "mate-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#kill-box-mate",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "checkmate.lolli-greco",
+      "name": "Queen-and-minor mates: Lolli, Greco, Balestra",
+      "domain": "checkmate",
+      "stage": 3,
+      "prereqs": [
+        "checkmate.support-mate"
+      ],
+      "lichessThemes": [
+        "balestraMate",
+        "mate",
+        "mateIn2"
+      ],
+      "summary": "Queen+pawn on g7 (Lolli) and queen+bishop on the h-file vs h8 (Greco).",
+      "masteryCriteria": "Solves 8 balestraMate puzzles and 10 curated Lolli/Greco puzzles with >=85% accuracy",
+      "exerciseTypes": [
+        "mate-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#lollis-mate",
+      "references": [
+        "Wikipedia: Checkmate pattern"
+      ]
+    },
+    {
+      "id": "checkmate.mate-in-3",
+      "name": "Mate in three",
+      "domain": "checkmate",
+      "stage": 3,
+      "prereqs": [
+        "checkmate.mate-in-2",
+        "tactics.combination-basics",
+        "checkmate.anastasia",
+        "checkmate.boden",
+        "checkmate.rook-bishop",
+        "checkmate.hook",
+        "checkmate.lolli-greco",
+        "checkmate.blocked-king-queen",
+        "checkmate.killbox-triangle"
+      ],
+      "lichessThemes": [
+        "mateIn3"
+      ],
+      "summary": "Finds forcing three-move mates including sacrifices.",
+      "masteryCriteria": "Solves 25 mateIn3 puzzles ~1500 with >=80% accuracy, median <2 min",
+      "exerciseTypes": [
+        "mate-drill",
+        "puzzle"
+      ],
+      "kbRef": "checkmate-patterns.md#mating-net-skills-beyond-named-patterns",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 3"
+      ]
+    },
+    {
+      "id": "checkmate.rook-bishop",
+      "name": "Rook-and-bishop mates: Morphy, Pillsbury, Opera, Mayet",
+      "domain": "checkmate",
+      "stage": 3,
+      "prereqs": [
+        "checkmate.back-rank",
+        "checkmate.mate-in-2",
+        "tactics.pin.absolute"
+      ],
+      "lichessThemes": [
+        "morphysMate",
+        "pillsburysMate",
+        "operaMate",
+        "backRankMate"
+      ],
+      "summary": "Rook and bishop coordinate: bishop mates with rook confining (Morphy), rook mates with bishop confining (Pillsbury), back-rank rook mates defended by a bishop (Opera, Mayet, Anderssen with pawn support).",
+      "masteryCriteria": "Solves 20 puzzles across morphysMate, pillsburysMate and operaMate plus 5 curated Mayet/Anderssen mates with >=85% accuracy",
+      "exerciseTypes": [
+        "mate-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#morphys-mate",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Wikipedia: Checkmate pattern",
+        "Wikipedia: Opera Game"
+      ]
+    },
+    {
+      "id": "calculation.candidate-moves",
+      "name": "Candidate moves",
+      "domain": "calculation",
+      "stage": 3,
+      "prereqs": [
+        "calculation.cct"
+      ],
+      "lichessThemes": [],
+      "summary": "Lists 2-4 candidate moves before calculating any deeply (Kotov).",
+      "masteryCriteria": "In 15 critical positions writes 2+ candidates that include the engine top move in >=80% of cases",
+      "exerciseTypes": [
+        "calculation-drill",
+        "guess-the-move"
+      ],
+      "kbRef": "calculation.md#candidate-moves",
+      "references": [
+        "Kotov, Think Like a Grandmaster"
+      ]
+    },
+    {
+      "id": "calculation.quiescence",
+      "name": "Calculating to a quiet position",
+      "domain": "calculation",
+      "stage": 3,
+      "prereqs": [
+        "calculation.cct",
+        "tactics.counting"
+      ],
+      "lichessThemes": [],
+      "summary": "Never stops calculating in the middle of an exchange or while checks/captures remain.",
+      "masteryCriteria": "In 15 exchange-sequence puzzles gives the correct material balance at the end with >=90% accuracy",
+      "exerciseTypes": [
+        "calculation-drill",
+        "puzzle"
+      ],
+      "kbRef": "calculation.md#calculation-tree",
+      "references": [
+        "Kotov"
+      ]
+    },
+    {
+      "id": "calculation.visualization.basic",
+      "name": "Visualization: 2-4 plies",
+      "domain": "calculation",
+      "stage": 3,
+      "prereqs": [
+        "calculation.cct",
+        "rules.notation.san-read"
+      ],
+      "lichessThemes": [],
+      "summary": "Holds a position in mind for 2-4 plies of described moves.",
+      "masteryCriteria": "After reading 4 plies from a diagram (no board update), answers 3 questions about the resulting position with >=90% accuracy across 15 items",
+      "exerciseTypes": [
+        "visualization-drill"
+      ],
+      "kbRef": "calculation.md#visualization",
+      "references": [
+        "Aagaard, GM Preparation: Calculation"
+      ]
+    },
+    {
+      "id": "strategy.centre",
+      "name": "The centre",
+      "domain": "strategy",
+      "stage": 3,
+      "prereqs": [
+        "opening.principles.centre",
+        "strategy.piece-activity"
+      ],
+      "lichessThemes": [
+        "middlegame"
+      ],
+      "summary": "Classical vs hypermodern centre, open/closed/dynamic centres, and reacting in the centre to flank attacks.",
+      "masteryCriteria": "Scores >=85% on a 15-item centre-concepts quiz with diagrams",
+      "exerciseTypes": [
+        "quiz",
+        "lesson"
+      ],
+      "kbRef": "strategy.md#centre",
+      "references": [
+        "Nimzowitsch, My System"
+      ]
+    },
+    {
+      "id": "strategy.evaluation-elements",
+      "name": "Evaluation elements and imbalances",
+      "domain": "strategy",
+      "stage": 3,
+      "prereqs": [
+        "rules.piece-values",
+        "strategy.piece-activity"
+      ],
+      "lichessThemes": [
+        "advantage"
+      ],
+      "summary": "Evaluates a position via material, king safety, activity, structure, space, imbalances.",
+      "masteryCriteria": "Writes a 5-element evaluation for 10 positions agreeing with coach/engine verdict in >=75%",
+      "exerciseTypes": [
+        "quiz",
+        "lesson"
+      ],
+      "kbRef": "strategy.md#evaluation-elements",
+      "references": [
+        "Silman, How to Reassess Your Chess"
+      ]
+    },
+    {
+      "id": "strategy.exchanges",
+      "name": "What to exchange",
+      "domain": "strategy",
+      "stage": 3,
+      "prereqs": [
+        "strategy.evaluation-elements"
+      ],
+      "lichessThemes": [],
+      "summary": "Trades when ahead, when cramped, bad-for-good pieces; avoids trades when attacking.",
+      "masteryCriteria": "Chooses the correct exchange decision in 15 positions with >=80% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#exchanges",
+      "references": [
+        "Yusupov, Build Up Your Chess 2"
+      ]
+    },
+    {
+      "id": "strategy.king-safety",
+      "name": "King safety",
+      "domain": "strategy",
+      "stage": 3,
+      "prereqs": [
+        "opening.principles.king-safety"
+      ],
+      "lichessThemes": [
+        "exposedKing"
+      ],
+      "summary": "Keeps pawn cover intact, avoids weakening moves, uses luft wisely.",
+      "masteryCriteria": "In 15 positions identifies the safer king and the key weakness with >=85% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#king-safety",
+      "references": [
+        "Vukovic"
+      ]
+    },
+    {
+      "id": "strategy.open-files",
+      "name": "Open and half-open files",
+      "domain": "strategy",
+      "stage": 3,
+      "prereqs": [
+        "strategy.piece-activity"
+      ],
+      "lichessThemes": [],
+      "summary": "Puts rooks on open/half-open files, doubles, and fights for entry squares.",
+      "masteryCriteria": "Chooses correct rook placement in 15 diagrams with >=85% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#open-files",
+      "references": [
+        "Nimzowitsch"
+      ]
+    },
+    {
+      "id": "strategy.pawn.islands",
+      "name": "Pawn islands and doubled pawns",
+      "domain": "strategy",
+      "stage": 3,
+      "prereqs": [
+        "strategy.evaluation-elements"
+      ],
+      "lichessThemes": [],
+      "summary": "Counts pawn islands and prefers fewer.",
+      "masteryCriteria": "Counts islands and picks the better structure in 15 diagrams and scores >=85% on 12 doubled-pawn items",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "strategy.md#pawn-islands",
+      "references": [
+        "Capablanca, Chess Fundamentals"
+      ]
+    },
+    {
+      "id": "strategy.pawn.isolated",
+      "name": "Isolated pawns and blockade",
+      "domain": "strategy",
+      "stage": 3,
+      "prereqs": [
+        "strategy.pawn.islands"
+      ],
+      "lichessThemes": [],
+      "summary": "Knows weakness of isolated pawns and the blockade square.",
+      "masteryCriteria": "Scores >=85% on a 12-item isolated-pawn quiz; wins 3/5 drill positions attacking an isolani",
+      "exerciseTypes": [
+        "quiz",
+        "endgame-drill"
+      ],
+      "kbRef": "strategy.md#isolated-pawn",
+      "references": [
+        "Nimzowitsch, My System"
+      ]
+    },
+    {
+      "id": "strategy.pawn.passed",
+      "name": "Passed pawns and blockade",
+      "domain": "strategy",
+      "stage": 3,
+      "prereqs": [
+        "strategy.pawn.islands",
+        "tactics.promotion"
+      ],
+      "lichessThemes": [
+        "advancedPawn"
+      ],
+      "summary": "Creates, supports and pushes passed pawns; blockades enemy passers with pieces (ideally knights).",
+      "masteryCriteria": "Scores >=85% on 15 passed-pawn items; converts 3/4 passed-pawn middlegame positions vs bot",
+      "exerciseTypes": [
+        "quiz",
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#passed-pawn",
+      "references": [
+        "Nimzowitsch, My System"
+      ]
+    },
+    {
+      "id": "endgame.king-activity",
+      "name": "King activity in the endgame",
+      "domain": "endgame",
+      "stage": 3,
+      "prereqs": [
+        "endgame.pawn.kp-basic"
+      ],
+      "lichessThemes": [
+        "endgame"
+      ],
+      "summary": "Centralises the king and uses it as a fighting piece once queens are off.",
+      "masteryCriteria": "In 10 simplified positions chooses an engine-top-3 king move in >=80%",
+      "exerciseTypes": [
+        "guess-the-move",
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#general-endgame-principles",
+      "references": [
+        "Silman, Complete Endgame Course, Part 2"
+      ]
+    },
+    {
+      "id": "endgame.pawn.breakthrough",
+      "name": "Pawn breakthroughs",
+      "domain": "endgame",
+      "stage": 3,
+      "prereqs": [
+        "endgame.pawn.square-rule",
+        "tactics.deflection"
+      ],
+      "lichessThemes": [
+        "pawnEndgame",
+        "advancedPawn"
+      ],
+      "summary": "Sacrifices pawns to create a queening passer (e.g., three v three b6!).",
+      "masteryCriteria": "Solves 12 breakthrough puzzles with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle",
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#pawn-breakthrough",
+      "references": [
+        "de la Villa, 100 Endgames You Must Know"
+      ]
+    },
+    {
+      "id": "endgame.pawn.key-squares",
+      "name": "Key squares",
+      "domain": "endgame",
+      "stage": 3,
+      "prereqs": [
+        "endgame.pawn.opposition"
+      ],
+      "lichessThemes": [
+        "pawnEndgame"
+      ],
+      "summary": "Knows key squares for pawns on each rank and the rook-pawn exception.",
+      "masteryCriteria": "Marks key squares for 15 pawn placements with 100% accuracy; wins 5/5 key-square positions vs engine",
+      "exerciseTypes": [
+        "quiz",
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#key-squares",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 1",
+        "de la Villa, 100 Endgames You Must Know"
+      ]
+    },
+    {
+      "id": "endgame.pawn.opposition",
+      "name": "Opposition (direct, distant, diagonal)",
+      "domain": "endgame",
+      "stage": 3,
+      "prereqs": [
+        "endgame.pawn.kp-basic"
+      ],
+      "lichessThemes": [
+        "pawnEndgame",
+        "zugzwang"
+      ],
+      "summary": "Takes the opposition to win or draw K+P v K and simple pawn endings.",
+      "masteryCriteria": "Achieves correct result in 10/10 opposition positions vs engine (both sides)",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#opposition",
+      "references": [
+        "Silman, Complete Endgame Course, Part 2",
+        "Dvoretsky's Endgame Manual ch. 1"
+      ]
+    },
+    {
+      "id": "endgame.pawn.outside-passer",
+      "name": "Outside and protected passed pawns",
+      "domain": "endgame",
+      "stage": 3,
+      "prereqs": [
+        "endgame.pawn.key-squares",
+        "endgame.king-activity"
+      ],
+      "lichessThemes": [
+        "pawnEndgame"
+      ],
+      "summary": "Uses an outside passer as a decoy to win on the other wing.",
+      "masteryCriteria": "Wins 5/5 outside-passer and 4/5 protected-passer pawn endings vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#outside-passed-pawn",
+      "references": [
+        "Silman, Complete Endgame Course, Part 3"
+      ]
+    },
+    {
+      "id": "endgame.pawn.races",
+      "name": "Pawn races and tempo counting",
+      "domain": "endgame",
+      "stage": 3,
+      "prereqs": [
+        "endgame.pawn.square-rule",
+        "tactics.skewer"
+      ],
+      "lichessThemes": [
+        "pawnEndgame",
+        "promotion"
+      ],
+      "summary": "Counts tempi in races including queening with check and skewers.",
+      "masteryCriteria": "Predicts the result of 15 pawn races with >=90% accuracy",
+      "exerciseTypes": [
+        "calculation-drill",
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#kp-vs-kp-races",
+      "references": [
+        "Silman, Complete Endgame Course, Part 3"
+      ]
+    },
+    {
+      "id": "endgame.queen-vs-pawn",
+      "name": "Queen vs pawn on the 7th",
+      "domain": "endgame",
+      "stage": 3,
+      "prereqs": [
+        "endgame.mate.kq",
+        "endgame.pawn.kp-basic",
+        "endgame.pawn.races"
+      ],
+      "lichessThemes": [
+        "queenEndgame"
+      ],
+      "summary": "Wins vs central/knight pawns; knows rook/bishop pawn stalemate draws and the winning zone basics.",
+      "masteryCriteria": "Wins 5/5 Q v central/knight pawn and holds 3/3 Q v bishop/rook pawn draws vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#queen-vs-pawn-on-the-7th",
+      "references": [
+        "de la Villa, 100 Endgames You Must Know",
+        "de la Villa ch. 3"
+      ]
+    },
+    {
+      "id": "endgame.rook-vs-pawn-basic",
+      "name": "Rook vs pawn basics",
+      "domain": "endgame",
+      "stage": 3,
+      "prereqs": [
+        "endgame.mate.kr",
+        "endgame.pawn.square-rule"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Wins when the rook side's king is in front of the pawn or the defending king is cut off.",
+      "masteryCriteria": "Correct result in 8/10 basic R v P positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#rook-vs-pawn-basics",
+      "references": [
+        "de la Villa, 100 Endgames You Must Know",
+        "Dvoretsky's Endgame Manual ch. 8"
+      ]
+    },
+    {
+      "id": "endgame.wrong-bishop",
+      "name": "Wrong-coloured bishop and rook pawn",
+      "domain": "endgame",
+      "stage": 3,
+      "prereqs": [
+        "endgame.pawn.key-squares"
+      ],
+      "lichessThemes": [
+        "bishopEndgame"
+      ],
+      "summary": "Draws K v K+B+rook pawn when the bishop does not control the promotion square.",
+      "masteryCriteria": "Holds 5/5 wrong-bishop positions as defender and wins 5/5 right-bishop positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#wrong-coloured-bishop",
+      "references": [
+        "de la Villa, 100 Endgames You Must Know",
+        "Silman, Complete Endgame Course, Part 3"
+      ]
+    },
+    {
+      "id": "opening.closed-overview",
+      "name": "Closed and Indian openings overview",
+      "domain": "opening",
+      "stage": 3,
+      "prereqs": [
+        "opening.first-repertoire.black"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Main ideas of QGD, Slav, QGA, London, KID, Nimzo, Grünfeld, Dutch, English.",
+      "masteryCriteria": "Scores >=85% on a 20-item quiz identifying openings by position and naming one plan each",
+      "exerciseTypes": [
+        "lesson",
+        "quiz"
+      ],
+      "kbRef": "openings.md#volume-d-closed-games-and-grünfeld",
+      "references": [
+        "ECO A, D, E"
+      ]
+    },
+    {
+      "id": "opening.gambits.intro",
+      "name": "Learning initiative with gambits",
+      "domain": "opening",
+      "stage": 3,
+      "prereqs": [
+        "opening.first-repertoire.white",
+        "tactics.attacking-f7"
+      ],
+      "lichessThemes": [
+        "opening",
+        "sacrifice"
+      ],
+      "summary": "Plays Danish/Evans/Scotch gambits to learn development leads and initiative.",
+      "masteryCriteria": "Scores >=60% in 10 gambit training games vs bot of equal rating",
+      "exerciseTypes": [
+        "play-bot",
+        "opening-drill"
+      ],
+      "kbRef": "openings.md#gambits-for-beginners",
+      "references": [
+        "Wikipedia: List of chess gambits"
+      ]
+    },
+    {
+      "id": "opening.open-games",
+      "name": "Open games ideas (1.e4 e5)",
+      "domain": "opening",
+      "stage": 3,
+      "prereqs": [
+        "opening.first-repertoire.white",
+        "opening.first-repertoire.black"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Main ideas of Italian, Two Knights, Scotch, Ruy Lopez basics, Petrov, King's Gambit.",
+      "masteryCriteria": "Scores >=85% on a 20-item open-games ideas quiz (plans, traps, typical pawn breaks)",
+      "exerciseTypes": [
+        "lesson",
+        "quiz"
+      ],
+      "kbRef": "openings.md#volume-c-open-games-and-french",
+      "references": [
+        "ECO C20-C99"
+      ]
+    },
+    {
+      "id": "opening.repertoire.complete-basic",
+      "name": "Complete basic repertoire",
+      "domain": "opening",
+      "stage": 3,
+      "prereqs": [
+        "opening.open-games",
+        "opening.semi-open-overview",
+        "opening.closed-overview",
+        "opening.traps.advanced"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Has one White system and two Black defences, 8-10 moves deep, with typical plans.",
+      "masteryCriteria": "Opening-drill accuracy >=90% over the whole repertoire (8-10 moves) on two sessions 7 days apart",
+      "exerciseTypes": [
+        "opening-drill"
+      ],
+      "kbRef": "openings.md#repertoire-building-by-level",
+      "references": [
+        "Chessable MoveTrainer"
+      ]
+    },
+    {
+      "id": "opening.semi-open-overview",
+      "name": "Semi-open defences overview",
+      "domain": "opening",
+      "stage": 3,
+      "prereqs": [
+        "opening.first-repertoire.black"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Main ideas of Sicilian, French, Caro-Kann, Scandinavian, Pirc/Modern, Alekhine.",
+      "masteryCriteria": "Scores >=85% on a 20-item quiz identifying openings by position and naming one plan each",
+      "exerciseTypes": [
+        "lesson",
+        "quiz"
+      ],
+      "kbRef": "openings.md#volume-b-semi-open-games",
+      "references": [
+        "ECO B00-B99, C00-C19"
+      ]
+    },
+    {
+      "id": "opening.traps.advanced",
+      "name": "Opening traps by repertoire",
+      "domain": "opening",
+      "stage": 3,
+      "prereqs": [
+        "opening.traps.basic",
+        "opening.open-games"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Knows the traps in own repertoire lines (Elephant, Lasker, Siberian, Mortimer, etc.).",
+      "masteryCriteria": "Solves 20 opening-phase puzzles ~1300 with >=85% accuracy",
+      "exerciseTypes": [
+        "puzzle",
+        "opening-drill"
+      ],
+      "kbRef": "openings.md#opening-traps-and-miniatures",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "practical.otb-etiquette",
+      "name": "Over-the-board etiquette, conduct and fair play",
+      "domain": "practical",
+      "stage": 3,
+      "prereqs": [
+        "rules.touch-move",
+        "rules.scoresheet",
+        "rules.draws.claims"
+      ],
+      "lichessThemes": [],
+      "summary": "Handles OTB procedures and conduct rules: arriving before default time, scoresheet, claims, electronic devices, no distraction.",
+      "masteryCriteria": "Scores 100% on 15 OTB procedure and conduct scenario items",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "psychology-and-practical.md#tournament-preparation",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 6.7, 11"
+      ]
+    },
+    {
+      "id": "practical.post-game-review",
+      "name": "Post-game review habit",
+      "domain": "practical",
+      "stage": 3,
+      "prereqs": [
+        "rules.notation.pgn"
+      ],
+      "lichessThemes": [],
+      "summary": "Reviews own games first without engine, then with engine, logging mistakes.",
+      "masteryCriteria": "Submits 10 reviewed games with own annotations at 3+ critical moments each",
+      "exerciseTypes": [
+        "game-review"
+      ],
+      "kbRef": "psychology-and-practical.md#post-game-analysis",
+      "references": [
+        "Dvoretsky & Yusupov"
+      ]
+    },
+    {
+      "id": "practical.time-budget",
+      "name": "Time budgeting",
+      "domain": "practical",
+      "stage": 3,
+      "prereqs": [
+        "rules.clock"
+      ],
+      "lichessThemes": [],
+      "summary": "Distributes thinking time across the game; avoids flagging.",
+      "masteryCriteria": "In 10 rated 15+10 games: no flag losses and never under 1 min before move 30",
+      "exerciseTypes": [
+        "play-bot",
+        "game-review"
+      ],
+      "kbRef": "psychology-and-practical.md#time-management",
+      "references": [
+        "Kotov"
+      ]
+    },
+    {
+      "id": "rules.rapid-blitz",
+      "name": "Rapid, blitz and quickplay regulations",
+      "domain": "rules",
+      "stage": 4,
+      "prereqs": [
+        "rules.illegal-moves"
+      ],
+      "lichessThemes": [],
+      "summary": "Applies Appendix A/B differences (no scoresheet, 1-minute penalties, supervision conditions) and online rule differences.",
+      "masteryCriteria": "Scores >=90% on 12 rapid/blitz scenario items",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "rules.md#rapid-and-blitz-appendices",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. App. A, B"
+      ]
+    },
+    {
+      "id": "tactics.clearance",
+      "name": "Clearance and line opening",
+      "domain": "tactics",
+      "stage": 4,
+      "prereqs": [
+        "tactics.discovered-attack"
+      ],
+      "lichessThemes": [
+        "clearance"
+      ],
+      "summary": "Vacates a square or line for another piece; sacrifices to open lines toward the king.",
+      "masteryCriteria": "Solves 15 clearance puzzles ~1700 and 8 curated line-opening positions with >=80% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#clearance",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.defensive-resources",
+      "name": "Defensive tactics",
+      "domain": "tactics",
+      "stage": 4,
+      "prereqs": [
+        "tactics.combination-basics",
+        "calculation.blunder-check",
+        "checkmate.mate-defence"
+      ],
+      "lichessThemes": [
+        "defensiveMove",
+        "equality"
+      ],
+      "summary": "Finds defensive moves: counter-threats, interposition with tempo, giving back material.",
+      "masteryCriteria": "Solves 20 defensiveMove puzzles ~1700 with >=75% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#defensive-and-drawing-tactics",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.desperado",
+      "name": "Desperado",
+      "domain": "tactics",
+      "stage": 4,
+      "prereqs": [
+        "tactics.counting",
+        "tactics.zwischenzug"
+      ],
+      "lichessThemes": [
+        "sacrifice",
+        "intermezzo"
+      ],
+      "summary": "A doomed piece sells itself for maximum material.",
+      "masteryCriteria": "Solves 12 curated desperado positions with >=80% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#desperado",
+      "references": [
+        "Curated set (no Lichess key)"
+      ]
+    },
+    {
+      "id": "tactics.endgame-tactics",
+      "name": "Endgame tactics",
+      "domain": "tactics",
+      "stage": 4,
+      "prereqs": [
+        "tactics.promotion",
+        "endgame.pawn.breakthrough"
+      ],
+      "lichessThemes": [
+        "endgame",
+        "advancedPawn",
+        "promotion"
+      ],
+      "summary": "Breakthroughs, deflection of blockaders, skewers of promoted queens, knight forks in endings.",
+      "masteryCriteria": "Solves 25 endgame-phase puzzles ~1700 with >=80% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#endgame-tactics",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.greek-gift",
+      "name": "Greek gift sacrifice Bxh7+",
+      "domain": "tactics",
+      "stage": 4,
+      "prereqs": [
+        "tactics.decoy",
+        "checkmate.mate-in-2"
+      ],
+      "lichessThemes": [
+        "sacrifice",
+        "kingsideAttack"
+      ],
+      "summary": "Executes Bxh7+ Kxh7 Ng5+ with Qh5 and knows the preconditions and king-retreat lines.",
+      "masteryCriteria": "Correctly decides sound/unsound for 15 Greek-gift candidate positions and solves the sound ones with >=80% accuracy",
+      "exerciseTypes": [
+        "puzzle",
+        "lesson",
+        "calculation-drill"
+      ],
+      "kbRef": "tactics.md#greek-gift-sacrifice",
+      "references": [
+        "Vukovic, The Art of Attack"
+      ]
+    },
+    {
+      "id": "tactics.interference",
+      "name": "Interference",
+      "domain": "tactics",
+      "stage": 4,
+      "prereqs": [
+        "tactics.deflection"
+      ],
+      "lichessThemes": [
+        "interference"
+      ],
+      "summary": "Blocks the line between an enemy piece and what it defends.",
+      "masteryCriteria": "Solves 15 interference puzzles ~1700 with >=80% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#interference",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.mixed-recognition",
+      "name": "Mixed tactics without hints",
+      "domain": "tactics",
+      "stage": 4,
+      "prereqs": [
+        "tactics.combination-basics",
+        "tactics.zwischenzug",
+        "tactics.discovered-check"
+      ],
+      "lichessThemes": [
+        "mix"
+      ],
+      "summary": "Recognises the motif without being told the theme.",
+      "masteryCriteria": "Reaches and holds Lichess puzzle rating >=1800 over 100 mixed puzzles, or solves 50 mixed puzzles ~1700 at >=80%",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#tactical-training-method",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 4"
+      ]
+    },
+    {
+      "id": "tactics.sacrifice.h7-h6",
+      "name": "Sacrifices on h7 and h6",
+      "domain": "tactics",
+      "stage": 4,
+      "prereqs": [
+        "tactics.greek-gift"
+      ],
+      "lichessThemes": [
+        "sacrifice",
+        "kingsideAttack"
+      ],
+      "summary": "Rook, queen and bishop sacrifices on h7/h6 to destroy the pawn shield.",
+      "masteryCriteria": "Solves 15 kingsideAttack sacrifice puzzles ~1700 with >=75% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#sacrifices-on-h7-and-h6",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Vukovic"
+      ]
+    },
+    {
+      "id": "tactics.underpromotion",
+      "name": "Underpromotion tactics",
+      "domain": "tactics",
+      "stage": 4,
+      "prereqs": [
+        "rules.promotion",
+        "rules.stalemate",
+        "tactics.promotion"
+      ],
+      "lichessThemes": [
+        "underPromotion"
+      ],
+      "summary": "Promotes to a knight for a fork/mate or to a rook/bishop to avoid stalemate.",
+      "masteryCriteria": "Solves 12 underPromotion puzzles ~1700 with >=80% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#underpromotion",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.x-ray",
+      "name": "X-ray attacks and collinear moves",
+      "domain": "tactics",
+      "stage": 4,
+      "prereqs": [
+        "tactics.skewer",
+        "tactics.counting",
+        "tactics.pin.relative"
+      ],
+      "lichessThemes": [
+        "xRayAttack",
+        "collinearMove"
+      ],
+      "summary": "Attacks or defends through a piece on the same line.",
+      "masteryCriteria": "Solves 15 xRayAttack and 8 collinearMove puzzles ~1600 with >=80% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#x-ray",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.zwischenzug",
+      "name": "Zwischenzug (intermezzo)",
+      "domain": "tactics",
+      "stage": 4,
+      "prereqs": [
+        "tactics.combination-basics"
+      ],
+      "lichessThemes": [
+        "intermezzo"
+      ],
+      "summary": "Inserts a stronger forcing move before the expected reply.",
+      "masteryCriteria": "Solves 20 intermezzo puzzles ~1600 with >=80% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#zwischenzug-intermezzo-in-between-move",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "checkmate.mate-in-4",
+      "name": "Mate in four",
+      "domain": "checkmate",
+      "stage": 4,
+      "prereqs": [
+        "checkmate.mate-in-3",
+        "calculation.tree-basic"
+      ],
+      "lichessThemes": [
+        "mateIn4"
+      ],
+      "summary": "Finds four-move forced mates.",
+      "masteryCriteria": "Solves 20 mateIn4 puzzles ~1800 with >=75% accuracy",
+      "exerciseTypes": [
+        "mate-drill",
+        "puzzle"
+      ],
+      "kbRef": "checkmate-patterns.md#mating-net-skills-beyond-named-patterns",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "checkmate.minor-piece-mates",
+      "name": "Advanced minor-piece mates: Max Lange, Blackburne, suffocation, double knight",
+      "domain": "checkmate",
+      "stage": 4,
+      "prereqs": [
+        "checkmate.boden",
+        "checkmate.hook",
+        "checkmate.lolli-greco"
+      ],
+      "lichessThemes": [
+        "mate",
+        "mateIn2"
+      ],
+      "summary": "Minor-piece mating nets: two bishops + knight, knight + bishop, two knights.",
+      "masteryCriteria": "Solves 16 curated Max Lange/Blackburne/suffocation/double-knight puzzles with >=80% accuracy",
+      "exerciseTypes": [
+        "mate-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#blackburnes-mate",
+      "references": [
+        "Wikipedia: Checkmate pattern"
+      ]
+    },
+    {
+      "id": "checkmate.reti",
+      "name": "Réti's mate",
+      "domain": "checkmate",
+      "stage": 4,
+      "prereqs": [
+        "tactics.double-check",
+        "checkmate.mate-in-3"
+      ],
+      "lichessThemes": [
+        "doubleCheck",
+        "sacrifice"
+      ],
+      "summary": "Queen sacrifice and double check leading to bishop mate (Réti-Tartakower 1910).",
+      "masteryCriteria": "Replays and explains Réti-Tartakower; solves 5 related double-check mates",
+      "exerciseTypes": [
+        "lesson",
+        "mate-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#rétis-mate",
+      "references": [
+        "Réti-Tartakower, Vienna 1910"
+      ]
+    },
+    {
+      "id": "checkmate.vukovic",
+      "name": "Vukovic mate",
+      "domain": "checkmate",
+      "stage": 4,
+      "prereqs": [
+        "checkmate.hook",
+        "checkmate.mate-in-3"
+      ],
+      "lichessThemes": [
+        "vukovicMate"
+      ],
+      "summary": "Rook mates supported by a third piece while a knight covers flight squares.",
+      "masteryCriteria": "Solves 8 vukovicMate puzzles with >=80% accuracy",
+      "exerciseTypes": [
+        "mate-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#vukovic-mate",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "calculation.critical-moments",
+      "name": "Recognising critical moments",
+      "domain": "calculation",
+      "stage": 4,
+      "prereqs": [
+        "calculation.candidate-moves"
+      ],
+      "lichessThemes": [],
+      "summary": "Detects positions where the decision changes the evaluation (structure changes, transitions, sacrifices).",
+      "masteryCriteria": "In 5 annotated master games identifies >=70% of the coach-marked critical moments",
+      "exerciseTypes": [
+        "game-review",
+        "guess-the-move"
+      ],
+      "kbRef": "calculation.md#critical-moments",
+      "references": [
+        "Dvoretsky"
+      ]
+    },
+    {
+      "id": "calculation.defensive",
+      "name": "Defensive calculation and only-moves",
+      "domain": "calculation",
+      "stage": 4,
+      "prereqs": [
+        "calculation.tree-basic"
+      ],
+      "lichessThemes": [
+        "defensiveMove",
+        "equality"
+      ],
+      "summary": "Calculates the opponent's attacking options and finds only-moves.",
+      "masteryCriteria": "Solves 15 defensiveMove/equality puzzles ~1700 with >=75% accuracy",
+      "exerciseTypes": [
+        "puzzle",
+        "calculation-drill"
+      ],
+      "kbRef": "calculation.md#defensive-calculation",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "calculation.elimination",
+      "name": "Elimination method",
+      "domain": "calculation",
+      "stage": 4,
+      "prereqs": [
+        "calculation.candidate-moves"
+      ],
+      "lichessThemes": [],
+      "summary": "Chooses the move by refuting all alternatives when one move cannot be refuted.",
+      "masteryCriteria": "In 10 \"only one move holds\" positions identifies the move and refutes 2 alternatives with >=80% accuracy",
+      "exerciseTypes": [
+        "calculation-drill"
+      ],
+      "kbRef": "calculation.md#elimination-and-comparison-methods",
+      "references": [
+        "Dvoretsky, Secrets of Chess Training"
+      ]
+    },
+    {
+      "id": "calculation.end-evaluation",
+      "name": "Evaluating final positions",
+      "domain": "calculation",
+      "stage": 4,
+      "prereqs": [
+        "calculation.quiescence",
+        "strategy.evaluation-elements"
+      ],
+      "lichessThemes": [
+        "advantage",
+        "crushing",
+        "equality"
+      ],
+      "summary": "Evaluates the end of a calculated line using material, king safety, activity and structure.",
+      "masteryCriteria": "Assigns =, +=, +/-, +- to 20 end positions agreeing with engine band in >=75%",
+      "exerciseTypes": [
+        "quiz",
+        "calculation-drill"
+      ],
+      "kbRef": "calculation.md#evaluating-final-positions",
+      "references": [
+        "Aagaard"
+      ]
+    },
+    {
+      "id": "calculation.tree-basic",
+      "name": "Calculating a small tree",
+      "domain": "calculation",
+      "stage": 4,
+      "prereqs": [
+        "calculation.candidate-moves",
+        "calculation.visualization.basic"
+      ],
+      "lichessThemes": [
+        "long"
+      ],
+      "summary": "Calculates 2-3 candidates with the main opponent replies 4-6 plies deep, branch by branch.",
+      "masteryCriteria": "Writes a correct 2-branch tree (verified by engine) for 10 positions with >=75% fully correct, <5 min each",
+      "exerciseTypes": [
+        "calculation-drill"
+      ],
+      "kbRef": "calculation.md#calculation-tree",
+      "references": [
+        "Kotov",
+        "Aagaard"
+      ]
+    },
+    {
+      "id": "calculation.visualization.intermediate",
+      "name": "Visualization: 4-6 plies with branches",
+      "domain": "calculation",
+      "stage": 4,
+      "prereqs": [
+        "calculation.visualization.basic"
+      ],
+      "lichessThemes": [],
+      "summary": "Holds positions 4-6 plies deep including two branches.",
+      "masteryCriteria": "Solves 12 puzzles presented with 4-6 ply text preambles (no board update) with >=75% accuracy",
+      "exerciseTypes": [
+        "visualization-drill",
+        "puzzle"
+      ],
+      "kbRef": "calculation.md#visualization",
+      "references": [
+        "Aagaard"
+      ]
+    },
+    {
+      "id": "strategy.attack.king",
+      "name": "Attacking the castled king (incl. rook lifts)",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.king-safety",
+        "tactics.greek-gift",
+        "strategy.open-files"
+      ],
+      "lichessThemes": [
+        "kingsideAttack"
+      ],
+      "summary": "Checks preconditions, brings pieces, opens lines, uses pawn storms.",
+      "masteryCriteria": "Scores >=60% in 6 attacking training games from set positions vs bot of equal rating",
+      "exerciseTypes": [
+        "play-bot",
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#attacking-the-king",
+      "references": [
+        "Vukovic, The Art of Attack"
+      ]
+    },
+    {
+      "id": "strategy.good-bad-bishop",
+      "name": "Good and bad bishops",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.pawn.chains",
+        "rules.pieces.bishop"
+      ],
+      "lichessThemes": [],
+      "summary": "Judges bishops by own pawn placement; knows active \"bad\" bishops can be fine.",
+      "masteryCriteria": "Classifies 15 bishops as good/bad/active-bad with >=85% accuracy",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "strategy.md#good-and-bad-bishops",
+      "references": [
+        "Silman"
+      ]
+    },
+    {
+      "id": "strategy.iqp",
+      "name": "Isolated queen pawn positions",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.pawn.isolated",
+        "strategy.open-files"
+      ],
+      "lichessThemes": [
+        "middlegame",
+        "kingsideAttack"
+      ],
+      "summary": "Plays both sides of IQP positions: attack and d4-d5 vs blockade and simplification.",
+      "masteryCriteria": "Scores >=55% in 6 IQP training games (both sides) vs bot of equal rating; >=80% on 12-item plan quiz",
+      "exerciseTypes": [
+        "play-bot",
+        "quiz"
+      ],
+      "kbRef": "strategy.md#isolated-queen-pawn",
+      "references": [
+        "Flores Rios, Chess Structures"
+      ]
+    },
+    {
+      "id": "strategy.knight-vs-bishop",
+      "name": "Knight vs bishop in the middlegame",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.good-bad-bishop",
+        "strategy.outposts"
+      ],
+      "lichessThemes": [],
+      "summary": "Judges minor-piece trades by structure.",
+      "masteryCriteria": "Makes the correct B-for-N trade decision in 12 positions with >=80% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#knight-vs-bishop",
+      "references": [
+        "Silman"
+      ]
+    },
+    {
+      "id": "strategy.opposite-castling",
+      "name": "Opposite-side castling races",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.attack.king"
+      ],
+      "lichessThemes": [
+        "kingsideAttack",
+        "queensideAttack"
+      ],
+      "summary": "Pawn storms and line-opening when kings castle on opposite sides; speed over material.",
+      "masteryCriteria": "Scores >=55% in 6 opposite-castling training games vs bot",
+      "exerciseTypes": [
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#attacking-the-king",
+      "references": [
+        "Vukovic"
+      ]
+    },
+    {
+      "id": "strategy.outposts",
+      "name": "Outposts",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.pawn.backward",
+        "strategy.piece-activity"
+      ],
+      "lichessThemes": [],
+      "summary": "Identifies and occupies outposts, especially with knights.",
+      "masteryCriteria": "Finds the best outpost in 15 positions with >=85% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#outposts",
+      "references": [
+        "Nimzowitsch"
+      ]
+    },
+    {
+      "id": "strategy.pawn.backward",
+      "name": "Backward pawns",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.pawn.isolated"
+      ],
+      "lichessThemes": [],
+      "summary": "Identifies and attacks backward pawns on half-open files and the hole in front.",
+      "masteryCriteria": "Scores >=85% on a 12-item backward-pawn quiz",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "strategy.md#backward-pawn",
+      "references": [
+        "Soltis"
+      ]
+    },
+    {
+      "id": "strategy.pawn.breaks",
+      "name": "Pawn breaks",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.pawn.chains"
+      ],
+      "lichessThemes": [
+        "middlegame"
+      ],
+      "summary": "Identifies the thematic pawn breaks of a structure and times them.",
+      "masteryCriteria": "Names the thematic break in 15 structures with >=80% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#pawn-breaks",
+      "references": [
+        "Flores Rios, Chess Structures"
+      ]
+    },
+    {
+      "id": "strategy.pawn.chains",
+      "name": "Pawn chains",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.centre"
+      ],
+      "lichessThemes": [],
+      "summary": "Attacks the base of the chain; plans by chain direction.",
+      "masteryCriteria": "In 12 chain positions names the correct break with >=85% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#pawn-chains",
+      "references": [
+        "Nimzowitsch, My System"
+      ]
+    },
+    {
+      "id": "strategy.pawn.majority",
+      "name": "Pawn majorities",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.pawn.passed"
+      ],
+      "lichessThemes": [],
+      "summary": "Uses a queenside/kingside majority to create a passed pawn.",
+      "masteryCriteria": "Converts 3/4 majority positions vs engine; scores >=85% on 10-item quiz",
+      "exerciseTypes": [
+        "quiz",
+        "endgame-drill"
+      ],
+      "kbRef": "strategy.md#pawn-majority",
+      "references": [
+        "Soltis"
+      ]
+    },
+    {
+      "id": "strategy.planning",
+      "name": "Forming a plan",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.evaluation-elements",
+        "strategy.pawn.breaks",
+        "strategy.outposts"
+      ],
+      "lichessThemes": [
+        "middlegame"
+      ],
+      "summary": "Evaluates imbalances, chooses targets and a wing, regroups pieces.",
+      "masteryCriteria": "In 10 positions writes a plan rated correct by coach/engine in >=70%",
+      "exerciseTypes": [
+        "quiz",
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#planning",
+      "references": [
+        "Kotov; Yusupov"
+      ]
+    },
+    {
+      "id": "strategy.seventh-rank",
+      "name": "Rooks on the seventh rank",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.open-files"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Penetrates to the 7th rank and exploits it.",
+      "masteryCriteria": "Scores >=85% on 10 seventh-rank items; wins 3/4 drill positions",
+      "exerciseTypes": [
+        "quiz",
+        "endgame-drill"
+      ],
+      "kbRef": "strategy.md#seventh-rank",
+      "references": [
+        "Nimzowitsch"
+      ]
+    },
+    {
+      "id": "strategy.space",
+      "name": "Space advantage",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.centre",
+        "strategy.exchanges"
+      ],
+      "lichessThemes": [],
+      "summary": "Uses space, avoids exchanges when ahead in space; frees with breaks when cramped.",
+      "masteryCriteria": "Scores >=80% on 12 space-handling decision items",
+      "exerciseTypes": [
+        "quiz",
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#space",
+      "references": [
+        "Tarrasch / Silman"
+      ]
+    },
+    {
+      "id": "strategy.weak-squares",
+      "name": "Weak squares and holes",
+      "domain": "strategy",
+      "stage": 4,
+      "prereqs": [
+        "strategy.outposts"
+      ],
+      "lichessThemes": [],
+      "summary": "Spots squares no longer controllable by pawns and plans to occupy them.",
+      "masteryCriteria": "Names the key weak square in 15 positions with >=85% accuracy",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "strategy.md#weak-squares-and-colour-complexes",
+      "references": [
+        "Silman"
+      ]
+    },
+    {
+      "id": "endgame.bishop-vs-pawns",
+      "name": "Bishop vs pawns",
+      "domain": "endgame",
+      "stage": 4,
+      "prereqs": [
+        "endgame.pawn.square-rule"
+      ],
+      "lichessThemes": [
+        "bishopEndgame"
+      ],
+      "summary": "Stops pawns with the bishop along one diagonal; bishop v connected pawns.",
+      "masteryCriteria": "Correct result in 8/10 B v pawns positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#bishop-vs-pawns",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 4"
+      ]
+    },
+    {
+      "id": "endgame.knight-vs-pawn",
+      "name": "Knight vs pawn",
+      "domain": "endgame",
+      "stage": 4,
+      "prereqs": [
+        "endgame.pawn.square-rule",
+        "rules.pieces.knight"
+      ],
+      "lichessThemes": [
+        "knightEndgame"
+      ],
+      "summary": "Stops pawns with a knight; knows rook-pawn difficulties and tempo-gaining checks.",
+      "masteryCriteria": "Correct result in 8/10 N v P positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#knight-vs-pawn",
+      "references": [
+        "de la Villa, 100 Endgames You Must Know",
+        "Dvoretsky's Endgame Manual ch. 2"
+      ]
+    },
+    {
+      "id": "endgame.mate.two-bishops",
+      "name": "K+2B vs K checkmate",
+      "domain": "endgame",
+      "stage": 4,
+      "prereqs": [
+        "endgame.mate.kr"
+      ],
+      "lichessThemes": [],
+      "summary": "Mates with two bishops in any corner.",
+      "masteryCriteria": "Mates vs engine from 3 random positions within 25 moves each",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#two-bishops-mate",
+      "references": [
+        "Silman, Complete Endgame Course, Part 4"
+      ]
+    },
+    {
+      "id": "endgame.ocb.basic",
+      "name": "Opposite-coloured bishops basics",
+      "domain": "endgame",
+      "stage": 4,
+      "prereqs": [
+        "endgame.wrong-bishop"
+      ],
+      "lichessThemes": [
+        "bishopEndgame"
+      ],
+      "summary": "Knows the strong drawing tendency and blockade on the bishop's colour.",
+      "masteryCriteria": "Holds 5/5 OCB down-a-pawn positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#opposite-coloured-bishops-basics",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 5"
+      ]
+    },
+    {
+      "id": "endgame.pawn.reti-manoeuvre",
+      "name": "Réti manoeuvre and shouldering",
+      "domain": "endgame",
+      "stage": 4,
+      "prereqs": [
+        "endgame.pawn.square-rule",
+        "endgame.king-activity",
+        "endgame.pawn.opposition"
+      ],
+      "lichessThemes": [
+        "pawnEndgame"
+      ],
+      "summary": "King pursues two goals at once on a diagonal.",
+      "masteryCriteria": "Draws the Réti study and 3 related positions, and wins 3/3 shouldering positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#réti-manoeuvre",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 1",
+        "de la Villa, 100 Endgames You Must Know"
+      ]
+    },
+    {
+      "id": "endgame.pawn.triangulation",
+      "name": "Triangulation",
+      "domain": "endgame",
+      "stage": 4,
+      "prereqs": [
+        "endgame.pawn.opposition"
+      ],
+      "lichessThemes": [
+        "pawnEndgame",
+        "zugzwang"
+      ],
+      "summary": "Loses a tempo with a king triangle to transfer the move.",
+      "masteryCriteria": "Wins 5/5 triangulation positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#triangulation",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 1",
+        "Silman, Complete Endgame Course, Part 5"
+      ]
+    },
+    {
+      "id": "endgame.rook.behind-passer",
+      "name": "Rook placement: behind passed pawns and activity",
+      "domain": "endgame",
+      "stage": 4,
+      "prereqs": [
+        "endgame.rook-vs-pawn-basic",
+        "strategy.pawn.passed"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Places rooks behind own and enemy passed pawns (Tarrasch rule).",
+      "masteryCriteria": "Chooses correct rook placement in 15 diagrams with >=90% and picks engine-top-2 moves in 10 rook-ending positions in >=75%",
+      "exerciseTypes": [
+        "quiz",
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#rook-behind-passed-pawn",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 9"
+      ]
+    },
+    {
+      "id": "endgame.rook.cut-off",
+      "name": "Cutting off the king with the rook",
+      "domain": "endgame",
+      "stage": 4,
+      "prereqs": [
+        "endgame.rook.lucena"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Cuts the defending king off by files/ranks and knows how many files suffice.",
+      "masteryCriteria": "Correct result in 8/10 cut-off R+P v R positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#cutting-off-the-king",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 9"
+      ]
+    },
+    {
+      "id": "endgame.rook.lucena",
+      "name": "Lucena position",
+      "domain": "endgame",
+      "stage": 4,
+      "prereqs": [
+        "endgame.mate.kr",
+        "endgame.rook-vs-pawn-basic"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Wins R+P v R with the bridge-building method.",
+      "masteryCriteria": "Wins the Lucena from 5 different set-ups (incl. Black/White flip) vs engine in 5/5",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#lucena-position",
+      "references": [
+        "Silman, Complete Endgame Course, Part 4 (1400-1599)",
+        "Dvoretsky's Endgame Manual ch. 9",
+        "de la Villa, 100 Endgames You Must Know"
+      ]
+    },
+    {
+      "id": "endgame.rook.philidor",
+      "name": "Philidor position and back-rank defence",
+      "domain": "endgame",
+      "stage": 4,
+      "prereqs": [
+        "endgame.mate.kr",
+        "endgame.pawn.key-squares"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Draws R v R+P with third-rank defence then checks from behind.",
+      "masteryCriteria": "Holds the Philidor draw from 5 set-ups vs engine in 5/5 and classifies 10 back-rank-defence positions as draw/loss with >=85% accuracy",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#philidor-position",
+      "references": [
+        "Silman, Complete Endgame Course, Part 4 (1400-1599)",
+        "Dvoretsky's Endgame Manual ch. 9",
+        "de la Villa, 100 Endgames You Must Know"
+      ]
+    },
+    {
+      "id": "opening.eco-classification",
+      "name": "ECO classification",
+      "domain": "opening",
+      "stage": 4,
+      "prereqs": [
+        "opening.semi-open-overview",
+        "opening.closed-overview"
+      ],
+      "lichessThemes": [],
+      "summary": "Knows ECO volumes A-E and locates major openings by code.",
+      "masteryCriteria": "Assigns correct ECO volume to 30 openings with >=90% and correct family code range to >=75%",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "openings.md#eco-classification",
+      "references": [
+        "ECO (Chess Informant)"
+      ]
+    },
+    {
+      "id": "opening.middlegame-transition",
+      "name": "From opening to middlegame plans",
+      "domain": "opening",
+      "stage": 4,
+      "prereqs": [
+        "opening.repertoire.club",
+        "strategy.planning"
+      ],
+      "lichessThemes": [
+        "opening",
+        "middlegame"
+      ],
+      "summary": "Converts opening structures into correct middlegame plans.",
+      "masteryCriteria": "In 15 move-15 positions from own repertoire, names the correct plan and finds engine-top-3 move in >=75%",
+      "exerciseTypes": [
+        "guess-the-move",
+        "quiz"
+      ],
+      "kbRef": "openings.md#transition-from-opening-to-middlegame",
+      "references": [
+        "Flores Rios, Chess Structures"
+      ]
+    },
+    {
+      "id": "opening.repertoire.club",
+      "name": "Club repertoire 10-15 moves with plans",
+      "domain": "opening",
+      "stage": 4,
+      "prereqs": [
+        "opening.repertoire.complete-basic",
+        "opening.study-method",
+        "strategy.pawn.breaks"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Extends repertoire to 10-15 moves in main lines with resulting middlegame plans, 2-3 model games each, and move-order/transposition awareness.",
+      "masteryCriteria": "Opening-drill accuracy >=90% at 12-move depth; explains the plan for 10 resulting positions",
+      "exerciseTypes": [
+        "opening-drill",
+        "quiz"
+      ],
+      "kbRef": "openings.md#repertoire-building-by-level",
+      "references": [
+        "Chessable"
+      ]
+    },
+    {
+      "id": "opening.study-method",
+      "name": "How to study openings",
+      "domain": "opening",
+      "stage": 4,
+      "prereqs": [
+        "opening.repertoire.complete-basic",
+        "rules.notation.pgn"
+      ],
+      "lichessThemes": [],
+      "summary": "Builds repertoire files, uses spaced repetition, model games and database statistics.",
+      "masteryCriteria": "Builds an annotated repertoire study (>=30 key positions with plans) reviewed by coach as complete",
+      "exerciseTypes": [
+        "lesson",
+        "opening-drill"
+      ],
+      "kbRef": "openings.md#opening-preparation-workflow",
+      "references": [
+        "Chessable"
+      ]
+    },
+    {
+      "id": "practical.critical-time",
+      "name": "Allocating time to critical moments",
+      "domain": "practical",
+      "stage": 4,
+      "prereqs": [
+        "practical.time-budget",
+        "calculation.critical-moments"
+      ],
+      "lichessThemes": [],
+      "summary": "Spends long thinks on critical positions and plays routine moves quickly.",
+      "masteryCriteria": "In 10 reviewed games, >=60% of moves with >5% clock usage coincide with coach-marked critical moments",
+      "exerciseTypes": [
+        "game-review"
+      ],
+      "kbRef": "psychology-and-practical.md#time-management",
+      "references": [
+        "Kotov"
+      ]
+    },
+    {
+      "id": "practical.error-log",
+      "name": "Personal error log",
+      "domain": "practical",
+      "stage": 4,
+      "prereqs": [
+        "practical.post-game-review"
+      ],
+      "lichessThemes": [],
+      "summary": "Classifies mistakes by type and phase to direct training.",
+      "masteryCriteria": "Maintains an error log for 20 games with categorised entries and a derived training plan",
+      "exerciseTypes": [
+        "game-review"
+      ],
+      "kbRef": "psychology-and-practical.md#post-game-analysis",
+      "references": [
+        "Heisman"
+      ]
+    },
+    {
+      "id": "practical.tilt",
+      "name": "Tilt and emotional regulation",
+      "domain": "practical",
+      "stage": 4,
+      "prereqs": [
+        "practical.post-game-review"
+      ],
+      "lichessThemes": [],
+      "summary": "Recognises tilt and uses stop-loss and reset routines.",
+      "masteryCriteria": "Applies a stop-loss rule in 4 weeks of play logs (no session with 3+ consecutive losses continuing)",
+      "exerciseTypes": [
+        "game-review",
+        "lesson"
+      ],
+      "kbRef": "psychology-and-practical.md#emotional-regulation-and-tilt",
+      "references": [
+        "Rowson, The Seven Deadly Chess Sins"
+      ]
+    },
+    {
+      "id": "practical.tournament-routine",
+      "name": "Tournament routines",
+      "domain": "practical",
+      "stage": 4,
+      "prereqs": [
+        "practical.otb-etiquette"
+      ],
+      "lichessThemes": [],
+      "summary": "Pre-game, in-game and post-game routines; sleep and nutrition.",
+      "masteryCriteria": "Documents and follows a routine across one 5+ round event (self-report checklist completed)",
+      "exerciseTypes": [
+        "lesson"
+      ],
+      "kbRef": "psychology-and-practical.md#tournament-preparation",
+      "references": [
+        "Dvoretsky & Yusupov"
+      ]
+    },
+    {
+      "id": "tactics.counter-sacrifice",
+      "name": "Counter-attack and counter-sacrifice",
+      "domain": "tactics",
+      "stage": 5,
+      "prereqs": [
+        "tactics.defensive-resources",
+        "calculation.opponent-resources"
+      ],
+      "lichessThemes": [
+        "defensiveMove",
+        "sacrifice"
+      ],
+      "summary": "Defends by counter-attack or returning material at the right moment.",
+      "masteryCriteria": "Solves 12 curated counter-sacrifice defence positions ~2000 with >=70% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#counter-attack-and-counter-sacrifice",
+      "references": [
+        "Dvoretsky"
+      ]
+    },
+    {
+      "id": "tactics.double-bishop-sacrifice",
+      "name": "Double bishop sacrifice (Lasker)",
+      "domain": "tactics",
+      "stage": 5,
+      "prereqs": [
+        "tactics.greek-gift",
+        "tactics.sacrifice.g7-g6"
+      ],
+      "lichessThemes": [
+        "sacrifice",
+        "kingsideAttack"
+      ],
+      "summary": "Bxh7+ and Bxg7 followed by queen and rook lift (Lasker-Bauer 1889).",
+      "masteryCriteria": "Solves 6 double-bishop-sacrifice positions with >=80% accuracy",
+      "exerciseTypes": [
+        "puzzle",
+        "lesson"
+      ],
+      "kbRef": "tactics.md#double-bishop-sacrifice",
+      "references": [
+        "Lasker-Bauer, Amsterdam 1889"
+      ]
+    },
+    {
+      "id": "tactics.king-hunt",
+      "name": "King hunts",
+      "domain": "tactics",
+      "stage": 5,
+      "prereqs": [
+        "tactics.sacrifice.h7-h6",
+        "checkmate.mate-in-4"
+      ],
+      "lichessThemes": [
+        "exposedKing",
+        "sacrifice"
+      ],
+      "summary": "Drives the king into the open with checks and sacrifices.",
+      "masteryCriteria": "Solves 12 exposedKing puzzles ~2000 with >=75% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#king-hunt",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "tactics.multi-motif",
+      "name": "Long multi-motif combinations",
+      "domain": "tactics",
+      "stage": 5,
+      "prereqs": [
+        "tactics.quiet-move",
+        "tactics.interference",
+        "tactics.clearance",
+        "tactics.x-ray"
+      ],
+      "lichessThemes": [
+        "long",
+        "veryLong",
+        "crushing"
+      ],
+      "summary": "Combines 3+ motifs in 4-6 move combinations.",
+      "masteryCriteria": "Solves 30 long/veryLong puzzles ~2000 with >=75% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#combination-techniques",
+      "references": [
+        "Steps Method Step 6",
+        "Yusupov's Chess School: Boost Your Chess 1"
+      ]
+    },
+    {
+      "id": "tactics.quiet-move",
+      "name": "Quiet moves in combinations",
+      "domain": "tactics",
+      "stage": 5,
+      "prereqs": [
+        "tactics.mixed-recognition",
+        "calculation.tree-basic"
+      ],
+      "lichessThemes": [
+        "quietMove"
+      ],
+      "summary": "Finds non-forcing moves that create unstoppable threats.",
+      "masteryCriteria": "Solves 15 quietMove puzzles ~2000 with >=75% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#quiet-move",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)",
+        "Steps Method Step 5"
+      ]
+    },
+    {
+      "id": "tactics.sacrifice.g7-g6",
+      "name": "Sacrifices on g7 and g6",
+      "domain": "tactics",
+      "stage": 5,
+      "prereqs": [
+        "tactics.sacrifice.h7-h6"
+      ],
+      "lichessThemes": [
+        "sacrifice",
+        "kingsideAttack"
+      ],
+      "summary": "Destroys fianchetto and g6/h6 structures with sacrifices.",
+      "masteryCriteria": "Solves 12 curated g7/g6 sacrifice puzzles ~2000 with >=75% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#sacrifices-on-g7-and-g6",
+      "references": [
+        "Vukovic"
+      ]
+    },
+    {
+      "id": "tactics.zugzwang",
+      "name": "Zugzwang in tactics",
+      "domain": "tactics",
+      "stage": 5,
+      "prereqs": [
+        "endgame.pawn.opposition",
+        "tactics.quiet-move"
+      ],
+      "lichessThemes": [
+        "zugzwang"
+      ],
+      "summary": "Uses zugzwang to force decisive concessions.",
+      "masteryCriteria": "Solves 15 zugzwang puzzles ~1900 with >=75% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#zugzwang",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "checkmate.mate-in-5",
+      "name": "Mate in five and longer",
+      "domain": "checkmate",
+      "stage": 5,
+      "prereqs": [
+        "checkmate.mate-in-4",
+        "calculation.tree-pruning"
+      ],
+      "lichessThemes": [
+        "mateIn5"
+      ],
+      "summary": "Finds long forced mates including quiet moves.",
+      "masteryCriteria": "Solves 15 mateIn5 puzzles ~2000 with >=70% accuracy",
+      "exerciseTypes": [
+        "mate-drill",
+        "puzzle"
+      ],
+      "kbRef": "checkmate-patterns.md#mating-net-skills-beyond-named-patterns",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "checkmate.mating-attack",
+      "name": "Constructing a mating attack",
+      "domain": "checkmate",
+      "stage": 5,
+      "prereqs": [
+        "checkmate.mate-in-4",
+        "strategy.attack.king"
+      ],
+      "lichessThemes": [
+        "kingsideAttack",
+        "exposedKing"
+      ],
+      "summary": "Brings pieces into range and opens lines before the decisive blow.",
+      "masteryCriteria": "In 10 attacking positions finds the engine-top plan move (not necessarily the final blow) in >=70%",
+      "exerciseTypes": [
+        "guess-the-move",
+        "calculation-drill"
+      ],
+      "kbRef": "checkmate-patterns.md#mating-net-skills-beyond-named-patterns",
+      "references": [
+        "Vukovic, The Art of Attack"
+      ]
+    },
+    {
+      "id": "calculation.comparison-method",
+      "name": "Comparison method",
+      "domain": "calculation",
+      "stage": 5,
+      "prereqs": [
+        "calculation.tree-basic",
+        "calculation.end-evaluation"
+      ],
+      "lichessThemes": [],
+      "summary": "Decides between similar lines by identifying the key difference instead of calculating both fully.",
+      "masteryCriteria": "Correctly chooses between two similar candidate lines with stated reason in 8/10 positions",
+      "exerciseTypes": [
+        "calculation-drill"
+      ],
+      "kbRef": "calculation.md#elimination-and-comparison-methods",
+      "references": [
+        "Dvoretsky & Yusupov, Positional Play"
+      ]
+    },
+    {
+      "id": "calculation.intuition",
+      "name": "Intuition and guess-the-move training",
+      "domain": "calculation",
+      "stage": 5,
+      "prereqs": [
+        "calculation.candidate-moves",
+        "strategy.planning"
+      ],
+      "lichessThemes": [],
+      "summary": "Builds and verifies intuitive move choice from master games.",
+      "masteryCriteria": "Scores >=60% engine-agreement (top-2 moves) over 40 guess-the-move positions from master games",
+      "exerciseTypes": [
+        "guess-the-move"
+      ],
+      "kbRef": "calculation.md#intuition-and-its-limits",
+      "references": [
+        "de Groot, Thought and Choice in Chess"
+      ]
+    },
+    {
+      "id": "calculation.opponent-resources",
+      "name": "Anticipating opponent's tactical resources",
+      "domain": "calculation",
+      "stage": 5,
+      "prereqs": [
+        "calculation.tree-basic",
+        "tactics.zwischenzug",
+        "tactics.desperado"
+      ],
+      "lichessThemes": [
+        "intermezzo",
+        "defensiveMove"
+      ],
+      "summary": "Checks for intermezzi, desperados and counter-sacrifices for the opponent at each node.",
+      "masteryCriteria": "In 12 \"the combination fails\" positions finds the defensive resource with >=75% accuracy",
+      "exerciseTypes": [
+        "calculation-drill",
+        "puzzle"
+      ],
+      "kbRef": "calculation.md#typical-calculation-errors",
+      "references": [
+        "Aagaard"
+      ]
+    },
+    {
+      "id": "calculation.tree-pruning",
+      "name": "Tree management and pruning",
+      "domain": "calculation",
+      "stage": 5,
+      "prereqs": [
+        "calculation.tree-basic"
+      ],
+      "lichessThemes": [
+        "veryLong"
+      ],
+      "summary": "Prunes irrelevant branches, avoids re-analysing lines, and stops when a line is \"good enough\" while still checking refutations.",
+      "masteryCriteria": "Solves 10 veryLong puzzles ~2000 within 6 min each with >=70% accuracy, writing branches before moving",
+      "exerciseTypes": [
+        "calculation-drill",
+        "puzzle"
+      ],
+      "kbRef": "calculation.md#calculation-tree",
+      "references": [
+        "Kotov"
+      ]
+    },
+    {
+      "id": "calculation.visualization.advanced",
+      "name": "Visualization: 6-10 plies",
+      "domain": "calculation",
+      "stage": 5,
+      "prereqs": [
+        "calculation.visualization.intermediate"
+      ],
+      "lichessThemes": [],
+      "summary": "Holds long forcing lines in mind with accurate piece locations.",
+      "masteryCriteria": "Solves 10 puzzles with 6-10 ply text preambles with >=70% accuracy",
+      "exerciseTypes": [
+        "visualization-drill"
+      ],
+      "kbRef": "calculation.md#visualization",
+      "references": [
+        "Aagaard"
+      ]
+    },
+    {
+      "id": "strategy.bishop-pair",
+      "name": "Bishop pair and bishop imbalances",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "strategy.knight-vs-bishop"
+      ],
+      "lichessThemes": [],
+      "summary": "Exploits two bishops by opening the position and restricting knights; knows opposite-coloured bishops favour the attacker in the middlegame.",
+      "masteryCriteria": "Scores >=55% in 4 bishop-pair training games vs bot; >=80% on 8-item quiz",
+      "exerciseTypes": [
+        "play-bot",
+        "quiz"
+      ],
+      "kbRef": "strategy.md#bishop-pair",
+      "references": [
+        "Steinitz; Watson"
+      ]
+    },
+    {
+      "id": "strategy.carlsbad",
+      "name": "Carlsbad structure and minority attack",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "strategy.pawn.breaks",
+        "strategy.pawn.majority"
+      ],
+      "lichessThemes": [
+        "queensideAttack"
+      ],
+      "summary": "Minority attack (b4-b5), e4 break, Black's kingside counterplay.",
+      "masteryCriteria": "Scores >=80% on 10 Carlsbad plan items; >=55% in 4 training games",
+      "exerciseTypes": [
+        "quiz",
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#carlsbad-structure",
+      "references": [
+        "Flores Rios"
+      ]
+    },
+    {
+      "id": "strategy.colour-complexes",
+      "name": "Colour complexes",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "strategy.weak-squares",
+        "strategy.good-bad-bishop"
+      ],
+      "lichessThemes": [],
+      "summary": "Exploits or repairs weakened colour complexes after bishop trades.",
+      "masteryCriteria": "Identifies colour-complex weaknesses and the plan in 12 positions with >=80% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#weak-squares-and-colour-complexes",
+      "references": [
+        "Silman"
+      ]
+    },
+    {
+      "id": "strategy.defence",
+      "name": "Defending worse positions",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "tactics.defensive-resources",
+        "strategy.exchanges"
+      ],
+      "lichessThemes": [
+        "defensiveMove",
+        "equality"
+      ],
+      "summary": "Exchanges attackers, returns material, counterattacks, builds solid set-ups.",
+      "masteryCriteria": "Holds (draw or better) 4/8 worse (-1.0 to -2.0) positions vs engine of equal rating",
+      "exerciseTypes": [
+        "play-bot",
+        "endgame-drill"
+      ],
+      "kbRef": "strategy.md#defence",
+      "references": [
+        "Dvoretsky"
+      ]
+    },
+    {
+      "id": "strategy.french-caro-structures",
+      "name": "French, Caro-Kann and Slav structures",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "strategy.pawn.chains",
+        "strategy.good-bad-bishop"
+      ],
+      "lichessThemes": [
+        "middlegame"
+      ],
+      "summary": "Advance chain play with ...c5/...f6 breaks, Winawer doubled pawns, Caro/Slav c6-d5 with the light bishop outside the chain, Panov IQP links.",
+      "masteryCriteria": "Scores >=80% on 20 French/Caro/Slav structure items and >=50% in 4 training games",
+      "exerciseTypes": [
+        "quiz",
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#french-structures",
+      "references": [
+        "Flores Rios, Chess Structures"
+      ]
+    },
+    {
+      "id": "strategy.hanging-pawns",
+      "name": "Hanging pawns",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "strategy.iqp"
+      ],
+      "lichessThemes": [
+        "middlegame"
+      ],
+      "summary": "Handles c/d hanging pawns dynamically or attacks them statically.",
+      "masteryCriteria": "Scores >=80% on 10 hanging-pawn plan items; >=50% in 4 training games",
+      "exerciseTypes": [
+        "quiz",
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#hanging-pawns",
+      "references": [
+        "Flores Rios"
+      ]
+    },
+    {
+      "id": "strategy.kid-structures",
+      "name": "King's Indian structures",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "strategy.pawn.chains",
+        "strategy.opposite-castling"
+      ],
+      "lichessThemes": [
+        "kingsideAttack",
+        "queensideAttack"
+      ],
+      "summary": "Mar del Plata, Benoni-type, exchange KID plans and pawn-storm races.",
+      "masteryCriteria": "Scores >=80% on 12 KID plan items; >=50% in 4 training games",
+      "exerciseTypes": [
+        "quiz",
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#kings-indian-structures",
+      "references": [
+        "Flores Rios"
+      ]
+    },
+    {
+      "id": "strategy.maroczy",
+      "name": "Maroczy bind",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "strategy.space",
+        "strategy.pawn.breaks"
+      ],
+      "lichessThemes": [],
+      "summary": "Plays with/against the c4-e4 bind.",
+      "masteryCriteria": "Scores >=80% on 10 Maroczy plan items; >=50% in 4 training games",
+      "exerciseTypes": [
+        "quiz",
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#maroczy-bind",
+      "references": [
+        "Flores Rios"
+      ]
+    },
+    {
+      "id": "strategy.material-imbalances",
+      "name": "Material imbalances",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "strategy.evaluation-elements",
+        "strategy.bishop-pair"
+      ],
+      "lichessThemes": [
+        "advantage",
+        "equality"
+      ],
+      "summary": "Evaluates Q v 2R, R v 2 minors, exchange, 3 minors v Q.",
+      "masteryCriteria": "Assigns correct evaluation band to 15 imbalance positions in >=75%",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "strategy.md#material-and-imbalances",
+      "references": [
+        "Kaufman"
+      ]
+    },
+    {
+      "id": "strategy.sicilian-structures",
+      "name": "Sicilian structures",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "strategy.pawn.backward",
+        "strategy.opposite-castling"
+      ],
+      "lichessThemes": [
+        "middlegame"
+      ],
+      "summary": "Scheveningen, Najdorf ...e5 (d5 hole), Dragon, Sveshnikov plans.",
+      "masteryCriteria": "Scores >=80% on 15 Sicilian structure items; >=50% in 4 training games",
+      "exerciseTypes": [
+        "quiz",
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#sicilian-structures",
+      "references": [
+        "Flores Rios"
+      ]
+    },
+    {
+      "id": "strategy.stonewall",
+      "name": "Stonewall structures",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "strategy.outposts",
+        "strategy.good-bad-bishop"
+      ],
+      "lichessThemes": [],
+      "summary": "e5/e4 outpost, kingside attack ideas, bad bishop issues.",
+      "masteryCriteria": "Scores >=80% on 10 Stonewall plan items",
+      "exerciseTypes": [
+        "quiz",
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#stonewall",
+      "references": [
+        "Soltis"
+      ]
+    },
+    {
+      "id": "strategy.transition-endgame",
+      "name": "Transition to the endgame",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "strategy.exchanges",
+        "endgame.rook.lucena",
+        "endgame.pawn.outside-passer"
+      ],
+      "lichessThemes": [
+        "endgame"
+      ],
+      "summary": "Chooses when and how to simplify into a favourable endgame, knowing target results.",
+      "masteryCriteria": "Makes the engine-correct simplify/not decision in 15 positions with >=75%",
+      "exerciseTypes": [
+        "guess-the-move",
+        "quiz"
+      ],
+      "kbRef": "strategy.md#transitions-to-endgames",
+      "references": [
+        "Shereshevsky"
+      ]
+    },
+    {
+      "id": "strategy.two-weaknesses",
+      "name": "Principle of two weaknesses",
+      "domain": "strategy",
+      "stage": 5,
+      "prereqs": [
+        "strategy.planning",
+        "strategy.pawn.majority"
+      ],
+      "lichessThemes": [
+        "advantage"
+      ],
+      "summary": "Creates a second weakness to overstretch the defence.",
+      "masteryCriteria": "Converts 3/4 two-weakness positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill",
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#two-weaknesses-principle",
+      "references": [
+        "Shereshevsky; Nimzowitsch"
+      ]
+    },
+    {
+      "id": "endgame.bishop-vs-knight",
+      "name": "Bishop vs knight endings",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.bishop-vs-pawns",
+        "endgame.knight-vs-pawn",
+        "strategy.knight-vs-bishop"
+      ],
+      "lichessThemes": [
+        "bishopEndgame",
+        "knightEndgame"
+      ],
+      "summary": "Knows when bishop or knight is better and plays B v N technique.",
+      "masteryCriteria": "Scores >=70% (engine-verified result) in 5 B v N training games from set positions",
+      "exerciseTypes": [
+        "endgame-drill",
+        "play-bot"
+      ],
+      "kbRef": "endgames.md#bishop-vs-knight-endgames",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 7"
+      ]
+    },
+    {
+      "id": "endgame.knight-endgames",
+      "name": "Knight endgames",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.knight-vs-pawn",
+        "endgame.pawn.outside-passer"
+      ],
+      "lichessThemes": [
+        "knightEndgame"
+      ],
+      "summary": "Plays knight endings like pawn endings; outside passers and forks.",
+      "masteryCriteria": "Scores >=70% in 5 knight-ending training games from set positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill",
+        "play-bot"
+      ],
+      "kbRef": "endgames.md#knight-endgames",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 3"
+      ]
+    },
+    {
+      "id": "endgame.mate.bishop-knight",
+      "name": "K+B+N vs K checkmate",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.mate.two-bishops"
+      ],
+      "lichessThemes": [],
+      "summary": "Mates in the bishop-coloured corner within 50 moves (Deletang/W-manoeuvre).",
+      "masteryCriteria": "Mates vs engine from 3 random positions within 40 moves each",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#bishop-and-knight-mate",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 13"
+      ]
+    },
+    {
+      "id": "endgame.ocb.advanced",
+      "name": "Opposite-coloured bishops advanced",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.ocb.basic",
+        "strategy.two-weaknesses"
+      ],
+      "lichessThemes": [
+        "bishopEndgame"
+      ],
+      "summary": "Wins with separated passers / second weakness; defends with king+bishop coordination.",
+      "masteryCriteria": "Correct result in 8/10 advanced OCB positions vs engine (both sides)",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#opposite-coloured-bishops-advanced",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 5"
+      ]
+    },
+    {
+      "id": "endgame.pawn.corresponding-squares",
+      "name": "Corresponding squares and mutual zugzwang",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.pawn.triangulation"
+      ],
+      "lichessThemes": [
+        "pawnEndgame",
+        "zugzwang"
+      ],
+      "summary": "Maps corresponding squares to solve complex king manoeuvres.",
+      "masteryCriteria": "Solves 6 corresponding-squares problems with >=70% accuracy and classifies 10 mutual-zugzwang positions with >=85% accuracy",
+      "exerciseTypes": [
+        "endgame-drill",
+        "calculation-drill"
+      ],
+      "kbRef": "endgames.md#corresponding-squares",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 1"
+      ]
+    },
+    {
+      "id": "endgame.queen-endgames",
+      "name": "Queen endgames",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.queen-vs-pawn",
+        "tactics.perpetual-check"
+      ],
+      "lichessThemes": [
+        "queenEndgame"
+      ],
+      "summary": "Centralisation, shelter from checks, Q+P v Q, perpetual defence, and the winning zone against advanced rook/bishop pawns.",
+      "masteryCriteria": "Correct result in 4/5 Q+P v Q positions and 10/12 Q v advanced rook/bishop pawn classifications vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#queen-endgames",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 12"
+      ]
+    },
+    {
+      "id": "endgame.queen-vs-rook",
+      "name": "Queen vs rook",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.mate.kq",
+        "tactics.fork.queen"
+      ],
+      "lichessThemes": [
+        "queenEndgame"
+      ],
+      "summary": "Wins Q v R via the Philidor position and fork/skewer technique.",
+      "masteryCriteria": "Wins 3/3 Q v R positions vs tablebase-backed engine within 50 moves",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#queen-vs-rook",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 13"
+      ]
+    },
+    {
+      "id": "endgame.rook-vs-bishop",
+      "name": "Rook vs bishop",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.mate.kr",
+        "endgame.ocb.basic"
+      ],
+      "lichessThemes": [
+        "endgame"
+      ],
+      "summary": "Defends in the safe corner; knows losing configurations.",
+      "masteryCriteria": "Holds 4/5 R v B positions as defender vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#rook-vs-bishop",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 11"
+      ]
+    },
+    {
+      "id": "endgame.rook-vs-connected-pawns",
+      "name": "Rook vs two connected pawns",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.rook-vs-pawn-basic"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Judges whether the rook stops two connected passers.",
+      "masteryCriteria": "Correct result in 8/10 positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#rook-vs-two-connected-pawns",
+      "references": [
+        "de la Villa, 100 Endgames You Must Know"
+      ]
+    },
+    {
+      "id": "endgame.rook-vs-knight",
+      "name": "Rook vs knight",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.mate.kr",
+        "endgame.knight-vs-pawn"
+      ],
+      "lichessThemes": [
+        "endgame"
+      ],
+      "summary": "Keeps the knight close to the king and away from edges.",
+      "masteryCriteria": "Holds 4/5 R v N positions as defender vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#rook-vs-knight",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 10"
+      ]
+    },
+    {
+      "id": "endgame.rook.a-pawn",
+      "name": "Rook endings with a rook pawn",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.rook.vancura"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Rook in front of a-pawn: defender king on g7/h7, skewer tricks.",
+      "masteryCriteria": "Correct result in 8/10 a-pawn rook-ending positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#rook-pawn-rook-endgames",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 9"
+      ]
+    },
+    {
+      "id": "endgame.rook.multi-pawn",
+      "name": "Many-pawn rook endgames",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.rook.behind-passer",
+        "endgame.rook.two-pawns"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Plays 3v2, 4v3 and multi-pawn rook endings with activity principles.",
+      "masteryCriteria": "Scores >=60% in 6 multi-pawn rook-ending training games vs engine from set positions",
+      "exerciseTypes": [
+        "endgame-drill",
+        "play-bot"
+      ],
+      "kbRef": "endgames.md#many-pawn-rook-endgames",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 9"
+      ]
+    },
+    {
+      "id": "endgame.rook.short-long-side",
+      "name": "Short side and long side defence",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.rook.philidor",
+        "endgame.rook.cut-off"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "King to the short side, rook to the long side for checks from the side.",
+      "masteryCriteria": "Holds 5/5 short-side defence positions and wins 3/3 where the defender errs, vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#short-side-and-long-side-defence",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 9",
+        "de la Villa, 100 Endgames You Must Know"
+      ]
+    },
+    {
+      "id": "endgame.rook.two-pawns",
+      "name": "R+2P vs R",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.rook.lucena",
+        "endgame.rook.philidor"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Wins with connected pawns; knows drawn f+h and doubled-pawn cases.",
+      "masteryCriteria": "Correct result in 8/10 R+2P v R positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#r2p-vs-r",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 9"
+      ]
+    },
+    {
+      "id": "endgame.rook.vancura",
+      "name": "Vancura position",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.rook.philidor",
+        "endgame.rook.behind-passer"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Draws rook v rook+a-pawn on the 6th with side attack on the pawn.",
+      "masteryCriteria": "Holds the Vancura from 5 set-ups vs engine in 5/5",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#vancura-position",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 9",
+        "de la Villa, 100 Endgames You Must Know"
+      ]
+    },
+    {
+      "id": "endgame.same-colour-bishops",
+      "name": "Same-coloured bishop endings (Centurini)",
+      "domain": "endgame",
+      "stage": 5,
+      "prereqs": [
+        "endgame.bishop-vs-pawns"
+      ],
+      "lichessThemes": [
+        "bishopEndgame"
+      ],
+      "summary": "Applies Centurini rules for B+P v B.",
+      "masteryCriteria": "Correct result in 8/10 same-colour bishop positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#same-coloured-bishops",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 6"
+      ]
+    },
+    {
+      "id": "opening.database-engine",
+      "name": "Using databases and engines for opening work",
+      "domain": "opening",
+      "stage": 5,
+      "prereqs": [
+        "opening.study-method"
+      ],
+      "lichessThemes": [],
+      "summary": "Uses master databases, statistics and engines (without blind trust) to choose, check and update lines.",
+      "masteryCriteria": "Produces a database- and engine-checked update of 2 repertoire lines with 3 new model games each and corrects at least 2 engine-refuted lines",
+      "exerciseTypes": [
+        "lesson",
+        "game-review"
+      ],
+      "kbRef": "openings.md#opening-preparation-workflow",
+      "references": [
+        "Lichess opening explorer",
+        "Stockfish documentation"
+      ]
+    },
+    {
+      "id": "opening.repertoire.structure-based",
+      "name": "Structure-based repertoire (15-20 moves)",
+      "domain": "opening",
+      "stage": 5,
+      "prereqs": [
+        "opening.middlegame-transition",
+        "strategy.iqp",
+        "strategy.carlsbad"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Repertoire chosen and understood via pawn structures; 15-20 moves in main lines; second options.",
+      "masteryCriteria": "Opening-drill accuracy >=90% at 18-move depth; scores >=55% in 20 training games from repertoire positions",
+      "exerciseTypes": [
+        "opening-drill",
+        "play-bot"
+      ],
+      "kbRef": "openings.md#repertoire-building-by-level",
+      "references": [
+        "Flores Rios, Chess Structures"
+      ]
+    },
+    {
+      "id": "opening.sideline-coverage",
+      "name": "Covering sidelines and anti-systems",
+      "domain": "opening",
+      "stage": 5,
+      "prereqs": [
+        "opening.repertoire.structure-based"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Has prepared answers to all common sidelines and anti-systems (e.g., anti-Sicilians, London, offbeat gambits).",
+      "masteryCriteria": "Opening-drill accuracy >=90% on 20 sideline positions",
+      "exerciseTypes": [
+        "opening-drill"
+      ],
+      "kbRef": "openings.md#repertoire-building-by-level",
+      "references": [
+        "ECO"
+      ]
+    },
+    {
+      "id": "practical.draw-decisions",
+      "name": "Draw offers and acceptance",
+      "domain": "practical",
+      "stage": 5,
+      "prereqs": [
+        "rules.draws.claims",
+        "strategy.evaluation-elements"
+      ],
+      "lichessThemes": [],
+      "summary": "Offers/accepts draws based on evaluation, clocks and tournament situation.",
+      "masteryCriteria": "Scores >=80% on 12 draw-decision scenarios judged by coach",
+      "exerciseTypes": [
+        "quiz"
+      ],
+      "kbRef": "psychology-and-practical.md#draw-offers-and-claims",
+      "references": [
+        "FIDE Laws of Chess 2023 Art. 9.1"
+      ]
+    },
+    {
+      "id": "practical.opponent-prep",
+      "name": "Opponent research",
+      "domain": "practical",
+      "stage": 5,
+      "prereqs": [
+        "practical.post-game-review",
+        "opening.database-engine"
+      ],
+      "lichessThemes": [],
+      "summary": "Researches opponents' repertoire and tendencies.",
+      "masteryCriteria": "Produces 3 opponent profiles (repertoire, strengths, time habits) rated complete by coach",
+      "exerciseTypes": [
+        "game-review",
+        "lesson"
+      ],
+      "kbRef": "psychology-and-practical.md#opponent-preparation",
+      "references": [
+        "ChessBase"
+      ]
+    },
+    {
+      "id": "practical.resilience",
+      "name": "Resilience after mistakes",
+      "domain": "practical",
+      "stage": 5,
+      "prereqs": [
+        "practical.tilt"
+      ],
+      "lichessThemes": [],
+      "summary": "Re-evaluates objectively after errors and keeps setting problems.",
+      "masteryCriteria": "In reviewed games, after an own error of >=1.5, average subsequent accuracy drop <10 points over 10 instances",
+      "exerciseTypes": [
+        "game-review"
+      ],
+      "kbRef": "psychology-and-practical.md#resilience-after-mistakes",
+      "references": [
+        "Rowson"
+      ]
+    },
+    {
+      "id": "practical.swindles",
+      "name": "Swindling in lost positions",
+      "domain": "practical",
+      "stage": 5,
+      "prereqs": [
+        "tactics.perpetual-check",
+        "practical.sportsmanship",
+        "practical.resilience"
+      ],
+      "lichessThemes": [
+        "equality"
+      ],
+      "summary": "Creates practical chances: traps, complications, fortress and perpetual tries.",
+      "masteryCriteria": "Saves >=3 of 10 lost (-2.5) positions vs bot of equal rating",
+      "exerciseTypes": [
+        "play-bot"
+      ],
+      "kbRef": "psychology-and-practical.md#swindles",
+      "references": [
+        "Practice"
+      ]
+    },
+    {
+      "id": "practical.time-trouble",
+      "name": "Handling time trouble",
+      "domain": "practical",
+      "stage": 5,
+      "prereqs": [
+        "practical.critical-time"
+      ],
+      "lichessThemes": [],
+      "summary": "Simplifies, uses safe moves and increment, exploits the opponent's zeitnot.",
+      "masteryCriteria": "In 10 rated games with time trouble (<2 min), engine accuracy drop vs rest of game <15 points",
+      "exerciseTypes": [
+        "play-bot",
+        "game-review"
+      ],
+      "kbRef": "psychology-and-practical.md#time-management",
+      "references": [
+        "Kotov"
+      ]
+    },
+    {
+      "id": "tactics.middlegame-zugzwang",
+      "name": "Middlegame zugzwang and domination",
+      "domain": "tactics",
+      "stage": 6,
+      "prereqs": [
+        "tactics.zugzwang",
+        "tactics.trapped-piece"
+      ],
+      "lichessThemes": [
+        "zugzwang",
+        "trappedPiece"
+      ],
+      "summary": "Uses zugzwang and piece domination in middlegames.",
+      "masteryCriteria": "Solves 8 middlegame zugzwang/domination positions with >=70% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#zugzwang",
+      "references": [
+        "Saemisch-Nimzowitsch 1923"
+      ]
+    },
+    {
+      "id": "tactics.real-sacrifice",
+      "name": "Intuitive (real) sacrifices",
+      "domain": "tactics",
+      "stage": 6,
+      "prereqs": [
+        "tactics.multi-motif",
+        "strategy.initiative"
+      ],
+      "lichessThemes": [
+        "sacrifice",
+        "advantage"
+      ],
+      "summary": "Sacrifices for long-term compensation where full calculation is impossible (Spielmann's real sacrifices).",
+      "masteryCriteria": "In 10 positions, decides correctly (engine-agreed) whether a real sacrifice is justified in >=7 and explains the compensation",
+      "exerciseTypes": [
+        "calculation-drill",
+        "guess-the-move"
+      ],
+      "kbRef": "tactics.md#sacrifice-general",
+      "references": [
+        "Spielmann, The Art of Sacrifice in Chess"
+      ]
+    },
+    {
+      "id": "tactics.sacrifice.sicilian",
+      "name": "Sicilian sacrifices: e6, f5, d5, b5",
+      "domain": "tactics",
+      "stage": 6,
+      "prereqs": [
+        "tactics.king-hunt",
+        "strategy.sicilian-structures"
+      ],
+      "lichessThemes": [
+        "sacrifice",
+        "exposedKing"
+      ],
+      "summary": "Typical Nd5, Nf5, Bxe6/Nxe6 and Bxb5 sacrifices against Sicilian structures.",
+      "masteryCriteria": "Solves 12 curated Sicilian sacrifice positions ~2200 with >=70% accuracy",
+      "exerciseTypes": [
+        "puzzle",
+        "lesson"
+      ],
+      "kbRef": "tactics.md#sacrifices-on-e6-and-f5",
+      "references": [
+        "Curated master games"
+      ]
+    },
+    {
+      "id": "calculation.deep-forcing",
+      "name": "Deep forcing lines 8-12 plies",
+      "domain": "calculation",
+      "stage": 6,
+      "prereqs": [
+        "calculation.visualization.advanced",
+        "calculation.tree-pruning"
+      ],
+      "lichessThemes": [
+        "veryLong",
+        "master"
+      ],
+      "summary": "Calculates long forcing variations accurately with sidelines.",
+      "masteryCriteria": "Solves 15 master-game combinations ~2300 with >=70% fully correct solutions in <10 min each",
+      "exerciseTypes": [
+        "calculation-drill",
+        "puzzle"
+      ],
+      "kbRef": "calculation.md#measurable-calculation-benchmarks",
+      "references": [
+        "Aagaard, GM Preparation: Calculation"
+      ]
+    },
+    {
+      "id": "calculation.prophylactic-thinking",
+      "name": "Prophylactic thinking",
+      "domain": "calculation",
+      "stage": 6,
+      "prereqs": [
+        "calculation.opponent-resources",
+        "strategy.prophylaxis"
+      ],
+      "lichessThemes": [],
+      "summary": "Before every decision asks what the opponent wants and integrates prevention into move choice.",
+      "masteryCriteria": "In 15 positions names the opponent's plan and chooses an engine-top-3 prophylactic move in >=70%",
+      "exerciseTypes": [
+        "calculation-drill",
+        "guess-the-move"
+      ],
+      "kbRef": "calculation.md#prophylactic-thinking",
+      "references": [
+        "Dvoretsky, Secrets of Chess Training"
+      ]
+    },
+    {
+      "id": "calculation.stoyko",
+      "name": "Stoyko exercise: full analysis tree",
+      "domain": "calculation",
+      "stage": 6,
+      "prereqs": [
+        "calculation.tree-pruning",
+        "calculation.comparison-method"
+      ],
+      "lichessThemes": [],
+      "summary": "Writes a complete analysis tree for a complex position and compares with engine.",
+      "masteryCriteria": "Over 5 Stoyko positions, main line matches engine top move for the first 4 plies in >=4/5 and evaluation band is correct in >=4/5",
+      "exerciseTypes": [
+        "calculation-drill"
+      ],
+      "kbRef": "calculation.md#training-methods",
+      "references": [
+        "Dvoretsky, Secrets of Chess Training"
+      ]
+    },
+    {
+      "id": "calculation.studies",
+      "name": "Endgame studies as calculation training",
+      "domain": "calculation",
+      "stage": 6,
+      "prereqs": [
+        "calculation.deep-forcing",
+        "endgame.pawn.reti-manoeuvre"
+      ],
+      "lichessThemes": [
+        "quietMove",
+        "zugzwang"
+      ],
+      "summary": "Solves composed studies requiring quiet moves, zugzwang and underpromotion.",
+      "masteryCriteria": "Solves 10 classic studies (Saavedra, Réti, Troitzky level) with >=60% fully correct",
+      "exerciseTypes": [
+        "calculation-drill",
+        "endgame-drill"
+      ],
+      "kbRef": "calculation.md#training-methods",
+      "references": [
+        "Dvoretsky, Studies for Practical Players"
+      ]
+    },
+    {
+      "id": "strategy.benoni-structures",
+      "name": "Benoni and Benko structures",
+      "domain": "strategy",
+      "stage": 6,
+      "prereqs": [
+        "strategy.kid-structures",
+        "strategy.pawn.majority"
+      ],
+      "lichessThemes": [
+        "middlegame"
+      ],
+      "summary": "Central majority vs queenside majority; e4-e5 vs ...b5 breaks; Benko compensation.",
+      "masteryCriteria": "Scores >=80% on 10 Benoni items",
+      "exerciseTypes": [
+        "quiz",
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#benoni-structures",
+      "references": [
+        "Flores Rios"
+      ]
+    },
+    {
+      "id": "strategy.exchange-sacrifice",
+      "name": "Positional exchange sacrifice",
+      "domain": "strategy",
+      "stage": 6,
+      "prereqs": [
+        "strategy.material-imbalances",
+        "strategy.colour-complexes"
+      ],
+      "lichessThemes": [
+        "sacrifice"
+      ],
+      "summary": "Gives the exchange for structure, squares, or initiative.",
+      "masteryCriteria": "Decides correctly (engine-agreed) in 8/10 exchange-sacrifice positions with stated compensation",
+      "exerciseTypes": [
+        "guess-the-move",
+        "calculation-drill"
+      ],
+      "kbRef": "strategy.md#exchange-sacrifice",
+      "references": [
+        "Petrosian games; Watson"
+      ]
+    },
+    {
+      "id": "strategy.hedgehog",
+      "name": "Hedgehog structures",
+      "domain": "strategy",
+      "stage": 6,
+      "prereqs": [
+        "strategy.maroczy",
+        "strategy.pawn.breaks"
+      ],
+      "lichessThemes": [
+        "middlegame"
+      ],
+      "summary": "Patient defence with ...b5/...d5 breaks behind a6-b6-d6-e6.",
+      "masteryCriteria": "Scores >=80% on 10 Hedgehog items; >=50% in 4 training games",
+      "exerciseTypes": [
+        "quiz",
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#hedgehog",
+      "references": [
+        "Flores Rios"
+      ]
+    },
+    {
+      "id": "strategy.initiative",
+      "name": "The initiative",
+      "domain": "strategy",
+      "stage": 6,
+      "prereqs": [
+        "strategy.piece-activity",
+        "strategy.attack.king",
+        "tactics.multi-motif"
+      ],
+      "lichessThemes": [
+        "advantage"
+      ],
+      "summary": "Evaluates and maintains initiative against material.",
+      "masteryCriteria": "In 10 positions chooses initiative-maintaining moves (engine-top-2) in >=70%",
+      "exerciseTypes": [
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#initiative",
+      "references": [
+        "Watson, Secrets of Modern Chess Strategy"
+      ]
+    },
+    {
+      "id": "strategy.prophylaxis",
+      "name": "Prophylaxis",
+      "domain": "strategy",
+      "stage": 6,
+      "prereqs": [
+        "strategy.planning",
+        "calculation.opponent-resources"
+      ],
+      "lichessThemes": [],
+      "summary": "Prevents opponent plans before executing own (Nimzowitsch, Petrosian, Karpov).",
+      "masteryCriteria": "Finds the engine-top-3 prophylactic move in 15 positions in >=70%",
+      "exerciseTypes": [
+        "guess-the-move",
+        "calculation-drill"
+      ],
+      "kbRef": "strategy.md#prophylaxis",
+      "references": [
+        "Dvoretsky & Yusupov, Positional Play"
+      ]
+    },
+    {
+      "id": "strategy.structure-transformations",
+      "name": "Pawn-structure transformations",
+      "domain": "strategy",
+      "stage": 6,
+      "prereqs": [
+        "strategy.hanging-pawns",
+        "strategy.carlsbad",
+        "strategy.sicilian-structures"
+      ],
+      "lichessThemes": [
+        "middlegame"
+      ],
+      "summary": "Anticipates and chooses structural transformations (IQP to hanging pawns, etc.).",
+      "masteryCriteria": "Correctly evaluates 10 structure-changing decisions in >=70%",
+      "exerciseTypes": [
+        "quiz",
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#pawn-structure",
+      "references": [
+        "Flores Rios"
+      ]
+    },
+    {
+      "id": "endgame.fortress",
+      "name": "Fortresses",
+      "domain": "endgame",
+      "stage": 6,
+      "prereqs": [
+        "endgame.ocb.advanced",
+        "endgame.wrong-bishop",
+        "endgame.rook-vs-bishop"
+      ],
+      "lichessThemes": [
+        "endgame",
+        "equality"
+      ],
+      "summary": "Recognises and builds fortresses (wrong bishop, OCB blockade, Q v R+P, minor v rook).",
+      "masteryCriteria": "Identifies fortress/no-fortress in 12 positions with >=80% accuracy and holds 4/5 fortresses vs engine",
+      "exerciseTypes": [
+        "quiz",
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#fortresses",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 13"
+      ]
+    },
+    {
+      "id": "endgame.pawn.advanced",
+      "name": "Complex pawn endgames",
+      "domain": "endgame",
+      "stage": 6,
+      "prereqs": [
+        "endgame.pawn.corresponding-squares",
+        "calculation.deep-forcing"
+      ],
+      "lichessThemes": [
+        "pawnEndgame"
+      ],
+      "summary": "Reserve tempi, multi-pawn races, complex triangulation.",
+      "masteryCriteria": "Solves 10 DEM chapter-1 exercises with >=70% fully correct",
+      "exerciseTypes": [
+        "endgame-drill",
+        "calculation-drill"
+      ],
+      "kbRef": "endgames.md#pawn-endgame-advanced",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 1"
+      ]
+    },
+    {
+      "id": "endgame.queen-vs-pieces",
+      "name": "Queen vs two rooks, rook+minor and minor pieces",
+      "domain": "endgame",
+      "stage": 6,
+      "prereqs": [
+        "endgame.queen-vs-rook",
+        "endgame.fortress"
+      ],
+      "lichessThemes": [
+        "queenEndgame",
+        "queenRookEndgame"
+      ],
+      "summary": "Assesses and plays Q v 2R, Q v R+minor, Q v 2B and Q v 2N, including fortress and perpetual resources.",
+      "masteryCriteria": "Correct result in 6/8 queen-vs-pieces positions vs engine and >=50% score in 4 Q v 2R training games",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#queen-vs-two-rooks",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 13"
+      ]
+    },
+    {
+      "id": "endgame.rook-bishop-vs-rook",
+      "name": "R+minor vs R (R+B and R+N vs R)",
+      "domain": "endgame",
+      "stage": 6,
+      "prereqs": [
+        "endgame.rook-vs-bishop",
+        "endgame.rook-vs-knight",
+        "endgame.rook.philidor"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Defends with Cochrane and second-rank defences; knows the Philidor winning position.",
+      "masteryCriteria": "Holds 4/5 R+B v R and 5/5 R+N v R positions as defender within the 50-move rule vs tablebase engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#rook-and-bishop-vs-rook",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 13"
+      ]
+    },
+    {
+      "id": "endgame.rook.advanced-technique",
+      "name": "Advanced rook endgame technique",
+      "domain": "endgame",
+      "stage": 6,
+      "prereqs": [
+        "endgame.rook.a-pawn",
+        "endgame.rook.short-long-side",
+        "endgame.rook.multi-pawn"
+      ],
+      "lichessThemes": [
+        "rookEndgame"
+      ],
+      "summary": "Kling-Horwitz positions, checking distance, rook v pawns studies.",
+      "masteryCriteria": "Correct result in 8/10 advanced DEM ch. 9 positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#rook-endgames-advanced-technique",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 9"
+      ]
+    },
+    {
+      "id": "endgame.strategy",
+      "name": "Endgame strategy (Shereshevsky)",
+      "domain": "endgame",
+      "stage": 6,
+      "prereqs": [
+        "strategy.two-weaknesses",
+        "endgame.king-activity",
+        "endgame.rook.multi-pawn"
+      ],
+      "lichessThemes": [
+        "endgame",
+        "advantage"
+      ],
+      "summary": "Applies do-not-hurry, two weaknesses, schematic thinking and exchange decisions in endings.",
+      "masteryCriteria": "Converts 4/5 clearly better (+1.5) endgame positions vs engine",
+      "exerciseTypes": [
+        "endgame-drill",
+        "play-bot"
+      ],
+      "kbRef": "endgames.md#endgame-strategy",
+      "references": [
+        "Shereshevsky, Endgame Strategy"
+      ]
+    },
+    {
+      "id": "opening.gambits.sound",
+      "name": "Sound gambits (Benko, Marshall, Catalan pawn)",
+      "domain": "opening",
+      "stage": 6,
+      "prereqs": [
+        "opening.repertoire.structure-based",
+        "strategy.initiative",
+        "opening.gambits.intro"
+      ],
+      "lichessThemes": [
+        "opening",
+        "sacrifice"
+      ],
+      "summary": "Understands long-term compensation in respected gambits.",
+      "masteryCriteria": "Explains compensation and plays the main line 15 moves deep with >=90% drill accuracy for one sound gambit",
+      "exerciseTypes": [
+        "opening-drill",
+        "lesson"
+      ],
+      "kbRef": "openings.md#gambits-for-beginners",
+      "references": [
+        "ECO A57-A59, C89"
+      ]
+    },
+    {
+      "id": "opening.opponent-prep",
+      "name": "Preparing openings against an opponent",
+      "domain": "opening",
+      "stage": 6,
+      "prereqs": [
+        "opening.repertoire.theoretical",
+        "practical.opponent-prep"
+      ],
+      "lichessThemes": [],
+      "summary": "Finds the opponent's likely lines and prepares a targeted choice.",
+      "masteryCriteria": "Prepares 3 opponent dossiers rated as complete by a coach; prediction of opening hit-rate >=50%",
+      "exerciseTypes": [
+        "game-review",
+        "lesson"
+      ],
+      "kbRef": "openings.md#opening-preparation-workflow",
+      "references": [
+        "ChessBase / Lichess"
+      ]
+    },
+    {
+      "id": "opening.repertoire.theoretical",
+      "name": "Theoretically sound repertoire (20+ moves)",
+      "domain": "opening",
+      "stage": 6,
+      "prereqs": [
+        "opening.sideline-coverage",
+        "opening.database-engine"
+      ],
+      "lichessThemes": [
+        "opening"
+      ],
+      "summary": "Main lines 20+ moves in critical lines with evaluations and plans.",
+      "masteryCriteria": "Opening-drill accuracy >=90% at 22-move depth across repertoire; 0 opening losses (engine <-1.0 by move 20) in 10 rated games",
+      "exerciseTypes": [
+        "opening-drill",
+        "game-review"
+      ],
+      "kbRef": "openings.md#repertoire-building-by-level",
+      "references": [
+        "Chess Informant"
+      ]
+    },
+    {
+      "id": "practical.tournament-prep",
+      "name": "Full tournament preparation",
+      "domain": "practical",
+      "stage": 6,
+      "prereqs": [
+        "practical.tournament-routine",
+        "practical.opponent-prep",
+        "opening.repertoire.theoretical"
+      ],
+      "lichessThemes": [],
+      "summary": "Prepares physically and chess-wise for events; manages multi-round energy.",
+      "masteryCriteria": "Completes a preparation plan for a 9-round event and performs within 50 points of rating",
+      "exerciseTypes": [
+        "lesson",
+        "game-review"
+      ],
+      "kbRef": "psychology-and-practical.md#tournament-preparation",
+      "references": [
+        "Dvoretsky & Yusupov"
+      ]
+    },
+    {
+      "id": "tactics.master-combinations",
+      "name": "Master-level combinations",
+      "domain": "tactics",
+      "stage": 7,
+      "prereqs": [
+        "tactics.real-sacrifice",
+        "calculation.deep-forcing"
+      ],
+      "lichessThemes": [
+        "master",
+        "masterVsMaster",
+        "veryLong"
+      ],
+      "summary": "Solves combinations from master games with all defensive resources.",
+      "masteryCriteria": "Solves 30 masterVsMaster puzzles ~2400 with >=70% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#tactical-training-method",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "calculation.blindfold",
+      "name": "Blindfold play",
+      "domain": "calculation",
+      "stage": 7,
+      "prereqs": [
+        "calculation.visualization.advanced"
+      ],
+      "lichessThemes": [],
+      "summary": "Plays complete games without seeing the board.",
+      "masteryCriteria": "Completes 3 blindfold games of 30+ moves vs a bot rated 400 below own rating with no illegal moves and >=2/3 score",
+      "exerciseTypes": [
+        "visualization-drill",
+        "play-bot"
+      ],
+      "kbRef": "calculation.md#training-methods",
+      "references": [
+        "Aagaard"
+      ]
+    },
+    {
+      "id": "calculation.complex-trees",
+      "name": "Complex multi-branch calculation",
+      "domain": "calculation",
+      "stage": 7,
+      "prereqs": [
+        "calculation.stoyko",
+        "calculation.deep-forcing"
+      ],
+      "lichessThemes": [
+        "masterVsMaster"
+      ],
+      "summary": "Handles several critical branches with accurate evaluations under time limits.",
+      "masteryCriteria": "Solves 15 masterVsMaster puzzles ~2450 with >=65% accuracy in <12 min each",
+      "exerciseTypes": [
+        "calculation-drill",
+        "puzzle"
+      ],
+      "kbRef": "calculation.md#measurable-calculation-benchmarks",
+      "references": [
+        "Aagaard, GM Preparation"
+      ]
+    },
+    {
+      "id": "strategy.dynamic-evaluation",
+      "name": "Statics vs dynamics",
+      "domain": "strategy",
+      "stage": 7,
+      "prereqs": [
+        "strategy.initiative",
+        "strategy.structure-transformations"
+      ],
+      "lichessThemes": [
+        "advantage",
+        "equality"
+      ],
+      "summary": "Weighs long-term structure against short-term activity correctly.",
+      "masteryCriteria": "Evaluation band matches engine in >=70% of 20 dynamic positions",
+      "exerciseTypes": [
+        "quiz",
+        "calculation-drill"
+      ],
+      "kbRef": "strategy.md#evaluation-elements",
+      "references": [
+        "Watson; Silman"
+      ]
+    },
+    {
+      "id": "strategy.model-games",
+      "name": "Classical model games and champions' styles",
+      "domain": "strategy",
+      "stage": 7,
+      "prereqs": [
+        "strategy.positional-sacrifice",
+        "strategy.structure-transformations"
+      ],
+      "lichessThemes": [
+        "master"
+      ],
+      "summary": "Knows the canon of model games (Steinitz to Carlsen) and the plans they illustrate, using them as templates.",
+      "masteryCriteria": "Identifies the game, players and key plan for 30 of 40 famous critical positions, and annotates 5 model games to coach standard",
+      "exerciseTypes": [
+        "quiz",
+        "guess-the-move",
+        "game-review"
+      ],
+      "kbRef": "strategy.md#steinitz-principles",
+      "references": [
+        "Kasparov, My Great Predecessors"
+      ]
+    },
+    {
+      "id": "strategy.positional-sacrifice",
+      "name": "Positional sacrifices",
+      "domain": "strategy",
+      "stage": 7,
+      "prereqs": [
+        "strategy.exchange-sacrifice",
+        "tactics.real-sacrifice"
+      ],
+      "lichessThemes": [
+        "sacrifice"
+      ],
+      "summary": "Pawn and piece sacrifices for long-term compensation.",
+      "masteryCriteria": "Decides correctly in 8/10 positional-sacrifice positions and plays them out to >=50% vs engine",
+      "exerciseTypes": [
+        "guess-the-move",
+        "play-bot"
+      ],
+      "kbRef": "strategy.md#positional-sacrifices",
+      "references": [
+        "Spielmann; Watson"
+      ]
+    },
+    {
+      "id": "strategy.technique",
+      "name": "Converting advantages against strong opposition",
+      "domain": "strategy",
+      "stage": 7,
+      "prereqs": [
+        "strategy.two-weaknesses",
+        "endgame.strategy",
+        "strategy.prophylaxis"
+      ],
+      "lichessThemes": [
+        "advantage",
+        "crushing"
+      ],
+      "summary": "Converts +1 to +2 advantages with minimal counterplay through prophylaxis and simplification.",
+      "masteryCriteria": "Converts 7/10 positions evaluated +1.5 to +2.5 against an engine set to 2400 strength",
+      "exerciseTypes": [
+        "play-bot",
+        "endgame-drill"
+      ],
+      "kbRef": "strategy.md#transitions-to-endgames",
+      "references": [
+        "Shereshevsky; Dvoretsky"
+      ]
+    },
+    {
+      "id": "endgame.practical-technique",
+      "name": "Practical endgame technique under time pressure",
+      "domain": "endgame",
+      "stage": 7,
+      "prereqs": [
+        "endgame.strategy",
+        "practical.time-trouble"
+      ],
+      "lichessThemes": [
+        "endgame",
+        "crushing"
+      ],
+      "summary": "Converts and defends endings with little time on the clock.",
+      "masteryCriteria": "Scores >=75% in 8 endgame positions played at 5+3 vs engine of equal rating",
+      "exerciseTypes": [
+        "play-bot",
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#band-2300-and-above-mastery",
+      "references": [
+        "Shereshevsky"
+      ]
+    },
+    {
+      "id": "endgame.tablebase-key-positions",
+      "name": "Key tablebase positions (5-6 pieces)",
+      "domain": "endgame",
+      "stage": 7,
+      "prereqs": [
+        "endgame.rook-bishop-vs-rook",
+        "endgame.queen-vs-pieces"
+      ],
+      "lichessThemes": [
+        "endgame"
+      ],
+      "summary": "Knows the results and methods of practically important 5-6 piece endings verified by tablebases.",
+      "masteryCriteria": "Gives the correct tablebase result for 40 key 5-6 piece positions with >=85% accuracy",
+      "exerciseTypes": [
+        "quiz",
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#band-2300-and-above-mastery",
+      "references": [
+        "Syzygy tablebases"
+      ]
+    },
+    {
+      "id": "endgame.two-knights-vs-pawn",
+      "name": "Two knights vs pawn (Troitzky line)",
+      "domain": "endgame",
+      "stage": 7,
+      "prereqs": [
+        "endgame.mate.bishop-knight",
+        "endgame.knight-vs-pawn"
+      ],
+      "lichessThemes": [
+        "knightEndgame"
+      ],
+      "summary": "Knows the Troitzky line and the winning method.",
+      "masteryCriteria": "Scores >=80% on a 10-item Troitzky quiz and wins 1/2 demonstration positions vs engine",
+      "exerciseTypes": [
+        "quiz",
+        "endgame-drill"
+      ],
+      "kbRef": "endgames.md#two-knights-vs-pawn",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 13",
+        "Wikipedia: Two knights endgame"
+      ]
+    },
+    {
+      "id": "opening.repertoire.professional",
+      "name": "Professional repertoire and novelties",
+      "domain": "opening",
+      "stage": 7,
+      "prereqs": [
+        "opening.repertoire.theoretical",
+        "opening.opponent-prep"
+      ],
+      "lichessThemes": [
+        "opening",
+        "master"
+      ],
+      "summary": "Maintains critical main lines with engine checks, prepared novelties and regular updates from top games.",
+      "masteryCriteria": "Maintains a repertoire file with >=10 prepared novelties/improvements checked to depth; scores >=55% in rated games vs 2300+",
+      "exerciseTypes": [
+        "opening-drill",
+        "game-review"
+      ],
+      "kbRef": "openings.md#repertoire-building-by-level",
+      "references": [
+        "Chess Informant"
+      ]
+    },
+    {
+      "id": "practical.professional-routines",
+      "name": "Professional routines and match strategy",
+      "domain": "practical",
+      "stage": 7,
+      "prereqs": [
+        "practical.tournament-prep",
+        "practical.time-trouble"
+      ],
+      "lichessThemes": [],
+      "summary": "Professional preparation, standings-based risk management, match play.",
+      "masteryCriteria": "Documents risk decisions in 9 rounds and achieves performance >=2350",
+      "exerciseTypes": [
+        "game-review"
+      ],
+      "kbRef": "psychology-and-practical.md#practical-competencies-by-stage",
+      "references": [
+        "Professional practice"
+      ]
+    },
+    {
+      "id": "practical.self-training",
+      "name": "Independent analysis and self-training",
+      "domain": "practical",
+      "stage": 7,
+      "prereqs": [
+        "practical.error-log",
+        "calculation.stoyko"
+      ],
+      "lichessThemes": [],
+      "summary": "Designs own training plan, analyses deeply without an engine, builds own training material.",
+      "masteryCriteria": "Produces 3 deep engine-free analyses later verified by engine with evaluation band correct at >=80% of marked nodes, plus a 3-month self-training plan",
+      "exerciseTypes": [
+        "game-review",
+        "calculation-drill"
+      ],
+      "kbRef": "psychology-and-practical.md#post-game-analysis",
+      "references": [
+        "Dvoretsky, Secrets of Chess Training"
+      ]
+    },
+    {
+      "id": "tactics.supergm-combinations",
+      "name": "Super-GM-level tactics",
+      "domain": "tactics",
+      "stage": 8,
+      "prereqs": [
+        "tactics.master-combinations",
+        "calculation.complex-trees"
+      ],
+      "lichessThemes": [
+        "superGM"
+      ],
+      "summary": "Solves tactical problems from super-GM games, including only-move defences.",
+      "masteryCriteria": "Solves 30 superGM puzzles rated 2500+ with >=65% accuracy",
+      "exerciseTypes": [
+        "puzzle"
+      ],
+      "kbRef": "tactics.md#tactical-training-method",
+      "references": [
+        "Lichess puzzle themes (lila PuzzleTheme.scala)"
+      ]
+    },
+    {
+      "id": "calculation.gm-level",
+      "name": "GM-level calculation",
+      "domain": "calculation",
+      "stage": 8,
+      "prereqs": [
+        "calculation.complex-trees",
+        "calculation.prophylactic-thinking"
+      ],
+      "lichessThemes": [
+        "superGM"
+      ],
+      "summary": "Calculates GM-Preparation-level positions including quiet and defensive resources with accurate final evaluations.",
+      "masteryCriteria": "Solves 20 Aagaard GM Preparation-level positions with >=60% fully correct (including sidelines) under 20 min each",
+      "exerciseTypes": [
+        "calculation-drill"
+      ],
+      "kbRef": "calculation.md#measurable-calculation-benchmarks",
+      "references": [
+        "Aagaard, Grandmaster Preparation: Calculation"
+      ]
+    },
+    {
+      "id": "calculation.practical-decisions",
+      "name": "Practical decision-making at GM level",
+      "domain": "calculation",
+      "stage": 8,
+      "prereqs": [
+        "calculation.gm-level",
+        "practical.professional-routines"
+      ],
+      "lichessThemes": [
+        "superGM"
+      ],
+      "summary": "Balances calculation depth, intuition and clock time to choose practically best moves.",
+      "masteryCriteria": "In 30 timed (3 min) positions from super-GM games, average engine loss per move <30 centipawns",
+      "exerciseTypes": [
+        "calculation-drill",
+        "guess-the-move"
+      ],
+      "kbRef": "calculation.md#critical-moments",
+      "references": [
+        "Aagaard, GM Preparation"
+      ]
+    },
+    {
+      "id": "strategy.integrated-judgement",
+      "name": "Integrated GM judgement",
+      "domain": "strategy",
+      "stage": 8,
+      "prereqs": [
+        "strategy.dynamic-evaluation",
+        "strategy.positional-sacrifice",
+        "calculation.prophylactic-thinking"
+      ],
+      "lichessThemes": [
+        "superGM"
+      ],
+      "summary": "Combines structure, dynamics, prophylaxis and concrete calculation at speed.",
+      "masteryCriteria": "Engine top-2 agreement >=60% over 50 guess-the-move positions from super-GM games under 3 min each",
+      "exerciseTypes": [
+        "guess-the-move"
+      ],
+      "kbRef": "strategy.md#strategic-competency-by-stage",
+      "references": [
+        "Dvoretsky, School of Chess Excellence"
+      ]
+    },
+    {
+      "id": "strategy.versatility",
+      "name": "Stylistic versatility across structures",
+      "domain": "strategy",
+      "stage": 8,
+      "prereqs": [
+        "strategy.integrated-judgement",
+        "opening.repertoire.elite"
+      ],
+      "lichessThemes": [
+        "superGM"
+      ],
+      "summary": "Plays open, closed, dynamic and technical structures from both sides at GM level.",
+      "masteryCriteria": "Scores >=50% across 20 training games vs 2500-strength engine from 10 different structure types, both colours",
+      "exerciseTypes": [
+        "play-bot",
+        "game-review"
+      ],
+      "kbRef": "strategy.md#strategic-competency-by-stage",
+      "references": [
+        "Dvoretsky, School of Chess Excellence"
+      ]
+    },
+    {
+      "id": "endgame.dem-mastery",
+      "name": "Complete theoretical endgame mastery (DEM)",
+      "domain": "endgame",
+      "stage": 8,
+      "prereqs": [
+        "endgame.rook.advanced-technique",
+        "endgame.pawn.advanced",
+        "endgame.queen-vs-pieces",
+        "endgame.tablebase-key-positions",
+        "endgame.two-knights-vs-pawn"
+      ],
+      "lichessThemes": [
+        "endgame"
+      ],
+      "summary": "Full Dvoretsky's Endgame Manual knowledge with practical application.",
+      "masteryCriteria": "Scores >=80% on a 50-position DEM exam (all 13 chapters) under 5 min per position",
+      "exerciseTypes": [
+        "endgame-drill",
+        "quiz"
+      ],
+      "kbRef": "endgames.md#band-2300-and-above-mastery",
+      "references": [
+        "Dvoretsky's Endgame Manual ch. 1-13"
+      ]
+    },
+    {
+      "id": "opening.repertoire.elite",
+      "name": "Elite repertoire breadth and deep preparation",
+      "domain": "opening",
+      "stage": 8,
+      "prereqs": [
+        "opening.repertoire.professional"
+      ],
+      "lichessThemes": [
+        "opening",
+        "superGM"
+      ],
+      "summary": "Broad repertoire with both 1.e4 and 1.d4 expertise; deep engine/NN preparation (25-30+ moves in forcing lines).",
+      "masteryCriteria": "Plays two different main-line repertoires as White with >=50% score in 20 games vs 2400+; prep reaches move 25 in >=30% of games",
+      "exerciseTypes": [
+        "opening-drill",
+        "game-review"
+      ],
+      "kbRef": "openings.md#how-much-theory-gms-know",
+      "references": [
+        "Top-level practice"
+      ]
+    },
+    {
+      "id": "practical.elite-competition",
+      "name": "Norm-level competition",
+      "domain": "practical",
+      "stage": 8,
+      "prereqs": [
+        "practical.professional-routines"
+      ],
+      "lichessThemes": [],
+      "summary": "Competes in norm events against titled opposition, managing pressure.",
+      "masteryCriteria": "Performance rating >=2500 over 27+ games against FIDE-norm-eligible fields",
+      "exerciseTypes": [
+        "game-review",
+        "play-bot"
+      ],
+      "kbRef": "grandmaster-competency-profile.md#stage-exit-tests",
+      "references": [
+        "FIDE Title Regulations"
+      ]
+    }
+  ]
+}

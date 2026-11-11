@@ -1,0 +1,98 @@
+{
+  "id": "adult.s7.master-combinations",
+  "track": "adult",
+  "stage": 7,
+  "order": 1,
+  "skillIds": [
+    "tactics.master-combinations"
+  ],
+  "title": "Combinations from master games",
+  "summary": "Solve combinations from world-championship and elite games with every defensive resource considered.",
+  "estMinutes": 35,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Solving at master level\n\nAt 2300-2450 the difference is not seeing the first move but **seeing the defence**: in-between moves, counter-sacrifices, a king walk, a stalemate. Aagaard's procedure for each exercise:\n1. Candidates (including absurd ones).\n2. For each, the opponent's **best** answer — what would *you* play as the defender?\n3. Calculate to a **quiet** position; evaluate concretely.\n4. Write the solution with the main defensive tries before checking."
+    },
+    {
+      "type": "move",
+      "fen": "1r4k1/3nppbp/p2p2p1/q7/2b5/2N3P1/P2QPPBP/2RR2K1 w - - 2 20",
+      "prompt": "White to move. A knight jump decides the game (Fischer-Spassky, World Championship 1972)",
+      "solution": [
+        "Nd5"
+      ],
+      "orientation": "white",
+      "explain": "**20.Nd5!** — the knight attacks e7 with tempo against the queen exchange: after 20...Qxd2 21.Nxe7+ Kf8 22.Rxd2 White wins a pawn and keeps a dominant position. Engine main line: 20.Nd5 Qxd2 21.Nxe7+ Kf8 22.Rxd2 Bh6 23.f4 Kxe7. (Fischer-Spassky, World Championship 1972; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "3r2k1/pb1r1pp1/1pn2q1p/3B4/6Q1/P4NP1/1P3PP1/3RR1K1 w - - 7 23",
+      "prompt": "White to move. Liquidate into a won position (Kasparov-Karpov, World Championship 1985)",
+      "solution": [
+        "Qxd7"
+      ],
+      "orientation": "white",
+      "explain": "**23.Qxd7!** — the queen sacrifice is temporary: after 23...Rxd7 24.Re8+ Kh7 25.Be4+ White regains material with interest. Engine main line: 23.Qxd7 Rxd7 24.Re8+ Kh7 25.Be4+ g6 26.Rxd7 Kg7 27.Rxb7 Qxb2. (Kasparov-Karpov, World Championship 1985; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "4rrk1/6pp/3b4/1ppb4/7Q/2P1BqP1/1PB2P1P/2R1R1K1 w - - 2 29",
+      "prompt": "White to move. Break the black king's shelter (Anand-Adams, SuperGM 2000)",
+      "solution": [
+        "Qxh7+"
+      ],
+      "orientation": "white",
+      "explain": "**29.Qxh7+!** — the queen takes with check and the bishops and rooks follow; Black is forced into a lost ending. Engine main line: 29.Qxh7+ Kf7 30.Qf5+ Qxf5 31.Bxf5 Re5 32.Bd7 c4 33.Bxb5 Bc5. (Anand-Adams, SuperGM 2000; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "r3r1k1/5pp1/1n1p1q2/p1pPpP1p/7n/2P4K/1PB2P1N/R2Q2R1 w - - 2 30",
+      "prompt": "White to move. Stein's combination (Stein-Spassky, URS-ch30 1962)",
+      "solution": [
+        "Qxh5"
+      ],
+      "orientation": "white",
+      "explain": "**30.Qxh5!** — the queen takes the pawn defending h4; after the exchanges White emerges with a winning endgame. Engine main line: 30.Qxh5 Nxd5 31.Qxh4 Nf4+ 32.Kg4 Qxh4+ 33.Kxh4 Kf8 34.Kg4 Reb8 35.Rgb1 Ke7. (Stein-Spassky, URS-ch30 1962; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "4r1k1/p1Q2p2/5n1p/2Pp2pq/1P6/P3BP2/6Pr/R2R2K1 b - - 1 26",
+      "prompt": "Black to move. Lasker against Steinitz (Steinitz-Lasker, Nuremberg 1896)",
+      "solution": [
+        "Rh1+"
+      ],
+      "orientation": "black",
+      "explain": "**26...Rh1+!** — the rook check deflects the king and the knight forks: Black wins the d1-rook. Engine main line: 26...Rh1+ 27.Kf2 Ne4+ 28.fxe4 Rxd1 29.Rxd1 Qxd1 30.c6 Qc2+ 31.Kg1. (Steinitz-Lasker, Nuremberg 1896; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "You have found a winning combination in a master-level exercise. Before you check the solution, what should your written answer contain?",
+      "choices": [
+        "Only the first move",
+        "The main line to a quiet position, the opponent's two or three most dangerous defences with your answer to each, and an evaluation",
+        "The first three moves",
+        "A list of all legal moves"
+      ],
+      "answer": 1,
+      "explain": "Scoring the main line and the key defences is how GM Preparation exercises are graded."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles**: 25 *master* and *masterVsMaster* puzzles at your rating, solved in exam mode with written lines.\n- **Guess the move**: one world-championship game per week (corpus), stopping at every capture or check to calculate."
+    }
+  ],
+  "practiceThemes": [
+    "master",
+    "masterVsMaster",
+    "veryLong"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "knowledge-base/03-chess-knowledge/grandmaster-competency-profile.md",
+    "Aagaard, Grandmaster Preparation: Calculation",
+    "Kasparov, My Great Predecessors (vols. I-V)",
+    "Fischer-Spassky, World Championship 1972",
+    "Kasparov-Karpov, World Championship 1985"
+  ]
+}

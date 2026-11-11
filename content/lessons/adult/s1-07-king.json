@@ -1,0 +1,114 @@
+{
+  "id": "adult.s1.king",
+  "track": "adult",
+  "stage": 1,
+  "order": 7,
+  "skillIds": [
+    "rules.pieces.king"
+  ],
+  "title": "How the king moves",
+  "summary": "One square in any direction, never onto an attacked square, never next to the other king.",
+  "estMinutes": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The **king** moves one square in any direction. Two restrictions:\n\n- It may **never move onto a square attacked** by an enemy piece.\n- So the two kings can **never stand next to each other** (each would be attacking the other).\n\nThe king cannot be captured. The whole game is about trapping it."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/4K3/8/8/8 w - - 0 1",
+      "md": "In the open, the king on e4 has eight squares.",
+      "highlights": [
+        "d3",
+        "e3",
+        "f3",
+        "d4",
+        "f4",
+        "d5",
+        "e5",
+        "f5"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/4K3/8/8/8 w - - 0 1",
+      "prompt": "Move the king to d5.",
+      "solution": [
+        "Kd5"
+      ],
+      "explain": "One square diagonally."
+    },
+    {
+      "type": "quiz",
+      "question": "The kings face each other on e4 and e6. Which square can the white king move to?",
+      "choices": [
+        "d3",
+        "d5",
+        "e5",
+        "f5"
+      ],
+      "answer": 0,
+      "explain": "d5, e5 and f5 all touch the black king on e6, so they are forbidden. d3 is safe.",
+      "fen": "8/8/4k3/8/4K3/8/8/8 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "The black rook controls the whole 5th rank. How many legal moves does the white king have?",
+      "choices": [
+        "5",
+        "8",
+        "3",
+        "0"
+      ],
+      "answer": 0,
+      "explain": "d5, e5 and f5 are attacked by the rook. d4, f4, d3, e3 and f3 are safe: 5 moves.",
+      "fen": "4k3/8/8/r7/4K3/8/8/8 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/r7/4K3/8/8/8 w - - 0 1",
+      "prompt": "Move the king to f4, staying off the rook's rank.",
+      "solution": [
+        "Kf4"
+      ],
+      "explain": "Before every king move, ask: is the destination attacked? Here the 5th rank is off-limits, but the 4th rank is safe."
+    },
+    {
+      "type": "quiz",
+      "question": "Can a king move two squares in one turn?",
+      "choices": [
+        "Only when castling (later lesson)",
+        "Yes, on its first move",
+        "Never"
+      ],
+      "answer": 0,
+      "explain": "Normally one square. The single exception is castling, a special king-and-rook move you will learn in stage 2."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: why can the two kings never touch?",
+      "choices": [
+        "Each would be moving onto a square attacked by the other king",
+        "It is a draw rule",
+        "They can if one is protected"
+      ],
+      "answer": 0,
+      "explain": "A king attacks the squares around it, and no king may step onto an attacked square."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: is a king ever captured in chess?",
+      "choices": [
+        "No, the game ends by checkmate before that",
+        "Yes, that is how you win",
+        "Only in blitz"
+      ],
+      "answer": 0,
+      "explain": "Kings are never captured. Checkmate (an attack with no escape) ends the game."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#king-moves-and-check",
+    "knowledge-base/02-methods/steps-method.md#3-didactic-principles"
+  ]
+}

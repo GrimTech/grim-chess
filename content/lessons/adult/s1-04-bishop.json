@@ -1,0 +1,125 @@
+{
+  "id": "adult.s1.bishop",
+  "track": "adult",
+  "stage": 1,
+  "order": 4,
+  "skillIds": [
+    "rules.pieces.bishop"
+  ],
+  "title": "How the bishop moves",
+  "summary": "Diagonals any distance; a bishop stays on its starting colour for the whole game.",
+  "estMinutes": 6,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The **bishop** moves diagonally, any number of empty squares, and cannot jump. Because it only moves diagonally it **never changes square colour**: each side has one light-squared and one dark-squared bishop. Value: about 3 pawns."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/3B4/8/8/4K3 w - - 0 1",
+      "md": "From d4 the bishop sweeps both diagonals: a1-h8 and a7-g1. 13 squares, all dark.",
+      "arrows": [
+        [
+          "d4",
+          "h8",
+          "green"
+        ],
+        [
+          "d4",
+          "a1",
+          "green"
+        ],
+        [
+          "d4",
+          "a7",
+          "green"
+        ],
+        [
+          "d4",
+          "g1",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/3B4/8/8/4K3 w - - 0 1",
+      "prompt": "Move the bishop to h8.",
+      "solution": [
+        "Bh8"
+      ],
+      "explain": "One move along the long a1-h8 diagonal."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/3B4/8/8/4K3 w - - 0 1",
+      "prompt": "Move the bishop to g1.",
+      "solution": [
+        "Bg1"
+      ],
+      "explain": "Backwards along the a7-g1 diagonal. Beginners often miss backward bishop moves, so look for them on purpose."
+    },
+    {
+      "type": "quiz",
+      "question": "The bishop is on d4, a dark square. Can it ever reach e4?",
+      "choices": [
+        "No, e4 is a light square",
+        "Yes, in two moves",
+        "Yes, in three moves"
+      ],
+      "answer": 0,
+      "explain": "e4 is light. A dark-squared bishop can never reach a light square, however many moves it makes.",
+      "fen": "4k3/8/8/8/3B4/8/8/4K3 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/8/8/3P4/2B1K3 w - - 0 1",
+      "prompt": "Bring the bishop from c1 to c5 in two moves. Your own pawn on d2 blocks one diagonal.",
+      "solution": [
+        "Ba3",
+        "Kd7",
+        "Bc5"
+      ],
+      "hint": "Go out to the a-file first.",
+      "explain": "With d2 blocked, the only route is c1-a3-c5. Bishops often need a zig-zag to reach a square on the same file."
+    },
+    {
+      "type": "quiz",
+      "question": "How many squares does a bishop on d4 control on an empty board, compared with one in the corner (a1)?",
+      "choices": [
+        "13 on d4, 7 on a1",
+        "7 on both",
+        "14 on both",
+        "13 on both"
+      ],
+      "answer": 0,
+      "explain": "Centralised bishops are stronger: 13 squares on d4, only 7 from the corner. Rooks always have 14, but bishops gain from the centre."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: why can a bishop never change square colour?",
+      "choices": [
+        "Every diagonal step lands on the same colour",
+        "It is a special rule for bishops",
+        "It can, after promotion"
+      ],
+      "answer": 0,
+      "explain": "Moving one step diagonally keeps you on the same colour, so the bishop is locked to its starting colour."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: each side starts with...",
+      "choices": [
+        "one light-squared and one dark-squared bishop",
+        "two light-squared bishops",
+        "two dark-squared bishops"
+      ],
+      "answer": 0,
+      "explain": "c1 is dark and f1 is light for White (f8 dark and c8 light for Black)."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#piece-movement",
+    "knowledge-base/02-methods/steps-method.md#3-didactic-principles"
+  ]
+}

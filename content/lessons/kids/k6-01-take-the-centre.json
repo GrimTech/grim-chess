@@ -1,0 +1,73 @@
+{
+  "id": "kids.6.take-the-centre",
+  "track": "kids",
+  "stage": 1,
+  "order": 601,
+  "skillIds": [
+    "opening.principles.centre"
+  ],
+  "title": "Take the middle",
+  "summary": "Start the game with pawns in the centre.",
+  "estMinutes": 5,
+  "minAge": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The four squares in the **middle** are the best seats in the house: d4, e4, d5 and e5."
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "md": "Pieces in the middle can go everywhere. Pieces in the corner are stuck!",
+      "highlights": [
+        "d4",
+        "e4",
+        "d5",
+        "e5"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Put a pawn in the middle with a big step!",
+      "solution": [
+        "e4"
+      ],
+      "explain": "A strong first move!",
+      "alternatives": [
+        "d4"
+      ],
+      "hint": "The pawns in front of the king or queen."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "prompt": "You are Black. Answer in the middle too!",
+      "solution": [
+        "e5"
+      ],
+      "explain": "You grab your share of the middle!",
+      "alternatives": [
+        "d5"
+      ],
+      "hint": "Push a middle pawn two squares."
+    },
+    {
+      "type": "quiz",
+      "question": "Which of these is a middle square?",
+      "choices": [
+        "e4",
+        "a4",
+        "h5"
+      ],
+      "answer": 0,
+      "explain": "e4 is one of the four centre squares."
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

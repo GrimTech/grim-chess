@@ -1,0 +1,101 @@
+{
+  "id": "adult.s2.piece-activity",
+  "track": "adult",
+  "stage": 2,
+  "order": 28,
+  "skillIds": [
+    "strategy.piece-activity"
+  ],
+  "title": "Piece activity and tempo",
+  "summary": "Active, coordinated pieces; improve your worst piece; use a lead in development.",
+  "estMinutes": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "When there are no tactics, improve your pieces:\n\n- An **active** piece controls many useful squares (central knights, bishops on open diagonals, rooks on open files).\n- Ask **\"Which is my worst piece?\"** and improve it.\n- **Tempo**: a lead in development is temporary. Use it (open lines, attack) before the opponent catches up."
+    },
+    {
+      "type": "quiz",
+      "question": "Which is White's worst piece?",
+      "choices": [
+        "The bishop on c1, still undeveloped",
+        "The knight on f3",
+        "The bishop on c4",
+        "The queen"
+      ],
+      "answer": 0,
+      "explain": "Everything else is developed. Bringing out the c1-bishop (e.g. Be3 or Bg5) is the natural plan.",
+      "fen": "r1bq1rk1/1pp2ppp/p1np1n2/2b1p3/2B1P3/2PP1N2/PP1N1PPP/R1BQ1RK1 w - - 0 8"
+    },
+    {
+      "type": "move",
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 w - - 1 7",
+      "prompt": "Your b1-knight is your least active piece (c3 is taken by a pawn). Improve it.",
+      "solution": [
+        "Nbd2"
+      ],
+      "explain": "Nbd2 heading for f1-g3 or b3 is the standard route in this structure. Na3 would put it on the rim."
+    },
+    {
+      "type": "move",
+      "fen": "rnbq1rk1/ppp1bpp1/4pn1p/3p4/2PP3B/2N1PN2/PP3PPP/R2QKB1R b KQ - 1 7",
+      "prompt": "You are Black. Your worst piece is the c8-bishop, blocked by e6. Prepare to activate it.",
+      "solution": [
+        "b6"
+      ],
+      "explain": "...b6 and ...Bb7 puts the bishop on the long diagonal (the Tartakower Variation)."
+    },
+    {
+      "type": "quiz",
+      "question": "You are three moves ahead in development. What should you do?",
+      "choices": [
+        "Open the position to use the lead before it disappears",
+        "Keep the position closed",
+        "Trade queens and wait"
+      ],
+      "answer": 0,
+      "explain": "A development lead is a temporary advantage. Open lines so your extra pieces can act."
+    },
+    {
+      "type": "quiz",
+      "question": "Where is a rook most active?",
+      "choices": [
+        "On an open file",
+        "Behind its own pawns on a closed file",
+        "In the corner"
+      ],
+      "answer": 0,
+      "explain": "Rooks need open lines."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what question finds a plan in a quiet position?",
+      "choices": [
+        "\"Which is my worst piece?\"",
+        "\"Which pawn can I push?\"",
+        "\"Can I trade queens?\""
+      ],
+      "answer": 0,
+      "explain": "Improve the worst piece."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: a \"tempo\" is...",
+      "choices": [
+        "A unit of time: one move",
+        "A pawn",
+        "A type of check"
+      ],
+      "answer": 0,
+      "explain": "Development with threats gains tempi."
+    }
+  ],
+  "practiceThemes": [
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#activity-and-coordination",
+    "knowledge-base/03-chess-knowledge/strategy.md#development-and-tempo",
+    "knowledge-base/03-chess-knowledge/strategy.md#good-and-bad-bishops"
+  ]
+}

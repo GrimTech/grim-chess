@@ -1,0 +1,107 @@
+{
+  "id": "adult.s5.stonewall-and-imbalances",
+  "track": "adult",
+  "stage": 5,
+  "order": 15,
+  "skillIds": [
+    "strategy.stonewall",
+    "strategy.material-imbalances"
+  ],
+  "title": "Stonewall structures and material imbalances",
+  "summary": "The e5/e4 outpost and the bad bishop in the Stonewall; how to evaluate Q v 2R, R v two minors, the exchange and three minors v queen.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Stonewall\n\nBlack pawns **c6-d5-e6-f5** (or White's c3-d4-e3-f4): a fixed centre with a permanent outpost on **e4** (e5 for White), a **bad light-squared bishop**, and a hole on e5 for the opponent. Plans:\n- Stonewall side: knight to e4, kingside attack (...Qe7-h5/...Rf6-h6, ...g5), improve the bad bishop (...b6 and ...Ba6 or ...Bd7-e8-h5).\n- Opponent: exchange the **good** dark-squared bishop (Ba3 or Bf4), occupy e5 with a knight, and break with f3 and e4 or with c4-c5."
+    },
+    {
+      "type": "board",
+      "fen": "rnb2rk1/pp2q1pp/2pbpn2/3pNp2/2PP4/1P4P1/P2NPPBP/R1BQ1RK1 b - - 4 9",
+      "md": "**Stonewall Dutch** (1.d4 e6 2.c4 f5 3.g3 Nf6 4.Bg2 d5 5.Nf3 c6 6.O-O Bd6 7.b3 Qe7 8.Ne5 O-O 9.Nd2). White's plan Ba3 trades Black's good bishop; the e5 knight and later f3/e4 aim at the light squares. Black aims for ...Nbd7, ...Ne4 and kingside play.",
+      "orientation": "black",
+      "highlights": [
+        "e4",
+        "e5"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the Stonewall, why is White's plan b3 and Ba3 so important?",
+      "choices": [
+        "It wins a pawn",
+        "It exchanges Black's good dark-squared bishop, leaving Black with the bad light-squared bishop and weak dark squares (e5, c5)",
+        "It prepares castling",
+        "It stops ...Ne4"
+      ],
+      "answer": 1,
+      "explain": "With the pawns on light squares, the dark-squared bishop is Black's good bishop. Its exchange leaves holes that a white knight can use.",
+      "fen": "rnb2rk1/pp2q1pp/2pbpn2/3pNp2/2PP4/1P4P1/P2NPPBP/R1BQ1RK1 b - - 4 9"
+    },
+    {
+      "type": "text",
+      "md": "## Material imbalances: rules of thumb\n\nPoint counts (1-3-3-5-9) are a starting point; Kaufman's statistics and practice refine them:\n- **Bishop pair** is worth about half a pawn in open positions.\n- **Rook v two minor pieces**: in the middlegame the two pieces are usually better (especially with the bishop pair); in endgames with few pawns the rook gains value.\n- **Exchange** (R v B or N): a pawn plus a strong minor piece often compensates; in endgames with passed pawns the rook usually wins.\n- **Q v 2R**: roughly equal; the rooks are better when they cooperate and the king is safe, the queen when the opponent's king is exposed or pawns are loose.\n- **Three minors v Q**: the pieces are often better if they are coordinated and safe from forks.\n- **Q v R+minor+pawn**: depends on king safety and the coordination of the pieces."
+    },
+    {
+      "type": "quiz",
+      "question": "Middlegame, many pawns, both kings safe. White has **rook + pawn**, Black has **two minor pieces (bishop pair)**. Which side is usually better?",
+      "choices": [
+        "White: rook and pawn are worth 6 points",
+        "Black: in the middlegame, two minor pieces (especially the bishop pair) usually outplay a rook and pawn",
+        "It is always equal",
+        "It depends only on who is to move"
+      ],
+      "answer": 1,
+      "explain": "In the middlegame the minor pieces coordinate, attack and control squares; the rook needs open files and targets. In a late endgame the rook and pawn improve."
+    },
+    {
+      "type": "quiz",
+      "question": "Endgame, pawns on both wings, no pieces besides: White has a queen, Black has two rooks. Black's rooks are connected and defend each other, and both kings are safe. Typical verdict?",
+      "choices": [
+        "The queen always wins",
+        "Roughly balanced, often slightly better for the rooks, since they can double on targets and the queen cannot attack both rooks at once",
+        "The rooks always win",
+        "A forced draw"
+      ],
+      "answer": 1,
+      "explain": "Two coordinated rooks are worth at least a queen; the queen needs exposed king positions or loose pawns to create double attacks."
+    },
+    {
+      "type": "quiz",
+      "question": "White has given the exchange (rook for bishop) and has one pawn for it. Which factor most often makes this compensation sufficient?",
+      "choices": [
+        "Having more pawns on the queenside",
+        "A dominant minor piece on an outpost, weak opponent squares (colour complex), and no open files for the opponent's rook",
+        "Having the move",
+        "An early queen exchange"
+      ],
+      "answer": 1,
+      "explain": "Exchange sacrifices work when the rook has no open files and the minor piece dominates. See the stage 6 lesson on exchange sacrifices."
+    },
+    {
+      "type": "play",
+      "fen": "rnb2rk1/pp2q1pp/2pbpn2/3pNp2/2PP4/1P4P1/P2NPPBP/R1BQ1RK1 b - - 4 9",
+      "goal": "hold",
+      "prompt": "Play the Stonewall as Black against the engine (level 12) for 25 moves. Use the e4 outpost, avoid the exchange of your good bishop if you can, and do not let the e5 knight become permanent.",
+      "maxMoves": 25,
+      "engineLevel": 12
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- For your next 10 puzzles with a material imbalance (themes *advantage* and *equality*), write down your evaluation (=, +=, +-) before solving.\n- Find two games in the corpus with an exchange sacrifice (Petrosian, Karpov) and evaluate the final position."
+    }
+  ],
+  "practiceThemes": [
+    "advantage",
+    "equality"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "knowledge-base/03-chess-knowledge/openings.md",
+    "Dvoretsky & Yusupov, Positional Play",
+    "Soltis, Pawn Structure Chess",
+    "Flores Rios, Chess Structures: A Grandmaster Guide",
+    "Kaufman, \"The Evaluation of Material Imbalances\" (Chess Life, 1999)",
+    "Aagaard & Ntirlis, Playing the Stonewall"
+  ]
+}

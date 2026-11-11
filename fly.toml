@@ -1,0 +1,47 @@
+# Fly.io deployment for Grim Chess.  First time:
+#   fly apps create grim-chess
+#   fly volumes create grim_chess_data --region lhr --size 1
+#   fly deploy
+app = "grim-chess"
+primary_region = "lhr"
+kill_signal = "SIGTERM"
+kill_timeout = "15s"
+
+[build]
+  dockerfile = "deploy/Dockerfile"
+
+[env]
+  DATA_DIR = "/data"
+  MODE = "cloud"
+  PORT = "8080"
+  HOST = "0.0.0.0"
+
+[[mounts]]
+  source = "grim_chess_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  # keep one machine up so live WebSocket games are not interrupted
+  min_machines_running = 1
+  processes = ["app"]
+
+  [http_service.concurrency]
+    type = "connections"
+    soft_limit = 800
+    hard_limit = 1000
+
+  [[http_service.checks]]
+    # first boot imports the puzzle database into SQLite (a few seconds)
+    grace_period = "60s"
+    interval = "15s"
+    timeout = "5s"
+    method = "GET"
+    path = "/healthz"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"

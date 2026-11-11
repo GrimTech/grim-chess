@@ -1,0 +1,87 @@
+{
+  "id": "kids.4.mate-in-two",
+  "track": "kids",
+  "stage": 2,
+  "order": 408,
+  "skillIds": [
+    "checkmate.mate-in-2"
+  ],
+  "title": "Mate in two",
+  "summary": "Your move, their move, then checkmate.",
+  "estMinutes": 8,
+  "minAge": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Mate in 2**: your move, their move, then checkmate! Look at **checks** first."
+    },
+    {
+      "type": "move",
+      "fen": "3r2k1/2q2ppp/8/8/8/8/3R1PPP/3Q2K1 w - - 0 1",
+      "prompt": "Mate in 2!",
+      "solution": [
+        "Rxd8+",
+        "Qxd8",
+        "Qxd8#"
+      ],
+      "explain": "Two attackers beat one defender!",
+      "hint": "Start by capturing on d8 with check."
+    },
+    {
+      "type": "move",
+      "fen": "8/7k/R7/1R6/8/8/8/2K5 w - - 0 1",
+      "prompt": "Mate in 2!",
+      "solution": [
+        "Rb7+",
+        "Kg8",
+        "Ra8#"
+      ],
+      "explain": "Ladder in two steps!",
+      "hint": "Use the ladder.",
+      "alternatives": [
+        "Rg5"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/8/6K1/8/8/8/2Q5 w - - 0 1",
+      "prompt": "Mate in 2! Bring your king closer first.",
+      "solution": [
+        "Kg6",
+        "Kg8",
+        "Qc8#"
+      ],
+      "explain": "A quiet king move, then checkmate!",
+      "hint": "Move your king, not the queen!"
+    },
+    {
+      "type": "quiz",
+      "question": "In mate in 2, what should you look at first?",
+      "choices": [
+        "Checks",
+        "Pawn moves",
+        "King walks"
+      ],
+      "answer": 0,
+      "explain": "Checks force your opponent to answer."
+    },
+    {
+      "type": "move",
+      "fen": "1r4k1/5ppp/8/8/8/8/4RPPP/4R1K1 w - - 0 1",
+      "prompt": "Mate in 2!",
+      "solution": [
+        "Re8+",
+        "Rxe8",
+        "Rxe8#"
+      ],
+      "explain": "Doubled rooks smash the back row!",
+      "hint": "Give check on e8."
+    }
+  ],
+  "practiceThemes": [
+    "mateIn2"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

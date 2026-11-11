@@ -1,0 +1,79 @@
+{
+  "id": "kids.6.my-first-openings",
+  "track": "kids",
+  "stage": 2,
+  "order": 605,
+  "skillIds": [
+    "opening.first-repertoire.white",
+    "opening.first-repertoire.black"
+  ],
+  "title": "My first openings",
+  "summary": "The Italian Game for White and simple answers for Black.",
+  "estMinutes": 7,
+  "minAge": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Let us learn real openings! As White we play the **Italian Game**."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Play the Italian Game: e4, then Nf3, then Bc4.",
+      "solution": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bc4"
+      ],
+      "explain": "The Italian Game! Centre, knight, bishop.",
+      "hint": "Start with the king pawn."
+    },
+    {
+      "type": "board",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "md": "Next you castle and play c3 and d4 to grab the middle."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "prompt": "As Black against e4: answer e5, then bring out the knight.",
+      "solution": [
+        "e5",
+        "Nf3",
+        "Nc6"
+      ],
+      "explain": "The knight guards your e5 pawn.",
+      "hint": "Push the king pawn two squares."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+      "prompt": "As Black against d4: answer d5, then bring out the knight.",
+      "solution": [
+        "d5",
+        "c4",
+        "Nf6"
+      ],
+      "explain": "Solid and simple!",
+      "hint": "Copy White: d-pawn two squares."
+    },
+    {
+      "type": "quiz",
+      "question": "What are the three opening goals?",
+      "choices": [
+        "Centre, develop, castle",
+        "Queen out, pawns on the edge, wait"
+      ],
+      "answer": 0,
+      "explain": "Centre, develop, castle!"
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

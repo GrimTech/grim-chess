@@ -1,0 +1,131 @@
+{
+  "id": "adult.s2.castling",
+  "track": "adult",
+  "stage": 2,
+  "order": 1,
+  "skillIds": [
+    "rules.castling"
+  ],
+  "title": "Castling and its conditions",
+  "summary": "The king-and-rook move: how to castle on both sides and when it is not allowed.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Castling** moves the king two squares toward a rook, and the rook jumps to the square the king crossed. Kingside (**O-O**): Ke1-g1, Rh1-f1. Queenside (**O-O-O**): Ke1-c1, Ra1-d1. Black does the same on rank 8.\n\nYou may **never** castle if the king or that rook has already moved. You may **not castle right now** if:\n- any square between king and rook is occupied, or\n- the king is in check, would pass through an attacked square, or would land on one.\n\nOver the board, touch the king first."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/8/8/PPPPPPPP/R3K2R w KQ - 0 1",
+      "prompt": "Castle kingside.",
+      "solution": [
+        "O-O"
+      ],
+      "explain": "King to g1, rook to f1, in a single move. To play it here, drag the king two squares toward the rook."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/8/8/PPPPPPPP/R3K2R w KQ - 0 1",
+      "prompt": "Now castle queenside.",
+      "solution": [
+        "O-O-O"
+      ],
+      "explain": "King to c1, rook to d1. The queenside rook travels three squares."
+    },
+    {
+      "type": "quiz",
+      "question": "The black bishop on c4 attacks f1. Which castling is legal for White?",
+      "choices": [
+        "Only queenside",
+        "Only kingside",
+        "Both",
+        "Neither"
+      ],
+      "answer": 0,
+      "explain": "The king may not pass through an attacked square (f1). The queenside squares e1, d1, c1 are all safe.",
+      "fen": "4k3/8/8/8/2b5/8/PPPP1PPP/R3K2R w KQ - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/2b5/8/PPPP1PPP/R3K2R w KQ - 0 1",
+      "prompt": "Castle on the side where it is legal.",
+      "solution": [
+        "O-O-O"
+      ],
+      "explain": "Queenside castling is fine: only e1, d1 and c1 have to be safe."
+    },
+    {
+      "type": "quiz",
+      "question": "The black rook attacks your h1-rook. Can White still castle kingside?",
+      "choices": [
+        "Yes: only the king's squares matter",
+        "No, the rook is attacked",
+        "Only after moving the rook"
+      ],
+      "answer": 0,
+      "explain": "A frequent misconception. An attacked rook does not stop castling.",
+      "fen": "4k2r/8/8/8/8/8/PPPPPPP1/R3K2R w KQk - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "The black knight attacks b1. Can White castle queenside?",
+      "choices": [
+        "Yes: b1 is not a square the king crosses",
+        "No",
+        "Only if the knight is captured"
+      ],
+      "answer": 0,
+      "explain": "For O-O-O the king uses e1, d1 and c1. The rook passes b1, and the rook may cross attacked squares. b1 only has to be empty.",
+      "fen": "4k3/8/8/8/8/n7/PPPPPPPP/R3K2R w KQ - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Earlier in the game your king was in check, and you blocked it without moving the king. May you castle now?",
+      "choices": [
+        "Yes, being checked earlier does not matter",
+        "No, never again",
+        "Only queenside"
+      ],
+      "answer": 0,
+      "explain": "Only moving the king (or that rook) removes the right. Being in check only stops castling while the check lasts."
+    },
+    {
+      "type": "move",
+      "fen": "3k4/8/8/8/8/8/8/R3K3 w Q - 0 1",
+      "prompt": "Castling can be an attacking move. Castle so that the rook gives check.",
+      "solution": [
+        "O-O-O+"
+      ],
+      "explain": "After O-O-O the rook lands on d1 and checks the king on d8. Remember that castling moves a rook too."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which of these permanently removes the right to castle kingside?",
+      "choices": [
+        "Moving the h1-rook and bringing it back",
+        "Being in check once",
+        "Having the h1-rook attacked"
+      ],
+      "answer": 0,
+      "explain": "Moving the king or that rook removes the right permanently, even if the piece returns to its square."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: can you castle out of check?",
+      "choices": [
+        "No",
+        "Yes, kingside only",
+        "Yes, if the rook is defended"
+      ],
+      "answer": 0,
+      "explain": "Not out of check, not through check, not into check."
+    }
+  ],
+  "practiceThemes": [
+    "castling"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#castling",
+    "knowledge-base/03-chess-knowledge/rules.md#touch-move"
+  ]
+}

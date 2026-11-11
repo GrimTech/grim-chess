@@ -1,0 +1,108 @@
+{
+  "id": "adult.s1.pawn",
+  "track": "adult",
+  "stage": 1,
+  "order": 8,
+  "skillIds": [
+    "rules.pieces.pawn"
+  ],
+  "title": "How the pawn moves and captures",
+  "summary": "Forward one (two from the start), captures diagonally, never backwards.",
+  "estMinutes": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The **pawn** is the only piece that moves differently from how it captures:\n\n- It **moves straight forward** one square (two squares on its first move, if both are empty).\n- It **captures one square diagonally forward**.\n- It **never moves backwards**, and a piece directly in front blocks it."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Push the d-pawn two squares.",
+      "solution": [
+        "d4"
+      ],
+      "explain": "From its starting square a pawn may move one or two squares."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/8/4P3/8/4K3 w - - 0 1",
+      "prompt": "Push this pawn as far as it can go in one move.",
+      "solution": [
+        "e4"
+      ],
+      "explain": "This pawn has already left its starting square (e2), so only a single step is possible."
+    },
+    {
+      "type": "quiz",
+      "question": "How many moves does the white e4-pawn have?",
+      "choices": [
+        "0",
+        "1",
+        "2"
+      ],
+      "answer": 0,
+      "explain": "The black pawn on e5 blocks it. Pawns cannot capture straight ahead, so both pawns are stuck.",
+      "fen": "4k3/8/8/4p3/4P3/8/8/4K3 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Which squares can the e4-pawn move to?",
+      "choices": [
+        "e5, d5 and f5",
+        "e5 only",
+        "d5 and f5 only",
+        "e5 and e6"
+      ],
+      "answer": 0,
+      "explain": "Straight ahead to the empty e5, or diagonally forward to capture on d5 or f5.",
+      "fen": "4k3/8/8/3p1p2/4P3/8/8/4K3 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/3p4/4P3/8/8/4K3 w - - 0 1",
+      "prompt": "Capture the black pawn.",
+      "solution": [
+        "exd5"
+      ],
+      "explain": "Diagonally forward. Written \"exd5\": the pawn from the e-file takes on d5."
+    },
+    {
+      "type": "quiz",
+      "question": "How many moves does the e2-pawn have here?",
+      "choices": [
+        "0",
+        "1",
+        "2"
+      ],
+      "answer": 0,
+      "explain": "A double step requires both squares to be empty. The knight on e3 blocks e3, so the pawn cannot jump to e4, and there is nothing to capture on d3 or f3.",
+      "fen": "4k3/8/8/8/8/4n3/4P3/4K3 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: can a pawn ever move backwards?",
+      "choices": [
+        "No, never",
+        "Yes, when capturing",
+        "Yes, once per game"
+      ],
+      "answer": 0,
+      "explain": "Pawn moves are permanent. Think before pushing."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: how does a pawn capture?",
+      "choices": [
+        "One square diagonally forward",
+        "One square straight ahead",
+        "One square diagonally in any direction"
+      ],
+      "answer": 0,
+      "explain": "Forward diagonal only. The pawn moves straight but captures diagonally."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#pawn-moves",
+    "knowledge-base/02-methods/steps-method.md#3-didactic-principles"
+  ]
+}

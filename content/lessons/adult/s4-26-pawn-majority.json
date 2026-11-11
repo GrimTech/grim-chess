@@ -1,0 +1,80 @@
+{
+  "id": "adult.s4.pawn-majority",
+  "track": "adult",
+  "stage": 4,
+  "order": 26,
+  "skillIds": [
+    "strategy.pawn.majority"
+  ],
+  "title": "Pawn majorities: making a passed pawn",
+  "summary": "Turn an extra pawn on one wing into a passed pawn, and know why the queenside majority is an endgame asset.",
+  "estMinutes": 16,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **pawn majority** is more pawns than the opponent on one wing (for example 3 against 2 on the queenside), even when material is level overall. Any healthy majority can create a **passed pawn**.\n\n- A **queenside majority** is valuable in endgames: the passed pawn it creates is far from the kings, so it decoys the enemy king (outside passed pawn).\n- A **kingside majority** usually supports a middlegame attack or a central passer.\n\nTechnique: advance the **candidate pawn** (the one with no enemy pawn in front of it) first, supported by its neighbours; avoid advancing a pawn that can be blocked by one enemy pawn holding two of yours."
+    },
+    {
+      "type": "quiz",
+      "question": "White has pawns a2, b2, c2 against Black's a7, b7. Which pawn is the \"candidate\" (the one that becomes passed)?",
+      "choices": [
+        "The c-pawn: no black pawn stands in front of it",
+        "The a-pawn",
+        "The b-pawn"
+      ],
+      "answer": 0,
+      "explain": "The c-pawn faces no enemy pawn on its file, so it will become passed after b-pawn and c-pawn exchanges against a7/b7. Typical sequence: b4, c4, c5 (or b5) to force the passer. Pushing the a-pawn first often lets ...a5 or ...b5 hold two pawns with one."
+    },
+    {
+      "type": "board",
+      "fen": "8/pp3k2/6p1/7p/7P/6P1/PPP2K2/8 w - - 0 1",
+      "md": "White to move. Material is level, but White has **3 against 2 on the queenside**, while the kingside is locked (g3/h4 against g6/h5). White will create a passed pawn on the queenside; the black king must run to stop it, and the white king then attacks the kingside pawns.",
+      "highlights": [
+        "a2",
+        "b2",
+        "c2"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the diagram, what is White's first priority?",
+      "choices": [
+        "Activate the king (Ke3/Kf3 towards the centre and kingside), then use the majority",
+        "Push a2-a4-a5 at once",
+        "Offer a draw: material is equal"
+      ],
+      "answer": 0,
+      "explain": "In pawn endings **king activity** first, then the majority. Engine check: Kf3 or Ke3 win most convincingly; rushing pawns is less precise. The majority will tie the black king to the queenside later."
+    },
+    {
+      "type": "play",
+      "fen": "8/pp3k2/6p1/7p/7P/6P1/PPP2K2/8 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Win with the queenside majority: activate your king, create a passed pawn, and promote it (the engine defends).",
+      "maxMoves": 50,
+      "explain": "The plan: king to the centre, create a passer with the candidate c-pawn (b4, c4, c5), use it to decoy the black king, then invade on the kingside or escort the passer."
+    },
+    {
+      "type": "quiz",
+      "question": "Why is a queenside majority often better than a kingside one in the endgame (with both sides castled short)?",
+      "choices": [
+        "The passed pawn it creates is far from both kings, so the defending king is drawn away from the other wing",
+        "Queenside pawns move faster",
+        "It is not; they are equal"
+      ],
+      "answer": 0,
+      "explain": "Distance is the point: an outside passed pawn deflects the enemy king. The same logic is why pawn endgames with an outside passer are usually won (stage-3 lesson)."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Define a pawn majority and a candidate pawn. In the diagram, what came first: king or pawns? Typical error: advancing the majority so that one enemy pawn blocks two of yours."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#pawn-majority",
+    "knowledge-base/03-chess-knowledge/endgames.md#outside-passed-pawn",
+    "Capablanca, Chess Fundamentals (1921), the queenside majority",
+    "de la Villa, 100 Endgames You Must Know (New in Chess, 2008)"
+  ]
+}

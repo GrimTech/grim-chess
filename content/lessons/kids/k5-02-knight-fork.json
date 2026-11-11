@@ -1,0 +1,75 @@
+{
+  "id": "kids.5.knight-fork",
+  "track": "kids",
+  "stage": 2,
+  "order": 502,
+  "skillIds": [
+    "tactics.fork.knight"
+  ],
+  "title": "Knight forks",
+  "summary": "The knight attacks two pieces that cannot attack it back.",
+  "estMinutes": 7,
+  "minAge": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The knight is the **fork champion**! It can attack two pieces, and they cannot hit back."
+    },
+    {
+      "type": "move",
+      "fen": "r3k3/8/8/1N6/8/8/8/6K1 w - - 0 1",
+      "prompt": "Fork the king and the rook!",
+      "solution": [
+        "Nc7+"
+      ],
+      "explain": "Check! Next you take the rook.",
+      "hint": "Find the square that touches both e8 and a8."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/3q4/8/8/4N3/8/8/6K1 w - - 0 1",
+      "prompt": "Fork the king and the queen!",
+      "solution": [
+        "Nf6+"
+      ],
+      "explain": "A royal fork! The queen is yours.",
+      "hint": "Jump with check."
+    },
+    {
+      "type": "move",
+      "fen": "q3k3/8/8/3N4/8/8/8/6K1 w - - 0 1",
+      "prompt": "Fork the king and the queen!",
+      "solution": [
+        "Nc7+"
+      ],
+      "explain": "Check! Next move the queen is yours.",
+      "hint": "The same trick as before, from a new square."
+    },
+    {
+      "type": "quiz",
+      "question": "How many pieces can a knight attack at once?",
+      "choices": [
+        "Only 1",
+        "Up to 8"
+      ],
+      "answer": 1,
+      "explain": "A knight in the middle touches 8 squares."
+    },
+    {
+      "type": "move",
+      "fen": "8/4k3/8/8/1r3r2/2N5/8/6K1 w - - 0 1",
+      "prompt": "Fork the king and both rooks!",
+      "solution": [
+        "Nd5+"
+      ],
+      "explain": "A triple fork!",
+      "hint": "One jump touches the king and both rooks."
+    }
+  ],
+  "practiceThemes": [
+    "fork"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

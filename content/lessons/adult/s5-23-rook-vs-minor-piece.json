@@ -1,0 +1,99 @@
+{
+  "id": "adult.s5.rook-vs-minor-piece",
+  "track": "adult",
+  "stage": 5,
+  "order": 23,
+  "skillIds": [
+    "endgame.rook-vs-bishop",
+    "endgame.rook-vs-knight"
+  ],
+  "title": "Rook against bishop, rook against knight",
+  "summary": "The safe corner against the rook, the wrong corner, keeping the knight next to the king, and how each defence fails.",
+  "estMinutes": 25,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Rook v bishop: the safe corner\n\nR v B without pawns is usually a **draw**, but only with the right defensive set-up. The defending king belongs in the corner **not of the bishop's colour** (light bishop: a1 or h8). There, the bishop can block checks on the squares next to the corner and stalemate ideas help. In the **wrong corner** (a corner of the bishop's colour) the king can be mated, and in the middle of the edge the defender loses more often than he draws."
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. Black has a light-squared bishop and his king is on a8 (a light corner). Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White mates in 2 (1.Rh8+ Bg8 2.Rxg8#). The wrong corner: the bishop cannot block on b8 (a dark square), and the king has no escape.",
+      "fen": "k7/8/1K6/8/2b5/8/8/7R w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. Same material, but the black king is on h8 (a dark corner) with the light-squared bishop. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw with any White move. The bishop interposes on g8 against checks on the 8th rank, and Rh-file checks are met by Kg8 with stalemate ideas.",
+      "fen": "7k/8/6K1/8/2b5/8/8/R7 w - - 0 1"
+    },
+    {
+      "type": "play",
+      "fen": "7k/8/6K1/8/8/8/b7/6R1 b - - 0 1",
+      "goal": "hold",
+      "prompt": "Defend R v B for 30 moves. Your king sits in the safe corner; keep the bishop on the a2-g8 diagonal so it can always block on g8.",
+      "maxMoves": 30
+    },
+    {
+      "type": "text",
+      "md": "## Rook v knight: keep them together\n\nR v N is also usually a **draw** — if the knight stays **next to its king**. A knight separated from its king is trapped or forked; a king forced to the edge with the knight in the corner may also lose. Defensive rules: keep the knight adjacent to the king, avoid the corners, and do not let the rook cut the knight off from the king."
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. The black knight is on h1, far from its king on a5. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White wins (in 21 moves, for example 1.Rf1 cutting the knight off along the f-file). The knight cannot rejoin its king and is eventually trapped. A separated knight is the classic losing pattern.",
+      "fen": "8/8/8/k7/8/7n/2K5/3R4 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. Knight next to its king in the centre. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw against any White move. King and knight protect each other and the rook cannot create a fork or a cut-off.",
+      "fen": "8/8/8/3kn3/8/8/2K5/7R w - - 0 1"
+    },
+    {
+      "type": "play",
+      "fen": "8/8/3k4/3n4/8/8/8/R2K4 b - - 0 1",
+      "goal": "hold",
+      "prompt": "Hold R v N for 30 moves against the engine. Keep the knight next to the king and away from the edge.",
+      "maxMoves": 30
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Endgames trainer:** defend R v B (safe corner) and R v N twice each against the engine; then play the winning side from a wrong-corner position.\n- In your games, remember the practical rule: in an endgame where you are a rook against a minor piece *with pawns on one side*, the defender's chances are good if he can trade pawns and reach these set-ups."
+    }
+  ],
+  "practiceThemes": [
+    "endgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky, Dvoretsky's Endgame Manual (5th ed., 2020)",
+    "de la Villa, 100 Endgames You Must Know",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)"
+  ]
+}

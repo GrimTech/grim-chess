@@ -1,0 +1,106 @@
+{
+  "id": "adult.s2.support-mate",
+  "track": "adult",
+  "stage": 2,
+  "order": 18,
+  "skillIds": [
+    "checkmate.support-mate"
+  ],
+  "title": "Supported queen mates",
+  "summary": "The queen mates next to the king, protected by a pawn, bishop, knight or rook.",
+  "estMinutes": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A queen next to the enemy king can be captured unless another piece **supports** it. Most middlegame mates are a queen landing on a square near the king (h7, g7, f7) with a second unit behind it: a pawn (**Damiano's mate**), a bishop, a knight or a rook."
+    },
+    {
+      "type": "board",
+      "fen": "5rk1/6pQ/6P1/8/8/8/8/6K1 b - - 0 1",
+      "md": "Damiano's mate: the g6-pawn protects the queen on h7 and covers f7.",
+      "arrows": [
+        [
+          "g6",
+          "h7",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/6p1/6P1/7Q/8/8/8/6K1 w - - 0 1",
+      "prompt": "Mate in one.",
+      "solution": [
+        "Qh7#"
+      ],
+      "explain": "The pawn on g6 supports h7. Damiano's mate."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/5pp1/7p/8/8/3Q4/5PPP/1B4K1 w - - 0 1",
+      "prompt": "Mate in one with the queen-bishop battery.",
+      "solution": [
+        "Qh7#"
+      ],
+      "explain": "The b1-bishop behind the queen supports h7."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/5pp1/8/6NQ/8/8/5PPP/6K1 w - - 0 1",
+      "prompt": "Mate in one.",
+      "solution": [
+        "Qh7#"
+      ],
+      "explain": "The g5-knight protects h7. Note this attacking pair: queen + knight against h7."
+    },
+    {
+      "type": "move",
+      "fen": "5r1k/Q6p/8/8/8/8/5P1P/6RK w - - 0 1",
+      "prompt": "Mate in one.",
+      "solution": [
+        "Qg7#"
+      ],
+      "explain": "The rook on the open g-file supports the queen on g7."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/1b3ppp/8/8/8/6Pq/5P1P/5RK1 b - - 0 1",
+      "prompt": "You are Black. Mate in one.",
+      "solution": [
+        "Qg2#"
+      ],
+      "explain": "The b7-bishop supports the queen on g2."
+    },
+    {
+      "type": "quiz",
+      "question": "Why does the queen need support when mating next to the king?",
+      "choices": [
+        "Otherwise the king simply captures it",
+        "It is a rule",
+        "It doesn't"
+      ],
+      "answer": 0,
+      "explain": "The supporting unit guards the queen's square. The queen itself covers the flight squares."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: in Damiano's mate, what supports the queen on h7?",
+      "choices": [
+        "A pawn on g6",
+        "A rook on h1",
+        "A knight on f6"
+      ],
+      "answer": 0,
+      "explain": "A pawn on g6 (for White) protecting h7 and f7."
+    }
+  ],
+  "practiceThemes": [
+    "mateIn1",
+    "mate"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#support-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#damianos-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#damianos-bishop-mate"
+  ]
+}

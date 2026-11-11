@@ -1,0 +1,108 @@
+{
+  "id": "adult.s3.removing-the-defender",
+  "track": "adult",
+  "stage": 3,
+  "order": 12,
+  "skillIds": [
+    "tactics.removing-defender"
+  ],
+  "title": "Removing the defender",
+  "summary": "Find the one piece that holds the opponent's position together, capture or exchange it, then take what it was guarding.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Ask of every enemy piece: **what is it defending?** If a target (a piece, a mating square, a promotion square) has a single defender, capture or exchange that defender first. The capture often looks like a bad trade (rook for knight, bishop for knight) until you see what falls next."
+    },
+    {
+      "type": "move",
+      "fen": "3r2k1/1p3p1p/p1n3q1/8/7Q/1P1p1N2/P4PPP/2R3K1 w - - 0 26",
+      "prompt": "White to move. The d8-rook is attacked by your queen. Who defends it? Remove that defender.",
+      "solution": [
+        "Rxc6",
+        "bxc6",
+        "Qxd8+"
+      ],
+      "explain": "Rxc6! The c6-knight was the only defender of d8. After ...bxc6 Qxd8+ White has given a rook for a knight and then taken the d8-rook with check: a clean piece up.",
+      "hint": "The rook is guarded by a knight."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/p2bb1pp/4pn2/1B1pB3/N3p3/1P2P2P/P4PP1/6K1 w - - 2 26",
+      "prompt": "White to move. Black's d7-bishop is attacked by your b5-bishop. Find its defender and remove it.",
+      "solution": [
+        "Bxf6",
+        "Bxf6",
+        "Bxd7"
+      ],
+      "explain": "Bxf6! The f6-knight was the only defender of d7. After ...Bxf6 Bxd7 White is a piece up."
+    },
+    {
+      "type": "move",
+      "fen": "rnbq1rk1/1p3ppp/p7/3np3/1b6/1NNB4/PPPB1PPP/R2QK2R w KQ - 0 10",
+      "prompt": "White to move. Black's b4-bishop is attacked by your d2-bishop. What holds it?",
+      "solution": [
+        "Nxd5",
+        "Qxd5",
+        "Bxb4"
+      ],
+      "explain": "Nxd5! The d5-knight defended b4. After ...Qxd5 Bxb4 White has won a piece. Notice the order: capture the defender with the knight, so the queen recapture does not protect b4."
+    },
+    {
+      "type": "move",
+      "fen": "r2qrbk1/1pp2ppp/p1np1n2/6B1/2BPN3/5P2/PPP2QPP/2KR3R b - - 3 15",
+      "prompt": "Black to move. White's g5-bishop pins your knight, but who defends that bishop?",
+      "solution": [
+        "Nxe4",
+        "fxe4",
+        "Qxg5+"
+      ],
+      "explain": "...Nxe4! The e4-knight was the bishop's only defender. After fxe4 Qxg5+ Black has won a piece with check, and the pin is gone."
+    },
+    {
+      "type": "move",
+      "fen": "qr4k1/3b1ppp/2nppb2/1Bp5/4P3/2NP1N2/1PPQ1PPP/4R1K1 b - - 2 15",
+      "prompt": "Black to move. White's b5-bishop is on the same file as your b8-rook. Remove its defender.",
+      "solution": [
+        "Bxc3",
+        "bxc3",
+        "Rxb5"
+      ],
+      "explain": "...Bxc3! The c3-knight defended b5. After bxc3 Rxb5 Black has won a piece."
+    },
+    {
+      "type": "quiz",
+      "question": "White's queen and bishop aim at h7; Black's knight on f6 is the only defender. Which move typically \"removes the defender\"?",
+      "choices": [
+        "h4-h5",
+        "Bg5xf6 or Rxf6, followed by Qxh7#",
+        "Qd1-d2",
+        "Castling queenside"
+      ],
+      "answer": 1,
+      "explain": "A bishop or exchange sacrifice on f6 is the classic removal of the h7 defender. Count what follows before you give up material."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what question finds removing-the-defender tactics?",
+      "choices": [
+        "\"Which of my pieces is most active?\"",
+        "\"What does each enemy piece defend, and is it the only defender?\"",
+        "\"Can I castle?\"",
+        "\"How many pawns do I have?\""
+      ],
+      "answer": 1,
+      "explain": "Overworked or single defenders are targets. This is Steps Method Step 3 material: drill it with the capturingDefender puzzle set."
+    }
+  ],
+  "practiceThemes": [
+    "capturingDefender"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#removing-the-defender",
+    "Brunia & van Wijgerden, Steps Method Step 3 workbook (eliminating the defender, discovered attack)",
+    "knowledge-base/02-methods/steps-method.md (Step 3: eliminating the defender, discovered attack, pawn endings)",
+    "Yusupov, Build Up Your Chess 1 (eliminating the defender)",
+    "Lichess puzzle database (CC0): 0iOvg, 0aDyQ, 0dqQ6, 0JTkd, 0nzc3"
+  ]
+}

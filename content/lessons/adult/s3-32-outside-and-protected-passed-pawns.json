@@ -1,0 +1,91 @@
+{
+  "id": "adult.s3.outside-and-protected-passed-pawns",
+  "track": "adult",
+  "stage": 3,
+  "order": 32,
+  "skillIds": [
+    "endgame.pawn.outside-passer"
+  ],
+  "title": "Outside and protected passed pawns",
+  "summary": "An outside passer drags the enemy king away; a protected passer ties it down. Both win pawn endings.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Outside passed pawn**: a passer far from the other pawns. The defending king must go and stop it; meanwhile your king eats the pawns on the other wing (a decoy).\n\n**Protected passed pawn**: a passer defended by a pawn. The enemy king cannot take it and must stay in its square, so your king is free to attack elsewhere."
+    },
+    {
+      "type": "play",
+      "fen": "8/6pp/4k3/4p3/P3K3/8/6PP/8 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Your outside a-pawn is a decoy. Use it to deflect Black's king, then win the kingside or promote.",
+      "explain": "a5-a6 drags the king to the queenside; your king takes e5 and the kingside pawns."
+    },
+    {
+      "type": "quiz",
+      "question": "In the outside-passer plan, when should the passed pawn be pushed?",
+      "choices": [
+        "Immediately to the 7th rank, regardless",
+        "Far enough to drag the enemy king away from your target, then your king attacks the other wing",
+        "Never: keep it at home",
+        "Only after the queens are traded"
+      ],
+      "answer": 1,
+      "explain": "The pawn's job is to pull the king. Often you sacrifice it at the right moment and win on the other wing."
+    },
+    {
+      "type": "move",
+      "fen": "8/p7/1pp1kp2/2P1p3/1P2P1K1/P2P4/8/8 w - - 0 44",
+      "prompt": "White to move. Create a protected passed pawn on the queenside.",
+      "solution": [
+        "cxb6",
+        "axb6",
+        "a4",
+        "b5",
+        "a5"
+      ],
+      "explain": "cxb6 axb6 a4! and after ...b5 a5: the a5-pawn is passed and protected by b4. Black's king must stay near it, and White's king will win on the kingside."
+    },
+    {
+      "type": "quiz",
+      "question": "Black's king is in the square of your protected passed pawn on c5 (protected by b4). Why is the pawn so strong?",
+      "choices": [
+        "It cannot be captured by the king, so the king is tied to stopping it, while your king is free",
+        "It is worth two pawns",
+        "It promotes faster",
+        "It controls the opposition"
+      ],
+      "answer": 0,
+      "explain": "A protected passer is a permanent decoy that costs you nothing."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: in a pawn ending with an outside passer, which king usually goes where?",
+      "choices": [
+        "Both kings stay in the centre",
+        "The defender's king must go to stop the passer; the attacker's king invades the other wing",
+        "The attacker's king escorts the passer, the defender attacks the other wing",
+        "Kings do not matter"
+      ],
+      "answer": 1,
+      "explain": "This is the most common winning method in pawn endings."
+    },
+    {
+      "type": "play",
+      "fen": "8/5kpp/8/8/P7/8/5KPP/8 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Simpler: a clean extra outside pawn. Promote it or use it to win the kingside.",
+      "explain": "Push the a-pawn; if the king chases it, your king walks into the kingside."
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#outside-passed-pawn",
+    "knowledge-base/03-chess-knowledge/endgames.md#protected-passed-pawn",
+    "Silman, Complete Endgame Course (1000-1199 and 1200-1399 sections)",
+    "de la Villa, 100 Endgames You Must Know",
+    "Lichess puzzle database (CC0): 0KMKj"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "kids.1.set-up-the-army",
+  "track": "kids",
+  "stage": 1,
+  "order": 109,
+  "skillIds": [
+    "rules.board.setup"
+  ],
+  "title": "Set up the army",
+  "summary": "Where every piece goes at the start.",
+  "estMinutes": 6,
+  "minAge": 6,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Let us set up! Each army has 8 pawns, 2 rooks, 2 knights, 2 bishops, 1 queen and 1 king."
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "md": "Rooks in the **corners**, then knights, then bishops.",
+      "highlights": [
+        "a1",
+        "h1",
+        "b1",
+        "g1",
+        "c1",
+        "f1"
+      ]
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "md": "The queen goes on **her own colour**: white queen on a light square, black queen on a dark square.",
+      "highlights": [
+        "d1",
+        "d8"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "What stands next to the rooks?",
+      "choices": [
+        "Knights",
+        "Bishops",
+        "Kings"
+      ],
+      "answer": 0,
+      "explain": "Knights stand next to the rooks."
+    },
+    {
+      "type": "quiz",
+      "question": "Where does the white queen go?",
+      "choices": [
+        "d1",
+        "e1",
+        "c1"
+      ],
+      "answer": 0,
+      "explain": "d1: a light square, her own colour."
+    },
+    {
+      "type": "quiz",
+      "question": "Which pieces stand in the front row?",
+      "choices": [
+        "Pawns",
+        "Rooks",
+        "Knights"
+      ],
+      "answer": 0,
+      "explain": "The 8 pawns stand in front."
+    },
+    {
+      "type": "quiz",
+      "question": "The white king starts on…",
+      "choices": [
+        "e1",
+        "d1",
+        "f1"
+      ],
+      "answer": 0,
+      "explain": "e1, next to his queen."
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

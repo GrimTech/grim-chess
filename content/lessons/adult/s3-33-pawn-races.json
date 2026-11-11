@@ -1,0 +1,105 @@
+{
+  "id": "adult.s3.pawn-races",
+  "track": "adult",
+  "stage": 3,
+  "order": 33,
+  "skillIds": [
+    "endgame.pawn.races"
+  ],
+  "title": "Pawn races and tempo counting",
+  "summary": "Count moves to promotion for both sides, and check whether the first new queen arrives with check or can stop the other pawn.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "In a race: (1) count the moves each pawn needs to queen, including whose turn it is; (2) check whether either king is in the square of the other pawn; (3) after promotion, check whether the new queen **gives check**, **skewers** the king and the other queen, or **controls** the other promotion square."
+    },
+    {
+      "type": "move",
+      "fen": "8/k7/8/7P/p7/8/8/7K w - - 0 1",
+      "prompt": "Count the race. White to move: what is the only correct move?",
+      "solution": [
+        "h6"
+      ],
+      "explain": "h6! Both pawns need three moves, but White moves first: after h6, h7, h8=Q the new queen controls a1 along the long diagonal, so ...a1=Q would be met by Qxa1. Kg2? wastes the tempo and it is Black who queens first and wins."
+    },
+    {
+      "type": "play",
+      "fen": "8/k7/8/7P/p7/8/8/7K w - - 0 1",
+      "goal": "promote",
+      "prompt": "Play the race out.",
+      "explain": "h6-h7-h8=Q, then use the queen to stop the a-pawn (e.g. checks and the a1/b2 squares)."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/2p5/P7/1k6/3K1p2/8/8 w - - 0 51",
+      "prompt": "White to move. Black's f3-pawn is close to queening, and your a5-pawn is far from it. Find the move order.",
+      "solution": [
+        "a6",
+        "f2",
+        "Ke2",
+        "Kc5",
+        "a7"
+      ],
+      "explain": "a6! f2 Ke2: the king catches the f-pawn just in time while the a-pawn runs; after ...Kc5 a7 White queens first."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/1k4n1/6PP/PP4K1/5p2/8/8 b - - 0 45",
+      "prompt": "Black to move. Count tempi: if White must spend a move capturing your knight, who queens first?",
+      "solution": [
+        "f2",
+        "hxg6",
+        "f1=Q"
+      ],
+      "explain": "...f2! hxg6 f1=Q: White's capture costs a tempo, so Black promotes first and with a big lead."
+    },
+    {
+      "type": "move",
+      "fen": "8/1Pk5/4n3/4PK1P/2P2p2/8/8/8 b - - 3 49",
+      "prompt": "Black to move. White's b-pawn is about to queen. Count your own race.",
+      "solution": [
+        "f3",
+        "Kxe6",
+        "f2",
+        "h6",
+        "f1=Q"
+      ],
+      "explain": "...f3! Kxe6 f2 h6 f1=Q: White wasted a tempo taking the knight and Black queens in time; White's b-pawn is stopped by the black king on c7."
+    },
+    {
+      "type": "quiz",
+      "question": "White pawn on b6, Black pawn on g4, White to move, both kings far away. What happens?",
+      "choices": [
+        "Black queens first",
+        "White queens first: 1.b7 g3 2.b8=Q g2 3.Qg3! and ...g1=Q is met by Qxg1",
+        "Both queen and it is a draw",
+        "Nobody can promote"
+      ],
+      "answer": 1,
+      "explain": "White needs two moves, Black three. The extra tempo lets the new queen reach the g-file (b8-g3 diagonal) before the pawn queens. Always look one move past the promotion."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what three things do you count in a pawn race?",
+      "choices": [
+        "Pieces, squares, files",
+        "Moves to promote for both sides, whether a king is inside the square, and what the first new queen does (check, skewer, stop the other pawn)",
+        "Only who moves first",
+        "Pawn islands"
+      ],
+      "answer": 1,
+      "explain": "Races are tempo arithmetic plus one tactical look at the final position."
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame",
+    "promotion"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#kp-vs-kp-races",
+    "Silman, Complete Endgame Course (1000-1199 and 1200-1399 sections)",
+    "de la Villa, 100 Endgames You Must Know",
+    "Lichess puzzle database (CC0): 02WmK, 1EeiO, 0GOZi"
+  ]
+}

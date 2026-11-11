@@ -1,0 +1,101 @@
+{
+  "id": "adult.s4.h7-h6-sacrifices",
+  "track": "adult",
+  "stage": 4,
+  "order": 16,
+  "skillIds": [
+    "tactics.sacrifice.h7-h6"
+  ],
+  "title": "Sacrifices on h7 and h6",
+  "summary": "Rook and queen sacrifices on h7, and bishop or queen sacrifices on h6 that rip open the king's pawn cover.",
+  "estMinutes": 16,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Two families:\n\n- **On h7 (Rxh7+/Qxh7+):** the sacrifice decoys the king to h7 or opens the h-file, so a second heavy piece arrives with mate (Anastasia, Pillsbury, h-file mates).\n- **On h6 (Bxh6/Qxh6+/Rxh6+):** after ...h6 or ...g6 with the pawn on h6, the sacrifice destroys the shield; g7 and h7 become accessible.\n\nAsk: \"If this pawn were gone, which piece would mate?\" Then check whether the sacrifice is forcing (check or mate threat)."
+    },
+    {
+      "type": "move",
+      "fen": "4r2k/2n1N1rp/3p1Qp1/qp1P4/4P3/p4PP1/p1P5/2K4R w - - 2 34",
+      "prompt": "White to move. Your queen on f6 and knight on e7 surround the king. Sacrifice on h7.",
+      "solution": [
+        "Rxh7+",
+        "Kxh7",
+        "Qh4#"
+      ],
+      "explain": "**34.Rxh7+! Kxh7 35.Qh4#.** The rook sacrifice drags the king to h7 and opens the h-file; the queen mates on h4 (the e7-knight covers g8 and g6, the g7-rook blocks). An **Anastasia-type** mate."
+    },
+    {
+      "type": "move",
+      "fen": "r4r1k/pp1b2pp/q1pp1p2/3BnP1Q/2P2R2/6P1/P2N3P/1R5K w - - 0 23",
+      "prompt": "White to move. Queen sacrifice on h7, then a rook on the h-file.",
+      "solution": [
+        "Qxh7+",
+        "Kxh7",
+        "Rh4#"
+      ],
+      "explain": "**23.Qxh7+! Kxh7 24.Rh4#.** The d5-bishop covers g8 along the diagonal, and the rook mates on the h-file: **Pillsbury-style** coordination of bishop and rook."
+    },
+    {
+      "type": "quiz",
+      "question": "What is the main point of a sacrifice on h6 when Black has pawns on g7 and h6?",
+      "choices": [
+        "To win the h6-pawn",
+        "To destroy the pawn cover so that the g-file, g7 and h7 become accessible to your pieces",
+        "To force a queen trade"
+      ],
+      "answer": 1,
+      "explain": "After Bxh6 gxh6 the king has lost its shield; your queen and rooks can use the open g-file and the dark squares. The material (a piece for a pawn) is repaid by mate or by winning more material back."
+    },
+    {
+      "type": "move",
+      "fen": "r1b4k/pp3Rb1/3q1Npn/2p5/2P1P3/3P4/PP1Q2BP/6K1 w - - 2 26",
+      "prompt": "White to move. Queen sacrifice on h6, then an Arabian-style rook mate.",
+      "solution": [
+        "Qxh6+",
+        "Bxh6",
+        "Rh7#"
+      ],
+      "explain": "**26.Qxh6+! Bxh6 27.Rh7#.** The bishop is deflected from g7; the rook on h7 is protected by the f6-knight, which also covers g8. Arabian mate."
+    },
+    {
+      "type": "move",
+      "fen": "r3r1bk/pp4p1/3b1p1p/3q4/6PP/2BBQ3/1PP2P2/2K1R2R w - - 7 32",
+      "prompt": "White to move. Remove the h6-pawn with the queen and mate with the bishops.",
+      "solution": [
+        "Qxh6+",
+        "gxh6",
+        "Bxf6#"
+      ],
+      "explain": "**32.Qxh6+! gxh6 33.Bxf6#.** The g7-pawn was pulled to h6, opening the long diagonal. The c3-bishop mates on f6 and covers g7, the d3-bishop covers h7, and the king's own g8-bishop blocks the last square: a double-bishop mate."
+    },
+    {
+      "type": "move",
+      "fen": "6r1/p4ppk/2n1b2p/3pPp1P/q1p5/P1P1BNR1/1rPQ1PP1/2R3K1 w - - 4 24",
+      "prompt": "White to move. Independent exercise from a master game: a bishop sacrifice on h6 that wins without a forced finish.",
+      "solution": [
+        "Bxh6",
+        "gxh6",
+        "Rxg8",
+        "Kxg8",
+        "Qxh6"
+      ],
+      "explain": "**24.Bxh6! gxh6 25.Rxg8 Kxg8 26.Qxh6** and White's queen and knight crash in against the bare king (Ng5 and Qh7+ next). Not every sacrifice ends in mate; here the shattered king is enough."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Which question finds h7/h6 sacrifices? (\"If this pawn were gone, which piece would mate?\") Name the mating patterns that appeared: Anastasia, Pillsbury, Arabian, double-bishop on the long diagonal."
+    }
+  ],
+  "practiceThemes": [
+    "sacrifice",
+    "kingsideAttack"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#sacrifices-on-h7-and-h6",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#anastasias-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#arabian-mate",
+    "Vukovic, The Art of Attack in Chess (1965), chapters on the h-file and the h6 sacrifice",
+    "Lichess puzzle database (CC0), puzzles FvFUn, 0TfEK, 5Lw6U, 7GQjt, 29TAs"
+  ]
+}

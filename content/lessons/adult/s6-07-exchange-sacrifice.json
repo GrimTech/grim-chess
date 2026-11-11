@@ -1,0 +1,96 @@
+{
+  "id": "adult.s6.exchange-sacrifice",
+  "track": "adult",
+  "stage": 6,
+  "order": 7,
+  "skillIds": [
+    "strategy.exchange-sacrifice"
+  ],
+  "title": "The positional exchange sacrifice",
+  "summary": "Give a rook for a minor piece to win squares, structure or initiative — Petrosian's speciality and a weapon of every modern GM.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## When is a rook worth less than a minor piece?\n\nAn exchange sacrifice is positional when the compensation is **not** forced material but:\n- a **dominant minor piece** (knight on an outpost, bishop on a long diagonal),\n- **weak squares** or a colour complex the remaining rook cannot fight,\n- **pawn structure** damage (doubled/isolated pawns) or a strong passed pawn,\n- the **initiative** or king safety.\n\nTypical patterns: ...Rxc3 in the Sicilian Dragon; ...Re6!? (Petrosian) to activate a knight on d5; Rxf6/Rxd5 to destroy the opponent's best defender."
+    },
+    {
+      "type": "board",
+      "fen": "3rq1k1/4rppp/2n3b1/pp2P3/2pP1QB1/P1P1R3/1B4PP/4R1K1 b - - 3 25",
+      "md": "**Reshevsky-Petrosian, Candidates tournament, Zurich 1953.** Black played **25...Re6!**, offering the exchange (after a later Bxe6 fxe6) to bring the knight to d5 and blockade the white centre. The knight on d5 became stronger than a rook, and Black held comfortably (the game was drawn). The most famous positional exchange sacrifice.",
+      "orientation": "black",
+      "highlights": [
+        "d5"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "What did Black gain in return for the exchange in Reshevsky-Petrosian?",
+      "choices": [
+        "A forced mate",
+        "A blockading knight on d5, light-square control and a dead white bishop pair attack — enough to neutralise White's initiative",
+        "Two pawns immediately",
+        "Nothing: it was a blunder"
+      ],
+      "answer": 1,
+      "explain": "Petrosian killed White's kingside attack and central pawn advance. Positional exchange sacrifices are often defensive.",
+      "fen": "3rq1k1/4rppp/2n3b1/pp2P3/2pP1QB1/P1P1R3/1B4PP/4R1K1 b - - 3 25"
+    },
+    {
+      "type": "move",
+      "fen": "4kb1r/1prbnp2/p2ppp2/7p/2N2P2/qNPB4/P2Q2PP/4RR1K b k - 9 21",
+      "prompt": "Black to move. Kasparov's exchange sacrifice for the light squares (Short-Kasparov, PCA-World Championship 1993)",
+      "solution": [
+        "Rxc4"
+      ],
+      "orientation": "black",
+      "explain": "**21...Rxc4!** — the rook takes the knight; after 22.Bxc4 h4 Black's bishops and the pawn structure give full compensation. Engine main line: 21...Rxc4 22.Bxc4 h4 23.Be2 Bg7 24.Bf3. (Short-Kasparov, PCA-World Championship 1993; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "4rbk1/1b3p2/pB2pP1p/qr2p1Pp/Np4n1/1P6/P1PQ2B1/1K1R3R b - - 1 29",
+      "prompt": "Black to move. Give the exchange to break White's attack (Ljubojevic-Larsen, Phillips&Drew 1980)",
+      "solution": [
+        "Rxb6"
+      ],
+      "orientation": "black",
+      "explain": "**29...Rxb6!** — the rook takes the dangerous bishop; the exchange is returned and Black's king becomes safe. Engine main line: 29...Rxb6 30.Nxb6 Qxb6 31.Bxb7 Qxb7 32.Rxh5 Qf3 33.Rg1. (Ljubojevic-Larsen, Phillips&Drew 1980; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "You are considering ...Rxc3 in a Sicilian Dragon (Yugoslav Attack). Which condition makes it most attractive?",
+      "choices": [
+        "White's king on c1/b1 with pawns that will be damaged after bxc3, and Black's dark-squared bishop alive on the long diagonal",
+        "White has already played Bh6 and exchanged the g7 bishop",
+        "Black is already a pawn up",
+        "Queens are off"
+      ],
+      "answer": 0,
+      "explain": "With the Dragon bishop alive, bxc3 leaves White's king exposed on the long diagonal. Without the bishop, the sacrifice loses much of its point."
+    },
+    {
+      "type": "play",
+      "fen": "4kb1r/1prbnp2/p2ppp2/7p/2N2P2/qNPB4/P2Q2PP/4RR1K b k - 9 21",
+      "goal": "hold",
+      "prompt": "Play the Short-Kasparov position as Black (World Championship 1993) against the engine (level 14) for 25 moves, starting with the exchange sacrifice. Keep the light squares and the bishops working.",
+      "maxMoves": 25,
+      "engineLevel": 14
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: Reshevsky-Petrosian 1953 and Short-Kasparov 1993 game (corpus), playing the side that sacrifices.\n- Collect 5 exchange sacrifices from master games (corpus search: Petrosian, Karpov, Kasparov, Carlsen) and write in one sentence what the compensation was."
+    }
+  ],
+  "practiceThemes": [
+    "sacrifice",
+    "advantage"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "Dvoretsky & Yusupov, Positional Play",
+    "Flores Rios, Chess Structures",
+    "Reshevsky-Petrosian, Zurich 1953",
+    "Short-Kasparov, World Championship 1993",
+    "Kasparov, My Great Predecessors vol. III (Petrosian)"
+  ]
+}

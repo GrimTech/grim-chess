@@ -1,0 +1,79 @@
+{
+  "id": "kids.1.meet-the-board",
+  "track": "kids",
+  "stage": 1,
+  "order": 101,
+  "skillIds": [
+    "rules.board.setup",
+    "rules.board.coordinates"
+  ],
+  "title": "Meet the board",
+  "summary": "Light and dark squares, two armies, and who moves first.",
+  "estMinutes": 5,
+  "minAge": 4,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Hi! I am **Rookie**. Let us look at a chess board!"
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "md": "The board has **64 squares**. Light and dark, like a checker cloth."
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "md": "White is at the bottom. Black is at the top. **White moves first.**"
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "md": "The corner on your **right** is always a **light** square.",
+      "highlights": [
+        "h1"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Who moves first?",
+      "choices": [
+        "White",
+        "Black"
+      ],
+      "answer": 0,
+      "explain": "Yes! White always starts."
+    },
+    {
+      "type": "quiz",
+      "question": "How many squares are on a chess board?",
+      "choices": [
+        "16",
+        "32",
+        "64"
+      ],
+      "answer": 2,
+      "explain": "8 rows of 8 squares makes 64."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Move the pawn to the star!",
+      "solution": [
+        "e4"
+      ],
+      "explain": "Great! You made your first move.",
+      "arrows": [
+        [
+          "e2",
+          "e4",
+          "green"
+        ]
+      ],
+      "hint": "Tap the pawn with the green arrow."
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

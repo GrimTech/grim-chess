@@ -1,0 +1,99 @@
+{
+  "id": "adult.s8.gm-level-calculation",
+  "track": "adult",
+  "stage": 8,
+  "order": 2,
+  "skillIds": [
+    "calculation.gm-level"
+  ],
+  "title": "GM-level calculation: quiet and defensive resources",
+  "summary": "Positions where the solution includes quiet moves for both sides, defensive only-moves and a precise final evaluation.",
+  "estMinutes": 40,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## What GMs calculate differently\n\n- They find **quiet moves in the middle of forcing lines** (for both sides).\n- They see the **defender's only-moves** and calculate them as carefully as their own.\n- They **evaluate the end position correctly**: an extra pawn in a drawn ending is a draw; a queen versus rook and two passed pawns is a matter of counting.\n- They manage the tree: candidates first, branches once, quiet endpoints."
+    },
+    {
+      "type": "move",
+      "fen": "2kr3r/ppp1qpp1/2p5/2b2b2/2P1pPPp/1P2P1P1/PBQPB3/RN2K2R b KQ - 0 13",
+      "prompt": "Black to move (Larsen-Spassky, Belgrade 1970). A pawn capture that opens everything (Larsen-Spassky, Belgrade URS-World 1970)",
+      "solution": [
+        "hxg3"
+      ],
+      "orientation": "black",
+      "explain": "**13...hxg3!** — Black opens the h-file; the rook on h8 joins the attack with tempo. Engine main line: 13...hxg3 14.Rg1 Qh4 15.Rg2 Bxg4 16.Qxe4 Qh1+ 17.Bf1 Rhe8 18.Be5. (Larsen-Spassky, Belgrade URS-World 1970; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "2kr4/ppp1qpp1/2p5/2b2b2/2P1pPP1/1P2P1p1/PBQPB3/RN2K2R b Q - 0 15",
+      "prompt": "Black to move (two moves later, after the famous 14...Rh1!! 15.Rxh1). Finish the attack (Larsen-Spassky, Belgrade URS-World 1970)",
+      "solution": [
+        "g2"
+      ],
+      "orientation": "black",
+      "explain": "**15...g2!** — the pawn attacks the h1-rook and threatens to promote; after 16.Rf1 Qh4+ 17.Kd1 gxf1=Q+ Black wins decisively. Engine main line: 15...g2 16.Rf1 Qh4+ 17.Kd1 gxf1=Q+ 18.Bxf1. (Larsen-Spassky, Belgrade URS-World 1970; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "3r3r/1R3p1p/Q5p1/1p6/2q5/2k2PPB/7P/1K6 w - - 0 34",
+      "prompt": "White to move (Kasparov-Topalov 1999, move 34). The king hunt is almost over. Find the only move (Kasparov-Topalov, Hoogovens 1999)",
+      "solution": [
+        "Qa1+"
+      ],
+      "orientation": "white",
+      "explain": "**34.Qa1+!** — the queen returns with check; only this keeps White winning chances. Engine main line: 34.Qa1+ Kd2 35.Qb2+ Kd1 36.Bf1 Rd2 37.Bxc4 Rxb2+ 38.Kxb2 bxc4. (Kasparov-Topalov, Hoogovens 1999; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "3r3r/1R3p1p/6p1/1p6/2q5/5PPB/1Q5P/1K1k4 w - - 4 36",
+      "prompt": "White to move (move 36). A quiet bishop move in the middle of the hunt (Kasparov-Topalov, Hoogovens 1999)",
+      "solution": [
+        "Bf1"
+      ],
+      "orientation": "white",
+      "explain": "**36.Bf1!!** — the bishop attacks the queen on c4 and deflects it; the black king on d1 is in a net. Engine main line: 36.Bf1 Rd2 37.Rd7 Rxd7 38.Bxc4 bxc4 39.Qxh8 Rd3. (Kasparov-Topalov, Hoogovens 1999; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "1b3r1k/p6p/4p1nr/5p1N/P2P1pPq/2Q4P/1P2RPB1/6RK w - - 0 35",
+      "prompt": "White to move (Ding-Nepomniachtchi, World Championship 2023). Break through (Ding Liren-Nepomniachtchi, WCh 2023 2023)",
+      "solution": [
+        "Rxe6"
+      ],
+      "orientation": "white",
+      "explain": "**35.Rxe6!** — the rook takes the e6-pawn, opening the long diagonal and the path of the d-pawn; the engine line shows a decisive attack. Engine main line: 35.Rxe6 f3 36.d5+ Ne5 37.Rxe5 fxg2+ 38.Rxg2 Bxe5 39.Qxe5+ Rhf6. (Ding Liren-Nepomniachtchi, WCh 2023 2023; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "At the end of a 10-ply line you reach queen and pawn against queen with your king exposed to checks. How do you evaluate it?",
+      "choices": [
+        "Winning: you have an extra pawn",
+        "Calculate whether the opponent has perpetual check; with an exposed king, Q+P v Q is often a draw — the evaluation depends on shelter from checks",
+        "Losing",
+        "Always a draw"
+      ],
+      "answer": 1,
+      "explain": "Final-position evaluation is where many 2400 players go wrong. Know the endgame and count the checks."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Calculation drill**: 3 GM Preparation-level positions per week, 30 minutes each, written solution with sidelines; score main line and defences separately.\n- **Puzzles**: 15 *superGM* + *defensiveMove* puzzles.\n- Re-solve the positions you failed after two weeks."
+    }
+  ],
+  "practiceThemes": [
+    "superGM",
+    "veryLong",
+    "defensiveMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "knowledge-base/03-chess-knowledge/grandmaster-competency-profile.md",
+    "Aagaard, Grandmaster Preparation: Calculation",
+    "Kasparov, My Great Predecessors (vols. I-V)",
+    "Larsen-Spassky, USSR v Rest of the World, Belgrade 1970",
+    "Kasparov-Topalov, Wijk aan Zee 1999",
+    "Ding-Nepomniachtchi, World Championship 2023"
+  ]
+}

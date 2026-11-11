@@ -1,0 +1,88 @@
+{
+  "id": "adult.s6.complex-pawn-endings",
+  "track": "adult",
+  "stage": 6,
+  "order": 12,
+  "skillIds": [
+    "endgame.pawn.advanced"
+  ],
+  "title": "Complex pawn endings: tempi, races and transitions",
+  "summary": "Outside and protected passers, reserve tempi, multi-pawn races and when to trade the last piece into a won pawn ending.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Counting is everything\n\nPawn endings are the most concrete phase: the result is calculable. Tools:\n- **Outside passed pawn**: decoys the enemy king; your king eats the other wing.\n- **Protected passed pawn**: the enemy king can never take it; often decisive.\n- **Reserve tempi**: spare pawn moves that win the opposition battle at the critical moment (keep them, do not spend them early).\n- **Races**: count moves to promotion for both sides, including checks and whether the new queen stops the other pawn.\n- **Transitions**: before trading the last piece, calculate the pawn ending to the end."
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: White has an outside passed a-pawn, the kingside pawns are balanced. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White wins whoever is to move. The a-pawn drags the black king away and the white king takes the kingside pawns.",
+      "fen": "8/8/3k2p1/7p/P2K3P/6P1/8/8 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: protected passed pawn on c5 (supported by b4), White king far away on f2. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White wins. The black king must watch the c-pawn and cannot take it; the white king walks to b5 and the black b-pawn falls.",
+      "fen": "8/8/2k5/1pP5/1P6/8/5K2/8 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: White has a- and h-pawns against an a-pawn; kings b3 and b5. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White wins (fastest is 1.h4!, running with the outside pawn). Two separated pawns against one usually win because the king cannot stop the outside pawn and guard the other.",
+      "fen": "8/p7/8/1k6/8/1K6/P6P/8 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "8/1r1k4/p7/4PppR/3K4/5P2/7P/8 w - - 1 48",
+      "prompt": "White to move. Should White trade rooks into the pawn ending? Calculate it (Ivanchuk-Giri, 74th Tata Steel GMA 2012)",
+      "solution": [
+        "Rh7+"
+      ],
+      "orientation": "white",
+      "explain": "**48.Rh7+!** and 49.Rxb7 — the rook exchange leads to a winning pawn ending because White's king is more active and the e-pawn is far advanced. Engine main line: 48.Rh7+ Kc8 49.Rxb7 Kxb7 50.Kd5 f4 51.h3 a5 52.Kd6 a4 53.e6 a3. (Ivanchuk-Giri, 74th Tata Steel GMA 2012; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "7K/8/k1P5/7p/8/8/8/8 w - - 0 1",
+      "prompt": "Reti's king walk in a pawn race. White to move and draw.",
+      "solution": [
+        "Kg7"
+      ],
+      "explain": "**1.Kg7!** — the king walks along the diagonal towards both the h-pawn and the c-pawn (tablebase: the only drawing move). See the studies lesson for the full line."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles**: 20 *pawnEndgame* puzzles at or above your rating; write the counting before you move.\n- **Endgames trainer**: play outside-passer and protected-passer endings against the engine from both sides.\n- Dvoretsky's Endgame Manual ch. 1: work through the sections on reserve tempi and the races (5 positions per week)."
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame",
+    "zugzwang"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky's Endgame Manual (5th ed.)",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)",
+    "Ivanchuk-Giri, Wijk aan Zee 2012"
+  ]
+}

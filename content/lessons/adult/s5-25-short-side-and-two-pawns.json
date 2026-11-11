@@ -1,0 +1,85 @@
+{
+  "id": "adult.s5.short-side-and-two-pawns",
+  "track": "adult",
+  "stage": 5,
+  "order": 25,
+  "skillIds": [
+    "endgame.rook.short-long-side",
+    "endgame.rook.two-pawns"
+  ],
+  "title": "Short-side defence and rook with two pawns",
+  "summary": "King to the short side, rook to the long side for checks from a distance; when R+2P v R wins (connected) and when it does not (f+h with the right defence).",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Short side, long side\n\nWhen the defending king cannot stand in front of the pawn (Philidor is no longer available), it should go to the **short side** of the pawn (the side with fewer files to the edge) and the rook to the **long side**, from where it checks the attacking king **from the side at a distance of at least three files**. A rook checking from close range is attacked by the king; a rook three or more files away keeps checking."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/1R1K4/8/4P3/8/8/8/2r5 b - - 0 1",
+      "prompt": "Black to move. White threatens e6 and Ke7. Draw.",
+      "solution": [
+        "Ra1",
+        "e6",
+        "Ra8",
+        "e7",
+        "Kf7"
+      ],
+      "orientation": "black",
+      "hint": "Where is the rook furthest from the white king?",
+      "explain": "**1...Ra1!** — the only drawing move (tablebase). The rook goes as far as possible to the long side. After **2.e6 Ra8!** the rook stops the pawn from the back rank at a safe distance and **3.e7 Kf7** wins the pawn (4.e8=Q+ Rxe8). With the rook on c1 it is too close: 1...Rc2? 2.e6 Rd2+ 3.Ke8 and the king shelters, winning for White."
+    },
+    {
+      "type": "text",
+      "md": "## Rook and two pawns against rook\n\n- **Connected pawns** almost always win (exceptions: far-back pawns with the defending king in front, or rook pawn + knight pawn in special cases).\n- **Doubled pawns** are often only as good as one pawn.\n- **f- and h-pawns** (and similar split pawns with one file between) are the classic drawing case when the defending king is in front of them and the rook is active; with a passive rook or a misplaced king the attacker often still wins."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. White has the f- and h-pawns against the black king on g8. Result with best play?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw — eight different black moves hold. The king in front of the pawns plus an active rook on the 2nd rank (checking from behind) is the standard defence.",
+      "fen": "6k1/8/5P2/7P/5K2/8/r7/7R b - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. Again f- and h-pawns, but the black rook is passive on f7 and the white rook is active. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White wins. The passive rook on f7 lets White combine Ra8+, Kg5 and h6 ideas. Activity of the defending rook is what makes f+h a draw — not the pawn configuration alone.",
+      "fen": "6k1/5r2/8/5P1P/6K1/8/8/R7 w - - 0 1"
+    },
+    {
+      "type": "play",
+      "fen": "8/8/5k2/R7/5PP1/5K2/8/1r6 w - - 0 1",
+      "goal": "win",
+      "prompt": "Connected pawns. Win against the engine: advance the pawns with king support, use the rook to cut the black king off and to shield your king from checks. (Tablebase: win in 23 moves with best play.)",
+      "maxMoves": 50,
+      "explain": "Success means queening and keeping the queen, or winning the rook. Typical method: g5+, Kf4 with the rook checking the king away, then f5 and the pawns roll."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Endgames trainer:** short-side defence as Black (twice), connected pawns as White (twice).\n- **Puzzles:** 20 *rookEndgame* puzzles.\n- Write down the three rules on a card: (1) king to the short side, (2) rook to the long side, three files away, (3) activity of the defending rook decides R+2P v R."
+    }
+  ],
+  "practiceThemes": [
+    "rookEndgame",
+    "endgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky, Dvoretsky's Endgame Manual (5th ed., 2020)",
+    "de la Villa, 100 Endgames You Must Know",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "adult.s4.clearance",
+  "track": "adult",
+  "stage": 4,
+  "order": 5,
+  "skillIds": [
+    "tactics.clearance"
+  ],
+  "title": "Clearance: vacate the square, open the line",
+  "summary": "Move a piece out of the way, ideally with tempo or as a sacrifice, so another piece can use its square or line.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "In a **clearance** your own piece is in the way. You move it, preferably **with tempo** (check, capture, threat) or as a sacrifice, to free:\n\n- a **square** for another piece (e.g. a queen wants the square your rook stands on), or\n- a **line** (file, rank, diagonal) for a piece behind it.\n\nDiagnostic question: \"If this piece of mine vanished, would I have a winning move?\" If yes, find the most forcing way to make it vanish."
+    },
+    {
+      "type": "board",
+      "fen": "r2qk2r/ppp2pp1/2p2n2/7p/3bP1b1/2N3QP/PPP2PP1/R1B1KB1R b KQkq - 0 9",
+      "md": "Black to move (a Stafford Gambit position). If the d4-bishop vanished, ...Qd1 would be mate: the g4-bishop covers d1 and the king has no squares. The bishop must leave **with check**.",
+      "arrows": [
+        [
+          "d8",
+          "d1",
+          "green"
+        ],
+        [
+          "d4",
+          "c3",
+          "blue"
+        ]
+      ],
+      "orientation": "black"
+    },
+    {
+      "type": "move",
+      "fen": "r2qk2r/ppp2pp1/2p2n2/7p/3bP1b1/2N3QP/PPP2PP1/R1B1KB1R b KQkq - 0 9",
+      "prompt": "Black to move. Clear the d-file with tempo.",
+      "solution": [
+        "Bxc3+",
+        "Qxc3",
+        "Qd1#"
+      ],
+      "explain": "**9...Bxc3+!** The bishop leaves the d-file with check (and takes a knight). After 10.Qxc3 (10.bxc3 Qd1# as well) **10...Qd1#**. Note: the g4-bishop guards d1; the clearance only worked because the file was the last obstacle."
+    },
+    {
+      "type": "move",
+      "fen": "1q5r/p3kpp1/2Q1p2p/3pP2P/2n3P1/2N2P2/PrP1N3/K3R2R b - - 1 26",
+      "prompt": "Black to move. Your queen would love to land on b2. Something is standing there.",
+      "solution": [
+        "Rxa2+",
+        "Nxa2",
+        "Qb2#"
+      ],
+      "explain": "**26...Rxa2+!** The rook vacates b2 with check (a square clearance). After 27.Nxa2 **27...Qb2#**: the queen arrives on the square the rook just left, supported by the c4-knight."
+    },
+    {
+      "type": "quiz",
+      "question": "Which statement describes a clearance rather than a deflection?",
+      "choices": [
+        "You force an enemy piece to leave a square it guards",
+        "You move your own piece away so another of your pieces can use its square or line",
+        "You block an enemy line with a piece"
+      ],
+      "answer": 1,
+      "explain": "Deflection moves an **enemy** piece; interference **blocks** an enemy line; clearance moves **your own** piece out of the way. The three are often combined, so naming them helps you search."
+    },
+    {
+      "type": "move",
+      "fen": "1r4nr/3N1pkp/2B1p1p1/8/Pp3N2/3P2P1/1bPQKP1P/q7 w - - 3 24",
+      "prompt": "White to move. Independent exercise. Which of your pieces blocks the queen's diagonal towards g5?",
+      "solution": [
+        "Nh5+",
+        "gxh5",
+        "Qg5#"
+      ],
+      "explain": "The f4-knight sits on the d2-g5 diagonal. **24.Nh5+!** clears it with check; after 24...gxh5 **25.Qg5#**: the king is boxed in by its own g8-knight, h8-rook and f7/h7-pawns, and the d7-knight covers f6 and f8."
+    },
+    {
+      "type": "text",
+      "md": "**Typical errors.** Clearing a line without tempo, so the opponent simply closes it again or defends; and forgetting that the cleared piece itself may be needed for defence.\n\n**Retrieval check.** State the diagnostic question for clearance. Then explain, for each puzzle, which square or line was cleared: d-file for the queen; the b2-square; the d2-g5 diagonal."
+    }
+  ],
+  "practiceThemes": [
+    "clearance"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#clearance",
+    "knowledge-base/03-chess-knowledge/tactics.md#line-opening-and-closing",
+    "Yusupov, Build Up Your Chess 2 (Quality Chess, 2009), chapter on clearance",
+    "Vukovic, The Art of Attack in Chess (1965), line opening",
+    "Lichess puzzle database (CC0), puzzles 01EUl, 00rNc, 1M0ex"
+  ]
+}

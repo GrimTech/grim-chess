@@ -1,0 +1,114 @@
+{
+  "id": "adult.s3.perpetual-check-and-stalemate-tricks",
+  "track": "adult",
+  "stage": 3,
+  "order": 20,
+  "skillIds": [
+    "tactics.perpetual-check"
+  ],
+  "title": "Saving tactics: perpetual check and stalemate tricks",
+  "summary": "When you are losing, look for an endless series of checks or a way to leave yourself without a legal move.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Two drawing weapons for the worse side:\n\n- **Perpetual check**: the enemy king cannot escape your checks, so the position repeats (claim threefold repetition).\n- **Stalemate tricks**: if your king has no legal moves, sacrifice your remaining mobile pieces; if they cannot be taken without stalemate, they become a \"desperado\" that checks forever.\n\nAlways check these before resigning, and as the stronger side, always check them before grabbing material."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/Q4ppp/8/8/4q3/8/PP3P1P/R4RK1 b - - 0 30",
+      "prompt": "Worked example. Black is two rooks down, but White's king is exposed. Force a perpetual: play the checks until the first position repeats.",
+      "solution": [
+        "Qg4+",
+        "Kh1",
+        "Qf3+",
+        "Kg1",
+        "Qg4+"
+      ],
+      "explain": "...Qg4+ Kh1 ...Qf3+ Kg1 ...Qg4+: the king can only shuttle between g1 and h1, and no white piece can block. Draw by repetition.",
+      "hint": "Check on the g-file first."
+    },
+    {
+      "type": "move",
+      "fen": "r4rk1/pp3p1p/8/4Q3/8/8/q4PPP/6K1 w - - 0 30",
+      "prompt": "Now the same idea from White's side (the board is the mirror image). Black is two rooks up. Find the perpetual.",
+      "solution": [
+        "Qg5+",
+        "Kh8",
+        "Qf6+",
+        "Kg8",
+        "Qg5+"
+      ],
+      "explain": "Qg5+ Kh8 Qf6+ Kg8 Qg5+. Two squares of checks are enough when the king has no shelter. Any other move loses to Black's extra rooks."
+    },
+    {
+      "type": "quiz",
+      "question": "You have found a perpetual check. Over the board, how is the draw recorded?",
+      "choices": [
+        "It is automatic after three checks",
+        "Claim threefold repetition (or agree a draw); after five repetitions the arbiter ends it automatically",
+        "The player giving check wins on time",
+        "You must give 50 checks"
+      ],
+      "answer": 1,
+      "explain": "\"Perpetual check\" is not itself a rule: it is drawn by repetition, agreement, or eventually the fivefold rule."
+    },
+    {
+      "type": "move",
+      "fen": "8/7k/8/6q1/8/7p/1R5P/7K w - - 0 30",
+      "prompt": "Stalemate trick. Your king on h1 has no legal moves: g1 and g2 are covered, and the h2-pawn is blocked. Black threatens ...Qg2 mate. Save the game.",
+      "solution": [
+        "Rb7+"
+      ],
+      "explain": "Rb7+! The rook becomes a desperado: it keeps checking along the 7th rank and down the files, and capturing it is stalemate. For example ...Kg6 Rg7+ Kxg7, stalemate. Any other rook move loses to ...Qg2#.",
+      "hint": "Your rook should start checking."
+    },
+    {
+      "type": "quiz",
+      "question": "After Rb7+ in the previous position, Black plays ...Qg7, blocking the check. What now?",
+      "choices": [
+        "Rxg7+, and ...Kxg7 is stalemate",
+        "Resign",
+        "Rb8, threatening mate",
+        "Kg1"
+      ],
+      "answer": 0,
+      "explain": "Rxg7+ Kxg7 leaves White with a king that cannot move and a blocked pawn: stalemate. The desperado rook only needs to be taken."
+    },
+    {
+      "type": "quiz",
+      "question": "You are a queen up against king and pawn on the 7th, and you are about to take the last enemy pawn. What must you check?",
+      "choices": [
+        "Nothing",
+        "That the enemy king will still have a legal move after your capture (no stalemate)",
+        "That you can castle",
+        "That your king is in the centre"
+      ],
+      "answer": 1,
+      "explain": "Stalemate is the most common way to throw away a won endgame at club level. Before every capture or check, count the opponent's legal moves."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which resources should you look for before resigning a lost position?",
+      "choices": [
+        "Only checkmate",
+        "Perpetual check, stalemate tricks, and swindles (traps the opponent might fall for)",
+        "A draw offer every move",
+        "Nothing: resigning saves time"
+      ],
+      "answer": 1,
+      "explain": "At club level, play on in lost positions where these resources exist; resign when the opponent clearly has the technique."
+    }
+  ],
+  "practiceThemes": [
+    "equality",
+    "defensiveMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#perpetual-check",
+    "knowledge-base/03-chess-knowledge/tactics.md#stalemate-tricks",
+    "knowledge-base/03-chess-knowledge/rules.md#threefold-repetition",
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#swindles",
+    "Tactics.md note: Lichess has no perpetual-check theme; positions curated and engine-verified"
+  ]
+}

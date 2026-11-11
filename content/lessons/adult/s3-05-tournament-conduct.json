@@ -1,0 +1,107 @@
+{
+  "id": "adult.s3.tournament-conduct",
+  "track": "adult",
+  "stage": 3,
+  "order": 5,
+  "skillIds": [
+    "practical.otb-etiquette"
+  ],
+  "title": "Tournament conduct, etiquette and fair play",
+  "summary": "Phones, notes, leaving the playing area, distracting the opponent, and the etiquette that keeps you out of trouble at your first rated events.",
+  "estMinutes": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The Laws (Art. 11) are short: no notes or advice during play, no analysing on another board, **no electronic device on your person** unless the regulations allow it switched off in a bag, do not leave the playing venue without the arbiter's permission, and do not distract or annoy your opponent. Default time is set by the event; if none is set it is **zero**: arrive before the round starts."
+    },
+    {
+      "type": "quiz",
+      "question": "Your phone vibrates in your pocket during the game. What does Art. 11.3.2 say?",
+      "choices": [
+        "Nothing, as long as you do not look at it",
+        "A device evidently on your person means the game is lost (regulations may set a lesser penalty)",
+        "You must switch it off within one minute",
+        "Only a warning, always"
+      ],
+      "answer": 1,
+      "explain": "Leave the phone in your bag, switched off, or outside the venue entirely, as the event regulations require."
+    },
+    {
+      "type": "quiz",
+      "question": "During the game you want to write a reminder \"watch the back rank\" on your scoresheet. Allowed?",
+      "choices": [
+        "Yes, it is your scoresheet",
+        "No: notes or sources of information are forbidden during play",
+        "Yes, if written in notation",
+        "Only in rapid games"
+      ],
+      "answer": 1,
+      "explain": "Art. 11.3.1 forbids notes. The scoresheet is for moves, clock times, draw offers \"(=)\" and nothing else."
+    },
+    {
+      "type": "quiz",
+      "question": "Which behaviour is most likely to be penalised as annoying the opponent?",
+      "choices": [
+        "Saying \"I adjust\" before straightening a piece",
+        "Offering a draw again and again after it has been declined",
+        "Standing up to walk in the playing area during your opponent's turn",
+        "Writing your opponent's move on your scoresheet"
+      ],
+      "answer": 1,
+      "explain": "Repeated, unreasonable draw offers or claims fall under Art. 11.5. Walking within the playing area is allowed; leaving the venue needs permission."
+    },
+    {
+      "type": "quiz",
+      "question": "You see that your opponent's flag has fallen in a game next to yours. What should you do?",
+      "choices": [
+        "Tell the players",
+        "Say nothing: only the players or the arbiter may point out flag fall",
+        "Stop their clock",
+        "Tell the arbiter loudly"
+      ],
+      "answer": 1,
+      "explain": "Spectators and other players must not intervene in a game. Only the players and the arbiter may call flag fall."
+    },
+    {
+      "type": "move",
+      "fen": "rnbq1rk1/ppp2pp1/8/7Q/8/3B4/PPP2PPP/5RK1 w - - 0 30",
+      "prompt": "Etiquette includes finishing cleanly. Your opponent has blundered and is waiting for your move. Mate in one, then shake hands and sign both scoresheets.",
+      "solution": [
+        "Qh7#"
+      ],
+      "explain": "Qh7#: the bishop on d3 protects the queen, and the king's own rook and pawns block every escape. After mate (or resignation), shake hands, sign both scoresheets, and take the post-mortem out of the playing hall.",
+      "hint": "Your bishop and queen line up on the b1-h7 diagonal."
+    },
+    {
+      "type": "quiz",
+      "question": "After the game, what is the expected procedure?",
+      "choices": [
+        "Leave immediately",
+        "Shake hands, sign both scoresheets with the result, report the result as the event requires, and analyse quietly outside the playing area",
+        "Analyse at the board loudly",
+        "Take your opponent's scoresheet home"
+      ],
+      "answer": 1,
+      "explain": "Post-mortems belong in the analysis room. Both players sign both scoresheets showing the result."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the default time if the tournament regulations do not specify one?",
+      "choices": [
+        "15 minutes",
+        "30 minutes",
+        "One hour",
+        "Zero: you must be at the board when the round starts"
+      ],
+      "answer": 3,
+      "explain": "Art. 6.7.1. Many events set a default (often 15-30 minutes), but if none is stated, absence at the start loses."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#conduct-and-fair-play",
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#tournament-preparation",
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#resigning",
+    "FIDE Laws of Chess (2023) Art. 6.7, 11.1-11.7, 12.9"
+  ]
+}

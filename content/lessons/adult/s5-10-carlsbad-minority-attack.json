@@ -1,0 +1,118 @@
+{
+  "id": "adult.s5.carlsbad-minority-attack",
+  "track": "adult",
+  "stage": 5,
+  "order": 10,
+  "skillIds": [
+    "strategy.carlsbad"
+  ],
+  "title": "The Carlsbad structure and the minority attack",
+  "summary": "White's b4-b5 minority attack, the central e3-e4 plan and f3-e4, and Black's kingside counterplay and ...Ne4 outpost.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## The structure\n\nCarlsbad: White pawns a2-b2-d4-e3-f2-g2-h2 against Black a7-b7-c6-d5-f7-g7-h7 — after the exchange cxd5 exd5 in the Queen's Gambit (or the Caro-Kann Exchange with colours reversed).\n\n**White's plans**\n1. **Minority attack**: a4/b4-b5, exchange on c6 to leave Black a weak c-pawn (backward on an open file) or an isolated d5-pawn. Rooks on b1/c1, knight to a4/c5, queen on b3/c2.\n2. **Central plan**: Nge2 or Nf3-e5 with f3 and e3-e4, opening the centre while Black's pieces are on the queenside. Typical with castling queenside or with Nge2 (Botvinnik's plan).\n\n**Black's plans**\n- Kingside counterplay: ...Ne4 (outpost supported by ...f5), ...Nf8-g6, ...Bd6, rook lift ...Re6-h6, attack on the white king while White's pieces are busy on the queenside.\n- Against the minority attack: meet b5 with ...cxb5 only when the resulting isolated d-pawn is safe; often ...a6 or ...c5 at the right moment, or prophylactic ...a5 to stop b4."
+    },
+    {
+      "type": "board",
+      "fen": "r1bqr1k1/pp2bppp/2p2nn1/3p2B1/1P1P4/2NBPN2/P1Q2PPP/1R3RK1 b - - 0 12",
+      "md": "**Classic minority-attack set-up.** White has played Rab1 and b4; the next step is a4 and b5. Black has regrouped ...Nf8-g6 and will look for ...Ne4 / ...Bd6 / ...Qc7 with kingside play. Notice how White's pieces (Qc2, Bd3) also watch the kingside — the minority attack is played with one eye on the king.",
+      "arrows": [
+        [
+          "b4",
+          "b5",
+          "green"
+        ],
+        [
+          "a2",
+          "a4",
+          "green"
+        ],
+        [
+          "f6",
+          "e4",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "White has played b4-b5 and Black allowed bxc6 ...bxc6. What is the main strategic gain for White?",
+      "choices": [
+        "A passed pawn on the a-file",
+        "A backward c6-pawn on the half-open c-file and the c5-square for a knight",
+        "The bishop pair",
+        "Control of the e5-square"
+      ],
+      "answer": 1,
+      "explain": "The goal of the minority attack is to create a weakness: after bxc6 bxc6 the c6 pawn is backward, the c5 square is a hole, and White's rooks press along the c-file.",
+      "fen": "r1bqr1k1/pp2bppp/2p2nn1/3p2B1/1P1P4/2NBPN2/P1Q2PPP/1R3RK1 b - - 0 12"
+    },
+    {
+      "type": "quiz",
+      "question": "Black meets b5 with ...cxb5 instead. What structural problem does Black accept?",
+      "choices": [
+        "Doubled pawns on the b-file",
+        "An isolated d5-pawn (and a weak b5-pawn if not traded)",
+        "A backward e-pawn",
+        "Nothing; this always equalises"
+      ],
+      "answer": 1,
+      "explain": "...cxb5 leaves d5 isolated. Sometimes that is fine (active pieces, ...Ne4), but it is a long-term target for White's knights and rooks."
+    },
+    {
+      "type": "quiz",
+      "question": "Which move is a typical prophylactic answer to the coming minority attack?",
+      "choices": [
+        "...h5",
+        "...a5 (or ...b5) to stop or hinder b4-b5",
+        "...g5",
+        "...Kh8"
+      ],
+      "answer": 1,
+      "explain": "...a5 meets b4 with ...axb4 or makes b4 harder; ...b5 fixes the queenside but weakens c5/c6. Each has costs — this is exactly the type of decision the structure asks for."
+    },
+    {
+      "type": "board",
+      "fen": "r1bqrnk1/pp2bppp/2p2n2/3p2B1/3P4/2NBPP2/PPQ1N1PP/R4RK1 b - - 0 11",
+      "md": "**Botvinnik's central plan**: Nge2, f3 and e3-e4. White fights for the centre instead of the queenside; the e4 advance opens lines while the black knight on f8 is far from e4. Compare Botvinnik's games in this structure.",
+      "arrows": [
+        [
+          "e3",
+          "e4",
+          "green"
+        ],
+        [
+          "f3",
+          "e4",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "play",
+      "fen": "r1bqr1k1/pp2bppp/2p2nn1/3p2B1/1P1P4/2NBPN2/P1Q2PPP/1R3RK1 b - - 0 12",
+      "goal": "hold",
+      "prompt": "Play the minority attack as White against the engine (level 12) for 25 moves. Aim for a4-b5 and a weakness on c6 or d5, while keeping an eye on ...Ne4 and the kingside.",
+      "maxMoves": 25,
+      "engineLevel": 12
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- In **Guess the move**, play through two Carlsbad games: one with the minority attack, one with the central e4 plan (search the corpus for QGD Exchange games, ECO D35-D36, e.g. Botvinnik's and Kasparov's).\n- In the **Openings** trainer, make sure your QGD/Caro lines reach this structure in the way you intend.\n- Write a one-paragraph plan for both sides; re-read it before your next game with this structure."
+    }
+  ],
+  "practiceThemes": [
+    "queensideAttack",
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "knowledge-base/03-chess-knowledge/openings.md",
+    "Dvoretsky & Yusupov, Positional Play",
+    "Soltis, Pawn Structure Chess",
+    "Flores Rios, Chess Structures: A Grandmaster Guide",
+    "Botvinnik's and Kasparov's games in the QGD Exchange (e.g. Kasparov-Andersson, Reykjavik 1988)"
+  ]
+}

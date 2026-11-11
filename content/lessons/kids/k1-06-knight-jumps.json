@@ -1,0 +1,110 @@
+{
+  "id": "kids.1.knight-jumps",
+  "track": "kids",
+  "stage": 1,
+  "order": 106,
+  "skillIds": [
+    "rules.pieces.knight"
+  ],
+  "title": "Knight jumps",
+  "summary": "The knight jumps in an L shape and can hop over pieces.",
+  "estMinutes": 6,
+  "minAge": 5,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The **knight** is a horse! It jumps in an **L**: two steps one way, then one step to the side."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/3N4/8/8/4K3 w - - 0 1",
+      "md": "It can land on these 8 squares.",
+      "arrows": [
+        [
+          "d4",
+          "e6"
+        ],
+        [
+          "d4",
+          "f5"
+        ],
+        [
+          "d4",
+          "f3"
+        ],
+        [
+          "d4",
+          "e2"
+        ],
+        [
+          "d4",
+          "c2"
+        ],
+        [
+          "d4",
+          "b3"
+        ],
+        [
+          "d4",
+          "b5"
+        ],
+        [
+          "d4",
+          "c6"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/8/8/8/8/8/1N5K w - - 0 1",
+      "prompt": "Jump the knight to the star!",
+      "solution": [
+        "Nc3"
+      ],
+      "explain": "Hop! Two up, one over.",
+      "highlights": [
+        "c3"
+      ],
+      "hint": "Two squares up, then one to the right."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Knights can jump **over** pieces! Jump to the star.",
+      "solution": [
+        "Nf3"
+      ],
+      "explain": "Over the pawns. Amazing!",
+      "highlights": [
+        "f3"
+      ],
+      "hint": "Use the knight next to the king."
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/8/8/4N3/8/8/7K w - - 0 1",
+      "prompt": "Jump to the star!",
+      "solution": [
+        "Nf6"
+      ],
+      "explain": "Great jumping!",
+      "highlights": [
+        "f6"
+      ],
+      "hint": "Two up, one to the right."
+    },
+    {
+      "type": "quiz",
+      "question": "Can a knight jump over other pieces?",
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "answer": 0,
+      "explain": "Yes! The knight is the only piece that jumps."
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

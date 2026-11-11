@@ -1,0 +1,88 @@
+{
+  "id": "adult.s4.good-and-bad-bishops",
+  "track": "adult",
+  "stage": 4,
+  "order": 20,
+  "skillIds": [
+    "strategy.good-bad-bishop"
+  ],
+  "title": "Good and bad bishops",
+  "summary": "Judge a bishop by its own pawns: fix pawns on the right colour, trade the bad bishop or activate it outside the chain.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **bad bishop** is hemmed in by its own pawns fixed on its colour; a **good bishop** has its own pawns on the other colour. Practical rules:\n\n- Put your pawns on the opposite colour of your bishop (especially in endgames), and fix the *opponent's* pawns on his bishop's colour.\n- Trade your bad bishop (e.g. French ...b6 and ...Ba6), or **activate** it outside the chain before closing it in (Caro-Kann ...Bf5 before ...e6).\n- A \"bad\" bishop that is active, or that defends key pawns, can be perfectly fine. Bad bishops lose when the opponent has **targets and an entry**."
+    },
+    {
+      "type": "board",
+      "fen": "rn1qkbnr/pp2pppp/2p5/3pPb2/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 1 4",
+      "md": "Caro-Kann Advance: Black develops the light-squared bishop to f5 *before* playing ...e6. Once ...e6 is played, the bishop is outside the d5-e6 chain and stays active. Compare the French (1.e4 e6), where the c8-bishop is locked behind e6/d5.",
+      "arrows": [
+        [
+          "c8",
+          "f5",
+          "green"
+        ]
+      ],
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "In the French Advance (White pawns d4/e5, Black pawns d5/e6), which is Black's \"bad\" bishop?",
+      "choices": [
+        "The dark-squared bishop on f8",
+        "The light-squared bishop on c8",
+        "Neither"
+      ],
+      "answer": 1,
+      "explain": "Black's centre pawns stand on light squares (d5, e6), so the **light-squared** c8-bishop is the bad one. Typical remedies: ...b6 and ...Ba6 to trade it against White's good bishop, or ...Bd7-e8-h5 manoeuvres."
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. White has a knight; Black has a light-squared bishop and all six pawns on light squares. Evaluate.",
+      "choices": [
+        "White is winning: every black pawn is a target for the knight and the king, and the bishop cannot defend them from the dark squares",
+        "Equal: material is level",
+        "Black is better: bishops beat knights"
+      ],
+      "answer": 0,
+      "explain": "This is the classic **good knight against bad bishop**: the black bishop bites on its own pawns, and dark squares like c5, f4 and e5... are the entry points. The knight can attack a6 and e6 from c5 (next lesson on outposts). Engine check: White is winning.",
+      "fen": "4b3/5k2/p3p1p1/1p1pP1Pp/1P1P1K1P/P2N4/8/8 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: the same type of bad bishop, but now the whole structure is locked and the white knight has no entry square. Evaluate.",
+      "choices": [
+        "White is winning, the bishop is bad",
+        "A draw: with no targets and no way in, a bad bishop is still a good defender",
+        "Black is winning"
+      ],
+      "answer": 1,
+      "explain": "The bishop is \"bad\", but there is nothing to attack and no square for the white king or knight to penetrate. A bad bishop loses only when the opponent can create **targets plus an entry**. Engine check: equal.",
+      "fen": "8/3b1k2/p1p1p1p1/PpPpP1Pp/1P1P3P/3N4/5K2/8 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "You have a light-squared bishop and are about to fix your central pawns. Which is usually correct in an endgame?",
+      "choices": [
+        "Put your pawns on dark squares, so the bishop defends them from behind and the light squares are covered by the bishop",
+        "Put your pawns on light squares, so the bishop protects them",
+        "It does not matter"
+      ],
+      "answer": 0,
+      "explain": "Pawns on the **opposite** colour make the bishop \"good\": it controls the squares the pawns do not, and its scope is free. (A bishop defending pawns on its own colour is a passive defender.) Typical error: advancing pawns onto your bishop's colour without thinking."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Define a bad bishop. Name two remedies (trade it; activate it outside the chain). When is a bad bishop a real problem? (When the opponent has targets and an entry square.)"
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#good-and-bad-bishops",
+    "knowledge-base/02-methods/positional-frameworks-nimzowitsch-silman.md#3-silman-how-to-reassess-your-chess-4th-ed-2010",
+    "Silman, How to Reassess Your Chess, 4th ed. (2010), imbalances: minor pieces, pawn structure, space",
+    "Dvoretsky & Yusupov, Positional Play (Batsford, 1996)"
+  ]
+}

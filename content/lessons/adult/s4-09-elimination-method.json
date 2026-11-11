@@ -1,0 +1,86 @@
+{
+  "id": "adult.s4.elimination-method",
+  "track": "adult",
+  "stage": 4,
+  "order": 9,
+  "skillIds": [
+    "calculation.elimination"
+  ],
+  "title": "The elimination method",
+  "summary": "When every move but one fails, you do not need to calculate the survivor to the end.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Elimination** (Dvoretsky/Yusupov): list the candidates, refute all but one, and play the survivor, even if you cannot calculate it to the end. It is the natural method when you are in check, facing a big threat, or when every natural move seems to lose.\n\n**Comparison:** when two candidates lead to similar positions, find the *difference* between them (a pawn on h3, the king on f1 instead of g1) and decide which difference favours you instead of calculating both fully."
+    },
+    {
+      "type": "move",
+      "fen": "k7/P7/1K6/1N6/2n5/4p1p1/8/8 w - - 2 60",
+      "prompt": "White to move. You are in check. List every legal king move and eliminate the ones that fail.",
+      "solution": [
+        "Ka6",
+        "e2",
+        "Nc7#"
+      ],
+      "explain": "The legal king moves are Ka6, Kc5, Kc6 and Kc7 (a5 is covered by the knight, b7 touches the black king). The c-file moves let the black king out via b7 or b8 and the e/g-pawns run. **60.Ka6!** keeps b7 covered and threatens Nc7 mate; after 60...e2 **61.Nc7#**."
+    },
+    {
+      "type": "move",
+      "fen": "2kr4/p1p1N2p/8/5b2/2Pb4/8/PP3PPP/R2K4 b - - 2 21",
+      "prompt": "Black to move. White has just played Ne7+, forking your king and the f5-bishop. Where does the king go? Eliminate.",
+      "solution": [
+        "Kb7",
+        "Nxf5",
+        "Bxb2+"
+      ],
+      "explain": "Candidates: ...Kd7, ...Kb8, ...Kb7. 21...Kd7? blocks your own d8-rook. 21...Kb8? walks into Nc6+, forking king and rook. That leaves **21...Kb7!**: after 22.Nxf5 the d-file is open, and **22...Bxb2+** is a discovered check from the d8-rook, winning the a1-rook next."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. White threatens Qxb8+. Which move survives elimination?",
+      "choices": [
+        "15...Bb4+ (check first), then castle",
+        "15...Bd6, defending b8? (it does not)",
+        "15...Nd7, adding a defender to b8"
+      ],
+      "answer": 0,
+      "explain": "15...Nd7? (the b8-knight itself is pinned along the back rank) guards b8 but leaves the king in the centre: White castles long and the d-file opens with a decisive attack (engine about -3.7 for Black). 15...Bd6? does not defend b8 at all, and 16.Bxb8 follows. **15...Bb4+!** is the survivor: after 16.Kd1 Black castles and the f8-rook guards the whole back rank.",
+      "fen": "Qn2kb1r/Bpq2ppp/4pn2/1p1P4/2P5/5P2/PP3P1P/R3KB1R b KQk - 1 15"
+    },
+    {
+      "type": "move",
+      "fen": "Qn2kb1r/Bpq2ppp/4pn2/1p1P4/2P5/5P2/PP3P1P/R3KB1R b KQk - 1 15",
+      "prompt": "Black to move. Now play the surviving line.",
+      "solution": [
+        "Bb4+",
+        "Kd1",
+        "O-O"
+      ],
+      "explain": "**15...Bb4+ 16.Kd1 O-O.** The check forced the white king to give up castling and gained the tempo you needed to castle; the rook on f8 now protects b8 along the back rank."
+    },
+    {
+      "type": "quiz",
+      "question": "Comparison method. Two candidate lines reach almost the same endgame: in line A your opponent's king is on g2, in line B it is on f1 (closer to your passed pawn on d3). Without calculating further, which line do you choose?",
+      "choices": [
+        "Line A, because the defending king is further from your passed pawn",
+        "Line B, because the king is more central",
+        "They are equal, so it does not matter"
+      ],
+      "answer": 0,
+      "explain": "The **difference** is the only thing to evaluate: the king on f1 is one step from e1/e2 and can blockade the d-pawn; on g2 it is a tempo slower. Comparing differences is cheaper and more reliable than calculating two long lines (Dvoretsky)."
+    },
+    {
+      "type": "text",
+      "md": "**Typical errors.** (1) Dismissing a candidate without a concrete refutation (\"it looks bad\"). (2) Eliminating too fast, before listing *all* checks and captures. (3) Calculating the survivor deeply although there is no alternative: if it is the only move, play it and save the clock.\n\n**Retrieval check.** When is elimination the right method? (In check, against strong threats, when natural moves all fail.) What does the comparison method compare? (The differences between two similar positions.)"
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md#elimination-and-comparison-methods",
+    "knowledge-base/03-chess-knowledge/calculation.md#candidate-moves",
+    "Dvoretsky & Yusupov, Secrets of Chess Training (Edition Olms, 1996), elimination and comparison methods",
+    "Aagaard, Grandmaster Preparation: Calculation (Quality Chess, 2012)",
+    "Lichess puzzle database (CC0), puzzles 02DwR, 05K1G, dbdmq"
+  ]
+}

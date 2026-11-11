@@ -1,0 +1,88 @@
+{
+  "id": "adult.s4.bishop-vs-pawns-and-ocb",
+  "track": "adult",
+  "stage": 4,
+  "order": 39,
+  "skillIds": [
+    "endgame.bishop-vs-pawns",
+    "endgame.ocb.basic"
+  ],
+  "title": "Bishop against pawns, and opposite-coloured bishops",
+  "summary": "Stop pawns along one diagonal, and use the drawing power of opposite-coloured bishops.",
+  "estMinutes": 16,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Bishop against pawns:** the bishop stops a pawn from afar along one diagonal. Against two **connected** pawns, find a diagonal on which the bishop attacks the square in front of *both*; then a pawn that advances is captured, and the king can come back in time.\n\n**Opposite-coloured bishops (OCB):** each bishop controls squares the other can never contest. The defender **blockades on squares of his own bishop's colour** (and with his king in front of the pawns). One extra pawn, and sometimes two, are usually not enough to win."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/8/1k3pp1/8/8/K5B1 w - - 0 1",
+      "goal": "draw",
+      "prompt": "You are White: bishop and king against two connected pawns. Hold the draw. Keep the bishop on the right diagonal and bring your king back.",
+      "maxMoves": 30,
+      "explain": "The bishop watches f2/g3/g2 from the g1-a7 and h2-b8 diagonals; your king comes back via b2-c2-d2-e2 to blockade."
+    },
+    {
+      "type": "quiz",
+      "question": "How does a lone bishop usually hold two connected passed pawns until its king arrives?",
+      "choices": [
+        "It sits on a diagonal that controls the squares in front of the pawns, so whichever pawn advances can be captured",
+        "It blocks one pawn by standing directly in front of it and ignores the other",
+        "It cannot; two connected pawns always win against a bishop"
+      ],
+      "answer": 0,
+      "explain": "The bishop does not need to stop both pawns at once: it controls the squares in front of them from a distance, so an advance loses a pawn, and the king comes back to blockade. (Two connected pawns far advanced with their king in support can still win, so act early.) Typical error: running your king the wrong way, letting the enemy king support the pawns."
+    },
+    {
+      "type": "board",
+      "fen": "6k1/5p1p/3b2p1/8/P1B5/6P1/5P1P/6K1 b - - 0 1",
+      "md": "Black to move, a pawn down with opposite-coloured bishops. White's extra pawn is the a-pawn, which promotes on a **light** square that Black's dark-squared bishop cannot control, but the bishop can stop it on the dark squares a5/a7 or along the a7-g1 / b6-e3 diagonals.",
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "As the defender in an OCB endgame, where do you blockade the passed pawns?",
+      "choices": [
+        "On squares of your own bishop's colour",
+        "On squares of the opponent's bishop's colour",
+        "Anywhere, it does not matter"
+      ],
+      "answer": 0,
+      "explain": "Your bishop can defend the blockade square and can never be challenged there by the enemy bishop. A blockade on the other colour can be broken by the enemy bishop."
+    },
+    {
+      "type": "play",
+      "fen": "6k1/5p1p/3b2p1/8/P1B5/6P1/5P1P/6K1 b - - 0 1",
+      "goal": "hold",
+      "prompt": "You are Black, a pawn down with opposite-coloured bishops. Hold the draw.",
+      "maxMoves": 30,
+      "explain": "Keep your bishop on the diagonal that controls the a-pawn's path (a7-g1 or b6-d8), bring your king to the queenside when needed, and keep your kingside pawns off the light squares where the white bishop could attack them."
+    },
+    {
+      "type": "quiz",
+      "question": "Why do opposite-coloured bishops favour the **attacker** in the middlegame but the **defender** in the endgame?",
+      "choices": [
+        "In the middlegame the attacker's bishop hits squares the defender's bishop can never cover; in the endgame the defender's bishop sets up an unbreakable blockade",
+        "Because of the fifty-move rule",
+        "They favour the defender in both"
+      ],
+      "answer": 0,
+      "explain": "The same property (the bishops never meet) works for the attacker against the king and for the defender against passed pawns. So the side with an extra pawn in an OCB ending often avoids trading the remaining pieces."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** How does a bishop stop two connected pawns? (One diagonal covering the squares in front of both, king returns.) Where does the OCB defender blockade? (On his bishop's colour.)"
+    }
+  ],
+  "practiceThemes": [
+    "bishopEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#bishop-vs-pawns",
+    "knowledge-base/03-chess-knowledge/endgames.md#opposite-coloured-bishops-basics",
+    "knowledge-base/03-chess-knowledge/endgames.md#wrong-coloured-bishop",
+    "de la Villa, 100 Endgames You Must Know (New in Chess, 2008)",
+    "Dvoretsky, Dvoretsky's Endgame Manual (Russell Enterprises, 2003), chapter on bishop endgames"
+  ]
+}

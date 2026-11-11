@@ -1,0 +1,88 @@
+{
+  "id": "adult.s4.outposts",
+  "track": "adult",
+  "stage": 4,
+  "order": 22,
+  "skillIds": [
+    "strategy.outposts"
+  ],
+  "title": "Outposts: squares for your knights",
+  "summary": "Find squares the enemy pawns can no longer attack, and bring a knight there.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "An **outpost** is a square in or near enemy territory (ranks 4-6) that **no enemy pawn can attack**, ideally protected by your own pawn. Knights benefit most: they are short-range pieces that need a stable forward square.\n\nChecklist: (1) Can any enemy pawn ever attack the square? Look at the adjacent files. (2) Can the opponent trade the piece that lands there? (3) What does the piece attack from there? (4) What is the knight's route (often three moves: Nb1-d2-f1-e3-d5)?"
+    },
+    {
+      "type": "quiz",
+      "question": "Your knight can go to d5. Black has pawns on c6 and e6. Is d5 an outpost?",
+      "choices": [
+        "Yes, it is in the centre",
+        "No: the c6- and e6-pawns attack d5, so it is not an outpost",
+        "Yes, if it is protected by the e4-pawn"
+      ],
+      "answer": 1,
+      "explain": "An outpost must be **safe from enemy pawns**. With pawns on c6 and e6, Black controls d5 directly. If Black had played ...e5 and lost the c-pawn (as in the Sveshnikov), d5 would be a true outpost."
+    },
+    {
+      "type": "board",
+      "fen": "4b3/5k2/p3p1p1/1p1pP1Pp/1P1P1K1P/P2N4/8/8 w - - 0 1",
+      "md": "White to move. Black's pawns stand on a6, b5, d5, e6, g6 and h5. Look at **c5**: the b-pawn has passed it and there is no black d-pawn behind it to cover it, so no black pawn can ever attack c5. It is protected by the b4- and d4-pawns.",
+      "highlights": [
+        "c5"
+      ],
+      "arrows": [
+        [
+          "d3",
+          "c5",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4b3/5k2/p3p1p1/1p1pP1Pp/1P1P1K1P/P2N4/8/8 w - - 0 1",
+      "prompt": "White to move. Occupy the outpost.",
+      "solution": [
+        "Nc5"
+      ],
+      "hint": "Which square can no black pawn ever attack?",
+      "explain": "**1.Nc5!** From c5 the knight attacks a6 and e6, and Black's light-squared bishop can never challenge it. Engine check: this wins (the a6-pawn falls next), while slow king moves give only a small edge."
+    },
+    {
+      "type": "quiz",
+      "question": "Which statement about outposts is correct?",
+      "choices": [
+        "A knight on an outpost should be exchanged as soon as possible",
+        "An outpost is most valuable when the opponent has no minor piece that can exchange the occupant",
+        "Rooks are the best outpost occupants"
+      ],
+      "answer": 1,
+      "explain": "If the opponent can simply trade the knight with a bishop of the same colour as the square or a knight, the outpost is worth less. Against a bishop of the *other* colour (as on c5 here, a dark square against a light bishop) the knight is permanent."
+    },
+    {
+      "type": "quiz",
+      "question": "Sveshnikov Sicilian after ...e5 and ...d6: which square is White's classic outpost?",
+      "choices": [
+        "d5",
+        "f5",
+        "b5"
+      ],
+      "answer": 0,
+      "explain": "**d5**: Black's c-pawn has gone and the e-pawn has advanced to e5, so no pawn can attack d5. White's knights head there (Nc3-d5, Na3-c2-e3-d5)."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Define an outpost in one sentence. Run the four-question checklist on c5 in the diagram: no black pawn can attack it; Black's bishop is light-squared so cannot trade it; it attacks a6 and e6; the knight reaches it in one move."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#outposts",
+    "knowledge-base/03-chess-knowledge/strategy.md#activity-and-coordination",
+    "knowledge-base/02-methods/positional-frameworks-nimzowitsch-silman.md#2-nimzowitsch-my-system-mein-system-1925",
+    "Nimzowitsch, My System (1925), chapters on pawn chains, outposts and the blockade",
+    "Silman, How to Reassess Your Chess, 4th ed. (2010), imbalances: minor pieces, pawn structure, space"
+  ]
+}

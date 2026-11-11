@@ -1,0 +1,84 @@
+{
+  "id": "adult.s4.knight-vs-pawn",
+  "track": "adult",
+  "stage": 4,
+  "order": 38,
+  "skillIds": [
+    "endgame.knight-vs-pawn"
+  ],
+  "title": "Knight against pawn",
+  "summary": "A knight stops a pawn by controlling a square in front of it; checks gain tempi; rook pawns are the hardest.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Knight against a passed pawn:\n\n- The knight holds if it controls a square **in front of the pawn** (ideally the promotion square) and cannot be driven away.\n- When the enemy king supports the pawn, **knight checks gain tempi**: every check forces the king to move, and your knight jumps closer to the pawn's path.\n- **Rook pawns are hardest** for the knight: near the corner the knight has few squares, and a pawn on the seventh supported by the king can win.\n- Typical error: a knight placed where the enemy king can attack it while it guards the pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "A black pawn on b2, Black to move, no black king nearby; your knight is on d2. Is the pawn stopped?",
+      "choices": [
+        "Yes: the d2-knight controls b1, so 1...b1=Q is met by Nxb1",
+        "No, knights can never stop pawns on the seventh",
+        "Only if your king is near"
+      ],
+      "answer": 0,
+      "explain": "The rule: the knight must control a square on the pawn's path, best the promotion square itself. From d2 the knight covers b1 (and b3), so the pawn cannot promote safely."
+    },
+    {
+      "type": "board",
+      "fen": "7K/8/8/8/2k1N3/1p6/8/8 w - - 0 1",
+      "md": "White to move. The black pawn on b3 is supported by the king on c4, and your king on h8 is far away. Only the knight can hold. Use checks.",
+      "arrows": [
+        [
+          "e4",
+          "d2",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "play",
+      "fen": "7K/8/8/8/2k1N3/1p6/8/8 w - - 0 1",
+      "goal": "draw",
+      "prompt": "Hold the draw with the knight: check to gain time, then guard the queening square.",
+      "maxMoves": 25,
+      "explain": "1.Nd2+ gains a tempo; the knight heads for b1/b3 squares while your king walks back."
+    },
+    {
+      "type": "quiz",
+      "question": "Why are rook pawns especially difficult for a knight?",
+      "choices": [
+        "On the edge the knight controls fewer squares and can be kept out of the corner",
+        "Rook pawns move two squares at a time",
+        "Because the knight cannot move to the a-file"
+      ],
+      "answer": 0,
+      "explain": "Near the corner a knight has only two or three squares; if the defending king supports the rook pawn on the seventh, the knight is often too slow."
+    },
+    {
+      "type": "quiz",
+      "question": "Which knight move pattern is used to stop a pawn while the enemy king attacks your knight?",
+      "choices": [
+        "Checks that gain tempi, then a jump to a square that covers the promotion square",
+        "Retreating the knight to the corner",
+        "Placing the knight in front of the pawn on the adjacent square"
+      ],
+      "answer": 0,
+      "explain": "A check forces the king to spend a move; your knight uses that time to reach a defended or unreachable square covering the pawn's path."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Name the three ideas: control a square in front, checks to gain tempi, beware rook pawns."
+    }
+  ],
+  "practiceThemes": [
+    "knightEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#knight-vs-pawn",
+    "knowledge-base/02-methods/endgame-study-methods.md#3-a-sequenced-canon-platform-default",
+    "de la Villa, 100 Endgames You Must Know (New in Chess, 2008), chapter on minor pieces vs pawns",
+    "Dvoretsky, Dvoretsky's Endgame Manual (Russell Enterprises, 2003)"
+  ]
+}

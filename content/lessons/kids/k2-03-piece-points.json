@@ -1,0 +1,84 @@
+{
+  "id": "kids.2.piece-points",
+  "track": "kids",
+  "stage": 1,
+  "order": 203,
+  "skillIds": [
+    "rules.piece-values"
+  ],
+  "title": "Piece points",
+  "summary": "Pawn 1, knight 3, bishop 3, rook 5, queen 9.",
+  "estMinutes": 6,
+  "minAge": 6,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Pieces have **points**: pawn **1**, knight **3**, bishop **3**, rook **5**, queen **9**. The king is priceless!"
+    },
+    {
+      "type": "quiz",
+      "question": "Which is worth more?",
+      "choices": [
+        "Rook",
+        "Knight"
+      ],
+      "answer": 0,
+      "explain": "Rook 5, knight 3."
+    },
+    {
+      "type": "quiz",
+      "question": "How many points is a queen?",
+      "choices": [
+        "3",
+        "5",
+        "9"
+      ],
+      "answer": 2,
+      "explain": "The queen is worth 9."
+    },
+    {
+      "type": "quiz",
+      "question": "Which is more: a knight and a pawn, or a rook?",
+      "choices": [
+        "Knight and pawn",
+        "Rook"
+      ],
+      "answer": 1,
+      "explain": "3 + 1 = 4, and a rook is 5."
+    },
+    {
+      "type": "move",
+      "fen": "7k/3q1p2/8/4N3/8/8/8/4K3 w - - 0 1",
+      "prompt": "Which capture gets more points? Take it!",
+      "solution": [
+        "Nxd7"
+      ],
+      "explain": "The queen is 9 points!",
+      "hint": "Queen or pawn?"
+    },
+    {
+      "type": "move",
+      "fen": "7k/3r4/8/8/3R3n/8/8/K7 w - - 0 1",
+      "prompt": "Take the piece worth the most!",
+      "solution": [
+        "Rxd7"
+      ],
+      "explain": "A rook (5) beats a knight (3).",
+      "hint": "Count the points."
+    },
+    {
+      "type": "quiz",
+      "question": "A bishop and a knight are worth…",
+      "choices": [
+        "About the same",
+        "The bishop is double",
+        "The knight is double"
+      ],
+      "answer": 0,
+      "explain": "Both are worth about 3."
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

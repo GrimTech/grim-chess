@@ -1,0 +1,91 @@
+{
+  "id": "adult.s5.corresponding-squares",
+  "track": "adult",
+  "stage": 5,
+  "order": 21,
+  "skillIds": [
+    "endgame.pawn.corresponding-squares"
+  ],
+  "title": "Corresponding squares and mutual zugzwang",
+  "summary": "Map the key squares and their partners, solve Lasker-Reichhelm, and recognise the trebuchet.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## From opposition to corresponding squares\n\nOpposition is a special case of a bigger idea. In a blocked pawn ending the attacker has **key squares** (squares that win if his king reaches them). For every square the attacking king can stand on, there is a **corresponding square** for the defending king from which the defender can answer every threat. If the attacker can reach a square whose partner the defender cannot reach in time — or make the defender move when he is already on the right square (**mutual zugzwang**) — the attacker wins.\n\n**Method:**\n1. Find the attacker's **key squares** (often two entry squares on different wings).\n2. Find the squares from which the attacking king threatens to reach two key squares at once; the defender must answer each with a fixed square.\n3. Work backwards to build the map, then look for a square where the defender has **no** corresponding square: that is where triangulation or a long walk gains the decisive tempo."
+    },
+    {
+      "type": "board",
+      "fen": "8/8/2Kp4/3Pk3/8/8/8/8 w - - 0 1",
+      "md": "**Trebuchet**: both kings defend their own pawn and attack the other. Whoever is to move must abandon his pawn and loses it. Tablebase: White to move loses; Black to move loses. This is the purest form of mutual zugzwang.",
+      "highlights": [
+        "d5",
+        "d6"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the trebuchet position above, it is White to move. What happens?",
+      "choices": [
+        "White wins by Kb5",
+        "Draw by Kc7",
+        "Black wins: every king move abandons d5",
+        "Draw because the kings cannot approach"
+      ],
+      "answer": 2,
+      "explain": "Every White move gives up the defence of d5 (or walks away). Black takes on d5 and wins the resulting K+P v K ending (tablebase). Corresponding-squares problems are full of such reciprocal zugzwangs."
+    },
+    {
+      "type": "board",
+      "fen": "8/k7/3p4/p2P1p2/P2P1P2/8/8/K7 w - - 0 1",
+      "md": "**Lasker-Reichhelm (1901).** All pawns are blocked. White's king wants to reach **b5** (winning a5) or attack f5 from the kingside (e3-f3-g3-h4-g5); the black king must answer every step from the queenside or the d-file. Black can meet each white king move with a corresponding square, unless White wins a tempo on the way.",
+      "arrows": [
+        [
+          "a1",
+          "b1",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/k7/3p4/p2P1p2/P2P1P2/8/8/K7 w - - 0 1",
+      "prompt": "White to move and win. Only one first move works (engine: about +7 for the solution, 0.00 for everything else). Find the start of the manoeuvre.",
+      "solution": [
+        "Kb1",
+        "Kb7",
+        "Kc1"
+      ],
+      "hint": "Think about which file the black king must be on when your king is on each file.",
+      "explain": "**1.Kb1! Kb7 2.Kc1!** (and 2...Kc7 3.Kd1!) White shadows the black king along the back ranks until the corresponding squares run out: the white king then switches files with a tempo in hand (Kc2/Kd2 ideas) and reaches b5 or the kingside entry route with Black to move. Every other first move (1.Ka2, 1.Kb2) lets Black keep the correspondence: the engine gives about +7 after 1.Kb1 and 0.00 after anything else. The full solution (about 20 moves) is in Fine, Basic Chess Endings, No. 70."
+    },
+    {
+      "type": "quiz",
+      "question": "Which statement about corresponding squares is correct?",
+      "choices": [
+        "They only exist in positions with a single pawn",
+        "Opposition is one special case of corresponding squares",
+        "They are a method for rook endings",
+        "The attacker always wins if he has the opposition"
+      ],
+      "answer": 1,
+      "explain": "Opposition (kings facing with one square between them) is the simplest correspondence. Complex positions such as Lasker-Reichhelm need a full map because the \"opposition\" squares are not on the same file or rank."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- Solve **10 pawn-endgame puzzles** (*pawnEndgame* theme) at or above your rating, writing down the king route before moving.\n- Set up Lasker-Reichhelm in the **Endgames** trainer (Play from position) and win it against the engine three times without looking at the solution.\n- Reference: Dvoretsky's Endgame Manual, chapter 1 (corresponding squares). Work through 5 positions per week."
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame",
+    "zugzwang"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky, Dvoretsky's Endgame Manual (5th ed., 2020)",
+    "de la Villa, 100 Endgames You Must Know",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)",
+    "Lasker & Reichhelm, Chicago Tribune 1901 (Fine, Basic Chess Endings, No. 70)"
+  ]
+}

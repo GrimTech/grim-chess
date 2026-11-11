@@ -1,0 +1,113 @@
+{
+  "id": "adult.s3.visualization-two-to-four-plies",
+  "track": "adult",
+  "stage": 3,
+  "order": 9,
+  "skillIds": [
+    "calculation.visualization.basic"
+  ],
+  "title": "Visualization: seeing 2-4 plies ahead",
+  "summary": "Hold a position in your head for a few moves: track where pieces land, which lines open, and spot \"ghost pieces\" that are no longer there.",
+  "estMinutes": 12,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Visualization means updating the board in your head as you calculate. Two common failures:\n\n- **Ghost pieces**: you \"see\" a piece still defending a square it has already left.\n- **Missed backward moves**: retreats and long-range defenders are easy to overlook.\n\nTrain it by answering questions about a position *after* a line, without moving the pieces. Answer the next questions without touching the board."
+    },
+    {
+      "type": "quiz",
+      "question": "From this position: 1.Bxf7+ Kxf7 2.Ng5+. Which squares can Black's king move to? (Do not move pieces.)",
+      "choices": [
+        "e8, f8, g8, e7, g6",
+        "e8, f8, g8, e6, g6",
+        "Only g8",
+        "e6, e7 and g6 only"
+      ],
+      "answer": 0,
+      "explain": "The g5-knight attacks e6, e4, f7, f3, h7 and h3, so e6 is out. e7 is free because the bishop went to c5, and f6/g7 are occupied by Black's own knight and pawn. Visualising a knight's squares exactly is the core skill here.",
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 1 5"
+    },
+    {
+      "type": "quiz",
+      "question": "Start position. 1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7. Without a board: on which square is White's light-squared bishop, and which black piece does it \"pin\" in spirit?",
+      "choices": [
+        "b5, pinning nothing",
+        "a4, eyeing the c6-knight (pinned to the e8-king if d7 moves)",
+        "c4, aiming at f7",
+        "b3, aiming at f7"
+      ],
+      "answer": 1,
+      "explain": "After 4.Ba4 it stayed there: the a4-e8 diagonal runs through c6 and d7. If Black plays ...d6-d5 or moves the d7-pawn, the knight becomes pinned to the king."
+    },
+    {
+      "type": "quiz",
+      "question": "Position shown. White plays 1.Qxh7+ Kxh7 2.Rh3+. Which black move is now legal?",
+      "choices": [
+        "...Kg8",
+        "...Kg6",
+        "...Qh4",
+        "...Bh2"
+      ],
+      "answer": 2,
+      "explain": "g8 is covered by the e6-bishop and g6 by the f5-pawn, so the king cannot move: the only legal reply is the block ...Qh4, and then Rxh4# (Pillsbury-style mate). ...Bh2 does not block the h3-h7 line.",
+      "fen": "1r1q1r1k/1bpn2pp/p2pB3/2p1bP2/8/2N3RQ/PPP3PP/R1B3K1 w - - 2 18"
+    },
+    {
+      "type": "move",
+      "fen": "r5k1/1p3p2/2p1ppp1/3p4/2nP4/1QB4P/rPP1BPP1/qNKR3R b - - 4 22",
+      "prompt": "Black to move: mate in 2. Visualise the final position before you move: where will White's king be, and which square does your rook land on?",
+      "solution": [
+        "Qxb1+",
+        "Kxb1",
+        "Ra1#"
+      ],
+      "explain": "...Qxb1+! Kxb1 Ra1#. Picture the final position: the a8-rook protects its partner along the open a-file, b2 and c2 are blocked by White's own pawns, and c1 is covered along the first rank.",
+      "hint": "Your queen sacrifice drags the king to b1."
+    },
+    {
+      "type": "move",
+      "fen": "3rr2k/pp2Nppp/8/4n3/8/8/PP3PK1/R6R w - - 5 25",
+      "prompt": "White to move: mate in 2. See the king on h7 after the sacrifice, then the second rook arriving.",
+      "solution": [
+        "Rxh7+",
+        "Kxh7",
+        "Rh1#"
+      ],
+      "explain": "Rxh7+! Kxh7 Rh1#: the e7-knight covers g8 and g6. This pattern (Anastasia's mate) appears again in a later lesson."
+    },
+    {
+      "type": "move",
+      "fen": "4Rbk1/5ppp/1p6/p7/2B5/1P5P/4QPPK/2qr4 w - - 6 31",
+      "prompt": "White to move: mate in 2. Hold the final picture: king on f7, queen on e6.",
+      "solution": [
+        "Bxf7+",
+        "Kxf7",
+        "Qe6#"
+      ],
+      "explain": "Bxf7+! Kxf7 Qe6#: the queen is protected by the e8-rook and covers every flight square. The f8-bishop and own pawns box the king in."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is a \"ghost piece\" error?",
+      "choices": [
+        "Forgetting that pieces can move backwards",
+        "Imagining a piece still controls a square after it has moved or been captured in your line",
+        "Calculating too many candidate moves",
+        "Moving a piece that is pinned"
+      ],
+      "answer": 1,
+      "explain": "Remedy: at the end of each line, re-build the final position piece by piece before evaluating it."
+    }
+  ],
+  "practiceThemes": [
+    "mateIn2",
+    "short"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md#visualization",
+    "knowledge-base/03-chess-knowledge/calculation.md#typical-calculation-errors",
+    "Aagaard, Grandmaster Preparation: Calculation (visualisation)",
+    "knowledge-base/01-learning-science/cognitive-load-theory.md#42-intermediate-about-10001800",
+    "Lichess puzzle database (CC0): 00aDl, 85nk9, 2Hxcn"
+  ]
+}

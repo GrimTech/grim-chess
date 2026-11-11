@@ -1,0 +1,101 @@
+{
+  "id": "adult.s2.attacking-f7",
+  "track": "adult",
+  "stage": 2,
+  "order": 25,
+  "skillIds": [
+    "tactics.attacking-f7"
+  ],
+  "title": "Attacking f7 and f2",
+  "summary": "Exploit the square defended only by the king in the opening.",
+  "estMinutes": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Before castling, **f7** (f2 for White) is defended only by the king. Bishop on c4, knight on g5 and queen on h5/f3/b3 all aim there. Typical tricks: **Bxf7+** to drag the king out, then a knight check that forks; **Nxf7** forking queen and rook; **Qxf7#**."
+    },
+    {
+      "type": "move",
+      "fen": "rnb1kbnr/pppp1ppp/8/8/2B1P1q1/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "prompt": "Black's queen on g4 is loose. Use f7 to win it.",
+      "solution": [
+        "Bxf7+",
+        "Kxf7",
+        "Ne5+",
+        "Ke8",
+        "Nxg4"
+      ],
+      "explain": "Bxf7+! drags the king to f7, and Ne5+ forks king and queen. Bishop for queen."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p1N1/2B1P3/8/PPPP1PPP/RNBQK2R b KQkq - 5 4",
+      "prompt": "You are Black. White threatens Nxf7. Defend by blocking the bishop.",
+      "solution": [
+        "d5"
+      ],
+      "explain": "4...d5 blocks the c4-bishop. After 5.exd5, be careful: 5...Nxd5? allows 6.Nxf7! (the Fried Liver); 5...Na5 is the main line."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqk2r/pppp1Npp/2n2n2/2b1p3/2B1P3/8/PPPP1PPP/RNBQK2R b KQkq - 0 5",
+      "prompt": "You are Black. White has taken on f7. Counter-attack f2.",
+      "solution": [
+        "Bxf2+"
+      ],
+      "explain": "The Traxler: 5...Bxf2+! drags the white king out. The same weakness exists on both sides."
+    },
+    {
+      "type": "quiz",
+      "question": "Why is f7 weak before castling?",
+      "choices": [
+        "Only the king defends it",
+        "It is a light square",
+        "Pawns there are blocked"
+      ],
+      "answer": 0,
+      "explain": "After castling, the f8-rook joins the defence."
+    },
+    {
+      "type": "quiz",
+      "question": "Which white pieces most often aim at f7 in the opening?",
+      "choices": [
+        "Bc4, Ng5 and the queen (h5, f3, b3)",
+        "Ra1 and Bc1",
+        "The b- and c-pawns"
+      ],
+      "answer": 0,
+      "explain": "Watch for them as Black. Use them as White."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: after Bxf7+ Kxf7, which knight check forks king and a queen on g4?",
+      "choices": [
+        "Ne5+",
+        "Ng5+",
+        "Nd4"
+      ],
+      "answer": 0,
+      "explain": "From e5 the knight hits f7 and g4."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the simplest long-term cure for f7 weakness?",
+      "choices": [
+        "Castle and develop",
+        "Push f6",
+        "Move the king to e7"
+      ],
+      "answer": 0,
+      "explain": "The f8-rook then defends f7."
+    }
+  ],
+  "practiceThemes": [
+    "attackingF2F7",
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#attacking-f2-and-f7",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#opening-mates-and-traps"
+  ]
+}

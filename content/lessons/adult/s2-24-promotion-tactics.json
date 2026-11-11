@@ -1,0 +1,107 @@
+{
+  "id": "adult.s2.promotion-tactics",
+  "track": "adult",
+  "stage": 2,
+  "order": 24,
+  "skillIds": [
+    "tactics.promotion"
+  ],
+  "title": "Promotion tactics",
+  "summary": "Win by promoting: deflect or block the guard, skewer from behind, break through.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "An advanced pawn is a constant threat. Typical tactics:\n\n- **Interference / deflection**: block or lure away the piece guarding the promotion square.\n- **Skewer from behind**: the rook in front of its pawn steps aside; if the enemy rook takes the pawn, a check wins it.\n- **Breakthrough**: sacrifice pawns to create a passed pawn."
+    },
+    {
+      "type": "move",
+      "fen": "r7/2P3k1/8/8/8/8/8/1R4K1 w - - 0 1",
+      "prompt": "Black's rook guards c8. Block it out.",
+      "solution": [
+        "Rb8"
+      ],
+      "explain": "Rb8! cuts the a8-rook off from c8. If ...Rxb8, cxb8=Q. Otherwise c8=Q next."
+    },
+    {
+      "type": "move",
+      "fen": "R7/P4k2/8/8/8/8/6K1/r7 w - - 0 1",
+      "prompt": "The rook in front of the pawn is stuck. Find the trick.",
+      "solution": [
+        "Rh8",
+        "Rxa7",
+        "Rh7+",
+        "Ke6",
+        "Rxa7"
+      ],
+      "explain": "Rh8! threatens a8=Q. If ...Rxa7, Rh7+ skewers king and rook."
+    },
+    {
+      "type": "move",
+      "fen": "8/ppp5/8/PPP5/8/7k/8/7K w - - 0 1",
+      "prompt": "Break through and make a queen.",
+      "solution": [
+        "b6",
+        "cxb6",
+        "a6",
+        "bxa6",
+        "c6"
+      ],
+      "explain": "b6! If ...cxb6 then a6! and the c-pawn runs; if ...axb6 then c6! The black king is too far away."
+    },
+    {
+      "type": "quiz",
+      "question": "After 1.b6 axb6, which move wins?",
+      "choices": [
+        "2.c6",
+        "2.axb6",
+        "2.a6"
+      ],
+      "answer": 0,
+      "explain": "2.c6 bxc6 3.a6 and the a-pawn queens.",
+      "fen": "8/1pp5/1p6/P1P5/8/7k/8/7K w - - 0 2"
+    },
+    {
+      "type": "quiz",
+      "question": "Why did Rh8 work in the rook endgame?",
+      "choices": [
+        "The black king was on f7, so Rh7+ hit the king and the rook on a7 on the same rank",
+        "It was mate",
+        "The rook is protected"
+      ],
+      "answer": 0,
+      "explain": "With the king on g7 or h7 the trick fails. Geometry matters."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is interference?",
+      "choices": [
+        "Placing a piece between an enemy piece and the square it guards",
+        "Capturing the queen",
+        "Promoting to a knight"
+      ],
+      "answer": 0,
+      "explain": "Rb8 interfered with the a8-rook's guard of c8."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: three connected pawns against three on the same files, kings far away. The attacker should look for...",
+      "choices": [
+        "A pawn breakthrough sacrifice",
+        "A draw offer",
+        "A king walk"
+      ],
+      "answer": 0,
+      "explain": "The middle pawn advances first (b6!)."
+    }
+  ],
+  "practiceThemes": [
+    "promotion",
+    "advancedPawn"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#promotion-tactics",
+    "knowledge-base/03-chess-knowledge/tactics.md#pawn-breakthrough",
+    "knowledge-base/03-chess-knowledge/endgames.md#rook-vs-pawn-basics"
+  ]
+}

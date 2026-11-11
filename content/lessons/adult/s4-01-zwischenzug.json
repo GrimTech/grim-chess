@@ -1,0 +1,142 @@
+{
+  "id": "adult.s4.zwischenzug",
+  "track": "adult",
+  "stage": 4,
+  "order": 1,
+  "skillIds": [
+    "tactics.zwischenzug"
+  ],
+  "title": "Zwischenzug: the in-between move",
+  "summary": "Before you recapture, look for a check, capture or bigger threat that improves the trade.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **zwischenzug** (German: \"in-between move\", also *intermezzo*) replaces the reply everybody expects, usually a recapture, with a more forcing move first: a check, a capture or a threat the opponent must answer. Only then do you recapture.\n\nThe habit to build: **when a capture happens, do not recapture on autopilot.** Ask: \"Is there a check or capture that makes the recapture better, or makes it come with tempo?\" Ask the same question about your opponent when you calculate your own combinations; the in-between move is the most common hole in a calculated line."
+    },
+    {
+      "type": "board",
+      "fen": "r1bqkb1r/pppn1ppp/5n2/3N2B1/3P4/8/PP2PPPP/R2QKBNR b KQkq - 0 6",
+      "md": "A classic: 1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.cxd5 exd5 6.Nxd5?, the **Elephant Trap**. White thinks the f6-knight is pinned to the queen. Black plays 6...Nxd5! anyway: after 7.Bxd8 the expected recapture 7...Kxd8 leaves Black a piece down, but Black first plays **7...Bb4+!**, a check White must answer. Only 8.Qd2 blocks; then 8...Bxd2+ 9.Kxd2 Kxd8 and Black has won a piece.",
+      "arrows": [
+        [
+          "f8",
+          "b4",
+          "green"
+        ],
+        [
+          "d7",
+          "d5",
+          "blue"
+        ]
+      ],
+      "orientation": "black"
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppn1ppp/5n2/3N2B1/3P4/8/PP2PPPP/R2QKBNR b KQkq - 0 6",
+      "prompt": "Black to move. Spring the Elephant Trap: capture on d5, then insert the in-between check before recapturing the queen.",
+      "solution": [
+        "Nxd5",
+        "Bxd8",
+        "Bb4+"
+      ],
+      "hint": "After 7.Bxd8, which bishop check forces White to block with the queen?",
+      "explain": "After 8.Qd2 (the only way to meet the check) 8...Bxd2+ 9.Kxd2 Kxd8 you regain the queen. You let White win your queen because the check on b4 wins it back with interest. The final count: White took a pawn on d5 and the queen; Black took a knight, the queen and the bishop. **Black is a piece up.** The in-between check was the whole point."
+    },
+    {
+      "type": "move",
+      "fen": "3rr1k1/ppq2ppp/2p5/6N1/P7/2P4P/RPn2QP1/4R1K1 w - - 0 22",
+      "prompt": "White to move. Black has just taken your c2-pawn with the knight. Recapture correctly.",
+      "solution": [
+        "Rxe8+",
+        "Rxe8",
+        "Qxc2"
+      ],
+      "hint": "Which black piece attacks your e1-rook? Remove it with check.",
+      "explain": "22.Qxc2? loses the e1-rook: the queen would no longer protect it and 22...Rxe1+ follows. Instead **22.Rxe8+!** trades off the rook that attacks e1, with check; after the forced 22...Rxe8 **23.Qxc2** wins the knight. Trade off the attacker with tempo, then collect."
+    },
+    {
+      "type": "move",
+      "fen": "r7/1ppnk3/p3p2p/4r1p1/4R3/6N1/PPP3PP/3R2K1 w - - 0 23",
+      "prompt": "White to move. Black has just played ...Rxe5. The obvious move is Rxe5. Is there something better first?",
+      "solution": [
+        "Rxd7+",
+        "Kxd7",
+        "Rxe5"
+      ],
+      "explain": "23.Rxe5?! Nxe5 is just a trade. **23.Rxd7+!** first: the d7-knight was the piece that would recapture on e5. After 23...Kxd7 **24.Rxe5** you are a knight up. The in-between capture removed the defender of the square where the exchange happens."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. White has just played Bxd4. Which recapture order is correct?",
+      "choices": [
+        "14...Bxd4 at once",
+        "14...Rxc1 first, then ...Bxd4",
+        "14...Qc7, keeping the tension"
+      ],
+      "answer": 1,
+      "explain": "14...Bxd4? 15.Rxc8 Qxc8 (or ...Bxc8) 16.Qxd4 and White regains the piece down the d-file. **14...Rxc1! 15.Qxc1 Bxd4** deflects the white queen from the d-file first, so Black keeps the extra piece. Same captures, different order, different result.",
+      "fen": "2rq1rk1/pb2ppbp/1p1p2p1/3P4/3B4/1P4P1/P3PPBP/2RQ1RK1 b - - 0 14"
+    },
+    {
+      "type": "move",
+      "fen": "2k4r/Qpp2p1p/2q1b1p1/8/2P5/2P1B3/P4PPP/3rR1K1 w - - 0 22",
+      "prompt": "White to move. Black has just played ...Rxd1, threatening ...Rxe1 mate. Rxd1 is necessary, but is there a check first?",
+      "solution": [
+        "Qa8+",
+        "Kd7",
+        "Rxd1+"
+      ],
+      "explain": "**22.Qa8+!** Kd7 (22...Kd8?? 23.Qxh8+). Now **23.Rxd1+** recaptures *with check* because the king stands on the d-file, and next White plays Qxh8: the queen on a8 already eyes the rook along the eighth rank. The in-between check put the king on the wrong square."
+    },
+    {
+      "type": "move",
+      "fen": "r1k5/ppp1q1p1/8/3p4/3np2Q/3B1N2/PPP2PPP/R3K2R b KQ - 0 20",
+      "prompt": "Black to move. White has just played Qxh4, attacking your queen. Find the stronger move than the queen trade.",
+      "solution": [
+        "Nxf3+",
+        "gxf3",
+        "Qxh4"
+      ],
+      "explain": "20...Qxh4?! 21.Nxh4 only trades queens. **20...Nxf3+!** captures a knight with check; after 21.gxf3 (any king move also drops the queen) **21...Qxh4** and Black is a full piece up."
+    },
+    {
+      "type": "quiz",
+      "question": "Which habit catches most in-between moves before they hurt you?",
+      "choices": [
+        "Always recapture immediately so you are not material down",
+        "Before every recapture, list your checks and captures; before every combination, list the opponent's checks and captures in the final position",
+        "Only look for in-between moves when you are losing"
+      ],
+      "answer": 1,
+      "explain": "The intermezzo is a **forcing move inserted into an exchange**. The checklist \"checks, captures, threats\" applied at every capture point, for both sides, is the reliable habit (Yusupov). Typical error: calculating your own combination to the end but forgetting the opponent's in-between check halfway."
+    },
+    {
+      "type": "move",
+      "fen": "r1bq2kr/pppp2pp/2n5/6b1/4PP2/8/PPP3PP/R2Q1RK1 w - - 0 13",
+      "prompt": "White to move. Black has just played ...Bxg5. Independent exercise: 13.fxg5 Qxg5 is equal. Find more.",
+      "solution": [
+        "Qd5+",
+        "Kf8",
+        "fxg5+"
+      ],
+      "explain": "**13.Qd5+!** drives the king to f8, onto the f-file, so that **14.fxg5+** becomes a *discovered check* from the f1-rook. Black has no time for ...Qxg5 while dealing with the check, and White regains the piece with a decisive attack against the exposed king. The in-between queen check changed the geometry before the recapture."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Without looking back: (1) What three kinds of move count as an in-between move? (2) In the Elephant Trap, why does 7...Bb4+ work? (3) In the ...Rxc1 / ...Bxd4 example, what did the in-between capture deflect?\n\nAnswers: checks, captures and threats that must be answered; the check forces Qd2 so Black regains the queen and keeps the piece; the white queen was deflected from the d-file."
+    }
+  ],
+  "practiceThemes": [
+    "intermezzo"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#zwischenzug-intermezzo-in-between-move",
+    "knowledge-base/03-chess-knowledge/calculation.md#typical-calculation-errors",
+    "knowledge-base/01-learning-science/retrieval-practice-interleaving-desirable-difficulties.md#2-retrieval-practice-the-testing-effect",
+    "Yusupov, Build Up Your Chess 2: Beyond the Basics (Quality Chess, 2009), chapter on the intermediate move",
+    "Elephant Trap (QGD, 6.Nxd5? Nxd5! 7.Bxd8 Bb4+), standard opening-trap literature",
+    "Lichess puzzle database (CC0), puzzles 0OW5d, 0JZ3N, 0Lqf2, 0BoYj, 08FKT"
+  ]
+}

@@ -1,0 +1,1 @@
+{ "name": "@grim/server", "version": "0.1.0", "type": "module", "private": true, "dependencies": { "@grim/core": "*", "chess.js": "1.4.0", "ws": "8.22.2" }, "devDependencies": { "@types/ws": "*", "@types/node": "*" } }

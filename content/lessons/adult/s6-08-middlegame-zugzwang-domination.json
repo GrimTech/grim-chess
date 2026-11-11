@@ -1,0 +1,87 @@
+{
+  "id": "adult.s6.middlegame-zugzwang-domination",
+  "track": "adult",
+  "stage": 6,
+  "order": 8,
+  "skillIds": [
+    "tactics.middlegame-zugzwang"
+  ],
+  "title": "Domination and zugzwang in the middlegame",
+  "summary": "Trap pieces, take away all their squares, and use quiet moves that leave the opponent without useful moves.",
+  "estMinutes": 25,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Domination\n\nA piece is **dominated** when every square it can go to is attacked (or it has no squares at all). In the middlegame this happens to knights on the edge, bishops behind their own pawns, and queens that went pawn-grabbing. **Zugzwang** in the middlegame (Saemisch-Nimzowitsch 1923) arises when one side's pieces are all tied to defensive tasks.\n\nMethod: (1) find the opponent's worst piece, (2) take its squares away with quiet moves, (3) attack it or wait until the opponent runs out of moves."
+    },
+    {
+      "type": "move",
+      "fen": "N1bk1b1r/pp1p1p1p/4p3/6p1/Q3P3/1KN1n1P1/PP1q3P/R4B1R w - - 3 17",
+      "prompt": "White to move. The black queen and knight have gone deep into White's camp. Find the quiet move that traps them (Nakamura-Karjakin, 4th Zurich CC Classical 2015)",
+      "solution": [
+        "a3"
+      ],
+      "orientation": "white",
+      "explain": "**17.a3!** — the king gets the a2-square and the queen on d2/knight on e3 run out of safe squares; Black must give material back. Engine main line: 17.a3 Qc2+ 18.Ka2 Qxa4 19.Nxa4 Nxf1 20.Rhxf1 b5. (Nakamura-Karjakin, 4th Zurich CC Classical 2015; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "r3k3/1p3p2/p2p1b1r/7P/8/2PR4/PP1QB3/R2K3q w q - 3 31",
+      "prompt": "White to move. Karpov lets the queen take the rook — and dominates (Karpov-Hort, Moscow 1971)",
+      "solution": [
+        "Kc2"
+      ],
+      "orientation": "white",
+      "explain": "**31.Kc2!** — the king steps away; after 31...Qxa1 32.Qxh6 the black queen on a1 is out of play and Black's king is exposed. Material is less important than activity and domination. Engine main line: 31.Kc2 Qxa1 32.Qxh6 Be5 33.Qg5 Kf8 34.a3 Qh1. (Karpov-Hort, Moscow 1971; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "8/5pk1/7p/5B2/2n2P2/3R2PP/1rr1P3/3RK3 w - - 3 46",
+      "prompt": "White to move. Restrict the knight (Botvinnik-Tal, World Championship 1961)",
+      "solution": [
+        "Bg4"
+      ],
+      "orientation": "white",
+      "explain": "**46.Bg4!** — the bishop takes squares from the knight and prepares Rb3/Rd4; Black's pieces are slowly squeezed. Engine main line: 46.Bg4 Ra2 47.Rb3 Nd2 48.Rb4 Kg6 49.Rd4 Nc4. (Botvinnik-Tal, World Championship 1961; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "Which piece is most often trapped or dominated in the middlegame?",
+      "choices": [
+        "A knight on the rim (a- or h-file) or a queen that has taken a pawn deep in the opponent's camp",
+        "A rook on an open file",
+        "A centralised bishop",
+        "The king"
+      ],
+      "answer": 0,
+      "explain": "Knights on the edge and pawn-grabbing queens have few squares. Always ask how a piece will get back before sending it deep."
+    },
+    {
+      "type": "quiz",
+      "question": "Black's pieces are all tied to defence and every black move worsens the position. White has a spare pawn move h3. What should White do?",
+      "choices": [
+        "Start a direct attack immediately",
+        "Play the waiting move h3 and let Black self-destruct (zugzwang)",
+        "Offer a draw",
+        "Exchange queens"
+      ],
+      "answer": 1,
+      "explain": "When the opponent is in zugzwang, the strongest move is often the quietest one."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles**: 20 *trappedPiece* and 10 *zugzwang* puzzles at your rating.\n- **Guess the move**: Saemisch-Nimzowitsch 1923 (corpus) as Black.\n- In your games, identify the opponent's worst piece once per game and ask how to keep it bad."
+    }
+  ],
+  "practiceThemes": [
+    "zugzwang",
+    "trappedPiece",
+    "quietMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md",
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "Gik/Averbakh, domination studies",
+    "Saemisch-Nimzowitsch, Copenhagen 1923"
+  ]
+}

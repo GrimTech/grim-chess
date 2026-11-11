@@ -1,0 +1,76 @@
+{
+  "id": "kids.6.wake-up-your-pieces",
+  "track": "kids",
+  "stage": 1,
+  "order": 602,
+  "skillIds": [
+    "opening.principles.development"
+  ],
+  "title": "Wake up your pieces",
+  "summary": "Bring knights and bishops out early, toward the middle.",
+  "estMinutes": 6,
+  "minAge": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "After the pawns, **wake up** your knights and bishops! Bring them toward the middle."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "prompt": "Bring out a knight toward the middle!",
+      "solution": [
+        "Nf3"
+      ],
+      "explain": "The knight attacks the e5 pawn too!",
+      "alternatives": [
+        "Nc3"
+      ],
+      "hint": "f3 or c3 are great knight squares."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "prompt": "Now bring out a bishop!",
+      "solution": [
+        "Bc4"
+      ],
+      "explain": "The bishop looks at f7!",
+      "alternatives": [
+        "Bb5"
+      ],
+      "hint": "Slide the bishop next to the king out."
+    },
+    {
+      "type": "quiz",
+      "question": "Should you bring your queen out very early?",
+      "choices": [
+        "Yes, she is strong",
+        "No, she can get chased"
+      ],
+      "answer": 1,
+      "explain": "Little pieces first. The queen comes later."
+    },
+    {
+      "type": "quiz",
+      "question": "Which knight move is better?",
+      "choices": [
+        "Nf3",
+        "Nh3"
+      ],
+      "answer": 0,
+      "explain": "Knights in the middle are stronger. \"A knight on the rim is dim!\""
+    },
+    {
+      "type": "board",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "md": "Both sides woke up their pieces. Next: keep the king safe!"
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "id": "adult.s4.mixed-tactics",
+  "track": "adult",
+  "stage": 4,
+  "order": 17,
+  "skillIds": [
+    "tactics.mixed-recognition"
+  ],
+  "title": "Mixed tactics: no hints",
+  "summary": "Recognise the motif yourself: forks, discoveries, skewers, trapped pieces and removal of the defender, unlabelled.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Themed puzzle sets tell you what to look for. Real games do not. **Interleaved** practice (mixed themes) feels harder but builds the recognition skill you actually need (Steps Method, Woodpecker Method).\n\nSix positions follow, no hints about the motif. Use your scan: **checks, captures, threats** for both sides; loose pieces; king position; aligned pieces. Name the motif to yourself after each one."
+    },
+    {
+      "type": "move",
+      "fen": "r2r4/p4pkp/3q1Np1/4Qn2/8/1P6/P4PPK/2R2R2 w - - 6 24",
+      "prompt": "White to move. Find the best move.",
+      "solution": [
+        "Ne8+",
+        "Kg8",
+        "Nxd6"
+      ],
+      "explain": "**24.Ne8+!** is a **double check** (the knight and the e5-queen along the diagonal) that also attacks the d6-queen. After 24...Kg8 25.Nxd6 White has won the queen. Motif: discovered/double check with a fork."
+    },
+    {
+      "type": "move",
+      "fen": "1r1r2k1/5pp1/6qp/p1pp4/4n3/P1P1PN2/1PQ2PPP/3RR2K b - - 9 24",
+      "prompt": "Black to move. Find the best move.",
+      "solution": [
+        "Ng3+",
+        "hxg3",
+        "Qxc2"
+      ],
+      "explain": "**24...Ng3+!** The knight leaves e4 with check and uncovers the g6-queen's attack on c2. After 25.hxg3 Qxc2 Black has won the queen. Motif: **discovered attack** with a checking piece."
+    },
+    {
+      "type": "move",
+      "fen": "r4bnr/ppp4p/2np1k2/8/3PPB2/8/PPP3PP/RN3RK1 w - - 1 12",
+      "prompt": "White to move. Find the best move.",
+      "solution": [
+        "Be5+",
+        "Kg6",
+        "Bxh8"
+      ],
+      "explain": "**12.Be5+!** is a double check (the bishop and the f1-rook along the f-file). After 12...Kg6 **13.Bxh8** wins the rook in the corner. Motif: discovered (double) check plus a skewer-like long-diagonal capture."
+    },
+    {
+      "type": "move",
+      "fen": "r1b1k2r/pppp1ppp/7n/4P3/8/2Q5/P1P1KPPP/RNq2B1R w kq - 4 12",
+      "prompt": "White to move. Find the best move.",
+      "solution": [
+        "Nd2",
+        "Qxa1",
+        "Qxa1"
+      ],
+      "explain": "**12.Nd2!** quietly traps the queen: the knight blocks d2 and uncovers the a1-rook's attack on c1. After 12...Qxa1 13.Qxa1 White has won the queen for a rook. Motif: **trapped piece** with a quiet move."
+    },
+    {
+      "type": "move",
+      "fen": "N1bk3r/pp1p1ppp/8/4P3/1b6/q1B2Q2/P2K1PPP/R4B1R b - - 2 14",
+      "prompt": "Black to move. Find the best move.",
+      "solution": [
+        "Qb2+",
+        "Kd1",
+        "Bxc3"
+      ],
+      "explain": "**14...Qb2+!** drives the king from the defence of c3; after 15.Kd1 **15...Bxc3** wins the bishop, and the a1-rook and a8-knight remain loose. Motif: **deflection** of a defender by check."
+    },
+    {
+      "type": "move",
+      "fen": "5r1k/pp4bp/3qp2p/3p4/b2n4/3BQP2/PP3P1P/2R3RK w - - 4 22",
+      "prompt": "White to move. Find the best move.",
+      "solution": [
+        "Rxg7",
+        "Kxg7",
+        "Qxd4+"
+      ],
+      "explain": "**22.Rxg7! Kxg7 23.Qxd4+** removes the defender of d4 (the g7-bishop) and recaptures with check. Motif: **removing the defender**, with the black king left bare."
+    },
+    {
+      "type": "quiz",
+      "question": "After a mixed set, what is the most useful thing to record?",
+      "choices": [
+        "Only your score",
+        "Which motifs you missed and why (did not see the check? stopped calculating too early?), to feed your error log and spaced repetition",
+        "Your fastest solve time"
+      ],
+      "answer": 1,
+      "explain": "Mixed sets are diagnostic. Logging the *missed motif and the reason* turns each failure into targeted training (see the error-log lesson), and failed puzzles should come back in spaced repetition."
+    }
+  ],
+  "practiceThemes": [
+    "mix"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#tactical-training-method",
+    "knowledge-base/03-chess-knowledge/calculation.md#forcing-moves-first-cct",
+    "knowledge-base/02-methods/tactical-repetition-woodpecker-de-la-maza.md#4-how-grim-chess-should-implement-tactical-repetition",
+    "knowledge-base/01-learning-science/retrieval-practice-interleaving-desirable-difficulties.md#4-interleaving",
+    "Smith & Tikkanen, The Woodpecker Method (Quality Chess, 2018)",
+    "Lichess puzzle database (CC0), puzzles 0w5MO, 07iQw, 06ABV, 150kr, 09IR3, 08QJS"
+  ]
+}

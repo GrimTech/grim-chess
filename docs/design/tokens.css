@@ -1,0 +1,838 @@
+/* ==========================================================================
+   Grim Chess design tokens  --  "Scoresheet" direction
+   --------------------------------------------------------------------------
+   Ink on paper, brass for time. See docs/design/DESIGN.md for the rationale
+   and docs/design/SOURCES.md for where every value comes from.
+
+   Layers in this file
+     1. Fonts (Google Fonts)
+     2. Primitive color scales  (Radix Colors v3, steps 1-12, copied verbatim
+        from github.com/radix-ui/colors src/light.ts + src/dark.ts)
+     3. Semantic roles          (what components actually use)
+     4. Type, space, radius, shadow, motion, layout tokens (Open Props-style)
+     5. Dark theme              (prefers-color-scheme + [data-theme="dark"])
+     6. Kids track              ([data-track="kids"])
+     7. Board themes            ([data-board="..."])
+     8. Base element styles
+
+   Switches (set on <html>):
+     data-theme="light" | "dark"   (omit to follow the OS)
+     data-track="adult" | "kids"   (omit = adult)
+     data-board="walnut" | "glacier" | "tournament" | "graphite" | "meadow"
+       (also valid on any element, e.g. a single .board-wrap)
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400..700&family=Atkinson+Hyperlegible+Next:ital,wght@0,300..800;1,400..700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..800,0..100,0..1&display=swap");
+
+/* --------------------------------------------------------------------------
+   2. Primitive scales -- light
+   Radix step semantics: 1 app bg, 2 subtle bg, 3 component bg, 4 hover,
+   5 pressed/selected, 6 subtle border, 7 border, 8 strong border / focus,
+   9 solid, 10 solid hover, 11 low-contrast text, 12 high-contrast text.
+   -------------------------------------------------------------------------- */
+:root {
+  /* Sand: warm grey neutral ("paper and graphite") */
+  --sand-1: #fdfdfc;  --sand-2: #f9f9f8;  --sand-3: #f1f0ef;  --sand-4: #e9e8e6;
+  --sand-5: #e2e1de;  --sand-6: #dad9d6;  --sand-7: #cfceca;  --sand-8: #bcbbb5;
+  --sand-9: #8d8d86;  --sand-10: #82827c; --sand-11: #63635e; --sand-12: #21201c;
+
+  /* Indigo: brand "ink" */
+  --indigo-1: #fdfdfe;  --indigo-2: #f7f9ff;  --indigo-3: #edf2fe;  --indigo-4: #e1e9ff;
+  --indigo-5: #d2deff;  --indigo-6: #c1d0ff;  --indigo-7: #abbdf9;  --indigo-8: #8da4ef;
+  --indigo-9: #3e63dd;  --indigo-10: #3358d4; --indigo-11: #3a5bc7; --indigo-12: #1f2d5c;
+
+  /* Amber: "brass" -- clocks, streaks, rewards, kids primary */
+  --amber-1: #fefdfb;  --amber-2: #fefbe9;  --amber-3: #fff7c2;  --amber-4: #ffee9c;
+  --amber-5: #fbe577;  --amber-6: #f3d673;  --amber-7: #e9c162;  --amber-8: #e2a336;
+  --amber-9: #ffc53d;  --amber-10: #ffba18; --amber-11: #ab6400; --amber-12: #4f3422;
+
+  /* Tomato: danger, blunders, low time */
+  --tomato-1: #fffcfc;  --tomato-2: #fff8f7;  --tomato-3: #feebe7;  --tomato-4: #ffdcd3;
+  --tomato-5: #ffcdc2;  --tomato-6: #fdbdaf;  --tomato-7: #f5a898;  --tomato-8: #ec8e7b;
+  --tomato-9: #e54d2e;  --tomato-10: #dd4425; --tomato-11: #d13415; --tomato-12: #5c271f;
+
+  /* Green: success, best / good moves */
+  --green-1: #fbfefc;  --green-2: #f4fbf6;  --green-3: #e6f6eb;  --green-4: #d6f1df;
+  --green-5: #c4e8d1;  --green-6: #adddc0;  --green-7: #8eceaa;  --green-8: #5bb98b;
+  --green-9: #30a46c;  --green-10: #2b9a66; --green-11: #218358; --green-12: #193b2d;
+
+  /* Cyan: brilliant moves */
+  --cyan-1: #fafdfe;  --cyan-2: #f2fafb;  --cyan-3: #def7f9;  --cyan-4: #caf1f6;
+  --cyan-5: #b5e9f0;  --cyan-6: #9ddde7;  --cyan-7: #7dcedc;  --cyan-8: #3db9cf;
+  --cyan-9: #00a2c7;  --cyan-10: #0797b9; --cyan-11: #107d98; --cyan-12: #0d3c48;
+
+  /* Blue: info, great moves */
+  --blue-1: #fbfdff;  --blue-2: #f4faff;  --blue-3: #e6f4fe;  --blue-4: #d5efff;
+  --blue-5: #c2e5ff;  --blue-6: #acd8fc;  --blue-7: #8ec8f6;  --blue-8: #5eb1ef;
+  --blue-9: #0090ff;  --blue-10: #0588f0; --blue-11: #0d74ce; --blue-12: #113264;
+
+  /* Orange: mistakes */
+  --orange-1: #fefcfb;  --orange-2: #fff7ed;  --orange-3: #ffefd6;  --orange-4: #ffdfb5;
+  --orange-5: #ffd19a;  --orange-6: #ffc182;  --orange-7: #f5ae73;  --orange-8: #ec9455;
+  --orange-9: #f76b15;  --orange-10: #ef5f00; --orange-11: #cc4e00; --orange-12: #582d1d;
+
+  /* Yellow: inaccuracies */
+  --yellow-1: #fdfdf9;  --yellow-2: #fefce9;  --yellow-3: #fffab8;  --yellow-4: #fff394;
+  --yellow-5: #ffe770;  --yellow-6: #f3d768;  --yellow-7: #e4c767;  --yellow-8: #d5ae39;
+  --yellow-9: #ffe629;  --yellow-10: #ffdc00; --yellow-11: #9e6c00; --yellow-12: #473b1f;
+
+  /* Bronze: opening-book moves, chess-history accents */
+  --bronze-1: #fdfcfc;  --bronze-2: #fdf7f5;  --bronze-3: #f6edea;  --bronze-4: #efe4df;
+  --bronze-5: #e7d9d3;  --bronze-6: #dfcdc5;  --bronze-7: #d3bcb3;  --bronze-8: #c2a499;
+  --bronze-9: #a18072;  --bronze-10: #957468; --bronze-11: #7d5e54; --bronze-12: #43302b;
+
+  /* Sky: kids track backgrounds, kids board highlight */
+  --sky-1: #f9feff;  --sky-2: #f1fafd;  --sky-3: #e1f6fd;  --sky-4: #d1f0fa;
+  --sky-5: #bee7f5;  --sky-6: #a9daed;  --sky-7: #8dcae3;  --sky-8: #60b3d7;
+  --sky-9: #7ce2fe;  --sky-10: #74daf8; --sky-11: #00749e; --sky-12: #1d3e56;
+
+  color-scheme: light;
+}
+
+/* --------------------------------------------------------------------------
+   3. Semantic roles (light). Components use ONLY these, never primitives,
+   except move-quality and board tokens which are roles in their own right.
+   -------------------------------------------------------------------------- */
+:root {
+  /* Surfaces */
+  --color-bg: var(--sand-2);                 /* page */
+  --color-surface: #ffffff;                  /* cards, panels, move list ("the sheet") */
+  --color-surface-2: var(--sand-1);          /* nested panel inside a card */
+  --color-surface-sunken: var(--sand-3);     /* wells, board surround, code */
+  --color-surface-hover: var(--sand-3);
+  --color-surface-active: var(--sand-5);
+  --color-overlay: rgb(33 32 28 / 0.48);     /* sand-12 @ 48% behind modals */
+
+  /* Borders */
+  --color-border: var(--sand-6);             /* non-interactive separators, cards */
+  --color-border-strong: var(--sand-7);
+  --color-border-control: var(--sand-9);     /* inputs/checkbox outlines: 3.28:1 on white (WCAG 1.4.11) */
+
+  /* Text */
+  --color-text: var(--sand-12);              /* 16.0:1 on sand-1 */
+  --color-text-muted: var(--sand-11);        /* 6.0:1 on white, 5.7:1 on sand-2 */
+  --color-text-disabled: var(--sand-9);
+  --color-text-inverse: var(--sand-1);
+
+  /* Brand ink */
+  --color-accent: var(--indigo-9);           /* solid; white text 5.21:1 */
+  --color-accent-hover: var(--indigo-10);    /* white text 6.02:1 */
+  --color-accent-text: var(--indigo-11);     /* links, active nav; 5.89:1 on sand-1 */
+  --color-accent-soft: var(--indigo-3);
+  --color-accent-soft-hover: var(--indigo-4);
+  --color-accent-soft-active: var(--indigo-5);
+  --color-accent-border: var(--indigo-7);
+  --color-on-accent: #ffffff;
+
+  /* Brass */
+  --color-brass: var(--amber-9);
+  --color-brass-hover: var(--amber-10);
+  --color-brass-text: var(--amber-11);       /* 4.53:1 on sand-1 */
+  --color-brass-soft: var(--amber-3);
+  --color-on-brass: #21201c;                 /* sand-12 light; 10.3:1 on amber-9 in both themes */
+
+  /* Status (text / solid / soft / border) */
+  --color-success: var(--green-11);
+  --color-success-solid: var(--green-11);    /* white text 4.72:1 */
+  --color-success-soft: var(--green-3);
+  --color-success-border: var(--green-7);
+  --color-warning: var(--amber-11);
+  --color-warning-solid: var(--amber-9);     /* pair with --color-on-brass */
+  --color-warning-soft: var(--amber-3);
+  --color-warning-border: var(--amber-7);
+  --color-danger: var(--tomato-11);          /* 4.98:1 on white */
+  --color-danger-solid: #d13415;             /* tomato-11 light, fixed in both themes: white text 4.98:1 */
+  --color-danger-solid-hover: #b82d12;
+  --color-danger-soft: var(--tomato-3);
+  --color-danger-border: var(--tomato-7);
+  --color-info: var(--blue-11);
+  --color-info-soft: var(--blue-3);
+  --color-info-border: var(--blue-7);
+
+  /* Focus ring (WCAG 2.4.7 / 2.4.13): 2px ring, 2px offset, >=3:1 against bg */
+  --focus-color: var(--indigo-9);            /* 5.12:1 on sand-1 */
+  --focus-width: 2px;
+  --focus-offset: 2px;
+  --focus-ring: 0 0 0 var(--focus-offset) var(--color-bg), 0 0 0 calc(var(--focus-offset) + var(--focus-width)) var(--focus-color);
+
+  /* Selection */
+  --color-selection-bg: var(--indigo-5);
+  --color-selection-text: var(--indigo-12);
+
+  /* Move-quality annotations (always paired with the glyph; never colour alone).
+     Text values are step 11 = >=4.5:1 on white; fills are step 9. */
+  --q-brilliant: var(--cyan-11);      --q-brilliant-fill: var(--cyan-9);     /* !! */
+  --q-great: var(--blue-11);          --q-great-fill: var(--blue-9);         /* !  */
+  --q-best: var(--green-11);          --q-best-fill: var(--green-9);         /* star */
+  --q-good: var(--green-11);          --q-good-fill: var(--green-8);
+  --q-book: var(--bronze-11);         --q-book-fill: var(--bronze-9);
+  --q-inaccuracy: var(--yellow-11);   --q-inaccuracy-fill: var(--yellow-9);  /* ?! */
+  --q-mistake: var(--orange-11);      --q-mistake-fill: var(--orange-9);     /* ?  */
+  --q-blunder: var(--tomato-11);      --q-blunder-fill: var(--tomato-9);     /* ?? */
+
+  /* Eval bar: literal piece colours, identical in both themes */
+  --eval-white: #eeeeec;
+  --eval-black: #2a2a28;
+  --eval-border: var(--sand-8);
+  --eval-text-on-white: #21201c;
+  --eval-text-on-black: #eeeeec;
+
+  /* Clock */
+  --clock-bg: var(--color-surface-sunken);
+  --clock-text: var(--color-text-muted);
+  --clock-running-bg: var(--color-surface);
+  --clock-running-text: var(--color-text);
+  --clock-running-edge: var(--indigo-9);
+  --clock-low-bg: var(--tomato-3);
+  --clock-low-text: var(--tomato-11);
+  --clock-low-running-bg: #d13415;
+  --clock-low-running-text: #ffffff;
+  --clock-bar: var(--green-9);
+
+  /* Charts (rating history etc.): ink first, then brass; categorical order */
+  --chart-1: var(--indigo-9);
+  --chart-2: var(--amber-9);
+  --chart-3: var(--cyan-9);
+  --chart-4: var(--tomato-9);
+  --chart-5: var(--green-9);
+  --chart-grid: var(--sand-5);
+  --chart-axis: var(--sand-11);
+}
+
+/* --------------------------------------------------------------------------
+   4. Type, space, radius, shadow, motion, layout
+   -------------------------------------------------------------------------- */
+:root {
+  /* Families */
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans: "Atkinson Hyperlegible Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
+
+  /* Fraunces axis settings: adult = sharp, straight (SOFT 0, WONK 0) */
+  --display-soft: 0;
+  --display-wonk: 0;
+  --display-weight: 600;
+
+  /* Bringhurst's classic typographic scale (The Elements of Typographic Style):
+     12 14 16 18 21 24 36 48 60 72 (px), expressed in rem */
+  --font-size-0: 0.75rem;   /* 12 -- captions, table meta; never body */
+  --font-size-1: 0.875rem;  /* 14 -- dense UI, table cells, secondary */
+  --font-size-2: 1rem;      /* 16 -- UI default */
+  --font-size-3: 1.125rem;  /* 18 -- reading body (lessons, knowledge base) */
+  --font-size-4: 1.3125rem; /* 21 -- h4 / card titles */
+  --font-size-5: 1.5rem;    /* 24 -- h3 */
+  --font-size-6: 2.25rem;   /* 36 -- h2 / big stat values */
+  --font-size-7: 3rem;      /* 48 -- h1 */
+  --font-size-8: 3.75rem;   /* 60 -- display (onboarding, results) */
+  --font-size-9: 4.5rem;    /* 72 -- hero numerals (rating reveal) */
+  --font-size-fluid-h1: clamp(2.25rem, 1.6rem + 2.6vw, 3rem);
+  --font-size-fluid-display: clamp(3rem, 2rem + 4vw, 4.5rem);
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.1;   /* display */
+  --line-height-snug: 1.25;   /* headings */
+  --line-height-ui: 1.4;      /* controls, tables */
+  --line-height-body: 1.6;    /* reading */
+
+  --letter-spacing-display: -0.015em;
+  --letter-spacing-clock: 0.02em;
+
+  --measure: 68ch;            /* reading width; skill rule: under 80 chars */
+  --measure-narrow: 52ch;
+
+  /* Spacing: Open Props --size-* values verbatim */
+  --size-00: -0.25rem;
+  --size-1: 0.25rem;   /* 4  */
+  --size-2: 0.5rem;    /* 8  */
+  --size-3: 1rem;      /* 16 */
+  --size-4: 1.25rem;   /* 20 */
+  --size-5: 1.5rem;    /* 24 */
+  --size-6: 1.75rem;   /* 28 */
+  --size-7: 2rem;      /* 32 */
+  --size-8: 3rem;      /* 48 */
+  --size-9: 4rem;      /* 64 */
+  --size-10: 5rem;     /* 80 */
+  --size-11: 7.5rem;   /* 120 */
+  --size-12: 10rem;    /* 160 */
+  /* Half-step for dense data UI (not in Open Props) */
+  --size-1h: 0.375rem; /* 6  */
+  --size-2h: 0.75rem;  /* 12 */
+
+  /* Radius: Grim's own, crisp like printed paper; kids override larger */
+  --radius-1: 3px;     /* badges, tags, squares in mini-boards */
+  --radius-2: 6px;     /* buttons, inputs */
+  --radius-3: 10px;    /* cards, menus */
+  --radius-4: 16px;    /* modals, sheets */
+  --radius-round: 1e5px;
+  --radius-board: 4px; /* the board itself stays nearly square */
+
+  --border-size-1: 1px;
+  --border-size-2: 2px;
+  --border-size-3: 3px;
+
+  /* Shadows: Open Props shadow-1..5 recipes verbatim (theme-aware via color/strength) */
+  --shadow-color: 40 6% 12%;          /* warm, matches Sand (Open Props default is 220 3% 15%) */
+  --shadow-strength: 2%;
+  --shadow-1: 0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --shadow-2:
+    0 3px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
+  --shadow-3:
+    0 -1px 3px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  --shadow-4:
+    0 -2px 5px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 1px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 2px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 9px 9px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 16px 16px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%));
+  --shadow-5:
+    0 -1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 2px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 10px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 20px 20px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 40px 40px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  --shadow-inset: inset 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --shadow-press: 0 0 0 transparent;  /* kids override gives a chunky "key" edge */
+
+  /* Motion: Open Props easings verbatim */
+  --ease-2: cubic-bezier(.25, 0, .4, 1);
+  --ease-3: cubic-bezier(.25, 0, .3, 1);
+  --ease-out-3: cubic-bezier(0, 0, .3, 1);
+  --ease-out-4: cubic-bezier(0, 0, .1, 1);
+  --ease-in-out-3: cubic-bezier(.5, 0, .5, 1);
+  --ease-elastic-out-2: cubic-bezier(.5, 1, .75, 1.25);
+  --duration-instant: 80ms;   /* hover/press colour */
+  --duration-fast: 140ms;     /* piece move animation default (user-adjustable) */
+  --duration-base: 200ms;     /* menus, tabs, toasts in */
+  --duration-slow: 320ms;     /* modal, sheet */
+  --duration-reward: 600ms;   /* the ONE orchestrated moment: puzzle solved / level up */
+
+  /* Layering */
+  --layer-base: 1;
+  --layer-board-piece: 2;
+  --layer-board-drag: 11;     /* matches chessground piece.dragging */
+  --layer-sticky: 20;
+  --layer-nav: 30;
+  --layer-dropdown: 40;
+  --layer-overlay: 50;
+  --layer-modal: 60;
+  --layer-toast: 70;
+  --layer-tooltip: 80;
+
+  /* Targets: WCAG 2.5.8 AA floor is 24px; Grim uses 44px (2.5.5 AAA) for primary controls */
+  --target-floor: 24px;
+  --target-min: 44px;
+  --target-compact: 32px;     /* dense toolbars (move-list nav, table actions) -- spaced to pass 2.5.8 */
+  --target-hero: 56px;
+
+  /* Control heights */
+  --control-h-sm: 32px;
+  --control-h-md: 44px;
+  --control-h-lg: 56px;
+
+  /* Data table row heights (Carbon sm/md/lg) */
+  --row-h-compact: 32px;
+  --row-h-default: 40px;
+  --row-h-relaxed: 48px;
+
+  /* Layout */
+  --gutter: var(--size-3);                 /* 16px phone gutter */
+  --sidebar-w: 248px;
+  --sidebar-w-collapsed: 72px;
+  --topbar-h: 56px;
+  --tabbar-h: 64px;                        /* mobile bottom nav */
+  --side-panel-w: clamp(300px, 26vw, 400px); /* move list / engine column */
+  --content-max: 1280px;
+  --player-strip-h: 48px;
+  --evalbar-w: 14px;
+
+  /* Icons (lucide-react) */
+  --icon-size-sm: 16px;
+  --icon-size-md: 20px;
+  --icon-size-lg: 24px;
+  --icon-stroke: 1.75;   /* pass as strokeWidth; lucide default is 2 */
+}
+
+/* --------------------------------------------------------------------------
+   5. Dark theme. Same block twice: OS preference unless the user forced
+      light, and explicit [data-theme="dark"]. Keep the two in sync.
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sand-1: #111110;  --sand-2: #191918;  --sand-3: #222221;  --sand-4: #2a2a28;
+    --sand-5: #31312e;  --sand-6: #3b3a37;  --sand-7: #494844;  --sand-8: #62605b;
+    --sand-9: #6f6d66;  --sand-10: #7c7b74; --sand-11: #b5b3ad; --sand-12: #eeeeec;
+    --indigo-1: #11131f;  --indigo-2: #141726;  --indigo-3: #182449;  --indigo-4: #1d2e62;
+    --indigo-5: #253974;  --indigo-6: #304384;  --indigo-7: #3a4f97;  --indigo-8: #435db1;
+    --indigo-9: #3e63dd;  --indigo-10: #5472e4; --indigo-11: #9eb1ff; --indigo-12: #d6e1ff;
+    --amber-1: #16120c;  --amber-2: #1d180f;  --amber-3: #302008;  --amber-4: #3f2700;
+    --amber-5: #4d3000;  --amber-6: #5c3d05;  --amber-7: #714f19;  --amber-8: #8f6424;
+    --amber-9: #ffc53d;  --amber-10: #ffd60a; --amber-11: #ffca16; --amber-12: #ffe7b3;
+    --tomato-1: #181111;  --tomato-2: #1f1513;  --tomato-3: #391714;  --tomato-4: #4e1511;
+    --tomato-5: #5e1c16;  --tomato-6: #6e2920;  --tomato-7: #853a2d;  --tomato-8: #ac4d39;
+    --tomato-9: #e54d2e;  --tomato-10: #ec6142; --tomato-11: #ff977d; --tomato-12: #fbd3cb;
+    --green-1: #0e1512;  --green-2: #121b17;  --green-3: #132d21;  --green-4: #113b29;
+    --green-5: #174933;  --green-6: #20573e;  --green-7: #28684a;  --green-8: #2f7c57;
+    --green-9: #30a46c;  --green-10: #33b074; --green-11: #3dd68c; --green-12: #b1f1cb;
+    --cyan-1: #0b161a;  --cyan-2: #101b20;  --cyan-3: #082c36;  --cyan-4: #003848;
+    --cyan-5: #004558;  --cyan-6: #045468;  --cyan-7: #12677e;  --cyan-8: #11809c;
+    --cyan-9: #00a2c7;  --cyan-10: #23afd0; --cyan-11: #4ccce6; --cyan-12: #b6ecf7;
+    --blue-1: #0d1520;  --blue-2: #111927;  --blue-3: #0d2847;  --blue-4: #003362;
+    --blue-5: #004074;  --blue-6: #104d87;  --blue-7: #205d9e;  --blue-8: #2870bd;
+    --blue-9: #0090ff;  --blue-10: #3b9eff; --blue-11: #70b8ff; --blue-12: #c2e6ff;
+    --orange-1: #17120e;  --orange-2: #1e160f;  --orange-3: #331e0b;  --orange-4: #462100;
+    --orange-5: #562800;  --orange-6: #66350c;  --orange-7: #7e451d;  --orange-8: #a35829;
+    --orange-9: #f76b15;  --orange-10: #ff801f; --orange-11: #ffa057; --orange-12: #ffe0c2;
+    --yellow-1: #14120b;  --yellow-2: #1b180f;  --yellow-3: #2d2305;  --yellow-4: #362b00;
+    --yellow-5: #433500;  --yellow-6: #524202;  --yellow-7: #665417;  --yellow-8: #836a21;
+    --yellow-9: #ffe629;  --yellow-10: #ffff57; --yellow-11: #f5e147; --yellow-12: #f6eeb4;
+    --bronze-1: #141110;  --bronze-2: #1c1917;  --bronze-3: #262220;  --bronze-4: #302a27;
+    --bronze-5: #3b3330;  --bronze-6: #493e3a;  --bronze-7: #5a4c47;  --bronze-8: #6f5f58;
+    --bronze-9: #a18072;  --bronze-10: #ae8c7e; --bronze-11: #d4b3a5; --bronze-12: #ede0d9;
+    --sky-1: #0d141f;  --sky-2: #111a27;  --sky-3: #112840;  --sky-4: #113555;
+    --sky-5: #154467;  --sky-6: #1b537b;  --sky-7: #1f6692;  --sky-8: #197cae;
+    --sky-9: #7ce2fe;  --sky-10: #a8eeff; --sky-11: #75c7f0; --sky-12: #c2f3ff;
+
+    color-scheme: dark;
+    --color-bg: var(--sand-1);
+    --color-surface: var(--sand-2);
+    --color-surface-2: var(--sand-3);
+    --color-surface-sunken: #0c0c0b;
+    --color-surface-hover: var(--sand-4);
+    --color-surface-active: var(--sand-5);
+    --color-overlay: rgb(0 0 0 / 0.62);
+    --color-border-control: var(--sand-9);   /* 3.40:1 on sand-2 */
+    --focus-color: var(--indigo-11);         /* 8.5:1 on sand-2 */
+    --color-selection-bg: var(--indigo-6);
+    --color-selection-text: var(--indigo-12);
+    --clock-running-edge: var(--indigo-11);
+    --clock-low-bg: var(--tomato-3);
+    --clock-low-text: var(--tomato-11);
+    --shadow-color: 40 30% 2%;
+    --shadow-strength: 25%;
+  }
+}
+
+:root[data-theme="dark"] {
+  --sand-1: #111110;  --sand-2: #191918;  --sand-3: #222221;  --sand-4: #2a2a28;
+  --sand-5: #31312e;  --sand-6: #3b3a37;  --sand-7: #494844;  --sand-8: #62605b;
+  --sand-9: #6f6d66;  --sand-10: #7c7b74; --sand-11: #b5b3ad; --sand-12: #eeeeec;
+  --indigo-1: #11131f;  --indigo-2: #141726;  --indigo-3: #182449;  --indigo-4: #1d2e62;
+  --indigo-5: #253974;  --indigo-6: #304384;  --indigo-7: #3a4f97;  --indigo-8: #435db1;
+  --indigo-9: #3e63dd;  --indigo-10: #5472e4; --indigo-11: #9eb1ff; --indigo-12: #d6e1ff;
+  --amber-1: #16120c;  --amber-2: #1d180f;  --amber-3: #302008;  --amber-4: #3f2700;
+  --amber-5: #4d3000;  --amber-6: #5c3d05;  --amber-7: #714f19;  --amber-8: #8f6424;
+  --amber-9: #ffc53d;  --amber-10: #ffd60a; --amber-11: #ffca16; --amber-12: #ffe7b3;
+  --tomato-1: #181111;  --tomato-2: #1f1513;  --tomato-3: #391714;  --tomato-4: #4e1511;
+  --tomato-5: #5e1c16;  --tomato-6: #6e2920;  --tomato-7: #853a2d;  --tomato-8: #ac4d39;
+  --tomato-9: #e54d2e;  --tomato-10: #ec6142; --tomato-11: #ff977d; --tomato-12: #fbd3cb;
+  --green-1: #0e1512;  --green-2: #121b17;  --green-3: #132d21;  --green-4: #113b29;
+  --green-5: #174933;  --green-6: #20573e;  --green-7: #28684a;  --green-8: #2f7c57;
+  --green-9: #30a46c;  --green-10: #33b074; --green-11: #3dd68c; --green-12: #b1f1cb;
+  --cyan-1: #0b161a;  --cyan-2: #101b20;  --cyan-3: #082c36;  --cyan-4: #003848;
+  --cyan-5: #004558;  --cyan-6: #045468;  --cyan-7: #12677e;  --cyan-8: #11809c;
+  --cyan-9: #00a2c7;  --cyan-10: #23afd0; --cyan-11: #4ccce6; --cyan-12: #b6ecf7;
+  --blue-1: #0d1520;  --blue-2: #111927;  --blue-3: #0d2847;  --blue-4: #003362;
+  --blue-5: #004074;  --blue-6: #104d87;  --blue-7: #205d9e;  --blue-8: #2870bd;
+  --blue-9: #0090ff;  --blue-10: #3b9eff; --blue-11: #70b8ff; --blue-12: #c2e6ff;
+  --orange-1: #17120e;  --orange-2: #1e160f;  --orange-3: #331e0b;  --orange-4: #462100;
+  --orange-5: #562800;  --orange-6: #66350c;  --orange-7: #7e451d;  --orange-8: #a35829;
+  --orange-9: #f76b15;  --orange-10: #ff801f; --orange-11: #ffa057; --orange-12: #ffe0c2;
+  --yellow-1: #14120b;  --yellow-2: #1b180f;  --yellow-3: #2d2305;  --yellow-4: #362b00;
+  --yellow-5: #433500;  --yellow-6: #524202;  --yellow-7: #665417;  --yellow-8: #836a21;
+  --yellow-9: #ffe629;  --yellow-10: #ffff57; --yellow-11: #f5e147; --yellow-12: #f6eeb4;
+  --bronze-1: #141110;  --bronze-2: #1c1917;  --bronze-3: #262220;  --bronze-4: #302a27;
+  --bronze-5: #3b3330;  --bronze-6: #493e3a;  --bronze-7: #5a4c47;  --bronze-8: #6f5f58;
+  --bronze-9: #a18072;  --bronze-10: #ae8c7e; --bronze-11: #d4b3a5; --bronze-12: #ede0d9;
+  --sky-1: #0d141f;  --sky-2: #111a27;  --sky-3: #112840;  --sky-4: #113555;
+  --sky-5: #154467;  --sky-6: #1b537b;  --sky-7: #1f6692;  --sky-8: #197cae;
+  --sky-9: #7ce2fe;  --sky-10: #a8eeff; --sky-11: #75c7f0; --sky-12: #c2f3ff;
+
+  color-scheme: dark;
+  --color-bg: var(--sand-1);
+  --color-surface: var(--sand-2);
+  --color-surface-2: var(--sand-3);
+  --color-surface-sunken: #0c0c0b;
+  --color-surface-hover: var(--sand-4);
+  --color-surface-active: var(--sand-5);
+  --color-overlay: rgb(0 0 0 / 0.62);
+  --color-border-control: var(--sand-9);
+  --focus-color: var(--indigo-11);
+  --color-selection-bg: var(--indigo-6);
+  --color-selection-text: var(--indigo-12);
+  --clock-running-edge: var(--indigo-11);
+  --clock-low-bg: var(--tomato-3);
+  --clock-low-text: var(--tomato-11);
+  --shadow-color: 40 30% 2%;
+  --shadow-strength: 25%;
+}
+
+/* --------------------------------------------------------------------------
+   6. Kids track. Warmer (sky + brass), rounder, bigger.
+      NN/g: children need much larger targets (2cm x 2cm for young kids),
+      simple tap gestures, and big colourful informative buttons.
+   -------------------------------------------------------------------------- */
+:root[data-track="kids"] {
+  /* Surfaces: open sky instead of paper */
+  --color-bg: var(--sky-2);
+  --color-surface: #ffffff;
+  --color-surface-2: var(--sky-1);
+  --color-surface-sunken: var(--sky-3);
+  --color-surface-hover: var(--sky-3);
+  --color-surface-active: var(--sky-5);
+  --color-border: var(--sky-6);
+  --color-border-strong: var(--sky-7);
+
+  /* Primary action = brass (sunny), dark text 10.3:1 */
+  --color-accent: var(--amber-9);
+  --color-accent-hover: var(--amber-10);
+  --color-on-accent: #21201c;
+  --color-accent-soft: var(--amber-3);
+  --color-accent-soft-hover: var(--amber-4);
+  --color-accent-soft-active: var(--amber-5);
+  --color-accent-border: var(--amber-8);
+  /* links / active nav stay ink for contrast */
+  --color-accent-text: var(--indigo-11);
+
+  /* Display face goes soft and wonky (Fraunces SOFT 100 = "SuperSoft") */
+  --display-soft: 100;
+  --display-wonk: 1;
+  --display-weight: 700;
+
+  /* Everything one step bigger: 18px base */
+  --font-size-1: 1rem;
+  --font-size-2: 1.125rem;
+  --font-size-3: 1.3125rem;
+  --font-size-4: 1.5rem;
+  --font-size-5: 1.875rem;
+  --font-size-6: 2.5rem;
+  --line-height-body: 1.55;
+
+  --radius-1: 8px;
+  --radius-2: 14px;
+  --radius-3: 22px;
+  --radius-4: 28px;
+  --radius-board: 14px;
+
+  /* A chunky "key" edge under pressable things */
+  --shadow-press: 0 4px 0 0 var(--amber-11);
+
+  --target-min: 60px;
+  --target-compact: 48px;
+  --target-hero: 88px;      /* answer choices, map nodes. ~14mm on a typical phone; NN/g's 2cm
+                               for ages 3-5 is ~120 CSS px there -- use --target-tiny-hands */
+  --target-tiny-hands: 120px;
+  --control-h-sm: 48px;
+  --control-h-md: 60px;
+  --control-h-lg: 76px;
+  --row-h-default: 56px;
+  --tabbar-h: 80px;
+  --player-strip-h: 64px;
+
+  --icon-size-md: 28px;
+  --icon-size-lg: 32px;
+  --icon-stroke: 2.25;
+
+  --duration-reward: 900ms;
+}
+
+/* Kids + dark: keep sky identity on dark sky steps */
+@media (prefers-color-scheme: dark) {
+  :root[data-track="kids"]:not([data-theme="light"]) {
+    --color-bg: var(--sky-1);
+    --color-surface: var(--sky-2);
+    --color-surface-2: var(--sky-3);
+    --color-surface-sunken: #0a1018;
+    --shadow-press: 0 4px 0 0 var(--amber-7);
+  }
+}
+:root[data-track="kids"][data-theme="dark"] {
+  --color-bg: var(--sky-1);
+  --color-surface: var(--sky-2);
+  --color-surface-2: var(--sky-3);
+  --color-surface-sunken: #0a1018;
+  --shadow-press: 0 4px 0 0 var(--amber-7);
+}
+
+/* --------------------------------------------------------------------------
+   7. Board themes. Default = walnut. Highlights are translucent so they
+      read on both square colours. Piece set is independent of the board.
+   -------------------------------------------------------------------------- */
+:root,
+[data-board="walnut"] {
+  /* lichess "brown" (squares sampled from lila public/images/board/brown.png) */
+  --board-light: #f0d9b5;
+  --board-dark: #b58863;
+  --board-coord-on-light: #946f51;
+  --board-coord-on-dark: #f0d9b5;
+  --board-frame: #8a6646;
+  /* highlights: chessground brown theme values */
+  --board-last-move: rgb(155 199 0 / 0.41);
+  --board-selected: rgb(20 85 30 / 0.5);
+  --board-move-dot: rgb(20 85 30 / 0.5);
+  --board-capture-ring: rgb(20 85 0 / 0.3);
+  --board-hover: rgb(20 85 30 / 0.3);
+  --board-premove: rgb(20 30 85 / 0.5);
+  --board-premove-dot: rgb(20 30 85 / 0.5);
+  --board-check: radial-gradient(ellipse at center, rgb(255 0 0) 0%, rgb(231 0 0) 25%, rgb(169 0 0 / 0) 89%, rgb(158 0 0 / 0) 100%);
+  --board-dot-size: 22%;
+  --board-hint: rgb(255 197 61 / 0.55);        /* trainer hint square: brass */
+  --board-correct: rgb(48 164 108 / 0.55);     /* green-9 */
+  --board-wrong: rgb(229 77 46 / 0.55);        /* tomato-9 */
+}
+
+[data-board="glacier"] {
+  /* lichess "blue" (sampled from lila public/images/board/blue.png) */
+  --board-light: #dee3e6;
+  --board-dark: #8ca2ad;
+  --board-coord-on-light: #788a94;
+  --board-coord-on-dark: #dee3e6;
+  --board-frame: #6f838d;
+  /* Grim tuning: brass last-move, ink selection (blue-on-blue green fails to read) */
+  --board-last-move: rgb(255 197 61 / 0.5);
+  --board-selected: rgb(62 99 221 / 0.45);
+  --board-move-dot: rgb(31 45 92 / 0.45);
+  --board-capture-ring: rgb(31 45 92 / 0.32);
+  --board-hover: rgb(31 45 92 / 0.22);
+  --board-premove: rgb(209 52 21 / 0.35);
+  --board-premove-dot: rgb(209 52 21 / 0.45);
+}
+
+[data-board="tournament"] {
+  /* lichess "green" (sampled from lila public/images/board/green.png):
+     the cream/green of a club vinyl roll-up board */
+  --board-light: #ffffdd;
+  --board-dark: #86a666;
+  --board-coord-on-light: #6d8753;
+  --board-coord-on-dark: #ffffdd;
+  --board-frame: #5f7a46;
+  --board-last-move: rgb(255 197 61 / 0.55);
+  --board-selected: rgb(20 85 30 / 0.45);
+  --board-move-dot: rgb(20 60 20 / 0.42);
+  --board-capture-ring: rgb(20 60 20 / 0.3);
+  --board-hover: rgb(20 60 20 / 0.22);
+  --board-premove: rgb(20 30 85 / 0.45);
+  --board-premove-dot: rgb(20 30 85 / 0.45);
+}
+
+[data-board="graphite"] {
+  /* Grim original from Radix Sand (light sand-5 / sand-9): calm, for long
+     analysis sessions and dark mode; ink highlights carry the brand */
+  --board-light: #e2e1de;
+  --board-dark: #8d8d86;
+  --board-coord-on-light: #63635e;
+  --board-coord-on-dark: #e2e1de;
+  --board-frame: #63635e;
+  --board-last-move: rgb(62 99 221 / 0.38);
+  --board-selected: rgb(62 99 221 / 0.55);
+  --board-move-dot: rgb(33 32 28 / 0.4);
+  --board-capture-ring: rgb(33 32 28 / 0.3);
+  --board-hover: rgb(33 32 28 / 0.18);
+  --board-premove: rgb(255 197 61 / 0.55);
+  --board-premove-dot: rgb(171 100 0 / 0.55);
+}
+
+[data-board="meadow"],
+:root[data-track="kids"]:not([data-board]) {
+  /* Kids: Radix amber-3 / green-8 -- bright, friendly, still 2.2:1 between squares */
+  --board-light: #fff7c2;
+  --board-dark: #5bb98b;
+  --board-coord-on-light: #218358;
+  --board-coord-on-dark: #fff7c2;
+  --board-frame: #218358;
+  --board-last-move: rgb(124 226 254 / 0.6);   /* sky-9 */
+  --board-selected: rgb(255 197 61 / 0.7);     /* amber-9 */
+  --board-move-dot: rgb(25 59 45 / 0.45);      /* green-12 */
+  --board-capture-ring: rgb(25 59 45 / 0.35);
+  --board-hover: rgb(25 59 45 / 0.2);
+  --board-premove: rgb(62 99 221 / 0.4);
+  --board-premove-dot: rgb(62 99 221 / 0.5);
+  --board-check: radial-gradient(circle at center, rgb(229 77 46 / 0.95) 0%, rgb(229 77 46 / 0.6) 40%, rgb(229 77 46 / 0) 80%);
+  --board-dot-size: 30%;
+}
+
+/* Arrow / circle brushes (chessground brush colours, lichess defaults) */
+:root {
+  --arrow-green: #15781b;
+  --arrow-red: #882020;
+  --arrow-blue: #003088;
+  --arrow-yellow: #e68f00;
+  --arrow-engine: rgb(62 99 221 / 0.75);  /* Grim: best-move arrow in ink */
+}
+
+/* --------------------------------------------------------------------------
+   8. Base element styles
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-family: var(--font-sans);
+  font-size: 100%; /* respect user font size; all tokens are rem */
+  line-height: var(--line-height-ui);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  scrollbar-gutter: stable;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-2);
+  line-height: var(--line-height-ui);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 var(--size-2);
+  color: var(--color-text);
+  line-height: var(--line-height-snug);
+  text-wrap: balance;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" var(--display-soft), "WONK" var(--display-wonk);
+  letter-spacing: var(--letter-spacing-display);
+}
+
+h1 { font-size: var(--font-size-fluid-h1); line-height: var(--line-height-tight); }
+h2 { font-size: var(--font-size-6); }
+h3 { font-size: var(--font-size-5); }
+/* h4-h6 are UI headings: sans, so dense panels don't turn bookish */
+h4 { font-size: var(--font-size-4); font-weight: var(--font-weight-bold); }
+h5 { font-size: var(--font-size-2); font-weight: var(--font-weight-bold); }
+h6 { font-size: var(--font-size-1); font-weight: var(--font-weight-bold); color: var(--color-text-muted); }
+
+p {
+  margin: 0 0 var(--size-3);
+  text-wrap: pretty;
+}
+
+small { font-size: var(--font-size-1); }
+
+a {
+  color: var(--color-accent-text);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in oklab, currentColor 45%, transparent);
+  transition: text-decoration-color var(--duration-instant) var(--ease-2);
+}
+a:hover {
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+kbd {
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--color-border-strong);
+  border-bottom-width: 2px;
+  border-radius: var(--radius-1);
+  background: var(--color-surface-2);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: var(--size-5) 0;
+}
+
+img, svg, video, canvas {
+  display: block;
+  max-width: 100%;
+}
+/* lucide icons inherit text colour and sit on the baseline grid */
+svg.lucide {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: -0.2em;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* Tabular figures anywhere numbers line up (Atkinson Hyperlegible Next ships tnum) */
+table, .num, time, data, meter, progress {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus { outline: none; }
+:focus-visible {
+  outline: var(--focus-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
+}
+/* Inputs and anything with its own border use an inset-safe ring */
+:where(input, select, textarea):focus-visible {
+  outline-offset: 0;
+}
+
+::selection {
+  background: var(--color-selection-bg);
+  color: var(--color-selection-text);
+}
+
+/* Screen-reader-only utility (move announcements, clock aria-live, etc.) */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reduced motion: kill decorative motion; keep state changes instant.
+   Piece moves still happen -- they just snap. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 0ms;
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+    --duration-reward: 0ms;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Forced colours (Windows High Contrast): keep focus and boundaries visible */
+@media (forced-colors: active) {
+  :focus-visible { outline: 2px solid CanvasText; }
+}

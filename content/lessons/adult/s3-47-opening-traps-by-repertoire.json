@@ -1,0 +1,114 @@
+{
+  "id": "adult.s3.opening-traps-by-repertoire",
+  "track": "adult",
+  "stage": 3,
+  "order": 47,
+  "skillIds": [
+    "opening.traps.advanced"
+  ],
+  "title": "Opening traps in your repertoire",
+  "summary": "The classic traps of the Ruy Lopez, Italian, Queen's Gambit and Smith-Morra: play them as the punisher, and learn the move that avoids them.",
+  "estMinutes": 16,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Every line you play has a few famous traps. Know them **from both sides**: as the punisher (to cash in), and as the potential victim (to avoid them). This lesson: Noah's Ark and the Fishing Pole (Ruy Lopez), Blackburne-Shilling (Italian), the Elephant trap (QGD), the Lasker trap (Albin) and the Siberian trap (Smith-Morra)."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/2p2ppp/p2p4/1p6/3QP3/1B6/PPP2PPP/RNB1K2R b KQkq - 0 8",
+      "prompt": "Noah's Ark trap. White's queen just took on d4. You are Black: start trapping the b3-bishop.",
+      "solution": [
+        "c5"
+      ],
+      "explain": "...c5! hits the queen. After 9.Qd5 Be6 10.Qc6+ Bd7 11.Qd5 c4 the bishop on b3 is caught in the \"ark\" of a6/b5/c4 pawns. White should have played 8.c3 or Bd5 earlier."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1ppp/8/4N3/2BnP3/8/PPPP1PPP/RNBQK2R b KQkq - 0 4",
+      "prompt": "Blackburne-Shilling trap. White grabbed e5. You are Black: punish it.",
+      "solution": [
+        "Qg5"
+      ],
+      "explain": "...Qg5! forks the e5-knight and g2. If 5.Nxf7?? Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3# is the famous finish. Best for White is 5.Bxf7+ Ke7 6.O-O, still worse."
+    },
+    {
+      "type": "move",
+      "fen": "r1b1kbnr/pppp1Npp/8/8/3nq3/8/PPPPBP1P/RNBQKR2 b Qkq - 1 7",
+      "prompt": "Finish the Blackburne-Shilling trap: mate in one.",
+      "solution": [
+        "Nf3#"
+      ],
+      "explain": "Nf3#: the knight is protected by the e4-queen, and every square around White's king (d1, d2, e2, f1, f2) is occupied by White's own pieces: a smothered mate."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppn1ppp/5n2/3N2B1/3P4/8/PP2PPPP/R2QKBNR b KQkq - 0 6",
+      "prompt": "Elephant trap. White took the \"pinned\" d5-pawn. You are Black: the knight on f6 is not really pinned.",
+      "solution": [
+        "Nxd5",
+        "Bxd8",
+        "Bb4+",
+        "Qd2",
+        "Bxd2+",
+        "Kxd2",
+        "Kxd8"
+      ],
+      "explain": "...Nxd5! 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8: Black has won a piece. The queen sacrifice works because of the in-between check on b4."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqk1nr/ppp2ppp/8/4P3/1BP5/4p3/PP3PPP/RN1QKBNR b KQkq - 0 6",
+      "prompt": "Lasker trap (Albin Countergambit). White took the bishop. You are Black: find the famous sequence with an underpromotion.",
+      "solution": [
+        "exf2+",
+        "Ke2",
+        "fxg1=N+"
+      ],
+      "explain": "...exf2+ 7.Ke2 fxg1=N+! (a queen would allow 8.Rxg1 or a check) 8.Ke1 Qh4+ and Black is winning: the knight promotion comes with check and keeps the extra piece."
+    },
+    {
+      "type": "move",
+      "fen": "r1b1kb1r/ppqp1ppp/2n1p3/8/2B1P1n1/2N2N1P/PP2QPP1/R1B2RK1 b kq - 0 9",
+      "prompt": "Siberian trap (Smith-Morra). White just played h3, attacking the g4-knight. You are Black.",
+      "solution": [
+        "Nd4"
+      ],
+      "explain": "...Nd4! attacks the queen and threatens ...Qh2# (the g4-knight covers h2). After 10.Nxd4 Qh2# or 10.Qd3 Qh2#, and 10.hxg4 Nxe2+ wins the queen."
+    },
+    {
+      "type": "quiz",
+      "question": "You play the Ruy Lopez as White and reach the Noah's Ark structure with ...b5. What avoids the trap?",
+      "choices": [
+        "Taking on d4 with the queen",
+        "Keeping a retreat for the b3-bishop (e.g. c3 to give it c2, or not allowing ...c5-c4 with tempo)",
+        "Moving the king",
+        "Playing a3"
+      ],
+      "answer": 1,
+      "explain": "The bishop on b3 needs an exit; c2-c3 provides one."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: why study traps \"from both sides\"?",
+      "choices": [
+        "To memorise more moves",
+        "So you can punish the opponent's mistake and avoid making the same mistake yourself in the positions your repertoire reaches",
+        "Because traps are always sound",
+        "To play faster"
+      ],
+      "answer": 1,
+      "explain": "Traps are the highest-value opening knowledge at club level: they appear in real games and decide them immediately."
+    }
+  ],
+  "practiceThemes": [
+    "opening",
+    "trappedPiece"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#opening-traps-and-miniatures",
+    "knowledge-base/03-chess-knowledge/tactics.md#trapped-piece",
+    "Chernev & Reinfeld, Winning Chess Traps",
+    "ECO (Encyclopaedia of Chess Openings) classification, volumes A-E"
+  ]
+}

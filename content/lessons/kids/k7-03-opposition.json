@@ -1,0 +1,62 @@
+{
+  "id": "kids.7.opposition",
+  "track": "kids",
+  "stage": 3,
+  "order": 703,
+  "skillIds": [
+    "endgame.pawn.opposition"
+  ],
+  "title": "King face-off",
+  "summary": "Kings facing each other: the side not to move must give way.",
+  "estMinutes": 7,
+  "minAge": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Opposition**: kings face each other with one square between. The king who must move has to step aside!"
+    },
+    {
+      "type": "board",
+      "fen": "8/8/8/4k3/8/4K3/8/8 b - - 0 1",
+      "md": "Black must move and give way. White has the opposition.",
+      "highlights": [
+        "e4"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/8/8/4k3/8/3K4/4P3/8 w - - 0 1",
+      "prompt": "Take the opposition!",
+      "solution": [
+        "Ke3"
+      ],
+      "explain": "Face-off! Now Black must step aside.",
+      "hint": "Put your king right opposite the black king."
+    },
+    {
+      "type": "quiz",
+      "question": "Kings face each other and it is Black to move. Who has the opposition?",
+      "choices": [
+        "White",
+        "Black"
+      ],
+      "answer": 0,
+      "explain": "The side that does NOT have to move has the opposition."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/4k3/8/3K4/4P3/8 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Use the opposition to make a queen!",
+      "maxMoves": 20,
+      "engineLevel": 6,
+      "explain": "Opposition master!"
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

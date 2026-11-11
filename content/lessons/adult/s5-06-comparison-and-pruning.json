@@ -1,0 +1,93 @@
+{
+  "id": "adult.s5.comparison-and-pruning",
+  "track": "adult",
+  "stage": 5,
+  "order": 6,
+  "skillIds": [
+    "calculation.comparison-method",
+    "calculation.tree-pruning"
+  ],
+  "title": "Comparison method and pruning the tree",
+  "summary": "Decide between similar candidates by their key difference, prune irrelevant branches, and stop when a line is good enough — but check for refutations.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Calculate less, decide better\n\n**Comparison method** (Dvoretsky/Yusupov): when two candidate moves lead to similar positions, do not calculate both to the end. Find the **difference** — a king on g3 instead of f2, a pawn on h3 instead of h2, a rook that is or is not protected — and decide which side the difference favours.\n\n**Pruning** (Kotov, revised by Aagaard):\n1. List candidates first; calculate each branch **once**.\n2. Calculate only the opponent's **best replies** (forcing ones first).\n3. Once you find a line that wins or clearly works, **stop looking for alternatives** and search only for refutations of it (\"if you see a good move, look for a better one\" applies only when there is time and the position is not yet decided).\n4. Stop each line in a **quiet** position and evaluate it."
+    },
+    {
+      "type": "move",
+      "fen": "5k2/p1p4R/1pr5/3p1pP1/P2P1P2/2P2K2/8/8 w - - 0 35",
+      "prompt": "White to move. White wants to bring the king to the kingside to support g6 and the h7-rook. Three king moves look similar (Kg3, Kf2, Ke2). Compare them (Capablanca-Tartakower, New York 1924).",
+      "solution": [
+        "Kg3",
+        "Rxc3+",
+        "Kh4"
+      ],
+      "hint": "Which king move gets to the pawns fastest, and what does the rook capture cost?",
+      "explain": "**35.Kg3! Rxc3+ 36.Kh4** — Capablanca gives up the c3-pawn: the difference between Kg3 and the \"safe\" Kf2/Ke2 is that only Kg3 reaches **h5/g6 in time**. White's king supports g6-g7 while the black rook is busy on the queenside; the game went 36...Rf3 37.g6 Rxf4+ 38.Kg5 Re4 39.Kf6 and White won. Engine: +2.3 for Kg3, about +0.3 for Ke2/Kf2."
+    },
+    {
+      "type": "move",
+      "fen": "8/1pB3p1/p3k3/P6R/4P1KP/5P2/6r1/4b3 w - - 4 39",
+      "prompt": "White to move. White is a pawn up, but the black rook and bishop are active. Only one king move keeps the advantage (Alekhine-Capablanca, World Championship 1927)",
+      "solution": [
+        "Kh3"
+      ],
+      "orientation": "white",
+      "explain": "**39.Kh3!** — the king steps out of the bishop's checks and out of ...Rg2-type tricks, keeping all White's pawns protected. Comparing Kh3 with Kf5/Kg5 shows the difference: on h3 the king cannot be checked by the bishop and supports g4/h4. Engine main line: 39.Kh3 Rf2 40.f4 Rf3+ 41.Kg2 Rf2+ 42.Kg1 Rc2. (Alekhine-Capablanca, World Championship 1927; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "5b2/1R4pp/5k2/1pp5/4R3/7P/5PP1/r5K1 w - - 4 36",
+      "prompt": "White to move. Compare the king moves: one of them is the only way to keep the balance (Fischer-Spassky, World Championship 1972)",
+      "solution": [
+        "Kh2"
+      ],
+      "orientation": "white",
+      "explain": "**36.Kh2!** — the king leaves the back rank (no more back-rank checks) and steps off the a7-g1 diagonal of the black bishop. Every other move allows ...Bc5/...Bd6+ with tempo. Engine main line: 36.Kh2 Bd6+ 37.g3 b4 38.Kg2 Ra6 39.f4 Rc6. (Fischer-Spassky, World Championship 1972; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "You found a forced line that wins a rook for a knight. Two other candidate moves look promising too. You have 20 minutes left for 15 moves. What do you do?",
+      "choices": [
+        "Calculate both alternatives fully to see if they win more",
+        "Check the winning line once more for refutations (in-between moves, checks for the opponent), then play it",
+        "Play the most beautiful alternative",
+        "Play quickly without checking"
+      ],
+      "answer": 1,
+      "explain": "Good-enough is enough when the line is clearly winning: spend the time on blunder-checking it, not on finding a prettier win. This is the core of pruning."
+    },
+    {
+      "type": "quiz",
+      "question": "Two candidate lines both end in a rook ending a pawn up. In line A your king is on e3, in line B it is on e2 and you have an extra tempo. How should you decide?",
+      "choices": [
+        "Calculate both rook endings to mate",
+        "Compare only the difference: which matters more, the king one rank further forward or the tempo? Evaluate that and choose",
+        "Choose randomly; they are the same",
+        "Avoid both and keep pieces"
+      ],
+      "answer": 1,
+      "explain": "That is the comparison method: identical except for one detail, so evaluate the detail."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Calculation drill**: 10 positions at your level in exam mode (no moving pieces, write the full tree with at most 3 candidates per node).\n- **Puzzles**: 15 *veryLong* puzzles. After each, count how many branches you calculated that turned out irrelevant.\n- In your next long game, note one decision where you used the comparison method; review it after the game."
+    }
+  ],
+  "practiceThemes": [
+    "veryLong",
+    "endgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/kotov-tree-of-analysis.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "knowledge-base/02-methods/soviet-school-botvinnik-dvoretsky-yusupov.md",
+    "Dvoretsky & Yusupov, Training for the Tournament Player",
+    "Aagaard, Grandmaster Preparation: Calculation",
+    "Capablanca-Tartakower, New York 1924",
+    "Alekhine-Capablanca, World Championship 1927"
+  ]
+}

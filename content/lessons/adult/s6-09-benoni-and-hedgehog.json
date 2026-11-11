@@ -1,0 +1,111 @@
+{
+  "id": "adult.s6.benoni-and-hedgehog",
+  "track": "adult",
+  "stage": 6,
+  "order": 9,
+  "skillIds": [
+    "strategy.benoni-structures",
+    "strategy.hedgehog"
+  ],
+  "title": "Benoni and Hedgehog structures",
+  "summary": "Central majority against queenside majority (e4-e5 v ...b5) in the Benoni, and patient Hedgehog defence with ...b5/...d5 breaks.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Modern Benoni\n\nAfter 1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 d6, White has a **central majority** (e4, d5) and Black a **queenside majority** (c5, b7, a7). White's main break is **e4-e5** (often prepared by f4 or Nd2-c4), Black's are **...b5** and **...f5**. Black's pieces: Bg7 on the long diagonal, rook on e8 against e4, knight via a6-c7 or d7-e5. White aims to blockade with Nc4 and play e5 at the right moment.\n\n## Hedgehog\n\nBlack pawns **a6-b6-d6-e6** behind White's c4-e4 bind. Black waits, completes development (Qc7, Nbd7, Rac8/Rfe8, Bf8) and strikes with **...b5** or **...d5** when White over-extends. White aims for e4-e5, f4-f5 or Nd5 sacrifices; patience and prophylaxis decide."
+    },
+    {
+      "type": "board",
+      "fen": "rnbqr1k1/pp3pbp/3p1np1/2pP4/4P3/2N2N2/PP2BPPP/R1BQ1RK1 w - - 6 10",
+      "md": "**Modern Benoni main line** (…7.Nf3 Bg7 8.Be2 O-O 9.O-O Re8). Black's rook on e8 hits e4; ...Na6-c7 and ...b5 are coming. White's plan: Nd2-c4, f4 and e5, or a4 to stop ...b5.",
+      "orientation": "black",
+      "arrows": [
+        [
+          "e4",
+          "e5",
+          "blue"
+        ],
+        [
+          "b7",
+          "b5",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the Modern Benoni, what is White's most dangerous central break?",
+      "choices": [
+        "c4-c5",
+        "e4-e5, opening lines and freeing d5/e4 for the pieces",
+        "g2-g4",
+        "b2-b4"
+      ],
+      "answer": 1,
+      "explain": "e5 attacks d6, opens the e-file and the long diagonal often closes for the g7-bishop. Black must keep e5 under control.",
+      "fen": "rnbqr1k1/pp3pbp/3p1np1/2pP4/4P3/2N2N2/PP2BPPP/R1BQ1RK1 w - - 6 10"
+    },
+    {
+      "type": "board",
+      "fen": "r3k2r/1bqnbppp/pp1ppn2/8/2PQP3/1PN2NP1/P4PBP/R1BR2K1 w kq - 1 12",
+      "md": "**Hedgehog** (English Opening move order). Black's set-up: pawns a6-b6-d6-e6, Bb7, Be7, Qc7, Nbd7. White has space; Black has flexible breaks ...b5 and ...d5.",
+      "orientation": "black",
+      "arrows": [
+        [
+          "b6",
+          "b5",
+          "red"
+        ],
+        [
+          "d6",
+          "d5",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In a Hedgehog, when is ...d5 or ...b5 usually strong?",
+      "choices": [
+        "At once, before development is finished",
+        "When Black's pieces are fully developed and White has weakened something (e.g. advanced pawns or a misplaced piece), so that opening the position favours Black",
+        "Never: the Hedgehog is passive",
+        "Only in the endgame"
+      ],
+      "answer": 1,
+      "explain": "The Hedgehog is a coiled spring: the breaks come after full development and when White over-presses.",
+      "fen": "r3k2r/1bqnbppp/pp1ppn2/8/2PQP3/1PN2NP1/P4PBP/R1BR2K1 w kq - 1 12"
+    },
+    {
+      "type": "play",
+      "fen": "rnbqr1k1/pp3pbp/3p1np1/2pP4/4P3/2N2N2/PP2BPPP/R1BQ1RK1 w - - 6 10",
+      "goal": "hold",
+      "prompt": "Play the Benoni position as Black against the engine (level 13) for 25 moves. Aim for ...Na6-c7, ...a6 and ...b5, and keep e5 under control.",
+      "maxMoves": 25,
+      "engineLevel": 13
+    },
+    {
+      "type": "play",
+      "fen": "r3k2r/1bqnbppp/pp1ppn2/8/2PQP3/1PN2NP1/P4PBP/R1BR2K1 w kq - 1 12",
+      "goal": "hold",
+      "prompt": "Play the Hedgehog as Black against the engine (level 13) for 25 moves. Complete development, then look for ...b5 or ...d5.",
+      "maxMoves": 25,
+      "engineLevel": 13
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: one Benoni game (Tal or Kasparov as Black in the corpus) and one Hedgehog game.\n- Write the pawn breaks for both sides in each structure and the piece that is most important to each side."
+    }
+  ],
+  "practiceThemes": [
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "Dvoretsky & Yusupov, Positional Play",
+    "Flores Rios, Chess Structures",
+    "Psakhis, The Complete Benoni",
+    "Shipov, The Complete Hedgehog"
+  ]
+}

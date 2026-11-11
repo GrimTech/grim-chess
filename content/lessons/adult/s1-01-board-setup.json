@@ -1,0 +1,125 @@
+{
+  "id": "adult.s1.board-setup",
+  "track": "adult",
+  "stage": 1,
+  "order": 1,
+  "skillIds": [
+    "rules.board.setup"
+  ],
+  "title": "The board and the starting position",
+  "summary": "Orient the board correctly and set up all 32 pieces.",
+  "estMinutes": 6,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Chess is played on an 8x8 board of 64 squares, alternating light and dark. Two rules fix the setup:\n\n1. **Light on the right**: the corner square nearest each player's right hand is light.\n2. **Queen on her own colour**: the white queen starts on a light square, the black queen on a dark one.\n\nThe goal of the game is checkmate: attacking the enemy king so that it has no escape. You will learn exactly what that means in a later lesson."
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "md": "The starting position. From the corners inwards on the back rank: rook, knight, bishop, then queen and king in the middle. Eight pawns stand in front. Black mirrors White: queens face each other, kings face each other.",
+      "highlights": [
+        "h1",
+        "a8",
+        "d1",
+        "d8"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "You sit down at the board as White. Which corner square must be on your right-hand side?",
+      "choices": [
+        "A light square",
+        "A dark square",
+        "Either, it does not matter"
+      ],
+      "answer": 0,
+      "explain": "\"Light on the right\". If the near-right corner is dark, the board is turned the wrong way and the kings and queens will end up on the wrong squares."
+    },
+    {
+      "type": "quiz",
+      "question": "Where does the white queen start?",
+      "choices": [
+        "On the light square next to the king (d1)",
+        "On the dark square next to the king (e1)",
+        "In the corner"
+      ],
+      "answer": 0,
+      "explain": "Queen on her own colour: the white queen goes on the light central square of the back rank, d1. The king takes the square beside her, e1."
+    },
+    {
+      "type": "quiz",
+      "question": "And the black queen?",
+      "choices": [
+        "Directly opposite the white queen, on a dark square (d8)",
+        "Directly opposite the white king (e8)",
+        "On a light square"
+      ],
+      "answer": 0,
+      "explain": "The black queen also stands on her own colour, the dark square d8, facing the white queen across the board."
+    },
+    {
+      "type": "quiz",
+      "question": "What is wrong with this setup?",
+      "choices": [
+        "Kings and queens have swapped squares",
+        "The knights and bishops have swapped squares",
+        "The pawns are on the wrong rank",
+        "Nothing, it is correct"
+      ],
+      "answer": 0,
+      "explain": "Here each queen is on the opposite colour (white queen on a dark square). This mistake shows up often. Check that each queen is on her own colour.",
+      "fen": "rnbkqbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBKQBNR w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Which piece stands right next to each rook at the start?",
+      "choices": [
+        "Knight",
+        "Bishop",
+        "Queen",
+        "Pawn"
+      ],
+      "answer": 0,
+      "explain": "From the corner: rook, knight, bishop. A common setup error is swapping knights and bishops."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "White always moves first. Make a first move: push the pawn in front of your king forward two squares.",
+      "solution": [
+        "e4"
+      ],
+      "hint": "The king stands on the e-file; its pawn is directly in front of it.",
+      "explain": "Every pawn may move two squares on its very first move. You have just played 1.e4, the most popular first move in chess."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: how many pawns does each side start with?",
+      "choices": [
+        "8",
+        "6",
+        "10",
+        "16"
+      ],
+      "answer": 0,
+      "explain": "Each side has 16 units: 8 pawns plus king, queen, two rooks, two bishops and two knights."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what are the two setup rules?",
+      "choices": [
+        "Light square on the right; queen on her own colour",
+        "Dark square on the right; king on his own colour",
+        "Rooks in the middle; queen on the left"
+      ],
+      "answer": 0,
+      "explain": "Light on the right, queen on her own colour. If you get those two right, everything else falls into place."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#board-and-initial-position",
+    "knowledge-base/03-chess-knowledge/rules.md#objective-of-the-game",
+    "knowledge-base/01-learning-science/cognitive-load-theory.md#41-beginners-0-to-about-1000"
+  ]
+}

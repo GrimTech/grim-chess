@@ -1,0 +1,105 @@
+{
+  "id": "adult.s3.pawn-islands-and-doubled-pawns",
+  "track": "adult",
+  "stage": 3,
+  "order": 42,
+  "skillIds": [
+    "strategy.pawn.islands"
+  ],
+  "title": "Pawn islands and doubled pawns",
+  "summary": "Fewer pawn islands usually means fewer weaknesses. Doubled pawns can be weak or useful; judge them by files, mobility and the endgame.",
+  "estMinutes": 12,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **pawn island** is a group of pawns on adjacent files. Capablanca's rule of thumb: **the side with fewer islands** usually has the better structure, because each island needs its own defence.\n\n**Doubled pawns** are weak when they are isolated or immobile, but can be useful when they control key squares or give a half-open file (e.g. after ...Bxc3 bxc3 in the Nimzo-Indian, White gets the bishop pair and a strong centre in return)."
+    },
+    {
+      "type": "quiz",
+      "question": "White pawns: a2, b2, d4, f2, g2, h2. How many pawn islands?",
+      "choices": [
+        "Two",
+        "Three",
+        "Four",
+        "Six"
+      ],
+      "answer": 1,
+      "explain": "a2-b2 is one island, d4 is a second (isolated), f2-g2-h2 a third.",
+      "fen": "6k1/pp3ppp/4p3/8/3P4/8/PP3PPP/6K1 w - - 0 30"
+    },
+    {
+      "type": "quiz",
+      "question": "Same diagram, Black pawns a7, b7, e6, f7, g7, h7. Who has the better pawn structure, and why?",
+      "choices": [
+        "White: more central pawns",
+        "Black: two islands against White's three, and the d4-pawn is isolated",
+        "Equal",
+        "White: the d-pawn is passed"
+      ],
+      "answer": 1,
+      "explain": "Black's structure has fewer weaknesses; d4 is a target in an endgame.",
+      "fen": "6k1/pp3ppp/4p3/8/3P4/8/PP3PPP/6K1 w - - 0 30"
+    },
+    {
+      "type": "quiz",
+      "question": "Nimzo-Indian after 4.a3 Bxc3+ 5.bxc3. White has doubled c-pawns. What did White get for them?",
+      "choices": [
+        "Nothing",
+        "The bishop pair, a half-open b-file and extra central control (c3 supports d4/e4)",
+        "A passed pawn",
+        "A safer king"
+      ],
+      "answer": 1,
+      "explain": "Doubled pawns are a trade-off, not automatically a weakness. Black targets c4 with ...b6/...Ba6 and ...Nc6-a5; White plays for the centre and the bishops.",
+      "fen": "rnbqk2r/pppp1ppp/4pn2/8/2PP4/P1P5/4PPPP/R1BQKBNR b KQkq - 0 5"
+    },
+    {
+      "type": "quiz",
+      "question": "When recapturing creates doubled pawns, which rule of thumb is classical?",
+      "choices": [
+        "Always recapture away from the centre",
+        "Recapture toward the centre (e.g. ...bxc6 rather than ...dxc6), unless concrete reasons say otherwise",
+        "Never recapture with a pawn",
+        "Recapture with the king"
+      ],
+      "answer": 1,
+      "explain": "Capturing toward the centre keeps more central control. Concrete factors (open lines for development, as in the Exchange Ruy ...dxc6) can override it."
+    },
+    {
+      "type": "move",
+      "fen": "8/p7/1pp1kp2/2P1p3/1P2P1K1/P2P4/8/8 w - - 0 44",
+      "prompt": "Pawn endgame. White to move: improve the structure so that your queenside becomes one healthy island with a protected passer.",
+      "solution": [
+        "cxb6",
+        "axb6",
+        "a4",
+        "b5",
+        "a5"
+      ],
+      "explain": "cxb6 axb6 a4! and after ...b5 a5 White has a protected passed pawn while Black's pawns are split and blocked."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: why do pawn islands matter most in the endgame?",
+      "choices": [
+        "They do not",
+        "Each island needs a defender; with few pieces left, extra islands become targets the king and rooks can attack",
+        "They change the rules of castling",
+        "They make the king safer"
+      ],
+      "answer": 1,
+      "explain": "In the middlegame activity can compensate; in the endgame structure dominates."
+    }
+  ],
+  "practiceThemes": [
+    "endgame",
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#pawn-islands",
+    "knowledge-base/03-chess-knowledge/strategy.md#doubled-pawns",
+    "Capablanca, Chess Fundamentals",
+    "Capablanca, Chess Fundamentals (pawn islands)",
+    "Yusupov, Build Up Your Chess 2 (exchanges, open files, pawn structure)"
+  ]
+}

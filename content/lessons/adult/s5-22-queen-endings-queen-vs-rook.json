@@ -1,0 +1,89 @@
+{
+  "id": "adult.s5.queen-endings-queen-vs-rook",
+  "track": "adult",
+  "stage": 5,
+  "order": 22,
+  "skillIds": [
+    "endgame.queen-endgames",
+    "endgame.queen-vs-rook"
+  ],
+  "title": "Queen endings and queen against rook",
+  "summary": "Centralise, find shelter from checks, use perpetual check as the defender, and win Q v R by driving the king to the edge and splitting it from the rook.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Queen endings\n\nQueen endings are the second most common endings after rook endings and are dominated by **checks**.\n\n- **Centralise the queen**: from the centre it attacks and checks in all directions and prevents enemy checks.\n- **Shelter**: the attacking king must find a square shielded from checks — often near the enemy king or in front of its own pawn. Count checks before advancing the king.\n- **The defender's weapon is perpetual check**. With Q+P v Q, the defender draws easily if his king stands **in front of the pawn**; with the king far away, central and knight pawns have real winning chances.\n- **Q v pawn on the 7th**: wins against centre and knight pawns; against a **rook or bishop pawn** supported by its king it is usually a draw (stalemate tricks) unless the attacking king is close."
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: queen against a bishop pawn on the 7th, the white king far away. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw. When the queen checks and the black king goes to the corner (Kb1/Kb2 area), taking the pawn would stalemate or the king hides on a1 because Qxc2 is stalemate. The white king on h8 is too far to help.",
+      "fen": "7K/8/8/8/8/5Q2/2pk4/8 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: queen against a knight pawn on the 7th. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White wins (1.Qb1! blocks the pawn at once; otherwise the usual check-pin technique forces the king in front of the pawn and the white king approaches).",
+      "fen": "K7/8/8/8/8/8/1p1k4/6Q1 w - - 0 1"
+    },
+    {
+      "type": "play",
+      "fen": "3k4/8/3PK3/8/8/8/7Q/1q6 b - - 0 1",
+      "goal": "hold",
+      "prompt": "Q+P v Q, your king is in front of the pawn. Hold for 30 moves against the engine: give checks, and keep the king on the queening path. (Tablebase: draw; five of Black's moves keep the draw here.)",
+      "maxMoves": 30
+    },
+    {
+      "type": "text",
+      "md": "## Queen against rook\n\nQ v R (without pawns) is a **win** in all but a few special positions, but it needs technique: the longest wins take more than 30 moves.\n\n1. **Drive the king to the edge** with king and queen; the rook stays near its king because a separated rook is forked.\n2. Reach the **zugzwang position** (Philidor): defending king on the edge, rook beside it, attacking king opposite, queen checking from the side. With the defender to move, the rook must leave the king's protection and is lost to a **fork or skewer**.\n3. Use **waiting moves with the queen** (triangulation) to hand the move to the defender.\n4. Watch for **stalemate tricks**: the rook gives itself up with check when the defending king has no moves."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/8/2kr4/8/8/K5Q1 w - - 0 1",
+      "goal": "win",
+      "prompt": "Win the rook. The engine defends at full strength; the tablebase says mate in 33 from here, so you have time but not for random checks. Success = the rook is captured with the king left alone.",
+      "maxMoves": 50,
+      "explain": "If you failed, replay and count: did each sequence of checks end with the black king closer to the edge?"
+    },
+    {
+      "type": "quiz",
+      "question": "Q v R: the defender's best practical tries are...",
+      "choices": [
+        "Keep the rook far from the king for long-range checks",
+        "Keep the rook next to the king and look for stalemate and skewer tricks",
+        "Exchange the rook for the queen whenever possible... the rook cannot do that",
+        "Attack the queen with the king"
+      ],
+      "answer": 1,
+      "explain": "A rook far from its king is forked by queen checks. Defenders keep the rook close, use the third-rank barrier, and hope for stalemate (rook sacrifices with check when the king has no moves)."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Endgames trainer:** Q v R three times (until you win in under 35 moves), Q+P v Q as the defender twice.\n- **Puzzles:** 15 *queenEndgame* puzzles at your rating.\n- Read Dvoretsky's Endgame Manual ch. 12 (queen endings) sections on Q v P and Q+P v Q."
+    }
+  ],
+  "practiceThemes": [
+    "queenEndgame",
+    "endgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky, Dvoretsky's Endgame Manual (5th ed., 2020)",
+    "de la Villa, 100 Endgames You Must Know",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)"
+  ]
+}

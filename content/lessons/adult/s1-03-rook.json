@@ -1,0 +1,125 @@
+{
+  "id": "adult.s1.rook",
+  "track": "adult",
+  "stage": 1,
+  "order": 3,
+  "skillIds": [
+    "rules.pieces.rook"
+  ],
+  "title": "How the rook moves",
+  "summary": "Straight lines along ranks and files, any distance, no jumping.",
+  "estMinutes": 6,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The **rook** moves in a straight line along a rank or file, as many empty squares as it likes. It cannot jump: a piece in the way stops it. It is worth about 5 pawns."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/3R4/8/8/4K3 w - - 0 1",
+      "md": "From d4 the rook reaches every square on the d-file and the 4th rank: 14 squares.",
+      "arrows": [
+        [
+          "d4",
+          "d8",
+          "green"
+        ],
+        [
+          "d4",
+          "d1",
+          "green"
+        ],
+        [
+          "d4",
+          "a4",
+          "green"
+        ],
+        [
+          "d4",
+          "h4",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/3R4/8/8/4K3 w - - 0 1",
+      "prompt": "Move the rook to h4.",
+      "solution": [
+        "Rh4"
+      ],
+      "explain": "Along the 4th rank to the right edge in one move: distance does not matter."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/3R4/8/8/4K3 w - - 0 1",
+      "prompt": "Move the rook to d1.",
+      "solution": [
+        "Rd1"
+      ],
+      "explain": "Rooks move backwards just as easily as forwards."
+    },
+    {
+      "type": "quiz",
+      "question": "Can the rook move from d4 to d7 here?",
+      "choices": [
+        "No, the pawn on d6 blocks the way",
+        "Yes, rooks jump",
+        "Yes, but only by capturing"
+      ],
+      "answer": 0,
+      "explain": "Rooks cannot jump. The white pawn on d6 blocks the file, so d5 is as far as the rook can go upwards.",
+      "fen": "4k3/8/3P4/8/3R4/8/8/4K3 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "8/8/3k4/1P6/8/8/1R6/4K3 w - - 0 1",
+      "prompt": "Get the rook from b2 to h8 in two moves. The pawn on b5 blocks the b-file, so find the other route.",
+      "solution": [
+        "Rh2",
+        "Ke6",
+        "Rh8"
+      ],
+      "hint": "First go sideways along the 2nd rank.",
+      "explain": "Rh2 then Rh8: along the 2nd rank, then up the open h-file. When the direct line is blocked, look for the route via another line."
+    },
+    {
+      "type": "quiz",
+      "question": "A rook stands alone in the corner (a1) of an empty board. How many squares can it reach?",
+      "choices": [
+        "14",
+        "7",
+        "28",
+        "8"
+      ],
+      "answer": 0,
+      "explain": "Always 14 on an empty board (7 along the rank + 7 along the file), whether in the corner or the centre. Unlike other pieces, a rook loses no range on the edge."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: can a rook move diagonally?",
+      "choices": [
+        "No",
+        "Yes, one square",
+        "Yes, any distance"
+      ],
+      "answer": 0,
+      "explain": "Rooks move only along ranks and files. Diagonals belong to the bishop."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: can a rook jump over a piece in its way?",
+      "choices": [
+        "No",
+        "Yes",
+        "Only over its own pawns"
+      ],
+      "answer": 0,
+      "explain": "Only the knight jumps. Rooks, bishops and queens are stopped by any piece in their path."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#piece-movement",
+    "knowledge-base/02-methods/steps-method.md#3-didactic-principles"
+  ]
+}

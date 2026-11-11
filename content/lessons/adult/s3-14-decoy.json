@@ -1,0 +1,126 @@
+{
+  "id": "adult.s3.decoy",
+  "track": "adult",
+  "stage": 3,
+  "order": 14,
+  "skillIds": [
+    "tactics.decoy"
+  ],
+  "title": "Decoy: lure the piece onto the fatal square",
+  "summary": "Sacrifice to force the king or queen onto a square where a fork, pin or mate is waiting.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **decoy** (Lichess: *attraction*) forces an enemy piece onto a specific square, usually by a sacrifice it must capture. Then a second motif finishes: a knight fork, a pin, or mate. Look for squares where the enemy king and another piece would be forkable, and ask: can I force the king there?"
+    },
+    {
+      "type": "move",
+      "fen": "4r3/8/p6R/1p5n/2p1N2k/2P5/PP6/1K6 w - - 2 40",
+      "prompt": "Worked example. White to move. If Black's king stood on h5, your knight could fork it with the e8-rook. Force it there.",
+      "solution": [
+        "Rxh5+",
+        "Kxh5",
+        "Nf6+",
+        "Kh4",
+        "Nxe8"
+      ],
+      "explain": "Rxh5+! Kxh5 Nf6+ and Nxe8: the rook sacrifice decoys the king onto a forking square. White ends a piece up.",
+      "hint": "Capture on h5 with check."
+    },
+    {
+      "type": "move",
+      "fen": "3r2k1/1b4bR/p2P2p1/3p2N1/2p5/2P2N2/PP6/2K5 w - - 0 29",
+      "prompt": "White to move. Find a sacrifice that brings Black's king to g7, where your knight can fork.",
+      "solution": [
+        "Rxg7+",
+        "Kxg7",
+        "Ne6+",
+        "Kg8",
+        "Nxd8"
+      ],
+      "explain": "Rxg7+! Kxg7 Ne6+ forks king and the d8-rook: Kg8 Nxd8. The decoy made the fork possible."
+    },
+    {
+      "type": "move",
+      "fen": "8/R1P3p1/3n2kp/8/3P4/P1BK4/2r5/8 b - - 2 49",
+      "prompt": "Black to move. White's king and the a7-rook could be forked by your knight from b5. Decoy the king.",
+      "solution": [
+        "Rxc3+",
+        "Kxc3",
+        "Nb5+",
+        "Kb2",
+        "Nxa7"
+      ],
+      "explain": "...Rxc3+! Kxc3 Nb5+ and ...Nxa7: the rook gives itself up to put the king on c3, a knight-fork square with a7."
+    },
+    {
+      "type": "move",
+      "fen": "r2r2k1/pp3p2/5p1p/3n3N/8/5P2/P5PP/2RR2K1 w - - 6 23",
+      "prompt": "White to move. Exchange first, then fork.",
+      "solution": [
+        "Rxd5",
+        "Rxd5",
+        "Nxf6+",
+        "Kg7",
+        "Nxd5"
+      ],
+      "explain": "Rxd5! Rxd5 Nxf6+ forks king and the new d5-rook: Kg7 Nxd5. The exchange decoyed the black rook onto d5."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/1B1n2pp/pp3r2/2b5/P4p1q/5P2/1PPN2PP/R4Q1K b - - 0 26",
+      "prompt": "Black to move: mate in two. Decoy the king onto h2.",
+      "solution": [
+        "Qxh2+",
+        "Kxh2",
+        "Rh6#"
+      ],
+      "explain": "...Qxh2+! Kxh2 Rh6#: the queen sacrifice drags the king to h2, and the rook mates on the h-file because the c5-bishop covers g1."
+    },
+    {
+      "type": "move",
+      "fen": "2kr4/2p2pp1/8/1R2PP1p/6n1/8/1Q4PP/3q2BK b - - 2 28",
+      "prompt": "Black to move: mate in two. White's king is boxed in by its own pawns. Bring it to g1.",
+      "solution": [
+        "Qxg1+",
+        "Kxg1",
+        "Rd1#"
+      ],
+      "explain": "...Qxg1+! Kxg1 Rd1#: the queen is sacrificed on g1 so that the king sits on the back rank, and the rook mates. g2/h2 pawns block every escape."
+    },
+    {
+      "type": "quiz",
+      "question": "Which sacrifice is a decoy rather than a deflection?",
+      "choices": [
+        "Bxf7+ so that Kxf7 leaves the d8-queen unguarded",
+        "Rh8+ so that Kxh8 puts the king on a square where Qh5+ and a knight fork follow",
+        "Qxd7 so that the defending rook must recapture and abandon the back rank",
+        "e5 attacking a pinned knight"
+      ],
+      "answer": 1,
+      "explain": "Bxf7+ and the Qxd7 idea pull a defender away (deflection). Rh8+ pulls the king onto a specific square for the follow-up (decoy)."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what do you look for to spot a decoy?",
+      "choices": [
+        "Pieces that can be traded",
+        "A square where the enemy king (or queen) would fall to a fork, pin or mate, and a forcing sacrifice that drags it there",
+        "An open file for your rook",
+        "A pawn you can push"
+      ],
+      "answer": 1,
+      "explain": "Decoys are the most common two-motif combination in club games: sacrifice + fork."
+    }
+  ],
+  "practiceThemes": [
+    "attraction"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#decoy-attraction",
+    "Brunia & van Wijgerden, Steps Method Step 3 workbook (eliminating the defender, discovered attack)",
+    "Yusupov, Build Up Your Chess 1 (decoy)",
+    "Lichess puzzle database (CC0): 07WfH, 00761, 0ElXH, 0rfq4, 0h3dZ, 022ib"
+  ]
+}

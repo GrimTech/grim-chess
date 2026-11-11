@@ -1,0 +1,95 @@
+{
+  "id": "adult.s6.fortresses",
+  "track": "adult",
+  "stage": 6,
+  "order": 11,
+  "skillIds": [
+    "endgame.fortress"
+  ],
+  "title": "Fortresses",
+  "summary": "Wrong bishop, queen against rook and pawn, knights protecting each other: recognise and build positions where material does not win.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## A fortress is a position the stronger side cannot break\n\nTypical fortresses:\n- **Wrong rook pawn + wrong bishop**: the defending king reaches the corner of the promotion square, which the bishop does not control.\n- **Q v R + pawn**: the rook on the 3rd rank (6th for Black) protected by a pawn on the 2nd, the king next to it — the white king cannot cross.\n- **Q v two knights** protecting each other next to their king.\n- **Opposite-coloured bishops** blockade on squares of the defender's colour.\n\nBuilding a fortress requires knowing the target position **and** reaching it in time."
+    },
+    {
+      "type": "board",
+      "fen": "7k/8/6KP/8/8/8/8/1B6 w - - 0 1",
+      "md": "**Wrong bishop.** White's bishop is light-squared but h8 is dark; the black king sits in the corner. Tablebase: draw with any White move (1.h7 is even stalemate).",
+      "highlights": [
+        "h8"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/4k3/8/7P/2B2K2/8/8/8 b - - 0 1",
+      "prompt": "Black to move. White has the wrong bishop for the h-pawn. Draw the game.",
+      "solution": [
+        "Kf6"
+      ],
+      "orientation": "black",
+      "hint": "Which corner do you need, and which route reaches it?",
+      "explain": "**1...Kf6!** (tablebase: the only draw) — the king heads for g7 and h8. 1...Kf7 is illegal (the bishop covers f7) and other moves (for example 1...Kd6) are too slow: White escorts the pawn with his king and keeps the black king out of the corner."
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: queen against rook and pawn; the black rook on e6 is protected by the f7-pawn and the king is on g7. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw. The rook shuttles between e6 and g6 (both protected by f7), the white king cannot cross the 6th rank, and the queen alone cannot break the fortress.",
+      "fen": "8/5pk1/4r3/8/8/3K4/8/7Q w - - 0 1"
+    },
+    {
+      "type": "play",
+      "fen": "8/5pk1/4r3/8/8/3K4/8/7Q b - - 0 1",
+      "goal": "hold",
+      "prompt": "Hold the Q v R+P fortress for 30 moves against the engine. Keep the rook on e6/g6 (protected by f7) and the king next to it.",
+      "maxMoves": 30
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: queen against two knights that protect each other next to the black king in the centre. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw. Two knights side by side protecting each other with the king nearby form a fortress against the queen.",
+      "fen": "8/8/4k3/3nn3/8/8/8/1K5Q w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: queen against two bishops (Black king e6, bishops d5 and e5). The tablebase says \"cursed win\". What does that mean in practice?",
+      "choices": [
+        "White wins easily",
+        "White wins only with perfect play beyond the 50-move rule, so under tournament rules it is a draw",
+        "Black wins",
+        "It is stalemate"
+      ],
+      "answer": 1,
+      "explain": "Q v 2B is a win in many positions but often takes more than 50 moves; \"cursed win\" means the 50-move rule saves the defender. Practical result: draw.",
+      "fen": "8/8/4k3/3bb3/8/8/8/1K5Q w - - 0 1"
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Endgames trainer**: hold each fortress of this lesson against the engine for 30 moves.\n- **Puzzles**: 15 *equality* puzzles in endgames (look for fortress and stalemate defences).\n- In your games: when you are clearly worse in an endgame, spend one think on \"is there a fortress?\""
+    }
+  ],
+  "practiceThemes": [
+    "endgame",
+    "equality"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky's Endgame Manual (5th ed.)",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "adult.s3.reading-and-writing-fen",
+  "track": "adult",
+  "stage": 3,
+  "order": 6,
+  "skillIds": [
+    "rules.notation.fen"
+  ],
+  "title": "Reading and writing FEN",
+  "summary": "Decode the six fields of Forsyth-Edwards Notation, including castling and en passant fields, so you can set up and share any position.",
+  "estMinutes": 12,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **FEN** string describes a position in six space-separated fields:\n\n1. **Placement**, rank 8 down to rank 1, files a to h, `/` between ranks. Uppercase = White (KQRBNP), lowercase = Black, digits = empty squares.\n2. **Side to move**: `w` or `b`.\n3. **Castling rights**: subset of `KQkq`, or `-`.\n4. **En passant target square** (the square *behind* a pawn that just moved two), or `-`.\n5. **Halfmove clock** (plies since the last capture or pawn move, for the 50-move rule).\n6. **Fullmove number**.\n\nExample after 1.e4: `rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1`."
+    },
+    {
+      "type": "quiz",
+      "question": "In the starting position, what does the 1st-rank field `RNBQKBNR` tell you?",
+      "choices": [
+        "Black's back rank from a to h",
+        "White's back rank from a to h",
+        "White's back rank from h to a",
+        "Black's pieces that can castle"
+      ],
+      "answer": 1,
+      "explain": "Uppercase is White, and every rank is read from the a-file to the h-file. The 1st rank is the last of the eight rank fields."
+    },
+    {
+      "type": "quiz",
+      "question": "Which placement field describes this position?",
+      "choices": [
+        "6k1/5ppp/8/8/8/8/5PPP/3R2K1",
+        "1k6/ppp5/8/8/8/8/PPP5/1K1R4",
+        "6k1/5ppp/8/8/8/8/5PPP/6K1",
+        "3R2K1/5PPP/8/8/8/8/5ppp/6k1"
+      ],
+      "answer": 0,
+      "explain": "Rank 8: six empty squares, k, one empty (6k1). Rank 1: three empty, R on d1, two empty, K on g1, one empty (3R2K1). Try it: White mates with Rd8.",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+      "prompt": "This is the position from that FEN. Play the move it was built for: mate in one.",
+      "solution": [
+        "Rd8#"
+      ],
+      "explain": "The classic back-rank mate. Reading FEN quickly lets you set up any puzzle or position from a book or a forum in seconds."
+    },
+    {
+      "type": "quiz",
+      "question": "A FEN ends `... b KQkq e3 0 1`. What does `e3` mean?",
+      "choices": [
+        "A white piece stands on e3",
+        "White's pawn just moved e2-e4, so a black pawn on d4 or f4 could capture en passant on e3",
+        "Black must move to e3",
+        "The game started from move e3"
+      ],
+      "answer": 1,
+      "explain": "The en passant field names the square *behind* the double-stepped pawn. Many programs write it after every double step; strict FEN writes it only when a capture is possible, which is what Grim Chess uses."
+    },
+    {
+      "type": "move",
+      "fen": "8/1k6/4p3/4Pp2/8/8/6K1/8 w - f6 0 40",
+      "prompt": "The FEN of this position is `8/1k6/4p3/4Pp2/8/8/6K1/8 w - f6 0 40`. The fourth field (`f6`) says Black's f-pawn has just moved two squares and an en passant capture is available. Play it: it wins.",
+      "solution": [
+        "exf6"
+      ],
+      "explain": "exf6 e.p. is legal on this move only. It removes Black's f-pawn and creates a passed pawn on f6 that Black's king cannot catch. Any other move lets the f-pawn run and Black wins. In the next FEN the en passant field returns to `-`."
+    },
+    {
+      "type": "quiz",
+      "question": "White's king is on e1 and rooks on a1 and h1, but White has already moved the h1-rook and returned it. What should the castling field show (Black still has both rights)?",
+      "choices": [
+        "KQkq",
+        "Qkq",
+        "Kkq",
+        "-"
+      ],
+      "answer": 1,
+      "explain": "Moving the h1-rook permanently loses the kingside right (K). FEN tracks *rights*, not whether castling is possible this move: a check or an attacked square does not remove the right."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqk2r/ppp1bppp/2np1n2/4p3/3PP3/2NB1N2/PPPBQPPP/R3K2R w Qkq - 4 8",
+      "prompt": "Read the FEN before you castle: `r1bqk2r/ppp1bppp/2np1n2/4p3/3PP3/2NB1N2/PPPBQPPP/R3K2R w Qkq - 4 8`. The castling field is `Qkq`. Castle on the only side White is still allowed to.",
+      "solution": [
+        "O-O-O"
+      ],
+      "explain": "Only `Q` remains for White, so O-O is no longer legal even though the squares look free (the king or the h1-rook must have moved earlier and returned). O-O-O is legal: the king does not pass through an attacked square."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what does the fifth field (halfmove clock) count?",
+      "choices": [
+        "Full moves since the start",
+        "Plies since the last capture or pawn move",
+        "Number of checks given",
+        "Seconds on the clock"
+      ],
+      "answer": 1,
+      "explain": "At 100 plies (50 moves by each side) a 50-move claim becomes possible; at 150 the 75-move rule ends the game automatically."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#fen-format",
+    "PGN Standard (Edwards 1994) section 16.1",
+    "Chess Programming Wiki: Forsyth-Edwards Notation",
+    "knowledge-base/01-learning-science/cognitive-load-theory.md#42-intermediate-about-10001800"
+  ]
+}

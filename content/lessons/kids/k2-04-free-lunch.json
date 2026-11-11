@@ -1,0 +1,88 @@
+{
+  "id": "kids.2.free-lunch",
+  "track": "kids",
+  "stage": 1,
+  "order": 204,
+  "skillIds": [
+    "tactics.hanging-piece"
+  ],
+  "title": "Free lunch",
+  "summary": "Capture pieces that nobody protects, and avoid the guarded ones.",
+  "estMinutes": 6,
+  "minAge": 6,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A piece that nobody guards is **hanging**. Taking it is a **free lunch**!"
+    },
+    {
+      "type": "board",
+      "fen": "6k1/8/4p3/3n3b/8/8/8/3Q2K1 w - - 0 1",
+      "md": "The knight is guarded by a pawn. The bishop is all alone.",
+      "arrows": [
+        [
+          "e6",
+          "d5",
+          "red"
+        ],
+        [
+          "d1",
+          "h5",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "6k1/8/4p3/3n3b/8/8/8/3Q2K1 w - - 0 1",
+      "prompt": "Take the free piece!",
+      "solution": [
+        "Qxh5"
+      ],
+      "explain": "Free lunch! If you took the knight, the pawn would take your queen.",
+      "hint": "Which piece has no guard?"
+    },
+    {
+      "type": "move",
+      "fen": "6k1/3n4/8/p7/1b1R4/8/8/6K1 w - - 0 1",
+      "prompt": "Take the free piece!",
+      "solution": [
+        "Rxd7"
+      ],
+      "explain": "Yes! The bishop was guarded by a pawn.",
+      "hint": "Look for the piece with no friends nearby."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/8/3p4/4p3/7q/5N2/8/6K1 w - - 0 1",
+      "prompt": "Something big is hanging. Grab it!",
+      "solution": [
+        "Nxh4"
+      ],
+      "explain": "The queen! What a lunch!",
+      "hint": "Look where the knight can jump."
+    },
+    {
+      "type": "quiz",
+      "question": "A piece with no guard is called…",
+      "choices": [
+        "Hanging",
+        "Sleeping",
+        "Hiding"
+      ],
+      "answer": 0,
+      "explain": "Hanging pieces can be taken for free."
+    },
+    {
+      "type": "board",
+      "fen": "7k/8/8/8/8/8/8/3QK3 w - - 0 1",
+      "md": "Always ask: **can I take something for free?** And: **is my piece safe?**"
+    }
+  ],
+  "practiceThemes": [
+    "hangingPiece"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

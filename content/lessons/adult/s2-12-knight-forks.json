@@ -1,0 +1,112 @@
+{
+  "id": "adult.s2.knight-forks",
+  "track": "adult",
+  "stage": 2,
+  "order": 12,
+  "skillIds": [
+    "tactics.fork.knight"
+  ],
+  "title": "Knight forks",
+  "summary": "Use the knight's L-jump to attack king, queen and rooks at once.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Knights are ideal forkers: their attacks are hard to see, and a knight check cannot be blocked. Look for enemy pieces that stand a **knight's move apart from one square**, especially king + rook (**family fork** with check) or king + queen (**royal fork**)."
+    },
+    {
+      "type": "move",
+      "fen": "r3k3/5ppp/8/1N6/8/8/5PPP/6K1 w - - 0 1",
+      "prompt": "Fork the king and the rook.",
+      "solution": [
+        "Nc7+",
+        "Kd7",
+        "Nxa8"
+      ],
+      "explain": "Nc7+ hits e8 and a8. The king must move and the rook falls."
+    },
+    {
+      "type": "move",
+      "fen": "2q3k1/5ppp/8/3N4/8/8/5PPP/6K1 w - - 0 1",
+      "prompt": "Win the queen with a royal fork.",
+      "solution": [
+        "Ne7+",
+        "Kh8",
+        "Nxc8"
+      ],
+      "explain": "Ne7+ attacks g8 and c8. Knight checks cannot be blocked."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppp1pp1/2n2n1p/4p1N1/2B1P3/8/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "prompt": "Black wasted a move. Fork queen and rook.",
+      "solution": [
+        "Nxf7"
+      ],
+      "explain": "Nxf7 attacks d8 and h8, and the c4-bishop guards the knight, so Kxf7 is impossible. White wins at least the exchange."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5ppp/8/8/1n6/8/5PPP/R3K3 b - - 0 1",
+      "prompt": "You are Black. Find the fork.",
+      "solution": [
+        "Nc2+",
+        "Kd1",
+        "Nxa1"
+      ],
+      "explain": "Nc2+ forks the king on e1 and the rook on a1. The c2-square is a classic fork point."
+    },
+    {
+      "type": "quiz",
+      "question": "A knight wants to fork pieces on e8 and a8. Which square must it reach?",
+      "choices": [
+        "c7",
+        "d6",
+        "b6",
+        "c6"
+      ],
+      "answer": 0,
+      "explain": "From c7 a knight hits a8, e8, a6, e6, b5 and d5."
+    },
+    {
+      "type": "quiz",
+      "question": "Must a fork include a check?",
+      "choices": [
+        "No, any two valuable targets will do; a check just makes it stronger",
+        "Yes",
+        "Only for knights"
+      ],
+      "answer": 0,
+      "explain": "Forks of queen + rook without check also win material if both cannot be saved."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is a \"family fork\"?",
+      "choices": [
+        "A knight fork of king, queen and/or rooks at once",
+        "A fork by two knights",
+        "A pawn fork"
+      ],
+      "answer": 0,
+      "explain": "Usually it includes the king, so the check forces the issue."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: why can't a knight check be blocked?",
+      "choices": [
+        "The knight jumps; there is no line between",
+        "Because it is protected",
+        "It can be blocked"
+      ],
+      "answer": 0,
+      "explain": "The defender must move the king or capture the knight."
+    }
+  ],
+  "practiceThemes": [
+    "fork"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#fork",
+    "knowledge-base/03-chess-knowledge/calculation.md#board-vision"
+  ]
+}

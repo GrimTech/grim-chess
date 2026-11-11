@@ -1,0 +1,117 @@
+{
+  "id": "adult.s2.pins",
+  "track": "adult",
+  "stage": 2,
+  "order": 14,
+  "skillIds": [
+    "tactics.pin.absolute"
+  ],
+  "title": "Absolute pins",
+  "summary": "A piece pinned to its king cannot legally move; pile up on it.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **pin**: a bishop, rook or queen attacks a piece that shields a more valuable piece behind it. If the piece behind is the **king**, the pin is **absolute**: the pinned piece may not leave the line, because that would expose the king. Pinned pieces are poor defenders and easy targets. Attack them again, preferably with a pawn."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/1p3ppp/2n5/1B6/3P4/8/5PPP/6K1 w - - 0 1",
+      "md": "The c6-knight is pinned to the e8-king by the b5-bishop.",
+      "arrows": [
+        [
+          "b5",
+          "e8",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4k3/1p3ppp/2n5/1B6/3P4/8/5PPP/6K1 w - - 0 1",
+      "prompt": "Win the pinned knight.",
+      "solution": [
+        "d5"
+      ],
+      "explain": "d5 attacks the knight, which cannot move. Bxc6+? would only trade (bxc6), but the pawn wins the knight outright."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/3n4/8/1B2b3/8/5N2/8/6K1 w - - 0 1",
+      "prompt": "The d7-knight seems to defend e5, but it is pinned. Win the bishop.",
+      "solution": [
+        "Nxe5"
+      ],
+      "explain": "The knight cannot recapture, since Nxe5 would expose the king on e8. A pinned piece does not really defend."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/5ppp/4q3/8/8/2N5/5PPP/R4K2 w - - 0 1",
+      "prompt": "Pin the queen to the king.",
+      "solution": [
+        "Re1"
+      ],
+      "explain": "Re1 pins the queen along the e-file. She can only take the rook (Qxe1+ Kxe1), so White wins queen for rook."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPPP3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4",
+      "prompt": "You are Black. The e4-pawn is defended only by a pinned knight. Take it.",
+      "solution": [
+        "Nxe4"
+      ],
+      "explain": "The c3-knight is pinned to the king by the b4-bishop, so it cannot recapture. A free pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "Can an absolutely pinned piece ever move?",
+      "choices": [
+        "Only along the line of the pin (or to capture the pinner)",
+        "Never",
+        "Yes, anywhere"
+      ],
+      "answer": 0,
+      "explain": "A pinned queen or rook can slide along the pin line. That is why the queen in the Re1 example could still take the rook."
+    },
+    {
+      "type": "quiz",
+      "question": "What is the difference between an absolute and a relative pin?",
+      "choices": [
+        "Absolute: pinned to the king (moving is illegal). Relative: pinned to a piece (moving is legal but costly)",
+        "There is none",
+        "Relative pins only involve pawns"
+      ],
+      "answer": 0,
+      "explain": "Relative pins can be broken, sometimes brilliantly (see Legal's mate later)."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which pieces can pin?",
+      "choices": [
+        "Bishops, rooks and queens",
+        "Knights",
+        "Pawns and kings"
+      ],
+      "answer": 0,
+      "explain": "Only line pieces pin."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: best way to exploit a pinned piece?",
+      "choices": [
+        "Attack it again, ideally with a pawn",
+        "Ignore it",
+        "Trade off the pinning piece"
+      ],
+      "answer": 0,
+      "explain": "Pile up on the pinned piece."
+    }
+  ],
+  "practiceThemes": [
+    "pin"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#pin",
+    "knowledge-base/03-chess-knowledge/rules.md#king-moves-and-check"
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "adult.s2.blunder-check",
+  "track": "adult",
+  "stage": 2,
+  "order": 8,
+  "skillIds": [
+    "calculation.blunder-check"
+  ],
+  "title": "Blunder check: real chess vs hope chess",
+  "summary": "Before you move, look at your opponent's checks, captures and threats in the position after it.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Hope chess** = playing a move and hoping nothing bad happens. **Real chess** = before releasing the piece, picturing the position after your move and asking:\n\n1. Does my move leave anything hanging (a piece, or mate)?\n2. What **checks, captures and threats** will my opponent have?\n3. Did my move remove a defender or open a line to my king?\n\nThis safety check is the biggest single skill gain between about 1000 and 1600."
+    },
+    {
+      "type": "quiz",
+      "question": "Black wants to grab White's queen with 5...Bxd1. Blunder check: what does White have after it?",
+      "choices": [
+        "6.Bxf7+ Ke7 7.Nd5#, checkmate",
+        "Nothing; Black simply wins the queen",
+        "6.Kxd1 and equal material"
+      ],
+      "answer": 0,
+      "explain": "This is Legal's mate. Winning the queen was hope chess; a blunder check reveals the mate.",
+      "fen": "rn1qkbnr/ppp2p1p/3p2p1/4N3/2B1P1b1/2N5/PPPP1PPP/R1BQK2R b KQkq - 0 5"
+    },
+    {
+      "type": "move",
+      "fen": "rnb2rk1/ppp2ppp/3b4/7q/3p4/5N2/PPP2PPP/RNBQ1RK1 w - - 0 10",
+      "prompt": "Win back the d4-pawn. Blunder-check first: one capture loses on the spot.",
+      "solution": [
+        "Qxd4"
+      ],
+      "hint": "Which white piece keeps h2 safe?",
+      "explain": "Qxd4 is safe. Nxd4?? takes the knight away from f3, where it was blocking the queen and bishop aimed at h2, and ...Qxh2# follows."
+    },
+    {
+      "type": "quiz",
+      "question": "White is considering 4.Nxe5 (winning a pawn). Blunder check?",
+      "choices": [
+        "4...Qg5! hits the knight and g2. The pawn grab is risky",
+        "Safe, Black has nothing",
+        "Black mates at once with Qh4"
+      ],
+      "answer": 0,
+      "explain": "This is the Blackburne-Shilling trap. After 4.Nxe5? Qg5 5.Nxf7?? Qxg2 Black wins. Simply 4.Nxd4 or 4.O-O is better.",
+      "fen": "r1bqkbnr/pppp1ppp/8/4p3/2BnP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1ppp/8/4p3/2BnP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "prompt": "Play a safe, sensible move here (don't touch e5).",
+      "solution": [
+        "Nxd4"
+      ],
+      "alternatives": [
+        "O-O",
+        "c3",
+        "Nc3",
+        "d3"
+      ],
+      "explain": "Nxd4 exd4 removes the annoying knight. O-O and c3 are also safe. The point is to resist the poisoned pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "In which order should you check your opponent's replies?",
+      "choices": [
+        "Checks, then captures, then threats",
+        "Threats, then pawn moves",
+        "Only captures"
+      ],
+      "answer": 0,
+      "explain": "Forcing moves first: they leave you the least choice."
+    },
+    {
+      "type": "quiz",
+      "question": "You have found a strong-looking move. What is the last thing to do before playing it?",
+      "choices": [
+        "A final blunder check of the resulting position",
+        "Play it quickly before you forget",
+        "Look for a different plan"
+      ],
+      "answer": 0,
+      "explain": "Every move, a final \"is it safe?\" scan."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is \"hope chess\"?",
+      "choices": [
+        "Making a move without checking the opponent's forcing replies",
+        "Playing for a swindle",
+        "Playing an opening you do not know"
+      ],
+      "answer": 0,
+      "explain": "Real chess = you check the opponent's forcing replies before you move."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: your knight on f3 is the only piece covering h2 from a queen-and-bishop battery. What happens if it moves?",
+      "choices": [
+        "It may allow mate on h2",
+        "Nothing",
+        "The knight is trapped"
+      ],
+      "answer": 0,
+      "explain": "Moving a defender removes its protection. That is exactly what the blunder check catches."
+    }
+  ],
+  "practiceThemes": [
+    "hangingPiece"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md#blunder-check",
+    "knowledge-base/02-methods/heisman-thought-process-and-real-chess.md#2-hope-chess-vs-real-chess",
+    "knowledge-base/02-methods/heisman-thought-process-and-real-chess.md#3-the-structured-thought-process-simplified-composite"
+  ]
+}

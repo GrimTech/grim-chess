@@ -1,0 +1,122 @@
+{
+  "id": "kids.1.rook-roads",
+  "track": "kids",
+  "stage": 1,
+  "order": 102,
+  "skillIds": [
+    "rules.pieces.rook"
+  ],
+  "title": "Rook roads",
+  "summary": "The rook moves in straight lines: up, down, left and right.",
+  "estMinutes": 5,
+  "minAge": 4,
+  "steps": [
+    {
+      "type": "text",
+      "md": "This is the **rook**. It looks like a little castle tower. It moves in **straight lines**."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/3R4/8/8/4K3 w - - 0 1",
+      "md": "Up, down, left, right. As far as it wants!",
+      "arrows": [
+        [
+          "d4",
+          "d8"
+        ],
+        [
+          "d4",
+          "d1"
+        ],
+        [
+          "d4",
+          "a4"
+        ],
+        [
+          "d4",
+          "h4"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/7k/8/8/8/8/7K/R7 w - - 0 1",
+      "prompt": "Slide the rook up to the star!",
+      "solution": [
+        "Ra6"
+      ],
+      "explain": "Zoom! Straight up.",
+      "arrows": [
+        [
+          "a1",
+          "a6",
+          "yellow"
+        ]
+      ],
+      "hint": "Go straight up the side."
+    },
+    {
+      "type": "move",
+      "fen": "8/7k/8/8/8/8/7K/R7 w - - 0 1",
+      "prompt": "Now slide the rook across to the star!",
+      "solution": [
+        "Re1"
+      ],
+      "explain": "Nice sliding!",
+      "arrows": [
+        [
+          "a1",
+          "e1",
+          "yellow"
+        ]
+      ],
+      "hint": "Go sideways along the bottom row."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/3P4/8/3R4/8/8/4K3 w - - 0 1",
+      "md": "A rook cannot jump. Pieces in the way **block** the road.",
+      "arrows": [
+        [
+          "d4",
+          "d5",
+          "green"
+        ]
+      ],
+      "highlights": [
+        "d6"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "7R/8/2k5/8/8/2K5/8/8 w - - 0 1",
+      "prompt": "Bring the rook all the way down to the star!",
+      "solution": [
+        "Rh1"
+      ],
+      "explain": "All the way down. Super!",
+      "arrows": [
+        [
+          "h8",
+          "h1",
+          "yellow"
+        ]
+      ],
+      "hint": "Straight down the h-road."
+    },
+    {
+      "type": "quiz",
+      "question": "How does the rook move?",
+      "choices": [
+        "In straight lines",
+        "On diagonals",
+        "Like an L"
+      ],
+      "answer": 0,
+      "explain": "Straight lines, just like a road."
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "adult.s3.blocked-king-queen-mates",
+  "track": "adult",
+  "stage": 3,
+  "order": 25,
+  "skillIds": [
+    "checkmate.blocked-king-queen"
+  ],
+  "title": "Queen mates against a blocked king: epaulette, dovetail, swallow's tail",
+  "summary": "When the king's own pieces occupy its flight squares, a single queen check can be mate. Recognise the three shapes.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "- **Epaulette**: the king's neighbours on the same rank are its own pieces (like shoulder pads); the queen mates from two squares in front.\n- **Dovetail** (Cozio): the queen mates diagonally adjacent, protected, and the two squares behind the king are blocked by its own pieces.\n- **Swallow's tail**: the queen mates from directly in front, protected, with the two diagonal-rear squares blocked."
+    },
+    {
+      "type": "move",
+      "fen": "3rkr2/p7/8/8/8/1Q6/P4PP1/6K1 w - - 0 30",
+      "prompt": "Epaulette mate in one.",
+      "solution": [
+        "Qe6#"
+      ],
+      "explain": "Qe6#: the rooks on d8 and f8 are the epaulettes; the queen covers d7, e7 and f7."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/1p2Q2p/1q2p1k1/8/6PP/8/6K1 w - - 8 43",
+      "prompt": "White to move: mate in two. Black's king is cramped by its own pawns.",
+      "solution": [
+        "h4+",
+        "Kh5",
+        "Qf5#"
+      ],
+      "explain": "h4+! Kh5 Qf5#: the queen covers g4, g5 and g6, the h4-pawn is protected by the g3-pawn, and h6 is blocked by Black's own pawn. The king is smothered on the edge by its own pawn (Lichess tags it as an epaulette mate)."
+    },
+    {
+      "type": "move",
+      "fen": "3r4/p5pk/1p1p1p2/2pQ4/2P5/PP2r1P1/2q2PK1/1R6 w - - 0 30",
+      "prompt": "White to move: mate in two. Drive the king to g6.",
+      "solution": [
+        "Rh1+",
+        "Kg6",
+        "Qh5#"
+      ],
+      "explain": "Rh1+! Kg6 Qh5#: a dovetail mate. The queen on h5 is protected by the rook, and the king's own pawns on f6 and g7 block the squares behind it."
+    },
+    {
+      "type": "move",
+      "fen": "8/5p2/6p1/7p/1Q3P2/6PP/2p1kPK1/3q4 w - - 7 50",
+      "prompt": "White to move: mate in two. A queen endgame, but the king walks into a dovetail.",
+      "solution": [
+        "Qe4+",
+        "Kd2",
+        "Qe3#"
+      ],
+      "explain": "Qe4+! Kd2 Qe3#: the queen mates diagonally adjacent to the king, protected by the f2-pawn, while Black's own pawn on c2 and queen on d1 occupy the squares behind the king: a dovetail."
+    },
+    {
+      "type": "move",
+      "fen": "7k/pp4pp/2p5/2P3K1/3PB1P1/5Q2/PP5q/8 b - - 2 33",
+      "prompt": "Black to move: mate in two. A swallow's-tail finish.",
+      "solution": [
+        "Qh6+",
+        "Kf5",
+        "Qf6#"
+      ],
+      "explain": "...Qh6+! Kf5 ...Qf6#: the queen mates from directly in front of the king, protected by the g7-pawn, and White's own bishop on e4 and pawn on g4 fill the two diagonal-rear squares: the swallow's tail."
+    },
+    {
+      "type": "move",
+      "fen": "rnb4r/ppp3k1/4p2p/6pQ/3bqB2/8/PPP3PP/R4R1K w - - 0 17",
+      "prompt": "White to move: mate in two. Deflect Black's queen first.",
+      "solution": [
+        "Be5+",
+        "Qxe5",
+        "Qf7#"
+      ],
+      "explain": "Be5+! Qxe5 Qf7#: the bishop check deflects Black's queen from the b1-h7 diagonal, where it guarded g6 and h7. The queen on f7 is protected by the f1-rook, and Black's own pawn on h6 and rook on h8 block the king."
+    },
+    {
+      "type": "quiz",
+      "question": "A black king on e8 with rooks on d8 and f8. A white queen lands on e6. Which pattern is this?",
+      "choices": [
+        "Dovetail",
+        "Epaulette",
+        "Swallow's tail",
+        "Boden"
+      ],
+      "answer": 1,
+      "explain": "Pieces on both sides of the king on the same rank: epaulettes."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what do all three patterns have in common?",
+      "choices": [
+        "The king is blocked by its own pieces, so a single protected queen check is enough",
+        "They all need two rooks",
+        "They only happen in the opening",
+        "The queen must be unprotected"
+      ],
+      "answer": 0,
+      "explain": "Before you defend with \"my pieces are next to my king\", check which squares they actually take away from it."
+    }
+  ],
+  "practiceThemes": [
+    "epauletteMate",
+    "dovetailMate",
+    "swallowstailMate"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#epaulette-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#dovetail-mate-cozios-mate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#swallows-tail-mate-guéridon-mate",
+    "Cozio, Il giuoco degli scacchi (1766)",
+    "Renaud & Kahn, The Art of the Checkmate (1953)",
+    "Lichess puzzle database (CC0): 2lg7M, 5Smba, 0GhM8, 251HT, 4lRvP, 6gv7u"
+  ]
+}

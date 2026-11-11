@@ -1,0 +1,98 @@
+{
+  "id": "adult.s3.open-and-half-open-files",
+  "track": "adult",
+  "stage": 3,
+  "order": 39,
+  "skillIds": [
+    "strategy.open-files"
+  ],
+  "title": "Open and half-open files",
+  "summary": "Rooks belong on open files. Double them, invade the 7th rank, and use half-open files against backward or isolated pawns.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A file without pawns is **open**; a file with only enemy pawns is **half-open** for you. Rook plan (Nimzowitsch): **occupy** the open file, **double** if possible, then **invade** the 7th or 8th rank where pawns and the king are exposed. Half-open files point at targets: the c-file in the Sicilian, the e-file against a backward e6-pawn."
+    },
+    {
+      "type": "move",
+      "fen": "r4rk1/pb1nqppp/1p2p3/3p4/3P4/1P2PN2/PB1Q1PPP/R4RK1 w - - 0 30",
+      "prompt": "The c-file is fully open. Occupy it first.",
+      "solution": [
+        "Rfc1"
+      ],
+      "explain": "Rfc1 (or Rac1): the first rook on the open file controls c7 and c8 and can be doubled. Whoever owns the open file often decides the middlegame.",
+      "alternatives": [
+        "Rac1"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Both sides have a rook on the open c-file, facing each other. What is a typical way to win the file?",
+      "choices": [
+        "Retreat your rook",
+        "Double rooks (or add the queen) so your rook is protected and the opponent must trade or yield",
+        "Push the c-pawn",
+        "Ignore the file"
+      ],
+      "answer": 1,
+      "explain": "Doubling gives you the last word in the exchanges on the file."
+    },
+    {
+      "type": "board",
+      "fen": "3r2k1/ppR2ppp/4p3/8/8/4P3/PP3PPP/6K1 w - - 0 30",
+      "md": "A rook on the 7th (\"pig on the seventh\") attacks pawns from the side, where they cannot defend each other, and cuts the king off on the 8th rank.",
+      "highlights": [
+        "b7",
+        "a7",
+        "f7"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Your rook stands on an open file but every entry square (c7, c8) is covered. What is the usual next step?",
+      "choices": [
+        "Leave the file",
+        "Double rooks on the file (or bring the queen behind), then force the entry or trade on your terms",
+        "Push the a-pawn",
+        "Trade the rook at once"
+      ],
+      "answer": 1,
+      "explain": "Occupation alone is not enough: doubling creates the pressure that eventually forces an entry to the 7th or 8th rank."
+    },
+    {
+      "type": "quiz",
+      "question": "In the Sicilian (Open variation), which file is half-open for Black and what does Black do with it?",
+      "choices": [
+        "The d-file: double rooks there",
+        "The c-file: put a rook on c8 and press against c3/c2",
+        "The e-file: nothing",
+        "The h-file: attack the king"
+      ],
+      "answer": 1,
+      "explain": "After ...cxd4 Black has a half-open c-file and White a half-open d-file. ...Rc8 and sometimes ...Rxc3 exchange sacrifices are typical."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the three-step rook plan on an open file?",
+      "choices": [
+        "Push, trade, castle",
+        "Occupy, double, invade (7th/8th rank)",
+        "Retreat, wait, attack",
+        "Check, check, check"
+      ],
+      "answer": 1,
+      "explain": "Occupation means nothing until you invade; the 7th rank is the usual target."
+    }
+  ],
+  "practiceThemes": [
+    "middlegame",
+    "endgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#open-files",
+    "knowledge-base/03-chess-knowledge/strategy.md#seventh-rank",
+    "Nimzowitsch, My System",
+    "Yusupov, Build Up Your Chess 2 (exchanges, open files, pawn structure)"
+  ]
+}

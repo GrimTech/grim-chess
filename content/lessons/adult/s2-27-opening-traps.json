@@ -1,0 +1,141 @@
+{
+  "id": "adult.s2.opening-traps",
+  "track": "adult",
+  "stage": 2,
+  "order": 27,
+  "skillIds": [
+    "opening.traps.basic"
+  ],
+  "title": "Classic opening traps",
+  "summary": "Fried Liver, Blackburne-Shilling, Noah's Ark and the Elephant trap: play and avoid them.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Learn traps from **both sides**: to punish mistakes, and so that you never fall into them. Every trap below punishes a natural-looking but careless move."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/ppp2ppp/2n5/3np1N1/2B5/8/PPPP1PPP/RNBQK2R w KQkq - 0 6",
+      "prompt": "Fried Liver: Black recaptured on d5 with the knight. Sacrifice on f7.",
+      "solution": [
+        "Nxf7"
+      ],
+      "alternatives": [
+        "d4"
+      ],
+      "explain": "6.Nxf7! Kxf7 7.Qf3+ drags the king into the open. 6.d4 (the Lolli) is equally strong."
+    },
+    {
+      "type": "move",
+      "fen": "r1bq1b1r/ppp2kpp/2n5/3np3/2B5/8/PPPP1PPP/RNBQK2R w KQ - 0 7",
+      "prompt": "Continue the attack.",
+      "solution": [
+        "Qf3+"
+      ],
+      "explain": "Qf3+ forces the king to e6 to keep the d5-knight. Then Nc3 piles up on the pinned knight."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1ppp/8/4N3/2BnP3/8/PPPP1PPP/RNBQK2R b KQkq - 0 4",
+      "prompt": "Blackburne-Shilling trap: White took the pawn. You are Black; punish it.",
+      "solution": [
+        "Qg5",
+        "Nxf7",
+        "Qxg2",
+        "Rf1",
+        "Qxe4+",
+        "Be2",
+        "Nf3#"
+      ],
+      "explain": "4...Qg5! hits e5 and g2. After 5.Nxf7? Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3# is a smothered mate."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1ppp/8/4p3/2BnP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "prompt": "You are White now. Avoid the trap with a sound move.",
+      "solution": [
+        "Nxd4"
+      ],
+      "alternatives": [
+        "O-O",
+        "c3",
+        "Nc3"
+      ],
+      "explain": "Nxd4 exd4 and O-O (or c3) give White an easy game. The e5-pawn is poisoned."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/2p2ppp/p2p4/1p6/3QP3/1B6/PPP2PPP/RNB1K2R b KQkq - 0 8",
+      "prompt": "Noah's Ark trap: White recaptured with the queen. You are Black; trap the bishop.",
+      "solution": [
+        "c5",
+        "Qd5",
+        "Be6",
+        "Qc6+",
+        "Bd7",
+        "Qd5",
+        "c4"
+      ],
+      "explain": "8...c5! 9.Qd5 Be6 10.Qc6+ Bd7 11.Qd5 c4 and the b3-bishop is trapped by the pawn chain (the \"ark\")."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppn1ppp/5n2/3N2B1/3P4/8/PP2PPPP/R2QKBNR b KQkq - 0 6",
+      "prompt": "Elephant trap: White grabbed the d5-pawn, thinking the f6-knight is pinned. You are Black.",
+      "solution": [
+        "Nxd5",
+        "Bxd8",
+        "Bb4+",
+        "Qd2",
+        "Bxd2+",
+        "Kxd2",
+        "Kxd8"
+      ],
+      "explain": "6...Nxd5! 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8: Black wins a piece. The pin on f6 was only relative."
+    },
+    {
+      "type": "quiz",
+      "question": "What do Legal's mate and the Elephant trap have in common?",
+      "choices": [
+        "Both break a relative pin that the opponent trusted",
+        "Both are smothered mates",
+        "Both start with 1.d4"
+      ],
+      "answer": 0,
+      "explain": "A piece pinned to the queen can still move. Check what happens if it does."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: in the Blackburne-Shilling trap, what is the key Black move after 4.Nxe5?",
+      "choices": [
+        "4...Qg5",
+        "4...Nxf3",
+        "4...d6"
+      ],
+      "answer": 0,
+      "explain": "Hitting e5 and g2 at once."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what traps the bishop in Noah's Ark?",
+      "choices": [
+        "Black pawns on b5, c4 (and a6)",
+        "Black knights",
+        "A rook on the b-file"
+      ],
+      "answer": 0,
+      "explain": "A bishop on b3 hemmed in by a pawn chain."
+    }
+  ],
+  "practiceThemes": [
+    "opening",
+    "attackingF2F7",
+    "trappedPiece"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#opening-traps-and-miniatures",
+    "knowledge-base/03-chess-knowledge/tactics.md#attacking-f2-and-f7",
+    "knowledge-base/03-chess-knowledge/tactics.md#trapped-piece"
+  ]
+}

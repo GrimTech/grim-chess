@@ -1,0 +1,99 @@
+{
+  "id": "adult.s2.smothered-mate",
+  "track": "adult",
+  "stage": 2,
+  "order": 20,
+  "skillIds": [
+    "checkmate.smothered"
+  ],
+  "title": "Smothered mate and Philidor's legacy",
+  "summary": "A knight mates a king hemmed in by its own pieces, often after a queen sacrifice.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Smothered mate**: a knight checks a king that is completely surrounded by its own pieces. Nothing can block a knight check, so if the king cannot move, it is mate.\n\n**Philidor's legacy** forces it: knight checks drive the king to the corner, then a queen sacrifice on g8 forces a rook to block the king's last square."
+    },
+    {
+      "type": "board",
+      "fen": "6rk/5Npp/8/8/8/8/6PP/6K1 b - - 0 1",
+      "md": "Smothered mate: g8, g7 and h7 are blocked by Black's own pieces."
+    },
+    {
+      "type": "move",
+      "fen": "6rk/6pp/8/6N1/8/8/6PP/6K1 w - - 0 1",
+      "prompt": "Mate in one.",
+      "solution": [
+        "Nf7#"
+      ],
+      "explain": "The king is smothered by its own rook and pawns."
+    },
+    {
+      "type": "move",
+      "fen": "4r2k/6pp/1q5N/3Q4/8/8/5PPP/6K1 w - - 4 3",
+      "prompt": "The knight checks have driven the king into the corner. Now the queen sacrifice: mate in two.",
+      "solution": [
+        "Qg8+",
+        "Rxg8",
+        "Nf7#"
+      ],
+      "explain": "Qg8+! The rook must capture (the king cannot, the knight on h6 guards g8), and the rook now blocks g8. Nf7# follows."
+    },
+    {
+      "type": "move",
+      "fen": "4r2k/6pp/1q6/3Q2N1/8/8/5PPP/6K1 w - - 0 1",
+      "prompt": "Now the whole combination: mate in four.",
+      "solution": [
+        "Nf7+",
+        "Kg8",
+        "Nh6+",
+        "Kh8",
+        "Qg8+",
+        "Rxg8",
+        "Nf7#"
+      ],
+      "explain": "Nf7+ Kg8 Nh6+ (double check from knight and queen) Kh8 Qg8+ Rxg8 Nf7#. If 2...Kf8, then Qf7# instead."
+    },
+    {
+      "type": "quiz",
+      "question": "Why is the Nh6+ check so strong?",
+      "choices": [
+        "It is a double check: knight and queen (via d5-g8) both give check, so the king must move",
+        "It wins the rook",
+        "It is mate"
+      ],
+      "answer": 0,
+      "explain": "Against a double check only a king move helps."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what makes a smothered mate possible?",
+      "choices": [
+        "The king is surrounded by its own pieces and a knight checks",
+        "The queen supports a pawn",
+        "Two rooks on the 7th"
+      ],
+      "answer": 0,
+      "explain": "Only a knight can deliver it, because its check cannot be blocked."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: in Philidor's legacy, what is the queen sacrifice for?",
+      "choices": [
+        "To force a rook onto g8, taking the king's last square",
+        "To win the rook",
+        "To avoid stalemate"
+      ],
+      "answer": 0,
+      "explain": "This is a decoy: the enemy rook is lured onto g8, where it blocks its own king."
+    }
+  ],
+  "practiceThemes": [
+    "smotheredMate",
+    "sacrifice"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#smothered-mate",
+    "knowledge-base/03-chess-knowledge/tactics.md#decoy-attraction"
+  ]
+}

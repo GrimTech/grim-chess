@@ -1,0 +1,97 @@
+{
+  "id": "adult.s4.rapid-and-blitz-rules",
+  "track": "adult",
+  "stage": 4,
+  "order": 44,
+  "skillIds": [
+    "rules.rapid-blitz"
+  ],
+  "title": "Rapid and blitz rules (and online differences)",
+  "summary": "What changes in FIDE rapid and blitz, and how online play differs from over-the-board rules.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "FIDE time-control categories (KB rules.md): **standard** 60 minutes or more per player, **rapid** more than 10 and less than 60 minutes, **blitz** 10 minutes or less (increments count x60). Rapid and blitz are played under the Laws with Appendices A and B, which change some details; online play follows each platform's terms and the FIDE Online Chess Regulations."
+    },
+    {
+      "type": "quiz",
+      "question": "A game is played at 15 minutes + 10 seconds per move. Which category is it?",
+      "choices": [
+        "Rapid: 15 + 60 x 10 s = 25 minutes, between 10 and 60",
+        "Blitz",
+        "Standard"
+      ],
+      "answer": 0,
+      "explain": "Count the increment times 60: 15 min + 10 s x 60 = 25 min, so rapid (App. A.1). 3+2 would be blitz (3 + 2 = 5 min)."
+    },
+    {
+      "type": "quiz",
+      "question": "In rapid (App. A), must players record the moves?",
+      "choices": [
+        "Not required: players need not keep score",
+        "Yes, as in standard chess",
+        "Only in the last five minutes"
+      ],
+      "answer": 0,
+      "explain": "Appendix A.2: players need not record the moves. (They lose some claim possibilities based on the scoresheet, so many arbiters recommend recording anyway.)"
+    },
+    {
+      "type": "quiz",
+      "question": "In standard chess, the first completed illegal move gives the opponent two extra minutes. In rapid and blitz?",
+      "choices": [
+        "One extra minute instead of two (App. A.3 / B.3); a second completed illegal move by the same player loses",
+        "The illegal move loses immediately in all cases",
+        "Nothing happens"
+      ],
+      "answer": 0,
+      "explain": "Rapid and blitz apply Article 7 with one minute instead of two. The second completed illegal move loses the game, unless the opponent cannot checkmate by any legal sequence (then it is a draw)."
+    },
+    {
+      "type": "quiz",
+      "question": "An incorrect draw claim (threefold repetition) in a rapid game leads to...",
+      "choices": [
+        "One minute added to the opponent's time, and the game continues",
+        "Loss of the game",
+        "Two minutes added to your own time"
+      ],
+      "answer": 0,
+      "explain": "Art. 9.5 with App. A.3: two minutes in standard become one minute in rapid/blitz, for the opponent. If the claim was based on a written intended move, that move must be played."
+    },
+    {
+      "type": "quiz",
+      "question": "Which of these is typical for **online** play but not for FIDE over-the-board rules?",
+      "choices": [
+        "Premoves and automatic threefold/50-move draws, no touch-move",
+        "Pressing the clock with the same hand that moved",
+        "Flag fall counted as a draw when the opponent cannot mate"
+      ],
+      "answer": 0,
+      "explain": "Online servers make many claims automatic and allow premoves; there is no touch-move. The other two items are OTB rules (Art. 6.2.3 and Art. 6.9); servers apply the insufficient-material rule automatically too."
+    },
+    {
+      "type": "quiz",
+      "question": "Your flag falls in a blitz game, but your opponent has only a king and a knight. What is the result under FIDE rules?",
+      "choices": [
+        "Draw: the opponent cannot checkmate by any legal sequence of moves",
+        "You lose on time",
+        "The game is replayed"
+      ],
+      "answer": 0,
+      "explain": "Art. 6.9: flag fall loses unless the opponent cannot checkmate by any series of legal moves. K+N cannot force or even construct a mate against a bare king, so it is a draw. (With your own pawns on the board, a mate by K+N is possible and you would lose.)"
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Rapid: more than 10, less than 60 minutes; no scoresheet required; penalties of one minute instead of two. Blitz: 10 minutes or less. Online: platform rules, premoves, automatic claims, no touch-move."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#rapid-and-blitz-appendices",
+    "knowledge-base/03-chess-knowledge/rules.md#irregularities-and-illegal-moves",
+    "knowledge-base/03-chess-knowledge/rules.md#common-time-controls",
+    "knowledge-base/03-chess-knowledge/rules.md#incorrect-claims",
+    "FIDE Laws of Chess (2023), Appendices A (Rapid) and B (Blitz)",
+    "FIDE Online Chess Regulations"
+  ]
+}

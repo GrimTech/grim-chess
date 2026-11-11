@@ -1,0 +1,73 @@
+{
+  "id": "kids.8.discovered-attack",
+  "track": "kids",
+  "stage": 3,
+  "order": 801,
+  "skillIds": [
+    "tactics.discovered-attack"
+  ],
+  "title": "Surprise attack",
+  "summary": "Move one piece and uncover an attack from the piece behind it.",
+  "estMinutes": 7,
+  "minAge": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **discovered attack**: move one piece out of the way and the piece **behind** it attacks. Surprise!"
+    },
+    {
+      "type": "board",
+      "fen": "4q3/7k/8/8/4N3/8/8/4R1K1 w - - 0 1",
+      "md": "The knight hides the rook. When the knight jumps, the rook sees the queen.",
+      "arrows": [
+        [
+          "e1",
+          "e8",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4q3/7k/8/8/4N3/8/8/4R1K1 w - - 0 1",
+      "prompt": "Jump with check and uncover the rook!",
+      "solution": [
+        "Nf6+"
+      ],
+      "explain": "Check! And the rook attacks the queen. The knight hits her too!",
+      "alternatives": [
+        "Ng5+"
+      ],
+      "hint": "Knight jump with check."
+    },
+    {
+      "type": "move",
+      "fen": "3k3q/8/8/8/3N4/8/1B6/6K1 w - - 0 1",
+      "prompt": "Jump with check and uncover the bishop!",
+      "solution": [
+        "Ne6+"
+      ],
+      "explain": "The bishop now attacks the queen!",
+      "alternatives": [
+        "Nc6+"
+      ],
+      "hint": "Which jump checks the king?"
+    },
+    {
+      "type": "quiz",
+      "question": "Why is a discovered attack strong?",
+      "choices": [
+        "Two pieces attack at once",
+        "It is always mate"
+      ],
+      "answer": 0,
+      "explain": "The moving piece AND the piece behind attack!"
+    }
+  ],
+  "practiceThemes": [
+    "discoveredAttack"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

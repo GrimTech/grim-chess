@@ -1,0 +1,91 @@
+{
+  "id": "adult.s4.pawn-breaks",
+  "track": "adult",
+  "stage": 4,
+  "order": 19,
+  "skillIds": [
+    "strategy.pawn.breaks"
+  ],
+  "title": "Pawn breaks: the levers of every structure",
+  "summary": "Identify the thematic break of a structure, prepare it, and time it.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **pawn break** (lever) is a pawn advance that challenges an enemy pawn and opens lines. Each structure has one or two thematic breaks; knowing them is half of planning.\n\nMethod: (1) name the structure; (2) list the breaks for both sides; (3) **prepare** your break (support it with pieces, so that after the exchange your pieces land on good squares); (4) **time** it: play it when the resulting open lines favour you, and prevent the opponent's break if you can."
+    },
+    {
+      "type": "quiz",
+      "question": "French Defence structure (White d4-e5, Black d5-e6). Which are Black's thematic breaks?",
+      "choices": [
+        "...c5 and ...f6",
+        "...e5 and ...b5",
+        "...g5 and ...h5"
+      ],
+      "answer": 0,
+      "explain": "Black hits the chain at the base with **...c5** and at the head with **...f6**. White's own breaks are f4-f5 and occasionally c4."
+    },
+    {
+      "type": "quiz",
+      "question": "Open Sicilian (White e4, Black d6/e6 or d6/e5). Which central break is Black's dream?",
+      "choices": [
+        "...d5, freeing the position",
+        "...f5 at any cost",
+        "...a5"
+      ],
+      "answer": 0,
+      "explain": "**...d5** dissolves the backward d-pawn and frees Black's game; in the Sicilian a well-timed ...d5 is usually equal or better for Black. White tries to stop it (Bd3/Nd5, f4-f5, or the Maroczy bind with c4)."
+    },
+    {
+      "type": "board",
+      "fen": "rn1qkbnr/pp2pppp/2p5/3pPb2/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 1 4",
+      "md": "Caro-Kann Advance after 3...Bf5. The bishop is outside the chain; next come ...e6 and the break **...c5**, hitting d4. White's levers are c4 and the kingside expansion g4/h4.",
+      "arrows": [
+        [
+          "c6",
+          "c5",
+          "green"
+        ]
+      ],
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "A break is \"prepared\" when...",
+      "choices": [
+        "you have played it as early as possible",
+        "your pieces support the advance so that after the pawn exchanges they occupy the opened lines and squares",
+        "the opponent has castled"
+      ],
+      "answer": 1,
+      "explain": "An unprepared break often just trades pawns and hands the open file to the opponent. Prepare with rooks behind the break, pieces covering the square the pawn moves to, and your king safe."
+    },
+    {
+      "type": "move",
+      "fen": "7r/3k1rb1/p3q3/1p2P3/3p1PQ1/3P1P1p/PPPB1K1P/4R3 w - - 6 29",
+      "prompt": "White to move. A pawn break with tempo can open the black king. Find it.",
+      "solution": [
+        "f5",
+        "Qxf5",
+        "e6+"
+      ],
+      "explain": "**29.f5!** attacks the queen; after 29...Qxf5 **30.e6+** opens the diagonal of your g4-queen with check (the pawn forks king and rook). Black must move the king and 31.Qxf5 wins the queen. Breaks are strongest when they come with threats."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Name the thematic breaks: French (Black ...c5, ...f6; White f4-f5), Sicilian (Black ...d5, ...b5), Caro-Kann Advance (Black ...c5), King's Indian (Black ...f5, White c5), IQP (White d4-d5), Carlsbad (White b4-b5 minority attack, e3-e4; Black ...c5, ...f5). Typical error: breaking without preparation, so the opened file belongs to the opponent."
+    }
+  ],
+  "practiceThemes": [
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#pawn-breaks",
+    "knowledge-base/03-chess-knowledge/strategy.md#pawn-structure",
+    "knowledge-base/03-chess-knowledge/strategy.md#caro-kann-and-slav-structures",
+    "knowledge-base/03-chess-knowledge/strategy.md#sicilian-structures",
+    "Flores Rios, Chess Structures: A Grandmaster Guide (Quality Chess, 2015)",
+    "Soltis, Pawn Structure Chess (1976)",
+    "Lichess puzzle database (CC0), puzzles 1JkQX"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "adult.s4.seventh-rank",
+  "track": "adult",
+  "stage": 4,
+  "order": 27,
+  "skillIds": [
+    "strategy.seventh-rank"
+  ],
+  "title": "Rooks on the seventh rank",
+  "summary": "Penetrate to the seventh rank, attack pawns from the side, and confine the king.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A rook on the **seventh rank** (second rank for Black) attacks pawns that are still on their starting squares, from the side where they are weakest, and **cuts the king off on the back rank**. Two rooks there (\"pigs\") often force mate or perpetual check; with the enemy king on the eighth rank this is the \"absolute seventh\".\n\nHow to get there: control an **open file**, then use an entry square on it (often supported by a pawn or covered so the opponent cannot contest it)."
+    },
+    {
+      "type": "quiz",
+      "question": "Why is the seventh rank so strong in endgames?",
+      "choices": [
+        "Pawns there have not moved, so they can only be defended by pieces, and the enemy king is confined to the back rank",
+        "Because rooks move faster on the seventh",
+        "Because it is close to promotion"
+      ],
+      "answer": 0,
+      "explain": "Pawns on their starting squares cannot defend each other along a rank; the rook attacks them one by one. Meanwhile the enemy king cannot come forward to help. Capablanca valued a rook on the seventh worth about a pawn."
+    },
+    {
+      "type": "move",
+      "fen": "r5k1/1R1P1pp1/8/8/3p3p/3K1P2/8/8 w - - 0 34",
+      "prompt": "White to move. Your rook is on the seventh and your d-pawn is one step from queening. Find the quiet move that decides.",
+      "solution": [
+        "Rc7",
+        "Kh7",
+        "Rc8"
+      ],
+      "explain": "**34.Rc7!** prepares Rc8+: the rook leaves b7 to a square from which it can check on the back rank. After 34...Kh7 35.Rc8 the rook covers c8/d8 and the pawn queens. The seventh rank and the passed pawn work together."
+    },
+    {
+      "type": "quiz",
+      "question": "Both sides have a rook and an open file. Your opponent offers to trade rooks on the file. When should you avoid the trade and fight for the seventh instead?",
+      "choices": [
+        "When you can occupy the file first and your rook will reach the seventh with tempo or create threats there",
+        "Never, always trade",
+        "Only when you are material down"
+      ],
+      "answer": 0,
+      "explain": "Control of the only open file decides who reaches the seventh. If you can double rooks or occupy the entry square first, keep the rooks; if the opponent controls it, trading may be wise."
+    },
+    {
+      "type": "quiz",
+      "question": "Two rooks on your seventh rank, enemy king on g8, enemy pawns on f7, g7 and h7, no other defenders. What should you look for first?",
+      "choices": [
+        "Checks and captures: Rxf7, Rxg7+ and back-rank ideas often lead to mate or perpetual check",
+        "A slow king walk",
+        "Trading one rook"
+      ],
+      "answer": 0,
+      "explain": "Doubled rooks on the seventh (\"pigs\") eat pawns with gain of tempo and create mating nets against a king trapped on the eighth rank. Calculate the forcing captures first."
+    },
+    {
+      "type": "quiz",
+      "question": "Your rook controls the open d-file, but Black covers d7 and d8 with king and rook. How do you usually get to the seventh rank?",
+      "choices": [
+        "Double rooks on the file, or switch to another open file where the entry square is not covered",
+        "Give up and trade rooks",
+        "Play Rd7 anyway and lose the rook"
+      ],
+      "answer": 0,
+      "explain": "An open file is only useful if it has an **entry square**. Doubling adds an attacker on the entry square; a second open file stretches the defender (Nimzowitsch: the file is the road, the seventh rank is the goal)."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** What two things does a rook on the seventh do? (Attack unmoved pawns, confine the king.) What do you need before you can get there? (Control of an open file and an entry square.)"
+    }
+  ],
+  "practiceThemes": [
+    "rookEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#seventh-rank",
+    "knowledge-base/03-chess-knowledge/strategy.md#open-files",
+    "knowledge-base/03-chess-knowledge/endgames.md#simple-rook-endgames-with-extra-pawn",
+    "Capablanca, Chess Fundamentals (1921)",
+    "Nimzowitsch, My System (1925), the seventh and eighth ranks",
+    "Lichess puzzle database (CC0), puzzles 03aEm"
+  ]
+}

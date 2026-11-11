@@ -1,0 +1,97 @@
+{
+  "id": "adult.s5.bishop-knight-mate",
+  "track": "adult",
+  "stage": 5,
+  "order": 19,
+  "skillIds": [
+    "endgame.mate.bishop-knight"
+  ],
+  "title": "Mate with bishop and knight",
+  "summary": "The Deletang method and the W-manoeuvre: drive the king to the edge, then to the corner of the bishop's colour, and mate within 50 moves.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## The only basic mate you can fail on the clock\n\nK+B+N v K is always a win (except for immediate stalemates or loss of a piece), but the **maximum needs 33 moves** with perfect play, and inaccurate technique runs into the **50-move rule**. It occurs rarely, but learning it trains piece coordination you use everywhere.\n\n**Plan (Deletang):**\n1. **Edge.** King, bishop and knight push the enemy king to an edge (any edge). The bishop and knight form a barrier together; the king does the pushing.\n2. **Right corner.** Mate is only forced in a corner **of the bishop's colour** (light bishop: a8 or h1). If the king runs to the wrong corner, drive it along the edge with the **W-manoeuvre** of the knight (for example Nf7-e5-d7-c5-b7 when driving from h8 to a8 with a light bishop on the 8th rank side).\n3. **Mate.** Typical final net: king a knight's move (or two squares) away, knight covers the corner's flight square, bishop gives the check."
+    },
+    {
+      "type": "board",
+      "fen": "k7/3N4/1K6/3B4/8/8/8/8 b - - 0 1",
+      "md": "**The final picture.** Black is mated on a8: the bishop on d5 checks along the long diagonal, the White king on b6 covers a7, b7 and the knight on d7 covers b8. With a light-squared bishop the mating corners are **a8 and h1**.",
+      "highlights": [
+        "a8",
+        "h1"
+      ],
+      "arrows": [
+        [
+          "d5",
+          "a8",
+          "green"
+        ],
+        [
+          "d7",
+          "b8",
+          "blue"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "You have K+B+N against K with a **dark-squared** bishop. The defending king runs to h8. What do you do?",
+      "choices": [
+        "Drive it to a8: the mate is only possible in a light corner",
+        "Build the mating net on h8: it is a corner of the bishop's colour",
+        "Drive it to h1, the nearest corner of the other colour",
+        "Any corner works equally well"
+      ],
+      "answer": 1,
+      "explain": "h8 is a dark square (as is a1). With a dark-squared bishop those are the mating corners, so the defender has run into the right corner. A defender who knows the technique runs to a8 or h1 instead."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/4k3/8/8/8/8/1N1BK3 w - - 0 1",
+      "goal": "mate",
+      "prompt": "Light-squared bishop, the enemy king in the centre. Mate within 50 moves against full-strength defence (tablebase: mate in 30 with best play). Phase 1: build the barrier and push to an edge.",
+      "maxMoves": 50,
+      "explain": "If you ran out of moves, check where you lost time: usually the king was not close enough, or the knight wandered away from the barrier."
+    },
+    {
+      "type": "text",
+      "md": "## The W-manoeuvre\n\nWith a **light** bishop and the enemy king on **h8** (wrong corner), set up: White king f6, knight f7, bishop on the light squares. The defender tries ...Kg8. The knight walks **f7-e5-d7**, the bishop and king take away the squares behind the fleeing king, and the knight continues **c5-b7** or similar, so that the defending king is escorted along the 8th rank towards a8. The knight's route draws a \"W\" across the board.\n\nKey habits: keep the defending king **boxed** on the edge after every move; use the bishop for **waiting moves** to pass the move (zugzwang); never let the knight be more than two jumps from the king's escape squares."
+    },
+    {
+      "type": "play",
+      "fen": "7k/8/5K2/8/8/8/8/1N1B4 w - - 0 1",
+      "goal": "mate",
+      "prompt": "The king is in the wrong corner (h8 is dark, your bishop is light). Drive it to a8 or h1 and mate. Tablebase: mate in 23 with best play.",
+      "maxMoves": 40
+    },
+    {
+      "type": "quiz",
+      "question": "In K+B+N v K, roughly how many moves does the stronger side need from the worst possible starting position with perfect play?",
+      "choices": [
+        "About 10",
+        "About 20",
+        "33",
+        "More than 50, so it is often a draw"
+      ],
+      "answer": 2,
+      "explain": "The longest K+B+N v K win is 33 moves (tablebase). That leaves a margin under the 50-move rule, but not for aimless manoeuvring."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- In the **Endgames** trainer, play K+B+N v K **five times**: twice with a light bishop, twice with a dark bishop, once from a random position. Target: mate in under 35 moves every time.\n- Repeat the drill after one week and after one month (spaced repetition). Once you can do it under 30 moves without thinking, the skill is stable."
+    }
+  ],
+  "practiceThemes": [
+    "endgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky, Dvoretsky's Endgame Manual (5th ed., 2020)",
+    "de la Villa, 100 Endgames You Must Know",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)",
+    "Deletang, Troisieme traite (1923) - \"triangle\" method"
+  ]
+}

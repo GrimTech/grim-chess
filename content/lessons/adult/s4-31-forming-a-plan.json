@@ -1,0 +1,101 @@
+{
+  "id": "adult.s4.forming-a-plan",
+  "track": "adult",
+  "stage": 4,
+  "order": 31,
+  "skillIds": [
+    "strategy.planning"
+  ],
+  "title": "Forming a plan",
+  "summary": "Imbalances, targets, the right wing, piece regrouping: a five-step procedure for quiet positions.",
+  "estMinutes": 18,
+  "steps": [
+    {
+      "type": "text",
+      "md": "In quiet positions you need a **plan**, not just moves. A practical five-step procedure (Yusupov/Kotov, with Silman's imbalances):\n\n1. **List the imbalances:** minor pieces, pawn structure, space, material, development, open files, king safety.\n2. **Find targets** (weak pawns, holes) and good squares for your pieces.\n3. **Choose the wing/break** that the structure points to.\n4. **Regroup:** improve your worst piece first (Makogonov).\n5. **Re-evaluate** after every structural change (exchange of pawns, trades)."
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3",
+      "md": "Apply the steps to the French Advance. Imbalances: White has kingside space (e5), Black has a bad light-squared bishop but play against d4. Targets: d4 for Black; for White, Black's kingside and the e6/f7 complex. Wings: White kingside, Black queenside.",
+      "highlights": [
+        "d4",
+        "e5"
+      ],
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. Which move starts the plan the structure demands?",
+      "choices": [
+        "3...c5, attacking d4 on the queenside wing",
+        "3...f6, opening the kingside",
+        "3...Bb4+, developing with check"
+      ],
+      "answer": 0,
+      "explain": "The chain points Black to the queenside and the base d4. 3...Bb4+ 4.c3 only drives the bishop back (it belongs on e7 here), and 3...f6 opens Black's own king. Engine check: 3...c5 is clearly best of the three.",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+    },
+    {
+      "type": "quiz",
+      "question": "Step 4 says \"improve your worst piece\". How do you find it?",
+      "choices": [
+        "Ask which piece has the fewest useful squares or does the least work, then find a route for it to a better square",
+        "Move the queen, it is the strongest",
+        "Move the piece that was moved last"
+      ],
+      "answer": 0,
+      "explain": "Typical candidates: a bad bishop, a knight on the rim, a rook on a closed file. Regrouping it often takes several quiet moves; that *is* the plan."
+    },
+    {
+      "type": "quiz",
+      "question": "After a planned exchange, the pawn structure changes (for example, a central pawn trade opens a file). What should you do?",
+      "choices": [
+        "Re-evaluate the imbalances and possibly change the plan",
+        "Continue the original plan regardless",
+        "Offer a draw"
+      ],
+      "answer": 0,
+      "explain": "Plans follow structures. When the structure changes, the targets and the right wing may change too (Steinitz/Kotov: re-evaluate at every transformation)."
+    },
+    {
+      "type": "quiz",
+      "question": "Rook endgame, White to move. Rook trade into a pawn ending, or keep the rooks? Plan by the imbalance: Black has the outside passed a-pawn.",
+      "choices": [
+        "1.Ra1, keeping rooks and putting the rook behind the passed pawn",
+        "1.Rxd8, trading into the pawn ending",
+        "1.Rc1, taking the c-file"
+      ],
+      "answer": 0,
+      "explain": "The decisive imbalance is Black's **outside passed pawn**: in a pawn ending it decoys White's king and Black wins (engine about -8.5). Keeping rooks with **1.Ra1** (behind the passer, Tarrasch rule) leaves White only slightly worse. Your plan must come from the imbalance.",
+      "fen": "3r4/4kppp/8/p7/8/4P1P1/5P1P/3R2K1 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Typical planning error at 1400-1800:",
+      "choices": [
+        "Making one-move threats with no connection to the structure (hope chess), then running out of ideas",
+        "Spending time on the imbalances",
+        "Improving the worst piece"
+      ],
+      "answer": 0,
+      "explain": "A plan links moves; isolated threats that the opponent parries easily usually leave your pieces worse placed. Use the imbalances to choose a target, and let the target choose the moves."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Recite the five planning steps. Apply them to a position from your last game: name two imbalances, one target and one piece to improve."
+    }
+  ],
+  "practiceThemes": [
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#planning",
+    "knowledge-base/03-chess-knowledge/strategy.md#evaluation-elements",
+    "knowledge-base/02-methods/positional-frameworks-nimzowitsch-silman.md#3-silman-how-to-reassess-your-chess-4th-ed-2010",
+    "knowledge-base/02-methods/positional-frameworks-nimzowitsch-silman.md#5-evidence-informed-approach-to-teaching-strategy-on-the-platform",
+    "Silman, How to Reassess Your Chess, 4th ed. (2010)",
+    "Yusupov, Build Up Your Chess 3: Mastery (Quality Chess, 2010), planning",
+    "Kotov, Think Like a Grandmaster (1971), planning"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "adult.s4.knight-vs-bishop",
+  "track": "adult",
+  "stage": 4,
+  "order": 24,
+  "skillIds": [
+    "strategy.knight-vs-bishop"
+  ],
+  "title": "Knight versus bishop",
+  "summary": "Decide minor-piece trades by the pawn structure: closed and fixed favours knights, open and two-winged favours bishops.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Neither minor piece is better in general. Decide by the **structure**:\n\n- **Knight** better: closed centre, fixed pawns, outposts, pawns only on one wing, opponent's bishop bad.\n- **Bishop** better: open position, pawns on **both wings**, passed pawns (the bishop stops them from afar and supports its own), fast play across the board.\n\nSo the question before trading a bishop for a knight (or allowing it) is: \"Will the position be open or closed? Where will the pawns be?\""
+    },
+    {
+      "type": "quiz",
+      "question": "Pawns on both wings, open centre, endgame. Which minor piece is usually better?",
+      "choices": [
+        "The bishop",
+        "The knight",
+        "They are equal"
+      ],
+      "answer": 0,
+      "explain": "A bishop crosses the board in one move; a knight needs several moves to switch wings. With pawns on both sides, the bishop covers both. Typical error: trading a good bishop for a knight just because \"the knight was annoying\"."
+    },
+    {
+      "type": "quiz",
+      "question": "Closed position, all pawns fixed on the bishop's colour, a protected outpost for the knight. Which piece is better?",
+      "choices": [
+        "The knight",
+        "The bishop",
+        "It depends only on the kings"
+      ],
+      "answer": 0,
+      "explain": "Fixed pawns on the bishop's colour make it bad, and the outpost gives the knight a permanent post. That is the ideal knight position (see the outposts lesson)."
+    },
+    {
+      "type": "move",
+      "fen": "4b3/5k2/p3p1p1/1p1pP1Pp/1P1P1K1P/P2N4/8/8 w - - 0 1",
+      "prompt": "White to move. A good knight against a bad bishop: make the knight work.",
+      "solution": [
+        "Nc5"
+      ],
+      "explain": "**1.Nc5!** attacks a6 and e6. The bishop cannot defend a6 from e8 in time and cannot challenge the knight. Knight versus bad bishop with targets is usually winning."
+    },
+    {
+      "type": "quiz",
+      "question": "You have a bishop against a knight with pawns on both wings. What should you do with your pawns?",
+      "choices": [
+        "Keep the position open and create play on both wings, ideally a passed pawn",
+        "Lock the centre with pawns on the bishop's colour",
+        "Trade all pawns on one wing and leave them on the other"
+      ],
+      "answer": 0,
+      "explain": "Open the position and stretch the knight: two-winged play and passed pawns favour the long-range piece. Locking pawns on your bishop's colour would turn it bad."
+    },
+    {
+      "type": "quiz",
+      "question": "Opening decision: you can play Bb5xc6 (giving up the bishop pair to double Black's pawns). When is this trade good?",
+      "choices": [
+        "When the resulting structure is closed or the doubled pawns are a lasting target, so your knights have good squares",
+        "Always, doubled pawns are always weak",
+        "Never, the bishop pair always wins"
+      ],
+      "answer": 0,
+      "explain": "Trades are judged by the structure that follows. If the position stays closed or the doubled c-pawns become targets, the knights are fine (Nimzo-Indian and Ruy Lopez Exchange ideas). If the position opens, the bishop pair takes over."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** List three conditions that favour the knight and three that favour the bishop. Then explain why 1.Nc5 was strong in the knight-versus-bad-bishop position."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#knight-vs-bishop",
+    "knowledge-base/03-chess-knowledge/endgames.md#bishop-vs-knight-endgames",
+    "Silman, How to Reassess Your Chess, 4th ed. (2010), imbalances: minor pieces, pawn structure, space",
+    "Capablanca, Chess Fundamentals (1921), on minor pieces"
+  ]
+}

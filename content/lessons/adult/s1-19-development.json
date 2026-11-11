@@ -1,0 +1,110 @@
+{
+  "id": "adult.s1.development",
+  "track": "adult",
+  "stage": 1,
+  "order": 19,
+  "skillIds": [
+    "opening.principles.development"
+  ],
+  "title": "Opening principle 2: develop your pieces",
+  "summary": "Knights and bishops out quickly; don't move one piece twice or bring the queen out early.",
+  "estMinutes": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Development** = moving pieces off the back rank to useful squares. Rules of thumb:\n\n- Knights and bishops first, toward the centre (knights before bishops is a good default).\n- Don't move the same piece twice without a reason.\n- Don't bring the queen out early; it gets chased and you lose time.\n\nEach move in the opening is a **tempo** (unit of time). Spend them on development."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "prompt": "Develop a knight with a threat.",
+      "solution": [
+        "Nf3"
+      ],
+      "explain": "Nf3 develops and attacks e5. Black must spend a move defending it."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "prompt": "You are Black. Defend e5 by developing a knight.",
+      "solution": [
+        "Nc6"
+      ],
+      "explain": "Nc6 defends e5 and develops toward the centre. 2...d6 also defends but is more passive."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "prompt": "Develop a bishop to an active square.",
+      "solution": [
+        "Bc4"
+      ],
+      "alternatives": [
+        "Bb5"
+      ],
+      "explain": "Bc4 eyes f7 (Italian). Bb5 (Spanish) is equally good."
+    },
+    {
+      "type": "move",
+      "fen": "rnb1kbnr/ppp1pppp/8/3q4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3",
+      "prompt": "Black's queen came out early. Develop with gain of time.",
+      "solution": [
+        "Nc3"
+      ],
+      "explain": "Nc3 develops and attacks the queen, which must move again. You gain a tempo."
+    },
+    {
+      "type": "quiz",
+      "question": "After 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6, which white move breaks the development principles?",
+      "choices": [
+        "4.a4",
+        "4.d3",
+        "4.Nc3",
+        "4.O-O"
+      ],
+      "answer": 0,
+      "explain": "4.a4 does nothing for development or the centre. The others develop, support the centre or castle.",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+    },
+    {
+      "type": "quiz",
+      "question": "Why is 2.Qh5 (after 1.e4 e5) considered dubious?",
+      "choices": [
+        "Black develops with tempo by attacking the queen (e.g. ...Nc6, ...g6, ...Nf6)",
+        "It is illegal",
+        "It loses the queen at once"
+      ],
+      "answer": 0,
+      "explain": "The queen is not lost, but Black gains time hitting it. Early queen sorties tend to cost tempi."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which pieces should usually be developed first?",
+      "choices": [
+        "Knights and bishops",
+        "Rooks",
+        "The queen"
+      ],
+      "answer": 0,
+      "explain": "Minor pieces first; rooks join after castling; the queen later."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is a \"tempo\"?",
+      "choices": [
+        "One move, as a unit of time",
+        "A pawn sacrifice",
+        "A type of check"
+      ],
+      "answer": 0,
+      "explain": "Gaining a tempo = making a useful move that also forces your opponent to waste one."
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#opening-principles",
+    "knowledge-base/03-chess-knowledge/strategy.md#development-and-tempo"
+  ]
+}

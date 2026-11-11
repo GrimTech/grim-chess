@@ -1,0 +1,111 @@
+{
+  "id": "adult.s1.ladder-mate",
+  "track": "adult",
+  "stage": 1,
+  "order": 21,
+  "skillIds": [
+    "checkmate.ladder"
+  ],
+  "title": "The ladder mate",
+  "summary": "Two heavy pieces take turns to push the king to the edge and mate it.",
+  "estMinutes": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "With two rooks (or queen + rook) you can mate without your king. One piece **cuts off** a rank; the other **checks** on the next rank. Then they swap roles, climbing like a ladder until the king hits the edge."
+    },
+    {
+      "type": "board",
+      "fen": "R5k1/1R6/8/8/8/8/8/6K1 b - - 0 1",
+      "md": "The final picture: the rook on b7 cuts off the 7th rank, the rook on a8 checks on the 8th. Mate.",
+      "arrows": [
+        [
+          "b7",
+          "h7",
+          "blue"
+        ],
+        [
+          "a8",
+          "g8",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/4k3/R7/8/8/8/8/1R4K1 w - - 0 1",
+      "prompt": "The a6-rook cuts off the 6th rank. Climb the ladder: check on the 7th.",
+      "solution": [
+        "Rb7+"
+      ],
+      "explain": "Rb7+ drives the king to the 8th rank. The a6-rook keeps guarding rank 6, so the king cannot come back."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/R7/8/8/8/8/8/1R4K1 w - - 0 1",
+      "prompt": "The king is on the back rank. Mate in one.",
+      "solution": [
+        "Rb8#"
+      ],
+      "explain": "The rook on a7 guards the 7th rank, the b-rook checks on the 8th: ladder mate."
+    },
+    {
+      "type": "quiz",
+      "question": "The black king stands next to your rook. What do you do?",
+      "choices": [
+        "Move that rook far away along its rank, then continue the ladder",
+        "Check anyway",
+        "Bring your king"
+      ],
+      "answer": 0,
+      "explain": "If a rook is attacked by the king, swing it to the far side (e.g. to the h-file). The cut-off still holds, and the ladder continues.",
+      "fen": "8/8/8/2k5/R7/8/7K/1R6 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "7k/R7/8/8/8/8/8/1Q4K1 w - - 0 1",
+      "prompt": "Queen and rook work the same way. The rook holds the 7th rank. Mate in one.",
+      "solution": [
+        "Qb8#"
+      ],
+      "alternatives": [
+        "Qh7#"
+      ],
+      "explain": "Qb8# on the back rank, with the rook cutting off the 7th. Qh7#, supported by the rook along the 7th rank, also mates."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/8/4k3/8/8/RR4K1 w - - 0 1",
+      "goal": "mate",
+      "prompt": "Mate the king with your two rooks. Use the ladder; you don't need your king.",
+      "maxMoves": 12,
+      "explain": "Cut off, check, swap. Keep the rooks out of the king's reach."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/3k4/8/8/8/QR4K1 w - - 0 1",
+      "goal": "mate",
+      "prompt": "Same idea with queen and rook: ladder mate.",
+      "maxMoves": 12,
+      "explain": "The queen and rook alternate just like two rooks. The queen also covers diagonals, so it is even easier."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: in the ladder mate, what does the \"other\" rook do while one rook checks?",
+      "choices": [
+        "Cuts off the rank behind the king",
+        "Protects the king",
+        "Nothing"
+      ],
+      "answer": 0,
+      "explain": "One cuts off, one checks, then they swap."
+    }
+  ],
+  "practiceThemes": [
+    "mate"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#ladder-mate-two-rooks-or-rook-and-queen",
+    "knowledge-base/03-chess-knowledge/endgames.md#two-rooks-or-kqr-vs-k"
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "adult.s3.semi-open-and-closed-openings",
+  "track": "adult",
+  "stage": 3,
+  "order": 46,
+  "skillIds": [
+    "opening.semi-open-overview",
+    "opening.closed-overview"
+  ],
+  "title": "Semi-open and closed openings: a map",
+  "summary": "The Sicilian, French, Caro-Kann and Scandinavian against 1.e4; the Queen's Gambit, Slav, London and Indian defences against 1.d4. Structures and first moves.",
+  "estMinutes": 18,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Semi-open** (1.e4, Black does not answer ...e5):\n- Sicilian 1...c5: asymmetry, Black gets the half-open c-file.\n- French 1...e6 2.d4 d5: pawn chains, Black's bad light bishop vs counterplay with ...c5/...f6.\n- Caro-Kann 1...c6 2.d4 d5: solid, the light bishop comes out (...Bf5).\n- Scandinavian 1...d5: simple theory, early queen.\n\n**Closed** (1.d4 d5) and **Indian** (1.d4 Nf6):\n- Queen's Gambit Declined (...e6), Slav (...c6), QGA (...dxc4).\n- London System (Bf4, e3, c3): a set-up.\n- King's Indian (...g6, ...d6, ...e5), Nimzo-Indian (...e6, ...Bb4)."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pp2pppp/3p4/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+      "prompt": "Open Sicilian. Take on d4: you trade a wing pawn for White's centre pawn.",
+      "solution": [
+        "cxd4"
+      ],
+      "explain": "...cxd4: Black gains the half-open c-file and a 2-vs-1 central majority (d6/e7 vs e4). That is why the Sicilian is a fighting defence."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pp2pppp/2p5/8/3PN3/8/PPP2PPP/R1BQKBNR b KQkq - 0 4",
+      "prompt": "Caro-Kann Classical. Develop the light-squared bishop before ...e6 locks it in.",
+      "solution": [
+        "Bf5"
+      ],
+      "explain": "...Bf5: the Caro-Kann's main idea compared with the French. The bishop is outside the pawn chain."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 1 3",
+      "prompt": "French Defence. Pin the knight that defends e4 (the Winawer).",
+      "solution": [
+        "Bb4"
+      ],
+      "explain": "...Bb4 pins the c3-knight and increases pressure on e4. The other main lines are 3...Nf6 and 3...dxe4.",
+      "alternatives": [
+        "Nf6",
+        "dxe4"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "prompt": "Queen's Gambit. Decline it solidly, keeping the d5-pawn.",
+      "solution": [
+        "e6"
+      ],
+      "explain": "...e6 (QGD) or ...c6 (Slav) keeps the centre. The QGD bishop on c8 is the problem piece; the Slav solves it with ...Bf5 but commits the c-pawn.",
+      "alternatives": [
+        "c6"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 3",
+      "prompt": "Nimzo-Indian. Pin the knight and fight for e4.",
+      "solution": [
+        "Bb4"
+      ],
+      "explain": "...Bb4: Black controls e4 with pieces and is ready to give the bishop pair for doubled c-pawns."
+    },
+    {
+      "type": "move",
+      "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N2N2/PP2BPPP/R1BQK2R b KQ - 3 6",
+      "prompt": "King's Indian. Strike at the centre.",
+      "solution": [
+        "e5"
+      ],
+      "explain": "...e5, the main break. After d5 the play splits: White on the queenside (c5), Black on the kingside (...f5)."
+    },
+    {
+      "type": "quiz",
+      "question": "Which defence gives Black a half-open c-file and asymmetrical pawns?",
+      "choices": [
+        "French",
+        "Sicilian",
+        "Caro-Kann",
+        "QGD"
+      ],
+      "answer": 1,
+      "explain": "After ...cxd4 the c-file is half-open for Black and the d-file for White."
+    },
+    {
+      "type": "quiz",
+      "question": "London System (1.d4, 2.Bf4, e3, c3, Nf3, Bd3). Its main practical strength at club level?",
+      "choices": [
+        "Sharp forcing theory",
+        "A stable set-up playable against almost anything, with little memorisation",
+        "An early kingside pawn storm",
+        "Winning material by force"
+      ],
+      "answer": 1,
+      "explain": "System openings save study time; the cost is less initiative against well-prepared opponents."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the typical problem piece in the French Defence and the QGD?",
+      "choices": [
+        "Black's king",
+        "Black's light-squared bishop (c8), blocked by ...e6",
+        "Black's queen",
+        "Black's g8-knight"
+      ],
+      "answer": 1,
+      "explain": "Plans with ...b6/...Ba6, ...Bd7-e8-h5 or the ...e5/...c5 breaks exist to free it."
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#volume-b-semi-open-games",
+    "knowledge-base/03-chess-knowledge/openings.md#volume-d-closed-games-and-grünfeld",
+    "knowledge-base/03-chess-knowledge/openings.md#volume-e-indian-defences",
+    "knowledge-base/03-chess-knowledge/strategy.md#sicilian-structures",
+    "knowledge-base/03-chess-knowledge/strategy.md#french-structures",
+    "knowledge-base/03-chess-knowledge/strategy.md#caro-kann-and-slav-structures",
+    "ECO (Encyclopaedia of Chess Openings) classification, volumes A-E",
+    "knowledge-base/02-methods/opening-repertoire-building.md#4-evidence-informed-principles-for-repertoire-work"
+  ]
+}

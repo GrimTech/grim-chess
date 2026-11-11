@@ -1,0 +1,110 @@
+{
+  "id": "adult.s1.knight",
+  "track": "adult",
+  "stage": 1,
+  "order": 6,
+  "skillIds": [
+    "rules.pieces.knight"
+  ],
+  "title": "How the knight moves",
+  "summary": "The L-shaped jump: two squares one way, one square sideways; the only piece that jumps.",
+  "estMinutes": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "The **knight** moves in an **L**: two squares along a rank or file, then one square to the side. It is the only piece that **jumps**: pieces in between do not matter. Every knight move lands on the **opposite colour**. Value: about 3 pawns."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/3N4/8/8/4K3 w - - 0 1",
+      "md": "A knight on d4 reaches eight squares: c6, e6, f5, f3, e2, c2, b3, b5.",
+      "highlights": [
+        "c6",
+        "e6",
+        "f5",
+        "f3",
+        "e2",
+        "c2",
+        "b3",
+        "b5"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/3N4/8/8/4K3 w - - 0 1",
+      "prompt": "Move the knight to e6.",
+      "solution": [
+        "Ne6"
+      ],
+      "explain": "Two up (d4-d6), one right (e6). Or think one right, two up: same square."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/8/3N4/8/8/4K3 w - - 0 1",
+      "prompt": "Move the knight backwards to c2.",
+      "solution": [
+        "Nc2"
+      ],
+      "explain": "Knights move backwards too. Backward knight moves are among the moves players miss most often."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Jump over the pawns: move the b1 knight to c3.",
+      "solution": [
+        "Nc3"
+      ],
+      "explain": "The pawns on b2 and c2 are in the way, but knights jump. Only the knights can move before any pawn has moved."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/7p/8/8/8/8/8/N3K3 w - - 0 1",
+      "prompt": "Bring the knight from a1 to c5 in two moves.",
+      "solution": [
+        "Nb3",
+        "Ke7",
+        "Nc5"
+      ],
+      "hint": "List the knight's two possible first moves and check which one reaches c5.",
+      "explain": "a1-b3-c5. From the corner the knight has only two moves, b3 and c2, and only b3 leads to c5 in one more jump."
+    },
+    {
+      "type": "quiz",
+      "question": "A knight stands on a dark square. Where does it land after one move?",
+      "choices": [
+        "Always a light square",
+        "Always a dark square",
+        "It depends on the direction"
+      ],
+      "answer": 0,
+      "explain": "Every knight move changes colour. So reaching a square of the same colour always takes an even number of moves."
+    },
+    {
+      "type": "quiz",
+      "question": "How many moves does a knight in the corner (a1) have, compared with one in the centre (d4)?",
+      "choices": [
+        "2 vs 8",
+        "4 vs 8",
+        "8 vs 8",
+        "3 vs 6"
+      ],
+      "answer": 0,
+      "explain": "\"A knight on the rim is dim.\" Knights need the centre to be effective."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: can a knight be blocked by a piece standing next to it?",
+      "choices": [
+        "No, it jumps over",
+        "Yes, like a bishop",
+        "Only by pawns"
+      ],
+      "answer": 0,
+      "explain": "Only the destination square matters. It must be empty or hold an enemy piece."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#piece-movement",
+    "knowledge-base/02-methods/steps-method.md#3-didactic-principles"
+  ]
+}

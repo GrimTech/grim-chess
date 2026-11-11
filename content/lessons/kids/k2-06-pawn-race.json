@@ -1,0 +1,74 @@
+{
+  "id": "kids.2.pawn-race",
+  "track": "kids",
+  "stage": 1,
+  "order": 206,
+  "skillIds": [
+    "rules.promotion",
+    "rules.pieces.pawn"
+  ],
+  "title": "Pawn race",
+  "summary": "Pawn Wars rules and a first race to the end.",
+  "estMinutes": 6,
+  "minAge": 6,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Pawn Wars** is a game with only pawns. The first pawn to reach the end **wins**!"
+    },
+    {
+      "type": "board",
+      "fen": "7k/8/8/7p/P7/8/8/2K5 w - - 0 1",
+      "md": "Your pawn and Black's pawn both run. Who gets there first?",
+      "arrows": [
+        [
+          "a4",
+          "a8",
+          "green"
+        ],
+        [
+          "h5",
+          "h1",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "White moves first. Both pawns need 4 steps. Who wins the race?",
+      "choices": [
+        "White",
+        "Black"
+      ],
+      "answer": 0,
+      "explain": "Moving first means you arrive first!",
+      "fen": "7k/8/8/7p/P7/8/8/2K5 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/4p3/3P4/8/8/8/7K w - - 0 1",
+      "prompt": "Capture the pawn in your way!",
+      "solution": [
+        "dxe6"
+      ],
+      "explain": "Road clear!",
+      "hint": "Pawns capture diagonally."
+    },
+    {
+      "type": "play",
+      "fen": "7k/8/8/7p/P7/8/8/2K5 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Race! Push your pawn every move.",
+      "maxMoves": 6,
+      "engineLevel": 6,
+      "explain": "You won the race!"
+    },
+    {
+      "type": "text",
+      "md": "Play more **Pawn Wars** in the Games corner!"
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "adult.s6.sound-gambits-theory",
+  "track": "adult",
+  "stage": 6,
+  "order": 15,
+  "skillIds": [
+    "opening.gambits.sound",
+    "opening.repertoire.theoretical"
+  ],
+  "title": "Sound gambits and a theoretically sound repertoire",
+  "summary": "Long-term compensation in the Benko, Marshall and Catalan, and how to keep 20+ move main lines correct and understood.",
+  "estMinutes": 35,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Three kinds of compensation\n\nA **sound gambit** is one where the engine, given time, shows roughly equal chances despite the missing pawn. The compensation is long-term and specific:\n\n- **Benko Gambit** (1.d4 Nf6 2.c4 c5 3.d5 b5): open a- and b-files, a monster bishop on g7, pressure on a2 and b2 that lasts into the endgame. Black is often happy to trade queens.\n- **Marshall Attack** (Ruy Lopez, 8.c3 d5): a lead in development and a kingside initiative against a white queenside that is still asleep. Pure dynamics: if the attack evaporates, Black is just a pawn down.\n- **Catalan**: White often gives the c4 pawn (4.Bg2 dxc4) for pressure on the long diagonal and on the queenside; usually White wins it back, and the \"gambit\" is about tempo and structure.\n\n**How to judge a gambit position:** count the **time** (developed pieces, castling), the **space and open lines**, and the **structure** (does the compensation survive the exchange of queens?). Benko compensation survives a queen trade; Marshall compensation does not."
+    },
+    {
+      "type": "board",
+      "fen": "r2q1rk1/3nppbp/3p1np1/2pP4/4P3/2N2NP1/PP3PKP/R1BQ3R w - - 5 12",
+      "md": "**Benko Gambit, fianchetto line with Kg2** (1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.bxa6 Bxa6 6.Nc3 d6 7.e4 Bxf1 8.Kxf1 g6 9.g3 Bg7 10.Kg2 O-O 11.Nf3 Nbd7). Black's plan: ...Qa5, ...Rfb8 and ...Rab8 or ...Ra7, knights to b6/e5/g4, pressure on a2 and b2. White's plan: consolidate (Re1, Qc2, Rb1), then e4-e5 or a central advance, and keep the extra pawn for the endgame.",
+      "orientation": "black",
+      "arrows": [
+        [
+          "a8",
+          "a2",
+          "red"
+        ],
+        [
+          "g7",
+          "b2",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In typical Benko middlegames, why is Black often willing to exchange queens?",
+      "choices": [
+        "Because the extra pawn on the queenside is weak for White",
+        "Because the compensation (open a/b files, bishop on the long diagonal, pressure on a2/b2) is structural and does not depend on attacking the king",
+        "Because Black wants a draw",
+        "Because the queen is badly placed on a5"
+      ],
+      "answer": 1,
+      "explain": "Benko compensation is positional and long-term. That is why the gambit is respected even at the top: an exchange of queens does not end the pressure on the queenside.",
+      "fen": "r2q1rk1/3nppbp/3p1np1/2pP4/4P3/2N2NP1/PP3PKP/R1BQ3R w - - 5 12"
+    },
+    {
+      "type": "board",
+      "fen": "5rk1/5ppp/p1pbr3/1p1n4/3P2b1/1BPQB1Pq/PP1N1P1P/R3R1K1 w - - 7 18",
+      "md": "**Marshall Attack, main line** (…12.d4 Bd6 13.Re1 Qh4 14.g3 Qh3 15.Be3 Bg4 16.Qd3 Rae8 17.Nd2 Re6). Black's queen and bishop hold the light squares around the white king; the rook lift ...Re6-h6/f6 adds a third attacker. White must finish development (a4, Qf1, Bxd5) and neutralise the initiative; if he does, the extra pawn tells.",
+      "orientation": "black",
+      "arrows": [
+        [
+          "e6",
+          "h6",
+          "blue"
+        ],
+        [
+          "h3",
+          "g2",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Which statement about the Marshall Attack is correct?",
+      "choices": [
+        "Black's compensation is mainly the better endgame",
+        "Black has dynamic compensation: development lead and a kingside initiative; if it fades, Black is simply a pawn down",
+        "The Marshall is unsound and refuted by 12.d4",
+        "White should always return the pawn immediately"
+      ],
+      "answer": 1,
+      "explain": "Top-level theory regards the Marshall as fully sound, which is why many Ruy Lopez players avoid it with anti-Marshall lines (8.a4, 8.h3). Its compensation is dynamic, so precise move order knowledge matters.",
+      "fen": "5rk1/5ppp/p1pbr3/1p1n4/3P2b1/1BPQB1Pq/PP1N1P1P/R3R1K1 w - - 7 18"
+    },
+    {
+      "type": "board",
+      "fen": "rn1q1rk1/1bp1bppp/p3pn2/1p6/3P4/5NP1/PPQBPPBP/RN3RK1 b - - 3 10",
+      "md": "**Open Catalan main line** (1.d4 Nf6 2.c4 e6 3.g3 d5 4.Bg2 dxc4 5.Nf3 Be7 6.O-O O-O 7.Qc2 a6 8.Qxc4 b5 9.Qc2 Bb7 10.Bd2). White has regained the pawn; Black has gained queenside space and the bishop on b7 contests the long diagonal. The structure dictates the plans: White aims at c6 and the queenside (Ba5, Rc1, Nbd2-b3), Black at ...Nbd7, ...c5 to free the game."
+    },
+    {
+      "type": "quiz",
+      "question": "You are building a theoretically sound repertoire (20+ moves in main lines). Which practice is most effective?",
+      "choices": [
+        "Memorise engine top lines to move 30 in every branch",
+        "Keep a file per opening with critical lines to 20-25 moves, an evaluation and a plan at each leaf, deeper in forcing lines and shallower in quiet ones; update it from new strong games and engine checks",
+        "Never use an engine for openings",
+        "Play a different opening every tournament"
+      ],
+      "answer": 1,
+      "explain": "Depth should follow forcingness. In quiet lines a plan and a typical structure matter more than move 25; in forcing gambit lines a single forgotten move can lose. Review with spaced repetition and update monthly."
+    },
+    {
+      "type": "play",
+      "fen": "r2q1rk1/3nppbp/3p1np1/2pP4/4P3/2N2NP1/PP3PKP/R1BQ3R w - - 5 12",
+      "goal": "hold",
+      "prompt": "Play the Benko position as Black against a strong engine (level 13) for 25 moves. Goal: keep the compensation alive — do not lose further material. Typical moves: ...Qa5, ...Rfb8, ...Nb6 or ...Ne5.",
+      "maxMoves": 25,
+      "engineLevel": 13,
+      "explain": "Afterwards, check the critical moments with the engine and note whether you kept pressure on a2/b2 or let White consolidate."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n1. Pick **one sound gambit** that fits your repertoire (Benko or Marshall as Black, or a gambit line of the Catalan as White). Study **5 model games** in Guess the move or from a book, then build the main lines to move 20 with plans at each leaf.\n2. In the **Openings** trainer, drill the line until you recall it 3 days in a row.\n3. Play **5 training games** (Play, 15+10 vs a bot at your level) starting from the gambit position; analyse each game before checking with the engine."
+    }
+  ],
+  "practiceThemes": [
+    "opening",
+    "sacrifice"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md",
+    "knowledge-base/02-methods/opening-repertoire-building.md",
+    "knowledge-base/02-methods/engine-use-best-practices.md",
+    "Kasparov, Garry Kasparov on Modern Chess (Benko and Marshall chapters)",
+    "Avrukh, Grandmaster Repertoire 1.d4 (Catalan)"
+  ]
+}

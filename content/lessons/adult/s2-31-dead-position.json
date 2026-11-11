@@ -1,0 +1,107 @@
+{
+  "id": "adult.s2.dead-position",
+  "track": "adult",
+  "stage": 2,
+  "order": 31,
+  "skillIds": [
+    "rules.draws.dead-position"
+  ],
+  "title": "Dead positions and insufficient material",
+  "summary": "When no sequence of legal moves can lead to mate, the game is drawn at once.",
+  "estMinutes": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A game is drawn immediately if **neither side can checkmate by any series of legal moves**: a **dead position**. Classic cases: K v K; K+B v K; K+N v K; K+B v K+B with bishops on the same colour; completely blocked pawn chains.\n\nBut **K+N+N v K is not dead**: mate cannot be forced, but it is possible if the defender blunders, so the game goes on."
+    },
+    {
+      "type": "quiz",
+      "question": "Is this a dead position?",
+      "choices": [
+        "Yes: K+B v K can never mate",
+        "No"
+      ],
+      "answer": 0,
+      "explain": "A single bishop (or knight) cannot mate even with help.",
+      "fen": "8/8/4k3/8/8/2B5/8/4K3 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Is this a dead position?",
+      "choices": [
+        "No: mate with two knights is possible if Black errs",
+        "Yes"
+      ],
+      "answer": 0,
+      "explain": "K+N+N v K cannot be forced, but a mating position exists, so the game is not dead.",
+      "fen": "8/8/4k3/8/8/2N2N2/8/4K3 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Both sides have one bishop, both on dark squares. Dead?",
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "answer": 0,
+      "explain": "Same-coloured bishops can never cover the squares needed for mate. With opposite colours, a (silly) mate is possible, so that is not dead.",
+      "fen": "5b2/8/4k3/8/8/8/8/2B1K3 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Is this pawn wall position dead?",
+      "choices": [
+        "Yes: nothing can ever move through",
+        "No"
+      ],
+      "answer": 0,
+      "explain": "No pawn can move or capture, and neither king can cross: no mate is possible.",
+      "fen": "8/k7/8/p1p1p1p1/P1P1P1P1/8/8/K7 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "8/8/8/4k3/8/2p5/8/1N2K3 w - - 0 1",
+      "prompt": "Black's pawn is dangerous. Capture it to reach a dead position.",
+      "solution": [
+        "Nxc3"
+      ],
+      "explain": "K+N v K: dead position, draw. Sometimes the best a defender can do is remove the last pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "Your flag falls. You have a lone king; your opponent has king and knight. Result?",
+      "choices": [
+        "Draw: the opponent cannot mate by any legal series of moves",
+        "You lose",
+        "You win"
+      ],
+      "answer": 0,
+      "explain": "Flag fall loses only if the opponent could still mate in some way (Art. 6.9)."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: is K+R v K a dead position?",
+      "choices": [
+        "No, it is a win",
+        "Yes"
+      ],
+      "answer": 0,
+      "explain": "Rook and king mate easily (box method)."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which of these is NOT dead?",
+      "choices": [
+        "K+N+N v K",
+        "K+B v K",
+        "K v K"
+      ],
+      "answer": 0,
+      "explain": "Two knights can mate if the defender helps."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#dead-position",
+    "knowledge-base/03-chess-knowledge/rules.md#insufficient-material-on-flag-fall"
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "adult.s8.complete-endgame-mastery",
+  "track": "adult",
+  "stage": 8,
+  "order": 5,
+  "skillIds": [
+    "endgame.dem-mastery"
+  ],
+  "title": "Complete endgame mastery: a DEM-level exam",
+  "summary": "Mixed tablebase-verified test positions across all chapters of Dvoretsky's Endgame Manual, plus play-outs against full-strength defence.",
+  "estMinutes": 40,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## The exam\n\nDEM-level knowledge means you know the result **and** the method of the key positions in every chapter: pawn endings, knight and bishop endings, opposite and same-coloured bishops, rook endings, rook v minor pieces, queen endings and other material relationships. Answer each question below without moving pieces; all answers are tablebase-verified."
+    },
+    {
+      "type": "quiz",
+      "question": "Chapter 1 (pawn endings). White to move: trebuchet on d5/d6. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 2,
+      "explain": "Mutual zugzwang: the side to move loses (tablebase).",
+      "fen": "8/8/2Kp4/3Pk3/8/8/8/8 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Chapter 5 (opposite-coloured bishops). White to move: pawns on b5 and h5. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White wins, but only with 1.h6!; other moves allow ...Be3 blockading both pawns.",
+      "fen": "8/8/3k4/1P5P/8/2K5/8/3B2b1 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Chapter 9 (rook endings). Black to move: Vancura position. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw; the rook attacks a6 from the side.",
+      "fen": "R7/6k1/P4r2/8/8/8/4K3/8 b - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Chapter 11 (rook v bishop). White to move: black king on a8 with a light-squared bishop. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White mates in 2 — the wrong corner.",
+      "fen": "k7/8/1K6/8/2b5/8/8/7R w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Chapter 12 (queen endings). White to move: queen against c-pawn on the 7th, white king far away. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw (stalemate defence with ...Ka1/...Kb1 ideas).",
+      "fen": "7K/8/8/8/8/5Q2/2pk4/8 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Chapter 13 (other material). White to move: queen against rook and pawn in the f7/e6 fortress. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw.",
+      "fen": "8/5pk1/4r3/8/8/3K4/8/7Q w - - 0 1"
+    },
+    {
+      "type": "play",
+      "fen": "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1",
+      "goal": "win",
+      "prompt": "Play-out 1: Saavedra against full-strength defence. Win (tablebase: mate in 26).",
+      "maxMoves": 40
+    },
+    {
+      "type": "play",
+      "fen": "6k1/5r2/4K3/8/8/3B4/8/1R6 b - - 0 1",
+      "goal": "hold",
+      "prompt": "Play-out 2: R+B v R, second-rank defence. Hold for 40 moves against full-strength attack.",
+      "maxMoves": 40
+    },
+    {
+      "type": "play",
+      "fen": "8/8/4k3/8/8/8/8/1N1BK3 w - - 0 1",
+      "goal": "mate",
+      "prompt": "Play-out 3: K+B+N v K. Mate within 40 moves (tablebase: mate in 30).",
+      "maxMoves": 40
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- Work through DEM chapter by chapter: 2 chapters per month, all positions solved before reading the solution, then checked with the tablebase in the **Analysis** board.\n- Every month, repeat this exam until you score 100% and win/hold all play-outs."
+    }
+  ],
+  "practiceThemes": [
+    "endgame",
+    "rookEndgame",
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky's Endgame Manual (5th ed.)",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)"
+  ]
+}

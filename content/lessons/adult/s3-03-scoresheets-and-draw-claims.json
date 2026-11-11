@@ -1,0 +1,119 @@
+{
+  "id": "adult.s3.scoresheets-and-draw-claims",
+  "track": "adult",
+  "stage": 3,
+  "order": 3,
+  "skillIds": [
+    "rules.scoresheet",
+    "rules.draws.claims"
+  ],
+  "title": "Scoresheets, draw offers and draw claims",
+  "summary": "How to record a game, how to offer a draw correctly, and how to claim threefold repetition and the 50-move rule without penalty.",
+  "estMinutes": 12,
+  "steps": [
+    {
+      "type": "text",
+      "md": "In standard (classical) games each player must **write every move, both sides, in algebraic notation** on the scoresheet, move by move. You may not write a move in advance, except to claim a draw. A player with less than **five minutes** and less than **30 seconds increment** may stop recording for the rest of that period."
+    },
+    {
+      "type": "quiz",
+      "question": "Which order is correct during your turn?",
+      "choices": [
+        "Write your move, then play it, then press the clock",
+        "Play the move, press the clock, then record it",
+        "Think, decide, write it in advance, show it to your opponent",
+        "Record only every second move to save time"
+      ],
+      "answer": 1,
+      "explain": "Writing a move in advance is forbidden (Art. 8.1.2), except for a draw claim. Play the move, press the clock, then record it. Most players record their opponent's move while their own clock runs."
+    },
+    {
+      "type": "text",
+      "md": "**Draw offers.** Offer after making your move and **before pressing the clock** (Art. 9.1.2.1). Mark it \"(=)\" on the scoresheet. An offer cannot be withdrawn; it stands until accepted, rejected orally, rejected by touching a piece, or the game ends.\n\n**Claims.** Threefold repetition and the 50-move rule are **not automatic** over the board: the player to move must claim. If the position is *about to* repeat a third time, write your move on the scoresheet, do not play it, and claim to the arbiter."
+    },
+    {
+      "type": "quiz",
+      "question": "When should you offer a draw?",
+      "choices": [
+        "Before making your move, on your own time",
+        "After making your move and before pressing the clock",
+        "After pressing the clock, while your opponent thinks",
+        "At any time; timing does not matter"
+      ],
+      "answer": 1,
+      "explain": "Art. 9.1.2.1. Offering on your opponent's time is a distraction; repeated offers can be penalised as annoying the opponent (Art. 11.5)."
+    },
+    {
+      "type": "move",
+      "fen": "r4rk1/pp3p1p/8/4Q3/8/8/q4PPP/6K1 w - - 0 30",
+      "prompt": "You are two rooks down and Black threatens to break through. Force a repetition with checks: play the sequence until the position after your first check appears again.",
+      "solution": [
+        "Qg5+",
+        "Kh8",
+        "Qf6+",
+        "Kg8",
+        "Qg5+"
+      ],
+      "explain": "Qg5+ Kh8 Qf6+ Kg8 Qg5+: the king can only shuttle between g8 and h8. The position after Qg5+ has now occurred twice. Before playing Qg5+ a third time, write it on your scoresheet, do not play it, and claim the draw (Art. 9.2.1 a).",
+      "hint": "Check on the g-file first; the king has only one square."
+    },
+    {
+      "type": "quiz",
+      "question": "The same position (same side to move, same castling and en passant possibilities) is about to appear for the third time after your move. What exactly do you do?",
+      "choices": [
+        "Play the move, then claim after your opponent replies",
+        "Write the move on the scoresheet, do not play it, and declare to the arbiter that you claim a draw",
+        "Play the move and press the clock; the arbiter will notice",
+        "Ask your opponent to agree that it is a repetition"
+      ],
+      "answer": 1,
+      "explain": "Art. 9.2.1 (a). Alternatively, if the position has just appeared for the third time and you are to move, you can claim immediately (9.2.1 b). Positions count as identical only if the same player is to move and all possible moves are identical, so castling rights and en passant matter."
+    },
+    {
+      "type": "quiz",
+      "question": "You claim a draw by repetition but the arbiter finds it incorrect. What happens in a standard game?",
+      "choices": [
+        "You lose the game",
+        "Your opponent receives two extra minutes and the game continues; if you wrote a move, you must play it",
+        "Nothing happens",
+        "You receive a warning and five minutes are deducted"
+      ],
+      "answer": 1,
+      "explain": "Art. 9.5: an incorrect claim gives the opponent two minutes (one minute in rapid/blitz) and you must play the move you wrote."
+    },
+    {
+      "type": "quiz",
+      "question": "Which draw happens automatically, without any claim?",
+      "choices": [
+        "Threefold repetition",
+        "Fifty moves by each side without a capture or pawn move",
+        "Fivefold repetition or 75 moves by each side without a capture or pawn move",
+        "Perpetual check after three checks"
+      ],
+      "answer": 2,
+      "explain": "Art. 9.6. Threefold and 50-move draws require a claim; fivefold and 75-move draws are automatic. \"Perpetual check\" is not a rule: it is drawn through repetition (or agreement)."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: under which condition may you stop keeping score in a standard game?",
+      "choices": [
+        "When you are winning",
+        "When you have less than five minutes and receive less than 30 seconds increment",
+        "After move 40",
+        "Whenever your opponent agrees"
+      ],
+      "answer": 1,
+      "explain": "Art. 8.4. With 30 seconds increment or more you must keep recording to the end."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#recording-moves-and-notation",
+    "knowledge-base/03-chess-knowledge/rules.md#draw-by-agreement",
+    "knowledge-base/03-chess-knowledge/rules.md#threefold-repetition",
+    "knowledge-base/03-chess-knowledge/rules.md#fifty-move-rule",
+    "knowledge-base/03-chess-knowledge/rules.md#incorrect-claims",
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#draw-offers-and-claims",
+    "FIDE Laws of Chess (2023) Art. 8.1, 8.4, 9.1-9.6"
+  ]
+}

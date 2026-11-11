@@ -1,0 +1,85 @@
+{
+  "id": "adult.s4.space",
+  "track": "adult",
+  "stage": 4,
+  "order": 25,
+  "skillIds": [
+    "strategy.space"
+  ],
+  "title": "Space: use it or lose it",
+  "summary": "With more space, avoid exchanges and expand; when cramped, trade pieces and break with pawns.",
+  "estMinutes": 12,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Space** = the squares controlled behind your pawn front. More space means your pieces can manoeuvre freely while the opponent's pieces step on each other.\n\n- With **more space**: avoid exchanges (each trade relieves the cramped side), keep restricting his breaks, then expand further or switch wings.\n- **Cramped**: seek exchanges, especially of your worst-placed pieces, and prepare the freeing pawn break."
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3",
+      "md": "French Advance: White's e5-pawn grabs space on the kingside: Black's knight cannot use f6 and Black's pieces have fewer squares there. Black's compensation is the counterattack on the base (...c5) and the queenside.",
+      "highlights": [
+        "e5",
+        "f6",
+        "d6"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "You have a clear space advantage. Your opponent offers a trade of knights. As a rule you should...",
+      "choices": [
+        "Avoid the trade if you can keep your pieces active, because exchanges relieve the cramped side",
+        "Always accept, simplification is good",
+        "Trade queens as well"
+      ],
+      "answer": 0,
+      "explain": "Tarrasch: \"the side with less space should seek exchanges\". So the side with more space usually avoids them, unless the trade wins something concrete or leads to a won endgame."
+    },
+    {
+      "type": "quiz",
+      "question": "You are cramped. Which plan is usually correct?",
+      "choices": [
+        "Trade pieces (especially your worst one) and prepare a freeing pawn break",
+        "Keep all pieces and wait",
+        "Attack immediately on the wing where you have the least space"
+      ],
+      "answer": 0,
+      "explain": "Fewer pieces need fewer squares. Combine trades with the freeing break (...c5 or ...f6 in the French, ...e5 or ...c5 in many d4 openings)."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move in the French Advance. Which move fights the space advantage in the right way?",
+      "choices": [
+        "3...c5, undermining the pawns that grab space",
+        "3...Nc6, blocking the c-pawn",
+        "3...f6, opening the king"
+      ],
+      "answer": 0,
+      "explain": "The way to fight space is to attack the pawns that hold it, starting at the base. Engine check: 3...c5 is clearly best of these.",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+    },
+    {
+      "type": "quiz",
+      "question": "Typical error of the side with more space:",
+      "choices": [
+        "Over-extending: pushing pawns so far that they become targets and leave holes behind",
+        "Avoiding exchanges",
+        "Keeping the opponent's breaks under control"
+      ],
+      "answer": 0,
+      "explain": "Pawns that advance too far cannot be supported and leave weak squares behind them. Space must be backed up by pieces."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** What should the side with more space do about exchanges? What two things should the cramped side do? (Trade, especially bad pieces, and prepare the freeing break.)"
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#space",
+    "knowledge-base/03-chess-knowledge/strategy.md#exchanges",
+    "knowledge-base/03-chess-knowledge/strategy.md#centre",
+    "Silman, How to Reassess Your Chess, 4th ed. (2010), imbalances: minor pieces, pawn structure, space",
+    "Tarrasch, The Game of Chess (1931), on space and exchanges"
+  ]
+}

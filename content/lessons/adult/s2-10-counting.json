@@ -1,0 +1,114 @@
+{
+  "id": "adult.s2.counting",
+  "track": "adult",
+  "stage": 2,
+  "order": 10,
+  "skillIds": [
+    "tactics.counting"
+  ],
+  "title": "Counting attackers and defenders",
+  "summary": "Decide whether a capture wins by counting attackers, defenders and piece values.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "To know if you can win a piece, **count**:\n\n- How many of your pieces **attack** it, and how many enemy pieces **defend** it? Include pieces lined up behind one another (x-rays).\n- If attackers > defenders, you can usually win it, provided you **capture with the least valuable piece first**.\n- Also compare values: a pawn defended once is not worth taking with a queen.\n\nEither side may stop capturing at any point in the sequence."
+    },
+    {
+      "type": "quiz",
+      "question": "Can White win the e5-pawn?",
+      "choices": [
+        "No: 2 attackers (Nf3, d4) vs 2 defenders (Nc6, d6)",
+        "Yes, Nxe5",
+        "Yes, dxe5 wins a pawn"
+      ],
+      "answer": 0,
+      "explain": "dxe5 dxe5 is only a pawn trade. Nxe5? Nxe5 dxe5 gives a knight for a pawn.",
+      "fen": "r1bqkbnr/ppp2ppp/2np4/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+    },
+    {
+      "type": "move",
+      "fen": "3q2k1/ppp2ppp/8/3n4/2B5/2N5/PPP1QPPP/6K1 w - - 0 1",
+      "prompt": "The d5-knight is attacked twice and defended once. Win it.",
+      "solution": [
+        "Nxd5"
+      ],
+      "alternatives": [
+        "Bxd5"
+      ],
+      "explain": "Two attackers vs one defender: Nxd5, and if ...Qxd5 then Bxd5. Bxd5 first works equally well."
+    },
+    {
+      "type": "move",
+      "fen": "3r2k1/5ppp/8/3n4/8/8/3R1PPP/3R2K1 w - - 0 1",
+      "prompt": "Doubled rooks count as two attackers. Win the knight.",
+      "solution": [
+        "Rxd5"
+      ],
+      "explain": "The d1-rook backs up the d2-rook (an x-ray). After Rxd5 Rxd5 Rxd5 White is a knight up."
+    },
+    {
+      "type": "quiz",
+      "question": "White plays Qxd5 against a pawn defended by a knight. Net result after ...Nxd5?",
+      "choices": [
+        "-8 (gain 1, lose 9)",
+        "+1",
+        "Even"
+      ],
+      "answer": 0,
+      "explain": "Values matter as much as numbers. Never capture a defended pawn with your queen."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/pp3ppp/5n2/3p4/4P3/2N5/PP3PPP/4K3 w - - 0 1",
+      "prompt": "The d5-pawn is attacked twice (e4, Nc3) and defended once (Nf6). Capture with the right piece.",
+      "solution": [
+        "exd5"
+      ],
+      "alternatives": [
+        "Nxd5"
+      ],
+      "explain": "Least valuable attacker first: exd5 wins a pawn and attacks the knight. Nxd5? also wins a pawn, but the pawn capture is cleaner."
+    },
+    {
+      "type": "quiz",
+      "question": "Three white attackers (pawn, knight, rook) against two black defenders (knight, bishop) on a black knight. Is it a win?",
+      "choices": [
+        "Yes: pawn takes first; whatever recaptures, White comes out ahead",
+        "No, attackers must be equal",
+        "Only if the rook takes first"
+      ],
+      "answer": 0,
+      "explain": "Start with the pawn: you win a knight for a pawn at least, and Black runs out of defenders first."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: with which piece should you start a capture sequence?",
+      "choices": [
+        "The least valuable attacker",
+        "The queen",
+        "The rook"
+      ],
+      "answer": 0,
+      "explain": "If the lowest-value piece is recaptured, you lose the least."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is an x-ray attacker?",
+      "choices": [
+        "A piece standing behind another on the same line, joining the attack after it captures",
+        "A pinned piece",
+        "A piece on the back rank"
+      ],
+      "answer": 0,
+      "explain": "Doubled rooks, or a queen behind a bishop, count as extra attackers."
+    }
+  ],
+  "practiceThemes": [
+    "hangingPiece"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#counting-and-exchanges",
+    "knowledge-base/02-methods/heisman-thought-process-and-real-chess.md#3-the-structured-thought-process-simplified-composite"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "adult.s4.backward-pawns",
+  "track": "adult",
+  "stage": 4,
+  "order": 21,
+  "skillIds": [
+    "strategy.pawn.backward"
+  ],
+  "title": "Backward pawns and the hole in front",
+  "summary": "Fix the backward pawn, pressure it on the half-open file, and occupy the square in front.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **backward pawn** has lost the support of its neighbours (they have advanced or disappeared) and cannot safely advance because the square in front is controlled by an enemy pawn. Two weaknesses come together:\n\n1. the **pawn itself**, a target on a half-open file;\n2. the **hole** in front of it, an ideal square for an enemy piece, best a knight.\n\nPlan against it: fix it (stop it advancing), occupy the hole, then pile up on the file."
+    },
+    {
+      "type": "board",
+      "fen": "r1bqkb1r/5p1p/p1np1p2/1p2p3/4P3/N1N5/PPP2PPP/R2QKB1R w KQkq - 0 10",
+      "md": "Sveshnikov Sicilian after 9...gxf6. Black's d6-pawn is backward: the c- and e-pawns are gone or advanced, and d5 is controlled by White's e4-pawn. **d5** is the hole in front of it. In return Black has the bishop pair and active play, which is why the opening is fully playable.",
+      "highlights": [
+        "d6",
+        "d5"
+      ],
+      "arrows": [
+        [
+          "c3",
+          "d5",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. Which move uses the hole correctly?",
+      "choices": [
+        "10.Nd5, occupying the hole in front of the backward pawn",
+        "10.Be2, developing",
+        "10.Qf3, hitting f6"
+      ],
+      "answer": 0,
+      "explain": "**10.Nd5!** puts the knight on the square no black pawn can attack. Natural developing moves fail tactically here: 10.Be2? b4! forks the c3- and a3-knights, and 10.Qf3? runs into ...Nd4 and ...b4. Engine check: 10.Nd5 is about equal, the others lose material.",
+      "fen": "r1bqkb1r/5p1p/p1np1p2/1p2p3/4P3/N1N5/PPP2PPP/R2QKB1R w KQkq - 0 10"
+    },
+    {
+      "type": "quiz",
+      "question": "Why is a knight the best piece to occupy the hole in front of a backward pawn?",
+      "choices": [
+        "Knights are worth more than bishops",
+        "From a protected central square the knight attacks deep into the enemy camp, cannot be chased by pawns, and blockades the pawn",
+        "Knights cannot be exchanged"
+      ],
+      "answer": 1,
+      "explain": "Nimzowitsch: the blockader should be a piece that also works from the blockading square. A knight on d5 hits c7, e7, f6, b6 and cannot be driven away by pawns. A bishop on d5 can be blocked or traded more easily, and a rook there is too valuable."
+    },
+    {
+      "type": "quiz",
+      "question": "What is the backward pawn's owner's main counter-strategy?",
+      "choices": [
+        "Play the freeing advance (...d5 here) as soon as it works tactically, or exchange the piece that occupies the hole",
+        "Defend it with as many pieces as possible and wait",
+        "Push the neighbouring pawns further"
+      ],
+      "answer": 0,
+      "explain": "Passive defence ties pieces down. The active solution is to **dissolve** the weakness with the pawn advance (...d5 in the Sicilian) or to **trade the blockader** (e.g. ...Be6xd5 or ...Ne7xd5)."
+    },
+    {
+      "type": "quiz",
+      "question": "After 10.Nd5 the knight dominates. What is Black's typical counterplay in this Sveshnikov structure?",
+      "choices": [
+        "...f5 and ...Bg7 with activity, and ...Ne7 to challenge or trade the d5-knight",
+        "Passive defence of d6 with all pieces",
+        "...Nb8 to regroup"
+      ],
+      "answer": 0,
+      "explain": "Black hits back at the e4-pawn (...f5), activates the bishop pair and aims to exchange the blockader (...Ne7xd5 or ...Bb7xd5). Trading the blockader removes the main drawback of the backward pawn.",
+      "fen": "r1bqkb1r/5p1p/p1np1p2/1p1Np3/4P3/N7/PPP2PPP/R2QKB1R b KQkq - 1 10"
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Define a backward pawn and the hole. What are the three steps against it? (Fix, occupy the hole, attack on the file.) What does the defender want? (The freeing advance or trading the blockader.)"
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#backward-pawn",
+    "knowledge-base/03-chess-knowledge/strategy.md#sicilian-structures",
+    "Nimzowitsch, My System (1925), chapters on pawn chains, outposts and the blockade",
+    "Kasparov & Nikitin, Sicilian: ...e6 and ...d6 Systems (1983)"
+  ]
+}

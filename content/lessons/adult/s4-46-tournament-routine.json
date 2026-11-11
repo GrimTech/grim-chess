@@ -1,0 +1,74 @@
+{
+  "id": "adult.s4.tournament-routine",
+  "track": "adult",
+  "stage": 4,
+  "order": 46,
+  "skillIds": [
+    "practical.tournament-routine"
+  ],
+  "title": "Tournament routines",
+  "summary": "Before, during and after the game: preparation, warm-up, in-game habits, recovery, sleep and food.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A routine turns good habits into automatic ones, so your energy goes into the game:\n\n- **Before:** sleep, light meal, hydration; a fresh look at your openings and an easy tactical warm-up (not hard calculation). Know the event rules: default time, draw-offer restrictions, devices.\n- **During:** a fixed thinking routine (blunder check before every move), posture and breathing, time checkpoints (e.g. move 15/30), water and a small snack in long games.\n- **After:** a short analysis (write down your thoughts), then rest. Full analysis later, with the error log."
+    },
+    {
+      "type": "quiz",
+      "question": "The tournament regulations do not mention default time. You arrive 5 minutes late. What happens under the FIDE Laws?",
+      "choices": [
+        "You lose: if not specified, the default time is zero (Art. 6.7.1)",
+        "Your clock is started and you may play",
+        "The game is postponed"
+      ],
+      "answer": 0,
+      "explain": "Without a specific rule the default time is zero. Always arrive early and check the regulations."
+    },
+    {
+      "type": "quiz",
+      "question": "What is a sensible warm-up an hour before a round?",
+      "choices": [
+        "A few easy puzzles and a quick review of your opening files",
+        "Two hours of hard calculation exercises",
+        "Several blitz games online"
+      ],
+      "answer": 0,
+      "explain": "Easy tactics activate pattern recognition without draining energy; hard calculation and blitz tire you or tilt you before the game."
+    },
+    {
+      "type": "quiz",
+      "question": "Your phone is in your pocket during a game. Under most FIDE event rules this...",
+      "choices": [
+        "May be forbidden: Art. 11.3 bans electronic devices in the playing area unless the regulations allow them, and a violation can lose the game",
+        "Is always allowed if it is switched off",
+        "Is only a problem if it rings"
+      ],
+      "answer": 0,
+      "explain": "Know the devices policy of the event. Leave the phone in the bag or at the arbiter's table if required."
+    },
+    {
+      "type": "quiz",
+      "question": "After a hard loss late in the evening, with another round tomorrow morning, which plan is best?",
+      "choices": [
+        "A short note of the critical moments, then food, rest and sleep; full analysis after the event",
+        "Analyse with the engine until 2 a.m.",
+        "Prepare five new openings overnight"
+      ],
+      "answer": 0,
+      "explain": "Sleep and recovery protect the next game; deep analysis can wait. (KB sleep-and-stamina notes.)"
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Write your personal three-part routine (before / during / after) in five lines, and keep it in your scorebook cover."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#tournament-preparation",
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#clock-handling",
+    "knowledge-base/01-learning-science/sleep-fitness-and-tournament-stamina.md#4-tournament-stamina",
+    "knowledge-base/03-chess-knowledge/rules.md#chess-clock",
+    "FIDE Laws of Chess (2023), Art. 6.7 (default time), Art. 11.3 (devices)"
+  ]
+}

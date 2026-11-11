@@ -1,0 +1,92 @@
+{
+  "id": "adult.s4.evaluating-final-positions",
+  "track": "adult",
+  "stage": 4,
+  "order": 10,
+  "skillIds": [
+    "calculation.end-evaluation"
+  ],
+  "title": "Evaluating the end of a line",
+  "summary": "Stop only in a quiet position, then judge material, king safety, activity and structure.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A calculated line is only as good as your judgement of its **final position**. Two rules:\n\n1. **Quiescence:** never stop in the middle of an exchange or when a piece hangs or a check is available. Extend the line until it is quiet.\n2. **Evaluate** with the static factors: material, king safety, piece activity, pawn structure (passed pawns!), and initiative. Also ask: does the side with less material have a forcing continuation?\n\nRough engine scale: about 0.3 = equal, 0.5-1.0 = slight edge, 1.0-2.0 = clear advantage, above 2.0 = winning."
+    },
+    {
+      "type": "quiz",
+      "question": "Your calculation ended here and you count: \"I am a knight up.\" It is **Black to move**. What is the real evaluation?",
+      "choices": [
+        "White is winning, a knight up",
+        "Black is winning: ...Nf3+ forks king and queen",
+        "Equal"
+      ],
+      "answer": 1,
+      "explain": "You stopped in a position that is not quiet: Black has a forcing move. **...Nf3+** forks the king and the d2-queen; after Kg2 Nxd2 Black has won the queen for a knight. Always check the opponent's checks and captures in the final position.",
+      "fen": "4r1k1/pp2qppp/8/4n3/N7/1P4P1/PB1Q1P1P/2R3K1 b - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "A line ends in this pawn endgame. Evaluate.",
+      "choices": [
+        "White is winning: the outside a-pawn decoys the black king",
+        "Equal: same number of pawns on the kingside",
+        "Black is better because his king is more active"
+      ],
+      "answer": 0,
+      "explain": "The **outside passed pawn** is a decisive factor in pawn endings: the black king must go to the a-file to stop it, and White's king then eats the kingside pawns. Pawn endgames are the most concrete endings: count tempi, not general factors.",
+      "fen": "8/5ppp/4k3/8/P7/6P1/5P1P/6K1 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "A line ends here: White is a pawn up with opposite-coloured bishops. Evaluate.",
+      "choices": [
+        "White is winning, a clean extra pawn",
+        "Drawish: Black's dark-squared bishop blockades the a-pawn on dark squares, White has at most a small edge",
+        "Black is better"
+      ],
+      "answer": 1,
+      "explain": "Opposite-coloured bishops in an endgame have a **strong drawing tendency**: the defender blockades on squares of his bishop's colour (here a5/a7 and the b6-a7 diagonal) and the attacker's bishop can never challenge it. One extra pawn is usually not enough.",
+      "fen": "6k1/5p1p/3b2p1/8/P1B5/6P1/5P1P/6K1 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "3r4/4kppp/8/8/P7/6P1/3R1P1P/6K1 w - - 0 1",
+      "prompt": "White to move. You can keep the rooks or trade into a pawn endgame. Evaluate both endpoints, then play the better one.",
+      "solution": [
+        "Rxd8"
+      ],
+      "explain": "**1.Rxd8! Kxd8** gives a pawn ending in which the outside a-pawn wins, exactly as in the previous exercise. Keeping the rooks (1.Re2+ or 1.Ra2) is still good for White, but rook endings with an extra pawn often end in a draw, while this pawn ending is a clean, calculable win. Knowing the evaluation of each endpoint makes the decision easy."
+    },
+    {
+      "type": "quiz",
+      "question": "Which factor do club players most often forget when evaluating the end of a sharp line?",
+      "choices": [
+        "Material",
+        "The opponent's next forcing move and king safety",
+        "The number of pawn islands"
+      ],
+      "answer": 1,
+      "explain": "Material is easy to count; the typical error is ending the line one move too early (a hanging piece, a check, a back-rank weakness) or ignoring that one king is exposed. Pawn islands matter, but rarely decide a tactical line."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** (1) What is a quiet position, and why must a line end in one? (2) Name the five static factors. (3) Which two endgame evaluations did you use today? (Outside passed pawn wins pawn endings; opposite-coloured bishops are drawish.)"
+    }
+  ],
+  "practiceThemes": [
+    "advantage",
+    "crushing",
+    "equality"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md#evaluating-final-positions",
+    "knowledge-base/03-chess-knowledge/calculation.md#calculation-tree",
+    "knowledge-base/03-chess-knowledge/strategy.md#evaluation-elements",
+    "knowledge-base/03-chess-knowledge/endgames.md#outside-passed-pawn",
+    "knowledge-base/03-chess-knowledge/endgames.md#opposite-coloured-bishops-basics",
+    "Dvoretsky & Yusupov, Secrets of Chess Training (Edition Olms, 1996)",
+    "Silman, How to Reassess Your Chess, 4th ed. (2010), imbalances"
+  ]
+}

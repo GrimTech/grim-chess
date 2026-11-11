@@ -1,0 +1,64 @@
+{
+  "id": "kids.7.key-squares",
+  "track": "kids",
+  "stage": 3,
+  "order": 704,
+  "skillIds": [
+    "endgame.pawn.key-squares"
+  ],
+  "title": "Golden squares",
+  "summary": "If your king reaches a key square, the pawn promotes.",
+  "estMinutes": 6,
+  "minAge": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Every pawn has **golden squares** (key squares). If your king reaches one, the pawn will promote!"
+    },
+    {
+      "type": "board",
+      "fen": "7k/8/8/8/4P3/8/8/2K5 w - - 0 1",
+      "md": "For a pawn on e4, the golden squares are d6, e6 and f6: two rows in front.",
+      "highlights": [
+        "d6",
+        "e6",
+        "f6"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/6k1/8/2K5/4P3/8/8/8 w - - 0 1",
+      "prompt": "Step onto a golden square!",
+      "solution": [
+        "Kd6"
+      ],
+      "explain": "Golden! This pawn will promote.",
+      "hint": "One of the stars."
+    },
+    {
+      "type": "quiz",
+      "question": "Your king reaches a golden square. What happens?",
+      "choices": [
+        "The pawn promotes",
+        "It is a draw"
+      ],
+      "answer": 0,
+      "explain": "With best play the pawn becomes a queen."
+    },
+    {
+      "type": "play",
+      "fen": "4k3/8/3K4/8/4P3/8/8/8 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Your king is on a golden square. Make a queen!",
+      "maxMoves": 15,
+      "engineLevel": 6,
+      "explain": "Golden squares win!"
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

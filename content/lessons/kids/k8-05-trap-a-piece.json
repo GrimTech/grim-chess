@@ -1,0 +1,54 @@
+{
+  "id": "kids.8.trap-a-piece",
+  "track": "kids",
+  "stage": 3,
+  "order": 805,
+  "skillIds": [
+    "tactics.trapped-piece"
+  ],
+  "title": "Trap a piece",
+  "summary": "A piece with no safe squares can be trapped and won.",
+  "estMinutes": 6,
+  "minAge": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A piece with **no safe squares** is trapped. Then you can win it!"
+    },
+    {
+      "type": "board",
+      "fen": "6k1/8/8/8/8/8/bPP5/2K5 w - - 0 1",
+      "md": "The black bishop grabbed a pawn on a2. Can it get out?"
+    },
+    {
+      "type": "move",
+      "fen": "6k1/8/8/8/8/8/bPP5/2K5 w - - 0 1",
+      "prompt": "Trap the bishop!",
+      "solution": [
+        "b3"
+      ],
+      "explain": "Trapped! Your king will eat it.",
+      "hint": "Close the door with a pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "A trapped piece is one that…",
+      "choices": [
+        "Has no safe square",
+        "Is in the corner"
+      ],
+      "answer": 0,
+      "explain": "Every square it can go to is attacked."
+    },
+    {
+      "type": "text",
+      "md": "Pieces on the edge get trapped most often. Keep yours in the middle!"
+    }
+  ],
+  "practiceThemes": [
+    "trappedPiece"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

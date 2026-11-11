@@ -1,0 +1,95 @@
+{
+  "id": "adult.s3.rook-pawn-and-wrong-bishop",
+  "track": "adult",
+  "stage": 3,
+  "order": 31,
+  "skillIds": [
+    "endgame.wrong-bishop"
+  ],
+  "title": "The rook pawn and the wrong-coloured bishop",
+  "summary": "King + rook pawn is often a draw, and adding a bishop that does not control the queening square does not help. Know when to defend and when to avoid this ending.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A rook pawn has only one side to pass on, so the defending king in the corner is almost impossible to drive out. **K + rook pawn vs K is a draw** if the defender reaches the corner.\n\nWith K + B + rook pawn vs K, it is still a draw if the bishop **cannot control the queening square** (\"wrong bishop\") and the defending king reaches the corner. Promotion square h8 is dark, so a light-squared bishop is wrong for the h-pawn."
+    },
+    {
+      "type": "board",
+      "fen": "7k/8/6KP/8/8/8/8/1B6 w - - 0 1",
+      "md": "Light bishop, dark h8: the wrong bishop. 1.h7 is stalemate; without that, Black just shuffles between h8 and g8 (or h7/h8). Draw.",
+      "highlights": [
+        "h8"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "White has king, h-pawn and a dark-squared bishop. Black's king is on h8. Is this the \"wrong bishop\"?",
+      "choices": [
+        "Yes: all bishops are wrong for rook pawns",
+        "No: h8 is dark, so a dark-squared bishop controls the queening square and White can win",
+        "Only if the pawn is on h7",
+        "Only if Black is to move"
+      ],
+      "answer": 1,
+      "explain": "Right bishop = bishop of the queening square's colour. a1 and h8 are dark; a8 and h1 are light."
+    },
+    {
+      "type": "play",
+      "fen": "8/5k2/8/6KP/8/8/8/8 b - - 0 1",
+      "goal": "draw",
+      "prompt": "You are Black. Hold the draw against the rook pawn.",
+      "explain": "Head for the corner: ...Kg7 and ...Kh8 (or keep the opposition in front of the pawn). Once your king reaches h8/g8 it cannot be driven away."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/5k2/8/7P/3B2K1/8/8 b - - 0 1",
+      "goal": "hold",
+      "prompt": "You are Black. White's bishop is the wrong colour for the h-pawn. Reach the corner and hold for 20 moves.",
+      "maxMoves": 20,
+      "explain": "Kg7 and Kh8. White's light-squared bishop can never control h8, so the king cannot be evicted: only stalemate or perpetual shuffling remain."
+    },
+    {
+      "type": "play",
+      "fen": "8/6k1/8/8/5K1P/8/8/2B5 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Now the RIGHT bishop: dark squares, dark h8. Promote the pawn.",
+      "explain": "Use the bishop to take the dark squares around h8 (Be3/Bd4, Bg7 checks), drive the king away with your king, then push the pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "You are a bishop and an h-pawn up but your bishop is light-squared. What should you avoid?",
+      "choices": [
+        "Trading the opponent's last pawn on the other wing if that leaves K+B+h-pawn vs K with their king near h8",
+        "Keeping any pawns",
+        "Centralising your king",
+        "Keeping the bishop"
+      ],
+      "answer": 0,
+      "explain": "Before simplifying, check the target ending's result: wrong-bishop endings are a classic way to turn a win into a draw."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which promotion squares are dark?",
+      "choices": [
+        "a8 and h1",
+        "a1 and h8",
+        "All corner squares",
+        "Only h8"
+      ],
+      "answer": 1,
+      "explain": "a1 and h8 are dark; a8 and h1 are light. So for White, a light-squared bishop is right for the a-pawn (a8) and a dark-squared bishop for the h-pawn (h8); for Black it is the other way round."
+    }
+  ],
+  "practiceThemes": [
+    "bishopEndgame",
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#rook-pawn",
+    "knowledge-base/03-chess-knowledge/endgames.md#wrong-coloured-bishop",
+    "de la Villa, 100 Endgames You Must Know",
+    "Silman, Complete Endgame Course (1000-1199 and 1200-1399 sections)",
+    "Dvoretsky's Endgame Manual, ch. 1 (pawn endings)"
+  ]
+}

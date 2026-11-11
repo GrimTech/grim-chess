@@ -1,0 +1,104 @@
+{
+  "id": "adult.s1.mate-in-one",
+  "track": "adult",
+  "stage": 1,
+  "order": 17,
+  "skillIds": [
+    "checkmate.mate-in-1"
+  ],
+  "title": "Mate in one",
+  "summary": "Find one-move checkmates by examining every check.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Method for mate-in-one: **list every check**, then for each check ask the three escape questions (move? capture? block?). The check that answers \"no\" to all three is mate. Don't stop at the first check you see."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/1R4K1 w - - 0 1",
+      "prompt": "White to move: mate in one.",
+      "solution": [
+        "Rb8#"
+      ],
+      "explain": "The back-rank pattern again: Black's own pawns imprison the king."
+    },
+    {
+      "type": "move",
+      "fen": "3k4/8/3K4/8/8/8/8/R7 w - - 0 1",
+      "prompt": "Mate in one with the rook.",
+      "solution": [
+        "Ra8#"
+      ],
+      "explain": "The kings face each other; your king covers c7, d7, e7, and the rook checks along the 8th rank."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2",
+      "prompt": "You are Black. Mate in one.",
+      "solution": [
+        "Qh4#"
+      ],
+      "explain": "Fool's mate, the fastest mate in chess. White's f- and g-pawn moves opened the e1-h4 diagonal, and nothing can block on f2 or g3."
+    },
+    {
+      "type": "move",
+      "fen": "6rk/6pp/8/6N1/8/8/6PP/6K1 w - - 0 1",
+      "prompt": "Mate in one with the knight.",
+      "solution": [
+        "Nf7#"
+      ],
+      "explain": "Smothered mate: the king is surrounded by its own pieces, and a knight check cannot be blocked."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/5ppp/8/8/8/3B3Q/5PPP/6K1 w - - 0 1",
+      "prompt": "Mate in one.",
+      "solution": [
+        "Qxh7#"
+      ],
+      "explain": "The bishop on d3 supports the queen on h7, so the king cannot capture it. The king has no squares left."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/ppp2ppp/2np4/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 0 4",
+      "prompt": "Black played 3...d6, ignoring the threat. Mate in one.",
+      "solution": [
+        "Qxf7#"
+      ],
+      "explain": "Scholar's mate: queen and bishop hit f7, the weakest point in Black's camp, defended only by the king."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the first step in finding a mate in one?",
+      "choices": [
+        "List every check",
+        "Look for captures",
+        "Move the king"
+      ],
+      "answer": 0,
+      "explain": "All mates are checks. Examine every one."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: why can a knight check never be blocked?",
+      "choices": [
+        "Knights jump, so there is no line between",
+        "Knights are worth 3",
+        "They can be blocked"
+      ],
+      "answer": 0,
+      "explain": "This makes knight checks especially dangerous near a crowded king."
+    }
+  ],
+  "practiceThemes": [
+    "mateIn1",
+    "mate",
+    "oneMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#mating-net-skills-beyond-named-patterns",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#back-rank-mate",
+    "knowledge-base/03-chess-knowledge/calculation.md#forcing-moves-first-cct"
+  ]
+}

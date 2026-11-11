@@ -1,0 +1,61 @@
+{
+  "id": "kids.6.castle-early",
+  "track": "kids",
+  "stage": 2,
+  "order": 603,
+  "skillIds": [
+    "opening.principles.king-safety",
+    "rules.castling"
+  ],
+  "title": "Tuck in the king",
+  "summary": "Castle early so the king is safe and the rook joins in.",
+  "estMinutes": 5,
+  "minAge": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Kings like to be **tucked in**. Castle early, then your rook can join the game too."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "prompt": "Castle to keep your king safe!",
+      "solution": [
+        "O-O"
+      ],
+      "explain": "Snug as a bug!",
+      "hint": "Move your king two squares to the right."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 b kq - 0 5",
+      "prompt": "You are Black. Castle too!",
+      "solution": [
+        "O-O"
+      ],
+      "explain": "Both kings are safe now.",
+      "hint": "Move the black king two squares toward the rook on h8."
+    },
+    {
+      "type": "quiz",
+      "question": "Why do we castle?",
+      "choices": [
+        "To keep the king safe and free the rook",
+        "To win a pawn"
+      ],
+      "answer": 0,
+      "explain": "Safe king, active rook!"
+    },
+    {
+      "type": "board",
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 w - - 1 6",
+      "md": "Centre, pieces out, king safe: the three opening rules!"
+    }
+  ],
+  "practiceThemes": [
+    "castling"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

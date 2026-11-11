@@ -1,0 +1,3 @@
+/* Design system entry. tokens.css + components.css come from docs/design (design agent). */
+@import './tokens.css';
+@import './components.css';

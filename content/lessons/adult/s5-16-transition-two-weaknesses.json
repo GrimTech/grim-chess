@@ -1,0 +1,96 @@
+{
+  "id": "adult.s5.transition-two-weaknesses",
+  "track": "adult",
+  "stage": 5,
+  "order": 16,
+  "skillIds": [
+    "strategy.transition-endgame",
+    "strategy.two-weaknesses"
+  ],
+  "title": "Transition to the endgame and the principle of two weaknesses",
+  "summary": "Know the target endgame before you simplify, and win by stretching the defence between two weaknesses.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Choosing the moment to simplify\n\nA transition (exchange of queens or of the last pieces) changes the evaluation permanently. Before you exchange, **know the result of the target endgame**: pawn endings are calculated, rook endings with an extra pawn are often drawn, minor piece endings depend on structure.\n\n**Rules:** exchange when the resulting ending is better for you than the middlegame; keep pieces when your advantage is dynamic (initiative, attack); when ahead in material, trade pieces, not pawns.\n\n## Two weaknesses\n\nOne weakness can usually be defended. The winning method (Nimzowitsch, Shereshevsky): create a **second weakness** on the other side of the board, so the defender's pieces cannot cover both. Then **do not hurry**: improve every piece, use the king, and only then break through."
+    },
+    {
+      "type": "move",
+      "fen": "2k5/5pq1/p3p1pp/1pPp4/1P2nP2/P1r1P3/1Q4PP/1B3RK1 w - - 1 38",
+      "prompt": "White to move. A transition: one exchange decides the character of the ending (Alekhine-Capablanca, World Championship 1927)",
+      "solution": [
+        "Bxe4"
+      ],
+      "orientation": "white",
+      "explain": "**38.Bxe4!** dxe4 — Alekhine gives up the bishop pair to reach a queen ending where his queenside majority (a4 break) creates a passed pawn and Black's e4-pawn becomes a second weakness. Engine main line: 38.Bxe4 dxe4 39.a4 Kd8 40.axb5 axb5. (Alekhine-Capablanca, World Championship 1927; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "2r1k3/p4ppp/bp1rp3/8/1RPP4/3K2P1/P4PBP/1R6 w - - 0 25",
+      "prompt": "White to move. Black has weaknesses on a7 and c-file; add pressure on a second front (Kasparov-Karpov, World Championship 1985)",
+      "solution": [
+        "Ra4"
+      ],
+      "orientation": "white",
+      "explain": "**25.Ra4!** — the rook attacks a7 and prepares to switch, tying Black down on the queenside before the king joins in the centre. Engine main line: 25.Ra4 b5 26.cxb5 Rb8 27.Ke3 Rdb6 28.Ra5 Bb7. (Kasparov-Karpov, World Championship 1985; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "1r4k1/r4ppp/pqp1b3/R2p4/1P1Q4/P3PPP1/2R4P/5BK1 w - - 1 27",
+      "prompt": "White to move. Rubinstein converts by transforming the queenside (Rubinstein-Salwe, Lodz mt 1908)",
+      "solution": [
+        "Rxc6"
+      ],
+      "orientation": "white",
+      "explain": "**27.Rxc6!** — the exchange of the c6-pawn's defender opens the a-file and the c-file; after 27...Qxc6 28.Qxa7 White has a passed b-pawn, a second target on a6, and Black's d5-pawn remains weak. Engine main line: 27.Rxc6 Qxc6 28.Qxa7 Ra8 29.Qc5 Qe8 30.Bxa6 Qd8. (Rubinstein-Salwe, Lodz mt 1908; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "You are a pawn up in a position with queens and rooks. Your opponent offers a queen trade leading to a rook ending with 4 v 3 pawns on the same side. What do you know about that ending?",
+      "choices": [
+        "It is almost always winning",
+        "It is usually a draw with correct defence, so keep the queens unless the ending has extra trumps",
+        "It is lost for the side with more pawns",
+        "It is always a win if you have the move"
+      ],
+      "answer": 1,
+      "explain": "4 v 3 on one side is the textbook drawn rook ending. Know the target result before you simplify."
+    },
+    {
+      "type": "quiz",
+      "question": "You have a weakness to attack on the queenside, but the opponent defends it with king and rook. What is the principle of two weaknesses telling you to do?",
+      "choices": [
+        "Attack the queenside weakness with all pieces until it falls",
+        "Create a second target on the kingside (a pawn break, a passed pawn, an entry square) so that the defender cannot cover both",
+        "Offer a draw",
+        "Exchange all rooks immediately"
+      ],
+      "answer": 1,
+      "explain": "Defenders can hold one point. Stretching the defence across the board is how most \"technical\" endgames are won."
+    },
+    {
+      "type": "play",
+      "fen": "2r1k3/p4ppp/bp1rp3/8/1RPP4/3K2P1/P4PBP/1R6 w - - 0 25",
+      "goal": "win",
+      "prompt": "Play this queenless middlegame as White (Kasparov-Karpov 1985, before 25.Ra4) against the engine (level 12). Attack the first weakness, create a second one, and do not hurry. Success = winning decisive material.",
+      "maxMoves": 40,
+      "engineLevel": 12
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles**: 15 *endgame* puzzles where you must choose to exchange or not (theme *advantage*).\n- **Guess the move**: Alekhine-Capablanca 1927 game 34 (in the corpus) from move 30 to the end — the textbook two-weaknesses technique.\n- In Game review, find your last game where you exchanged queens: was the resulting endgame better for you than the middlegame?"
+    }
+  ],
+  "practiceThemes": [
+    "endgame",
+    "advantage"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "Shereshevsky, Endgame Strategy",
+    "Alekhine-Capablanca, World Championship 1927",
+    "Rubinstein-Salwe, Lodz 1908"
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "adult.s3.what-to-exchange",
+  "track": "adult",
+  "stage": 3,
+  "order": 41,
+  "skillIds": [
+    "strategy.exchanges"
+  ],
+  "title": "Exchanges: what to trade and when",
+  "summary": "Trade when ahead, trade your bad pieces for good ones, trade attackers when defending, and know the endgame you are heading into before you simplify.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Exchange guidelines:\n\n- **Ahead in material**: trade pieces, not pawns.\n- **Behind**: trade pawns, not pieces (fewer pawns = more drawing chances).\n- **Defending**: trade the opponent's attacking pieces. **Attacking**: avoid trades, especially of the queen.\n- Trade your **bad** pieces for the opponent's **good** ones.\n- **Before simplifying into an endgame, know its result** (pawn endings especially)."
+    },
+    {
+      "type": "quiz",
+      "question": "You are a knight up in a middlegame. The opponent offers a queen trade. Generally?",
+      "choices": [
+        "Decline: queens make winning easier",
+        "Accept: fewer pieces make the extra knight count more and remove counterplay",
+        "Only accept if you can also trade pawns",
+        "Resign"
+      ],
+      "answer": 1,
+      "explain": "Simplification magnifies a material advantage and kills the opponent's tactical chances."
+    },
+    {
+      "type": "quiz",
+      "question": "You are a pawn down in a rook endgame. Which trade helps you?",
+      "choices": [
+        "Rook trade into a pawn ending",
+        "Pawn trades, especially on the side where the opponent has the extra pawn",
+        "None",
+        "Trading your king"
+      ],
+      "answer": 1,
+      "explain": "Every pawn trade reduces the winning potential of the extra pawn. Rook trades usually make pawn endings, which are much easier to win for the side with the extra pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "Your bishop is blocked by its own pawns (bad bishop); the opponent has a strong knight on an outpost. Which trade is usually welcome?",
+      "choices": [
+        "Trade your good knight for their bad bishop",
+        "Trade your bad bishop for their good knight",
+        "Trade queens",
+        "Trade rooks"
+      ],
+      "answer": 1,
+      "explain": "Exchange your worst piece for their best one."
+    },
+    {
+      "type": "move",
+      "fen": "4r2k/7q/p7/1p1p4/4R3/1P6/1PP5/2K5 w - - 0 38",
+      "prompt": "White to move. You are a queen down, but look at the pawn ending that the exchanges on the e-file lead to.",
+      "solution": [
+        "Rxe8+",
+        "Qg8",
+        "Rxg8+",
+        "Kxg8",
+        "Kd2"
+      ],
+      "explain": "Rxe8+ Qg8 (forced) Rxg8+ Kxg8 Kd2: White trades everything into a pawn ending, and White's king is far closer to the centre and the d5-pawn, so the pawn ending is winning. Knowing the endgame result is what made the simplification possible."
+    },
+    {
+      "type": "move",
+      "fen": "2r3k1/5ppp/8/P7/8/8/5PPP/3R2K1 w - - 0 30",
+      "prompt": "You are a pawn up with a passed a-pawn. Black's rook is passive. Play the most direct move.",
+      "solution": [
+        "a6"
+      ],
+      "explain": "a6! Advance before Black's rook gets behind the pawn. Trading pawns on the kingside would only help Black; your plan is to use the passer."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what must you know before trading into a pawn endgame?",
+      "choices": [
+        "Nothing: pawn endings are always drawn",
+        "Its result: count the opposition, key squares, outside passers and tempi",
+        "Only the number of pawns",
+        "Whether you have the bishop pair"
+      ],
+      "answer": 1,
+      "explain": "Pawn endings are the most concrete of all: a single tempo decides. Calculate them, do not guess."
+    }
+  ],
+  "practiceThemes": [
+    "advantage",
+    "endgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#exchanges",
+    "knowledge-base/03-chess-knowledge/strategy.md#transitions-to-endgames",
+    "Yusupov, Build Up Your Chess 2 (exchanges, open files, pawn structure)",
+    "Silman, How to Reassess Your Chess (imbalances)",
+    "knowledge-base/03-chess-knowledge/endgames.md#general-endgame-principles"
+  ]
+}

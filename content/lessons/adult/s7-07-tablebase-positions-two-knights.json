@@ -1,0 +1,102 @@
+{
+  "id": "adult.s7.tablebase-positions-two-knights",
+  "track": "adult",
+  "stage": 7,
+  "order": 7,
+  "skillIds": [
+    "endgame.tablebase-key-positions",
+    "endgame.two-knights-vs-pawn"
+  ],
+  "title": "Key tablebase positions; two knights against a pawn",
+  "summary": "Practically important 5-6 piece endings with tablebase-verified results, and the Troitzky line for N+N v P.",
+  "estMinutes": 35,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Tablebases changed endgame theory\n\nSyzygy tablebases give perfect results for all positions with up to 7 pieces. Important results to know:\n- R+P v R: Lucena (win), Philidor and Vancura (draw), short-side defence.\n- Q v R: win; Q v R+P: often a fortress draw.\n- R+B v R: draw in general, wins only in special positions; R+N v R: draw.\n- Q v 2B: often a win but beyond 50 moves (\"cursed win\"); Q v 2N: draw when the knights protect each other.\n- **N+N v P**: two knights cannot mate a bare king, but **with an enemy pawn** they can (the pawn removes stalemate). Rule (Troitzky): if the pawn is blockaded by a knight on or behind the **Troitzky line** (for a black pawn: a4, b6, c5, d4, e4, f5, g6, h4), White wins — though sometimes only after more than 50 moves."
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: the black d-pawn on d4 is blockaded by a knight on d3. Result with best play?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: White wins (mate in 27). The pawn is blockaded on the Troitzky line (d4), so the second knight and the king can build the mate while the pawn is frozen.",
+      "fen": "7k/8/5K2/8/3p4/3N4/8/6N1 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Same material, but the black pawn has reached d3 and is blockaded on d2. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw. The pawn is past the Troitzky line: the blockading knight must leave too early and the pawn promotes or the stalemate cannot be avoided.",
+      "fen": "7k/8/5K2/8/8/3p4/3N4/6N1 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: rook and pawn against rook in the Lucena position (pawn b7, king b8, black king cut off on d7). Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 0,
+      "explain": "Tablebase: win (mate in 21). Method: Rd1+ and the rook to the 4th rank (\"building a bridge\").",
+      "fen": "1K6/1P1k4/8/8/8/8/r7/2R5 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: queen against two rooks that protect each other on the 2nd rank. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw.",
+      "fen": "6k1/8/8/8/8/8/1r3r2/3Q2K1 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: queen against two bishops, black king e6, bishops d5/e5. Tablebase category?",
+      "choices": [
+        "Win within 50 moves",
+        "Cursed win: a win only beyond the 50-move rule — a draw in practice",
+        "Draw",
+        "Loss"
+      ],
+      "answer": 1,
+      "explain": "Q v 2B in the \"Lolli\" or central defence often needs more than 50 moves. Tablebase: cursed win.",
+      "fen": "8/8/4k3/3bb3/8/8/8/1K5Q w - - 0 1"
+    },
+    {
+      "type": "play",
+      "fen": "7k/8/5K2/8/3p4/3N4/8/6N1 w - - 0 1",
+      "goal": "mate",
+      "prompt": "Two knights against the d-pawn (Troitzky line). Mate within 40 moves against perfect defence (tablebase: mate in 27). Keep the pawn blockaded, drive the king to a corner with king and the free knight, then release the blockading knight at the last moment.",
+      "maxMoves": 40
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Endgames trainer**: the tablebase-key positions above, both sides, until each result is reached reliably.\n- Use the **Analysis** board's tablebase lookup to check every 5-7 piece ending from your own games.\n- Read DEM ch. 2 (knight v pawns) section on two knights."
+    }
+  ],
+  "practiceThemes": [
+    "endgame",
+    "knightEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky's Endgame Manual (5th ed.)",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)",
+    "Troitzky, 2500 Finales (two knights v pawn)"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "kids.3.escape-check",
+  "track": "kids",
+  "stage": 1,
+  "order": 302,
+  "skillIds": [
+    "rules.check"
+  ],
+  "title": "Escape from check",
+  "summary": "Three ways out of check: move, block or capture.",
+  "estMinutes": 7,
+  "minAge": 6,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Three ways out of check: **move** the king, **block** the attack, or **capture** the attacker."
+    },
+    {
+      "type": "move",
+      "fen": "4r2k/8/8/8/8/8/8/4K3 w - - 0 1",
+      "prompt": "Check! **Move** your king to safety.",
+      "solution": [
+        "Kd1"
+      ],
+      "explain": "Phew, safe!",
+      "hint": "Step off the line of the rook.",
+      "alternatives": [
+        "Kd2",
+        "Kf2",
+        "Kf1"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4r2k/8/8/8/8/8/3P1P2/3RKB2 w - - 0 1",
+      "prompt": "Check! **Block** it with your bishop.",
+      "solution": [
+        "Be2"
+      ],
+      "explain": "Blocked! The bishop is a shield.",
+      "hint": "Put the bishop between the rook and your king."
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/8/8/8/8/4q3/4K3 w - - 0 1",
+      "prompt": "Check! **Capture** the attacker.",
+      "solution": [
+        "Kxe2"
+      ],
+      "explain": "The king can capture too!",
+      "hint": "Nobody guards the queen."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/8/8/8/8/8/5PPP/3Rr1K1 w - - 0 1",
+      "prompt": "Check! Save your king.",
+      "solution": [
+        "Rxe1"
+      ],
+      "explain": "Capture the attacker. Saved!",
+      "hint": "Your rook can reach it."
+    },
+    {
+      "type": "quiz",
+      "question": "What are the three ways out of check?",
+      "choices": [
+        "Move, block, capture",
+        "Run, hide, cry",
+        "Jump, swap, skip"
+      ],
+      "answer": 0,
+      "explain": "Move, block, capture!"
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "kids.1.square-names",
+  "track": "kids",
+  "stage": 1,
+  "order": 108,
+  "skillIds": [
+    "rules.board.coordinates"
+  ],
+  "title": "Square names",
+  "summary": "Every square has a name: a letter and a number.",
+  "estMinutes": 6,
+  "minAge": 6,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Every square has a **name**. Letters go across (**a** to **h**). Numbers go up (**1** to **8**)."
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "md": "This square is **e4**: letter e, number 4.",
+      "highlights": [
+        "e4"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Where does the white king start?",
+      "choices": [
+        "e1",
+        "d1",
+        "e8"
+      ],
+      "answer": 0,
+      "explain": "The white king starts on e1.",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Which square is the bottom-left corner?",
+      "choices": [
+        "a1",
+        "h1",
+        "a8"
+      ],
+      "answer": 0,
+      "explain": "a1: letter a, number 1.",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Move the knight to **f3**.",
+      "solution": [
+        "Nf3"
+      ],
+      "explain": "f3 found!",
+      "hint": "Letter f, number 3."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Move a pawn to **c4**.",
+      "solution": [
+        "c4"
+      ],
+      "explain": "c4. You can read the board!",
+      "hint": "Letter c, number 4."
+    },
+    {
+      "type": "quiz",
+      "question": "Where does the black queen start?",
+      "choices": [
+        "d8",
+        "e8",
+        "d1"
+      ],
+      "answer": 0,
+      "explain": "The black queen starts on d8.",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "adult.s4.error-log-and-tilt",
+  "track": "adult",
+  "stage": 4,
+  "order": 45,
+  "skillIds": [
+    "practical.error-log",
+    "practical.tilt"
+  ],
+  "title": "Your error log, and handling tilt",
+  "summary": "Classify every mistake by type and phase to steer training, and use stop-loss and reset routines against tilt.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Error log.** After each serious game: analyse **without an engine first** (your thoughts, critical moments), then with your opponent if possible, then with the engine. Record each real mistake with: **type** (tactical oversight, calculation error, evaluation, plan, time, opening, endgame technique), **phase**, **time left**, and **why** it happened. After 20-30 games the log shows your bottleneck.\n\n**Tilt** is degraded decision quality after a loss or a mistake: playing faster, revenge rematches, skipped blunder checks. Remedies: **stop-loss rules** online (e.g. stop after two losses in a row), a **reset routine** at the board (\"the game starts again now\", breathing, re-evaluate objectively)."
+    },
+    {
+      "type": "quiz",
+      "question": "You blundered a piece because you did not check your opponent's checks and captures. How do you log it?",
+      "choices": [
+        "Type: tactical oversight (blunder check skipped); phase: middlegame; note the time and position, and add the position to your review set",
+        "\"Bad luck\"",
+        "Opening error, because the game started badly"
+      ],
+      "answer": 0,
+      "explain": "The useful log entry names the **cause**, not just the result. \"Skipped blunder check\" points to a habit to train; \"bad luck\" points nowhere."
+    },
+    {
+      "type": "quiz",
+      "question": "Your log shows: 40% of your decisive mistakes happen with less than 5 minutes left. What does it suggest?",
+      "choices": [
+        "A time-management problem: train time allocation and spend less time on routine moves",
+        "You need more opening theory",
+        "Nothing; mistakes are random"
+      ],
+      "answer": 0,
+      "explain": "Classification turns many separate losses into one trainable problem. Here the fix is in the critical-moments/time lesson, not in more puzzles."
+    },
+    {
+      "type": "quiz",
+      "question": "Which analysis order gives you the most learning?",
+      "choices": [
+        "Own analysis first, then post-mortem with the opponent, then engine",
+        "Engine first, to save time",
+        "Only the engine's blunder graph"
+      ],
+      "answer": 0,
+      "explain": "Your own analysis reveals your thinking; the engine then corrects it. Starting with the engine skips the part that trains you (KB analysis loops)."
+    },
+    {
+      "type": "quiz",
+      "question": "You have lost two online blitz games in a row and feel angry. Which action fits a stop-loss rule?",
+      "choices": [
+        "Stop playing for now; do a short review or a few easy puzzles later",
+        "Play a rematch immediately to win the rating back",
+        "Switch to bullet"
+      ],
+      "answer": 0,
+      "explain": "Tilt data show that results after consecutive losses are worse than usual. A pre-set stop-loss rule removes the decision from the tilted moment."
+    },
+    {
+      "type": "quiz",
+      "question": "During a tournament game you make a mistake and lose a pawn. What does a reset routine look like?",
+      "choices": [
+        "Pause, breathe, tell yourself \"new game\", evaluate the position objectively (often still defensible) and set practical problems",
+        "Play fast to get it over with",
+        "Offer a draw immediately"
+      ],
+      "answer": 0,
+      "explain": "Resilience: the position after a mistake is a new position. Many are still holdable, and the opponent also has to convert."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** What five fields does a log entry need? (Type, phase, time, position, reason.) What is your personal stop-loss rule? Write it down now."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#post-game-analysis",
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#emotional-regulation-and-tilt",
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#resilience-after-mistakes",
+    "knowledge-base/02-methods/game-study-and-analysis-loops.md#3-loop-b-play--self-analysis--post-mortem--engine--coach",
+    "knowledge-base/01-learning-science/motivation-tilt-and-emotional-control.md#3-tilt-what-the-data-show",
+    "knowledge-base/01-learning-science/plateaus-and-rating-stagnation.md#3-diagnosing-the-bottleneck-platform-implementation",
+    "Rowson, The Seven Deadly Chess Sins (Gambit, 2000)"
+  ]
+}

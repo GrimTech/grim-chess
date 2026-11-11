@@ -1,0 +1,92 @@
+{
+  "id": "adult.s3.pawn-breakthrough",
+  "track": "adult",
+  "stage": 3,
+  "order": 34,
+  "skillIds": [
+    "endgame.pawn.breakthrough"
+  ],
+  "title": "Pawn breakthroughs",
+  "summary": "Sacrifice pawns to deflect defenders and create an unstoppable passer: the a5-b5-c5 breakthrough and its relatives.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "With three pawns facing three (a5-b5-c5 vs a7-b7-c7) and the kings far away, **1.b6!** breaks through: after 1...axb6 2.c6! bxc6 3.a6, or 1...cxb6 2.a6! bxa6 3.c6, a pawn queens. It is a deflection: each sacrifice pulls a defender off the file. Count tempi against the enemy king before you go for it."
+    },
+    {
+      "type": "board",
+      "fen": "7k/ppp5/8/PPP5/8/8/8/7K w - - 0 1",
+      "md": "The classic set-up. White to move breaks through with 1.b6!",
+      "arrows": [
+        [
+          "b5",
+          "b6",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "8/ppp3k1/8/PPP5/8/8/8/6K1 w - - 0 1",
+      "prompt": "White to move. Black's king is closer than in the diagram, so slow play fails. Break through now.",
+      "solution": [
+        "b6"
+      ],
+      "explain": "b6! axb6 (or ...cxb6 a6!) c6! and a pawn will queen before Black's king arrives. A slow king move lets Black's king come to the queenside and win White's pawns."
+    },
+    {
+      "type": "play",
+      "fen": "7k/ppp5/8/PPP5/8/8/8/7K w - - 0 1",
+      "goal": "promote",
+      "prompt": "Play the breakthrough out against the engine.",
+      "explain": "1.b6! cxb6 2.a6! bxa6 3.c6, or 1...axb6 2.c6! bxc6 3.a6."
+    },
+    {
+      "type": "move",
+      "fen": "8/p5p1/1p2p3/1P2P2p/P4P1P/3K2k1/8/8 w - - 0 44",
+      "prompt": "White to move. Black's king is on g3, far away. Break through on the kingside centre.",
+      "solution": [
+        "f5",
+        "exf5",
+        "e6"
+      ],
+      "explain": "f5! exf5 e6: the f-pawn sacrifice deflects the e6-pawn, and the e-pawn runs to queen. The black king is outside the square."
+    },
+    {
+      "type": "quiz",
+      "question": "After 1.b6 in the classic set-up, Black plays 1...cxb6. What is the follow-up?",
+      "choices": [
+        "2.axb6",
+        "2.a6! (deflecting the b7-pawn), then 3.c6",
+        "2.cxb6",
+        "2.Kg2"
+      ],
+      "answer": 1,
+      "explain": "2.axb6? or 2.cxb6? recaptures and leaves no passer. Always sacrifice the pawn next to the one that just captured."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: before a breakthrough, what must you verify?",
+      "choices": [
+        "That the breakthrough looks nice",
+        "That the new passer queens before the enemy king catches it (and before enemy pawns queen elsewhere)",
+        "That you have a bishop",
+        "That queens are on the board"
+      ],
+      "answer": 1,
+      "explain": "A breakthrough is a tempo calculation: count the king's distance to your future passer."
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame",
+    "advancedPawn"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#pawn-breakthrough",
+    "knowledge-base/03-chess-knowledge/tactics.md#pawn-breakthrough",
+    "de la Villa, 100 Endgames You Must Know",
+    "Silman, Complete Endgame Course (1000-1199 and 1200-1399 sections)",
+    "Lichess puzzle database (CC0): 08is1"
+  ]
+}

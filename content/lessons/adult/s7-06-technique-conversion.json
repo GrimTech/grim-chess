@@ -1,0 +1,95 @@
+{
+  "id": "adult.s7.technique-conversion",
+  "track": "adult",
+  "stage": 7,
+  "order": 6,
+  "skillIds": [
+    "strategy.technique",
+    "endgame.practical-technique"
+  ],
+  "title": "Converting advantages against strong opposition",
+  "summary": "Turn +1 into +2 without counterplay: prophylaxis, simplification and exact endgame technique, also with little time.",
+  "estMinutes": 35,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## The technique checklist\n\n1. **Remove counterplay first** (prophylaxis): what is the opponent's only active idea? Kill it.\n2. **Improve the worst piece**; centralise the king in endings.\n3. **Simplify** into an ending you know is won — exchange pieces, not pawns.\n4. **Create a passed pawn** or a second weakness.\n5. **Calculate concretely** at the moment of conversion; technique fails on a single tactic.\n6. **With little time**: choose the simplest winning plan, avoid allowing checks, use the increment for safe moves."
+    },
+    {
+      "type": "move",
+      "fen": "8/7R/8/P1pk4/8/1K6/6rP/8 w - - 3 55",
+      "prompt": "White to move. Rook ending: push the right pawn (Carlsen-Anand, WCh 2013 2013)",
+      "solution": [
+        "a6"
+      ],
+      "orientation": "white",
+      "explain": "**55.a6!** — the passed pawn advances while the rook stays behind it on the 7th rank; the black king cannot cover both the pawn and the h-file. Engine main line: 55.a6 c4+ 56.Kc3 Kc5. (Carlsen-Anand, WCh 2013 2013; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "8/4k3/1R6/P3b2p/4Bp2/5P1K/r6P/8 w - - 3 40",
+      "prompt": "White to move. Simplify into a winning ending (Kramnik-Kasparov, Braingames WCC 2000)",
+      "solution": [
+        "Bd5"
+      ],
+      "orientation": "white",
+      "explain": "**40.Bd5!** — the bishop blocks the d-file and prepares Re6+; after 40...Rxa5 41.Re6+ Kd7 42.Rxe5 the exchanges lead to a winning ending (engine line below). Engine main line: 40.Bd5 Rxa5 41.Re6+ Kd7 42.Rxe5 Kd6 43.Rxh5 Rxd5 44.Rxd5+ Kxd5 45.Kg4 Ke5. (Kramnik-Kasparov, Braingames WCC 2000; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/4P1q1/5R1N/5P1K/8/8/8 w - - 1 134",
+      "prompt": "White to move. Rook, knight and two pawns against the queen (World Championship 2021, game 6, move 134) (Carlsen-Nepomniachtchi, WCh 2021 2021)",
+      "solution": [
+        "Rf7"
+      ],
+      "orientation": "white",
+      "explain": "**134.Rf7!** — the rook takes the 7th rank and the e-pawn advances with support; Black's checks run out. Engine main line: 134.Rf7 Kd8 135.f5 Qg2 136.Ng7 Qh2+ 137.Kg5 Qg3+ 138.Kh6 Qh3+. (Carlsen-Nepomniachtchi, WCh 2021 2021; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "5k2/pQ3p2/1p6/7R/3q4/1P2n3/P7/6K1 w - - 6 46",
+      "prompt": "White to move. Liquidate into a won rook ending (Capablanca-Lasker, World Championship 1921)",
+      "solution": [
+        "Qb8+"
+      ],
+      "orientation": "white",
+      "explain": "**46.Qb8+!** Ke7 47.Qe5+ forces the queen exchange, and after 47...Qxe5 48.Rxe5+ Kd6 49.Rxe3 White is a whole rook up. Engine main line: 46.Qb8+ Ke7 47.Qe5+ Qxe5 48.Rxe5+ Kd6 49.Rxe3 a5 50.Rd3+ Kc5. (Capablanca-Lasker, World Championship 1921; checked with Stockfish 19.)"
+    },
+    {
+      "type": "play",
+      "fen": "8/4k3/1R6/P3b2p/4Bp2/5P1K/r6P/8 w - - 3 40",
+      "goal": "win",
+      "prompt": "Convert the Kramnik-Kasparov 2000 ending as White against the engine (level 14). Success = winning decisive material or queening.",
+      "maxMoves": 40,
+      "engineLevel": 14
+    },
+    {
+      "type": "quiz",
+      "question": "You have a clear endgame advantage and 3 minutes plus 30-second increment. The opponent has a dangerous passed pawn as his only counterplay. What do you do first?",
+      "choices": [
+        "Calculate a long winning line",
+        "Blockade or win the passed pawn first (remove counterplay), then convert slowly using the increment",
+        "Offer a draw",
+        "Advance your own pawns as fast as possible"
+      ],
+      "answer": 1,
+      "explain": "Technique under time pressure is about safety: remove the opponent's chances first."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Play from position**: 5 winning positions (+2 or more) against a strong bot (level 13-14) with a 5+3 clock; record how many you convert.\n- **Guess the move**: Carlsen-Anand 2013 game 6 from move 40 and Kramnik-Kasparov 2000 (corpus).\n- **Puzzles**: 20 *crushing* puzzles in endgames."
+    }
+  ],
+  "practiceThemes": [
+    "advantage",
+    "crushing",
+    "endgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "Carlsen-Anand, World Championship 2013",
+    "Kramnik-Kasparov, World Championship 2000",
+    "Capablanca-Lasker, World Championship 1921"
+  ]
+}

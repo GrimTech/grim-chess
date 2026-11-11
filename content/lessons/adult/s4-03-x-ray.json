@@ -1,0 +1,127 @@
+{
+  "id": "adult.s4.x-ray",
+  "track": "adult",
+  "stage": 4,
+  "order": 3,
+  "skillIds": [
+    "tactics.x-ray"
+  ],
+  "title": "X-ray attacks and defence",
+  "summary": "Pieces act through other pieces on the same line: use it to win material and count exchanges correctly.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "An **X-ray** is a line piece (rook, bishop, queen) acting *through* another piece on the same line. Two uses:\n\n- **X-ray defence/attack:** your rook behind an enemy rook still \"covers\" the square beyond it. When the enemy rook captures and leaves the line, your rook recaptures.\n- **Counting:** when you count attackers and defenders of a square, pieces lined up behind each other (batteries, and pieces behind *enemy* pieces) all count.\n\nTypical error: counting only the pieces that touch the square directly."
+    },
+    {
+      "type": "move",
+      "fen": "5r1k/4Q1pp/p4r1q/1p6/4B3/P6P/5RPK/8 w - - 9 31",
+      "prompt": "White to move. Count the attackers of f8 carefully, including the rook on f2.",
+      "solution": [
+        "Qxf8+",
+        "Rxf8",
+        "Rxf8#"
+      ],
+      "explain": "**31.Qxf8+! Rxf8 32.Rxf8#.** Before the sacrifice the f6-rook stood between your f2-rook and f8. When it recaptured on f8, it left the f-file and your rook saw straight through to f8. Your f2-rook was an *X-ray defender* of f8 all along."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/p5pp/1p1Q4/3P4/8/B5P1/P3qr1P/5RK1 w - - 0 30",
+      "prompt": "White to move. Black has just taken on f2 and threatens mate himself. Strike first.",
+      "solution": [
+        "Qxf8+",
+        "Rxf8",
+        "Rxf8#"
+      ],
+      "explain": "**30.Qxf8+! Rxf8 31.Rxf8#.** The black rook on f2 had to leave the f-file to recapture, and your f1-rook X-rayed through it. Also note the a3-bishop: it covers f8 too, so the queen was never really \"hanging\"."
+    },
+    {
+      "type": "board",
+      "fen": "2r2rk1/4ppbp/3p2p1/1bqR2B1/1p2PP2/1B5P/1PP1Q1PK/5R2 w - - 1 21",
+      "md": "White to move. Black has just played ...Bb5, attacking the e2-queen. Look along the fifth rank: the d5-rook stands *behind* the black queen on c5, aimed at b5. If the c5-queen ever captures on b5, the rook recaptures.",
+      "arrows": [
+        [
+          "d5",
+          "b5",
+          "blue"
+        ],
+        [
+          "e2",
+          "b5",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "2r2rk1/4ppbp/3p2p1/1bqR2B1/1p2PP2/1B5P/1PP1Q1PK/5R2 w - - 1 21",
+      "prompt": "White to move. Use the X-ray along the fifth rank.",
+      "solution": [
+        "Qxb5",
+        "Qxb5",
+        "Rxb5"
+      ],
+      "explain": "**21.Qxb5! Qxb5 22.Rxb5.** The bishop on b5 was defended only by the queen, and the d5-rook defended b5 *through* the black queen. Net result: White wins a piece."
+    },
+    {
+      "type": "move",
+      "fen": "r1b1k2r/4bppp/p1n1p3/1p1pPn2/Q2P4/4BN2/1q1NBPPP/1R3RK1 w kq - 0 14",
+      "prompt": "White to move. Black has just played ...b5, attacking your queen, while your b1-rook attacks his queen. Solve the mutual attack.",
+      "solution": [
+        "Bxb5",
+        "Qxb5",
+        "Rxb5"
+      ],
+      "explain": "**14.Bxb5!** saves the queen with tempo: the bishop is protected by the queen and pins the c6-knight. If 14...Qxb5 15.Rxb5 the b1-rook recaptures through the b-file that the black queen just vacated. Black loses the queen for a bishop. 14.Rxb2? bxa4 would only trade queens."
+    },
+    {
+      "type": "quiz",
+      "question": "Two white rooks are doubled on the d-file (d1 and d2). Black has one rook on d8 and a knight defending d7. How many white attackers does d7 have?",
+      "choices": [
+        "One, only the front rook",
+        "Two: the d1-rook X-rays through the d2-rook",
+        "Zero, because d7 is defended"
+      ],
+      "answer": 1,
+      "explain": "Pieces lined up on the same line all count: the rear rook supports the front one. In exchanges the order matters (the front piece must capture first), but both are attackers. Counting batteries correctly is the everyday use of the X-ray."
+    },
+    {
+      "type": "move",
+      "fen": "3r1rk1/R4pp1/1p2p2p/2n5/3R1P2/P3nBP1/PB2PK1P/8 b - - 1 24",
+      "prompt": "Black to move. Your d8-rook stands behind White's d4-rook. Find the knight check that exploits it.",
+      "solution": [
+        "Nd1+",
+        "Rxd1",
+        "Rxd1"
+      ],
+      "explain": "**24...Nd1+!** forks the king and the b2-bishop. After 25.Rxd1 the d4-rook has left the file and **25...Rxd1** recaptures: your d8-rook X-rayed through it to d1. Black has won the exchange."
+    },
+    {
+      "type": "move",
+      "fen": "5k2/6r1/p4pqQ/1ppp3p/8/5R2/PPP2PP1/6K1 w - - 2 32",
+      "prompt": "White to move. Independent exercise. Notice what stands between your queen and f6.",
+      "solution": [
+        "Rxf6+",
+        "Qxf6",
+        "Qxf6+"
+      ],
+      "explain": "**32.Rxf6+! Qxf6 33.Qxf6+** and the queen forks king and the g7-rook. The black queen on g6 was the only piece between your h6-queen and f6; when it captured on f6 it opened the line. White wins a rook."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** (1) What is an X-ray defender? (2) Why did ...Rxf8 lose in the first two puzzles? (3) In 21.Qxb5 Qxb5 22.Rxb5, which piece was \"in the way\" before the exchange?\n\nAnswers: a piece that guards a square through another piece on the same line; the recapturing rook left the file and uncovered the X-raying rook; the black queen on c5."
+    }
+  ],
+  "practiceThemes": [
+    "xRayAttack",
+    "collinearMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#x-ray",
+    "knowledge-base/03-chess-knowledge/tactics.md#collinear-move",
+    "knowledge-base/03-chess-knowledge/tactics.md#counting-and-exchanges",
+    "Yusupov, Build Up Your Chess 1: The Fundamentals (Quality Chess, 2008), chapters on the X-ray and counting",
+    "Lichess puzzle database (CC0), puzzles 1NlV4, 0lCtN, 0QTgq, 1g0BU, 0fuBB, 0Dr5X"
+  ]
+}

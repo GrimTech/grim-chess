@@ -1,0 +1,69 @@
+{
+  "id": "kids.7.king-and-pawn",
+  "track": "kids",
+  "stage": 2,
+  "order": 701,
+  "skillIds": [
+    "endgame.pawn.kp-basic"
+  ],
+  "title": "King leads the pawn",
+  "summary": "In the endgame the king walks in front of its pawn.",
+  "estMinutes": 7,
+  "minAge": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "In the endgame the **king becomes a hero**! Walk him in front of your pawn, like a bodyguard."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/4K3/4P3/8/8/8/8 w - - 0 1",
+      "md": "King in front of the pawn: this wins!",
+      "arrows": [
+        [
+          "e6",
+          "d7",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/4K3/4P3/8/8/8/8 w - - 0 1",
+      "prompt": "Step to the side so your pawn can run!",
+      "solution": [
+        "Kd6"
+      ],
+      "explain": "Now the pawn can march.",
+      "alternatives": [
+        "Kf6"
+      ],
+      "hint": "Step diagonally next to the pawn path."
+    },
+    {
+      "type": "quiz",
+      "question": "Where should your king stand?",
+      "choices": [
+        "In front of the pawn",
+        "Behind the pawn"
+      ],
+      "answer": 0,
+      "explain": "In front, to clear the road."
+    },
+    {
+      "type": "play",
+      "fen": "4k3/8/4K3/4P3/8/8/8/8 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Make a queen! Your king clears the way.",
+      "maxMoves": 10,
+      "engineLevel": 6,
+      "explain": "King and pawn team: new queen!"
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

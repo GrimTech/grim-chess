@@ -1,0 +1,77 @@
+{
+  "id": "kids.5.pins",
+  "track": "kids",
+  "stage": 2,
+  "order": 504,
+  "skillIds": [
+    "tactics.pin.absolute"
+  ],
+  "title": "Pins",
+  "summary": "A pinned piece cannot move because the king is behind it.",
+  "estMinutes": 7,
+  "minAge": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **pin**: a piece cannot move because its king is behind it. It is stuck like a pin in a board!"
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/2n5/1B6/8/8/8/6K1 w - - 0 1",
+      "md": "The knight cannot move. The king is behind it.",
+      "arrows": [
+        [
+          "b5",
+          "e8",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/2n5/8/8/8/8/5BK1 w - - 0 1",
+      "prompt": "Pin the knight to the king!",
+      "solution": [
+        "Bb5"
+      ],
+      "explain": "Pinned! The knight is frozen.",
+      "hint": "Put the bishop on the diagonal through the knight and the king."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/1p6/2n5/1B6/3P4/8/8/6K1 w - - 0 1",
+      "prompt": "Attack the pinned knight!",
+      "solution": [
+        "d5"
+      ],
+      "explain": "The knight cannot run away!",
+      "hint": "Attack it with a pawn."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/8/4q3/8/8/5K2/R7 w - - 0 1",
+      "prompt": "Pin the queen!",
+      "solution": [
+        "Re1"
+      ],
+      "explain": "The queen is pinned to her king!",
+      "hint": "Put the rook on the same line as the queen and king."
+    },
+    {
+      "type": "quiz",
+      "question": "Can a piece pinned to the king move away?",
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "answer": 1,
+      "explain": "No, that would leave the king in check."
+    }
+  ],
+  "practiceThemes": [
+    "pin"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

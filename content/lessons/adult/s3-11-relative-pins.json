@@ -1,0 +1,134 @@
+{
+  "id": "adult.s3.relative-pins",
+  "track": "adult",
+  "stage": 3,
+  "order": 11,
+  "skillIds": [
+    "tactics.pin.relative"
+  ],
+  "title": "Relative pins: attack the pinned piece",
+  "summary": "A piece pinned to a queen or rook can legally move, but at a price. Learn to pile up on it, hit it with a pawn, and exploit the duties it can no longer perform.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "An **absolute pin** is against the king: the pinned piece cannot legally move. A **relative pin** is against a queen, rook or other valuable unit: the move is legal but loses material.\n\nThree ways to exploit a pin:\n1. **Attack the pinned piece**, ideally with a pawn.\n2. **Pile up**: add attackers faster than the opponent can add defenders.\n3. **A pinned piece defends nothing**: whatever it \"guards\" may be capturable."
+    },
+    {
+      "type": "move",
+      "fen": "r2q1rk1/pb1n1ppp/1pp2n2/3p2B1/3PP3/2NB4/PPP2PPP/R2Q1RK1 w - - 0 30",
+      "prompt": "Worked example. The f6-knight is pinned to the d8-queen by your g5-bishop. Hit it with a pawn.",
+      "solution": [
+        "e5"
+      ],
+      "explain": "e5! The knight cannot move without exposing the queen (Bxd8), and it cannot be defended by a pawn. Black loses a piece for a pawn: for example ...h6 Bh4 g5 exf6. The pawn is the ideal attacker: it is worth less than anything it attacks.",
+      "hint": "Which pawn can attack f6?"
+    },
+    {
+      "type": "move",
+      "fen": "r2q1rk1/ppp2ppp/2nb4/4p3/3P2b1/2P2N2/PP3PPP/RNBQ1RK1 b - - 0 30",
+      "prompt": "Same idea with Black. White's f3-knight is pinned to the queen on d1. Win material.",
+      "solution": [
+        "e4"
+      ],
+      "explain": "...e4! hits the pinned knight. If it moves, ...Bxd1. White can only break the pin at a loss, and ...exf3 follows. Look for this whenever a bishop pins a knight to a queen in front of your pawn."
+    },
+    {
+      "type": "move",
+      "fen": "1r6/b3kp2/p2p3p/7P/4q3/PP1p4/1K1Nr3/1Q1RR3 w - - 2 42",
+      "prompt": "White to move. Black's e2-rook is pinned against the queen on e4 by your e1-rook. Win material.",
+      "solution": [
+        "Rxe2",
+        "Qxe2",
+        "Re1"
+      ],
+      "explain": "Rxe2! After ...Qxe2 the other rook arrives with Re1, pinning the queen to the king on e7: White wins the queen for a rook. (If ...dxe2, the b1-queen takes on e4 along the opened diagonal.)",
+      "hint": "Capture the pinned rook first, then pin again."
+    },
+    {
+      "type": "move",
+      "fen": "r5k1/1p3p2/p2b1Bq1/7p/P2P2rQ/8/1P6/R5RK w - - 2 38",
+      "prompt": "White to move. Black's g4-rook is pinned to the queen on g6. Exploit it.",
+      "solution": [
+        "Rxg4",
+        "Qxg4",
+        "Rg1"
+      ],
+      "explain": "Rxg4! Taking the pinned rook. After ...Qxg4 the a1-rook comes to g1, and now the queen is pinned to the king on g8: White wins the queen. A relative pin turned into an absolute one."
+    },
+    {
+      "type": "move",
+      "fen": "4rrk1/p1q3pp/3bb3/Np1n1p2/1Ppp1P2/P2P1QNP/2PB2P1/R3R1K1 w - - 2 21",
+      "prompt": "White to move. Black's e6-bishop is pinned to the e8-rook. What is it \"defending\" that you can now take?",
+      "solution": [
+        "Rxe6",
+        "Rxe6",
+        "Qxd5"
+      ],
+      "explain": "Rxe6! Rxe6 Qxd5: the bishop was the only defender of the d5-knight. After the trade the knight falls, and the queen on d5 even pins the e6-rook to the king. A pinned piece defends nothing."
+    },
+    {
+      "type": "move",
+      "fen": "3r2k1/5p2/4pQ1p/5p1P/5P2/2pB2P1/1qP4K/3R4 b - - 3 44",
+      "prompt": "Black to move. White's d3-bishop is pinned to the d1-rook. What is it guarding?",
+      "solution": [
+        "Rxd3",
+        "Rxd3",
+        "Qxc2+"
+      ],
+      "explain": "...Rxd3! Rxd3 Qxc2+ and the queen also attacks the d3-rook: the bishop was the only defender of c2. Black wins material with a check.",
+      "hint": "The bishop was protecting a pawn."
+    },
+    {
+      "type": "board",
+      "fen": "rn1qkbnr/ppp2p1p/3p2p1/4p3/2B1P1b1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 5",
+      "md": "A warning: relative pins can be broken. Here Black's bishop pins the f3-knight to the queen, and Black's last move ...g6? allowed **Légal's trap**: 5.Nxe5! Bxd1?? 6.Bxf7+ Ke7 7.Nd5#. The knight was \"pinned\", but abandoning the queen was legal and decisive.",
+      "arrows": [
+        [
+          "f3",
+          "e5",
+          "green"
+        ],
+        [
+          "g4",
+          "d1",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Black's knight on f6 is pinned to the queen on d8 by your bishop on g5. Which is NOT a standard way for Black to deal with the pin?",
+      "choices": [
+        "...h6 and ...g5, kicking the bishop",
+        "Moving the queen off the d8-h4 diagonal (e.g. ...Qd6), unpinning",
+        "Interposing a piece on e7 (e.g. ...Be7)",
+        "Moving the pinned knight, because relative pins can be ignored safely"
+      ],
+      "answer": 3,
+      "explain": "A relative pin can be broken legally, but moving the knight here just loses the queen unless there is a concrete tactic (as in Légal's trap). Kick, unpin or interpose."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the difference between an absolute and a relative pin?",
+      "choices": [
+        "None; both forbid the pinned piece to move",
+        "Absolute: pinned to the king, moving is illegal. Relative: pinned to another valuable piece, moving is legal but costs material",
+        "Absolute pins only happen on files, relative pins on diagonals",
+        "Relative pins only involve pawns"
+      ],
+      "answer": 1,
+      "explain": "Exploit both the same way: attack the pinned piece, pile up, and remember it defends nothing."
+    }
+  ],
+  "practiceThemes": [
+    "pin"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#pin",
+    "Brunia & van Wijgerden, Steps Method Step 3 workbook (eliminating the defender, discovered attack)",
+    "Yusupov, Build Up Your Chess 1 (pins)",
+    "knowledge-base/02-methods/steps-method.md (Step 3: eliminating the defender, discovered attack, pawn endings)",
+    "Lichess puzzle database (CC0): 1AU36, 0ZtrA, 09OO6, 24ZL7"
+  ]
+}

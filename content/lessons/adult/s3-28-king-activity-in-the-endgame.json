@@ -1,0 +1,109 @@
+{
+  "id": "adult.s3.king-activity-in-the-endgame",
+  "track": "adult",
+  "stage": 3,
+  "order": 28,
+  "skillIds": [
+    "endgame.king-activity"
+  ],
+  "title": "The king is a fighting piece",
+  "summary": "In the endgame the king attacks pawns, escorts passers and decides races. Centralise it first and use it actively.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Once the queens are off, the king is worth roughly a minor piece in attack and defence. General rules:\n\n- **Centralise** the king early in the endgame.\n- Use it to **attack pawns** and to **escort** your passed pawn.\n- In pawn endings, the more active king usually wins, often regardless of material."
+    },
+    {
+      "type": "move",
+      "fen": "8/pp3k2/8/3K4/8/8/PP6/8 w - - 0 1",
+      "prompt": "Pawns are equal. Use your active king: which square wins?",
+      "solution": [
+        "Kd6"
+      ],
+      "explain": "Kd6! heads for c7 and the b7-pawn. Black's king is too far away to defend, and White wins a pawn and then the game. Quiet pawn moves (b4?) let Black's king come back and draw.",
+      "hint": "Go for the queenside pawns, but cut off the black king too."
+    },
+    {
+      "type": "play",
+      "fen": "8/pp3k2/8/3K4/8/8/PP6/8 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Now play it out against the engine: use your king to win a pawn and promote.",
+      "explain": "Typical route: Kd6, Kc7, Kxb7, then push the a/b-pawns with the king in front."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/2p4p/1p3k2/3K3P/8/P7/8 w - - 3 48",
+      "prompt": "White to move. Your king is on d4, Black's on f5. Which way should your king go?",
+      "solution": [
+        "Kc5",
+        "h5",
+        "Kxc6",
+        "b4",
+        "Kc5"
+      ],
+      "explain": "Kc5! goes after the c6- and b5-pawns. ...h5 (counterplay) Kxc6 b4 Kc5 catches the b-pawn too. Your h-pawn is safe because Black's king is far away."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/3p1k2/3K2p1/1p1P2P1/7P/8/8 w - - 0 40",
+      "prompt": "White to move. Black has a passed b-pawn. Bring the king.",
+      "solution": [
+        "Kc4",
+        "Ke6",
+        "Kxb4",
+        "Kd5",
+        "Kc3"
+      ],
+      "explain": "Kc4! Ke6 Kxb4: the king rounds up the passed pawn. After ...Kd5 Kc3 it stays out of checks and White's d-pawn decides."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/8/3k2Kp/7P/8/8/8 w - - 3 58",
+      "prompt": "White to move. Win the pawn, then put your king in front of your own pawn.",
+      "solution": [
+        "Kxh5",
+        "Ke6",
+        "Kg6",
+        "Ke7",
+        "Kg7"
+      ],
+      "explain": "Kxh5 Ke6 Kg6! Ke7 Kg7: with a rook pawn the king must reach the queening corner ahead of the pawn; now the h-pawn walks through."
+    },
+    {
+      "type": "quiz",
+      "question": "Queens have just been traded in a symmetrical pawn ending. Your king is on g1, the opponent's on g8. What is usually the first priority?",
+      "choices": [
+        "Push your passed pawn at once",
+        "Bring the king to the centre (e2-d3 etc.)",
+        "Make waiting moves with pawns",
+        "Offer a draw"
+      ],
+      "answer": 1,
+      "explain": "In pawn and minor-piece endings, the king race to the centre is often the whole game."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: why can king activity outweigh a pawn in the endgame?",
+      "choices": [
+        "Kings are worth 4 points",
+        "An active king attacks and wins enemy pawns and escorts its own passer, while a passive king can only watch",
+        "Because the opponent is in time trouble",
+        "It cannot"
+      ],
+      "answer": 1,
+      "explain": "Silman's 1000-1399 sections drill this repeatedly: king position first, pawn moves second."
+    }
+  ],
+  "practiceThemes": [
+    "endgame",
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#general-endgame-principles",
+    "Silman, Complete Endgame Course (1000-1199 and 1200-1399 sections)",
+    "Capablanca, Chess Fundamentals (king in the endgame)",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Lichess puzzle database (CC0): 05vCQ, 08wiN, 0AhiZ"
+  ]
+}

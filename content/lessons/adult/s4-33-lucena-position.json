@@ -1,0 +1,102 @@
+{
+  "id": "adult.s4.lucena-position",
+  "track": "adult",
+  "stage": 4,
+  "order": 33,
+  "skillIds": [
+    "endgame.rook.lucena"
+  ],
+  "title": "The Lucena position: building a bridge",
+  "summary": "The most important winning technique in rook endgames: shield your king from checks with your rook on the fourth rank.",
+  "estMinutes": 18,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Lucena position:** rook and pawn against rook, the pawn on the seventh rank, your king on the promotion square in front of it, and the defending king **cut off** by at least one file. The defender's rook checks from the side or behind whenever your king steps out.\n\nThe winning method, **building a bridge**:\n1. Check the defending king one file further away (if needed).\n2. Put your rook on the **fourth rank** (from your side).\n3. Walk the king out; when the checks come, block the last check with the rook (the \"bridge\")."
+    },
+    {
+      "type": "board",
+      "fen": "1K1k4/1P6/8/8/8/8/r7/2R5 w - - 0 1",
+      "md": "White: Kb8, Pb7, Rc1. Black: Kd8 (cut off by the c1-rook), Ra2 (ready to check on the a-file). The white king cannot use a7 or a8 (the a2-rook controls the a-file), and c7/c8 are next to the black king. Plan: 1.Rd1+! Ke7 2.Rd4!, then Kc7, Kb6, and the rook blocks a check on b4.",
+      "arrows": [
+        [
+          "c1",
+          "d1",
+          "green"
+        ],
+        [
+          "d1",
+          "d4",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "1K1k4/1P6/8/8/8/8/r7/2R5 w - - 0 1",
+      "prompt": "White to move. Drive the king away with a check, then put your rook on the fourth rank.",
+      "solution": [
+        "Rd1+",
+        "Ke7",
+        "Rd4"
+      ],
+      "alternatives": [
+        "Rc4"
+      ],
+      "hint": "First a check on the d-file, then the rook goes to d4.",
+      "explain": "After **1.Rd1+ Ke7 2.Rd4!** the bridge is ready: 2...Ra1 3.Kc7 Rc1+ 4.Kb6 Rb1+ 5.Kc6 Rc1+ 6.Kb5 Rb1+ 7.Rb4 and the pawn queens. (1.Rc4, putting the rook on the fourth at once, also wins.)"
+    },
+    {
+      "type": "quiz",
+      "question": "Why the **fourth** rank?",
+      "choices": [
+        "So that the rook can interpose on the b-file (b4) once the king has walked down to b5, and still be protected or out of reach of the king",
+        "Because the fourth rank is the centre",
+        "To attack the black king"
+      ],
+      "answer": 0,
+      "explain": "The king walks b8-c7-b6-c6-b5; the last check from b1 is blocked by Rd4-b4. If the rook were on the fifth or sixth rank, the king would have no room between it and the checks."
+    },
+    {
+      "type": "quiz",
+      "question": "What is the first condition for a Lucena win?",
+      "choices": [
+        "The defending king is cut off from the pawn by at least one file",
+        "Your rook is behind the pawn",
+        "The pawn is on the sixth rank"
+      ],
+      "answer": 0,
+      "explain": "If the defending king stands in front of the pawn or next to it, the position is usually a Philidor draw (next lesson). The cut-off is what makes the Lucena possible."
+    },
+    {
+      "type": "play",
+      "fen": "1K1k4/1P6/8/8/8/8/r7/2R5 w - - 0 1",
+      "goal": "win",
+      "prompt": "Win the Lucena against the engine. Build the bridge.",
+      "maxMoves": 40,
+      "explain": "Check the king away, rook to the fourth rank, walk the king out, block the last check with the rook."
+    },
+    {
+      "type": "play",
+      "fen": "3K4/3P1k2/8/8/8/8/7r/4R3 w - - 0 1",
+      "goal": "win",
+      "prompt": "A central-pawn Lucena (king on d8, pawn on d7, black king cut off on the f-file). Win it.",
+      "maxMoves": 40,
+      "explain": "Same method: Re4 builds the bridge on the fourth rank; then Kc7/Kd6-d5 and block the checks on the d-file with the rook."
+    },
+    {
+      "type": "text",
+      "md": "**Typical errors.** Walking the king out before the rook is on the fourth rank (endless checks); putting the rook on the wrong side; forgetting the preliminary check that pushes the defending king a file further. **Retrieval check:** recite the three steps of building a bridge."
+    }
+  ],
+  "practiceThemes": [
+    "rookEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#lucena-position",
+    "knowledge-base/02-methods/endgame-study-methods.md#3-a-sequenced-canon-platform-default",
+    "de la Villa, 100 Endgames You Must Know (New in Chess, 2008), Lucena position",
+    "Dvoretsky, Dvoretsky's Endgame Manual (Russell Enterprises, 2003), chapter 9 (rook endgames)",
+    "Lucena / Salvio (1634), historical attribution"
+  ]
+}

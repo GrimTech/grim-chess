@@ -1,0 +1,137 @@
+{
+  "id": "adult.s2.repertoire-white",
+  "track": "adult",
+  "stage": 2,
+  "order": 29,
+  "skillIds": [
+    "opening.first-repertoire.white"
+  ],
+  "title": "A first repertoire for White: 1.e4 and the Italian",
+  "summary": "1.e4 e5 2.Nf3 Nc6 3.Bc4 with plans, and simple answers to other defences.",
+  "estMinutes": 12,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Your first White repertoire: **1.e4**, and after 1...e5 the **Italian Game**: 2.Nf3 Nc6 3.Bc4. Plans: castle, play c3 and d3 (slow, solid) or c3 and d4 (central break), then Re1, h3, Nbd2-f1-g3.\n\nLearn ideas, not long lines. Against other first moves, follow principles: take the centre (2.d4), develop knights."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Play the Giuoco Pianissimo: 1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d3",
+      "solution": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bc4",
+        "Bc5",
+        "c3",
+        "Nf6",
+        "d3"
+      ],
+      "explain": "A solid set-up: c3 prepares d4 later; d3 protects e4. Next: O-O, Re1, Nbd2."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "prompt": "Black chose the Two Knights Defence. Protect e4 with a pawn.",
+      "solution": [
+        "d3"
+      ],
+      "alternatives": [
+        "Nc3"
+      ],
+      "explain": "4.d3 keeps things solid. (4.Ng5 is the sharp alternative; 4.Nc3 also defends e4.)"
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "prompt": "Sicilian Defence. Develop toward the centre.",
+      "solution": [
+        "Nf3"
+      ],
+      "alternatives": [
+        "Nc3",
+        "c3"
+      ],
+      "explain": "2.Nf3 followed by d4 is the main line. 2.Nc3 and 2.c3 are fine simpler options."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "prompt": "French Defence. Take the centre.",
+      "solution": [
+        "d4"
+      ],
+      "explain": "Build the big centre with 2.d4."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "prompt": "Caro-Kann Defence. Take the centre.",
+      "solution": [
+        "d4"
+      ],
+      "explain": "Same answer: 2.d4."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "prompt": "Scandinavian Defence. Capture.",
+      "solution": [
+        "exd5"
+      ],
+      "explain": "Take, and after ...Qxd5 develop with tempo by Nc3."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+      "prompt": "Philidor Defence. Strike in the centre.",
+      "solution": [
+        "d4"
+      ],
+      "explain": "3.d4 gains space and opens lines for your pieces."
+    },
+    {
+      "type": "quiz",
+      "question": "In the Italian with c3, what central break is White preparing?",
+      "choices": [
+        "d4",
+        "f4",
+        "b4"
+      ],
+      "answer": 0,
+      "explain": "c3 supports d4, building a big pawn centre."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: after 1.e4 e5 2.Nf3 Nc6, what is your third move?",
+      "choices": [
+        "3.Bc4",
+        "3.Bb5",
+        "3.d4"
+      ],
+      "answer": 0,
+      "explain": "Bc4: the Italian (Bb5 and d4 are other openings for later)."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the general answer to 1...e6 or 1...c6?",
+      "choices": [
+        "2.d4, taking the full centre",
+        "2.Nf3",
+        "2.Bc4"
+      ],
+      "answer": 0,
+      "explain": "When Black does not contest the centre at once, take it with 2.d4."
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#repertoire-building-by-level",
+    "knowledge-base/03-chess-knowledge/openings.md#opening-principles",
+    "knowledge-base/01-learning-science/retrieval-practice-interleaving-desirable-difficulties.md#4-interleaving"
+  ]
+}

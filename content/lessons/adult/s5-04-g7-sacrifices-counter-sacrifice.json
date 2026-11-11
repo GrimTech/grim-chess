@@ -1,0 +1,101 @@
+{
+  "id": "adult.s5.g7-sacrifices-counter-sacrifice",
+  "track": "adult",
+  "stage": 5,
+  "order": 4,
+  "skillIds": [
+    "tactics.sacrifice.g7-g6",
+    "tactics.counter-sacrifice"
+  ],
+  "title": "Sacrifices on g7 and g6, and the counter-sacrifice",
+  "summary": "Destroying fianchetto and g6/h6 shelters; and defending by giving material back at the right moment.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Breaking g7 and g6\n\nThe g7/g6 pawn is the **keystone** of a castled king, especially with a fianchetto bishop missing or exchanged. Typical breakers:\n- **Rxg7 / Bxg7 / Nxg7** when the king becomes exposed to queen and rook on the g- and h-files;\n- **h4-h5xg6** against ...g6 and ...h6 structures, followed by Bxh6 or Rxh6;\n- **Nf5/Nh5** sacrifices against the g7-pawn when the queen joins on g3/g4.\n\n## The counter-sacrifice\n\nA defender's best weapon is often to **give material back** or **counter-attack**: return the extra piece to kill the attack, or ignore a threat and strike first. Ask: *is my king safer after I return material? Is my counter-attack faster?* (Geller-Euwe 1953 is the model.)"
+    },
+    {
+      "type": "move",
+      "fen": "7k/3n2rp/2q2p1N/5P2/1p1Pp2Q/1rp1P2P/6R1/5RK1 w - - 2 43",
+      "prompt": "White to move. The black king is protected only by the g7-rook and the h7-pawn. Strike (Pillsbury-Tarrasch, Hastings 1895).",
+      "solution": [
+        "Rxg7"
+      ],
+      "hint": "Remove the keystone.",
+      "explain": "**43.Rxg7!** Kxg7 44.Qg3+ (or Qg4+) and the king is exposed to queen, knight and rook; the game ended 44...Kxh6 45.Kh1! Qd5 46.Rg1 with a mating attack. Engine: +6.3 for Rxg7, 0.00 for the best alternative."
+    },
+    {
+      "type": "move",
+      "fen": "3r1rnk/pp2b1p1/4Q1Pp/q1p5/3P1B2/8/PPP2PP1/1K1R3R w - - 1 21",
+      "prompt": "White to move. A 13-year-old's famous attack (Carlsen-Ernst, GMC 2004)",
+      "solution": [
+        "Bxh6"
+      ],
+      "orientation": "white",
+      "explain": "**21.Bxh6!** gxh6 22.Rxh6+ and the open h-file decides. Engine main line: 21.Bxh6 gxh6 22.Rxh6+ Nxh6 23.Qxe7 Nf7 24.gxf7 Qb6. (Carlsen-Ernst, GMC 2004; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "4r2k/1b3p1p/pq1RNpr1/1p5P/4pnB1/2P4R/1P3PP1/2K5 w - - 0 28",
+      "prompt": "White to move. The g6-pawn is the last barrier (Kasparov-Kramnik, Novgorod 1994)",
+      "solution": [
+        "hxg6"
+      ],
+      "orientation": "white",
+      "explain": "**28.hxg6!** opens the h-file: the black queen takes on d6 but the rook and pawn break through. Engine main line: 28.hxg6 Qxd6 29.Rxh7+ Kg8 30.gxf7+ Kxh7 31.fxe8=Q Nxe6. (Kasparov-Kramnik, Novgorod 1994; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "2r1n2Q/pb1p1kp1/4qp1B/1p6/3P3R/P5N1/6PP/R5K1 b - - 0 23",
+      "prompt": "Black to move. White's queen has just penetrated to h8 and threatens Qxg7+ (and Bxg7). Black is a piece down. Find the counter-attack (Geller-Euwe, Zurich 1953).",
+      "solution": [
+        "Rc2"
+      ],
+      "hint": "Counter-attack against g2 instead of defending g7.",
+      "explain": "**23...Rc2!!** ignores the attack: the rook joins the counter-attack on g2, and White's attack turns out to be one move too slow. The game went 24.d5 Bxd5 25.Rd1 Rxg2+ 26.Kf1 and Black won. Engine: 0.00 for Rc2, -3.1 for the natural 23...gxh6."
+    },
+    {
+      "type": "quiz",
+      "question": "A typical counter-sacrifice in defence is...",
+      "choices": [
+        "Giving back the extra piece to exchange the attacker's strongest piece or to block the attacking line",
+        "Moving the king to the corner",
+        "Offering a draw",
+        "Advancing pawns in front of your king"
+      ],
+      "answer": 0,
+      "explain": "Returning material at the right moment (often with an exchange of queens or the main attacker) is the most common way strong players kill an attack."
+    },
+    {
+      "type": "quiz",
+      "question": "When is a sacrifice on g7 (Rxg7 or Bxg7) usually justified?",
+      "choices": [
+        "Whenever the g7-pawn is protected only by the king",
+        "When the queen and another piece can follow on the g- or h-file with tempo and the defender has no quick ...f6/...Kf8 escape",
+        "Only when the opponent has castled long",
+        "Only in endgames"
+      ],
+      "answer": 1,
+      "explain": "The same three questions as in every attack: which pieces follow, how fast, and what can the defender do?"
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles**: 20 *sacrifice* + *kingsideAttack* puzzles and 10 *defensiveMove* puzzles. In the defensive ones, note whether the solution returns material.\n- **Guess the move**: Geller-Euwe 1953 (playing Black) — a model of counter-attack.\n- Play 3 games against the bot from a position where you are under attack (*Play → from position*), using counter-sacrifices to defuse it."
+    }
+  ],
+  "practiceThemes": [
+    "sacrifice",
+    "kingsideAttack",
+    "defensiveMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md",
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "Nunn, Understanding Chess Tactics",
+    "Kasparov, My Great Predecessors (vols. I-IV)",
+    "Pillsbury-Tarrasch, Hastings 1895",
+    "Geller-Euwe, Zurich 1953"
+  ]
+}

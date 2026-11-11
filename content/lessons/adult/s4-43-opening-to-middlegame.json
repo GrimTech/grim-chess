@@ -1,0 +1,96 @@
+{
+  "id": "adult.s4.opening-to-middlegame",
+  "track": "adult",
+  "stage": 4,
+  "order": 43,
+  "skillIds": [
+    "opening.middlegame-transition"
+  ],
+  "title": "From the opening to a middlegame plan",
+  "summary": "Recognise the structure your opening produces and pick the plan, regrouping and break that belong to it.",
+  "estMinutes": 16,
+  "steps": [
+    {
+      "type": "text",
+      "md": "When \"the theory ends\" you are not alone: the **pawn structure** tells you what to do. Procedure:\n\n1. Name the structure (French chain, Carlsbad, IQP, Caro-Kann Advance, Open Sicilian...).\n2. Recall its **breaks** and **typical piece placements**.\n3. Find your worst piece and its best square in this structure.\n4. Check the opponent's plan (prophylaxis) before starting yours."
+    },
+    {
+      "type": "board",
+      "fen": "r1bqrnk1/pp2bppp/2p2n2/3p2B1/3P4/2NBPN2/PPQ2PPP/1R3RK1 b - - 5 11",
+      "md": "A **Carlsbad structure** (Queen's Gambit Exchange): White has pawns on d4/e3, Black on c6/d5. Classic White plan: the **minority attack** b4-b5 to create a weak black c-pawn. Black's typical plans: kingside play with ...Ne4/...f5 or ...Ng6, or the ...c5 break.",
+      "arrows": [
+        [
+          "b2",
+          "b4",
+          "green"
+        ],
+        [
+          "b4",
+          "b5",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the Carlsbad structure, why does White push b4-b5 (\"minority attack\") with only two pawns against three?",
+      "choices": [
+        "To exchange on c6 and leave Black with a weak backward or isolated c-pawn on a half-open file",
+        "To promote the b-pawn",
+        "To attack the black king"
+      ],
+      "answer": 0,
+      "explain": "After b5xc6 b7xc6 (or ...bxc6 by Black), the c6-pawn is backward on a half-open c-file and c5 becomes a hole. That is a long-term target for White's rooks and knights."
+    },
+    {
+      "type": "quiz",
+      "question": "The game leaves your opening knowledge in a **French Advance** structure as White. Which plan fits?",
+      "choices": [
+        "Hold d4 (c3, Nf3, Bd3/Be2), gain kingside space, and attack there, because the chain points to the kingside",
+        "Exchange on d5 and open the c-file",
+        "Play for the queenside with b4-b5 at once"
+      ],
+      "answer": 0,
+      "explain": "The d4-e5 chain points to the kingside. Protect the base and use the space there; Black will play on the queenside with ...c5, ...Qb6, ...Nc6."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move in an IQP position (White just played Be4). Which plan suits the defender of the IQP?",
+      "choices": [
+        "Keep the knight on d5 as a blockader (11...Nce7), trade pieces, play against d4",
+        "Trade the d5-knight at once (11...Nxc3)",
+        "Open the kingside with ...f5"
+      ],
+      "answer": 0,
+      "explain": "Blockade and simplify. 11...Nxc3 gives White the c3/d4 pawn pair and the b-file; ...f5 weakens e6 and e5. Engine check: 11...Nce7 is clearly better than 11...Nxc3.",
+      "fen": "r1bq1rk1/pp3ppp/2n1pb2/3n4/3PB3/2N2N2/PP3PPP/R1BQR1K1 b - - 7 11"
+    },
+    {
+      "type": "quiz",
+      "question": "In the QGD, what is Black's most typical way to solve the \"problem bishop\" on c8?",
+      "choices": [
+        "...b6 and ...Bb7, or free the position with ...c5/...e5 after ...dxc4",
+        "...Bd7 and ...Be8",
+        "Leave it at home all game"
+      ],
+      "answer": 0,
+      "explain": "Classic QGD plans (Capablanca, Tartakower) all aim to activate the c8-bishop, either by fianchetto or by opening the c8-h3 diagonal with a central break."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Name the main plan for each structure: Carlsbad (White minority attack; Black kingside play or ...c5), French Advance (White kingside, Black ...c5 and queenside), IQP (attack and d4-d5 vs blockade and trades), QGD (activate the c8-bishop)."
+    }
+  ],
+  "practiceThemes": [
+    "opening",
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#transition-from-opening-to-middlegame",
+    "knowledge-base/03-chess-knowledge/strategy.md#pawn-structure",
+    "knowledge-base/03-chess-knowledge/strategy.md#carlsbad-structure",
+    "knowledge-base/03-chess-knowledge/strategy.md#isolated-queen-pawn",
+    "Flores Rios, Chess Structures: A Grandmaster Guide (Quality Chess, 2015)",
+    "Silman, How to Reassess Your Chess, 4th ed. (2010)"
+  ]
+}

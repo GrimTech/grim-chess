@@ -1,0 +1,87 @@
+{
+  "id": "adult.s7.complex-trees",
+  "track": "adult",
+  "stage": 7,
+  "order": 2,
+  "skillIds": [
+    "calculation.complex-trees"
+  ],
+  "title": "Complex multi-branch calculation",
+  "summary": "Handle several critical branches with correct evaluations under time limits: the order of candidates, branch evaluation and decision.",
+  "estMinutes": 40,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## When there is no single forcing line\n\nComplex positions have 3-4 serious candidates, each with 2-3 replies. Working method:\n1. **Order candidates** by forcingness and by intuition; calculate the most promising first.\n2. Evaluate each branch at a quiet position with a **number or symbol** (=, +=, +/-, +-) and move on — do not return without new information.\n3. Look for **transpositions** between branches.\n4. **Decide**: choose the best branch, and if two are close, use the comparison method or practical criteria (simplicity, clock).\n\nTime budget at this level: 15-25 minutes for the critical position of the game is normal."
+    },
+    {
+      "type": "move",
+      "fen": "2b2k2/2p2pp1/3p1r1p/1p2B3/1P2P1q1/1NP2nP1/R7/1B1QR2K w - - 0 30",
+      "prompt": "White to move. Many pieces are hanging; only one move keeps the balance. Calculate the main branches (Kasparov-Short, PCA-World Championship 1993)",
+      "solution": [
+        "Rh2"
+      ],
+      "orientation": "white",
+      "explain": "**30.Rh2!** — the rook covers the second rank and the h-file; after 30...Nxe1 31.Qxe1 Qf3+ 32.Kg1 White's king survives and the e5-bishop remains strong. Engine main line: 30.Rh2 Nxe1 31.Qxe1 Qf3+ 32.Kg1 dxe5 33.Rd2 Bh3 34.Nc5 Rg6. (Kasparov-Short, PCA-World Championship 1993; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "2r5/5pp1/1pnR2k1/p1p3N1/5p2/P3PK2/1P3P1r/6R1 b - - 0 29",
+      "prompt": "Black to move. White's pieces are aggressive; only one move holds (Spassky-Larsen, Belgrade URS-World 1970)",
+      "solution": [
+        "f6"
+      ],
+      "orientation": "black",
+      "explain": "**29...f6!** — the pawn hits the g5-knight and frees f7 for the king; after 30.Ne6+ Kh7 31.Rxg7+ Kh8 the counter-attack on f2 balances. Engine main line: 29...f6 30.Ne6+ Kh7 31.Rxg7+ Kh8 32.Kxf4 Rxf2+ 33.Ke4 Re8 34.Rxc6. (Spassky-Larsen, Belgrade URS-World 1970; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "2r5/6p1/1pnR1p2/p1p2k2/5N2/P3PK2/1P3P1r/6R1 b - - 0 31",
+      "prompt": "Black to move. Two moves later: find the only move again (Spassky-Larsen, Belgrade URS-World 1970)",
+      "solution": [
+        "Ne5+"
+      ],
+      "orientation": "black",
+      "explain": "**31...Ne5+!** — the knight check forces the king to g3, and the rook lift ...Rch8 creates threats on the h-file. Engine main line: 31...Ne5+ 32.Kg3 Rch8 33.f3 Rh1 34.Rxh1. (Spassky-Larsen, Belgrade URS-World 1970; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "8/4Q1bk/2p3p1/q5Np/1n1P3P/NP2p1P1/5r2/1K1R4 b - - 3 38",
+      "prompt": "Black to move. A critical position with many checks for both sides. Find the only move (Firouzja-Caruana, 10th Sinquefield Cup 2023)",
+      "solution": [
+        "Kh8"
+      ],
+      "orientation": "black",
+      "explain": "**38...Kh8!** — the king steps out of the knight forks and the checks on the 7th rank; Black's counterplay on the 2nd rank then decides. Engine main line: 38...Kh8 39.Qe8+ Rf8 40.Qxg6 Qf5+ 41.Qxf5 Rxf5 42.Re1 Bxd4 43.Nc2. (Firouzja-Caruana, 10th Sinquefield Cup 2023; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "You are calculating three candidates; after 15 minutes the first gives +=, the second = and the third is unclear but you have not finished it. You have 30 minutes for 12 moves. What do you do?",
+      "choices": [
+        "Calculate the third until it is clear, however long it takes",
+        "Play the first (+=) unless the third has a concrete reason to be much better; set a time limit (5 more minutes) for the unclear branch",
+        "Play the second",
+        "Play the third: unclear is always best"
+      ],
+      "answer": 1,
+      "explain": "Decision discipline: a clear += with a safe clock is usually the professional choice."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Calculation drill**: 5 positions per week with at least 3 serious candidates; 20 minutes each, written tree with evaluations at the leaves.\n- **Stoyko exercise**: one per fortnight from your own games.\n- **Guess the move**: Spassky-Larsen 1970 (corpus) from move 20."
+    }
+  ],
+  "practiceThemes": [
+    "masterVsMaster",
+    "veryLong"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "knowledge-base/03-chess-knowledge/grandmaster-competency-profile.md",
+    "Aagaard, Grandmaster Preparation: Calculation",
+    "Kasparov, My Great Predecessors (vols. I-V)",
+    "knowledge-base/02-methods/kotov-tree-of-analysis.md",
+    "Spassky-Larsen, USSR v Rest of the World, Belgrade 1970"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "adult.s3.passed-pawns-and-blockade",
+  "track": "adult",
+  "stage": 3,
+  "order": 44,
+  "skillIds": [
+    "strategy.pawn.passed"
+  ],
+  "title": "Passed pawns: push, support, blockade",
+  "summary": "Passed pawns must be pushed; rooks belong behind them; the defender blockades with a knight. Practice both sides of the struggle.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **passed pawn** has no enemy pawns in front of it or on the adjacent files. Principles:\n\n- **Passed pawns must be pushed** (each step makes it more dangerous and ties down more defenders).\n- Rooks belong **behind** passed pawns (yours and the opponent's: Tarrasch).\n- The defender **blockades** the square in front, ideally with a knight; a blockaded passer is much less dangerous."
+    },
+    {
+      "type": "move",
+      "fen": "2r3k1/5ppp/8/P7/8/8/5PPP/3R2K1 w - - 0 30",
+      "prompt": "Endgame: push the passer while Black's rook is not behind it.",
+      "solution": [
+        "a6"
+      ],
+      "explain": "a6! Black must spend the rook on the a-file (...Ra8), where it is passive. Then a7 and your rook (Rd7/Rb1-b8 ideas) or king decide."
+    },
+    {
+      "type": "move",
+      "fen": "8/2Q1qkpp/p7/1p1P4/1P6/7P/6PK/8 w - - 5 36",
+      "prompt": "White to move. Your d-pawn is one step from the 7th rank. Use it.",
+      "solution": [
+        "d6",
+        "Qxc7",
+        "dxc7"
+      ],
+      "explain": "d6! Black cannot keep the queens: after ...Qxc7 dxc7 the pawn queens next move. A passed pawn on the 6th/7th is often worth a piece."
+    },
+    {
+      "type": "move",
+      "fen": "5k2/3R2pp/4pp2/8/2p5/1p2N1P1/1P3PKP/2r5 b - - 1 31",
+      "prompt": "Black to move. You have connected passed pawns on b3/c4. Break through.",
+      "solution": [
+        "c3",
+        "bxc3",
+        "b2"
+      ],
+      "explain": "...c3! bxc3 b2: the sacrifice deflects the b2-pawn and the b-pawn promotes. Connected passers on the 6th rank beat a rook."
+    },
+    {
+      "type": "quiz",
+      "question": "Where should your rook stand to support your own passed a-pawn?",
+      "choices": [
+        "In front of it (a8)",
+        "Behind it (on the a-file below the pawn)",
+        "On the 7th rank",
+        "Next to your king"
+      ],
+      "answer": 1,
+      "explain": "Behind the pawn, the rook gains scope with every step the pawn takes; in front it loses scope."
+    },
+    {
+      "type": "quiz",
+      "question": "Your opponent has a passed pawn on d5. Which piece is the ideal blockader on d6?",
+      "choices": [
+        "Queen",
+        "Rook",
+        "Knight",
+        "King in the middlegame"
+      ],
+      "answer": 2,
+      "explain": "A knight on d6 blockades, cannot be attacked by pawns there, and still radiates activity. The queen is too valuable to blockade; the king only in the endgame."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what are the three passed-pawn principles?",
+      "choices": [
+        "Push it, rooks behind it, blockade it (when defending)",
+        "Keep it back, rooks in front, trade it",
+        "Push it only in the opening",
+        "Ignore it until the endgame"
+      ],
+      "answer": 0,
+      "explain": "Practise them in the endgame lessons too: outside passers, races and breakthroughs all rely on them."
+    }
+  ],
+  "practiceThemes": [
+    "advancedPawn",
+    "promotion"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#passed-pawn",
+    "Nimzowitsch, My System",
+    "Nimzowitsch, My System (the passed pawn, blockade)",
+    "knowledge-base/03-chess-knowledge/endgames.md#general-endgame-principles",
+    "Lichess puzzle database (CC0): 03BPz, 023GF"
+  ]
+}

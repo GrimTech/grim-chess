@@ -1,0 +1,103 @@
+{
+  "id": "adult.s2.repetition-draws",
+  "track": "adult",
+  "stage": 2,
+  "order": 32,
+  "skillIds": [
+    "rules.draws.repetition"
+  ],
+  "title": "Repetition and move-count draws",
+  "summary": "Threefold and fivefold repetition, the 50-move and 75-move rules, and perpetual check.",
+  "estMinutes": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "- **Threefold repetition**: the same position for the third time (same side to move, same castling and en passant possibilities) lets the player to move **claim** a draw.\n- **Fivefold**: the fifth time, the draw is **automatic**.\n- **50-move rule**: 50 moves by each side with no capture and no pawn move: a claim. **75 moves**: automatic.\n\nOnline servers usually apply the claims automatically. **Perpetual check** (endless checks) is the usual way to force a repetition."
+    },
+    {
+      "type": "quiz",
+      "question": "Over the board, the same position appears for the third time. Is the game over automatically?",
+      "choices": [
+        "No: the player to move must claim it",
+        "Yes",
+        "Only in blitz"
+      ],
+      "answer": 0,
+      "explain": "Threefold needs a claim; fivefold is automatic."
+    },
+    {
+      "type": "quiz",
+      "question": "The same pieces stand on the same squares, but in the first occurrence White could still castle and now cannot. Same position?",
+      "choices": [
+        "No: castling rights differ",
+        "Yes"
+      ],
+      "answer": 0,
+      "explain": "Positions are the same only if all possible moves are the same, including castling and en passant."
+    },
+    {
+      "type": "quiz",
+      "question": "In a FEN ending \"... w - - 87 120\", what does 87 mean?",
+      "choices": [
+        "87 half-moves since the last capture or pawn move",
+        "Move number 87",
+        "87 seconds left"
+      ],
+      "answer": 0,
+      "explain": "This halfmove clock reaches 100 at the 50-move claim, 150 at the automatic 75-move draw."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/5p1p/8/8/5Q2/8/q1r3PP/7K w - - 0 1",
+      "prompt": "Black is threatening to mate you. Save the game with perpetual check.",
+      "solution": [
+        "Qg5+",
+        "Kh8",
+        "Qf6+",
+        "Kg8",
+        "Qg5+"
+      ],
+      "explain": "Qg5+ Kh8 Qf6+ Kg8 Qg5+. The black king can never escape, and the position repeats: a draw. Other checks (Qg3+, Qg4+) let Black escape to h8 and win."
+    },
+    {
+      "type": "quiz",
+      "question": "Which resets the 50-move count?",
+      "choices": [
+        "Any capture or any pawn move",
+        "Any check",
+        "Castling"
+      ],
+      "answer": 0,
+      "explain": "Only captures and pawn moves."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which of these draws is automatic, with no claim needed?",
+      "choices": [
+        "Fivefold repetition",
+        "Threefold repetition",
+        "50-move rule"
+      ],
+      "answer": 0,
+      "explain": "Fivefold and 75 moves are automatic."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: perpetual check leads to a draw by...",
+      "choices": [
+        "Repetition (or agreement)",
+        "Stalemate",
+        "Dead position"
+      ],
+      "answer": 0,
+      "explain": "Perpetual check is not a rule in itself. It leads to a repetition draw."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#draws-by-repetition-and-move-count",
+    "knowledge-base/03-chess-knowledge/rules.md#threefold-repetition",
+    "knowledge-base/03-chess-knowledge/rules.md#fifty-move-rule",
+    "knowledge-base/03-chess-knowledge/rules.md#seventy-five-move-and-fivefold-rules",
+    "knowledge-base/03-chess-knowledge/tactics.md#perpetual-check"
+  ]
+}

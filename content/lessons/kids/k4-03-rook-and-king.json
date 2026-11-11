@@ -1,0 +1,71 @@
+{
+  "id": "kids.4.rook-and-king",
+  "track": "kids",
+  "stage": 2,
+  "order": 403,
+  "skillIds": [
+    "endgame.mate.kr"
+  ],
+  "title": "Rook and king team",
+  "summary": "Kings face to face, then the rook checks along the edge.",
+  "estMinutes": 9,
+  "minAge": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A rook and king can checkmate too. Kings **face each other**, then the rook checks on the edge."
+    },
+    {
+      "type": "move",
+      "fen": "5k2/8/5K2/8/8/8/8/R7 w - - 0 1",
+      "prompt": "Kings face to face. Checkmate!",
+      "solution": [
+        "Ra8#"
+      ],
+      "explain": "Checkmate on the edge!",
+      "hint": "Check along the top row."
+    },
+    {
+      "type": "move",
+      "fen": "1k6/8/1K6/8/8/8/7R/8 w - - 0 1",
+      "prompt": "Checkmate!",
+      "solution": [
+        "Rh8#"
+      ],
+      "explain": "Perfect teamwork!",
+      "hint": "Top row again."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/8/6K1/8/8/8/8/R7 w - - 0 1",
+      "prompt": "Checkmate!",
+      "solution": [
+        "Ra8#"
+      ],
+      "explain": "You know the pattern!",
+      "hint": "Where is the edge?"
+    },
+    {
+      "type": "quiz",
+      "question": "Before the rook checks, where should your king be?",
+      "choices": [
+        "Facing the black king",
+        "Far away"
+      ],
+      "answer": 0,
+      "explain": "Kings face to face, then check."
+    },
+    {
+      "type": "play",
+      "fen": "8/k7/2K5/8/8/8/8/7R w - - 0 1",
+      "goal": "mate",
+      "prompt": "Checkmate with your rook and king!",
+      "maxMoves": 12,
+      "engineLevel": 6,
+      "explain": "Rook team checkmate!"
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

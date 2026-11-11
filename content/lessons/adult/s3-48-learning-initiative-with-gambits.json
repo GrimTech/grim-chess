@@ -1,0 +1,112 @@
+{
+  "id": "adult.s3.learning-initiative-with-gambits",
+  "track": "adult",
+  "stage": 3,
+  "order": 48,
+  "skillIds": [
+    "opening.gambits.intro"
+  ],
+  "title": "Gambits: trading a pawn for time",
+  "summary": "Danish, Evans, Scotch Gambit, King's Gambit, Smith-Morra, Albin and Budapest: what the gambiteer gets, and how to use the development lead before it fades.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **gambit** gives a pawn (sometimes two) for **development, open lines and initiative**. Rules for the gambiteer:\n\n- Develop fast and **open lines** toward the king before the opponent consolidates.\n- Do not grab the pawn back too early if it costs time.\n- If the initiative disappears, you are simply a pawn down.\n\nAt stage 3, gambits are a great way to learn attacking play in training games."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "prompt": "Evans Gambit. Offer the b-pawn to gain time for c3 and d4.",
+      "solution": [
+        "b4"
+      ],
+      "explain": "b4! If ...Bxb4, then c3 hits the bishop and d4 follows with tempo: White gets a big centre and quick development."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/4p3/1bB1P3/5N2/P1PP1PPP/RNBQK2R w KQkq - 0 5",
+      "prompt": "Evans Gambit accepted. Gain a tempo on the bishop and prepare d4.",
+      "solution": [
+        "c3",
+        "Ba5",
+        "d4"
+      ],
+      "explain": "c3 and d4: two tempi used for the centre. White now plays O-O, Qb3 and Ba3 against Black's uncastled king."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppp1ppp/8/8/3pP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+      "prompt": "Danish Gambit. Offer a second pawn.",
+      "solution": [
+        "c3"
+      ],
+      "explain": "c3!? After ...dxc3 Bc4 cxb2 Bxb2 White has two bishops raking f7 and g7 and a huge lead in development for two pawns. Black's safest reply is to return material with ...d5."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pp1ppppp/8/8/3pP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+      "prompt": "Smith-Morra Gambit against the Sicilian.",
+      "solution": [
+        "c3"
+      ],
+      "explain": "c3: after ...dxc3 Nxc3 White gets open c- and d-files and fast development (Bc4, Nf3, O-O, Qe2, Rd1)."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "prompt": "You are Black. Play the Budapest Gambit.",
+      "solution": [
+        "e5"
+      ],
+      "explain": "...e5!? After dxe5 Ng4 Black regains the pawn on e5 in many lines while developing actively (...Nc6, ...Bb4+)."
+    },
+    {
+      "type": "quiz",
+      "question": "What does a gambiteer typically get for the pawn?",
+      "choices": [
+        "A better endgame",
+        "Development lead, open lines and initiative",
+        "A safer king",
+        "Nothing"
+      ],
+      "answer": 1,
+      "explain": "All three are temporary; use them before the opponent finishes development."
+    },
+    {
+      "type": "quiz",
+      "question": "You accepted a gambit and are a pawn up but behind in development. Best general policy?",
+      "choices": [
+        "Grab more pawns",
+        "Return material if needed to finish development and castle; consolidate",
+        "Attack with your queen alone",
+        "Push the extra pawn at all costs"
+      ],
+      "answer": 1,
+      "explain": "Giving back a pawn to neutralise the initiative is often the best defence against a gambit."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: why are gambits recommended at stage 3 for training games?",
+      "choices": [
+        "They are objectively best",
+        "They train development, initiative and tactics around an exposed king",
+        "They avoid theory",
+        "They always win quickly"
+      ],
+      "answer": 1,
+      "explain": "At stage 4+ prefer sound main lines and keep gambits as surprise weapons."
+    }
+  ],
+  "practiceThemes": [
+    "opening",
+    "sacrifice"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#gambits-for-beginners",
+    "knowledge-base/03-chess-knowledge/strategy.md#development-and-tempo",
+    "knowledge-base/03-chess-knowledge/strategy.md#initiative",
+    "Wikipedia: List of chess gambits",
+    "knowledge-base/02-methods/opening-repertoire-building.md#4-evidence-informed-principles-for-repertoire-work"
+  ]
+}

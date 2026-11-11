@@ -1,0 +1,127 @@
+{
+  "id": "adult.s3.pgn-and-game-review",
+  "track": "adult",
+  "stage": 3,
+  "order": 7,
+  "skillIds": [
+    "rules.notation.pgn",
+    "practical.post-game-review"
+  ],
+  "title": "PGN files and the post-game review habit",
+  "summary": "Read and write PGN (tags, movetext, comments, variations, NAGs), then use it for a disciplined review: your own analysis first, engine last, mistakes into an error log.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **PGN** file is plain text: a header of tags in square brackets, then the moves.\n\n```\n[Event \"Club Championship\"]\n[Site \"Leeds\"]\n[Date \"2026.10.04\"]\n[Round \"3\"]\n[White \"Ada\"]\n[Black \"Ben\"]\n[Result \"1-0\"]\n\n1. e4 c5 2. Nf3 d6 {Najdorf coming} 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be3 (6. Bg5 $5) 6... e5 1-0\n```\n\nThe first seven tags (**Event, Site, Date, Round, White, Black, Result**) are the mandatory Seven Tag Roster. `{...}` is a comment, `(...)` a variation, `$1`..`$6` are NAGs for ! ? !! ?? !? ?!."
+    },
+    {
+      "type": "quiz",
+      "question": "Which of these is NOT part of the Seven Tag Roster?",
+      "choices": [
+        "Round",
+        "Result",
+        "WhiteElo",
+        "Site"
+      ],
+      "answer": 2,
+      "explain": "WhiteElo, ECO, TimeControl, FEN/SetUp and others are optional tags. A position that does not start from the initial array needs [SetUp \"1\"] and [FEN \"...\"]."
+    },
+    {
+      "type": "quiz",
+      "question": "In `6. Be3 (6. Bg5 $5) 6... e5`, what is `(6. Bg5 $5)`?",
+      "choices": [
+        "A comment saying Bg5 was played",
+        "A variation: the alternative 6.Bg5, marked \"interesting\" ($5 = !?)",
+        "An illegal move notation",
+        "A clock time"
+      ],
+      "answer": 1,
+      "explain": "$1 = !, $2 = ?, $3 = !!, $4 = ??, $5 = !?, $6 = ?!. Variations do not change the main line; after them the main line resumes with `6...` for Black."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+      "prompt": "Replay the PGN above on the board: you are at move 6 of the main line. Play White's main-line move from the movetext.",
+      "solution": [
+        "Be3"
+      ],
+      "explain": "6.Be3, the English Attack set-up. Reading SAN fluently from a PGN is the first step of reviewing your games without a screen doing it for you."
+    },
+    {
+      "type": "text",
+      "md": "**The review loop** (Dvoretsky/Yusupov, Heisman):\n\n1. Immediately after the game, write down your thoughts at the critical moments (what you feared, what you missed).\n2. Analyse **without an engine**: find the turning points yourself.\n3. If possible, a post-mortem with your opponent.\n4. Only then check with the engine, and compare.\n5. Log each mistake by type (tactical oversight, time, opening, endgame, evaluation) and turn the positions into puzzles for spaced repetition."
+    },
+    {
+      "type": "quiz",
+      "question": "Why analyse your game yourself before switching on the engine?",
+      "choices": [
+        "Engines are often wrong in club positions",
+        "Generating your own analysis first exposes how you actually think, and the engine then corrects specific errors: you learn far more than by reading an evaluation bar",
+        "It saves electricity",
+        "The rules of most tournaments forbid engines after games"
+      ],
+      "answer": 1,
+      "explain": "Generation before feedback (retrieval practice) is what makes the correction stick; an engine-first review mostly teaches you that the engine is strong."
+    },
+    {
+      "type": "move",
+      "fen": "2r1k2r/1q2bp2/p2p4/1p1P2p1/3Q4/PN4B1/1Pn4P/R4R1K w k - 0 25",
+      "prompt": "Critical moment from a game: you played a slow move here and lost the thread. White to move: find the forcing move you should have played, and win material.",
+      "solution": [
+        "Qxh8+",
+        "Kd7",
+        "Qh3+"
+      ],
+      "explain": "Checks first: Qxh8+ grabs the loose rook on the long diagonal with check, and after ...Kd7 Qh3+ skewers the king and the c8-rook. In your error log this goes under \"tactical oversight: did not scan captures with check\".",
+      "hint": "The h8-rook is loose."
+    },
+    {
+      "type": "move",
+      "fen": "r3k2r/1bqpnp2/1p3b1p/5B2/8/2P2N2/PP1N2PP/R2QR1K1 b kq - 1 16",
+      "prompt": "Another position from the same review, now from Black's side. Black to move: one check wins a piece.",
+      "solution": [
+        "Qc5+",
+        "Kh1",
+        "Qxf5"
+      ],
+      "explain": "...Qc5+ forks king and the bishop on f5 (Kh1 Qxf5). Logging which motif you missed (here: queen fork with check) is what lets the platform send you the right puzzle themes later."
+    },
+    {
+      "type": "quiz",
+      "question": "After the review you find: 2 tactical oversights, 1 opening deviation you did not know, and you were under 1 minute from move 31. What goes in the error log?",
+      "choices": [
+        "Only the losing move",
+        "All of it, each tagged by type: tactics x2, opening (look up the line and add it to your repertoire file), time management",
+        "Nothing: the game is lost anyway",
+        "Only the engine's evaluation graph"
+      ],
+      "answer": 1,
+      "explain": "Patterns emerge only when every error is tagged. A month of logs tells you whether your problem is tactics, time, openings or endgames."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what marks a PGN that starts from a custom position?",
+      "choices": [
+        "[Variant \"Custom\"]",
+        "[SetUp \"1\"] together with [FEN \"...\"]",
+        "A comment {start} before move 1",
+        "Nothing: PGN always starts from the initial position"
+      ],
+      "answer": 1,
+      "explain": "Without SetUp/FEN, software replays the moves from the initial array and the file breaks."
+    }
+  ],
+  "practiceThemes": [
+    "mix"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#pgn-format",
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#post-game-analysis",
+    "PGN Standard (Edwards 1994)",
+    "knowledge-base/02-methods/game-study-and-analysis-loops.md",
+    "knowledge-base/02-methods/engine-use-best-practices.md",
+    "Dvoretsky & Yusupov, Training for the Tournament Player (self-analysis)",
+    "Lichess puzzle database (CC0): 0Dz8O, 05HUb"
+  ]
+}

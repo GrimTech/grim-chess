@@ -1,0 +1,93 @@
+{
+  "id": "adult.s5.defending-worse-positions",
+  "track": "adult",
+  "stage": 5,
+  "order": 17,
+  "skillIds": [
+    "strategy.defence"
+  ],
+  "title": "Defending worse positions",
+  "summary": "Find the only moves, exchange attackers, return material, build solid set-ups and keep counterplay — as in world-championship defence.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## The defender's toolbox\n\n1. **Find the threat**: what does the attacker want (a break, a sacrifice, an entry square)? Prophylaxis starts here.\n2. **Exchange attackers**, especially the most active piece; keep your defensive minor pieces.\n3. **Return material** when it kills the initiative.\n4. **Counter-attack** where the opponent is weak; passive defence alone rarely holds.\n5. **Only-moves**: in critical moments, look for the single move that holds; the engine often shows a 3-4 pawn gap between it and the rest.\n6. **Keep fighting**: make the opponent prove the win; practical chances matter."
+    },
+    {
+      "type": "move",
+      "fen": "1rb1r1k1/2q1bppp/ppnppn2/6P1/P3PP2/1NN1BB2/1PPQ3P/R4R1K b - - 0 16",
+      "prompt": "Black to move. White prepares a kingside attack with g5 and f5. Find the regrouping that holds (Karpov-Kasparov, World Championship 1985)",
+      "solution": [
+        "Nd7"
+      ],
+      "orientation": "black",
+      "explain": "**16...Nd7!** — the knight leaves f6 before g5-g6 or e5 hits it and heads for c5/e5; Kasparov's defence held and he went on to win the game. Engine main line: 16...Nd7 17.Qf2 Bb7 18.Rad1 Na5 19.Nd2 Nc4 20.Nxc4. (Karpov-Kasparov, World Championship 1985; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "2k3r1/p7/1pp1q2p/2p1b2P/4Pp2/1P1P3P/P1P2NQ1/5RK1 w - - 3 30",
+      "prompt": "White to move. Black threatens to open the kingside. Only one move keeps the balance (Caruana-Carlsen, WCh 2018 2018)",
+      "solution": [
+        "Ng4"
+      ],
+      "orientation": "white",
+      "explain": "**30.Ng4!** — the knight blocks and hits e5/h6, stopping Black's pieces from using the g-file and the long diagonal. Engine main line: 30.Ng4 Kb7 31.Qf3 Bc7 32.Re1 Qe5 33.Re2 Qxh5. (Caruana-Carlsen, WCh 2018 2018; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "r6k/p4p1p/3bp1r1/6qN/PppP1pPn/2Q4P/1PB2P2/4R1RK w - - 0 27",
+      "prompt": "White to move. The black pieces are swarming around the white king. Find the only move that keeps White alive (Ding Liren-Nepomniachtchi, WCh 2023 2023)",
+      "solution": [
+        "Qxc4"
+      ],
+      "orientation": "white",
+      "explain": "**27.Qxc4!** — the queen takes a pawn and returns to defence along the 4th rank and the long diagonal; slower moves allow ...Rxg4 or ...Nf3. Engine main line: 27.Qxc4 Rd8 28.Qc6 Rh6 29.Qb7 Qe7 30.Be4 f5. (Ding Liren-Nepomniachtchi, WCh 2023 2023; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "4kb1r/1prb1p2/pNnppp2/7p/q4P2/1NPB4/P2Q2PP/R4R1K b k - 5 19",
+      "prompt": "Black to move. White's knight has jumped into b6. Find the only move that keeps the balance (Short-Kasparov, PCA-World Championship 1993)",
+      "solution": [
+        "Qa3"
+      ],
+      "orientation": "black",
+      "explain": "**19...Qa3!** — the queen counter-attacks along the third rank and against c3, keeping White's pieces busy. Engine main line: 19...Qa3 20.Na8 Rc8 21.Nb6 Rd8 22.Nc4 Qa4 23.Rae1. (Short-Kasparov, PCA-World Championship 1993; checked with Stockfish 19.)"
+    },
+    {
+      "type": "quiz",
+      "question": "Under attack, you can either give back the extra pawn to force a queen exchange, or keep the pawn and defend passively. The engine shows 0.00 for the first and -0.40 for the second. Which do you choose in a tournament game?",
+      "choices": [
+        "Keep the pawn: material is material",
+        "Give back the pawn: the resulting position is objectively equal and much easier to play",
+        "Resign",
+        "Choose randomly"
+      ],
+      "answer": 1,
+      "explain": "Practical defence prefers simple, safe positions. Returning material to end the attack is a strong defensive method."
+    },
+    {
+      "type": "play",
+      "fen": "2k3r1/p7/1pp1q2p/2p1b2P/4Pp2/1P1P3P/P1P2NQ1/5RK1 w - - 3 30",
+      "goal": "hold",
+      "prompt": "Defend this position as White (Caruana-Carlsen, World Championship 2018) against the engine (level 12) for 25 moves. Start with the only move.",
+      "maxMoves": 25,
+      "engineLevel": 11
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles**: 25 *defensiveMove* puzzles at your rating.\n- **Play from position**: 3 games defending a worse position (around -1) against a bot at your level.\n- **Guess the move**: Karpov-Kasparov 1985 game 16 (in the corpus), playing Black."
+    }
+  ],
+  "practiceThemes": [
+    "defensiveMove",
+    "equality"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "Aagaard, Grandmaster Preparation: Attack and Defence",
+    "Karpov-Kasparov, World Championship 1985",
+    "Caruana-Carlsen, World Championship 2018"
+  ]
+}

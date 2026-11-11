@@ -1,0 +1,111 @@
+{
+  "id": "adult.s1.board-vision",
+  "track": "adult",
+  "stage": 1,
+  "order": 12,
+  "skillIds": [
+    "calculation.board-vision"
+  ],
+  "title": "Board vision: seeing every attack",
+  "summary": "Count attackers and defenders, and spot backward and long-range captures.",
+  "estMinutes": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Most beginner losses come from simply not seeing a piece's line. Train three habits:\n\n1. For any square, count **who attacks it** and **who defends it**.\n2. Look for **long-range** and **backward** moves: queens and bishops sliding the length of the board, knights jumping back.\n3. Know which of your pieces are **loose** (undefended)."
+    },
+    {
+      "type": "quiz",
+      "question": "How many white pieces attack the black knight on e5?",
+      "choices": [
+        "2 (knight f3 and pawn d4)",
+        "3 (knight, pawn and bishop)",
+        "1",
+        "0"
+      ],
+      "answer": 0,
+      "explain": "The bishop on b2 is blocked by its own pawn on d4. A blocked line does not attack. Counting correctly means checking each line all the way.",
+      "fen": "4k3/8/8/4n3/3P4/5N2/1B6/6K1 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5pp1/7p/3Q4/8/8/n4PPP/6K1 w - - 0 1",
+      "prompt": "Win the loose knight.",
+      "solution": [
+        "Qxa2"
+      ],
+      "explain": "A backward diagonal: d5-c4-b3-a2. Backward queen moves are among the most frequently missed."
+    },
+    {
+      "type": "move",
+      "fen": "4k2r/pp6/8/8/8/8/5PPP/B5K1 w k - 0 1",
+      "prompt": "Find the capture.",
+      "solution": [
+        "Bxh8"
+      ],
+      "explain": "From a1 to h8 in one move, the whole long diagonal. Always scan the full length of every line."
+    },
+    {
+      "type": "quiz",
+      "question": "Which white piece is loose (completely undefended)?",
+      "choices": [
+        "The bishop on d3",
+        "The knight on c3",
+        "The pawn on f2",
+        "The pawn on g2"
+      ],
+      "answer": 0,
+      "explain": "The knight is defended by the b2-pawn; f2 and g2 by the king. Nothing protects d3. Loose pieces are the first targets of tactics.",
+      "fen": "4k3/8/8/8/8/2NB4/PP3PPP/R5K1 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "r3k3/8/8/8/8/8/8/R5K1 w - - 0 1",
+      "prompt": "Find the free capture.",
+      "solution": [
+        "Rxa8+"
+      ],
+      "explain": "Straight up the open a-file. The rook on a8 is undefended (the king on e8 is too far away)."
+    },
+    {
+      "type": "quiz",
+      "question": "How many defenders does the black pawn on d5 have?",
+      "choices": [
+        "2 (pawn e6 and knight f6)",
+        "1",
+        "3",
+        "0"
+      ],
+      "answer": 0,
+      "explain": "e6 pawn and f6 knight both guard d5. The bishop on f7 is blocked by the e6 pawn.",
+      "fen": "4k3/5b2/4pn2/3p4/8/8/8/4K3 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which moves do players miss most often?",
+      "choices": [
+        "Backward and long diagonal moves",
+        "Pawn pushes",
+        "King moves"
+      ],
+      "answer": 0,
+      "explain": "The eye tends to look forward and nearby. Scan backwards and along full diagonals on purpose."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: a piece that is not defended by anything is called...",
+      "choices": [
+        "Loose",
+        "Pinned",
+        "Trapped"
+      ],
+      "answer": 0,
+      "explain": "Loose pieces (and pawns) are the first targets of tactics. Know where yours are."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md#board-vision",
+    "knowledge-base/02-methods/heisman-thought-process-and-real-chess.md#3-the-structured-thought-process-simplified-composite",
+    "knowledge-base/01-learning-science/cognitive-load-theory.md#41-beginners-0-to-about-1000"
+  ]
+}

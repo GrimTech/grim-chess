@@ -1,0 +1,109 @@
+{
+  "id": "adult.s1.opening-mates",
+  "track": "adult",
+  "stage": 1,
+  "order": 20,
+  "skillIds": [
+    "checkmate.opening-mates"
+  ],
+  "title": "Fool's mate and Scholar's mate",
+  "summary": "The fastest mates, and how to defend f7 against an early queen.",
+  "estMinutes": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Two mates every player must know, from both sides:\n\n- **Fool's mate** (1.f3 e5 2.g4 Qh4#): weakening pawn moves in front of your king open a diagonal.\n- **Scholar's mate** (1.e4 e5 2.Bc4 Nc6 3.Qh5 Nf6?? 4.Qxf7#): queen and bishop hit **f7**, which only the king defends."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2",
+      "prompt": "You are Black. Punish White's pawn moves.",
+      "solution": [
+        "Qh4#"
+      ],
+      "explain": "Fool's mate. Lesson for your own games: avoid early f- and g-pawn moves that open your king."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
+      "prompt": "Black has just blundered. Finish the game.",
+      "solution": [
+        "Qxf7#"
+      ],
+      "explain": "Scholar's mate. f7 was attacked twice (queen and bishop) and defended only by the king."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+      "prompt": "You are Black. White threatens Qxf7#. Defend f7.",
+      "solution": [
+        "g6"
+      ],
+      "alternatives": [
+        "Qe7",
+        "Qf6",
+        "Nh6"
+      ],
+      "explain": "3...g6 blocks the queen's diagonal and attacks it. 3...Qe7, 3...Qf6 and 3...Nh6 also defend. 3...Nf6?? walks into mate."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR b KQkq - 1 4",
+      "prompt": "The queen has switched to f3, again aiming at f7. Defend f7 by developing a knight.",
+      "solution": [
+        "Nf6"
+      ],
+      "explain": "The knight blocks the f-file and develops. Now White's queen is misplaced and Black is comfortable."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppp1p1p/2n2np1/4p3/2B1P3/1Q6/PPPP1PPP/RNB1K1NR b KQkq - 3 5",
+      "prompt": "Third attempt: Qb3 hits f7 again. Parry the threat, ideally while hitting the queen.",
+      "solution": [
+        "Nd4"
+      ],
+      "explain": "Nd4! attacks the queen and threatens Nxc2+, forking king and rook. 5...Qe7 (solid) and 5...d5 (blocking the bishop) also parry the threat, but Nd4 is strongest. White has spent four moves on the queen; Black has developed."
+    },
+    {
+      "type": "quiz",
+      "question": "Why is f7 (f2 for White) a weak point at the start?",
+      "choices": [
+        "Only the king defends it",
+        "It is the only light square near the king",
+        "Pawns there cannot move"
+      ],
+      "answer": 0,
+      "explain": "Every other square around the uncastled king has more defenders. Castling and developing fix this."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: how many moves does Scholar's mate take?",
+      "choices": [
+        "4 moves by White",
+        "2 moves",
+        "10 moves"
+      ],
+      "answer": 0,
+      "explain": "1.e4, 2.Bc4, 3.Qh5, 4.Qxf7#. Fool's mate is quicker: Black mates on move 2."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the best response to an early Qh5 attacking f7?",
+      "choices": [
+        "Defend f7 (e.g. ...g6 or ...Qe7) and then develop with tempo",
+        "Ignore it and push a flank pawn",
+        "Move the king"
+      ],
+      "answer": 0,
+      "explain": "Parry the threat first, then develop while hitting the queen."
+    }
+  ],
+  "practiceThemes": [
+    "attackingF2F7",
+    "mateIn1"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#opening-mates-and-traps",
+    "knowledge-base/03-chess-knowledge/tactics.md#attacking-f2-and-f7"
+  ]
+}

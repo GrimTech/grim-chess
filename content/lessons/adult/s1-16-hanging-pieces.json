@@ -1,0 +1,109 @@
+{
+  "id": "adult.s1.hanging-pieces",
+  "track": "adult",
+  "stage": 1,
+  "order": 16,
+  "skillIds": [
+    "tactics.hanging-piece"
+  ],
+  "title": "Free pieces: take them, don't give them",
+  "summary": "Spot undefended pieces, capture them, and stop leaving your own en prise.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **hanging** piece can be captured without enough recapture. Up to about 1000 rating, most games are decided by hanging pieces. After every opponent move ask two questions:\n\n1. **Did they leave something free?** Take it, but first check it really is undefended.\n2. **Is anything of mine attacked and not defended enough?** Save it."
+    },
+    {
+      "type": "move",
+      "fen": "rnb1kbnr/pppp1ppp/8/4p3/4P2q/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "prompt": "Black's queen just jumped to h4. Punish it.",
+      "solution": [
+        "Nxh4"
+      ],
+      "explain": "The queen is undefended and your knight attacks it. Winning a queen for nothing usually decides the game."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P1Q1/8/PPPP1PPP/RNB1K1NR b KQkq - 5 4",
+      "prompt": "White's queen walked into an attack. Take it.",
+      "solution": [
+        "Nxg4"
+      ],
+      "explain": "The knight on f6 attacks g4, and nothing defends the queen there."
+    },
+    {
+      "type": "quiz",
+      "question": "Black is tempted by 4...Qxg5. Is the knight on g5 free?",
+      "choices": [
+        "No, the c1 bishop defends it; Qxg5 Bxg5 loses the queen",
+        "Yes, take it",
+        "Only if Black castles first"
+      ],
+      "answer": 0,
+      "explain": "Always check the whole board for defenders, including pieces still on their starting squares. The c1-bishop sees g5 along c1-d2-e3-f4-g5.",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p1N1/2B1P3/8/PPPP1PPP/RNBQK2R b KQkq - 5 4"
+    },
+    {
+      "type": "move",
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1n3/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 0 6",
+      "prompt": "One black piece is hanging. Find it and take it.",
+      "solution": [
+        "dxe4"
+      ],
+      "hint": "Count attackers and defenders of each black piece.",
+      "explain": "The knight on e4 is attacked three times and defended zero times. Take with the pawn: the least valuable attacker."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 4",
+      "prompt": "You are Black. White ignored your last move. Punish it.",
+      "solution": [
+        "axb5"
+      ],
+      "explain": "The bishop on b5 was attacked by the a6-pawn and White did not move it. Nothing recaptures on b5: a free piece."
+    },
+    {
+      "type": "quiz",
+      "question": "Your knight on c3 is attacked by a pawn. What should you think first?",
+      "choices": [
+        "Where can it go to be safe, or can I gain more elsewhere?",
+        "Ignore it and attack",
+        "Resign"
+      ],
+      "answer": 0,
+      "explain": "A piece attacked by a pawn must usually move: the pawn is worth less than anything it attacks."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: a piece is \"hanging\" when...",
+      "choices": [
+        "It can be captured and not enough recaptures follow",
+        "It is attacked at all",
+        "It has no legal moves"
+      ],
+      "answer": 0,
+      "explain": "Attacked and defended once by a pawn is not hanging. Attacked twice and defended once may be. That is counting, which you will practise in stage 2."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: before capturing a \"free\" piece, what should you verify?",
+      "choices": [
+        "That nothing (including far-away or undeveloped pieces) recaptures",
+        "That it is a queen",
+        "Nothing, take it fast"
+      ],
+      "answer": 0,
+      "explain": "The Ng5/Bc1 example shows how a far-away defender hides."
+    }
+  ],
+  "practiceThemes": [
+    "hangingPiece",
+    "oneMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#hanging-piece",
+    "knowledge-base/02-methods/heisman-thought-process-and-real-chess.md#2-hope-chess-vs-real-chess",
+    "knowledge-base/03-chess-knowledge/calculation.md#board-vision"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "adult.s3.touch-move-and-the-clock",
+  "track": "adult",
+  "stage": 3,
+  "order": 1,
+  "skillIds": [
+    "rules.touch-move",
+    "rules.clock"
+  ],
+  "title": "Touch-move and the chess clock",
+  "summary": "The over-the-board rules that cost club players games: touch-move, adjusting, one-hand moves, and how the clock, increment and delay work.",
+  "estMinutes": 12,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Online, a misclick is the only accident. Over the board, **touching is committing**. If it is your move and you deliberately touch one of your pieces, you must move it (if it has a legal move). Touch an opponent's piece and you must capture it (if you can). To straighten a piece, say **\"I adjust\"** (or \"j'adoube\") *before* touching it.\n\nA move is complete when you **release** the piece on its new square. Then press the clock **with the same hand** you moved with."
+    },
+    {
+      "type": "quiz",
+      "question": "It is your move. Without saying anything, you pick up your bishop, realise it is a bad idea, and put it back. What now?",
+      "choices": [
+        "Nothing: you put it back on its original square",
+        "You must move that bishop if it has any legal move",
+        "You receive a warning and may play any move",
+        "Your opponent chooses which piece you must move"
+      ],
+      "answer": 1,
+      "explain": "Art. 4.3: a deliberately touched own piece must be moved, provided it has a legal move. Putting it back changes nothing. Only if the touched piece has no legal move may you play any move (Art. 4.5)."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 4",
+      "prompt": "Touch-move in practice: you (Black) reached for your f8-bishop without saying \"I adjust\". You must now move that bishop. Pick its best square.",
+      "solution": [
+        "Bc5"
+      ],
+      "explain": "Bc5 develops actively and eyes f2. ...Be7 is also playable, but once the bishop is touched you only get to choose *where* it goes, so make it the most active square. The lesson: decide before your hand moves.",
+      "alternatives": [
+        "Be7"
+      ],
+      "hint": "The bishop wants the most active diagonal available."
+    },
+    {
+      "type": "quiz",
+      "question": "Your opponent touches their queen, then says \"I adjust\" and plays a knight move instead. What is the correct reaction?",
+      "choices": [
+        "Accept it: \"I adjust\" can be said at any time",
+        "Claim touch-move before you touch any piece yourself; the queen must be moved if it can",
+        "Stop the clock and ask the arbiter to award you the game",
+        "Touch-move is only enforced in rapid games"
+      ],
+      "answer": 1,
+      "explain": "Saying \"I adjust\" only works *before* touching. Claim immediately: you lose the right to claim once you deliberately touch a piece yourself (Art. 4.8). Stop the clock and call the arbiter if your opponent disagrees."
+    },
+    {
+      "type": "quiz",
+      "question": "Which castling execution is legal over the board?",
+      "choices": [
+        "Move the rook first, then the king",
+        "Move king and rook at the same time with both hands",
+        "Move the king two squares first, then the rook, with one hand",
+        "Move the king one square, press the clock, then finish castling"
+      ],
+      "answer": 2,
+      "explain": "Castling is a king move: touch the king first and move it two squares, then move the rook with the same hand. Touching the rook first means a rook move (Art. 4.4.2). Using two hands is treated as an illegal move (Art. 7.5.4)."
+    },
+    {
+      "type": "text",
+      "md": "**The clock.** Each player has a time budget. Common controls: classical (60+ minutes), rapid (more than 10 and less than 60 minutes), blitz (10 minutes or less). **Increment** (Fischer) adds time after every move (e.g. 15+10 adds 10 seconds per move). **Delay** (Bronstein / US) counts down a few seconds before your main time starts running. The flag falling means a loss, unless your opponent cannot possibly checkmate you."
+    },
+    {
+      "type": "quiz",
+      "question": "A game is played at 15+10. You have 40 seconds left and make a move quickly in 4 seconds. How much time do you have after pressing the clock?",
+      "choices": [
+        "36 seconds",
+        "46 seconds",
+        "50 seconds",
+        "40 seconds"
+      ],
+      "answer": 1,
+      "explain": "Increment is added after each completed move: 40 - 4 + 10 = 46 seconds. In increment games you can survive time trouble indefinitely if you move faster than the increment."
+    },
+    {
+      "type": "quiz",
+      "question": "Under FIDE rules, which of these is a rapid time control?",
+      "choices": [
+        "5+3",
+        "10+0",
+        "15+10",
+        "90+30"
+      ],
+      "answer": 2,
+      "explain": "Rapid is more than 10 and less than 60 minutes per player, where the increment counts x60 (App. A.1). 15+10 = 15 + 10 = 25-minute equivalent. 5+3 and 10+0 are blitz; 90+30 is classical."
+    },
+    {
+      "type": "quiz",
+      "question": "Your opponent's flag falls. You have only a bare king left. What is the result?",
+      "choices": [
+        "You win on time",
+        "Draw: you cannot checkmate by any legal series of moves",
+        "Your opponent loses only if you claim within 10 seconds",
+        "The game continues with 2 minutes added"
+      ],
+      "answer": 1,
+      "explain": "Flag fall loses, except when the opponent cannot checkmate by any legal sequence; then it is a draw (Art. 6.9). A lone king can never mate."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which three habits avoid most over-the-board rule accidents?",
+      "choices": [
+        "Say \"I adjust\" before straightening; decide fully before touching; press the clock with the moving hand",
+        "Always touch the rook first when castling; use both hands in time trouble; stop the clock to think",
+        "Adjust pieces on your opponent's time; touch pieces to help visualise; press with either hand",
+        "Only claim touch-move after the game; ignore the clock until move 40; castle with two hands"
+      ],
+      "answer": 0,
+      "explain": "Adjust only with an announcement, think with your hands off the pieces, and use one hand for both the move and the clock."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#touch-move",
+    "knowledge-base/03-chess-knowledge/rules.md#chess-clock",
+    "knowledge-base/03-chess-knowledge/rules.md#common-time-controls",
+    "FIDE Laws of Chess (2023) Art. 4.1-4.8, 6.1-6.12, App. A.1, B.1",
+    "knowledge-base/01-learning-science/cognitive-load-theory.md#42-intermediate-about-10001800"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "adult.s6.opponent-and-tournament-prep",
+  "track": "adult",
+  "stage": 6,
+  "order": 16,
+  "skillIds": [
+    "opening.opponent-prep",
+    "practical.tournament-prep"
+  ],
+  "title": "Preparing for an opponent and for a tournament",
+  "summary": "Find the opponent's likely lines, choose a target structure, prepare efficiently, and manage energy, sleep and routines across a multi-round event.",
+  "estMinutes": 25,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Opponent preparation in 60-90 minutes\n\n1. **Collect** the opponent's games (database, online accounts if public) from the last 2-3 years, with the colour you will face.\n2. **Tree**: which first moves and main lines, and how consistent is he? Players who always repeat are easy targets; players with a wide repertoire require preparing *structures*, not lines.\n3. **Target**: choose a line where (a) you understand the resulting structure, (b) his results or his handling of that structure are weak, (c) the theory is not so sharp that one slip loses.\n4. **Check** the critical position with the engine and refresh your own notes; do not build a new repertoire the night before.\n5. **Habits**: time use (does he get into time trouble?), endgame skill, how he reacts to an early surprise.\n\nBotvinnik's rule still applies: preparation is useful only if it leads to positions *you* play well."
+    },
+    {
+      "type": "quiz",
+      "question": "Your next opponent plays the French Defence in 90% of his games, scoring well in the Winawer but poorly in the Tarrasch (3.Nd2) structures with an isolated pawn. You normally play 3.Nc3 but have played 3.Nd2 before. Best choice?",
+      "choices": [
+        "Prepare a sharp Winawer novelty all night",
+        "Play 3.Nd2 aiming for the IQP structures you know, and spend the time refreshing typical plans",
+        "Play 1.d4 for the first time",
+        "Ignore his repertoire; just play your normal moves"
+      ],
+      "answer": 1,
+      "explain": "A small switch to a structure you understand and he handles poorly is the classic efficient preparation. A brand-new opening or an all-night novelty hunt costs energy and confidence."
+    },
+    {
+      "type": "quiz",
+      "question": "During a nine-round tournament with one game a day, which routine is most supported by evidence and expert practice?",
+      "choices": [
+        "Analyse your game until 2 a.m. every night",
+        "Short post-mortem, light preparation, regular sleep and meals at fixed times, a walk or light exercise, and keeping the same routine every day",
+        "No preparation at all to stay fresh",
+        "Study new openings between rounds"
+      ],
+      "answer": 1,
+      "explain": "Sleep and stable routines protect decision quality in long events (see the sleep and stamina KB article). Deep analysis is for after the event."
+    },
+    {
+      "type": "quiz",
+      "question": "You lost a painful game in round 4 of 9. What is the best approach for round 5?",
+      "choices": [
+        "Play a very sharp opening to win back the point quickly",
+        "Do a short, honest post-mortem, then treat round 5 as a new event: normal preparation, normal opening, normal time use",
+        "Offer a quick draw in every remaining game",
+        "Change your entire repertoire"
+      ],
+      "answer": 1,
+      "explain": "Tilt causes \"must-win\" decisions and unnecessary risk. Resilience means returning to your normal process, not compensating for the lost point."
+    },
+    {
+      "type": "quiz",
+      "question": "Before the event, which physical preparation helps most for long classical games?",
+      "choices": [
+        "None; chess is purely mental",
+        "Regular aerobic exercise in the weeks before, sleep schedule adjusted to round times, and planned meals/snacks during the game",
+        "Large amounts of caffeine before each round",
+        "Training only blitz the week before"
+      ],
+      "answer": 1,
+      "explain": "Long games demand sustained attention; fitness and sleep routines are part of serious preparation (Botvinnik already prescribed physical training)."
+    },
+    {
+      "type": "board",
+      "fen": "rnbq1rk1/p1p1bpp1/1p2pn1p/3p4/2PP3B/2N1PN2/PP3PPP/R2QKB1R w KQ - 0 8",
+      "md": "**Example target structure.** If your opponent plays the Queen's Gambit Declined, knowing the Tartakower set-up (...h6, ...b6) and its hanging-pawn middlegames lets you prepare one line and many plans. Study 3 model games in this structure instead of 30 moves of a single variation."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- For your **next real opponent** (or a club player whose games are public), do the 60-90 minute protocol above and write a one-page plan: expected line, target structure, two model games, his habits.\n- Write your **tournament checklist**: sleep time, wake time, pre-game meal, warm-up (10 easy puzzles, not new openings), post-game routine (30-minute post-mortem, no engine marathons).\n- After the event, review with Game review and note which preparation actually appeared on the board."
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md",
+    "knowledge-base/02-methods/opening-repertoire-building.md",
+    "knowledge-base/02-methods/soviet-school-botvinnik-dvoretsky-yusupov.md",
+    "Botvinnik, Achieving the Aim (preparation regimen)",
+    "knowledge-base/01-learning-science/sleep-fitness-and-tournament-stamina.md"
+  ]
+}

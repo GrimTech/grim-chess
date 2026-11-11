@@ -1,0 +1,84 @@
+{
+  "id": "adult.s6.rook-minor-vs-rook-queen-vs-pieces",
+  "track": "adult",
+  "stage": 6,
+  "order": 13,
+  "skillIds": [
+    "endgame.rook-bishop-vs-rook",
+    "endgame.queen-vs-pieces"
+  ],
+  "title": "R+minor v R, and queen against rooks and minor pieces",
+  "summary": "The second-rank and Cochrane defences in R+B v R; when Q v 2R, Q v R+N and Q v 2N are draws.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Rook and bishop against rook\n\nR+B v R is **theoretically drawn** in general, but the defence is hard and must be held within the 50-move rule.\n- **Second-rank defence**: the defender's rook on the 2nd rank (7th for Black) with the king near a corner not of the bishop's colour; very reliable.\n- **Cochrane defence**: the defender's rook pins the bishop against its king, keeping the defending king off the edge.\n- **Philidor position**: a winning set-up with the defending king on the edge — avoid it.\n\nR+N v R is easier to draw: keep the king away from the edge and the corner.\n\n## Queen against pieces\n\n- **Q v 2R**: roughly balanced; coordinated rooks often hold or even win, the queen needs forks and an exposed king.\n- **Q v R+minor**: usually drawn with pawns balanced; the pieces protecting each other near the king form a fortress.\n- **Q v 2N**: draw when the knights protect each other near the king. **Q v 2B**: often a win but frequently beyond 50 moves."
+    },
+    {
+      "type": "play",
+      "fen": "6k1/5r2/4K3/8/8/3B4/8/1R6 b - - 0 1",
+      "goal": "hold",
+      "prompt": "R+B v R, second-rank defence: your rook stays on the 7th rank, your king near g8/h8. Hold for 30 moves against the engine (tablebase: draw).",
+      "maxMoves": 30
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: queen against two rooks; the rooks are on b2 and f2, the black king on g8 and the white king on g1. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw (with 10 different White moves). The rooks protect each other along the 2nd rank; the queen has no fork.",
+      "fen": "6k1/8/8/8/8/8/1r3r2/3Q2K1 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White to move: queen against rook and knight, the black pieces near their king. Result?",
+      "choices": [
+        "White wins",
+        "Draw",
+        "Black wins"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: draw. Rook and knight close to their king and to each other hold against the queen.",
+      "fen": "8/8/4k3/4n3/3r4/8/8/1K5Q w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "In R+B v R, which defensive set-up should you aim for as the defender?",
+      "choices": [
+        "King in the centre, rook far away",
+        "Second-rank defence (rook on your 2nd rank, king near a safe corner) or the Cochrane pin; avoid the Philidor position on the edge",
+        "King in the corner of the bishop's colour",
+        "Exchange the rooks"
+      ],
+      "answer": 1,
+      "explain": "These defences are tablebase-proven and practical. The king in the corner of the bishop's colour is exactly where the attacker wants it."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/8/2kr4/8/8/K5Q1 w - - 0 1",
+      "goal": "win",
+      "prompt": "Revision: queen against rook. Win the rook against full-strength defence (tablebase: mate in 33).",
+      "maxMoves": 50
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Endgames trainer**: R+B v R second-rank defence (twice), R+N v R defence (once), Q v R (once).\n- Read DEM ch. 13 (other material relationships): Q v 2R, Q v R+minor.\n- Remember the practical rule: R+B v R must be won (or defended) within 50 moves — count them."
+    }
+  ],
+  "practiceThemes": [
+    "rookEndgame",
+    "queenEndgame",
+    "queenRookEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky's Endgame Manual (5th ed.)",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)"
+  ]
+}

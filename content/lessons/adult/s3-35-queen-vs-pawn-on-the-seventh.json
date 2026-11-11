@@ -1,0 +1,81 @@
+{
+  "id": "adult.s3.queen-vs-pawn-on-the-seventh",
+  "track": "adult",
+  "stage": 3,
+  "order": 35,
+  "skillIds": [
+    "endgame.queen-vs-pawn"
+  ],
+  "title": "Queen vs pawn on the 7th",
+  "summary": "The queen beats a centre or knight pawn by forcing the king in front of it; against rook and bishop pawns the stalemate defence often draws.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Technique vs a centre or knight pawn**: check and pin until the defending king must step **in front** of its pawn (onto the queening square). That gains a tempo: bring your king one step closer. Repeat until your king helps win the pawn.\n\n**Rook pawn or bishop pawn**: when the defending king goes to the corner, taking the pawn (or forcing it to stay) can be **stalemate**. Unless the attacking king is already close, these are draws."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/8/8/8/8/3pk3/Q6K w - - 0 1",
+      "goal": "win",
+      "prompt": "Centre pawn on the 7th. Win: force the king onto d1, bring your king closer, repeat.",
+      "explain": "Checks and pins (Qe5+, Qd4, Qe4+...) until ...Kd1; then a king move; finally Qxd2 and mate with K+Q."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/8/8/8/8/p1k5/4Q2K b - - 0 1",
+      "prompt": "You are Black with a rook pawn. Find the only drawing move.",
+      "solution": [
+        "Kb2"
+      ],
+      "explain": "...Kb2! keeps the king next to the pawn and heading for the corner. If the queen ever forces ...Ka1, taking on a2 is stalemate. ...Kb3? lets the queen reach a1 or block the pawn and White wins."
+    },
+    {
+      "type": "play",
+      "fen": "7K/8/8/8/8/8/2pk1Q2/8 b - - 0 1",
+      "goal": "draw",
+      "prompt": "Bishop pawn. You are Black: hold the draw.",
+      "explain": "Keep your king next to the pawn. The key trick: when the queen drives your king towards b1, go to a1 instead and leave the pawn: Qxc2 would be stalemate. White's king on h8 is too far away to help."
+    },
+    {
+      "type": "play",
+      "fen": "K7/8/8/8/8/8/1p1k4/6Q1 w - - 0 1",
+      "goal": "win",
+      "prompt": "Knight pawn: winning for White even with the king far away. Use checks and pins to force ...Kb1, then approach.",
+      "explain": "Same method as the centre pawn: the knight pawn has no stalemate trick."
+    },
+    {
+      "type": "quiz",
+      "question": "Which pawn on the 7th, supported by its king, usually draws against a lone queen when the attacking king is far away?",
+      "choices": [
+        "d-pawn",
+        "b-pawn",
+        "c-pawn or a-pawn",
+        "e-pawn"
+      ],
+      "answer": 2,
+      "explain": "Rook and bishop pawns give the defender stalemate resources. Centre and knight pawns lose."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the purpose of each check and pin in the winning technique?",
+      "choices": [
+        "To give perpetual check",
+        "To force the defending king onto the queening square in front of its pawn, gaining a tempo for your own king",
+        "To trade queens",
+        "To win on time"
+      ],
+      "answer": 1,
+      "explain": "King in front of pawn = pawn cannot promote = one free move for the attacking king."
+    }
+  ],
+  "practiceThemes": [
+    "queenEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#queen-vs-pawn-on-the-7th",
+    "de la Villa, 100 Endgames You Must Know",
+    "de la Villa, 100 Endgames You Must Know ch. 3",
+    "Silman, Complete Endgame Course (1000-1199 and 1200-1399 sections)"
+  ]
+}

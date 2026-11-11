@@ -1,0 +1,104 @@
+{
+  "id": "adult.s4.interference",
+  "track": "adult",
+  "stage": 4,
+  "order": 4,
+  "skillIds": [
+    "tactics.interference"
+  ],
+  "title": "Interference: cutting the defender's line",
+  "summary": "Drop a piece or pawn onto the line between a defender and what it defends.",
+  "estMinutes": 14,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Interference** cuts a line: you place a piece (often with a threat or as a sacrifice) on a square between an enemy line piece and the thing it protects. The protected piece is then loose.\n\nRecipe: (1) find an enemy piece that is defended **only** by a rook, bishop or queen from a distance; (2) look at the squares in between; (3) can one of your pieces land there with tempo, or so that capturing it is impossible or costly?"
+    },
+    {
+      "type": "board",
+      "fen": "4r1k1/1p3p2/1b2q2p/p5p1/8/2P1pPB1/PP2Q1PP/3R3K w - - 1 26",
+      "md": "White to move. The b6-bishop is defended only by the queen on e6 along the sixth rank. The squares between them are c6 and d6. Your d1-rook can land on d6 **attacking the queen**.",
+      "arrows": [
+        [
+          "e6",
+          "b6",
+          "red"
+        ],
+        [
+          "d1",
+          "d6",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "4r1k1/1p3p2/1b2q2p/p5p1/8/2P1pPB1/PP2Q1PP/3R3K w - - 1 26",
+      "prompt": "White to move. Cut the queen off from the bishop.",
+      "solution": [
+        "Rd6",
+        "Qxa2",
+        "Rxb6"
+      ],
+      "explain": "**26.Rd6!** attacks the queen and cuts its line to b6. The queen must move (26...Qxa2) and **27.Rxb6** wins the bishop. A rook move that both attacks and interferes."
+    },
+    {
+      "type": "move",
+      "fen": "4rrk1/1p1n2p1/p2p2p1/3P1qN1/1PP1p3/7P/P2Q1PP1/R3R1K1 b - - 1 21",
+      "prompt": "Black to move. The g5-knight is defended only by the queen on d2. Interfere with a pawn.",
+      "solution": [
+        "e3",
+        "Rxe3",
+        "Qxg5"
+      ],
+      "explain": "**21...e3!** The pawn lands on the d2-g5 diagonal and attacks the queen at the same time. After 22.Rxe3 the rook itself blocks the diagonal, so **22...Qxg5** wins the knight. 22.fxe3 Qxg5 is the same story, and 22.Qxe3?? Rxe3 drops the queen down the e-file."
+    },
+    {
+      "type": "quiz",
+      "question": "What makes a defender vulnerable to interference?",
+      "choices": [
+        "It defends from far away along a line, with empty squares in between",
+        "It is a knight defending from close range",
+        "It is defended by a pawn"
+      ],
+      "answer": 0,
+      "explain": "Only **line pieces** (R, B, Q) defending at a distance can be interfered with: a knight or pawn defends by jumping or touching and has no line to cut. The longer the line, the more squares you can drop a piece on."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqk1nr/ppppbpQp/8/8/8/1P6/P1P1PPPP/RNB1KBNR b KQkq - 0 4",
+      "prompt": "Black to move. White's queen has grabbed g7 and protects his a1-rook along the long diagonal. Interfere and attack at once.",
+      "solution": [
+        "Bf6",
+        "Qg3",
+        "Bxa1"
+      ],
+      "explain": "**4...Bf6!** hits the queen and blocks the g7-a1 diagonal. The queen must flee (5.Qg3) and **5...Bxa1** wins the rook. Interference with tempo is the strongest form."
+    },
+    {
+      "type": "move",
+      "fen": "3r2kr/pp3p1p/1q4p1/2b1Q3/1P6/P2P4/5PPP/RN3RK1 b - - 0 23",
+      "prompt": "Black to move. Independent exercise: White's a1-rook is defended only by the e5-queen.",
+      "solution": [
+        "Bd4",
+        "Qe1",
+        "Bxa1"
+      ],
+      "explain": "**23...Bd4!** attacks the queen and cuts the e5-a1 diagonal; the bishop is protected by the d8-rook. After 24.Qe1 (the queen defends nothing on a1 because the b1-knight blocks the first rank) **24...Bxa1** wins the exchange."
+    },
+    {
+      "type": "text",
+      "md": "**Typical errors.** (1) Interfering on a square where your piece is simply captured with no gain: check what the capture does. (2) Forgetting that the defender may have another route (a second line or a different defender). (3) Missing interference *against you*: before you rely on a long-range defender, ask whether a piece can be dropped between.\n\n**Retrieval check.** Name the three-step recipe from the start of the lesson, then name which piece was cut off in each of the four puzzles."
+    }
+  ],
+  "practiceThemes": [
+    "interference"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#interference",
+    "knowledge-base/03-chess-knowledge/tactics.md#line-opening-and-closing",
+    "Yusupov, Build Up Your Chess 2 (Quality Chess, 2009), chapter on interference",
+    "Novotny and Grimshaw themes, problem-chess terminology (KB tactics.md)",
+    "Lichess puzzle database (CC0), puzzles 0qKSL, 1YJUs, 055lF, 0fRpS"
+  ]
+}

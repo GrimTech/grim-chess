@@ -1,0 +1,76 @@
+{
+  "id": "kids.3.check",
+  "track": "kids",
+  "stage": 1,
+  "order": 301,
+  "skillIds": [
+    "rules.check"
+  ],
+  "title": "Check!",
+  "summary": "When a piece attacks the king, that is check.",
+  "estMinutes": 6,
+  "minAge": 6,
+  "steps": [
+    {
+      "type": "text",
+      "md": "When a piece attacks the king, we say **check**! The king must be saved right away."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/8/8/8/8/8/4R1K1 b - - 0 1",
+      "md": "The rook attacks the black king. Check!",
+      "arrows": [
+        [
+          "e1",
+          "e8",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/8/8/8/8/8/2B3K1 w - - 0 1",
+      "prompt": "Give check with the bishop!",
+      "solution": [
+        "Bb2+"
+      ],
+      "explain": "Check! The bishop aims at the king.",
+      "hint": "Find the long diagonal to the corner."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/8/N7/8/8/8/8/6K1 w - - 0 1",
+      "prompt": "Give check with the knight!",
+      "solution": [
+        "Nc7+"
+      ],
+      "explain": "Check from a jumping knight!",
+      "hint": "Which square does the knight jump to so it touches e8?"
+    },
+    {
+      "type": "quiz",
+      "question": "What is check?",
+      "choices": [
+        "The king is attacked",
+        "A piece is captured",
+        "The game is a draw"
+      ],
+      "answer": 0,
+      "explain": "Check means the king is under attack."
+    },
+    {
+      "type": "quiz",
+      "question": "Is the black king in check?",
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "answer": 0,
+      "explain": "Yes, the rook attacks it.",
+      "fen": "4k3/8/8/8/8/8/8/4R1K1 b - - 0 1"
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

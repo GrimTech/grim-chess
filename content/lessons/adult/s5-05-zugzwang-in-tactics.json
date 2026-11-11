@@ -1,0 +1,76 @@
+{
+  "id": "adult.s5.zugzwang-in-tactics",
+  "track": "adult",
+  "stage": 5,
+  "order": 5,
+  "skillIds": [
+    "tactics.zugzwang"
+  ],
+  "title": "Zugzwang as a tactical weapon",
+  "summary": "The Immortal Zugzwang game, waiting moves, and endgame positions where passing the move wins.",
+  "estMinutes": 25,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## When every move is a concession\n\n**Zugzwang**: the side to move would prefer to pass, because every legal move worsens its position. Most common in endgames (king and pawn, queen v rook), but also in middlegames where one side's pieces are completely tied up.\n\nHow to use it: (1) make sure your own position has **spare moves** (pawn moves, a free king or bishop move), (2) restrict the opponent's useful moves one by one, (3) then make a **waiting move** and let him self-destruct."
+    },
+    {
+      "type": "board",
+      "fen": "6k1/3q2pp/p2bp3/3p1r2/1p1Pp3/3bQ1PP/PP1B1rB1/1N2R1RK b - - 7 25",
+      "md": "**Saemisch-Nimzowitsch, Copenhagen 1923, after 25.Rce1.** Black's pieces dominate the light squares and the f-file; White has almost no safe moves. Nimzowitsch played **25...h6!!**, a pure waiting move, and White **resigned**: every white move loses material (a bishop move drops a piece, Kh2 allows ...R5f3, a rook move on the back rank allows ...Rxd2/...Bxb1, and so on). Engine: Black is about +6 after h6 and after several other quiet moves — the point is that White has no useful move at all.",
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "In the Saemisch-Nimzowitsch position, why is 25...h6 strong although it creates no new threat?",
+      "choices": [
+        "It prepares ...g5",
+        "It is a waiting move: all of White's moves lose material, so passing the move wins",
+        "It protects the king from back-rank mate only",
+        "It threatens ...h5-h4"
+      ],
+      "answer": 1,
+      "explain": "This is zugzwang in the middlegame. The waiting move also gives the black king luft, removing the last back-rank worry.",
+      "fen": "6k1/3q2pp/p2bp3/3p1r2/1p1Pp3/3bQ1PP/PP1B1rB1/1N2R1RK b - - 7 25"
+    },
+    {
+      "type": "move",
+      "fen": "K7/8/8/8/8/8/1p1k4/6Q1 w - - 0 1",
+      "prompt": "Queen against knight pawn on the 7th. White to move and win (tablebase).",
+      "solution": [
+        "Qb1"
+      ],
+      "hint": "Stop the pawn first.",
+      "explain": "**1.Qb1!** blockades the pawn on the promotion square at once; Black's king must step away from b2's protection and the white king walks in. Other moves also win but take much longer (tablebase: 1.Qb1 mates in 10, the next best in 17)."
+    },
+    {
+      "type": "quiz",
+      "question": "Which statement about zugzwang in practical play is correct?",
+      "choices": [
+        "It only occurs in pawn endings",
+        "Keep spare tempi (pawn moves you can make without weakening) because in tense positions the side that runs out of useful moves loses",
+        "Zugzwang is impossible when queens are on the board",
+        "The side with more material can never be in zugzwang"
+      ],
+      "answer": 1,
+      "explain": "Spare tempi decide many endgames and some middlegames. Queens and rooks on the board make zugzwang rarer but not impossible (Saemisch-Nimzowitsch had queens and rooks)."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles**: 20 *zugzwang* puzzles at your rating.\n- **Endgames trainer**: revisit triangulation and the trebuchet; play both sides.\n- **Guess the move**: Saemisch-Nimzowitsch 1923 (in the corpus, *classics-interwar.pgn*), playing Black."
+    }
+  ],
+  "practiceThemes": [
+    "zugzwang",
+    "quietMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md",
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "Nunn, Understanding Chess Tactics",
+    "Kasparov, My Great Predecessors (vols. I-IV)",
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "Saemisch-Nimzowitsch, Copenhagen 1923 (\"Immortal Zugzwang Game\")"
+  ]
+}

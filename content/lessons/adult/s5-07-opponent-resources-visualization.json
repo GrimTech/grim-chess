@@ -1,0 +1,103 @@
+{
+  "id": "adult.s5.opponent-resources-visualization",
+  "track": "adult",
+  "stage": 5,
+  "order": 7,
+  "skillIds": [
+    "calculation.opponent-resources",
+    "calculation.visualization.advanced"
+  ],
+  "title": "The opponent's resources and seeing 6-10 plies ahead",
+  "summary": "Check intermezzi, desperados and counter-sacrifices for the opponent at every node, and hold long lines in your head with accurate piece positions.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## What can he do?\n\nThe most common reason a calculated combination fails is an **opponent resource**: an in-between check, a desperado capture, a counter-sacrifice, a stalemate trick. At every node of your tree ask: *what are his checks, captures and threats here — including the ones that give up material?*\n\nThe defensive side of the same skill: when you are attacked, look for **your** resources first — often there is exactly one move that holds (the engine shows a huge gap between it and everything else).\n\n**Visualisation 6-10 plies**: keep track of every piece after each move. Common errors: \"ghost pieces\" (a piece that already moved), forgetting that a capture opened a line, and missing backward moves."
+    },
+    {
+      "type": "move",
+      "fen": "r1q2r1k/p2n2pp/1p1p4/2pP1N2/2P1pP2/1Qb3P1/PP2P2P/R4R1K w - - 0 22",
+      "prompt": "White to move. The bishop on c3 attacks b2 and the a1-rook. Only one move holds the balance (Euwe-Alekhine, World Championship 1935)",
+      "solution": [
+        "Nxd6"
+      ],
+      "orientation": "white",
+      "explain": "**22.Nxd6!** — a counter-attack: the knight hits the queen on c8 and the e4-pawn, so Black has no time to take on b2. Slower moves lose material on the long diagonal. Engine main line: 22.Nxd6 Qb8 23.Nxe4 Bf6 24.Nd2 b5 25.e4 bxc4. (Euwe-Alekhine, World Championship 1935; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "r2qrbk1/pp3p2/2npb1pp/2p4Q/4PB2/2P5/PP1NBPPP/R2R2K1 w - - 0 15",
+      "prompt": "White to move. The queen on h5 is attacked by the g6-pawn. Only one retreat keeps the balance (Karpov-Topalov, Dos Hermanas 1994)",
+      "solution": [
+        "Qf3"
+      ],
+      "orientation": "white",
+      "explain": "**15.Qf3!** — from f3 the queen protects the f4-bishop and watches the long diagonal; the other retreats run into ...g5 or ...Nd4 with tempo. Engine main line: 15.Qf3 d5 16.exd5 Bxd5 17.Qd3 Qe7 18.Re1 Rad8. (Karpov-Topalov, Dos Hermanas 1994; checked with Stockfish 19.)"
+    },
+    {
+      "type": "move",
+      "fen": "2b2k2/2pq1pp1/3p1r1p/1p2r3/1P1BP1Pn/1NP2Pn1/R6P/1B1QR2K w - - 3 28",
+      "prompt": "White to move. The knight on g3 gives check. Take it or move the king? (Kasparov-Short, PCA-World Championship 1993)",
+      "solution": [
+        "hxg3"
+      ],
+      "orientation": "white",
+      "explain": "**28.hxg3!** — take the piece; the counter-play after ...Nxf3 is less dangerous than it looks, while a king move leaves the white king in a mating net. Engine main line: 28.hxg3 Nxf3 29.Bxe5 Qxg4 30.Rh2 Nxe1 31.Qxe1 Qf3+. (Kasparov-Short, PCA-World Championship 1993; checked with Stockfish 19.)"
+    },
+    {
+      "type": "board",
+      "fen": "3rkb1r/p2nqppp/5n2/1B2p1B1/4P3/1Q6/PPP2PPP/2KR3R w k - 3 13",
+      "md": "**Visualisation exercise.** Do not move pieces. From this position (Morphy-Duke of Brunswick and Count Isouard, Paris 1858) play in your head: **13.Rxd7 Rxd7 14.Rd1 Qe6 15.Bxd7+ Nxd7.** Now answer the question in the next step."
+    },
+    {
+      "type": "quiz",
+      "question": "After 13.Rxd7 Rxd7 14.Rd1 Qe6 15.Bxd7+ Nxd7 (from the previous diagram), what does White play?",
+      "choices": [
+        "16.Bxe7 winning the queen",
+        "16.Qb8+! Nxb8 17.Rd8# (mate)",
+        "16.Rxd7 Qxd7",
+        "16.Qb5 pinning the knight"
+      ],
+      "answer": 1,
+      "explain": "16.Qb8+!! Nxb8 17.Rd8# — the knight on d7 must leave to take the queen, and the rook mates on d8 supported by the g5-bishop (which covers e7).",
+      "fen": "3rkb1r/p2nqppp/5n2/1B2p1B1/4P3/1Q6/PPP2PPP/2KR3R w k - 3 13"
+    },
+    {
+      "type": "board",
+      "fen": "r4rk1/1b2bppp/ppq1p3/2ppB2n/5P2/1P1BP3/P1PPQ1PP/R4RK1 w - - 0 15",
+      "md": "**Second visualisation.** Lasker-Bauer 1889: **15.Bxh7+ Kxh7 16.Qxh5+ Kg8 17.Bxg7 Kxg7 18.Qg4+ Kh7 19.Rf3 e5 20.Rh3+ Qh6 21.Rxh6+ Kxh6.** Hold the final position in your head and answer the next question."
+    },
+    {
+      "type": "quiz",
+      "question": "In the final position of that line (after 21...Kxh6), White is to move. What wins material?",
+      "choices": [
+        "22.Qh4+ forking king and bishop on e7",
+        "22.Qd7! attacking both bishops (b7 and e7)",
+        "22.fxe5",
+        "22.Qg5+ Kxg5"
+      ],
+      "answer": 1,
+      "explain": "22.Qd7! forks the bishops on b7 and e7; White wins one of them and the game. If you had to check the board, repeat this exercise tomorrow.",
+      "fen": "r4rk1/1b2bppp/ppq1p3/2ppB2n/5P2/1P1BP3/P1PPQ1PP/R4RK1 w - - 0 15"
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Visualization drill** (*Train → visualization*): 3 sessions at the \"read 6-8 plies\" level.\n- **Puzzles**: 20 *defensiveMove* and 10 *intermezzo* puzzles at your rating.\n- In each puzzle you fail, write down which opponent resource you missed (check, capture, intermezzo, desperado, stalemate)."
+    }
+  ],
+  "practiceThemes": [
+    "intermezzo",
+    "defensiveMove"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/kotov-tree-of-analysis.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "knowledge-base/02-methods/soviet-school-botvinnik-dvoretsky-yusupov.md",
+    "Dvoretsky & Yusupov, Training for the Tournament Player",
+    "Aagaard, Grandmaster Preparation: Calculation",
+    "Euwe-Alekhine, World Championship 1935",
+    "Karpov-Topalov, Dos Hermanas 1994"
+  ]
+}

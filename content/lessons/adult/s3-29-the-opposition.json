@@ -1,0 +1,107 @@
+{
+  "id": "adult.s3.the-opposition",
+  "track": "adult",
+  "stage": 3,
+  "order": 29,
+  "skillIds": [
+    "endgame.pawn.opposition"
+  ],
+  "title": "The opposition: direct, distant and diagonal",
+  "summary": "Kings facing each other with one square between: the side NOT to move has the opposition. Use it to win K+P vs K and to defend it.",
+  "estMinutes": 16,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Direct opposition**: kings on the same file (or rank) with one square between them. The side **not** to move \"has the opposition\", because the other king must give way.\n\n**Distant opposition**: three or five squares between. **Diagonal opposition**: kings on a diagonal with one square between.\n\nIn K+P vs K, the attacker uses the opposition to push the defending king aside; the defender uses it to stay in front of the pawn."
+    },
+    {
+      "type": "board",
+      "fen": "8/4k3/8/4K3/4P3/8/8/8 w - - 0 1",
+      "md": "White to move: Black has the opposition and draws (1.Kd5 Kd7 2.e5 Ke7 3.e6 Ke8! 4.Kd6 Kd8 5.e7+ Ke8 6.Ke6 stalemate). With **Black** to move, White wins: 1...Kd7 2.Kf6 reaches a key square.",
+      "highlights": [
+        "e5",
+        "e7"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the position shown, who has the opposition if it is White to move?",
+      "choices": [
+        "White",
+        "Black",
+        "Nobody: kings are not on the same file",
+        "It depends on the pawn"
+      ],
+      "answer": 1,
+      "explain": "The side not to move has the opposition. White to move must step aside and Black keeps blocking.",
+      "fen": "8/4k3/8/4K3/4P3/8/8/8 w - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "8/8/4k3/8/4PK2/8/8/8 b - - 0 1",
+      "prompt": "Defend. Black to move: only one king move holds the draw.",
+      "solution": [
+        "Kf6"
+      ],
+      "explain": "...Kf6! takes the direct opposition. White's king cannot advance, and if the pawn moves, Black stays in front of it. Any other move lets White's king reach f5 or e5 with a winning position.",
+      "hint": "Face the white king."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/8/3k4/8/4K3/3P4/8 w - - 0 1",
+      "prompt": "Attack. White to move: one king move takes the opposition and wins.",
+      "solution": [
+        "Kd3"
+      ],
+      "explain": "Kd3! Now Black must give way (...Kc5 Ke4 or ...Ke5 Kc4), and White's king marches up in front of the pawn. Pawn moves (d3? d4?) waste the pawn's spare tempo and draw."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/3k4/8/8/3K4/3P4/8 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Play it out: win with the opposition, keeping your king in front of the pawn.",
+      "explain": "Advance the king first (Kd4/Kc4), keep the pawn on d2 as a spare tempo to regain the opposition when needed."
+    },
+    {
+      "type": "quiz",
+      "question": "Kings on e1 and e8, White pawn on e2, White to move. Who has the opposition?",
+      "choices": [
+        "White",
+        "Black, the distant opposition (five squares between, side not to move)",
+        "Nobody",
+        "Whoever has the pawn"
+      ],
+      "answer": 1,
+      "explain": "Five squares between is distant opposition, held by the side not to move. White still wins here thanks to the pawn tempo (e2-e3 later) and by approaching correctly."
+    },
+    {
+      "type": "play",
+      "fen": "4k3/8/8/8/8/8/4P3/4K3 w - - 0 1",
+      "goal": "promote",
+      "prompt": "From far away: win with king and pawn. Lead with the king, and keep the pawn's spare tempo.",
+      "explain": "Kd2/Kf2, then Ke3-e4, and use e2-e3 only when you need to hand the move to Black."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: why is the pawn on its 2nd rank a resource in K+P vs K?",
+      "choices": [
+        "It can promote faster",
+        "It can move one or two squares, giving the attacker a spare tempo to regain the opposition",
+        "It cannot be captured",
+        "It blocks the enemy king"
+      ],
+      "answer": 1,
+      "explain": "Keep spare pawn tempi in reserve: they are how you win the opposition battle."
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame",
+    "zugzwang"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#opposition",
+    "Silman, Complete Endgame Course (1000-1199 and 1200-1399 sections)",
+    "Dvoretsky's Endgame Manual, ch. 1 (pawn endings)",
+    "de la Villa, 100 Endgames You Must Know"
+  ]
+}

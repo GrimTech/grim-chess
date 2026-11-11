@@ -1,0 +1,104 @@
+{
+  "id": "adult.s5.hanging-pawns",
+  "track": "adult",
+  "stage": 5,
+  "order": 12,
+  "skillIds": [
+    "strategy.hanging-pawns"
+  ],
+  "title": "Hanging pawns: dynamic strength or static weakness",
+  "summary": "The c- and d-pawn duo: advance with ...d4 or ...c4 at the right moment, or blockade and attack them; Fischer-Spassky 1972 game 6 as the model.",
+  "estMinutes": 25,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Hanging pawns\n\nTwo pawns side by side on the 4th rank (c5-d5 for Black, c4-d4 for White) with no neighbouring pawns. They control key central squares and support pieces; but they cannot be defended by other pawns, and **when one advances, the other may become backward or isolated**.\n\n**Owner's plan**: keep them mobile, use them to cramp the opponent, and advance **at the right moment** (...d4 to open lines for the bishops or ...c4 to fix the queenside); pieces placed behind them (rooks on c8/d8, queen on b7/e7).\n**Opponent's plan**: pressure with rooks on the c- and d-files, knights/bishops attacking d5, provoke an advance (e.g. **e4!** striking at d5), then blockade the advanced pawn and attack the remaining weakness."
+    },
+    {
+      "type": "board",
+      "fen": "rn1q1rk1/pb3pp1/5b1p/2pp4/8/2N1PN2/PP2BPPP/2RQ1RK1 b - - 1 13",
+      "md": "**Typical hanging pawns** from the Queen's Gambit (Tartakower): Black's c5 and d5 stand on the 5th rank. White's rook on c1 and the queen will hit c5; Black's bishop on f6 and pieces behind the pawns keep them alive. The thematic advance ...d4 is strongest when it opens the long diagonal for Black's bishops.",
+      "highlights": [
+        "c5",
+        "d5"
+      ]
+    },
+    {
+      "type": "board",
+      "fen": "2r2qk1/r2n2p1/p3p2p/2pp4/4P3/Q7/PP2BPPP/2R2RK1 b - - 0 20",
+      "md": "**Fischer-Spassky, Reykjavik 1972 (game 6), after 20.e4!** White attacks the hanging pawns at once. After 20...dxe4 the c5-pawn is isolated and d5 is lost as a strong point; Fischer later played Bc4, Qe3 and won the c-pawn's support squares, with f5 to open the kingside. A model of how to fight hanging pawns.",
+      "arrows": [
+        [
+          "e4",
+          "d5",
+          "red"
+        ]
+      ],
+      "highlights": [
+        "c5",
+        "d5"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In the position above (Fischer-Spassky 1972, after 20.e4), what is the strategic point of e4?",
+      "choices": [
+        "To win the d5-pawn by force",
+        "To provoke ...d4 or ...dxe4, after which the pawn duo loses its flexibility: d4 gives White the e4/c4 squares and blockade, ...dxe4 leaves c5 isolated",
+        "To prepare castling",
+        "To open the h-file"
+      ],
+      "answer": 1,
+      "explain": "The attack on the pawn duo forces a decision. Both replies leave a static weakness; that is the general method against hanging pawns.",
+      "fen": "2r2qk1/r2n2p1/p3p2p/2pp4/4P3/Q7/PP2BPPP/2R2RK1 b - - 0 20"
+    },
+    {
+      "type": "quiz",
+      "question": "When are hanging pawns usually strongest for their owner?",
+      "choices": [
+        "In an endgame with few pieces",
+        "In the middlegame with many pieces, when they control central squares and their advance creates threats",
+        "When the opponent has a strong blockading knight in front of them",
+        "When both rooks are exchanged"
+      ],
+      "answer": 1,
+      "explain": "Hanging pawns are a dynamic asset: their strength is in the middlegame. In the endgame they become targets, so the opponent tries to trade pieces."
+    },
+    {
+      "type": "quiz",
+      "question": "You are playing against hanging pawns on c5 and d5. Which piece set-up is typical?",
+      "choices": [
+        "Pawns on b4 and e4 at once, without preparation",
+        "Rooks on c1 and d1, a knight aiming at d5 or c4 (via b3/d4), the queen pressing c5, and the move e3-e4 or b4 ready to provoke an advance",
+        "All pieces on the kingside for a mating attack",
+        "Exchanging all minor pieces immediately"
+      ],
+      "answer": 1,
+      "explain": "Pressure, then a provoking pawn move, then blockade. Exchanging pieces is good in general, but not at the cost of letting the pawns advance with tempo."
+    },
+    {
+      "type": "play",
+      "fen": "rn1q1rk1/pb3pp1/5b1p/2pp4/8/2N1PN2/PP2BPPP/2RQ1RK1 b - - 1 13",
+      "goal": "hold",
+      "prompt": "Play against the hanging pawns as White (engine level 12) for 25 moves: pressure c5/d5, provoke an advance, blockade, and do not allow a strong ...d4 with tempo.",
+      "maxMoves": 25,
+      "engineLevel": 12
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Guess the move**: Fischer-Spassky 1972 game 6 (in the corpus, *classics-karpov-kasparov.pgn*), from move 14 to the end, playing White.\n- Find one game in your database where you had (or faced) hanging pawns; check whether the right side advanced at the right moment."
+    }
+  ],
+  "practiceThemes": [
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md",
+    "knowledge-base/03-chess-knowledge/openings.md",
+    "Dvoretsky & Yusupov, Positional Play",
+    "Soltis, Pawn Structure Chess",
+    "Flores Rios, Chess Structures: A Grandmaster Guide",
+    "Fischer-Spassky, World Championship (game 6), Reykjavik 1972",
+    "Kasparov, My Great Predecessors vol. IV (Fischer)"
+  ]
+}

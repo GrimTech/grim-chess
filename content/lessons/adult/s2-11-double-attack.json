@@ -1,0 +1,100 @@
+{
+  "id": "adult.s2.double-attack",
+  "track": "adult",
+  "stage": 2,
+  "order": 11,
+  "skillIds": [
+    "tactics.double-attack"
+  ],
+  "title": "Double attack",
+  "summary": "One move, two threats: the opponent can only parry one.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **double attack** creates two threats with one move. The opponent can usually meet only one, so you win the other. Best targets: loose pieces, the king (checks), and mate threats. A double attack by a single piece on two targets is called a **fork** (next lessons)."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/4qppp/3b4/8/8/8/P1PB1PPP/R5K1 b - - 0 1",
+      "prompt": "You are Black. One queen move threatens mate and a loose rook at the same time.",
+      "solution": [
+        "Qe5",
+        "g3",
+        "Qxa1+"
+      ],
+      "explain": "Qe5 threatens Qxh2# (backed by the d6-bishop) and Qxa1+ along the long diagonal. White can stop only one."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppp1ppp/2n5/4p3/2B1N3/5N2/PPPP1PPP/R1BQK2R b KQkq - 0 5",
+      "prompt": "You are Black. Black gave a knight on e4; win it back with a pawn double attack.",
+      "solution": [
+        "d5"
+      ],
+      "explain": "The fork trick: d5 attacks bishop and knight at once. Black regains the piece with a good centre."
+    },
+    {
+      "type": "move",
+      "fen": "4k3/ppp2ppp/8/8/1b6/8/PP3PPP/3Q2K1 w - - 0 1",
+      "prompt": "Check and attack the loose bishop at the same time.",
+      "solution": [
+        "Qa4+",
+        "c6",
+        "Qxb4"
+      ],
+      "explain": "Qa4+ checks along a4-e8 and hits b4 along the 4th rank. Black blocks the check, and the bishop falls."
+    },
+    {
+      "type": "quiz",
+      "question": "Why does a double attack work?",
+      "choices": [
+        "The opponent has one move and can usually meet only one threat",
+        "It is always a check",
+        "It wins the queen"
+      ],
+      "answer": 0,
+      "explain": "Two threats against one tempo."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/pn3ppp/8/8/8/3B4/4QPPP/6K1 w - - 0 1",
+      "prompt": "Find the queen move that creates two threats at once: mate, and a loose piece.",
+      "solution": [
+        "Qe4",
+        "g6",
+        "Qxb7"
+      ],
+      "explain": "Qe4 threatens Qxh7# (backed by the d3-bishop) and Qxb7. Black stops the mate, and the knight falls."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which targets make the best double-attack targets?",
+      "choices": [
+        "Loose pieces and the king",
+        "Defended pawns",
+        "Pieces on their starting squares"
+      ],
+      "answer": 0,
+      "explain": "Loose pieces drop off (LPDO). A check is a threat the opponent must answer."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the name for a double attack by one piece on two targets?",
+      "choices": [
+        "Fork",
+        "Pin",
+        "Skewer"
+      ],
+      "answer": 0,
+      "explain": "Knight forks, pawn forks and queen forks follow next."
+    }
+  ],
+  "practiceThemes": [
+    "fork"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#double-attack",
+    "knowledge-base/03-chess-knowledge/tactics.md#fork"
+  ]
+}

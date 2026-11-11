@@ -1,0 +1,97 @@
+{
+  "id": "adult.s5.king-hunts-multi-motif",
+  "track": "adult",
+  "stage": 5,
+  "order": 2,
+  "skillIds": [
+    "tactics.king-hunt",
+    "tactics.multi-motif"
+  ],
+  "title": "King hunts and long multi-motif combinations",
+  "summary": "Drag the king into the open with checks and sacrifices; chain three or more motifs (deflection, windmill, discovered check) into one combination.",
+  "estMinutes": 35,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## Combining motifs\n\nCombinations of 4-6 moves rarely use one idea. Typical chains:\n- **Deflection + windmill**: a queen sacrifice or pin lets a rook give alternating discovered checks (Torre-Lasker 1925).\n- **Sacrifice + king hunt**: the king is driven forward by checks until it meets a net (Petrosian-Pachman 1961).\n- **Discovered checks with gain of material**: each check wins a tempo to take something (Byrne-Fischer 1956).\n\n**Method**: after spotting the first move, ask at every node: *which checks does he have, which squares does his king have, which of my pieces arrive with tempo?* Calculate forcing moves first; stop only in a quiet position."
+    },
+    {
+      "type": "move",
+      "fen": "r3rnk1/pb3pp1/3pp2p/1q4BQ/1P1P4/4N1R1/P4PPP/4R1K1 w - - 4 25",
+      "prompt": "White to move. The white queen on h5 is attacked by the black queen. Find the move that starts the windmill (Torre-Lasker, Moscow 1925).",
+      "solution": [
+        "Bf6",
+        "Qxh5",
+        "Rxg7+"
+      ],
+      "hint": "Give up the queen to set up discovered checks.",
+      "explain": "**25.Bf6!! Qxh5 26.Rxg7+ Kh8 27.Rxf7+** — the rook and bishop form a **windmill**: every discovered check from the g7-rook wins material (27...Kg8 28.Rg7+ Kh8 29.Rxb7+ Kg8 30.Rg7+ Kh8 31.Rg5+ Kh7 32.Rxh5), and White ends up with an extra pawn and a winning ending. Engine: +6.7 for Bf6, 0.00 for the best alternative."
+    },
+    {
+      "type": "move",
+      "fen": "r3r1k1/pp3pbp/1Bp1b1p1/8/2BP4/Q1n2N2/P4PPP/3R1K1R b - - 0 18",
+      "prompt": "Black to move. White has just taken the queen on b6. Use discovered checks to collect material (Byrne-Fischer, New York 1956, \"Game of the Century\").",
+      "solution": [
+        "Bxc4+",
+        "Kg1",
+        "Ne2+"
+      ],
+      "hint": "Every check gains a tempo.",
+      "explain": "**18...Bxc4+ 19.Kg1 Ne2+ 20.Kf1 Nxd4+ 21.Kg1 Ne2+ 22.Kf1 Nc3+ 23.Kg1 axb6** — the windmill of knight checks picks up the bishop, the d4-pawn and gains a tempo to take back on b6. Black ends up with rook, two bishops and knight for the queen and won brilliantly. Engine: +6.9 for Bxc4+."
+    },
+    {
+      "type": "move",
+      "fen": "r1br4/1p2npkp/3Bpbp1/pqp5/2N1R3/1P1P1QP1/1PP2PBP/R5K1 w - - 6 19",
+      "prompt": "White to move. Black's king on g7 has few defenders. Start the king hunt (Petrosian-Pachman, Bled 1961).",
+      "solution": [
+        "Qxf6+"
+      ],
+      "hint": "The black king is safer with the queen on f6 than without it — or is it?",
+      "explain": "**19.Qxf6+!! Kxf6 20.Be5+** and the king is driven forward: 20...Kg5 21.Bg7! (threatening f4+ and h4 mate) and Black was mated or lost decisive material. Declining with 19...Kg8 loses to 20.Be5 (engine). Engine: +13.6 for Qxf6+, +3.3 for 19.Bc7."
+    },
+    {
+      "type": "move",
+      "fen": "2kr4/pp3ppp/2b5/6q1/3P4/4r3/PP3PPP/2RQ1RK1 w - - 0 17",
+      "prompt": "White to move. The black king on c8 is short of defenders and the rook on e3 is loose. Find the combination (Rubinstein-Lasker, St Petersburg 1909).",
+      "solution": [
+        "Rxc6+",
+        "bxc6",
+        "Qc1"
+      ],
+      "hint": "First open the king, then a quiet double attack.",
+      "explain": "**17.Rxc6+! bxc6 18.Qc1!** — the exchange sacrifice opens the black king, and the quiet queen move attacks the e3-rook and c6 at once (the double threat Qxc6+). After 18...Rxd4 19.fxe3 White has won material while keeping the attack. Engine: +1.5 for Rxc6+, all other moves lose (about -6.8)."
+    },
+    {
+      "type": "quiz",
+      "question": "You calculate a 5-move combination and reach a position where you are a piece up but your opponent has a check. What must you do before playing the first move?",
+      "choices": [
+        "Nothing: a piece up is winning",
+        "Continue the calculation until the position is quiet — check his check and every capture; a combination that ends in the middle of a sequence of checks is not finished",
+        "Play it and see",
+        "Choose a different first move"
+      ],
+      "answer": 1,
+      "explain": "The quiescence rule: never stop calculating in a position with checks or captures pending. Many long combinations fail to the last check."
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Puzzles**: 15 *veryLong* and 15 *exposedKing* puzzles at your rating. For each, write the full line before moving (*Calculation drill* mode).\n- **Guess the move**: Byrne-Fischer 1956 from move 11, playing Black.\n- Write down the motifs used in each combination of this lesson (deflection, windmill, discovered check, king hunt). Recognising the chain is half of finding it."
+    }
+  ],
+  "practiceThemes": [
+    "exposedKing",
+    "sacrifice",
+    "long",
+    "veryLong"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md",
+    "knowledge-base/03-chess-knowledge/calculation.md",
+    "knowledge-base/02-methods/aagaard-grandmaster-preparation.md",
+    "Nunn, Understanding Chess Tactics",
+    "Kasparov, My Great Predecessors (vols. I-IV)",
+    "Torre-Lasker, Moscow 1925",
+    "Byrne-Fischer, New York 1956",
+    "Petrosian-Pachman, Bled 1961"
+  ]
+}

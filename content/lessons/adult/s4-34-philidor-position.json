@@ -1,0 +1,97 @@
+{
+  "id": "adult.s4.philidor-position",
+  "track": "adult",
+  "stage": 4,
+  "order": 34,
+  "skillIds": [
+    "endgame.rook.philidor"
+  ],
+  "title": "The Philidor position: third-rank defence",
+  "summary": "Hold rook and pawn against rook: rook on your third rank, then checks from behind once the pawn advances.",
+  "estMinutes": 16,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Philidor position** (defending R+P vs R with your king **in front of the pawn**):\n\n1. Keep your rook on your **third rank** (the sixth for Black) so the enemy king cannot advance to it.\n2. When the pawn advances to that rank, the enemy king has lost its shelter: move your rook to the **far back** and give **checks from behind**. The king cannot hide in front of its pawn.\n\nIt is the most important drawing technique in rook endgames."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/7R/8/3KP3/8/8/8/r7 b - - 0 1",
+      "md": "Black to move. White's king is on d5, pawn on e5, and threatens Kd6/Ke6 with mating ideas against your king on e8. Your rook belongs on the **sixth rank** (your third), barring the king.",
+      "arrows": [
+        [
+          "a1",
+          "a6",
+          "green"
+        ]
+      ],
+      "orientation": "black"
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. Where does the rook go?",
+      "choices": [
+        "1...Ra6, to the sixth rank",
+        "1...Ra8, to the back rank",
+        "1...Rd1+, check at once"
+      ],
+      "answer": 0,
+      "explain": "**1...Ra6!** cuts the white king off from the sixth rank. If White plays 2.e6, the pawn has taken away the king's shelter on e6, and Black switches to 2...Ra1! with checks from behind. (Passive back-rank defence with ...Ra8 loses against a central pawn once the white king reaches the sixth rank.)"
+    },
+    {
+      "type": "move",
+      "fen": "4k3/7R/r3P3/3K4/8/8/8/8 b - - 0 1",
+      "prompt": "Black to move. White has pushed e6. Switch to the second phase of the Philidor.",
+      "solution": [
+        "Ra1"
+      ],
+      "alternatives": [
+        "Ra2",
+        "Ra3",
+        "Ra4"
+      ],
+      "explain": "**1...Ra1!** and the rook checks from behind (or the side) forever: the white king cannot approach the pawn without leaving its shelter, because the pawn on e6 no longer hides it. Any rook move far down the a-file works."
+    },
+    {
+      "type": "quiz",
+      "question": "Passive \"back-rank defence\" (rook on the eighth rank, king in front of the pawn) against a **centre** pawn usually...",
+      "choices": [
+        "loses, because the attacking king reaches the sixth rank and the attacking rook checks on the eighth",
+        "draws easily",
+        "wins for the defender"
+      ],
+      "answer": 0,
+      "explain": "Back-rank defence holds only against rook pawns and sometimes knight pawns. Against centre pawns, use the Philidor (third-rank) defence while you can."
+    },
+    {
+      "type": "play",
+      "fen": "4k3/7R/8/3KP3/8/8/8/r7 b - - 0 1",
+      "goal": "hold",
+      "prompt": "You are Black. Hold the draw for 30 moves with the Philidor method.",
+      "maxMoves": 30,
+      "explain": "Rook to the sixth; when the pawn reaches the sixth, rook to the first rank and check from behind."
+    },
+    {
+      "type": "play",
+      "fen": "4k3/7R/r3P3/3K4/8/8/8/8 b - - 0 1",
+      "goal": "hold",
+      "prompt": "You are Black. The pawn has already advanced to e6. Hold with checks from behind.",
+      "maxMoves": 25
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** Phase 1: where is the rook? (Third rank from your side.) Phase 2: when and how does it change? (When the pawn steps onto that rank: rook to the far back rank, checks from behind.) Typical error: checking too early from close range, so the king escapes towards your rook."
+    }
+  ],
+  "practiceThemes": [
+    "rookEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#philidor-position",
+    "knowledge-base/03-chess-knowledge/endgames.md#back-rank-defence",
+    "knowledge-base/03-chess-knowledge/endgames.md#short-side-and-long-side-defence",
+    "knowledge-base/02-methods/endgame-study-methods.md#3-a-sequenced-canon-platform-default",
+    "de la Villa, 100 Endgames You Must Know (New in Chess, 2008), Philidor position",
+    "Dvoretsky, Dvoretsky's Endgame Manual (Russell Enterprises, 2003), chapter 9"
+  ]
+}

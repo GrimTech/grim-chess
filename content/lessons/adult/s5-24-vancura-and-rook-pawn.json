@@ -1,0 +1,94 @@
+{
+  "id": "adult.s5.vancura-and-rook-pawn",
+  "track": "adult",
+  "stage": 5,
+  "order": 24,
+  "skillIds": [
+    "endgame.rook.vancura",
+    "endgame.rook.a-pawn"
+  ],
+  "title": "Rook pawn endings: Vancura and the skewer",
+  "summary": "Rook in front of the a-pawn: the Vancura side attack from the 6th rank, the king on g7/h7, and the Rh8 skewer that punishes the wrong king position.",
+  "estMinutes": 30,
+  "steps": [
+    {
+      "type": "text",
+      "md": "## The typical a-pawn ending\n\nR+a-pawn v R with the **attacking rook in front of its pawn** (Ra8, pawn a6 or a7) is the most common rook ending of all. The attacking rook is passive in front of the pawn; the attacking king must walk to the pawn to free the rook, and the defender wants to **check that king from behind or the side**.\n\n- **Pawn on a7**: the defender's king belongs on **g7 or h7** (out of the rook's checks and away from the 7th rank skewer), the defender's rook behind the pawn (on the a-file). If the defending king stands anywhere else on the 7th rank, **Rh8!** wins: ...Rxa7 is met by Rh7+ and Rxa7.\n- **Pawn on a6 — Vancura position**: the defender's rook attacks the pawn **from the side, on the 6th rank** (...Rf6), the king on g7. White's rook is tied to the pawn; if White's king comes to the pawn, the rook checks it from behind; if a7, the rook goes to the a-file."
+    },
+    {
+      "type": "board",
+      "fen": "R7/6k1/P4r2/8/8/4K3/8/8 w - - 0 1",
+      "md": "**The Vancura position.** The black rook on f6 attacks a6 from the side. The white rook must protect the pawn and cannot free itself; the white king cannot approach the pawn without being checked from behind; and a7 is met by ...Ra6. Draw.",
+      "arrows": [
+        [
+          "f6",
+          "a6",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "R7/6k1/P7/8/1K6/8/8/5r2 b - - 0 1",
+      "prompt": "Black to move. The white king is heading for the pawn. Draw the game.",
+      "solution": [
+        "Rf6"
+      ],
+      "alternatives": [
+        "Rf4+"
+      ],
+      "orientation": "black",
+      "hint": "Attack the pawn from the side.",
+      "explain": "**1...Rf6!** reaches the Vancura set-up (tablebase: draw; 1...Rf4+ first and then ...Rf6 also holds). Checks from behind fail: 1...Rb1+? 2.Ka5 Ra1+ 3.Kb6 Rb1+ 4.Ka7 and the king hides on a7/b7, the rook leaves a8 with Rb8 and the pawn promotes. Passive moves also lose: 1...Kh7? 2.Ra7+ Kg6 3.Rb7! and the white rook leaves the front of the pawn with tempo."
+    },
+    {
+      "type": "play",
+      "fen": "R7/6k1/P4r2/8/8/8/4K3/8 b - - 0 1",
+      "goal": "hold",
+      "prompt": "Hold the Vancura position for 30 moves. Keep your king on g7/h7, your rook on the 6th rank attacking a6 (or behind the pawn once it reaches a7), and check the white king from behind when it approaches the pawn.",
+      "maxMoves": 30
+    },
+    {
+      "type": "move",
+      "fen": "R7/P4k2/8/8/8/8/r7/6K1 w - - 0 1",
+      "prompt": "White to move. Black's king has strayed to f7. Win.",
+      "solution": [
+        "Rh8",
+        "Rxa7",
+        "Rh7+"
+      ],
+      "hint": "Clear the a8-square for the pawn with tempo.",
+      "explain": "**1.Rh8! Rxa7 2.Rh7+** and 3.Rxa7 (tablebase win). The skewer works whenever the defending king is on the 7th rank but not on g7/h7 — on g7 or h7 the king covers h8/h7 and the trick fails."
+    },
+    {
+      "type": "quiz",
+      "question": "Same position, but Black to move. Which move draws?",
+      "choices": [
+        "...Ke7",
+        "...Kg7",
+        "...Ra6",
+        "...Ra3"
+      ],
+      "answer": 1,
+      "explain": "Tablebase: only 1...Kg7 (or the check 1...Ra1+ first) draws. 1...Ke7? 2.Rh8 is the skewer again, and passive rook moves allow the white king to approach.",
+      "fen": "R7/P4k2/8/8/8/8/r7/6K1 b - - 0 1"
+    },
+    {
+      "type": "text",
+      "md": "## Assignment\n\n- **Endgames trainer:** play the Vancura position (both sides) and the a7-pawn position with your king on g7 until you hold both easily.\n- **Puzzles:** 15 *rookEndgame* puzzles at your rating.\n- In Game review, look for rook endings in your games: was the defending rook active (behind or beside the pawn) or passive?"
+    }
+  ],
+  "practiceThemes": [
+    "rookEndgame",
+    "endgame",
+    "skewer"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md",
+    "knowledge-base/02-methods/endgame-study-methods.md",
+    "Dvoretsky, Dvoretsky's Endgame Manual (5th ed., 2020)",
+    "de la Villa, 100 Endgames You Must Know",
+    "Syzygy tablebases via tablebase.lichess.ovh (results checked)",
+    "Vancura, 1924 (study)"
+  ]
+}

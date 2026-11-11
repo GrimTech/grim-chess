@@ -1,0 +1,111 @@
+{
+  "id": "adult.s4.opposite-side-castling",
+  "track": "adult",
+  "stage": 4,
+  "order": 30,
+  "skillIds": [
+    "strategy.opposite-castling"
+  ],
+  "title": "Opposite-side castling: the race",
+  "summary": "When kings castle on opposite wings, speed decides: pawn storms, open files, and material matters less than tempo.",
+  "estMinutes": 15,
+  "steps": [
+    {
+      "type": "text",
+      "md": "With kings on opposite wings, both sides can **storm with pawns** without weakening their own king. The game becomes a race:\n\n- **Tempo is everything:** count how many moves each attack needs to open a file against the king.\n- Use **pawns to open files** (g4-g5, h4-h5 against a kingside king; ...b5-b4, ...a5-a4 against a queenside king). Sacrificing a pawn or the exchange to open a file is normal (Dragon ...Rxc3).\n- **Defensive moves only when forced**; a move that slows the opponent by one tempo can be worth as much as an attacking move.\n- Avoid opening files against your own king (do not capture towards your own king if it opens a line for him)."
+    },
+    {
+      "type": "board",
+      "fen": "2rq1rk1/pp1bppb1/3p1np1/4n2p/3NP2P/1BN1BP2/PPPQ2P1/2KR3R w - - 0 13",
+      "md": "Yugoslav Attack against the Dragon. White has castled long and plays h4-h5 and g4 to open the h-file; Black has castled short and plays ...Rc8, ...Ne5-c4 and the exchange sacrifice ...Rxc3 against the queenside king.",
+      "arrows": [
+        [
+          "h4",
+          "h5",
+          "green"
+        ],
+        [
+          "g2",
+          "g4",
+          "green"
+        ],
+        [
+          "c8",
+          "c3",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "In an opposite-castling race, your opponent offers a pawn on the wing where your king lives. Accepting would open a file towards your own king. Usually you should...",
+      "choices": [
+        "Decline and keep attacking: tempo and closed files near your king matter more than a pawn",
+        "Grab it, material is material",
+        "Castle on the other side"
+      ],
+      "answer": 0,
+      "explain": "In races the currency is time and open lines. Taking a pawn that opens a file towards your king often loses the race."
+    },
+    {
+      "type": "quiz",
+      "question": "Which pawn advance usually opens lines fastest against a king on g8 with pawns f7, g7, h7 (or after ...h5)?",
+      "choices": [
+        "g4-g5 or h4-h5 levers that attack the pawn cover directly",
+        "a4-a5 on the other wing",
+        "c4-c5 in the centre"
+      ],
+      "answer": 0,
+      "explain": "Levers against the pawn shield (h4-h5 against ...g6, g4 against ...h5) force files open. Pawns on the other wing do nothing for the attack."
+    },
+    {
+      "type": "move",
+      "fen": "2k2r2/p5Q1/Ppp1p1p1/6N1/1bPP1q2/7P/1P4P1/6K1 w - - 1 32",
+      "prompt": "White to move. The black king on c8 has lost its pawn cover. Strike first.",
+      "solution": [
+        "Qb7+",
+        "Kd8",
+        "Nxe6+"
+      ],
+      "explain": "**32.Qb7+! Kd8 33.Nxe6+** forks the king and the f4-queen. The exposed king on the queenside allowed the queen to check from b7 and the knight to join with tempo."
+    },
+    {
+      "type": "move",
+      "fen": "1k4r1/2q2p1p/1p2p3/P5N1/3rQn2/8/5PPP/R4RK1 w - - 0 24",
+      "prompt": "White to move. Black has just played ...Rxd4, attacking your queen. Your a-pawn has reached a5 next to the black king.",
+      "solution": [
+        "axb6",
+        "Rxe4",
+        "bxc7+"
+      ],
+      "explain": "**24.axb6!** ignores the attack on the queen and opens the black king. After 24...Rxe4 25.bxc7+ Kxc7 26.Nxe4 White comes out ahead in material with the black king exposed. Pawn levers against the castled king are worth more than a queen when they come with tempo."
+    },
+    {
+      "type": "quiz",
+      "question": "Typical error in opposite-castling positions:",
+      "choices": [
+        "Making a \"safe\" prophylactic move when the race requires every tempo for the attack",
+        "Pushing pawns towards the enemy king",
+        "Opening a file with a sacrifice"
+      ],
+      "answer": 0,
+      "explain": "The side that hesitates usually loses the race. Prophylaxis is right only when it costs the opponent more time than it costs you."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** What decides opposite-castling races? (Tempo and open files.) Which pawns do you push? (Those on the wing of the enemy king.) What do you avoid? (Opening files towards your own king.)"
+    }
+  ],
+  "practiceThemes": [
+    "kingsideAttack",
+    "queensideAttack"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#attacking-the-king",
+    "knowledge-base/03-chess-knowledge/strategy.md#king-safety",
+    "knowledge-base/03-chess-knowledge/strategy.md#sicilian-structures",
+    "Vukovic, The Art of Attack in Chess (1965)",
+    "Yugoslav Attack vs the Dragon, standard Sicilian theory",
+    "Lichess puzzle database (CC0), puzzles 06uCP, 0Oz0i"
+  ]
+}

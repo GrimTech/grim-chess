@@ -1,0 +1,91 @@
+{
+  "id": "adult.s4.cut-off-and-rook-behind-passer",
+  "track": "adult",
+  "stage": 4,
+  "order": 35,
+  "skillIds": [
+    "endgame.rook.cut-off",
+    "endgame.rook.behind-passer"
+  ],
+  "title": "Cutting off the king and the rook behind the passer",
+  "summary": "How many files must the defending king be cut off, and why rooks belong behind passed pawns.",
+  "estMinutes": 18,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Two practical rules in rook endgames:\n\n- **Cut-off:** use your rook to keep the defending king away from your pawn along a file or rank. One file is often not enough when the pawn is still on its fourth rank; **two files**, or a more advanced pawn, usually win (the attacker reaches a Lucena).\n- **Tarrasch's rule:** rooks belong **behind** passed pawns, both your own (the rook gains scope as the pawn advances) and the opponent's (the rook restrains it while staying active). A rook in front of a passer is passive."
+    },
+    {
+      "type": "board",
+      "fen": "r7/8/5k2/8/3P4/3K4/8/4R3 w - - 0 1",
+      "md": "White to move. The black king is cut off by **one file** (the e-file) and the pawn is on d4. Engine check: this is a draw; the black king and rook can harass the pawn and the white king before it gets far enough.",
+      "highlights": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7",
+        "e8"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Compare: (A) pawn on d4, black king cut off by one file; (B) pawn on d4, black king cut off by **two** files (on g6, rook on f1); (C) pawn on d5, one file. Which are winning?",
+      "choices": [
+        "B and C",
+        "Only A",
+        "All three are draws"
+      ],
+      "answer": 0,
+      "explain": "With a two-file cut-off (B) or a more advanced pawn (C), the defending king is too slow and White reaches a Lucena. Engine check: A is equal, B and C are about +4 (winning)."
+    },
+    {
+      "type": "play",
+      "fen": "r7/8/6k1/8/3P4/3K4/8/5R2 w - - 0 1",
+      "goal": "win",
+      "prompt": "The black king is cut off by two files. Win the position (the engine defends).",
+      "maxMoves": 60,
+      "explain": "Advance king and pawn together, use the rook on the f-file to keep the black king away, shelter your king from checks, and aim for the Lucena position."
+    },
+    {
+      "type": "quiz",
+      "question": "White to move. Your a-pawn is passed; Black's rook stands in front of it. Where should your rook go?",
+      "choices": [
+        "1.Ra1, behind the passed pawn",
+        "1.Rb7, to the seventh rank",
+        "1.a6, pushing at once"
+      ],
+      "answer": 0,
+      "explain": "**1.Ra1!** Tarrasch's rule: from behind, the rook supports every pawn step and Black's rook on a8 is reduced to a passive blockader. 1.Rb7? Rxa5 and 1.a6? Rxa6 simply lose the pawn. Engine check: 1.Ra1 is about +3.8, the others are equal.",
+      "fen": "r7/5pk1/6p1/P6p/7P/6P1/5PK1/1R6 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Your opponent has a dangerous passed pawn. Where is your rook best placed?",
+      "choices": [
+        "Behind the passed pawn, restraining it while staying active",
+        "In front of it, blockading",
+        "On the opposite wing"
+      ],
+      "answer": 0,
+      "explain": "From behind, the rook attacks the pawn on every step and keeps its freedom. In front, it becomes a passive blockader that the enemy king can drive away."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** When does a one-file cut-off fail? (Pawn still on its fourth rank, as in the d4 example.) What does Tarrasch's rule say? (Rooks behind passed pawns, yours and the opponent's.)"
+    }
+  ],
+  "practiceThemes": [
+    "rookEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#cutting-off-the-king",
+    "knowledge-base/03-chess-knowledge/endgames.md#rook-behind-passed-pawn",
+    "knowledge-base/03-chess-knowledge/endgames.md#simple-rook-endgames-with-extra-pawn",
+    "de la Villa, 100 Endgames You Must Know (New in Chess, 2008)",
+    "Dvoretsky, Dvoretsky's Endgame Manual (Russell Enterprises, 2003), chapter 9",
+    "Tarrasch's rule (rooks behind passed pawns), standard endgame literature"
+  ]
+}

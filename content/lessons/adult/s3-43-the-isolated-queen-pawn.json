@@ -1,0 +1,94 @@
+{
+  "id": "adult.s3.the-isolated-queen-pawn",
+  "track": "adult",
+  "stage": 3,
+  "order": 43,
+  "skillIds": [
+    "strategy.pawn.isolated"
+  ],
+  "title": "Isolated pawns and the blockade",
+  "summary": "Against an isolated pawn: blockade the square in front of it, trade pieces, and attack it. With it: use the activity, the outposts and the d4-d5 break.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "An **isolated pawn** has no friendly pawns on the adjacent files, so no pawn can defend it. The **isolated queen's pawn (IQP)** on d4/d5 is the most common.\n\n- **Against it**: blockade the square in front (d5 for a white IQP, d4 for a black one), ideally with a knight; trade pieces (especially minor pieces); attack it in the endgame.\n- **With it**: activity, outposts on e5/c5 (or e4/c4), kingside attack, and the **d4-d5 break** to dissolve the weakness at the right moment."
+    },
+    {
+      "type": "move",
+      "fen": "r1bq1rk1/pp2bppp/2n2n2/3p2B1/3p4/2N2NP1/PP2PPBP/R2Q1RK1 w - - 0 10",
+      "prompt": "Tarrasch Defence. Black has just played ...cxd4. Recapture onto the square in front of Black's isolated d5-pawn.",
+      "solution": [
+        "Nxd4"
+      ],
+      "explain": "Nxd4: the knight occupies d4, the blockade square in front of the isolani. From there it cannot be chased by a pawn (no black c- or e-pawn). White's plan: pressure d5 with Bg2, Rd1, Qb3 and trade minor pieces."
+    },
+    {
+      "type": "quiz",
+      "question": "Why is the knight the best blockader?",
+      "choices": [
+        "It is the cheapest piece",
+        "It keeps its full activity on a blockade square (it jumps over the pawn) and cannot be attacked by pawns there",
+        "It defends the king",
+        "It controls the d-file"
+      ],
+      "answer": 1,
+      "explain": "Nimzowitsch: a blockading knight loses nothing in mobility, while a blockading bishop or rook is partly wasted."
+    },
+    {
+      "type": "quiz",
+      "question": "You have the IQP (White pawn d4). Which plan suits you?",
+      "choices": [
+        "Trade all minor pieces",
+        "Keep pieces on, use e5/c5 outposts, attack, and prepare d4-d5 when it opens lines",
+        "Advance the a- and b-pawns",
+        "Offer a queen trade"
+      ],
+      "answer": 1,
+      "explain": "Every exchange brings the IQP side closer to an endgame where the pawn is just weak."
+    },
+    {
+      "type": "quiz",
+      "question": "Which trade most helps the side playing AGAINST the isolated pawn?",
+      "choices": [
+        "Queen for queen? Not necessarily; minor pieces for minor pieces, removing the IQP side's attackers",
+        "Pawns for pawns",
+        "Rooks on the d-file only",
+        "No trades"
+      ],
+      "answer": 0,
+      "explain": "Minor-piece trades reduce the IQP side's activity and make the pawn a pure weakness. A queen trade is often good too, but minor pieces matter most."
+    },
+    {
+      "type": "board",
+      "fen": "r1bq1rk1/pp2bppp/2n2n2/3p2B1/3p4/2N2NP1/PP2PPBP/R2Q1RK1 w - - 0 10",
+      "md": "Before recapturing: note that White's g2-bishop (after Bg2) and a rook on d1 will aim at d5. The isolani is fixed; the blockader on d4 is the cornerstone.",
+      "highlights": [
+        "d4",
+        "d5"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the blockade square against a black IQP on d5?",
+      "choices": [
+        "d6",
+        "d4",
+        "e5",
+        "c5"
+      ],
+      "answer": 1,
+      "explain": "The square directly in front of the pawn, from the pawn's point of view: d4."
+    }
+  ],
+  "practiceThemes": [
+    "middlegame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/strategy.md#isolated-pawn",
+    "knowledge-base/03-chess-knowledge/strategy.md#isolated-queen-pawn",
+    "Nimzowitsch, My System",
+    "Nimzowitsch, My System (blockade)",
+    "Yusupov, Build Up Your Chess 2 (exchanges, open files, pawn structure)"
+  ]
+}

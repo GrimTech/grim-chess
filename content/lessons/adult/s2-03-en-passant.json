@@ -1,0 +1,126 @@
+{
+  "id": "adult.s2.en-passant",
+  "track": "adult",
+  "stage": 2,
+  "order": 3,
+  "skillIds": [
+    "rules.en-passant"
+  ],
+  "title": "En passant",
+  "summary": "Capturing a pawn that has just double-stepped past yours, only on the very next move.",
+  "estMinutes": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "When a pawn makes its **two-square first move** and lands right beside an enemy pawn, that enemy pawn may capture it **as if it had moved only one square**. It moves diagonally onto the square the pawn skipped. This is **en passant** (\"in passing\").\n\n- Only pawn takes pawn.\n- The capturing pawn must be on its 5th rank (White) or 4th rank (Black).\n- It is allowed **only on the very next move**; otherwise the chance is gone."
+    },
+    {
+      "type": "board",
+      "fen": "rnbqkbnr/1pp1pppp/p7/3pP3/8/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 3",
+      "md": "Black has just played ...d7-d5, passing the d6-square right next to White's e5-pawn. White may capture exd6 en passant.",
+      "arrows": [
+        [
+          "d7",
+          "d5",
+          "blue"
+        ],
+        [
+          "e5",
+          "d6",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/1pp1pppp/p7/3pP3/8/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 3",
+      "prompt": "Capture en passant.",
+      "solution": [
+        "exd6"
+      ],
+      "explain": "The pawn moves to d6 and the d5-pawn disappears. Notation: exd6 (sometimes \"e.p.\" is added)."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/ppp1pppp/8/8/2Pp4/4PN2/PP1P1PPP/RNBQKB1R b KQkq c3 0 3",
+      "prompt": "You are Black. White just played c2-c4. Capture en passant.",
+      "solution": [
+        "dxc3"
+      ],
+      "explain": "Your d4-pawn takes on c3, the square the white pawn skipped. Black captures en passant from its 4th rank."
+    },
+    {
+      "type": "quiz",
+      "question": "The black pawn reached d5 earlier, in two single steps. Can White capture it en passant now?",
+      "choices": [
+        "No: en passant only applies right after a two-square move",
+        "Yes",
+        "Only with check"
+      ],
+      "answer": 0,
+      "explain": "Here nothing has just double-stepped, so a normal capture on d5 is impossible (the pawn is straight ahead) and en passant does not apply.",
+      "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Black played ...d5, and White replied with a king move instead of capturing. Can White play exd6 on the following move?",
+      "choices": [
+        "No, the right expired",
+        "Yes, any time",
+        "Yes, once more"
+      ],
+      "answer": 0,
+      "explain": "En passant must be done immediately or never."
+    },
+    {
+      "type": "move",
+      "fen": "5r2/8/2p5/2kpP3/4K3/r7/8/8 w - d6 0 2",
+      "prompt": "Black has just played ...d7-d5 with check. Find White's only legal move.",
+      "solution": [
+        "exd6"
+      ],
+      "explain": "The king cannot move: every square is covered and Kxd5 walks into the defended square. Only en passant removes the checking pawn. Always remember this capture when you list your options."
+    },
+    {
+      "type": "quiz",
+      "question": "On which rank must a white pawn stand to capture en passant?",
+      "choices": [
+        "The 5th rank",
+        "The 4th rank",
+        "The 6th rank",
+        "Any rank"
+      ],
+      "answer": 0,
+      "explain": "White captures e.p. from rank 5; Black from rank 4. These are the only ranks where an enemy double step can land beside your pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which pieces can capture en passant?",
+      "choices": [
+        "Only pawns, and only pawns can be captured that way",
+        "Any piece",
+        "Pawns and knights"
+      ],
+      "answer": 0,
+      "explain": "It is purely a pawn-takes-pawn rule."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: after exd6 e.p., where does the white pawn stand?",
+      "choices": [
+        "d6",
+        "d5",
+        "e6"
+      ],
+      "answer": 0,
+      "explain": "On the skipped square, d6, as if the black pawn had stopped there."
+    }
+  ],
+  "practiceThemes": [
+    "enPassant"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#en-passant",
+    "knowledge-base/03-chess-knowledge/tactics.md#en-passant-tactics"
+  ]
+}

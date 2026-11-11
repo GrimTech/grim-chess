@@ -1,0 +1,112 @@
+{
+  "id": "adult.s1.checkmate",
+  "track": "adult",
+  "stage": 1,
+  "order": 14,
+  "skillIds": [
+    "rules.checkmate"
+  ],
+  "title": "Checkmate",
+  "summary": "Check with no escape ends the game. Learn to recognise it.",
+  "estMinutes": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "**Checkmate** = the king is in check **and** none of the three escapes works (no safe square, no capture of the checker, no block). The game ends immediately: the side that gives mate wins."
+    },
+    {
+      "type": "board",
+      "fen": "3k4/3Q4/3K4/8/8/8/8/8 b - - 0 1",
+      "md": "Checkmate. The queen on d7 checks; the black king cannot take it because the white king guards it, and every flight square is covered.",
+      "highlights": [
+        "d7"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Is this checkmate?",
+      "choices": [
+        "No, the king can capture the queen",
+        "Yes",
+        "No, it is not even check"
+      ],
+      "answer": 0,
+      "explain": "The queen on d7 is undefended (the white king on d5 is too far away). Kxd7 escapes.",
+      "fen": "3k4/3Q4/8/3K4/8/8/8/8 b - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. Check, checkmate, or neither?",
+      "choices": [
+        "Checkmate",
+        "Check only",
+        "Neither"
+      ],
+      "answer": 0,
+      "explain": "The rook checks on the back rank, and the black pawns on f7, g7, h7 take away every escape square. This is the back-rank mate.",
+      "fen": "4R1k1/5ppp/8/8/8/8/5PPP/6K1 b - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "3k4/8/3K4/8/8/8/8/7Q w - - 0 1",
+      "prompt": "Deliver checkmate in one move.",
+      "solution": [
+        "Qh8#"
+      ],
+      "alternatives": [
+        "Qa8#"
+      ],
+      "explain": "The queen checks along the 8th rank; your king on d6 covers c7, d7 and e7. Qa8# works too."
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1",
+      "prompt": "Checkmate in one.",
+      "solution": [
+        "Re8#"
+      ],
+      "explain": "Re8#: the black king is boxed in by its own pawns. You will meet this back-rank pattern again and again."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. What is the situation?",
+      "choices": [
+        "Check, but not mate: the king can step off the 8th rank",
+        "Checkmate",
+        "Not check"
+      ],
+      "answer": 0,
+      "explain": "The rook checks along the 8th rank, but the king can step to d7, e7 or f7 (all unguarded). Before you announce mate, test all three escapes.",
+      "fen": "R3k3/8/8/8/8/8/8/4K3 b - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: checkmate means...",
+      "choices": [
+        "Check, and no legal move escapes it",
+        "The king has no moves but is not in check",
+        "The queen is captured"
+      ],
+      "answer": 0,
+      "explain": "Check + no escape. Without the check, it would be stalemate (next lesson)."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what happens after checkmate?",
+      "choices": [
+        "The game ends; the mating side wins",
+        "The king is captured next move",
+        "Play continues until the king is taken"
+      ],
+      "answer": 0,
+      "explain": "Mate ends the game at once."
+    }
+  ],
+  "practiceThemes": [
+    "mateIn1"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#checkmate",
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#king-and-queen-vs-king"
+  ]
+}

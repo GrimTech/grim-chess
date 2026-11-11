@@ -1,0 +1,115 @@
+{
+  "id": "adult.s4.endgame-tactics",
+  "track": "adult",
+  "stage": 4,
+  "order": 7,
+  "skillIds": [
+    "tactics.endgame-tactics"
+  ],
+  "title": "Endgame tactics: deflect, skewer, promote",
+  "summary": "Few pieces, sharp tactics: deflect the blockader, skewer behind the pawn, and decoy the king.",
+  "estMinutes": 16,
+  "steps": [
+    {
+      "type": "text",
+      "md": "In the endgame, one pawn often outweighs everything else, so tactics revolve around **promotion**:\n\n- **Deflection** of the only piece that stops the pawn (often by a check or capture that must be answered).\n- **Skewer** along a rank or file: check the king, win the piece or new queen behind it.\n- **Decoy** of the king onto a square where it is forked or where it cannot stop a pawn.\n\nMethod: identify the piece that guards the promotion square; ask how to remove, block or overload it."
+    },
+    {
+      "type": "move",
+      "fen": "8/5BPb/8/8/5p2/2pk1K2/8/8 w - - 0 50",
+      "prompt": "White to move. Black has just pushed ...c3. Only the h7-bishop stops your g-pawn.",
+      "solution": [
+        "Bg6+",
+        "Bxg6",
+        "g8=Q"
+      ],
+      "explain": "**50.Bg6+!** deflects the bishop: after 50...Bxg6 **51.g8=Q** and the queen easily stops the c-pawn. The check forces the capture, so Black has no time to push."
+    },
+    {
+      "type": "move",
+      "fen": "5r2/1k6/p7/1pR2B2/8/PP1P1KP1/2p5/8 b - - 1 37",
+      "prompt": "Black to move. Your c-pawn is one step from queening and only the c5-rook guards c1.",
+      "solution": [
+        "Rxf5+",
+        "Rxf5",
+        "c1=Q"
+      ],
+      "explain": "**37...Rxf5+!** The rook on c5 cannot both recapture and stop the pawn. After 38.Rxf5 **38...c1=Q** and Black is a queen for a rook up."
+    },
+    {
+      "type": "move",
+      "fen": "6R1/1P6/K7/4p3/P7/4k3/1r4p1/8 w - - 0 60",
+      "prompt": "White to move. Black has just played ...e5. Both sides have dangerous pawns. Remove the one that matters.",
+      "solution": [
+        "Rxg2",
+        "Rxg2",
+        "b8=Q"
+      ],
+      "explain": "**60.Rxg2! Rxg2 61.b8=Q.** The b2-rook was the only guard of b8 along the b-file; capturing the g2-pawn deflects it. Your new queen beats the lone rook."
+    },
+    {
+      "type": "move",
+      "fen": "r5k1/6pR/3prPP1/8/1pp1P3/p7/2P5/1K6 w - - 0 39",
+      "prompt": "White to move. Check, then skewer.",
+      "solution": [
+        "f7+",
+        "Kf8",
+        "Rh8+",
+        "Ke7",
+        "Rxa8"
+      ],
+      "explain": "**39.f7+ Kf8 40.Rh8+ Ke7 41.Rxa8.** The pawn check drives the king to the eighth rank; the rook check from h8 skewers the king and the a8-rook. A textbook skewer behind the king."
+    },
+    {
+      "type": "quiz",
+      "question": "A rook stands behind an enemy pawn that is about to queen, and the enemy king is on the same rank as the promotion square. What tactic should you look for?",
+      "choices": [
+        "A skewer: after the pawn promotes, check the king along the rank and take the new queen",
+        "An immediate rook sacrifice on the pawn",
+        "Nothing; the pawn will queen"
+      ],
+      "answer": 0,
+      "explain": "This is the standard **skewer of the promoted queen**: if the king and the queening square share a rank (or file) with your rook, the new queen is lost after a rook check. Defenders use it; attackers must avoid it by first moving the king off that line."
+    },
+    {
+      "type": "move",
+      "fen": "7r/6RP/2p5/7K/2k5/1p6/5P2/8 b - - 1 50",
+      "prompt": "Black to move. Independent exercise: White's g7-rook guards h7 and also has to stop your b-pawn.",
+      "solution": [
+        "b2",
+        "Rb7",
+        "Rxh7+",
+        "Rxh7",
+        "b1=Q"
+      ],
+      "explain": "**50...b2!** threatens to queen. After 51.Rb7 the rook has left g7, so **51...Rxh7+!** and the recapture 52.Rxh7 takes the rook off the b-file: **52...b1=Q**. White's rook was *overloaded*: it could not guard both h7 and the b-pawn."
+    },
+    {
+      "type": "move",
+      "fen": "8/8/1Pk5/P1pn1N2/2K1pp2/8/5P2/8 w - - 1 52",
+      "prompt": "White to move. Black has just played ...Nd5. Your king attacks the knight and only the black king defends it.",
+      "solution": [
+        "b7",
+        "Kxb7",
+        "Kxd5"
+      ],
+      "explain": "**52.b7!** decoys the king: 52...Kxb7 53.Kxd5 and White has won the knight (and the a-pawn and king are ready to go). If Black ignores the pawn, it queens."
+    },
+    {
+      "type": "text",
+      "md": "**Retrieval check.** For each motif, recall one puzzle from this lesson: deflection (Bg6+, Rxf5+, Rxg2), skewer (Rh8+ and Rxa8), decoy (b7 and Kxd5), overload (the g7-rook in ...b2 and ...Rxh7+)."
+    }
+  ],
+  "practiceThemes": [
+    "endgame",
+    "advancedPawn",
+    "promotion"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#endgame-tactics",
+    "knowledge-base/03-chess-knowledge/endgames.md#general-endgame-principles",
+    "de la Villa, 100 Endgames You Must Know (New in Chess, 2008)",
+    "Dvoretsky, Dvoretsky's Endgame Manual (Russell Enterprises, 2003), chapters on pawn races and tactical devices",
+    "Lichess puzzle database (CC0), puzzles 0pgS2, 0BHOd, 0X2tq, 02KwH, 02fzY, 08QjJ"
+  ]
+}

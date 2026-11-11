@@ -1,0 +1,86 @@
+{
+  "id": "kids.4.back-rank",
+  "track": "kids",
+  "stage": 2,
+  "order": 404,
+  "skillIds": [
+    "checkmate.back-rank"
+  ],
+  "title": "Back-row trap",
+  "summary": "A king stuck behind its pawns can be checkmated on the back row.",
+  "estMinutes": 7,
+  "minAge": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A king hiding behind his pawns can get **stuck**. A rook or queen on the back row: checkmate!"
+    },
+    {
+      "type": "move",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1",
+      "prompt": "Back-row checkmate!",
+      "solution": [
+        "Re8#"
+      ],
+      "explain": "Trapped by his own pawns!",
+      "hint": "The e-file is open."
+    },
+    {
+      "type": "move",
+      "fen": "7k/5ppp/8/8/8/8/3Q1PPP/6K1 w - - 0 1",
+      "prompt": "Checkmate!",
+      "solution": [
+        "Qd8#"
+      ],
+      "explain": "The queen does it too.",
+      "hint": "Straight up to the back row."
+    },
+    {
+      "type": "move",
+      "fen": "2r3k1/5ppp/8/8/8/8/5PPP/2R3K1 w - - 0 1",
+      "prompt": "The black rook guards the back row. Capture it… with checkmate!",
+      "solution": [
+        "Rxc8#"
+      ],
+      "explain": "Capture and checkmate in one!",
+      "hint": "Your rook can take the guard."
+    },
+    {
+      "type": "quiz",
+      "question": "How can you stop a back-row checkmate?",
+      "choices": [
+        "Move a pawn to give your king air",
+        "Move the king to the middle"
+      ],
+      "answer": 0,
+      "explain": "A little \"window\" like h3 gives the king an escape square."
+    },
+    {
+      "type": "move",
+      "fen": "4r1k1/5ppp/8/8/R7/8/5PPP/6K1 w - - 0 1",
+      "prompt": "Black threatens back-row checkmate! Stop it.",
+      "solution": [
+        "h3"
+      ],
+      "explain": "Now your king has a window to escape!",
+      "hint": "Give your king an escape square, or guard the back row.",
+      "alternatives": [
+        "Ra8",
+        "Re4",
+        "Ra1",
+        "f3",
+        "f4",
+        "g3",
+        "g4",
+        "h4",
+        "Kf1"
+      ]
+    }
+  ],
+  "practiceThemes": [
+    "backRankMate"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

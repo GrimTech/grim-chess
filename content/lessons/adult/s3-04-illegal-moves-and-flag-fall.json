@@ -1,0 +1,108 @@
+{
+  "id": "adult.s3.illegal-moves-and-flag-fall",
+  "track": "adult",
+  "stage": 3,
+  "order": 4,
+  "skillIds": [
+    "rules.illegal-moves"
+  ],
+  "title": "Illegal moves, irregularities and flag fall",
+  "summary": "What happens after an illegal move in classical, rapid and blitz, how flag fall is decided, and when insufficient material saves you.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "An **illegal move** is completed once you press the clock. In standard games the position before the irregularity is restored, the opponent gets **two extra minutes**, and a **second** completed illegal move by the same player **loses** (unless the opponent cannot checkmate, then it is a draw). Rapid and blitz: same principle, **one minute** instead of two. Pressing the clock without moving also counts as an illegal move."
+    },
+    {
+      "type": "quiz",
+      "question": "Classical game. Your opponent leaves their king in check and presses the clock. It is their first illegal move. What happens?",
+      "choices": [
+        "They lose immediately",
+        "The position before the illegal move is restored, you receive two extra minutes, and they must make a legal move (with the touched piece if possible)",
+        "You may capture their king",
+        "The game is replayed from the start"
+      ],
+      "answer": 1,
+      "explain": "Art. 7.5. \"Capturing the king\" does not exist under FIDE rules. Touch-move still applies to the piece they touched for the illegal move, if it has a legal move."
+    },
+    {
+      "type": "move",
+      "fen": "r3k2r/ppp2ppp/2np4/2b1p3/2B1P2q/3P1N2/PPP2PPP/R2QK2R w KQkq - 0 30",
+      "prompt": "Your opponent's illegal move has just been taken back and you received two extra minutes. They then replied ...Qh4. Reset your attention to the board: what is the strongest move?",
+      "solution": [
+        "Nxh4"
+      ],
+      "explain": "Nxh4 wins the queen. After any irregularity, players on both sides tend to rush; take a breath and run your normal checks, captures and threats scan before moving.",
+      "hint": "Which piece attacks h4?"
+    },
+    {
+      "type": "quiz",
+      "question": "Blitz game (supervised). Your opponent makes an illegal move and presses the clock. You notice it. What is the standard result under the current FIDE blitz rules?",
+      "choices": [
+        "You can claim a win immediately for any illegal move",
+        "Same as Art. 7.5 but with one minute instead of two: first illegal move gives you one minute; a second one loses",
+        "Nothing: illegal moves stand in blitz",
+        "The game is drawn"
+      ],
+      "answer": 1,
+      "explain": "App. B.3 applies Art. 7 with one minute instead of two. Many older club rules (\"illegal move loses\") are out of date; check the event regulations."
+    },
+    {
+      "type": "quiz",
+      "question": "Your flag falls. Your opponent has only king and bishop. What is the result?",
+      "choices": [
+        "You lose on time",
+        "Draw: king and bishop cannot checkmate by any legal sequence, so the opponent cannot win on time",
+        "Draw only if you also have a bishop",
+        "The opponent wins if they claim quickly"
+      ],
+      "answer": 1,
+      "explain": "Art. 6.9: flag fall loses unless the opponent cannot checkmate by any legal series of moves. With K+B vs your remaining material, check carefully: if you still have pawns or pieces, a \"helpmate\" may be possible (e.g. K+B vs K+P can mate in a corner with the pawn blocking), and then you lose."
+    },
+    {
+      "type": "quiz",
+      "question": "Your flag falls. Your opponent has king and knight; you have king and rook. What is the result under Art. 6.9?",
+      "choices": [
+        "Draw, because a knight can never mate",
+        "You lose, because a mate is theoretically possible with your rook blocking your own king",
+        "You win on material",
+        "The arbiter decides by evaluation"
+      ],
+      "answer": 1,
+      "explain": "The test is \"any legal series of moves\", including the worst possible play by you. With your rook available to block your own king, a knight mate exists in theory, so flag fall loses. Only bare king (or truly impossible material) saves you."
+    },
+    {
+      "type": "quiz",
+      "question": "Which counts as an illegal move under Art. 7.5?",
+      "choices": [
+        "Touching a piece and not moving it",
+        "Pressing the clock without making a move",
+        "Offering a draw before pressing the clock",
+        "Adjusting a piece after saying \"I adjust\""
+      ],
+      "answer": 1,
+      "explain": "Art. 7.5.3: pressing the clock without moving is treated as an illegal move. Failing to follow touch-move is dealt with under Art. 4, not as an illegal move."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: classical game, your opponent makes their second completed illegal move. You have only a bare king left. Result?",
+      "choices": [
+        "They lose",
+        "Draw, because you cannot checkmate",
+        "Two more minutes for you",
+        "The game continues normally"
+      ],
+      "answer": 1,
+      "explain": "The second illegal move normally loses, but if the opponent of the offender cannot checkmate by any legal sequence, the game is drawn (Art. 7.5.5)."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#irregularities-and-illegal-moves",
+    "knowledge-base/03-chess-knowledge/rules.md#chess-clock",
+    "knowledge-base/03-chess-knowledge/rules.md#rapid-and-blitz-appendices",
+    "knowledge-base/03-chess-knowledge/rules.md#insufficient-material-on-flag-fall",
+    "FIDE Laws of Chess (2023) Art. 6.9, 7.2-7.5, App. A.3, B.3"
+  ]
+}

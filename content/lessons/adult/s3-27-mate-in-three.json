@@ -1,0 +1,145 @@
+{
+  "id": "adult.s3.mate-in-three",
+  "track": "adult",
+  "stage": 3,
+  "order": 27,
+  "skillIds": [
+    "checkmate.mate-in-3"
+  ],
+  "title": "Mate in three: calculate the whole net",
+  "summary": "Combine the named patterns into three-move mates. List checks first, follow every king escape, and know the final picture before you start.",
+  "estMinutes": 18,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A mate in three is two named patterns stitched together. Method:\n\n1. **Picture the final pattern** (which mate could finish here?).\n2. **List all checks** and forcing captures; follow every king escape and every block.\n3. Accept a **quiet move** only after checks fail.\n\nThe puzzles are mixed on purpose: the name of the pattern is not given."
+    },
+    {
+      "type": "move",
+      "fen": "2r3k1/pbqn1Npn/1p5p/2ppN3/3P4/2P3P1/PPQ2PP1/4R1K1 w - - 0 22",
+      "prompt": "White to move: mate in three.",
+      "solution": [
+        "Nxh6+",
+        "gxh6",
+        "Qg6+",
+        "Kh8",
+        "Nf7#"
+      ],
+      "explain": "Nxh6+! gxh6 Qg6+ Kh8 Nf7#: knight sacrifice to open g6 for the queen, then a corner mate with the second knight.",
+      "hint": "Start with a knight sacrifice that gives check."
+    },
+    {
+      "type": "move",
+      "fen": "4r1rk/pp1b4/2p2pPq/3p4/1P1P3R/P2BP2P/6P1/6K1 w - - 0 42",
+      "prompt": "White to move: mate in three.",
+      "solution": [
+        "Rxh6+",
+        "Kg7",
+        "Rh7+",
+        "Kf8",
+        "Rf7#"
+      ],
+      "explain": "Rxh6+! (taking the queen with check) Kg7 Rh7+ Kf8 Rf7#: the rook mates on f7, protected by the g6-pawn, and Black's own rooks on e8 and g8 block the king: an epaulette mate."
+    },
+    {
+      "type": "move",
+      "fen": "r6r/1N3pk1/pp2p1p1/2p1N3/5n2/2PP4/PP3PPP/R4RK1 b - - 0 22",
+      "prompt": "Black to move: mate in three.",
+      "solution": [
+        "Ne2+",
+        "Kh1",
+        "Rxh2+",
+        "Kxh2",
+        "Rh8#"
+      ],
+      "explain": "...Ne2+! Kh1 ...Rxh2+! Kxh2 ...Rh8#: knight check, rook sacrifice, and an Anastasia mate on the h-file."
+    },
+    {
+      "type": "move",
+      "fen": "5rk1/1b3pp1/3r3p/2Q1b3/8/2P1BP1P/PP3P2/R4RK1 b - - 0 27",
+      "prompt": "Black to move: mate in three.",
+      "solution": [
+        "Rg6+",
+        "Bg5",
+        "Rxg5+",
+        "Kh1",
+        "Bxf3#"
+      ],
+      "explain": "...Rg6+! Bg5 ...Rxg5+ Kh1 ...Bxf3#: the g5-rook covers g1 and g2, the e5-bishop covers h2, and the b7-bishop mates on the long diagonal: Morphy's pattern."
+    },
+    {
+      "type": "move",
+      "fen": "8/7p/5ppk/2Q5/1P4P1/2p1PK1P/3q4/8 w - - 4 46",
+      "prompt": "White to move: mate in three. A queen endgame with an exposed king.",
+      "solution": [
+        "Qf8+",
+        "Kg5",
+        "h4+",
+        "Kxh4",
+        "Qh6#"
+      ],
+      "explain": "Qf8+! Kg5 h4+! Kxh4 Qh6#: the pawn check drags the king to h4. The queen covers g5 and h5 (and h3 through the king), and White's king covers g3 and g4."
+    },
+    {
+      "type": "move",
+      "fen": "5k2/1p3p2/2p2BbP/2PpR1p1/p2P1p2/1r6/6K1/8 w - - 2 40",
+      "prompt": "White to move: mate in three.",
+      "solution": [
+        "Bg7+",
+        "Kg8",
+        "Re8+",
+        "Kh7",
+        "Rh8#"
+      ],
+      "explain": "Bg7+! Kg8 Re8+ Kh7 Rh8#: the bishop check drives the king to g8, the rook check chases it to h7, and the final rook mate on h8 is protected by the g7-bishop (itself protected by the h6-pawn). Black's own bishop blocks g6: an Opera-style rook-and-bishop finish."
+    },
+    {
+      "type": "move",
+      "fen": "r5rk/pp3p2/4N2P/q2p4/5PQ1/1P1n4/5RP1/1K5R w - - 1 32",
+      "prompt": "White to move: mate in three.",
+      "solution": [
+        "Qg7+",
+        "Rxg7",
+        "hxg7+",
+        "Kg8",
+        "Rh8#"
+      ],
+      "explain": "Qg7+! Rxg7 hxg7+ (a discovered check from the h1-rook) Kg8 Rh8#: the queen sacrifice pulls the rook to g7, the pawn recapture opens the h-file with check, and the e6-knight and g7-pawn seal the king."
+    },
+    {
+      "type": "quiz",
+      "question": "You have found a mate in three that starts with a check. Before you play it, what must you still verify?",
+      "choices": [
+        "That it is pretty",
+        "Every legal reply at each step, including blocks and captures of the checking piece",
+        "That the opponent is in time trouble",
+        "That there is no mate in four"
+      ],
+      "answer": 1,
+      "explain": "A mate in three is only a mate if every defence fails. Most errors come from a missed block or a capture of the checking piece."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which is the best first scan in a mate-in-three puzzle?",
+      "choices": [
+        "Quiet improving moves",
+        "All checks (including sacrifices), then forcing captures, then quiet moves",
+        "Pawn moves only",
+        "King moves"
+      ],
+      "answer": 1,
+      "explain": "CCT order: checks, captures, threats. The final pattern tells you which check to try first."
+    }
+  ],
+  "practiceThemes": [
+    "mateIn3"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#mating-net-skills-beyond-named-patterns",
+    "knowledge-base/03-chess-knowledge/calculation.md#forcing-moves-first-cct",
+    "Steps Method Step 3 (mating patterns, look-ahead workbooks)",
+    "Polgar, Chess: 5334 Problems, Combinations and Games (mate in three section)",
+    "knowledge-base/01-learning-science/retrieval-practice-interleaving-desirable-difficulties.md#4-interleaving",
+    "Lichess puzzle database (CC0): 1FhTV, 0e2Fb, CAoY3, 8kCD9, 0hfFv, 1FeLL, 4Aebn"
+  ]
+}

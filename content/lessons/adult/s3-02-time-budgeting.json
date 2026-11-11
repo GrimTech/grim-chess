@@ -1,0 +1,111 @@
+{
+  "id": "adult.s3.time-budgeting",
+  "track": "adult",
+  "stage": 3,
+  "order": 2,
+  "skillIds": [
+    "practical.time-budget"
+  ],
+  "title": "Budgeting your thinking time",
+  "summary": "Spend time where it matters: fast routine moves, long thinks at critical moments, and a reserve for the end. Includes time-trouble technique.",
+  "estMinutes": 10,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Most club players lose time in two ways: **too fast** in critical positions (Heisman: improving players play too fast in slow games) and **too slow** on routine moves (re-checking the same line, Kotov's warning). A budget fixes both:\n\n- Opening: quick, from preparation.\n- Middlegame: most of your time, concentrated on **critical moments** (captures that change the structure, sacrifices, trades into an endgame, surprises).\n- Reserve: enough for the last moves before the time control or the endgame.\n\nRule of thumb for classical games: no more than about a third of your time used by move 15 unless the position is critical."
+    },
+    {
+      "type": "quiz",
+      "question": "90-minute game, no increment. It is move 12, a quiet position, and you have used 40 minutes. What is the best adjustment?",
+      "choices": [
+        "Fine: the opening deserves the most time",
+        "You are behind schedule: play routine moves faster and save long thinks for genuinely critical moments",
+        "Start playing blitz moves for the rest of the game",
+        "Offer a draw to avoid time trouble"
+      ],
+      "answer": 1,
+      "explain": "Forty minutes by move 12 is over the one-third guideline in a quiet position. Do not panic into blitz; just stop re-checking routine moves and keep the long thinks for critical moments."
+    },
+    {
+      "type": "quiz",
+      "question": "Which of these positions most deserves a long think?",
+      "choices": [
+        "Recapturing a piece where only one recapture is legal",
+        "Deciding whether to trade queens into a pawn endgame",
+        "Playing your 6th move of a main-line opening you know",
+        "Moving your king out of a check with only one legal square"
+      ],
+      "answer": 1,
+      "explain": "Transitions into pawn endgames are irreversible and often decided by a single tempo. Forced recaptures, only-moves and known theory should take seconds."
+    },
+    {
+      "type": "move",
+      "fen": "r2q1rk1/pbpn1ppp/1p1p4/4p3/2B1P3/2N5/PPPQ1PPP/R4RK1 w - - 0 30",
+      "prompt": "Calm position, you are short of time. Spend your seconds on a safety check, then make a simple, solid move: develop the a1-rook to the centre.",
+      "solution": [
+        "Rad1"
+      ],
+      "explain": "In time trouble, prefer safe, useful moves that do not create new weaknesses. Rad1 connects the rooks and adds pressure on d6 without opening anything. Save calculation for forcing positions.",
+      "alternatives": [
+        "Rae1"
+      ],
+      "hint": "A rook move to a central file."
+    },
+    {
+      "type": "quiz",
+      "question": "You have 3 minutes left for 8 moves, no increment, in an unclear middlegame. What is the best practical approach?",
+      "choices": [
+        "Calculate one long sacrificial line to the end",
+        "Simplify, make safe moves, and think on your opponent's time",
+        "Stop recording moves and ask the arbiter for extra time",
+        "Spend 2 minutes on the next move to get it right"
+      ],
+      "answer": 1,
+      "explain": "Time-trouble technique: simplify, avoid long forcing lines you cannot verify, keep pieces protected, use the opponent's time. You may stop recording when under five minutes with less than 30 seconds increment (Art. 8.4)."
+    },
+    {
+      "type": "quiz",
+      "question": "Your opponent is in severe time trouble and you are better. Which approach is most practical?",
+      "choices": [
+        "Force a long series of exchanges so the position becomes simple",
+        "Keep the position complicated but safe, avoiding forcing simplifications",
+        "Offer a draw so they relax",
+        "Play as fast as possible yourself"
+      ],
+      "answer": 1,
+      "explain": "Against a short clock, keep tension and problems on the board while keeping your own position safe. Forcing simplifications let a player in time trouble make easy, obvious moves."
+    },
+    {
+      "type": "quiz",
+      "question": "In a 90+30 game you have 2 minutes left. How should you treat the increment?",
+      "choices": [
+        "Ignore it: it is too small to matter",
+        "Never let your clock fall below the level where the 30 seconds alone is enough for a safe move",
+        "Use the full 30 seconds plus a minute on every move",
+        "Play pre-moves to gain time"
+      ],
+      "answer": 1,
+      "explain": "With increment, the danger is spending more than the increment on several moves in a row. Keep enough of a cushion so that each move can be checked for safety. Pre-moves do not exist over the board."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which statement best describes good time budgeting?",
+      "choices": [
+        "Equal time for every move",
+        "Fast in the opening and on routine or forced moves, long thinks at critical moments, a reserve for the end",
+        "Always use half your time on the first ten moves",
+        "Spend most time in the endgame because it decides games"
+      ],
+      "answer": 1,
+      "explain": "A budget is uneven by design: time follows criticality. Practise this in your training games and review where your minutes went afterwards."
+    }
+  ],
+  "practiceThemes": [],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#time-management",
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#clock-handling",
+    "knowledge-base/03-chess-knowledge/calculation.md#critical-moments",
+    "knowledge-base/02-methods/heisman-thought-process-and-real-chess.md#4-time-management",
+    "Kotov, Think Like a Grandmaster (time trouble)"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "kids.2.gobble-up",
+  "track": "kids",
+  "stage": 1,
+  "order": 201,
+  "skillIds": [
+    "rules.capture"
+  ],
+  "title": "Gobble up!",
+  "summary": "Capture an enemy piece by moving onto its square.",
+  "estMinutes": 5,
+  "minAge": 5,
+  "steps": [
+    {
+      "type": "text",
+      "md": "You can **capture**! Move onto an enemy piece and it leaves the board. Gobble!"
+    },
+    {
+      "type": "board",
+      "fen": "7k/3p4/8/8/3R4/8/8/4K3 w - - 0 1",
+      "md": "The rook can reach the black pawn.",
+      "arrows": [
+        [
+          "d4",
+          "d7",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "7k/3p4/8/8/3R4/8/8/4K3 w - - 0 1",
+      "prompt": "Capture the black pawn with the rook!",
+      "solution": [
+        "Rxd7"
+      ],
+      "explain": "Gobbled!",
+      "hint": "Go straight up."
+    },
+    {
+      "type": "move",
+      "fen": "7k/5n2/8/8/2B5/8/8/4K3 w - - 0 1",
+      "prompt": "Capture the knight with the bishop!",
+      "solution": [
+        "Bxf7"
+      ],
+      "explain": "Yum!",
+      "hint": "Slide up the diagonal."
+    },
+    {
+      "type": "move",
+      "fen": "7k/3r4/8/8/8/8/8/K2Q4 w - - 0 1",
+      "prompt": "Capture the rook with the queen!",
+      "solution": [
+        "Qxd7"
+      ],
+      "explain": "Big gobble!",
+      "hint": "Straight up."
+    },
+    {
+      "type": "move",
+      "fen": "7k/8/8/4p3/8/5N2/8/K7 w - - 0 1",
+      "prompt": "Jump and capture with the knight!",
+      "solution": [
+        "Nxe5"
+      ],
+      "explain": "Hop and gobble!",
+      "hint": "The knight jumps in an L."
+    },
+    {
+      "type": "quiz",
+      "question": "Where does a captured piece go?",
+      "choices": [
+        "Off the board",
+        "Back to the start",
+        "It stays"
+      ],
+      "answer": 0,
+      "explain": "It leaves the board for the rest of the game."
+    }
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

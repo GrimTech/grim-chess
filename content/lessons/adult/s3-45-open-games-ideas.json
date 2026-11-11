@@ -1,0 +1,121 @@
+{
+  "id": "adult.s3.open-games-ideas",
+  "track": "adult",
+  "stage": 3,
+  "order": 45,
+  "skillIds": [
+    "opening.open-games"
+  ],
+  "title": "Open games (1.e4 e5): the main ideas",
+  "summary": "Italian, Scotch and Ruy Lopez from both sides: what White is aiming at, how Black equalises, and the moves you must know.",
+  "estMinutes": 16,
+  "steps": [
+    {
+      "type": "text",
+      "md": "After 1.e4 e5 2.Nf3 Nc6 White chooses a plan:\n\n- **Italian (3.Bc4)**: bishop at f7, then c3 and d4 (or the slower d3).\n- **Scotch (3.d4)**: open the centre at once.\n- **Ruy Lopez (3.Bb5)**: pressure the c6-knight, the defender of e5; a long strategic fight.\n\nBlack's aim in every line: develop quickly, keep a foothold in the centre (the e5-pawn or a ...d5 break), and castle."
+    },
+    {
+      "type": "move",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "prompt": "You are Black. Defend the e5-pawn while developing a piece.",
+      "solution": [
+        "Nc6"
+      ],
+      "explain": "...Nc6 develops and protects e5. (...d6 is the Philidor and ...Nf6 the Petrov, both playable; ...Nc6 is the most flexible.)",
+      "alternatives": [
+        "Nf6",
+        "d6"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "prompt": "Italian Game. Prepare d2-d4 the classical way.",
+      "solution": [
+        "c3",
+        "Nf6",
+        "d4"
+      ],
+      "explain": "c3 and d4: White builds the centre. In the Giuoco Piano Black usually answers ...exd4 cxd4 Bb4+ and fights the centre with ...d5."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "prompt": "Two Knights Defence. You are White and want a calm, healthy game. Protect e4 and keep your structure.",
+      "solution": [
+        "d3"
+      ],
+      "explain": "d3: the modern main line (Giuoco Pianissimo style). 4.Ng5 attacks f7 but after 4...d5 5.exd5 Na5 Black gets active play for a pawn.",
+      "alternatives": [
+        "Nc3"
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4",
+      "prompt": "Scotch Game. Recapture and centralise.",
+      "solution": [
+        "Nxd4"
+      ],
+      "explain": "Nxd4: White has a strong central knight and open lines. Black challenges it with ...Nf6 or ...Bc5."
+    },
+    {
+      "type": "move",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "prompt": "Ruy Lopez. You are Black: the most popular reply asks the bishop a question.",
+      "solution": [
+        "a6"
+      ],
+      "explain": "...a6, the Morphy Defence. 4.Bxc6 dxc6 5.Nxe5? Qd4! regains the pawn, so the threat on e5 is not yet real. (...Nf6, the Berlin, is the other main line.)",
+      "alternatives": [
+        "Nf6"
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Ruy Lopez: why is 4.Bxc6 dxc6 5.Nxe5 not winning a pawn?",
+      "choices": [
+        "It is winning a pawn",
+        "Because 5...Qd4 attacks the knight and e4, winning the pawn back",
+        "Because of 5...Bb4+",
+        "Because the knight is pinned"
+      ],
+      "answer": 1,
+      "explain": "A double attack by the queen regains material. Always check for queen forks before grabbing a central pawn."
+    },
+    {
+      "type": "quiz",
+      "question": "Which plan is typical for White in the Italian with c3?",
+      "choices": [
+        "Queenside castling and a pawn storm",
+        "Prepare d4 to build a pawn centre, or play d3, Nbd2-f1-g3 for a slow kingside build-up",
+        "Trade the light-squared bishop at once",
+        "Play f4 immediately"
+      ],
+      "answer": 1,
+      "explain": "Both the d4 and d3 plans are main lines; know at least one by heart, with its main ideas."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: in the open games, what is Black's main freeing break?",
+      "choices": [
+        "...g5",
+        "...d5 (often prepared by ...c6 or ...Re8)",
+        "...a5",
+        "...h5"
+      ],
+      "answer": 1,
+      "explain": "When Black achieves ...d5 without losing material, the opening is usually solved."
+    }
+  ],
+  "practiceThemes": [
+    "opening"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/openings.md#volume-c-open-games-and-french",
+    "knowledge-base/03-chess-knowledge/openings.md#opening-principles",
+    "ECO (Encyclopaedia of Chess Openings) classification, volumes A-E",
+    "knowledge-base/02-methods/opening-repertoire-building.md#4-evidence-informed-principles-for-repertoire-work",
+    "Yusupov, Build Up Your Chess 1 (opening principles)"
+  ]
+}

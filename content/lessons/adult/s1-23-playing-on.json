@@ -1,0 +1,99 @@
+{
+  "id": "adult.s1.playing-on",
+  "track": "adult",
+  "stage": 1,
+  "order": 23,
+  "skillIds": [
+    "practical.sportsmanship"
+  ],
+  "title": "Sportsmanship and never giving up",
+  "summary": "Etiquette, why beginners shouldn't resign, and the stalemate swindle.",
+  "estMinutes": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "Good conduct: shake hands before and after, don't distract your opponent, follow **touch-move** over the board (if you touch a piece you must move it; say \"I adjust\" first to straighten one).\n\nAt beginner level, **don't resign** a position just because you are behind. Opponents at this level often fail to win won games: they blunder back material, miss mates, or stalemate you. Play on until it is truly hopeless (or until mate)."
+    },
+    {
+      "type": "quiz",
+      "question": "You are a knight down at move 20 in a game between two 500-rated players. Best attitude?",
+      "choices": [
+        "Keep playing hard, set problems, look for tactics",
+        "Resign to save time",
+        "Offer a draw every move"
+      ],
+      "answer": 0,
+      "explain": "At this level, material swings back and forth constantly. Resigning gives away half your chances."
+    },
+    {
+      "type": "quiz",
+      "question": "Over the board you touch your bishop, then see it would hang. What must you do?",
+      "choices": [
+        "Move the bishop (touch-move), choosing its safest legal square",
+        "Move another piece instead",
+        "Put it back and say nothing"
+      ],
+      "answer": 0,
+      "explain": "Touch-move: a deliberately touched piece must be moved if it has a legal move. Say \"I adjust\" before touching if you only want to straighten it."
+    },
+    {
+      "type": "move",
+      "fen": "k5r1/p1Q5/P7/8/8/8/7P/7K b - - 0 1",
+      "prompt": "You are Black and about to be mated (Qb7# is coming). Find the swindle: force a stalemate.",
+      "solution": [
+        "Rg1+",
+        "Kxg1"
+      ],
+      "hint": "Your king has no moves. What if your rook disappeared?",
+      "explain": "Rg1+! The white king must capture (g2 is covered and h2 is blocked), and then Black has no legal move and is not in check: stalemate. A lost game becomes a draw."
+    },
+    {
+      "type": "quiz",
+      "question": "Why did the rook sacrifice work?",
+      "choices": [
+        "Black's only mobile piece disappeared while Black's king had no moves and was not in check",
+        "Because it was checkmate",
+        "Because White had no pawns"
+      ],
+      "answer": 0,
+      "explain": "Look for stalemate tricks whenever your king is boxed in and you have few mobile pieces."
+    },
+    {
+      "type": "play",
+      "fen": "r1b1k2r/ppp2pp1/2n5/3q4/3P4/2P5/P4PPP/R1BQ1RK1 w kq - 0 12",
+      "goal": "hold",
+      "prompt": "You are a knight down for a pawn. Keep fighting for 20 moves: no further blunders, look for tactics.",
+      "engineLevel": 3,
+      "maxMoves": 20,
+      "explain": "Your opponent is also a beginner. Keep your pieces defended, look for checks and captures, and stay in the game."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: when should a beginner resign?",
+      "choices": [
+        "Almost never; play until it is truly hopeless",
+        "When a pawn down",
+        "When behind on the clock"
+      ],
+      "answer": 0,
+      "explain": "Many beginner games are won by the side that kept fighting."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what should you say before straightening a piece over the board?",
+      "choices": [
+        "\"I adjust\" (j'adoube)",
+        "Nothing",
+        "\"Check\""
+      ],
+      "answer": 0,
+      "explain": "Say it before touching the piece."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#resigning",
+    "knowledge-base/03-chess-knowledge/psychology-and-practical.md#resilience-after-mistakes",
+    "knowledge-base/03-chess-knowledge/rules.md#touch-move",
+    "knowledge-base/03-chess-knowledge/rules.md#stalemate"
+  ]
+}

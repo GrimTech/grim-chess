@@ -1,0 +1,133 @@
+{
+  "id": "adult.s2.notation-write",
+  "track": "adult",
+  "stage": 2,
+  "order": 5,
+  "skillIds": [
+    "rules.notation.san-write"
+  ],
+  "title": "Writing chess notation",
+  "summary": "Record moves correctly, including captures, disambiguation, castling and promotion.",
+  "estMinutes": 7,
+  "steps": [
+    {
+      "type": "text",
+      "md": "In a tournament game (standard time control) you must write down every move, yours and your opponent's, in algebraic notation. Recipe: **piece letter** (nothing for a pawn) + **x** if it captures + **destination square**, then **+** or **#**. Add the starting file or rank only when two identical pieces could make the same move."
+    },
+    {
+      "type": "quiz",
+      "question": "The knight on b1 moves to d2 (the knight on f3 could also have gone there). How do you write it?",
+      "choices": [
+        "Nbd2",
+        "Nd2",
+        "N1d2",
+        "Nb1d2"
+      ],
+      "answer": 0,
+      "explain": "Use the file of departure: Nbd2. Plain Nd2 would be ambiguous. Use the rank (N1d2) only when the file does not tell them apart.",
+      "fen": "4k3/8/8/8/8/5N2/8/1N2K3 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "The e4-pawn captures the pawn on d5. Write it.",
+      "choices": [
+        "exd5",
+        "Pxd5",
+        "ed5",
+        "e4d5"
+      ],
+      "answer": 0,
+      "explain": "Pawn captures: departure file + x + square.",
+      "fen": "4k3/8/8/3p4/4P3/8/8/4K3 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "The rook on a5 moves to a3. Write it.",
+      "choices": [
+        "R5a3",
+        "Raa3",
+        "Ra3",
+        "R3a5"
+      ],
+      "answer": 0,
+      "explain": "Both rooks are on the a-file, so use the rank of departure.",
+      "fen": "4k3/8/8/R7/8/8/8/R3K3 w - - 0 1"
+    },
+    {
+      "type": "quiz",
+      "question": "White's king goes e1-c1 and the rook a1-d1 in one move. Write it.",
+      "choices": [
+        "O-O-O",
+        "O-O",
+        "Kc1",
+        "Kc1 Rd1"
+      ],
+      "answer": 0,
+      "explain": "Queenside castling: three Os. Kingside: two."
+    },
+    {
+      "type": "quiz",
+      "question": "White's queen moves to h7 and it is checkmate. Write it.",
+      "choices": [
+        "Qh7#",
+        "Qh7+",
+        "Q-h7 mate",
+        "Qxh7"
+      ],
+      "answer": 0,
+      "explain": "\"#\" marks mate. If a pawn stood on h7, it would be Qxh7#."
+    },
+    {
+      "type": "quiz",
+      "question": "Black has just played ...d7-d5; White captures en passant. Write it.",
+      "choices": [
+        "exd6",
+        "exd5",
+        "dxe6",
+        "e5d6"
+      ],
+      "answer": 0,
+      "explain": "Written by the destination square, d6. \"e.p.\" may be added.",
+      "fen": "rnbqkbnr/1pp1pppp/p7/3pP3/8/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 3"
+    },
+    {
+      "type": "quiz",
+      "question": "A white pawn moves from g7 to g8, becomes a queen and gives check. Write it.",
+      "choices": [
+        "g8=Q+",
+        "Qg8+",
+        "g7g8",
+        "gQ8+"
+      ],
+      "answer": 0,
+      "explain": "Pawn move + \"=\" + piece letter, then the check sign."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: when do you add an extra file or rank letter to a move?",
+      "choices": [
+        "When two identical pieces could move to the same square",
+        "For every capture",
+        "For every knight move"
+      ],
+      "answer": 0,
+      "explain": "Disambiguation is only needed when two identical pieces could legally make that move."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: which letter stands for the knight?",
+      "choices": [
+        "N",
+        "K",
+        "Kn",
+        "S"
+      ],
+      "answer": 0,
+      "explain": "K is the king, so the knight is N."
+    }
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/rules.md#algebraic-notation-san",
+    "knowledge-base/03-chess-knowledge/rules.md#recording-moves-and-notation"
+  ]
+}

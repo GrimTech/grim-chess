@@ -1,0 +1,109 @@
+{
+  "id": "adult.s3.discovered-check",
+  "track": "adult",
+  "stage": 3,
+  "order": 16,
+  "skillIds": [
+    "tactics.discovered-check"
+  ],
+  "title": "Discovered check",
+  "summary": "When the unmasked piece gives check, the moving piece can go anywhere, even en prise, and grab what it wants.",
+  "estMinutes": 13,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **discovered check** is a discovered attack in which the uncovered piece checks the king. The opponent must deal with the check first, so the piece that moved has a free move: it can capture a queen or rook, even on a square where it can be recaptured afterwards. Repeating discovered checks (the **windmill**) can harvest a whole army."
+    },
+    {
+      "type": "move",
+      "fen": "r1bq2k1/pp1nbr1p/2p1pn1p/2Pp1pN1/3P4/2N4P/PPQ1PP2/R3KBR1 w Q - 0 13",
+      "prompt": "Worked example. White to move. Your g1-rook is aimed at Black's king along the open g-file, blocked only by your g5-knight.",
+      "solution": [
+        "Nxe6+",
+        "Kh8",
+        "Nxd8"
+      ],
+      "explain": "Nxe6+! (discovered check from the rook) Kh8 Nxd8: the knight takes a pawn with tempo and then the queen. White wins the queen for nothing.",
+      "hint": "Any knight move gives check; which one also attacks the queen?"
+    },
+    {
+      "type": "move",
+      "fen": "1R4k1/5b1p/6p1/5p2/PP1b4/4rB2/6PP/5RK1 b - - 2 40",
+      "prompt": "Black to move. Your d4-bishop is aimed at White's king, blocked by your own e3-rook.",
+      "solution": [
+        "Re8+",
+        "Kh1",
+        "Rxb8"
+      ],
+      "explain": "...Re8+! The rook steps away with discovered check from the bishop and attacks the b8-rook: Kh1 Rxb8."
+    },
+    {
+      "type": "move",
+      "fen": "r4rk1/pbp2ppp/1p2p2R/8/2P4P/P2B4/2PKN3/6Qq w - - 0 19",
+      "prompt": "White to move. Your h6-rook and d3-bishop work together against the king on g8. Black's queen is on h1.",
+      "solution": [
+        "Bxh7+",
+        "Kh8",
+        "Be4+"
+      ],
+      "explain": "Bxh7+! Kh8 and now Be4+, a discovered check from the h6-rook, while the bishop attacks the h1-queen. White wins the queen."
+    },
+    {
+      "type": "move",
+      "fen": "r1b1k2r/1p3pp1/pnn1P2p/8/2B4N/b5P1/PP3P1P/R1BqR1K1 w kq - 0 16",
+      "prompt": "White to move. Black has just taken your queen on d1. Do not recapture at once.",
+      "solution": [
+        "exf7+",
+        "Kd7",
+        "Rxd1+"
+      ],
+      "explain": "exf7+! is a discovered check from the e1-rook: the king must move (...Kd7), and then Rxd1+ takes the queen back with check, a pawn up and with a strong attack.",
+      "hint": "Your e1-rook is aimed at e8."
+    },
+    {
+      "type": "quiz",
+      "question": "Why can the moving piece in a discovered check go \"anywhere\", even to an attacked square?",
+      "choices": [
+        "Because pieces giving discovered check cannot be captured",
+        "Because the opponent must first answer the check, so there is no time to capture the moved piece",
+        "Because it is illegal to capture a piece after a check",
+        "It cannot: it must stay protected"
+      ],
+      "answer": 1,
+      "explain": "The defender's next move is forced (king move, block or capture of the checking piece). Only after that can they deal with your moved piece, by which time it has taken something."
+    },
+    {
+      "type": "quiz",
+      "question": "Black's king is on g8. Your rook on g1 and knight on g5 form a battery on the g-file. What should you look for first?",
+      "choices": [
+        "A knight move that also attacks the queen or captures a piece",
+        "A knight retreat to f3",
+        "Moving the rook instead",
+        "Advancing your h-pawn"
+      ],
+      "answer": 0,
+      "explain": "Every knight move gives check. Choose the one that wins the most: capture, fork, or attack on the queen."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is a windmill?",
+      "choices": [
+        "Rotating the board between moves",
+        "Repeated alternation of a discovered check and a direct check that wins material each time",
+        "A fianchetto structure",
+        "A perpetual check"
+      ],
+      "answer": 1,
+      "explain": "Torre - Lasker (Moscow 1925) is the famous example; it is stage 4 material, but the mechanism is the discovered check you learned here."
+    }
+  ],
+  "practiceThemes": [
+    "discoveredCheck"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/tactics.md#discovered-check",
+    "Brunia & van Wijgerden, Steps Method Step 3 workbook (eliminating the defender, discovered attack)",
+    "Torre - Lasker, Moscow 1925 (windmill, mentioned)",
+    "Lichess puzzle database (CC0): 02Ojk, 08Hmx, 0JKWC, 26uws"
+  ]
+}

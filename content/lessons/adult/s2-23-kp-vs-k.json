@@ -1,0 +1,104 @@
+{
+  "id": "adult.s2.kp-vs-k",
+  "track": "adult",
+  "stage": 2,
+  "order": 23,
+  "skillIds": [
+    "endgame.pawn.kp-basic"
+  ],
+  "title": "King and pawn vs king",
+  "summary": "Attacker: king in front of the pawn. Defender: block the pawn and use stalemate.",
+  "estMinutes": 12,
+  "steps": [
+    {
+      "type": "text",
+      "md": "King and pawn vs king is the foundation of all endgames.\n\n- **Attacker**: put your **king in front of the pawn**, not behind it. A king on the 6th rank in front of its (non-rook) pawn always wins.\n- **Defender**: get your king **in front of the pawn** and stay there. If you are pushed back to the last rank, the attacker must beware of stalemate."
+    },
+    {
+      "type": "board",
+      "fen": "4k3/8/4K3/8/4P3/8/8/8 w - - 0 1",
+      "md": "Winning set-up: the white king on e6 leads the pawn. Whoever is to move, White wins."
+    },
+    {
+      "type": "play",
+      "fen": "4k3/8/4K3/8/4P3/8/8/8 w - - 0 1",
+      "goal": "promote",
+      "prompt": "Promote the pawn (and keep the new queen).",
+      "maxMoves": 15,
+      "explain": "Keep the king in front; push the pawn when your king controls the squares ahead."
+    },
+    {
+      "type": "quiz",
+      "question": "Black to move. What is the result?",
+      "choices": [
+        "Stalemate",
+        "Checkmate",
+        "Black wins the pawn"
+      ],
+      "answer": 0,
+      "explain": "The pawn on d7 covers c8 and e8, the king on d6 covers c7, d7 and e7: no legal move, no check. This is the defender's main hope.",
+      "fen": "3k4/3P4/3K4/8/8/8/8/8 b - - 0 1"
+    },
+    {
+      "type": "move",
+      "fen": "3k4/3P4/8/3K4/8/8/8/8 w - - 0 1",
+      "prompt": "White to move and win. (Kd6?? stalemates.)",
+      "solution": [
+        "Ke6"
+      ],
+      "alternatives": [
+        "Kc6"
+      ],
+      "explain": "Ke6 protects d7 and leaves Black one move, ...Kc7, after which Ke7 and d8=Q win. Kc6 works the same way."
+    },
+    {
+      "type": "play",
+      "fen": "8/8/4k3/8/4P3/4K3/8/8 b - - 0 1",
+      "goal": "hold",
+      "prompt": "You are Black. Hold the draw: keep your king in front of the pawn.",
+      "maxMoves": 20,
+      "explain": "Stay in front of the pawn; when pushed back, go straight back (e8, not to the side), and take the opposition when the white king comes."
+    },
+    {
+      "type": "quiz",
+      "question": "As the defender, where should your king aim to stand?",
+      "choices": [
+        "Directly in front of the pawn",
+        "Behind the pawn",
+        "Far away on the other wing"
+      ],
+      "answer": 0,
+      "explain": "Blocking the pawn is the defender's whole plan."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: attacker's key rule?",
+      "choices": [
+        "King in front of the pawn",
+        "Push the pawn as fast as possible",
+        "Keep the king behind the pawn"
+      ],
+      "answer": 0,
+      "explain": "The king clears the path. Pushing too early lets the defender block."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what is the defender's last resource on the back rank?",
+      "choices": [
+        "Stalemate",
+        "Promoting first",
+        "Repetition"
+      ],
+      "answer": 0,
+      "explain": "As in the Kd6?? position above."
+    }
+  ],
+  "practiceThemes": [
+    "pawnEndgame"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/endgames.md#kp-vs-k-basics",
+    "knowledge-base/03-chess-knowledge/endgames.md#stalemate-awareness",
+    "knowledge-base/03-chess-knowledge/endgames.md#general-endgame-principles"
+  ]
+}

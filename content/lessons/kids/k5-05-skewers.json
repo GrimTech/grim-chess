@@ -1,0 +1,72 @@
+{
+  "id": "kids.5.skewers",
+  "track": "kids",
+  "stage": 2,
+  "order": 505,
+  "skillIds": [
+    "tactics.skewer"
+  ],
+  "title": "Skewers",
+  "summary": "Attack the big piece; it moves and you take the piece behind it.",
+  "estMinutes": 6,
+  "minAge": 8,
+  "steps": [
+    {
+      "type": "text",
+      "md": "A **skewer** is a pin turned around: attack the big piece, it moves away, and you capture the piece **behind** it."
+    },
+    {
+      "type": "move",
+      "fen": "4q3/8/8/8/4k3/8/7K/R7 w - - 0 1",
+      "prompt": "Skewer the king and queen!",
+      "solution": [
+        "Re1+"
+      ],
+      "explain": "The king must move, and the queen falls!",
+      "hint": "Check along the e-file."
+    },
+    {
+      "type": "move",
+      "fen": "6r1/8/8/3k4/8/8/8/1B5K w - - 0 1",
+      "prompt": "Skewer the king and the rook!",
+      "solution": [
+        "Ba2+"
+      ],
+      "explain": "Check! Then take the rook.",
+      "hint": "Check on the diagonal that also goes to g8."
+    },
+    {
+      "type": "move",
+      "fen": "q7/8/8/3k4/8/8/8/2K3Q1 w - - 0 1",
+      "prompt": "Skewer the king and the queen!",
+      "solution": [
+        "Qg2+"
+      ],
+      "explain": "The king steps away and the queen falls!",
+      "alternatives": [
+        "Qh1+"
+      ],
+      "hint": "Check on the long diagonal."
+    },
+    {
+      "type": "quiz",
+      "question": "In a skewer, which piece is in front?",
+      "choices": [
+        "The more valuable one",
+        "The less valuable one"
+      ],
+      "answer": 0,
+      "explain": "The big piece in front must move away."
+    },
+    {
+      "type": "text",
+      "md": "Pins and skewers both use **lines**. Rooks, bishops and queens love them!"
+    }
+  ],
+  "practiceThemes": [
+    "skewer"
+  ],
+  "sources": [
+    "knowledge-base/02-methods/steps-method.md"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": "adult.s2.legals-mate",
+  "track": "adult",
+  "stage": 2,
+  "order": 26,
+  "skillIds": [
+    "checkmate.legal"
+  ],
+  "title": "Legal's mate",
+  "summary": "Break a relative pin with a queen sacrifice, then mate with Bxf7+ and Nd5#.",
+  "estMinutes": 9,
+  "steps": [
+    {
+      "type": "text",
+      "md": "After 1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 g6? the f3-knight is pinned to the queen. That pin is only **relative**: the knight may legally move. 5.Nxe5! offers the queen. If 5...Bxd1?? then 6.Bxf7+ Ke7 7.Nd5# is mate."
+    },
+    {
+      "type": "board",
+      "fen": "rn1qkbnr/ppp2p1p/3p2p1/4p3/2B1P1b1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 5",
+      "md": "The position after 4...g6. The g4-bishop pins the knight to the queen, but only the queen is behind it, not the king.",
+      "arrows": [
+        [
+          "g4",
+          "d1",
+          "red"
+        ]
+      ]
+    },
+    {
+      "type": "move",
+      "fen": "rn1qkbnr/ppp2p1p/3p2p1/4p3/2B1P1b1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 5",
+      "prompt": "Play the whole combination: Legal's mate.",
+      "solution": [
+        "Nxe5",
+        "Bxd1",
+        "Bxf7+",
+        "Ke7",
+        "Nd5#"
+      ],
+      "explain": "5.Nxe5! Bxd1?? 6.Bxf7+ Ke7 7.Nd5#. Three minor pieces mate the king in the middle of the board."
+    },
+    {
+      "type": "move",
+      "fen": "rn1qkbnr/ppp2p1p/3p2p1/4N3/2B1P3/2N5/PPPP1PPP/R1BbK2R w KQkq - 0 6",
+      "prompt": "Black took the queen. Finish: mate in two.",
+      "solution": [
+        "Bxf7+",
+        "Ke7",
+        "Nd5#"
+      ],
+      "explain": "Bxf7+ forces Ke7, and Nd5# completes the net: the e5-knight covers d7 and f7, the bishop covers e6 and e8."
+    },
+    {
+      "type": "move",
+      "fen": "rn1qkbnr/ppp2p1p/6p1/4p3/2B1P1b1/2N5/PPPP1PPP/R1BQK2R w KQkq - 0 6",
+      "prompt": "Black declined the queen. Collect a pawn.",
+      "solution": [
+        "Qxg4"
+      ],
+      "explain": "After 5...dxe5 6.Qxg4 White is a clean pawn up. The combination pays either way."
+    },
+    {
+      "type": "quiz",
+      "question": "Why could the \"pinned\" f3-knight move?",
+      "choices": [
+        "It was pinned to the queen, not the king (a relative pin)",
+        "Pins are illegal",
+        "The bishop was protected"
+      ],
+      "answer": 0,
+      "explain": "A relative pin can be broken if the price is right. Here the price was mate."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what are the mating pieces in Legal's mate?",
+      "choices": [
+        "Two knights and a bishop",
+        "Queen and bishop",
+        "Rook and knight"
+      ],
+      "answer": 0,
+      "explain": "Bf7, Ne5 and Nd5."
+    },
+    {
+      "type": "quiz",
+      "question": "Retrieval check: what was Black's real mistake?",
+      "choices": [
+        "4...g6?, ignoring the threat to e5 and f7",
+        "2...d6",
+        "3...Bg4"
+      ],
+      "answer": 0,
+      "explain": "3...Bg4 is playable. The fatal move was the slow 4...g6."
+    }
+  ],
+  "practiceThemes": [
+    "attackingF2F7",
+    "mateIn2"
+  ],
+  "sources": [
+    "knowledge-base/03-chess-knowledge/checkmate-patterns.md#legals-mate",
+    "knowledge-base/03-chess-knowledge/tactics.md#pin"
+  ]
+}
